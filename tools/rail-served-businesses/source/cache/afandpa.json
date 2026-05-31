@@ -1,0 +1,6968 @@
+[
+ {
+  "company_name": "Georgia-Pacific Leaf River Cellulose",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "bctmp_pulp",
+   "fluff_pulp"
+  ],
+  "industry_naics": "",
+  "state": "MS",
+  "county": "",
+  "city": "New Augusta",
+  "lat": 31.201,
+  "lon": -89.0367,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"georgia-pacific\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Georgia-Pacific Crossett Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "paper",
+   "pulp"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Crossett",
+  "lat": 33.1281,
+  "lon": -91.9622,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"georgia-pacific\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Georgia-Pacific Brewton Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "bleached_board",
+   "kraft"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Brewton",
+  "lat": 31.1057,
+  "lon": -87.0725,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"georgia-pacific\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Georgia-Pacific Cedar Springs Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard",
+   "kraft"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Cedar Springs",
+  "lat": 31.186,
+  "lon": -85.0533,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"georgia-pacific\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Georgia-Pacific Naheola Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard",
+   "tissue"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Pennington",
+  "lat": 32.1953,
+  "lon": -88.0386,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"georgia-pacific\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Georgia-Pacific Monticello Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "MS",
+  "county": "",
+  "city": "Monticello",
+  "lat": 31.5536,
+  "lon": -90.1078,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"georgia-pacific\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Georgia-Pacific Toledo Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "kraft_linerboard"
+  ],
+  "industry_naics": "",
+  "state": "OR",
+  "county": "",
+  "city": "Toledo",
+  "lat": 44.6226,
+  "lon": -123.9384,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"georgia-pacific\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Georgia-Pacific Palatka Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "tissue",
+   "kraft"
+  ],
+  "industry_naics": "",
+  "state": "FL",
+  "county": "",
+  "city": "Palatka",
+  "lat": 29.6483,
+  "lon": -81.6376,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"georgia-pacific\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Georgia-Pacific Camas Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "specialty_paper"
+  ],
+  "industry_naics": "",
+  "state": "WA",
+  "county": "",
+  "city": "Camas",
+  "lat": 45.5871,
+  "lon": -122.404,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"georgia-pacific\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Georgia-Pacific Big Island Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "VA",
+  "county": "",
+  "city": "Big Island",
+  "lat": 37.5331,
+  "lon": -79.3611,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"georgia-pacific\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Georgia-Pacific Taylorsville OSB",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "osb"
+  ],
+  "industry_naics": "",
+  "state": "MS",
+  "county": "",
+  "city": "Taylorsville",
+  "lat": 31.8294,
+  "lon": -89.4392,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"georgia-pacific\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Georgia-Pacific Hawthorne Plywood",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "plywood"
+  ],
+  "industry_naics": "",
+  "state": "FL",
+  "county": "",
+  "city": "Hawthorne",
+  "lat": 29.5905,
+  "lon": -82.0876,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"georgia-pacific\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Vicksburg Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard",
+   "kraft_paper"
+  ],
+  "industry_naics": "",
+  "state": "MS",
+  "county": "",
+  "city": "Vicksburg",
+  "lat": 32.3522,
+  "lon": -90.8783,
+  "rail_served": "Y",
+  "nearest_class_i": "KCS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"international paper\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Rome Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Rome",
+  "lat": 34.257,
+  "lon": -85.1647,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"international paper\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Riegelwood Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "fluff_pulp",
+   "kraft"
+  ],
+  "industry_naics": "",
+  "state": "NC",
+  "county": "",
+  "city": "Riegelwood",
+  "lat": 34.3346,
+  "lon": -78.2316,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"international paper\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Mansfield Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Mansfield",
+  "lat": 32.0387,
+  "lon": -93.7138,
+  "rail_served": "Y",
+  "nearest_class_i": "KCS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"international paper\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Pine Hill Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Pine Hill",
+  "lat": 31.9888,
+  "lon": -87.5919,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"international paper\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Prattville Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "uncoated_freesheet"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Prattville",
+  "lat": 32.464,
+  "lon": -86.4597,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"international paper\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Cantonment Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "FL",
+  "county": "",
+  "city": "Cantonment",
+  "lat": 30.6079,
+  "lon": -87.3325,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"international paper\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Augusta Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "fluff_pulp"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Augusta",
+  "lat": 33.4734,
+  "lon": -82.0105,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"international paper\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Eastover Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "uncoated_freesheet"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Eastover",
+  "lat": 33.9085,
+  "lon": -80.6948,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"international paper\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Georgetown Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "fluff_pulp",
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Georgetown",
+  "lat": 33.3644,
+  "lon": -79.2944,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"international paper\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Savannah Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Savannah",
+  "lat": 32.13,
+  "lon": -81.148,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"international paper\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Springfield Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "OR",
+  "county": "",
+  "city": "Springfield",
+  "lat": 44.0463,
+  "lon": -123.022,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"international paper\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Texarkana Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Texarkana",
+  "lat": 33.4251,
+  "lon": -94.0477,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"international paper\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Selma Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "fluff_pulp"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Selma",
+  "lat": 32.4074,
+  "lon": -87.0211,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"international paper\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Bogalusa Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Bogalusa",
+  "lat": 30.7791,
+  "lon": -89.8487,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"international paper\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Weyerhaeuser Longview Pulp Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "bleached_kraft"
+  ],
+  "industry_naics": "",
+  "state": "WA",
+  "county": "",
+  "city": "Longview",
+  "lat": 46.1382,
+  "lon": -122.9382,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Weyerhaeuser Columbus Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber",
+   "OSB"
+  ],
+  "industry_naics": "",
+  "state": "MS",
+  "county": "",
+  "city": "Columbus",
+  "lat": 33.5061,
+  "lon": -88.4928,
+  "rail_served": "Y",
+  "nearest_class_i": "KCS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Weyerhaeuser Dierks Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Dierks",
+  "lat": 34.1134,
+  "lon": -94.0118,
+  "rail_served": "Y",
+  "nearest_class_i": "KCS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Weyerhaeuser Idabel OSB",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "osb"
+  ],
+  "industry_naics": "",
+  "state": "OK",
+  "county": "",
+  "city": "Idabel",
+  "lat": 33.8954,
+  "lon": -94.8266,
+  "rail_served": "Y",
+  "nearest_class_i": "KCS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Weyerhaeuser Holden OSB",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "osb"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Holden",
+  "lat": 30.5224,
+  "lon": -90.6473,
+  "rail_served": "Y",
+  "nearest_class_i": "KCS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Weyerhaeuser Grayling OSB",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "osb"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Grayling",
+  "lat": 44.6614,
+  "lon": -84.7147,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Weyerhaeuser Sutton OSB",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "osb"
+  ],
+  "industry_naics": "",
+  "state": "WV",
+  "county": "",
+  "city": "Sutton",
+  "lat": 38.6648,
+  "lon": -80.7081,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Weyerhaeuser Pine Bluff Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "fluff_pulp"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Pine Bluff",
+  "lat": 34.2284,
+  "lon": -92.0032,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Domtar Ashdown Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "bleached_kraft",
+   "fluff_pulp"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Ashdown",
+  "lat": 33.674,
+  "lon": -94.1313,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"domtar\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Domtar Hawesville Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "uncoated_freesheet"
+  ],
+  "industry_naics": "",
+  "state": "KY",
+  "county": "",
+  "city": "Hawesville",
+  "lat": 37.8997,
+  "lon": -86.7561,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"domtar\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Domtar Kingsport Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "TN",
+  "county": "",
+  "city": "Kingsport",
+  "lat": 36.5484,
+  "lon": -82.5618,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"domtar\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Domtar Plymouth Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "fluff_pulp"
+  ],
+  "industry_naics": "",
+  "state": "NC",
+  "county": "",
+  "city": "Plymouth",
+  "lat": 35.8676,
+  "lon": -76.748,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"domtar\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Domtar Marlboro Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "uncoated_freesheet"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Bennettsville",
+  "lat": 34.6151,
+  "lon": -79.6845,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"domtar\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Domtar Johnsonburg Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "uncoated_freesheet"
+  ],
+  "industry_naics": "",
+  "state": "PA",
+  "county": "",
+  "city": "Johnsonburg",
+  "lat": 41.4914,
+  "lon": -78.6781,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"domtar\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Domtar Nekoosa Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "uncoated_freesheet"
+  ],
+  "industry_naics": "",
+  "state": "WI",
+  "county": "",
+  "city": "Nekoosa",
+  "lat": 44.3128,
+  "lon": -89.9009,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"domtar\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Domtar Rothschild Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "specialty_paper"
+  ],
+  "industry_naics": "",
+  "state": "WI",
+  "county": "",
+  "city": "Rothschild",
+  "lat": 44.8855,
+  "lon": -89.6207,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"domtar\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Fernandina Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "FL",
+  "county": "",
+  "city": "Fernandina Beach",
+  "lat": 30.6697,
+  "lon": -81.4632,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"smurfit westrock\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Mahrt Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Cottonton",
+  "lat": 32.174,
+  "lon": -85.1011,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"smurfit westrock\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Stevenson Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Stevenson",
+  "lat": 34.8704,
+  "lon": -85.8377,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"smurfit westrock\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Hodge Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Hodge",
+  "lat": 32.2779,
+  "lon": -92.7268,
+  "rail_served": "Y",
+  "nearest_class_i": "KCS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"smurfit westrock\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Hopewell Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "kraft_paper"
+  ],
+  "industry_naics": "",
+  "state": "VA",
+  "county": "",
+  "city": "Hopewell",
+  "lat": 37.3043,
+  "lon": -77.2872,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"smurfit westrock\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Tacoma Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "WA",
+  "county": "",
+  "city": "Tacoma",
+  "lat": 47.2529,
+  "lon": -122.4443,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"smurfit westrock\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Florence Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Florence",
+  "lat": 34.1954,
+  "lon": -79.7626,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"smurfit westrock\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Solvay Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "NY",
+  "county": "",
+  "city": "Solvay",
+  "lat": 43.0584,
+  "lon": -76.2099,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"smurfit westrock\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Longview Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "WA",
+  "county": "",
+  "city": "Longview",
+  "lat": 46.1382,
+  "lon": -122.9382,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"smurfit westrock\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Covington Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "bleached_kraft"
+  ],
+  "industry_naics": "",
+  "state": "VA",
+  "county": "",
+  "city": "Covington",
+  "lat": 37.7935,
+  "lon": -79.9939,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"smurfit westrock\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Roanoke Rapids Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "NC",
+  "county": "",
+  "city": "Roanoke Rapids",
+  "lat": 36.4621,
+  "lon": -77.6541,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"smurfit westrock\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Panama City Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "FL",
+  "county": "",
+  "city": "Panama City",
+  "lat": 30.1588,
+  "lon": -85.6602,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"smurfit westrock\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Charleston Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "North Charleston",
+  "lat": 32.8546,
+  "lon": -79.9748,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"smurfit westrock\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "PCA Counce Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard",
+   "kraft"
+  ],
+  "industry_naics": "",
+  "state": "TN",
+  "county": "",
+  "city": "Counce",
+  "lat": 35.004,
+  "lon": -88.2906,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "PCA DeRidder Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "DeRidder",
+  "lat": 30.8454,
+  "lon": -93.2891,
+  "rail_served": "Y",
+  "nearest_class_i": "KCS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "PCA Valdosta Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Valdosta",
+  "lat": 30.8327,
+  "lon": -83.2785,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "PCA Tomahawk Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "WI",
+  "county": "",
+  "city": "Tomahawk",
+  "lat": 45.4708,
+  "lon": -89.729,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "PCA Wallula Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "WA",
+  "county": "",
+  "city": "Wallula",
+  "lat": 46.071,
+  "lon": -118.9131,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "PCA Filer City Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Filer City",
+  "lat": 44.2392,
+  "lon": -86.3164,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "PCA Jackson Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Jackson",
+  "lat": 31.5093,
+  "lon": -87.8939,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Graphic Packaging Augusta Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "coated_recycled_board"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Augusta",
+  "lat": 33.4734,
+  "lon": -82.0105,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"graphic packaging\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Graphic Packaging Kalamazoo Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "coated_recycled_board"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Kalamazoo",
+  "lat": 42.2917,
+  "lon": -85.5872,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"graphic packaging\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Graphic Packaging Macon Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Macon",
+  "lat": 32.8407,
+  "lon": -83.6324,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"graphic packaging\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Graphic Packaging Middletown Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "specialty_paper"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Middletown",
+  "lat": 39.5151,
+  "lon": -84.3983,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"graphic packaging\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Graphic Packaging West Monroe Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "coated_recycled_board"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "West Monroe",
+  "lat": 32.5182,
+  "lon": -92.1593,
+  "rail_served": "Y",
+  "nearest_class_i": "KCS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"graphic packaging\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Graphic Packaging Texarkana Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Queen City",
+  "lat": 33.1521,
+  "lon": -94.1518,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"graphic packaging\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Pratt Industries Conyers Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "recycled_containerboard"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Conyers",
+  "lat": 33.6679,
+  "lon": -84.0177,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"pratt industries\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Pratt Industries Shreveport Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "recycled_containerboard"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Shreveport",
+  "lat": 32.5252,
+  "lon": -93.7502,
+  "rail_served": "Y",
+  "nearest_class_i": "KCS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"pratt industries\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Pratt Industries Valparaiso Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "recycled_containerboard"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Valparaiso",
+  "lat": 41.4731,
+  "lon": -87.0611,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"pratt industries\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Pratt Industries Wapakoneta Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "recycled_containerboard"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Wapakoneta",
+  "lat": 40.5673,
+  "lon": -84.1935,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"pratt industries\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Sappi Cloquet Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "dissolving_pulp",
+   "coated_freesheet"
+  ],
+  "industry_naics": "",
+  "state": "MN",
+  "county": "",
+  "city": "Cloquet",
+  "lat": 46.7222,
+  "lon": -92.4593,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Sappi Somerset Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "coated_freesheet"
+  ],
+  "industry_naics": "",
+  "state": "ME",
+  "county": "",
+  "city": "Skowhegan",
+  "lat": 44.7647,
+  "lon": -69.7194,
+  "rail_served": "Y",
+  "nearest_class_i": "PAS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Sappi Westbrook Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "specialty_paper"
+  ],
+  "industry_naics": "",
+  "state": "ME",
+  "county": "",
+  "city": "Westbrook",
+  "lat": 43.677,
+  "lon": -70.3717,
+  "rail_served": "Y",
+  "nearest_class_i": "PAS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Sappi Matane Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "specialty_paper"
+  ],
+  "industry_naics": "",
+  "state": "PA",
+  "county": "",
+  "city": "Allentown",
+  "lat": 40.6084,
+  "lon": -75.4902,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Clearwater Paper Lewiston Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "bleached_kraft",
+   "tissue"
+  ],
+  "industry_naics": "",
+  "state": "ID",
+  "county": "",
+  "city": "Lewiston",
+  "lat": 46.4166,
+  "lon": -117.0177,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Clearwater Paper Cypress Bend Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "McGehee",
+  "lat": 33.6293,
+  "lon": -91.3998,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Clearwater Paper Augusta Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "bleached_paperboard"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Augusta",
+  "lat": 33.4734,
+  "lon": -82.0105,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Clearwater Paper Shelby Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "tissue"
+  ],
+  "industry_naics": "",
+  "state": "NC",
+  "county": "",
+  "city": "Shelby",
+  "lat": 35.2924,
+  "lon": -81.5358,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Sylvamo Eastover Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "uncoated_freesheet"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Eastover",
+  "lat": 33.9085,
+  "lon": -80.6948,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Sylvamo Ticonderoga Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "uncoated_freesheet"
+  ],
+  "industry_naics": "",
+  "state": "NY",
+  "county": "",
+  "city": "Ticonderoga",
+  "lat": 43.8484,
+  "lon": -73.4259,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Sonoco Hartsville Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "uncoated_recycled_board"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Hartsville",
+  "lat": 34.3737,
+  "lon": -80.0731,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Sonoco Holyoke Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "uncoated_recycled_board"
+  ],
+  "industry_naics": "",
+  "state": "MA",
+  "county": "",
+  "city": "Holyoke",
+  "lat": 42.2042,
+  "lon": -72.6162,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Greif Massillon Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Massillon",
+  "lat": 40.7967,
+  "lon": -81.5215,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"greif\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Greif Riverville Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "VA",
+  "county": "",
+  "city": "Amherst",
+  "lat": 37.5837,
+  "lon": -79.0498,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"greif\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Hood Container Macon Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Macon",
+  "lat": 32.8407,
+  "lon": -83.6324,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"hood container\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "New-Indy Catawba Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Catawba",
+  "lat": 34.8482,
+  "lon": -80.9087,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "New-Indy Oxnard Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "CA",
+  "county": "",
+  "city": "Oxnard",
+  "lat": 34.1975,
+  "lon": -119.1771,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "New-Indy Ontario Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "CA",
+  "county": "",
+  "city": "Ontario",
+  "lat": 34.0633,
+  "lon": -117.6509,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "NORPAC Longview Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "newsprint",
+   "groundwood"
+  ],
+  "industry_naics": "",
+  "state": "WA",
+  "county": "",
+  "city": "Longview",
+  "lat": 46.1382,
+  "lon": -122.9382,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Kimberly-Clark Mobile Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "tissue",
+   "fluff_pulp"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Mobile",
+  "lat": 30.6954,
+  "lon": -88.0399,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"kimberly-clark\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Kimberly-Clark New Milford Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "tissue"
+  ],
+  "industry_naics": "",
+  "state": "CT",
+  "county": "",
+  "city": "New Milford",
+  "lat": 41.5773,
+  "lon": -73.4078,
+  "rail_served": "Y",
+  "nearest_class_i": "PAS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"kimberly-clark\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Kimberly-Clark Memphis Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "tissue"
+  ],
+  "industry_naics": "",
+  "state": "TN",
+  "county": "",
+  "city": "Memphis",
+  "lat": 35.1495,
+  "lon": -90.049,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"kimberly-clark\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Kimberly-Clark Beech Island Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "tissue"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Beech Island",
+  "lat": 33.4421,
+  "lon": -81.839,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"kimberly-clark\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Kimberly-Clark Loudon Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "tissue"
+  ],
+  "industry_naics": "",
+  "state": "TN",
+  "county": "",
+  "city": "Loudon",
+  "lat": 35.7339,
+  "lon": -84.3358,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"kimberly-clark\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Kimberly-Clark Maumelle Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "tissue"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Maumelle",
+  "lat": 34.8669,
+  "lon": -92.404,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"kimberly-clark\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Procter & Gamble Mehoopany Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "tissue"
+  ],
+  "industry_naics": "",
+  "state": "PA",
+  "county": "",
+  "city": "Mehoopany",
+  "lat": 41.5409,
+  "lon": -76.0011,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"procter & gamble\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Procter & Gamble Albany Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "tissue"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Albany",
+  "lat": 31.5785,
+  "lon": -84.1557,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"procter & gamble\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Procter & Gamble Box Elder Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "tissue"
+  ],
+  "industry_naics": "",
+  "state": "UT",
+  "county": "",
+  "city": "Box Elder",
+  "lat": 41.5302,
+  "lon": -112.0805,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"procter & gamble\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Procter & Gamble Cape Girardeau Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "tissue"
+  ],
+  "industry_naics": "",
+  "state": "MO",
+  "county": "",
+  "city": "Jackson",
+  "lat": 37.3823,
+  "lon": -89.6663,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"procter & gamble\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Green Bay Packaging Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "WI",
+  "county": "",
+  "city": "Green Bay",
+  "lat": 44.5133,
+  "lon": -88.0133,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"green bay packaging\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Green Bay Packaging Morrilton Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Morrilton",
+  "lat": 35.1503,
+  "lon": -92.7438,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"green bay packaging\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Billerud Escanaba Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "coated_freesheet"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Escanaba",
+  "lat": 45.7452,
+  "lon": -87.0646,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Billerud Quinnesec Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "bleached_kraft"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Quinnesec",
+  "lat": 45.8044,
+  "lon": -87.9779,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Suzano Pine Bluff Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "fluff_pulp"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Pine Bluff",
+  "lat": 34.2284,
+  "lon": -92.0032,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_afandpa_unverified",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "parent company not matched against current AF&PA members page; treating as curated"
+ },
+ {
+  "company_name": "Essity Neenah Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "tissue"
+  ],
+  "industry_naics": "",
+  "state": "WI",
+  "county": "",
+  "city": "Neenah",
+  "lat": 44.1858,
+  "lon": -88.4626,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"essity\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Essity Menasha Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "tissue"
+  ],
+  "industry_naics": "",
+  "state": "WI",
+  "county": "",
+  "city": "Menasha",
+  "lat": 44.2025,
+  "lon": -88.4465,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"essity\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Ahlstrom Kaukauna Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "specialty_paper"
+  ],
+  "industry_naics": "",
+  "state": "WI",
+  "county": "",
+  "city": "Kaukauna",
+  "lat": 44.2783,
+  "lon": -88.2625,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"ahlstrom\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Ahlstrom Mount Holly Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "specialty_paper"
+  ],
+  "industry_naics": "",
+  "state": "PA",
+  "county": "",
+  "city": "Mount Holly Springs",
+  "lat": 40.1192,
+  "lon": -77.1894,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"ahlstrom\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Hollingsworth & Vose East Walpole Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "specialty_paper"
+  ],
+  "industry_naics": "",
+  "state": "MA",
+  "county": "",
+  "city": "East Walpole",
+  "lat": 42.1488,
+  "lon": -71.2114,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"hollingsworth & vose\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Seaman Paper Otter River Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "tissue"
+  ],
+  "industry_naics": "",
+  "state": "MA",
+  "county": "",
+  "city": "Templeton",
+  "lat": 42.551,
+  "lon": -72.0606,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"seaman paper\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Monadnock Paper Bennington Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "specialty_paper"
+  ],
+  "industry_naics": "",
+  "state": "NH",
+  "county": "",
+  "city": "Bennington",
+  "lat": 43.0079,
+  "lon": -71.927,
+  "rail_served": "Y",
+  "nearest_class_i": "PAS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "afandpa",
+  "source_confidence": "high",
+  "last_verified_at": "2026-05-06",
+  "scraped_url": "https://www.afandpa.org/our-members",
+  "scraped_at": "2026-05-06T02:36:56.409304+00:00",
+  "source_note": "parent company \"monadnock paper\" verified on AF&PA members page; mill location curated from operator public records"
+ },
+ {
+  "company_name": "Roseburg Dillard Plywood",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "plywood"
+  ],
+  "industry_naics": "",
+  "state": "OR",
+  "county": "",
+  "city": "Dillard",
+  "lat": 43.0931,
+  "lon": -123.3389,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Roseburg Riddle Plywood",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "plywood"
+  ],
+  "industry_naics": "",
+  "state": "OR",
+  "county": "",
+  "city": "Riddle",
+  "lat": 42.9509,
+  "lon": -123.3636,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Roseburg Coquille Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "OR",
+  "county": "",
+  "city": "Coquille",
+  "lat": 43.1773,
+  "lon": -124.1872,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Roseburg Weed Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "CA",
+  "county": "",
+  "city": "Weed",
+  "lat": 41.4226,
+  "lon": -122.3861,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Roseburg Russellville Particleboard",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "particleboard",
+   "MDF"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Russellville",
+  "lat": 33.5126,
+  "lon": -79.9967,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Roseburg Taylorsville LVL",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "LVL",
+   "engineered_wood"
+  ],
+  "industry_naics": "",
+  "state": "MS",
+  "county": "",
+  "city": "Taylorsville",
+  "lat": 31.8294,
+  "lon": -89.4392,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Roseburg Simsboro Plywood",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "plywood"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Simsboro",
+  "lat": 32.5546,
+  "lon": -92.7818,
+  "rail_served": "Y",
+  "nearest_class_i": "KCS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "West Fraser Augusta Lumber",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Augusta",
+  "lat": 33.4734,
+  "lon": -82.0105,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "West Fraser Joyce Plywood",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "plywood"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Joyce",
+  "lat": 32.079,
+  "lon": -92.4868,
+  "rail_served": "Y",
+  "nearest_class_i": "KCS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "West Fraser Maxville OSB",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "osb"
+  ],
+  "industry_naics": "",
+  "state": "FL",
+  "county": "",
+  "city": "Maxville",
+  "lat": 30.2419,
+  "lon": -81.9784,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "West Fraser Allendale Lumber",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Allendale",
+  "lat": 33.0093,
+  "lon": -81.3098,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "West Fraser Newberry Lumber",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Newberry",
+  "lat": 34.2746,
+  "lon": -81.619,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "West Fraser Henderson Lumber",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Henderson",
+  "lat": 32.1532,
+  "lon": -94.799,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "West Fraser Leola Lumber",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Leola",
+  "lat": 34.1632,
+  "lon": -92.5915,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "West Fraser Huttig Lumber",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Huttig",
+  "lat": 33.0379,
+  "lon": -92.1849,
+  "rail_served": "Y",
+  "nearest_class_i": "KCS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "West Fraser Opelika Lumber",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Opelika",
+  "lat": 32.6454,
+  "lon": -85.3783,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "West Fraser Wilmington Plywood",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "plywood"
+  ],
+  "industry_naics": "",
+  "state": "NC",
+  "county": "",
+  "city": "Wilmington",
+  "lat": 34.2257,
+  "lon": -77.9447,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Boise Cascade Florien Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Florien",
+  "lat": 31.4543,
+  "lon": -93.4671,
+  "rail_served": "Y",
+  "nearest_class_i": "KCS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Boise Cascade Oakdale Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Oakdale",
+  "lat": 30.8198,
+  "lon": -92.6593,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Boise Cascade Kettle Falls Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "WA",
+  "county": "",
+  "city": "Kettle Falls",
+  "lat": 48.609,
+  "lon": -118.0584,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Boise Cascade Medford Plywood",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "plywood"
+  ],
+  "industry_naics": "",
+  "state": "OR",
+  "county": "",
+  "city": "Medford",
+  "lat": 42.3265,
+  "lon": -122.8756,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Boise Cascade Roxboro Plywood",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "plywood"
+  ],
+  "industry_naics": "",
+  "state": "NC",
+  "county": "",
+  "city": "Roxboro",
+  "lat": 36.3938,
+  "lon": -78.9819,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Boise Cascade White City Engineered Wood",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "LVL",
+   "engineered_wood"
+  ],
+  "industry_naics": "",
+  "state": "OR",
+  "county": "",
+  "city": "White City",
+  "lat": 42.4357,
+  "lon": -122.8298,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Boise Cascade Alexandria Engineered Wood",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "LVL",
+   "I-joist"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Alexandria",
+  "lat": 31.3113,
+  "lon": -92.4451,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "LP Roaring River Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "osb"
+  ],
+  "industry_naics": "",
+  "state": "NC",
+  "county": "",
+  "city": "Roaring River",
+  "lat": 36.1798,
+  "lon": -81.0331,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "LP Two Harbors Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "osb"
+  ],
+  "industry_naics": "",
+  "state": "MN",
+  "county": "",
+  "city": "Two Harbors",
+  "lat": 47.0227,
+  "lon": -91.6712,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "LP Hayward Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "osb"
+  ],
+  "industry_naics": "",
+  "state": "WI",
+  "county": "",
+  "city": "Hayward",
+  "lat": 46.0136,
+  "lon": -91.4843,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "LP Houlton Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "osb"
+  ],
+  "industry_naics": "",
+  "state": "ME",
+  "county": "",
+  "city": "Houlton",
+  "lat": 46.1262,
+  "lon": -67.8403,
+  "rail_served": "Y",
+  "nearest_class_i": "PAS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "LP Wilmington Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "siding"
+  ],
+  "industry_naics": "",
+  "state": "NC",
+  "county": "",
+  "city": "Wilmington",
+  "lat": 34.2257,
+  "lon": -77.9447,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "LP Houlton Siding Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "siding"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Maniwaki",
+  "lat": 45.9719,
+  "lon": -84.7281,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "LP Sagola Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "osb"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Sagola",
+  "lat": 46.101,
+  "lon": -88.0479,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "LP Tomahawk Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "osb"
+  ],
+  "industry_naics": "",
+  "state": "WI",
+  "county": "",
+  "city": "Tomahawk",
+  "lat": 45.4708,
+  "lon": -89.729,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "LP Newberry Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "osb"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Newberry",
+  "lat": 46.3552,
+  "lon": -85.5083,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Canfor Conway Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Conway",
+  "lat": 33.836,
+  "lon": -79.0476,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Canfor Darlington Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Darlington",
+  "lat": 34.2998,
+  "lon": -79.8761,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Canfor Estill Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Estill",
+  "lat": 32.7551,
+  "lon": -81.2412,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Canfor Camden Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Camden",
+  "lat": 34.2465,
+  "lon": -80.6068,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Canfor Mobile Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Mobile",
+  "lat": 30.6954,
+  "lon": -88.0399,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Canfor Fulton Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Fulton",
+  "lat": 31.7873,
+  "lon": -87.7333,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Canfor Eastover Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Eastover",
+  "lat": 33.9085,
+  "lon": -80.6948,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Canfor Marion Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "NC",
+  "county": "",
+  "city": "Marion",
+  "lat": 35.684,
+  "lon": -82.0095,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Canfor DeQuincy Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "DeQuincy",
+  "lat": 30.4499,
+  "lon": -93.4351,
+  "rail_served": "Y",
+  "nearest_class_i": "KCS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Canfor El Dorado Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "El Dorado",
+  "lat": 33.2076,
+  "lon": -92.6663,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Canfor Urbana Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Urbana",
+  "lat": 33.1737,
+  "lon": -92.4596,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Interfor Bay Springs Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "MS",
+  "county": "",
+  "city": "Bay Springs",
+  "lat": 31.9837,
+  "lon": -89.2867,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Interfor Eatonton Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Eatonton",
+  "lat": 33.3262,
+  "lon": -83.3879,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Interfor Macon Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Macon",
+  "lat": 32.8407,
+  "lon": -83.6324,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Interfor Meldrim Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Meldrim",
+  "lat": 32.1382,
+  "lon": -81.4365,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Interfor Monticello Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Monticello",
+  "lat": 33.629,
+  "lon": -91.791,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Interfor Perry Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Perry",
+  "lat": 32.4582,
+  "lon": -83.7321,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Interfor Sumter Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Sumter",
+  "lat": 33.9204,
+  "lon": -80.3414,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Interfor Swainsboro Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Swainsboro",
+  "lat": 32.597,
+  "lon": -82.3343,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Interfor Thomaston Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Thomaston",
+  "lat": 32.8884,
+  "lon": -84.3265,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Idaho Forest Group Chilco Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "ID",
+  "county": "",
+  "city": "Athol",
+  "lat": 47.9457,
+  "lon": -116.7032,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Idaho Forest Group Grangeville Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "ID",
+  "county": "",
+  "city": "Grangeville",
+  "lat": 45.9265,
+  "lon": -116.1218,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Idaho Forest Group Laclede Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "ID",
+  "county": "",
+  "city": "Laclede",
+  "lat": 48.1746,
+  "lon": -116.7332,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Idaho Forest Group Moyie Springs Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "ID",
+  "county": "",
+  "city": "Moyie Springs",
+  "lat": 48.7259,
+  "lon": -116.1853,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Idaho Forest Group Lumberton Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "MS",
+  "county": "",
+  "city": "Lumberton",
+  "lat": 31.004,
+  "lon": -89.4525,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Hampton Darrington Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "WA",
+  "county": "",
+  "city": "Darrington",
+  "lat": 48.2547,
+  "lon": -121.5994,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Hampton Babinda Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "OR",
+  "county": "",
+  "city": "Tillamook",
+  "lat": 45.4562,
+  "lon": -123.8442,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Hampton Warrenton Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "OR",
+  "county": "",
+  "city": "Warrenton",
+  "lat": 46.1648,
+  "lon": -123.923,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Hampton Banks Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "OR",
+  "county": "",
+  "city": "Banks",
+  "lat": 45.619,
+  "lon": -123.1131,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Sierra Pacific Burney Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "CA",
+  "county": "",
+  "city": "Burney",
+  "lat": 40.8826,
+  "lon": -121.6608,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Sierra Pacific Anderson Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "CA",
+  "county": "",
+  "city": "Anderson",
+  "lat": 40.4482,
+  "lon": -122.2978,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Sierra Pacific Lincoln Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "CA",
+  "county": "",
+  "city": "Lincoln",
+  "lat": 38.8915,
+  "lon": -121.2933,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Sierra Pacific Sonora Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "CA",
+  "county": "",
+  "city": "Sonora",
+  "lat": 37.9829,
+  "lon": -120.3822,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Stimson Lumber Forest Grove Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "OR",
+  "county": "",
+  "city": "Forest Grove",
+  "lat": 45.5198,
+  "lon": -123.1095,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Stimson Lumber Tillamook Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "OR",
+  "county": "",
+  "city": "Tillamook",
+  "lat": 45.4562,
+  "lon": -123.8442,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Stimson Lumber Plummer Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "ID",
+  "county": "",
+  "city": "Plummer",
+  "lat": 47.3357,
+  "lon": -116.8893,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Weyerhaeuser Bruce Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "MS",
+  "county": "",
+  "city": "Bruce",
+  "lat": 33.9924,
+  "lon": -89.3479,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Weyerhaeuser Millport Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Millport",
+  "lat": 33.5601,
+  "lon": -88.0708,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Weyerhaeuser Camden Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Camden",
+  "lat": 31.9924,
+  "lon": -87.29,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Weyerhaeuser Plymouth NC Mill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "NC",
+  "county": "",
+  "city": "Plymouth",
+  "lat": 35.8676,
+  "lon": -76.748,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Weyerhaeuser Princeton WV Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "WV",
+  "county": "",
+  "city": "Princeton",
+  "lat": 37.3673,
+  "lon": -81.0976,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Weyerhaeuser Aberdeen Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "WA",
+  "county": "",
+  "city": "Aberdeen",
+  "lat": 46.9754,
+  "lon": -123.8157,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Weyerhaeuser Raymond Sawmill",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "lumber"
+  ],
+  "industry_naics": "",
+  "state": "WA",
+  "county": "",
+  "city": "Raymond",
+  "lat": 46.6815,
+  "lon": -123.7299,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Georgia-Pacific Acme Gypsum Plant",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "gypsum"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Acme",
+  "lat": 34.212,
+  "lon": -99.7178,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Georgia-Pacific Sweetwater Gypsum",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "gypsum"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Sweetwater",
+  "lat": 32.4709,
+  "lon": -100.406,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Georgia-Pacific Mt. Holly Gypsum",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "gypsum"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Mt. Holly",
+  "lat": 33.3262,
+  "lon": -92.9479,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Georgia-Pacific Newington Gypsum",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "gypsum"
+  ],
+  "industry_naics": "",
+  "state": "NH",
+  "county": "",
+  "city": "Newington",
+  "lat": 43.0876,
+  "lon": -70.7858,
+  "rail_served": "Y",
+  "nearest_class_i": "PAS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Georgia-Pacific Wilmington Gypsum",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "gypsum"
+  ],
+  "industry_naics": "",
+  "state": "DE",
+  "county": "",
+  "city": "Wilmington",
+  "lat": 39.7391,
+  "lon": -75.5398,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Springfield Containerboard",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "containerboard"
+  ],
+  "industry_naics": "",
+  "state": "OR",
+  "county": "",
+  "city": "Springfield",
+  "lat": 44.0463,
+  "lon": -123.022,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Mansfield TX Container",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Mansfield",
+  "lat": 32.5632,
+  "lon": -97.1417,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Phoenix Container",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "AZ",
+  "county": "",
+  "city": "Phoenix",
+  "lat": 33.4484,
+  "lon": -112.074,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "International Paper San Antonio Container",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "San Antonio",
+  "lat": 29.4241,
+  "lon": -98.4936,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Edinburg Container",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Edinburg",
+  "lat": 26.3017,
+  "lon": -98.1633,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Olympia Container",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "WA",
+  "county": "",
+  "city": "Olympia",
+  "lat": 47.0379,
+  "lon": -122.9007,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Salt Lake City Container",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "UT",
+  "county": "",
+  "city": "Salt Lake City",
+  "lat": 40.7608,
+  "lon": -111.891,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Detroit Container",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Detroit",
+  "lat": 42.3314,
+  "lon": -83.0458,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Newark Container",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Newark",
+  "lat": 40.0581,
+  "lon": -82.4013,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "International Paper Murfreesboro Container",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "TN",
+  "county": "",
+  "city": "Murfreesboro",
+  "lat": 35.8456,
+  "lon": -86.3903,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Atlanta Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Atlanta",
+  "lat": 33.749,
+  "lon": -84.388,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Birmingham Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Birmingham",
+  "lat": 33.5207,
+  "lon": -86.8025,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Memphis Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "TN",
+  "county": "",
+  "city": "Memphis",
+  "lat": 35.1495,
+  "lon": -90.049,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Houston Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Houston",
+  "lat": 29.7604,
+  "lon": -95.3698,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Chicago Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Chicago",
+  "lat": 41.8781,
+  "lon": -87.6298,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Indianapolis Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Indianapolis",
+  "lat": 39.7684,
+  "lon": -86.1581,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Cincinnati Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Cincinnati",
+  "lat": 39.1031,
+  "lon": -84.512,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Charlotte Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "NC",
+  "county": "",
+  "city": "Charlotte",
+  "lat": 35.2271,
+  "lon": -80.8431,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Jacksonville Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "FL",
+  "county": "",
+  "city": "Jacksonville",
+  "lat": 30.3322,
+  "lon": -81.6557,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Tampa Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "FL",
+  "county": "",
+  "city": "Tampa",
+  "lat": 27.9506,
+  "lon": -82.4572,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Dallas Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Dallas",
+  "lat": 32.7767,
+  "lon": -96.797,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Phoenix Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "AZ",
+  "county": "",
+  "city": "Phoenix",
+  "lat": 33.4484,
+  "lon": -112.074,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Denver Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "CO",
+  "county": "",
+  "city": "Denver",
+  "lat": 39.7392,
+  "lon": -104.9903,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Salt Lake City Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "UT",
+  "county": "",
+  "city": "Salt Lake City",
+  "lat": 40.7608,
+  "lon": -111.891,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Boise Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "ID",
+  "county": "",
+  "city": "Boise",
+  "lat": 43.615,
+  "lon": -116.2023,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Portland Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "OR",
+  "county": "",
+  "city": "Portland",
+  "lat": 45.5152,
+  "lon": -122.6784,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock San Diego Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "CA",
+  "county": "",
+  "city": "San Diego",
+  "lat": 32.7157,
+  "lon": -117.1611,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Smurfit Westrock Seattle Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "WA",
+  "county": "",
+  "city": "Seattle",
+  "lat": 47.6062,
+  "lon": -122.3321,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Pratt Industries Atlanta Box",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Conyers",
+  "lat": 33.6679,
+  "lon": -84.0177,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Pratt Industries Memphis Box",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "TN",
+  "county": "",
+  "city": "Memphis",
+  "lat": 35.1495,
+  "lon": -90.049,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Pratt Industries Tulsa Box",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "OK",
+  "county": "",
+  "city": "Tulsa",
+  "lat": 36.154,
+  "lon": -95.9928,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Pratt Industries Chicago Box",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Chicago",
+  "lat": 41.8781,
+  "lon": -87.6298,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Pratt Industries Charlotte Box",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "NC",
+  "county": "",
+  "city": "Charlotte",
+  "lat": 35.2271,
+  "lon": -80.8431,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "Pratt Industries Dallas Box",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Dallas",
+  "lat": 32.7767,
+  "lon": -96.797,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "PCA Atlanta Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Atlanta",
+  "lat": 33.749,
+  "lon": -84.388,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "PCA Houston Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Houston",
+  "lat": 29.7604,
+  "lon": -95.3698,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "PCA Chicago Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Chicago",
+  "lat": 41.8781,
+  "lon": -87.6298,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "PCA Memphis Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "TN",
+  "county": "",
+  "city": "Memphis",
+  "lat": 35.1495,
+  "lon": -90.049,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ },
+ {
+  "company_name": "PCA Indianapolis Box Plant",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "corrugated"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Indianapolis",
+  "lat": 39.7684,
+  "lon": -86.1581,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "industry_knowledge_forest_products",
+  "source_confidence": "low",
+  "last_verified_at": "2026-05-06",
+  "source_note": "non-AF&PA forest-products operator; curated from operator public records"
+ }
+]

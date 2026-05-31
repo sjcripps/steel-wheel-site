@@ -1,0 +1,212 @@
+[
+ {
+  "name": "Genesee & Wyoming",
+  "reporting_marks": "G&W (parent)",
+  "hq_city": "Darien",
+  "hq_state": "CT",
+  "track_miles": 13000
+ },
+ {
+  "name": "Watco Transportation Services",
+  "reporting_marks": "WATX",
+  "hq_city": "Pittsburg",
+  "hq_state": "KS",
+  "track_miles": 5300
+ },
+ {
+  "name": "Indiana Rail Road",
+  "reporting_marks": "INRD",
+  "hq_city": "Indianapolis",
+  "hq_state": "IN",
+  "track_miles": 500
+ },
+ {
+  "name": "Iowa Interstate Railroad",
+  "reporting_marks": "IAIS",
+  "hq_city": "Cedar Rapids",
+  "hq_state": "IA",
+  "track_miles": 600
+ },
+ {
+  "name": "Florida East Coast Railway",
+  "reporting_marks": "FEC",
+  "hq_city": "Jacksonville",
+  "hq_state": "FL",
+  "track_miles": 351
+ },
+ {
+  "name": "Montana Rail Link",
+  "reporting_marks": "MRL",
+  "hq_city": "Missoula",
+  "hq_state": "MT",
+  "track_miles": 940
+ },
+ {
+  "name": "Wisconsin & Southern Railroad",
+  "reporting_marks": "WSOR",
+  "hq_city": "Milwaukee",
+  "hq_state": "WI",
+  "track_miles": 700
+ },
+ {
+  "name": "Pan Am Railways (now CSXT/Pan Am Southern)",
+  "reporting_marks": "PAS",
+  "hq_city": "North Billerica",
+  "hq_state": "MA",
+  "track_miles": 1700
+ },
+ {
+  "name": "RJ Corman Railroad Group",
+  "reporting_marks": "RJCC",
+  "hq_city": "Nicholasville",
+  "hq_state": "KY",
+  "track_miles": 1200
+ },
+ {
+  "name": "Anacostia Rail Holdings",
+  "reporting_marks": "ANR",
+  "hq_city": "Chicago",
+  "hq_state": "IL",
+  "track_miles": 350
+ },
+ {
+  "name": "Vermont Rail System",
+  "reporting_marks": "VTR",
+  "hq_city": "Burlington",
+  "hq_state": "VT",
+  "track_miles": 350
+ },
+ {
+  "name": "Patriot Rail",
+  "reporting_marks": "PTRC",
+  "hq_city": "Jacksonville",
+  "hq_state": "FL",
+  "track_miles": 600
+ },
+ {
+  "name": "Iowa Northern Railway",
+  "reporting_marks": "IANR",
+  "hq_city": "Cedar Falls",
+  "hq_state": "IA",
+  "track_miles": 220
+ },
+ {
+  "name": "Alabama Gulf Coast Railway",
+  "reporting_marks": "AGR",
+  "hq_city": "Monroeville",
+  "hq_state": "AL",
+  "track_miles": 122
+ },
+ {
+  "name": "Buckingham Branch Railroad",
+  "reporting_marks": "BB",
+  "hq_city": "Dillwyn",
+  "hq_state": "VA",
+  "track_miles": 275
+ },
+ {
+  "name": "Providence & Worcester Railroad",
+  "reporting_marks": "PW",
+  "hq_city": "Worcester",
+  "hq_state": "MA",
+  "track_miles": 600
+ },
+ {
+  "name": "Reading Blue Mountain & Northern Railroad",
+  "reporting_marks": "RBMN",
+  "hq_city": "Port Clinton",
+  "hq_state": "PA",
+  "track_miles": 320
+ },
+ {
+  "name": "Arkansas & Missouri Railroad",
+  "reporting_marks": "AM",
+  "hq_city": "Springdale",
+  "hq_state": "AR",
+  "track_miles": 140
+ },
+ {
+  "name": "Western New York & Pennsylvania Railroad",
+  "reporting_marks": "WNYP",
+  "hq_city": "Olean",
+  "hq_state": "NY",
+  "track_miles": 320
+ },
+ {
+  "name": "Iowa, Chicago & Eastern Railroad",
+  "reporting_marks": "ICE (now CP)",
+  "hq_city": "Davenport",
+  "hq_state": "IA",
+  "track_miles": 1400
+ },
+ {
+  "name": "Texas-New Mexico Railroad",
+  "reporting_marks": "TNMR",
+  "hq_city": "Lovington",
+  "hq_state": "NM",
+  "track_miles": 110
+ },
+ {
+  "name": "South Kansas & Oklahoma Railroad",
+  "reporting_marks": "SKOL",
+  "hq_city": "Pittsburg",
+  "hq_state": "KS",
+  "track_miles": 480
+ },
+ {
+  "name": "Bay Line Railroad",
+  "reporting_marks": "BAYL",
+  "hq_city": "Panama City",
+  "hq_state": "FL",
+  "track_miles": 100
+ },
+ {
+  "name": "Mississippi Tennessee Railroad",
+  "reporting_marks": "MSTR",
+  "hq_city": "Tupelo",
+  "hq_state": "MS",
+  "track_miles": 50
+ },
+ {
+  "name": "Arkansas Southern Railroad",
+  "reporting_marks": "ARS",
+  "hq_city": "Crossett",
+  "hq_state": "AR",
+  "track_miles": 18
+ },
+ {
+  "name": "Mississippi Export Railroad",
+  "reporting_marks": "MSE",
+  "hq_city": "Moss Point",
+  "hq_state": "MS",
+  "track_miles": 42
+ },
+ {
+  "name": "Columbus and Greenville Railway",
+  "reporting_marks": "CAGY",
+  "hq_city": "Columbus",
+  "hq_state": "MS",
+  "track_miles": 125
+ },
+ {
+  "name": "Mississippi Central Railroad",
+  "reporting_marks": "MSCI",
+  "hq_city": "Oxford",
+  "hq_state": "MS",
+  "track_miles": 48
+ },
+ {
+  "name": "Strasburg Rail Road",
+  "reporting_marks": "SRC",
+  "hq_city": "Strasburg",
+  "hq_state": "PA",
+  "track_miles": 5
+ },
+ {
+  "name": "Cape Cod Central Railroad",
+  "reporting_marks": "CCCR",
+  "hq_city": "Hyannis",
+  "hq_state": "MA",
+  "track_miles": 45
+ }
+]

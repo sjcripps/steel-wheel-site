@@ -1,0 +1,1104 @@
+[
+ {
+  "company_name": "Marathon Garyville Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Garyville",
+  "lat": 30.0541,
+  "lon": -90.6195,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Marathon Galveston Bay Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Texas City",
+  "lat": 29.3838,
+  "lon": -94.9027,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Marathon Catlettsburg Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "KY",
+  "county": "",
+  "city": "Catlettsburg",
+  "lat": 38.4042,
+  "lon": -82.6037,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Marathon Robinson Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Robinson",
+  "lat": 39.0034,
+  "lon": -87.7392,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Marathon Detroit Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Detroit",
+  "lat": 42.3314,
+  "lon": -83.0458,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Valero Houston Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Houston",
+  "lat": 29.7604,
+  "lon": -95.3698,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Valero Texas City Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Texas City",
+  "lat": 29.3838,
+  "lon": -94.9027,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Valero Port Arthur Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Port Arthur",
+  "lat": 29.885,
+  "lon": -93.94,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Valero Corpus Christi Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Corpus Christi",
+  "lat": 27.8006,
+  "lon": -97.3964,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Valero Memphis Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "TN",
+  "county": "",
+  "city": "Memphis",
+  "lat": 35.1495,
+  "lon": -90.049,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Valero Three Rivers Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Three Rivers",
+  "lat": 28.4664,
+  "lon": -98.1789,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Valero McKee Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Sunray",
+  "lat": 36.015,
+  "lon": -101.8255,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Phillips 66 Borger Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Borger",
+  "lat": 35.6678,
+  "lon": -101.3974,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Phillips 66 Ponca City Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "OK",
+  "county": "",
+  "city": "Ponca City",
+  "lat": 36.707,
+  "lon": -97.0856,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Phillips 66 Ferndale Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "WA",
+  "county": "",
+  "city": "Ferndale",
+  "lat": 48.8462,
+  "lon": -122.591,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Phillips 66 Rodeo Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "CA",
+  "county": "",
+  "city": "Rodeo",
+  "lat": 38.0327,
+  "lon": -122.2683,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Phillips 66 Lake Charles Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Westlake",
+  "lat": 30.2371,
+  "lon": -93.2466,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Phillips 66 Sweeny Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Old Ocean",
+  "lat": 29.0699,
+  "lon": -95.6916,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Phillips 66 Bayway Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "NJ",
+  "county": "",
+  "city": "Linden",
+  "lat": 40.6201,
+  "lon": -74.2107,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Citgo Lemont Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Lemont",
+  "lat": 41.6739,
+  "lon": -88.0017,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Citgo Corpus Christi Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Corpus Christi",
+  "lat": 27.8006,
+  "lon": -97.3964,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Citgo Lake Charles Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Lake Charles",
+  "lat": 30.2103,
+  "lon": -93.2658,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "BP Whiting Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Whiting",
+  "lat": 41.6795,
+  "lon": -87.494,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "BP Cherry Point Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "WA",
+  "county": "",
+  "city": "Blaine",
+  "lat": 48.8829,
+  "lon": -122.7488,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "PBF Energy Toledo Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Toledo",
+  "lat": 41.6635,
+  "lon": -83.5552,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "PBF Energy Delaware City Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "DE",
+  "county": "",
+  "city": "Delaware City",
+  "lat": 39.5765,
+  "lon": -75.5905,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "PBF Energy Paulsboro Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "NJ",
+  "county": "",
+  "city": "Paulsboro",
+  "lat": 39.8243,
+  "lon": -75.233,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "PBF Energy Chalmette Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Chalmette",
+  "lat": 29.9379,
+  "lon": -89.9636,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "HollyFrontier Tulsa Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "OK",
+  "county": "",
+  "city": "Tulsa",
+  "lat": 36.154,
+  "lon": -95.9928,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "HollyFrontier Cheyenne Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "WY",
+  "county": "",
+  "city": "Cheyenne",
+  "lat": 41.14,
+  "lon": -104.8202,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "HollyFrontier El Dorado Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "KS",
+  "county": "",
+  "city": "El Dorado",
+  "lat": 37.817,
+  "lon": -96.8625,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "HollyFrontier Woods Cross Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "UT",
+  "county": "",
+  "city": "Woods Cross",
+  "lat": 40.8722,
+  "lon": -111.9163,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "HollyFrontier Sinclair Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "WY",
+  "county": "",
+  "city": "Sinclair",
+  "lat": 41.7894,
+  "lon": -107.109,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Suncor Commerce City Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "CO",
+  "county": "",
+  "city": "Commerce City",
+  "lat": 39.8083,
+  "lon": -104.9339,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Par Pacific Wyoming Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "WY",
+  "county": "",
+  "city": "Newcastle",
+  "lat": 43.8553,
+  "lon": -104.2025,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Par Pacific Tacoma Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "WA",
+  "county": "",
+  "city": "Tacoma",
+  "lat": 47.2529,
+  "lon": -122.4443,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CHS McPherson Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "KS",
+  "county": "",
+  "city": "McPherson",
+  "lat": 38.3708,
+  "lon": -97.6645,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CHS Laurel Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "MT",
+  "county": "",
+  "city": "Laurel",
+  "lat": 45.6708,
+  "lon": -108.7715,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "petroleum_refineries",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ }
+]

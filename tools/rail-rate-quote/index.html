@@ -1,0 +1,2228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free indicative rail-rate estimator — get a ballpark rate on any U.S. rail lane in seconds. Steel Wheel Logistics.">
+  <title>Indicative Rail-Rate Estimator | Steel Wheel Logistics</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <link rel="canonical" href="https://steelwheellogistics.com/tools/rail-rate-quote">
+  <meta property="og:title" content="Indicative Rail-Rate Estimator | Steel Wheel Logistics">
+  <meta property="og:description" content="Free rail-rate estimator — instant regulated-cost ballpark for U.S. rail lanes.">
+  <meta property="og:url" content="https://steelwheellogistics.com/tools/rail-rate-quote">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+  <style>
+    .tool-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 48px 20px;
+      text-align: center;
+    }
+    .tool-hero h1 {
+      color: var(--white);
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .tool-hero p {
+      color: var(--steel-grey);
+      font-size: 1.05rem;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .tool-hero .badge {
+      display: inline-block;
+      background: rgba(74, 144, 217, 0.15);
+      color: var(--steel-blue);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tool-layout {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    .quote-form {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .quote-form h2 {
+      font-size: 1.3rem;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--light-grey);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 640px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+    .form-group { display: flex; flex-direction: column; }
+    .form-group.full-width { grid-column: 1 / -1; }
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .form-group label .hint {
+      font-weight: 400;
+      color: var(--text-light);
+      font-size: 0.8rem;
+    }
+    .form-group select,
+    .form-group input[type="text"],
+    .form-group input[type="number"] {
+      padding: 10px 12px;
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      background: var(--white);
+      transition: border-color 0.2s;
+    }
+    .form-group select:focus,
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--steel-blue);
+      box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.1);
+    }
+
+    .submit-row {
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .submit-btn {
+      background: var(--steel-blue);
+      color: var(--white);
+      border: none;
+      padding: 12px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .submit-btn:hover { background: var(--steel-blue-dark); }
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .submit-btn .spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: var(--white);
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Predictive-text city typeahead. Replaces the hardcoded datalist so
+       customers don't think the placeholder examples are the only options. */
+    .city-typeahead { position: relative; }
+    .city-suggest {
+      position: absolute;
+      top: calc(100% + 2px);
+      left: 0;
+      right: 0;
+      max-height: 280px;
+      overflow-y: auto;
+      margin: 0;
+      padding: 4px 0;
+      list-style: none;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      z-index: 30;
+    }
+    .city-suggest li {
+      padding: 8px 14px;
+      font-size: 0.95rem;
+      color: var(--gray-800, #1f2937);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+    .city-suggest li:hover,
+    .city-suggest li.active {
+      background: #eef3f9;
+      color: var(--steel-blue-dark, #1f3b66);
+    }
+    .city-suggest li .city-pop {
+      font-size: 0.78rem;
+      color: var(--gray-500);
+      flex-shrink: 0;
+    }
+    .city-suggest li .city-hub-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #b65900;
+      background: rgba(255, 159, 28, 0.15);
+      padding: 2px 8px;
+      border-radius: 12px;
+      margin-left: 6px;
+      white-space: nowrap;
+    }
+    .city-suggest li .city-hub-link {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--steel-blue);
+      margin-top: 2px;
+      text-decoration: none;
+    }
+    .city-suggest li .city-hub-link:hover { text-decoration: underline; }
+    .city-suggest li .city-text { flex: 1; min-width: 0; }
+    .city-suggest .city-empty {
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      cursor: default;
+    }
+    .city-suggest .city-empty:hover { background: transparent; color: var(--gray-500); }
+
+    /* Loading panel — visible while the rate engine is computing primary
+       + alternates. The /quote round-trip can take 5-15s on a cold path
+       search (Yen's algorithm runs N Dijkstras for alternates), and the
+       button-level spinner is too easy to miss. */
+    .loading-panel {
+      display: none;
+      margin-top: 24px;
+      padding: 32px 24px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .loading-panel.active { display: block; }
+    .loading-panel .big-spinner {
+      display: inline-block;
+      width: 48px;
+      height: 48px;
+      border: 4px solid #e6ebf2;
+      border-top-color: var(--steel-blue);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 16px;
+    }
+    .loading-panel .loading-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--steel-blue-dark);
+      margin: 0 0 6px;
+    }
+    .loading-panel .loading-step {
+      font-size: 0.95rem;
+      color: var(--gray-600);
+      margin: 0;
+      min-height: 1.4em;
+    }
+    .loading-panel .loading-help {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      margin: 14px 0 0;
+    }
+    .error-msg {
+      color: var(--error-red);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* Result card */
+    .results-section {
+      margin-top: 40px;
+      display: none;
+    }
+    .results-section.visible { display: block; }
+    .result-card {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .route-summary {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--light-grey);
+      margin-bottom: 20px;
+    }
+    .route-cities {
+      flex: 1;
+      min-width: 250px;
+    }
+    .route-cities .od-pair {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+    .route-cities .od-arrow {
+      color: var(--steel-blue);
+      margin: 0 8px;
+    }
+    .route-cities .route-rails {
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+    .route-miles {
+      text-align: right;
+    }
+    .route-miles .miles-num {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--steel-blue);
+      line-height: 1;
+    }
+    .route-miles .miles-label {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-top: 4px;
+    }
+    .lane-type-badge {
+      display: inline-block;
+      background: rgba(74, 144, 217, 0.1);
+      color: var(--steel-blue);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-top: 6px;
+    }
+    .lane-type-badge.interline {
+      background: rgba(248, 180, 0, 0.12);
+      color: #b8860b;
+    }
+
+    .estimate-block {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .estimate-cell {
+      background: var(--light-grey);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+    .estimate-cell.primary {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: var(--white);
+    }
+    .estimate-cell .label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+    .estimate-cell.primary .label {
+      color: rgba(255,255,255,0.7);
+    }
+    .estimate-cell .value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.1;
+    }
+    .estimate-cell.primary .value {
+      color: var(--white);
+    }
+    .estimate-cell .sub {
+      font-size: 0.82rem;
+      margin-top: 4px;
+      color: var(--text-light);
+    }
+    .estimate-cell.primary .sub {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .legs-table {
+      margin: 0 0 20px;
+      font-size: 0.9rem;
+    }
+    .legs-table h3 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+    .legs-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .legs-table th, .legs-table td {
+      padding: 8px 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--light-grey);
+    }
+    .legs-table th {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: var(--text-light);
+      font-weight: 600;
+      background: var(--light-grey);
+    }
+    .legs-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .legs-table tr.subtotal-row td {
+      font-weight: 700;
+      background: rgba(74, 144, 217, 0.06);
+      border-top: 2px solid var(--steel-blue);
+    }
+    .legs-table tr.interchange-fee-row td {
+      background: rgba(74, 144, 217, 0.04);
+      color: var(--text-body);
+      font-size: 0.88rem;
+    }
+    .legs-table .fsc-footnote {
+      margin-top: 8px;
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-style: italic;
+    }
+    .interchange-row td {
+      background: rgba(74, 144, 217, 0.04);
+      color: var(--text-light);
+      font-size: 0.82rem;
+      font-style: italic;
+      padding: 4px 10px;
+    }
+    /* Short-line "(incl. X 12mi origination)" sub-note rendered under the
+       railroad name when a non-Class-I carrier was absorbed into a Class I
+       leg during smoothing. We price the absorbed miles at the host Class I's
+       per-mile rate but want to be transparent about who actually moved the
+       car at origin/delivery. */
+    .legs-table .short-line-note {
+      margin-top: 3px;
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-style: italic;
+    }
+
+    /* Alternate routings (Tier 1) */
+    .alternates-section {
+      margin: 0 0 24px;
+      border: 1px solid var(--border-grey);
+      border-radius: 10px;
+      background: var(--white);
+    }
+    .alternates-section.empty { display: none; }
+    .alternates-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 14px 18px;
+      background: var(--light-grey);
+      border: none;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      cursor: pointer;
+      text-align: left;
+    }
+    .alternates-toggle:hover { background: #e8edf3; }
+    .alternates-toggle .toggle-arrow {
+      transition: transform 0.2s;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+    .alternates-section.open .alternates-toggle {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .alternates-section.open .toggle-arrow { transform: rotate(180deg); }
+    .alternates-list {
+      display: none;
+      padding: 12px 16px 16px;
+      gap: 12px;
+      flex-direction: column;
+    }
+    .alternates-section.open .alternates-list { display: flex; }
+    .alternate-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      background: var(--white);
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+      flex-wrap: wrap;
+    }
+    .alternate-card:hover {
+      border-color: var(--steel-blue);
+      background: rgba(74, 144, 217, 0.04);
+    }
+    .alternate-card.selected {
+      border-color: var(--steel-blue);
+      background: rgba(74, 144, 217, 0.08);
+      box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.18);
+    }
+    .alternate-card .alt-meta { flex: 1; min-width: 220px; }
+    .alternate-card .alt-label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+    .alternate-card .alt-summary {
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+    .alternate-card .alt-price {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .alternate-card .alt-delta {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+    .alternate-card .alt-delta.up { color: var(--error-red); }
+    .alternate-card .alt-delta.down { color: #1f8a4c; }
+    .alternates-help {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      margin-top: 6px;
+      font-style: italic;
+    }
+
+    .disclaimer {
+      background: var(--light-grey);
+      border-left: 3px solid var(--steel-blue);
+      padding: 16px 20px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+    .routing-notes {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+    .routing-notes ul { margin: 0; padding-left: 20px; }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-top: 8px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--steel-blue);
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .cta-btn:hover { background: var(--steel-blue-dark); color: var(--white); }
+    .cta-btn-secondary {
+      background: var(--white);
+      color: var(--navy);
+      border: 1px solid var(--border-grey);
+    }
+    .cta-btn-secondary:hover {
+      background: var(--light-grey);
+      color: var(--navy);
+    }
+
+    .below-form-help {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    /* Email-gate modal */
+    .email-gate-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+    .email-gate-overlay.visible { display: flex; }
+    .email-gate-modal {
+      background: var(--white);
+      border-radius: 12px;
+      max-width: 460px;
+      width: 100%;
+      padding: 28px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+    }
+    .email-gate-modal h3 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+      color: var(--text-dark);
+    }
+    .email-gate-modal p.lead {
+      margin: 0 0 18px;
+      font-size: 0.92rem;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+    .email-gate-modal label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .email-gate-modal input[type="email"],
+    .email-gate-modal input[type="text"],
+    .email-gate-modal input[type="tel"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    .email-gate-modal input[type="email"]:focus,
+    .email-gate-modal input[type="text"]:focus,
+    .email-gate-modal input[type="tel"]:focus {
+      outline: none;
+      border-color: var(--steel-blue);
+      box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.1);
+    }
+    .email-gate-modal .field-spacer { height: 10px; }
+    .email-gate-modal .gate-help {
+      margin: 6px 0 14px;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+    .email-gate-modal .consent-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin: 12px 0 18px;
+      font-size: 0.85rem;
+      color: var(--text-body);
+      line-height: 1.4;
+    }
+    .email-gate-modal .consent-row input { margin-top: 3px; }
+    .email-gate-modal .gate-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+    .email-gate-modal .gate-cancel {
+      background: var(--white);
+      color: var(--text-dark);
+      border: 1px solid var(--border-grey);
+      padding: 10px 18px;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .email-gate-modal .gate-submit {
+      background: var(--steel-blue);
+      color: var(--white);
+      border: none;
+      padding: 10px 22px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .email-gate-modal .gate-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .email-gate-modal .gate-error {
+      color: var(--error-red);
+      font-size: 0.88rem;
+      margin: 6px 0 12px;
+      min-height: 1.1em;
+    }
+
+    /* Route-map visualization — rendered below the breakdown table after
+       a successful /quote. Uses Leaflet polylines coloured per carrier.
+       Hidden by default; JS sets display:block once the map has bounds. */
+    #route-map {
+      height: 400px;
+      width: 100%;
+      margin: 24px 0 8px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      display: none;
+    }
+    @media (max-width: 600px) {
+      #route-map { height: 300px; }
+    }
+    .leg-tooltip {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 14px;
+      line-height: 1.35;
+    }
+    .leg-tooltip strong { font-weight: 600; }
+    .map-attribution {
+      font-size: 11px;
+      color: #666;
+      margin: 0 0 16px;
+      display: none;
+    }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossorigin=""></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RSWDYHVY7Z');
+  </script>
+  <!-- jsPDF 2.5.x — pure client-side PDF generation. Loaded async so it doesn't
+       block the LCP; the Download PDF button checks window.jspdf before firing. -->
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js" defer></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog">Blog</a>
+        <a href="/courses">Courses</a>
+        <a href="/tools" class="active">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="tool-hero">
+    <span class="badge">Free Tool</span>
+    <h1>Indicative Rail-Rate Estimator</h1>
+    <p>Get a ballpark rate on any U.S. rail lane in seconds. Use it to sanity-check a quote, scope a new lane, or model a project move.</p>
+  </section>
+
+  <!-- Main content -->
+  <div class="tool-layout">
+
+    <!-- Form -->
+    <div class="quote-form">
+      <h2>Lane Details</h2>
+      <form id="quoteForm" autocomplete="off">
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="origin">Origin <span class="hint">(City, ST)</span></label>
+            <div class="city-typeahead">
+              <input type="text" id="origin" placeholder="Start typing a city..." autocomplete="off" required>
+              <ul class="city-suggest" id="originSuggest" role="listbox" hidden></ul>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="destination">Destination <span class="hint">(City, ST)</span></label>
+            <div class="city-typeahead">
+              <input type="text" id="destination" placeholder="Start typing a city..." autocomplete="off" required>
+              <ul class="city-suggest" id="destinationSuggest" role="listbox" hidden></ul>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="commodity">Commodity</label>
+            <select id="commodity" required>
+              <option value="">Loading...</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="car_type">Car Type</label>
+            <select id="car_type" required>
+              <option value="">Loading...</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="weight_tons">Weight per Car <span class="hint">(tons, default 100)</span></label>
+            <input type="number" id="weight_tons" min="1" max="500" step="1" value="100" required>
+          </div>
+
+        </div>
+
+        <div class="submit-row">
+          <button type="submit" class="submit-btn" id="submitBtn">Calculate Estimate</button>
+          <span class="error-msg" id="errorMsg"></span>
+        </div>
+        <p class="below-form-help">Indicative estimate only. Actual pricing varies by railroad, equipment availability, fuel surcharges, and contract terms — we do not guarantee rates.</p>
+      </form>
+    </div>
+
+    <!-- Loading panel -->
+    <div class="loading-panel" id="loadingPanel" role="status" aria-live="polite">
+      <div class="big-spinner" aria-hidden="true"></div>
+      <p class="loading-title">Calculating your rate...</p>
+      <p class="loading-step" id="loadingStep">Resolving origin and destination on the rail network...</p>
+      <p class="loading-help">This usually takes 5-15 seconds. Please don't close or refresh the page.</p>
+    </div>
+
+    <!-- Results -->
+    <div class="results-section" id="resultsSection">
+      <div class="result-card">
+
+        <div class="route-summary">
+          <div class="route-cities">
+            <div class="od-pair">
+              <span id="rOrigin"></span>
+              <span class="od-arrow">&rarr;</span>
+              <span id="rDest"></span>
+            </div>
+            <div class="route-rails" id="rRails"></div>
+            <span class="lane-type-badge" id="rLaneType"></span>
+          </div>
+          <div class="route-miles">
+            <div class="miles-num" id="rMiles"></div>
+            <div class="miles-label">rail miles</div>
+          </div>
+        </div>
+
+        <div class="estimate-block">
+          <div class="estimate-cell primary">
+            <div class="label">Estimated Tariff</div>
+            <div class="value" id="rTariffTotal"></div>
+            <div class="sub" id="rTariffPerCwt"></div>
+          </div>
+        </div>
+
+        <div class="legs-table" id="legsBlock">
+          <h3 id="legsBlockTitle">Tariff Breakdown</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Segment</th>
+                <th>Railroad</th>
+                <th class="num">Miles</th>
+                <th class="num">Line-haul</th>
+                <th class="num">Fuel Surcharge</th>
+                <th class="num">Total</th>
+              </tr>
+            </thead>
+            <tbody id="legsBody"></tbody>
+          </table>
+          <div class="fsc-footnote" id="fscFootnote"></div>
+        </div>
+
+        <div id="route-map" aria-label="Route map showing the rail path between origin and destination"></div>
+        <p id="map-attribution" class="map-attribution">
+          Rail data &copy; U.S. Bureau of Transportation Statistics (NTAD) &middot;
+          Tiles &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors (ODbL)
+        </p>
+
+        <div class="alternates-section empty" id="alternatesSection">
+          <button type="button" class="alternates-toggle" id="alternatesToggle" aria-expanded="false">
+            <span id="alternatesToggleLabel">Compare alternative routings</span>
+            <span class="toggle-arrow">&#9660;</span>
+          </button>
+          <div class="alternates-list" id="alternatesList"></div>
+        </div>
+
+        <div class="routing-notes" id="routingNotesBlock" style="display:none">
+          <strong>Routing notes:</strong>
+          <ul id="routingNotesList"></ul>
+        </div>
+
+        <div class="disclaimer" id="disclaimer"></div>
+
+        <div class="cta-row">
+          <a href="/contact.html?subject=Discuss+this+lane" class="cta-btn">Discuss This Lane With Us</a>
+          <a href="tel:+16018212199" class="cta-btn cta-btn-secondary">Call (601) 821-2199</a>
+          <button type="button" class="cta-btn cta-btn-secondary" id="downloadPdfBtn" style="cursor:pointer">Download Quote PDF</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Email-gate modal -->
+  <div class="email-gate-overlay" id="emailGateOverlay" role="dialog" aria-modal="true" aria-labelledby="emailGateTitle">
+    <div class="email-gate-modal">
+      <h3 id="emailGateTitle">One step before your estimate</h3>
+      <p class="lead">Where should we send your indicative rate? We use it to follow up if you'd like to talk through the lane in more detail.</p>
+      <form id="emailGateForm" novalidate>
+        <label for="leadEmail">Email address</label>
+        <input type="email" id="leadEmail" name="email" required autocomplete="email" placeholder="you@company.com">
+        <div class="field-spacer"></div>
+        <label for="leadName">Name <span style="font-weight:400;color:#888">(optional)</span></label>
+        <input type="text" id="leadName" name="name" autocomplete="name" placeholder="Your name" maxlength="200">
+        <div class="field-spacer"></div>
+        <label for="leadPhone">Phone <span style="font-weight:400;color:#888">(optional)</span></label>
+        <input type="tel" id="leadPhone" name="phone" autocomplete="tel" placeholder="(555) 555-5555" maxlength="60">
+        <div class="gate-help">We'll only contact you about your quote.</div>
+        <div class="gate-error" id="leadEmailError"></div>
+        <label class="consent-row">
+          <input type="checkbox" id="leadConsent" checked>
+          <span>I agree to receive my rate estimate by email and follow-up.</span>
+        </label>
+        <div class="gate-actions">
+          <button type="button" class="gate-cancel" id="leadCancel">Cancel</button>
+          <button type="submit" class="gate-submit" id="leadSubmit">Get My Estimate</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Reference data: commodities + car types are served by the same proxy
+    // ── as the quote endpoint. We could hardcode these, but pulling from the
+    // ── live service means new commodities flow through automatically.
+    const QUOTE_URL = '/api/rail-rate-quote';
+    const CITIES_URL = '/api/rail-rate-cities';
+    const TOOLS_BASE = 'https://tools.steelwheellogistics.com';
+
+    // Predictive-text city autocomplete. Per-prefix client-side cache keeps
+    // re-typing the same prefix instant; debounced 200ms so we don't fire on
+    // every keystroke.
+    const cityCache = new Map();
+
+    // Commodity-flow hub index — populated from /tools/commodity-flow-map/data/hubs.json.
+    // Used to surface a "Major commodity hub" badge in the autocomplete dropdown
+    // when a customer types an origin that matches a curated hub by name or city.
+    // Pure UI signal — does not change rate computation.
+    let commodityHubs = [];        // raw list
+    const commodityHubByCity = new Map();  // city.toLowerCase() -> hub
+    const commodityHubByName = [];         // [{needle, hub}] for substring match
+
+    (async function loadCommodityHubs() {
+      try {
+        const res = await fetch('/tools/commodity-flow-map/data/hubs.json');
+        if (!res.ok) return;
+        const data = await res.json();
+        commodityHubs = Array.isArray(data.hubs) ? data.hubs : [];
+        commodityHubs.forEach(h => {
+          if (h.city) {
+            // Index full city string AND city with trailing state token stripped.
+            // Source data has values like "Laredo TX" — we want both "laredo tx"
+            // and "laredo" to match.
+            const c = String(h.city).toLowerCase().trim();
+            commodityHubByCity.set(c, h);
+            const stripped = c.replace(/\s+[a-z]{2}$/, '').trim();
+            if (stripped && stripped !== c) commodityHubByCity.set(stripped, h);
+          }
+          if (h.name) {
+            commodityHubByName.push({ needle: String(h.name).toLowerCase(), hub: h });
+            // Also index a "leading word" form for fuzzy substring match —
+            // "Powder River Basin (Coal)" -> "powder river basin".
+            const lead = String(h.name).toLowerCase().split(/[(,]/)[0].trim();
+            if (lead && lead.length > 4) {
+              commodityHubByName.push({ needle: lead, hub: h });
+            }
+          }
+        });
+      } catch (_) { /* non-fatal */ }
+    })();
+
+    function findHubMatch(label) {
+      if (!label || !commodityHubs.length) return null;
+      const lower = String(label).toLowerCase().trim();
+      // 1. City exact match (split on comma — labels look like "Chicago, IL").
+      const cityPart = lower.split(',')[0].trim();
+      if (cityPart && commodityHubByCity.has(cityPart)) return commodityHubByCity.get(cityPart);
+      // 2. Hub name substring match (covers "Powder River", "Laredo", etc.).
+      const labelClean = lower.replace(/[,]/g, '').trim();
+      for (const entry of commodityHubByName) {
+        const ent = entry.needle;
+        if (ent.length < 5) continue;
+        // Require labelClean to fully contain the hub needle, or vice versa
+        // with a meaningful length (avoids "Powder Springs"→"Powder River").
+        if (labelClean.length >= 6 && (labelClean.includes(ent) || (ent.length >= labelClean.length && ent.includes(labelClean)))) {
+          return entry.hub;
+        }
+      }
+      return null;
+    }
+
+    function attachCityTypeahead(inputId, listId) {
+      const input = document.getElementById(inputId);
+      const list = document.getElementById(listId);
+      let activeIdx = -1;
+      let lastQuery = '';
+      let debounceTimer = null;
+
+      function close() {
+        list.hidden = true;
+        list.innerHTML = '';
+        activeIdx = -1;
+      }
+      function escAttr(s) {
+        return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+      }
+      function render(results) {
+        if (!results || results.length === 0) {
+          list.innerHTML = '<li class="city-empty">No matches — try a different spelling or check the state.</li>';
+          list.hidden = false;
+          return;
+        }
+        list.innerHTML = results.map((r, i) => {
+          const popLabel = r.population >= 1000000
+            ? (r.population / 1e6).toFixed(1) + 'M'
+            : (r.population / 1000).toFixed(0) + 'k';
+          const hub = findHubMatch(r.label);
+          const hubBadge = hub
+            ? `<span class="city-hub-badge" title="Major commodity hub: ${escAttr(hub.name)}">🔎 Major commodity hub</span>`
+            : '';
+          return `<li role="option" data-label="${escAttr(r.label)}" data-idx="${i}">
+            <span class="city-text">${escAttr(r.label)}${hubBadge}</span>
+            <span class="city-pop">${popLabel}</span></li>`;
+        }).join('');
+        list.hidden = false;
+        activeIdx = -1;
+      }
+      async function fetchSuggestions(q) {
+        if (cityCache.has(q)) return cityCache.get(q);
+        try {
+          const res = await fetch(`${CITIES_URL}?q=${encodeURIComponent(q)}&limit=10`);
+          if (!res.ok) return [];
+          const data = await res.json();
+          const results = Array.isArray(data.results) ? data.results : [];
+          cityCache.set(q, results);
+          return results;
+        } catch (_) {
+          return [];
+        }
+      }
+
+      input.addEventListener('input', () => {
+        const q = input.value.trim();
+        if (q.length < 2) { close(); return; }
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(async () => {
+          if (q === lastQuery) return;
+          lastQuery = q;
+          const results = await fetchSuggestions(q);
+          if (input.value.trim() !== q) return;
+          render(results);
+        }, 200);
+      });
+      input.addEventListener('focus', () => {
+        if (input.value.trim().length >= 2 && list.children.length > 0) list.hidden = false;
+      });
+      input.addEventListener('blur', () => {
+        // Delay close so a click on a suggestion still fires.
+        setTimeout(close, 150);
+      });
+      input.addEventListener('keydown', (e) => {
+        if (list.hidden) return;
+        const items = list.querySelectorAll('li[role="option"]');
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          activeIdx = Math.min(activeIdx + 1, items.length - 1);
+          items.forEach((el, i) => el.classList.toggle('active', i === activeIdx));
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          activeIdx = Math.max(activeIdx - 1, 0);
+          items.forEach((el, i) => el.classList.toggle('active', i === activeIdx));
+        } else if (e.key === 'Enter' && activeIdx >= 0) {
+          e.preventDefault();
+          input.value = items[activeIdx].dataset.label;
+          close();
+        } else if (e.key === 'Escape') {
+          close();
+        }
+      });
+      list.addEventListener('mousedown', (e) => {
+        const li = e.target.closest('li[role="option"]');
+        if (!li) return;
+        e.preventDefault();
+        input.value = li.dataset.label;
+        close();
+      });
+    }
+
+    async function loadDropdowns() {
+      const [commRes, carRes] = await Promise.all([
+        fetch(`${TOOLS_BASE}/api/rail-rate-commodities`).then(r => r.json()).catch(() => null),
+        fetch(`${TOOLS_BASE}/api/rail-rate-car-types`).then(r => r.json()).catch(() => null),
+      ]);
+
+      const commSel = document.getElementById('commodity');
+      const carSel  = document.getElementById('car_type');
+
+      if (commRes && Array.isArray(commRes.commodities)) {
+        commSel.innerHTML = '<option value="">Select a commodity</option>' +
+          commRes.commodities.map(c => `<option value="${c.id}" data-default-car="${c.default_car}">${c.name}</option>`).join('');
+      } else {
+        commSel.innerHTML = '<option value="">Failed to load</option>';
+      }
+
+      if (carRes && Array.isArray(carRes.car_types)) {
+        carSel.innerHTML = '<option value="">Select a car type</option>' +
+          carRes.car_types.map(c => `<option value="${c.id}">${c.name}</option>`).join('');
+      } else {
+        carSel.innerHTML = '<option value="">Failed to load</option>';
+      }
+
+      // Auto-select the recommended car when commodity changes
+      commSel.addEventListener('change', () => {
+        const opt = commSel.options[commSel.selectedIndex];
+        const def = opt && opt.dataset.defaultCar;
+        if (def && carSel.querySelector(`option[value="${def}"]`)) {
+          carSel.value = def;
+        }
+      });
+    }
+
+    loadDropdowns();
+    attachCityTypeahead('origin', 'originSuggest');
+    attachCityTypeahead('destination', 'destinationSuggest');
+
+    function fmtMoney(n) {
+      if (n == null || isNaN(n)) return '—';
+      return '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    }
+    function fmtMiles(n) {
+      return Number(n).toLocaleString('en-US', { maximumFractionDigits: 0 });
+    }
+    // Defensive: strip any markdown / HTML / AI-style markers that might leak
+    // into a field before it lands in the customer-facing PDF. Backend fields
+    // are plain prose today, but if any get sourced from AI-generated content
+    // later, this keeps the PDF clean (no ** bold **, *italic*, # headers,
+    // [link](url), `code`, list bullets, or stray HTML tags).
+    function stripMarkdown(s) {
+      if (s == null) return '';
+      let t = String(s);
+      // Strip HTML tags first (in case any leaked in).
+      t = t.replace(/<[^>]+>/g, '');
+      // [text](url) -> text
+      t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1');
+      // **bold** / __bold__ -> bold
+      t = t.replace(/\*\*([^*]+)\*\*/g, '$1');
+      t = t.replace(/__([^_]+)__/g, '$1');
+      // *italic* / _italic_ -> italic (avoid eating math/star within words)
+      t = t.replace(/(^|\s)\*([^*\n]+)\*(?=\s|$|[.,;:!?])/g, '$1$2');
+      t = t.replace(/(^|\s)_([^_\n]+)_(?=\s|$|[.,;:!?])/g, '$1$2');
+      // `code` -> code
+      t = t.replace(/`([^`]+)`/g, '$1');
+      // Strip leading list bullets / heading markers from each line.
+      t = t.split('\n').map(line =>
+        line.replace(/^\s*([#>]+|[-*+]|\d+\.)\s+/, '')).join('\n');
+      // Collapse stray asterisks left over.
+      t = t.replace(/\*+/g, '');
+      // Trim trailing whitespace per line + collapse runs of blank lines.
+      t = t.split('\n').map(l => l.replace(/\s+$/, '')).join('\n');
+      t = t.replace(/\n{3,}/g, '\n\n');
+      return t.trim();
+    }
+
+    // ── Email-gate state. Cross-tool: a shared SWL unlock (90-day TTL in
+    // ── localStorage) lets a user who unlocked any other SWL tool skip the
+    // ── modal here. Per-session contact (name/phone) still lives in
+    // ── sessionStorage since those are tool-form fields, not unlock state.
+    const EMAIL_KEY = 'swl_rate_lead_email';
+    const NAME_KEY  = 'swl_rate_lead_name';
+    const PHONE_KEY = 'swl_rate_lead_phone';
+    const TOOL_SLUG = 'rail-rate-quote';
+    const FORMAT_RE = /^[A-Za-z0-9._%+\-]+@[A-Za-z0-9](?:[A-Za-z0-9\-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9\-]{0,61}[A-Za-z0-9])?)+$/;
+
+    // ── State-code validator (US/Canada/Mexico) ──
+    const VALID_STATE_CODES = new Set([
+      // US (50)
+      'AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA',
+      'KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ',
+      'NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT',
+      'VA','WA','WV','WI','WY','DC',
+      // Canada (13)
+      'AB','BC','MB','NB','NL','NS','ON','PE','QC','SK','YT','NT','NU',
+      // Mexico (32, ISO 3166-2:MX 3-letter codes)
+      'AGU','BCN','BCS','CAM','CHP','CHH','COA','COL','CMX','DUR','GUA','GRO',
+      'HID','JAL','MEX','MIC','MOR','NAY','NLE','OAX','PUE','QUE','ROO','SLP',
+      'SIN','SON','TAB','TAM','TLA','VER','YUC','ZAC',
+    ]);
+
+    function validateStateCode(cityString) {
+      if (!cityString || typeof cityString !== 'string') return false;
+      const parts = cityString.trim().split(/,\s*/);
+      if (parts.length < 2) return false;
+      const stateCode = parts[parts.length - 1].toUpperCase().trim();
+      // Reject numeric codes like "08" and non-alphabetic codes
+      if (!/^[A-Z]{2,3}$/.test(stateCode)) return false;
+      return VALID_STATE_CODES.has(stateCode);
+    }
+
+    // ── Shared SWL email-unlock (cross-tool, 90-day TTL) ──
+    const SWL_EMAIL_KEY = 'swl_email';
+    const SWL_TS_KEY = 'swl_email_unlocked_at';
+    const SWL_TTL_MS = 90 * 86400 * 1000;
+    function swlReadSharedEmail() {
+      try {
+        const e = localStorage.getItem(SWL_EMAIL_KEY) || '';
+        const ts = localStorage.getItem(SWL_TS_KEY) || '';
+        if (!e || !ts) return '';
+        const t = Date.parse(ts);
+        if (!isFinite(t)) return '';
+        if (Date.now() - t > SWL_TTL_MS) return '';
+        return e;
+      } catch (_) { return ''; }
+    }
+    function swlWriteSharedEmail(email) {
+      try {
+        localStorage.setItem(SWL_EMAIL_KEY, email);
+        localStorage.setItem(SWL_TS_KEY, new Date().toISOString());
+      } catch (_) {}
+    }
+    function swlLeadFiredKey(slug) { return 'swl_lead_fired_' + slug; }
+    function swlMarkLeadFired(slug) {
+      try { sessionStorage.setItem(swlLeadFiredKey(slug), '1'); } catch (_) {}
+    }
+
+    function cachedEmail() {
+      const shared = swlReadSharedEmail();
+      if (shared) return shared;
+      try { return sessionStorage.getItem(EMAIL_KEY) || ''; } catch (_) { return ''; }
+    }
+    function cacheEmail(email) {
+      swlWriteSharedEmail(email);
+      try { sessionStorage.setItem(EMAIL_KEY, email); } catch (_) {}
+    }
+    function cachedName() {
+      try { return sessionStorage.getItem(NAME_KEY) || ''; } catch (_) { return ''; }
+    }
+    function cachedPhone() {
+      try { return sessionStorage.getItem(PHONE_KEY) || ''; } catch (_) { return ''; }
+    }
+    function cacheContact(name, phone) {
+      try {
+        if (name) sessionStorage.setItem(NAME_KEY, name);
+        if (phone) sessionStorage.setItem(PHONE_KEY, phone);
+      } catch (_) {}
+    }
+
+    function showGate() {
+      const overlay = document.getElementById('emailGateOverlay');
+      overlay.classList.add('visible');
+      const input = document.getElementById('leadEmail');
+      input.value = cachedEmail();
+      const nameInput = document.getElementById('leadName');
+      const phoneInput = document.getElementById('leadPhone');
+      if (nameInput && !nameInput.value) nameInput.value = cachedName();
+      if (phoneInput && !phoneInput.value) phoneInput.value = cachedPhone();
+      document.getElementById('leadEmailError').textContent = '';
+      setTimeout(() => input.focus(), 50);
+    }
+    function hideGate() {
+      document.getElementById('emailGateOverlay').classList.remove('visible');
+    }
+
+    document.getElementById('leadCancel').addEventListener('click', () => {
+      hideGate();
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = false;
+      btn.innerHTML = 'Calculate Estimate';
+    });
+
+    document.getElementById('emailGateOverlay').addEventListener('click', (e) => {
+      // Click outside the modal closes it.
+      if (e.target.id === 'emailGateOverlay') {
+        hideGate();
+        const btn = document.getElementById('submitBtn');
+        btn.disabled = false;
+        btn.innerHTML = 'Calculate Estimate';
+      }
+    });
+
+    function buildPayload(extra) {
+      return Object.assign({
+        origin: document.getElementById('origin').value.trim(),
+        destination: document.getElementById('destination').value.trim(),
+        commodity: document.getElementById('commodity').value,
+        car_type: document.getElementById('car_type').value,
+        weight_tons: Number(document.getElementById('weight_tons').value),
+        year: 2024,
+        name: cachedName(),
+        phone: cachedPhone(),
+      }, extra || {});
+    }
+
+    async function runQuote(email) {
+      const btn = document.getElementById('submitBtn');
+      const errEl = document.getElementById('errorMsg');
+      const loadingPanel = document.getElementById('loadingPanel');
+      const loadingStep = document.getElementById('loadingStep');
+      const resultsSection = document.getElementById('resultsSection');
+      errEl.textContent = '';
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner"></span>Calculating...';
+      // Hide any prior result + show the loading panel.
+      resultsSection.classList.remove('visible');
+      loadingPanel.classList.add('active');
+      // Rotate step copy so the user feels progress instead of a frozen
+      // panel. Pure cosmetic — the upstream call is a single round-trip.
+      const STEPS = [
+        'Resolving origin and destination on the rail network...',
+        'Searching the lowest-cost routings...',
+        'Calculating fuel surcharges and interchange fees...',
+        'Comparing alternative carrier paths...',
+        'Almost there — finalizing your estimate...',
+      ];
+      let stepIdx = 0;
+      const stepTimer = setInterval(() => {
+        stepIdx = Math.min(stepIdx + 1, STEPS.length - 1);
+        loadingStep.textContent = STEPS[stepIdx];
+      }, 2400);
+      // Smoothly scroll the loading panel into view so the user sees it.
+      try { loadingPanel.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (_) {}
+
+      const payload = buildPayload({ email });
+      currentLeadEmail = email;
+      try {
+        const res = await fetch(QUOTE_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          // Email-validation errors pop the gate back up so user can fix it.
+          if (data.code && String(data.code).startsWith('email_')) {
+            // Drop the cached email so the user is forced to re-enter.
+            try { sessionStorage.removeItem(EMAIL_KEY); } catch (_) {}
+            showGate();
+            document.getElementById('leadEmailError').textContent = data.error || 'Please enter a valid email address.';
+            return;
+          }
+          throw new Error(data.error || `Server error (${res.status})`);
+        }
+        // Lead is captured server-side at /quote return — never let a
+        // client-side render exception (Safari/iOS quirks, missing fields,
+        // etc.) surface as a confusing form error and hide the quote the
+        // customer already paid for with their email.
+        try {
+          renderResults(data);
+        } catch (renderErr) {
+          console.error('renderResults failed:', renderErr);
+          // Soft fallback so the user at least sees a number.
+          try {
+            const fallback = document.getElementById('resultsSection');
+            const total = Number(data.tariff_total);
+            if (fallback && isFinite(total)) {
+              fallback.classList.add('visible');
+              const totalEl = document.getElementById('rTariffTotal');
+              if (totalEl) totalEl.textContent = '$' + Math.round(total).toLocaleString('en-US');
+            }
+          } catch (_) {}
+        }
+        try {
+          if (typeof gtag === 'function') {
+            gtag('event', 'rail_rate_quote', {
+              event_category: 'tools',
+              event_label: payload.commodity,
+              value: Math.round(Number(data.tariff_total) || 0),
+            });
+            gtag('event', 'rail_rate_lead_capture', {
+              event_category: 'tools',
+              event_label: payload.commodity,
+            });
+          }
+        } catch (analyticsErr) {
+          console.warn('gtag fire skipped:', analyticsErr);
+        }
+      } catch (err) {
+        errEl.textContent = err.message || 'Could not get an estimate. Please try again.';
+      } finally {
+        clearInterval(stepTimer);
+        loadingPanel.classList.remove('active');
+        btn.disabled = false;
+        btn.innerHTML = 'Calculate Estimate';
+      }
+    }
+
+    document.getElementById('quoteForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const errEl = document.getElementById('errorMsg');
+      errEl.textContent = '';
+
+      const payload = buildPayload();
+      if (!payload.origin || !payload.destination || !payload.commodity || !payload.car_type) {
+        errEl.textContent = 'Please fill in all fields.';
+        return;
+      }
+
+      // Validate state codes (US/CA/MX format)
+      if (!validateStateCode(payload.origin)) {
+        errEl.textContent = 'Invalid origin state code. Use 2-letter US/CA codes (e.g., TX, ON) or 3-letter Mexico codes (e.g., QUE).';
+        btn.disabled = false;
+        btn.innerHTML = 'Calculate Estimate';
+        return;
+      }
+      if (!validateStateCode(payload.destination)) {
+        errEl.textContent = 'Invalid destination state code. Use 2-letter US/CA codes (e.g., TX, ON) or 3-letter Mexico codes (e.g., QUE).';
+        btn.disabled = false;
+        btn.innerHTML = 'Calculate Estimate';
+        return;
+      }
+
+      const stored = cachedEmail();
+      if (stored && FORMAT_RE.test(stored)) {
+        // Already captured this session — go straight to the rate.
+        // The /api/rail-rate-quote call captures the lead, so mark fired.
+        swlMarkLeadFired(TOOL_SLUG);
+        runQuote(stored);
+      } else {
+        showGate();
+      }
+    });
+
+    document.getElementById('emailGateForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const input  = document.getElementById('leadEmail');
+      const errEl  = document.getElementById('leadEmailError');
+      const consent = document.getElementById('leadConsent');
+      const submit = document.getElementById('leadSubmit');
+
+      const email = (input.value || '').trim().toLowerCase();
+      const name  = (document.getElementById('leadName').value || '').trim().slice(0, 200);
+      const phone = (document.getElementById('leadPhone').value || '').trim().slice(0, 60);
+      errEl.textContent = '';
+
+      if (!email) {
+        errEl.textContent = 'Email is required.';
+        return;
+      }
+      // Fast client-side format check — server is still authoritative.
+      if (!FORMAT_RE.test(email)) {
+        errEl.textContent = 'Please enter a valid email address.';
+        return;
+      }
+      if (!consent.checked) {
+        errEl.textContent = 'Please agree to receive your estimate by email.';
+        return;
+      }
+
+      cacheEmail(email);
+      cacheContact(name, phone);
+      swlMarkLeadFired(TOOL_SLUG);
+      submit.disabled = true;
+      submit.textContent = 'Validating...';
+      hideGate();
+      submit.disabled = false;
+      submit.textContent = 'Get My Estimate';
+
+      runQuote(email);
+    });
+
+    // Quote/render state. `currentQuote` holds the full /quote response so
+    // we can re-render the breakdown when the user clicks an alternate; we
+    // never re-fetch (alternates are pre-priced server-side).
+    let currentQuote = null;
+    let currentRouteChoice = 'primary';
+    let currentLeadEmail = '';
+
+    const SEG_LABEL = (i, n) => {
+      if (n === 1) return 'Line-haul';
+      if (i === 0) return 'Starting segment';
+      if (i === n - 1) return 'Ending segment';
+      return `Middle segment ${i}`;
+    };
+
+    // ────────────────────── Route-Map Renderer ──────────────────────
+    // Renders the picked routing's actual rail path on a Leaflet map below
+    // the breakdown table. Each leg is a colored polyline (per carrier);
+    // origin/destination markers anchor the endpoints; interchange points
+    // get small pins. Lazy-init the Leaflet map only after a successful
+    // quote so a user who never submits the form never downloads tiles.
+    const CARRIER_COLORS = {
+      BNSF: '#FF8C00', UP: '#FFD700',
+      CSXT: '#0066CC', CSX: '#0066CC',
+      NS: '#8B4513',
+      CN: '#C00000', CNGT: '#C00000',
+      CPKC: '#990066', CP: '#990066',
+      KCS: '#3D9970', KCSM: '#3D9970',
+      FXE: '#FF6B35',
+      CGR: '#00838F',
+    };
+    const SHORTLINE_COLOR = '#666666';
+    let _swlMap = null;
+
+    function renderRouteMap(routingView, originLabel, destLabel) {
+      const mapEl = document.getElementById('route-map');
+      const attrEl = document.getElementById('map-attribution');
+      if (!mapEl || typeof L === 'undefined') return;
+
+      const legs = (routingView && routingView.legs) || [];
+      // Filter to legs that actually have geometry (class_i legs do;
+      // short_line synthetic splits don't — they piggyback on the host
+      // class_i leg's track, no separate footprint).
+      const drawable = legs.filter(L =>
+        L && L.geometry && Array.isArray(L.geometry.coordinates)
+        && L.geometry.coordinates.length >= 2
+      );
+      if (!drawable.length) {
+        mapEl.style.display = 'none';
+        if (attrEl) attrEl.style.display = 'none';
+        return;
+      }
+
+      mapEl.style.display = 'block';
+      if (attrEl) attrEl.style.display = 'block';
+
+      // Tear down any prior map instance — we rebuild from scratch on each
+      // routing pick so polyline colours + bounds reflect the current view.
+      if (_swlMap) { _swlMap.remove(); _swlMap = null; }
+      _swlMap = L.map(mapEl, { scrollWheelZoom: false });
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors',
+        maxZoom: 18,
+      }).addTo(_swlMap);
+
+      const allCoords = [];
+
+      drawable.forEach((leg, i) => {
+        // GeoJSON spec is [lon, lat]; Leaflet polyline expects [lat, lon].
+        const latLngs = leg.geometry.coordinates.map(c => [c[1], c[0]]);
+        for (let j = 0; j < latLngs.length; j++) allCoords.push(latLngs[j]);
+
+        const rr = (leg.railroad || '').toUpperCase();
+        const color = leg.kind === 'short_line'
+          ? SHORTLINE_COLOR
+          : (CARRIER_COLORS[rr] || '#999999');
+        const polyline = L.polyline(latLngs, {
+          color: color, weight: 4, opacity: 0.85,
+        }).addTo(_swlMap);
+
+        const lineHaul = (typeof leg.line_haul === 'number')
+          ? '$' + leg.line_haul.toFixed(2) : '—';
+        const fsc = (typeof leg.fuel_surcharge === 'number')
+          ? '$' + leg.fuel_surcharge.toFixed(2) : '—';
+        const miles = (typeof leg.miles === 'number')
+          ? leg.miles.toFixed(1) + ' mi' : '—';
+        const segLabel = leg.seg_label || leg.railroad || ('Segment ' + (i + 1));
+        polyline.bindTooltip(
+          '<div class="leg-tooltip"><strong>' + segLabel + '</strong>'
+          + ' (' + (leg.railroad || '—') + ')<br>' + miles
+          + '<br>Line-haul: ' + lineHaul
+          + '<br>FSC: ' + fsc + '</div>',
+          { sticky: true }
+        );
+      });
+
+      // Origin marker — anchor at the first vertex of the first drawable leg.
+      const firstLeg = drawable[0];
+      if (firstLeg && firstLeg.geometry.coordinates.length) {
+        const o = firstLeg.geometry.coordinates[0];
+        const oName = firstLeg.from_node_name || originLabel || 'Origin';
+        L.marker([o[1], o[0]]).addTo(_swlMap)
+          .bindPopup('<strong>Origin</strong><br>' + oName);
+      }
+
+      // Destination marker — anchor at the last vertex of the last drawable leg.
+      const lastLeg = drawable[drawable.length - 1];
+      if (lastLeg && lastLeg.geometry.coordinates.length) {
+        const d = lastLeg.geometry.coordinates[lastLeg.geometry.coordinates.length - 1];
+        const dName = lastLeg.to_node_name || destLabel || 'Destination';
+        L.marker([d[1], d[0]]).addTo(_swlMap)
+          .bindPopup('<strong>Destination</strong><br>' + dName);
+      }
+
+      // Interchange markers between consecutive drawable legs.
+      for (let i = 0; i < drawable.length - 1; i++) {
+        const curLeg = drawable[i];
+        const nextLeg = drawable[i + 1];
+        const coords = curLeg.geometry.coordinates;
+        if (!coords.length) continue;
+        const interCoord = coords[coords.length - 1];
+        const interName = curLeg.to_node_name || 'Interchange';
+        L.marker([interCoord[1], interCoord[0]], { opacity: 0.75 })
+          .addTo(_swlMap)
+          .bindPopup(
+            '<strong>Interchange</strong><br>' + interName
+            + '<br>' + (curLeg.railroad || '—')
+            + ' &rarr; ' + (nextLeg.railroad || '—')
+          );
+      }
+
+      if (allCoords.length) {
+        _swlMap.fitBounds(L.latLngBounds(allCoords), { padding: [40, 40] });
+      } else {
+        _swlMap.setView([39.5, -98.5], 4);
+      }
+      // Leaflet measures container size at init; if the parent was hidden
+      // when we constructed the map, the tile layer ends up with a 0×0
+      // canvas. Force a size invalidation after the next frame so panning
+      // and bounds-fitting render at full extent.
+      setTimeout(() => { if (_swlMap) _swlMap.invalidateSize(); }, 50);
+    }
+
+    function renderBreakdown(routingView) {
+      // routingView shape matches both the primary (top-level /quote response)
+      // and an alternate (entry from d.alternates) — they both expose
+      // legs[], tariff_total, interchange_count, interchange_fee_total.
+      const legsBlock = document.getElementById('legsBlock');
+      const legsBody  = document.getElementById('legsBody');
+      const legs = routingView.legs || [];
+      if (!legs.length) {
+        legsBlock.style.display = 'none';
+        return;
+      }
+      const rows = [];
+      legs.forEach((leg, i) => {
+        if (i > 0 && leg.kind === 'class_i' && leg.from_node_name) {
+          rows.push(`<tr class="interchange-row"><td colspan="6">&darr; Interchange at ${leg.from_node_name}${leg.from_node_operator ? ` (${leg.from_node_operator})` : ''}</td></tr>`);
+        }
+        const segLabel = leg.seg_label || SEG_LABEL(i, legs.length);
+        const rrCell = leg.kind === 'short_line'
+          ? `${leg.railroad} <span class="hint">(short-line)</span>`
+          : `${leg.railroad}${leg.trackage_rights ? ' <span class="hint">(trackage rights)</span>' : ''}`;
+        rows.push(`<tr>
+          <td>${segLabel}</td>
+          <td>${rrCell}</td>
+          <td class="num">${fmtMiles(leg.miles)}</td>
+          <td class="num">${fmtMoney(leg.line_haul)}</td>
+          <td class="num">${fmtMoney(leg.fuel_surcharge)}</td>
+          <td class="num">${fmtMoney(leg.leg_total)}</td>
+        </tr>`);
+      });
+      if (routingView.interchange_count && routingView.interchange_fee_total) {
+        rows.push(`<tr class="interchange-fee-row">
+          <td colspan="5">Interchange fees (${routingView.interchange_count} junction${routingView.interchange_count > 1 ? 's' : ''})</td>
+          <td class="num">${fmtMoney(routingView.interchange_fee_total)}</td>
+        </tr>`);
+      }
+      rows.push(`<tr class="subtotal-row">
+        <td colspan="5">Total Estimated Tariff</td>
+        <td class="num">${fmtMoney(routingView.tariff_total)}</td>
+      </tr>`);
+      legsBody.innerHTML = rows.join('');
+      legsBlock.style.display = 'block';
+    }
+
+    function applyRouteChoice(choice) {
+      // Swap the breakdown table + headline numbers to the picked routing.
+      // No API call — alternates were pre-priced and live in currentQuote.
+      if (!currentQuote) return;
+      currentRouteChoice = choice;
+      let view = null;
+      let altRank = null;
+      if (choice === 'primary') {
+        view = currentQuote;
+      } else if (choice && choice.startsWith('alt-')) {
+        altRank = parseInt(choice.slice(4), 10);
+        view = (currentQuote.alternates || []).find(a => a.rank === altRank) || null;
+      }
+      if (!view) {
+        currentRouteChoice = 'primary';
+        view = currentQuote;
+      }
+
+      // Headline figures.
+      document.getElementById('rMiles').textContent = fmtMiles(view.miles);
+      document.getElementById('rTariffTotal').textContent = fmtMoney(view.tariff_total);
+      document.getElementById('rTariffPerCwt').textContent =
+        `${Number(view.tariff_per_cwt || 0).toFixed(2)}¢ per cwt · per car`;
+
+      // Carrier strip + lane-type badge reflect the picked routing.
+      const carriers = view.legs && view.legs.length
+        ? view.legs.map(l => l.railroad).filter((r, i, a) => a.indexOf(r) === i).join(' / ')
+        : '';
+      document.getElementById('rRails').textContent = carriers || 'Routing details below';
+      const laneBadge = document.getElementById('rLaneType');
+      const isSingle = (view.legs || []).length === 1;
+      if (isSingle) {
+        laneBadge.textContent = 'Single-Line';
+        laneBadge.classList.remove('interline');
+      } else {
+        laneBadge.textContent = `Interline · ${view.legs.length} segments`;
+        laneBadge.classList.add('interline');
+      }
+
+      // Title hint so the user knows which routing the table reflects.
+      const title = document.getElementById('legsBlockTitle');
+      if (choice === 'primary') {
+        title.textContent = 'Tariff Breakdown — Suggested Routing';
+      } else {
+        title.textContent = `Tariff Breakdown — Alternate ${altRank - 1}`;
+      }
+
+      renderBreakdown(view);
+
+      // Render the route map for the picked routing. originLabel/destLabel
+      // come from currentQuote (the top-level /quote response) which always
+      // carries the canonical origin + destination, regardless of which
+      // routing was clicked.
+      try {
+        const originLabel = currentQuote && currentQuote.origin
+          ? (currentQuote.origin.name + ', ' + currentQuote.origin.state)
+          : '';
+        const destLabel = currentQuote && currentQuote.destination
+          ? (currentQuote.destination.name + ', ' + currentQuote.destination.state)
+          : '';
+        renderRouteMap(view, originLabel, destLabel);
+      } catch (mapErr) {
+        // Map failure should never block the breakdown/quote UX.
+        console.warn('route-map render skipped:', mapErr);
+        const mapEl = document.getElementById('route-map');
+        if (mapEl) mapEl.style.display = 'none';
+        const attrEl = document.getElementById('map-attribution');
+        if (attrEl) attrEl.style.display = 'none';
+      }
+
+      // Update visual selection in the alternates list.
+      document.querySelectorAll('#alternatesList .alternate-card').forEach(el => {
+        el.classList.toggle('selected', el.dataset.routeChoice === choice);
+      });
+
+      // Fire-and-forget lead-choice ping so we capture which routing the
+      // user actually engaged with. Skip primary since /quote already
+      // recorded it (avoids double-logging on the initial render).
+      if (choice !== 'primary' && currentLeadEmail) {
+        try {
+          fetch('/api/rail-rate-lead-route-choice', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              email: currentLeadEmail,
+              origin: currentQuote.origin
+                ? `${currentQuote.origin.name}, ${currentQuote.origin.state}`
+                : '',
+              destination: currentQuote.destination
+                ? `${currentQuote.destination.name}, ${currentQuote.destination.state}`
+                : '',
+              commodity: currentQuote.commodity ? currentQuote.commodity.name : '',
+              car_type: currentQuote.car_type ? currentQuote.car_type.name : '',
+              weight_tons: currentQuote.weight_tons,
+              route_choice: choice,
+              tariff_total: view.tariff_total,
+              miles: view.miles,
+            }),
+          }).catch(() => {});
+        } catch (_) { /* never block UI on lead capture */ }
+
+        if (typeof gtag === 'function') {
+          gtag('event', 'rail_rate_route_alt_selected', {
+            event_category: 'tools',
+            event_label: choice,
+            value: Math.round(Number(view.tariff_total) || 0),
+          });
+        }
+      }
+    }
+
+    function renderAlternates(d) {
+      const section = document.getElementById('alternatesSection');
+      const list    = document.getElementById('alternatesList');
+      const toggle  = document.getElementById('alternatesToggle');
+      const label   = document.getElementById('alternatesToggleLabel');
+      const alts    = Array.isArray(d.alternates) ? d.alternates : [];
+
+      if (!alts.length) {
+        section.classList.add('empty');
+        section.classList.remove('open');
+        list.innerHTML = '';
+        return;
+      }
+
+      section.classList.remove('empty');
+      label.textContent = `Compare alternative routings (${alts.length})`;
+
+      const primaryTotal = Number(d.tariff_total) || 0;
+      const cards = [];
+      // Primary card first so the user sees the suggested routing in the same
+      // visual idiom as the alternates and can re-pick it after exploring.
+      const primaryCarriers = (d.legs || [])
+        .map(l => l.railroad)
+        .filter((r, i, a) => a.indexOf(r) === i);
+      cards.push(
+        renderAlternateCard({
+          rank: 1,
+          choice: 'primary',
+          carriers: primaryCarriers,
+          miles: d.miles,
+          tariff_total: d.tariff_total,
+          carrier_count: primaryCarriers.length,
+          isPrimary: true,
+        }, primaryTotal)
+      );
+      alts.forEach(a => {
+        cards.push(
+          renderAlternateCard({
+            rank: a.rank,
+            choice: `alt-${a.rank}`,
+            carriers: a.carrier_path || [],
+            miles: a.miles,
+            tariff_total: a.tariff_total,
+            carrier_count: a.carrier_count || (a.carrier_path || []).length,
+            isPrimary: false,
+          }, primaryTotal)
+        );
+      });
+      list.innerHTML = cards.join('');
+
+      // Wire click handlers.
+      list.querySelectorAll('.alternate-card').forEach(el => {
+        el.addEventListener('click', () => {
+          applyRouteChoice(el.dataset.routeChoice);
+        });
+        el.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            applyRouteChoice(el.dataset.routeChoice);
+          }
+        });
+      });
+
+      // Default: collapsed. User opts in via toggle.
+      section.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    function renderAlternateCard(view, primaryTotal) {
+      const carrierStr = (view.carriers || []).join(' → ') || '—';
+      const carrierCount = view.carrier_count || (view.carriers || []).length;
+      const labelPrefix = view.isPrimary ? 'Suggested' : `Alt ${view.rank - 1}`;
+      const summary = `${carrierCount} carrier${carrierCount === 1 ? '' : 's'} · ${fmtMiles(view.miles)} mi`;
+      let deltaHtml = '';
+      if (!view.isPrimary && primaryTotal > 0) {
+        const diff = Number(view.tariff_total) - primaryTotal;
+        const pct = (diff / primaryTotal) * 100;
+        const sign = diff > 0 ? '+' : '−';
+        const cls  = diff > 0 ? 'up' : (diff < 0 ? 'down' : '');
+        deltaHtml = `<div class="alt-delta ${cls}">${sign}${fmtMoney(Math.abs(diff))} (${sign}${Math.abs(pct).toFixed(1)}%) vs suggested</div>`;
+      }
+      return `
+        <div class="alternate-card" tabindex="0" role="button"
+             data-route-choice="${view.choice}"
+             aria-label="${labelPrefix}: ${carrierStr}, ${fmtMiles(view.miles)} miles, ${fmtMoney(view.tariff_total)}">
+          <div class="alt-meta">
+            <div class="alt-label">${labelPrefix}: ${carrierStr}</div>
+            <div class="alt-summary">${summary}</div>
+          </div>
+          <div>
+            <div class="alt-price">${fmtMoney(view.tariff_total)}</div>
+            ${deltaHtml}
+          </div>
+        </div>
+      `;
+    }
+
+    document.getElementById('alternatesToggle').addEventListener('click', () => {
+      const section = document.getElementById('alternatesSection');
+      const toggle  = document.getElementById('alternatesToggle');
+      const open    = section.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    function renderResults(d) {
+      currentQuote = d;
+      currentRouteChoice = 'primary';
+
+      // Each section is wrapped so a quirk in one (Safari-specific edge,
+      // missing field, etc.) doesn't take down the rest of the breakdown.
+      try {
+        document.getElementById('rOrigin').textContent = `${d.origin.name}, ${d.origin.state}`;
+        document.getElementById('rDest').textContent   = `${d.destination.name}, ${d.destination.state}`;
+      } catch (e) { console.warn('header labels skipped:', e); }
+
+      // Headline tariff + miles + carriers + lane badge are set by applyRouteChoice
+      // so primary + alternate rendering go through one code path.
+      try { applyRouteChoice('primary'); } catch (e) { console.warn('applyRouteChoice skipped:', e); }
+
+      try {
+        const fscFoot = document.getElementById('fscFootnote');
+        if (fscFoot) {
+          const asOf = d.fsc_as_of ? String(d.fsc_as_of).slice(0, 10) : '';
+          fscFoot.textContent = asOf
+            ? `Fuel surcharge based on published Class I tariffs as of ${asOf}. Refreshes monthly.`
+            : 'Fuel surcharge based on published Class I tariffs. Refreshes monthly.';
+        }
+      } catch (e) { console.warn('fsc footnote skipped:', e); }
+
+      try { renderAlternates(d); } catch (e) { console.warn('renderAlternates skipped:', e); }
+
+      try {
+        const notesBlock = document.getElementById('routingNotesBlock');
+        const notesList  = document.getElementById('routingNotesList');
+        const notes = (d.routing_notes || []).filter(n => !/^single-line preference/.test(n));
+        if (notes.length) {
+          notesList.innerHTML = notes.map(n => `<li>${n}</li>`).join('');
+          notesBlock.style.display = 'block';
+        } else {
+          notesBlock.style.display = 'none';
+        }
+      } catch (e) { console.warn('routing notes skipped:', e); }
+
+      try { document.getElementById('disclaimer').textContent = d.disclaimer || ''; } catch (e) {}
+
+      try {
+        const section = document.getElementById('resultsSection');
+        section.classList.add('visible');
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } catch (e) { console.warn('scroll skipped:', e); }
+    }
+
+    // ────────────────────── PDF Download ──────────────────────
+    // Generates a downloadable rate-quote PDF entirely client-side using jsPDF
+    // + jsPDF-AutoTable. No backend round-trip — the quote response already
+    // has everything we need. Skips gracefully if the script hasn't loaded.
+
+    function buildQuoteId() {
+      const d = new Date();
+      const yyyymmdd = d.getFullYear().toString() +
+        String(d.getMonth() + 1).padStart(2, '0') +
+        String(d.getDate()).padStart(2, '0');
+      const rand = Math.random().toString(36).slice(2, 6).toUpperCase();
+      return `SWL-RQ-${yyyymmdd}-${rand}`;
+    }
+
+    function generateQuotePdf() {
+      if (!currentQuote) return;
+      if (!window.jspdf || !window.jspdf.jsPDF) {
+        alert('PDF generator is still loading — please try again in a moment.');
+        return;
+      }
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({ unit: 'pt', format: 'letter' });
+
+      // Pick the routing the user is currently viewing.
+      let view = currentQuote;
+      if (currentRouteChoice && currentRouteChoice !== 'primary') {
+        const rank = parseInt(currentRouteChoice.slice(4), 10);
+        const alt = (currentQuote.alternates || []).find(a => a.rank === rank);
+        if (alt) view = alt;
+      }
+
+      const quoteId = buildQuoteId();
+      const now = new Date();
+      const dateStr = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+      // Header bar
+      doc.setFillColor(26, 58, 92);
+      doc.rect(0, 0, doc.internal.pageSize.getWidth(), 70, 'F');
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(18);
+      doc.setFont('helvetica', 'bold');
+      doc.text('Steel Wheel Logistics', 40, 32);
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'normal');
+      doc.text('Rail Rate Estimate', 40, 50);
+      doc.setFontSize(9);
+      doc.text('(601) 821-2199  |  steelwheellogistics.com', doc.internal.pageSize.getWidth() - 40, 50, { align: 'right' });
+
+      doc.setTextColor(0, 0, 0);
+      let y = 100;
+
+      // Quote ID + date
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'bold');
+      doc.text(`Quote ID: ${quoteId}`, 40, y);
+      doc.text(`Generated: ${dateStr}`, doc.internal.pageSize.getWidth() - 40, y, { align: 'right' });
+      y += 24;
+
+      // Customer block
+      const custEmail = stripMarkdown(currentLeadEmail || cachedEmail() || '');
+      const custName  = stripMarkdown(cachedName() || '');
+      if (custEmail || custName) {
+        doc.setFont('helvetica', 'bold');
+        doc.text('Prepared For:', 40, y);
+        doc.setFont('helvetica', 'normal');
+        let cx = 130;
+        if (custName) { doc.text(custName, cx, y); y += 14; }
+        if (custEmail) { doc.text(custEmail, custName ? cx : 130, custName ? y : y); y += 14; }
+        y += 6;
+      }
+
+      // Lane summary table
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(12);
+      doc.text('Lane Summary', 40, y);
+      y += 10;
+
+      const od = currentQuote.origin
+        ? stripMarkdown(`${currentQuote.origin.name}, ${currentQuote.origin.state}`) : '';
+      const dd = currentQuote.destination
+        ? stripMarkdown(`${currentQuote.destination.name}, ${currentQuote.destination.state}`) : '';
+      const commodityName = currentQuote.commodity ? stripMarkdown(currentQuote.commodity.name) : '';
+      const carName = currentQuote.car_type ? stripMarkdown(currentQuote.car_type.name) : '';
+      const wt = currentQuote.weight_tons != null ? `${currentQuote.weight_tons} tons/car` : '';
+      const milesShown = view.miles != null ? `${Math.round(view.miles)} mi` : '';
+      const routeLabel = (currentRouteChoice && currentRouteChoice !== 'primary')
+        ? `Alternate ${parseInt(currentRouteChoice.slice(4), 10) - 1}`
+        : 'Suggested (primary)';
+
+      doc.autoTable({
+        startY: y,
+        head: [['Field', 'Value']],
+        body: [
+          ['Origin', od],
+          ['Destination', dd],
+          ['Commodity', commodityName],
+          ['Car Type', carName],
+          ['Weight', wt],
+          ['Distance', milesShown],
+          ['Routing', routeLabel],
+        ],
+        theme: 'grid',
+        headStyles: { fillColor: [74, 144, 217], textColor: 255, fontSize: 10 },
+        styles: { fontSize: 10, cellPadding: 5 },
+        columnStyles: { 0: { cellWidth: 130, fontStyle: 'bold' } },
+        margin: { left: 40, right: 40 },
+      });
+      y = doc.lastAutoTable.finalY + 16;
+
+      // Per-leg breakdown
+      const legs = view.legs || [];
+      if (legs.length) {
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(12);
+        doc.text('Per-Leg Breakdown', 40, y);
+        y += 4;
+        const legBody = legs.map((leg, i) => {
+          const rawSeg = (leg.seg_label) || (legs.length === 1 ? 'Line-haul'
+            : (i === 0 ? 'Starting segment'
+              : (i === legs.length - 1 ? 'Ending segment' : `Middle segment ${i}`)));
+          return [
+            stripMarkdown(rawSeg),
+            stripMarkdown(leg.railroad || ''),
+            leg.miles != null ? `${Math.round(leg.miles)}` : '',
+            fmtMoney(leg.line_haul),
+            fmtMoney(leg.fuel_surcharge),
+            fmtMoney(leg.leg_total),
+          ];
+        });
+        doc.autoTable({
+          startY: y + 6,
+          head: [['Segment', 'Railroad', 'Miles', 'Line-haul', 'Fuel Surcharge', 'Leg Total']],
+          body: legBody,
+          theme: 'grid',
+          headStyles: { fillColor: [74, 144, 217], textColor: 255, fontSize: 10 },
+          styles: { fontSize: 9, cellPadding: 4 },
+          columnStyles: { 2: { halign: 'right' }, 3: { halign: 'right' }, 4: { halign: 'right' }, 5: { halign: 'right' } },
+          margin: { left: 40, right: 40 },
+        });
+        y = doc.lastAutoTable.finalY + 14;
+      }
+
+      // Totals block
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(12);
+      doc.text('Totals', 40, y);
+      y += 4;
+      const totalsBody = [
+        ['Line-haul', fmtMoney(view.line_haul_total)],
+        ['Fuel Surcharge', fmtMoney(view.fuel_surcharge_total)],
+      ];
+      if (view.interchange_count && view.interchange_fee_total) {
+        totalsBody.push([
+          `Interchange Fees (${view.interchange_count} junction${view.interchange_count > 1 ? 's' : ''})`,
+          fmtMoney(view.interchange_fee_total),
+        ]);
+      }
+      totalsBody.push(['Total Estimated Tariff', fmtMoney(view.tariff_total)]);
+      doc.autoTable({
+        startY: y + 6,
+        body: totalsBody,
+        theme: 'plain',
+        styles: { fontSize: 11, cellPadding: 4 },
+        columnStyles: {
+          0: { cellWidth: 360, fontStyle: 'bold' },
+          1: { halign: 'right' },
+        },
+        margin: { left: 40, right: 40 },
+        didParseCell: function(data) {
+          if (data.row.index === totalsBody.length - 1) {
+            data.cell.styles.fillColor = [240, 246, 252];
+            data.cell.styles.fontStyle = 'bold';
+            data.cell.styles.fontSize = 12;
+          }
+        },
+      });
+      y = doc.lastAutoTable.finalY + 18;
+
+      // Alternative routings comparison (if any). Includes the primary
+      // routing as row 1 + each alternate as a subsequent row. The row
+      // matching what the customer is currently viewing (and that the
+      // breakdown above prices) gets a highlighted background so they can
+      // tell which one their main breakdown was for.
+      const alts = Array.isArray(currentQuote.alternates) ? currentQuote.alternates : [];
+      if (alts.length > 0) {
+        doc.setTextColor(0, 0, 0);
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(12);
+        doc.text('Alternative Routings', 40, y);
+        y += 4;
+
+        // Primary row (uses currentQuote totals, not `view` — `view` may
+        // be the alt the user is currently looking at).
+        const primaryCarriers = (currentQuote.legs || [])
+          .map(L => stripMarkdown(L.railroad || ''))
+          .filter(Boolean).join(' → ') || '—';
+        const altRows = [{
+          tag: 'Primary',
+          summary: stripMarkdown(currentQuote.summary_string || primaryCarriers),
+          miles: currentQuote.miles,
+          total: currentQuote.tariff_total,
+          isCurrent: !currentRouteChoice || currentRouteChoice === 'primary',
+        }];
+        for (const a of alts) {
+          const altCarriers = (a.legs || [])
+            .map(L => stripMarkdown(L.railroad || ''))
+            .filter(Boolean).join(' → ') || '—';
+          altRows.push({
+            tag: stripMarkdown(a.label || `Alt ${a.rank ? a.rank - 1 : ''}`).trim() ||
+                 `Alt ${a.rank ? a.rank - 1 : ''}`,
+            summary: stripMarkdown(a.summary_string || altCarriers),
+            miles: a.miles,
+            total: a.tariff_total,
+            isCurrent: currentRouteChoice === `alt-${a.rank}`,
+          });
+        }
+
+        const altBody = altRows.map(r => [
+          r.tag + (r.isCurrent ? '  ✓' : ''),
+          r.summary,
+          r.miles != null ? `${Math.round(r.miles)}` : '—',
+          fmtMoney(r.total),
+        ]);
+
+        doc.autoTable({
+          startY: y + 6,
+          head: [['Routing', 'Carrier Path', 'Miles', 'Total']],
+          body: altBody,
+          theme: 'grid',
+          headStyles: { fillColor: [74, 144, 217], textColor: 255, fontSize: 10 },
+          styles: { fontSize: 9, cellPadding: 4, overflow: 'linebreak' },
+          columnStyles: {
+            0: { cellWidth: 70, fontStyle: 'bold' },
+            2: { halign: 'right', cellWidth: 50 },
+            3: { halign: 'right', cellWidth: 80 },
+          },
+          margin: { left: 40, right: 40 },
+          didParseCell: function(data) {
+            if (data.section === 'body' && altRows[data.row.index] &&
+                altRows[data.row.index].isCurrent) {
+              data.cell.styles.fillColor = [240, 246, 252];
+              data.cell.styles.fontStyle = 'bold';
+            }
+          },
+        });
+        y = doc.lastAutoTable.finalY + 6;
+
+        // Footnote explaining the highlight.
+        doc.setFont('helvetica', 'italic');
+        doc.setFontSize(8);
+        doc.setTextColor(110, 110, 110);
+        doc.text(
+          '✓ marks the routing the breakdown above is priced against. ' +
+          'Other routings show their own all-in totals; full per-leg breakdowns are available in the rate-quote tool.',
+          40, y + 8, { maxWidth: doc.internal.pageSize.getWidth() - 80 });
+        y += 26;
+      }
+
+      // Disclaimer
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(9);
+      doc.setTextColor(80, 80, 80);
+      const disc = stripMarkdown(currentQuote.disclaimer || (
+        'Indicative tariff estimate only. Actual rates depend on the specific ' +
+        'railroad, equipment availability, lane competition, and contract ' +
+        'terms — we do not guarantee rates. Call (601) 821-2199 or contact ' +
+        'us to discuss your lane.'));
+      const discWrap = doc.splitTextToSize(disc, doc.internal.pageSize.getWidth() - 80);
+      doc.text(discWrap, 40, y);
+      y += discWrap.length * 11 + 14;
+
+      // Footer
+      doc.setFontSize(9);
+      doc.setTextColor(40, 40, 40);
+      doc.text(
+        'To discuss your shipment: call (601) 821-2199 or email info@steelwheellogistics.com',
+        40, y);
+      y += 12;
+      doc.setTextColor(120, 120, 120);
+      doc.text('steelwheellogistics.com  |  © 2026 Steel Wheel Logistics', 40, y);
+
+      // Save
+      const filename = `${quoteId}.pdf`;
+      doc.save(filename);
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'rail_rate_pdf_download', {
+          event_category: 'tools',
+          event_label: commodityName,
+          value: Math.round(Number(view.tariff_total) || 0),
+        });
+      }
+    }
+
+    document.getElementById('downloadPdfBtn').addEventListener('click', generateQuotePdf);
+  </script>
+
+</body>
+</html>

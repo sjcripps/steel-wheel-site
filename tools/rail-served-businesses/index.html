@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Searchable directory of rail-served shippers, producers, and industrial sites across North America — filter by commodity, state, and Class I carrier. Steel Wheel Logistics.">
+  <title>Rail-Served Business Directory | Steel Wheel Logistics</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <link rel="canonical" href="https://steelwheellogistics.com/tools/rail-served-businesses">
+  <meta property="og:title" content="Rail-Served Business Directory | Steel Wheel Logistics">
+  <meta property="og:description" content="Find rail-served shippers, producers, and industrial sites across North America — filter by commodity, state, and Class I carrier.">
+  <meta property="og:url" content="https://steelwheellogistics.com/tools/rail-served-businesses">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+
+  <style>
+    .tool-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 48px 20px;
+      text-align: center;
+    }
+    .tool-hero h1 {
+      color: var(--white);
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .tool-hero p {
+      color: var(--steel-grey);
+      font-size: 1.05rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .tool-hero .badge {
+      display: inline-block;
+      background: rgba(74, 144, 217, 0.15);
+      color: var(--steel-blue);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .directory-layout {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 30px 20px 60px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 900px) {
+      .directory-layout { grid-template-columns: 1fr; }
+      .filters-panel {
+        position: static;
+        max-height: none;
+        overflow-y: visible;
+      }
+      .filters-panel.collapsed .filters-body { display: none; }
+    }
+    @media (max-width: 900px) {
+      .filters-toggle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background: var(--navy);
+        color: var(--white);
+        border: 0;
+        border-radius: 6px;
+        padding: 10px 14px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        margin-bottom: 12px;
+      }
+      .filters-toggle .chevron::after { content: "▼"; font-size: 0.7rem; }
+      .filters-panel.collapsed .filters-toggle .chevron::after { content: "▶"; }
+      .filter-checkboxes { max-height: none; }
+      #map { height: 280px; }
+    }
+    @media (min-width: 901px) {
+      .filters-toggle { display: none; }
+    }
+
+    .filters-panel {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 18px;
+      align-self: start;
+      position: sticky;
+      top: 12px;
+      max-height: calc(100vh - 24px);
+      overflow-y: auto;
+    }
+    .filters-panel h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin: 0 0 10px;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .filters-panel input[type="text"],
+    .filters-panel select {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid var(--border-grey);
+      border-radius: 6px;
+      font-size: 0.9rem;
+      box-sizing: border-box;
+      margin-bottom: 14px;
+    }
+    .filter-group {
+      border-top: 1px solid var(--border-grey);
+      padding-top: 12px;
+      margin-bottom: 14px;
+    }
+    .filter-group h3 { margin-bottom: 8px; }
+    .filter-checkboxes {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      max-height: 260px;
+      overflow-y: auto;
+    }
+    .filter-checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+    .filter-checkbox-row input { margin: 0; cursor: pointer; }
+    .filters-reset {
+      width: 100%;
+      padding: 8px;
+      background: var(--steel-grey);
+      color: var(--white);
+      border: 0;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .filters-reset:hover { background: var(--navy); }
+
+    .results-panel { min-width: 0; }
+    .results-stats {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+    }
+    .results-stats .count {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 1.05rem;
+    }
+
+    .help-banner {
+      background: rgba(74, 144, 217, 0.08);
+      border: 1px solid rgba(74, 144, 217, 0.25);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .help-banner .help-text {
+      font-size: 0.92rem;
+      color: var(--text-dark);
+      line-height: 1.45;
+    }
+    .help-banner .help-text strong { color: var(--navy); }
+    .help-banner .help-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .help-banner .help-btn {
+      display: inline-block;
+      padding: 8px 14px;
+      background: var(--steel-blue);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+    .help-banner .help-btn:hover { opacity: 0.9; }
+    .help-banner .help-btn-tel {
+      background: var(--white);
+      color: var(--navy);
+      border: 1px solid var(--border-grey);
+    }
+
+    #map {
+      width: 100%;
+      height: 360px;
+      border-radius: 12px;
+      border: 1px solid var(--border-grey);
+      margin-bottom: 16px;
+      background: #f4f6fa;
+    }
+
+    .results-table-wrap {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    .results-table thead {
+      background: var(--navy);
+      color: var(--white);
+      text-align: left;
+    }
+    .results-table th {
+      padding: 10px 12px;
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .results-table th:hover { background: var(--navy-light); }
+    .results-table th .sort-arrow { opacity: 0.55; margin-left: 4px; }
+    .results-table th.sorted-asc .sort-arrow,
+    .results-table th.sorted-desc .sort-arrow { opacity: 1; }
+    .results-table tbody tr {
+      border-top: 1px solid var(--border-grey);
+      transition: background 0.1s;
+    }
+    .results-table tbody tr:hover { background: #f7faff; }
+    .results-table tbody tr.row-selected { background: #fff3e0; }
+    .results-table td {
+      padding: 10px 12px;
+      vertical-align: top;
+    }
+    .results-table td.col-loc { white-space: nowrap; }
+    .results-table td.col-loc strong { color: var(--navy); }
+    .results-table td.col-loc .city-state {
+      display: block;
+      color: var(--text-grey);
+      font-size: 0.8rem;
+      margin-top: 2px;
+    }
+    .results-table .pill {
+      display: inline-block;
+      background: rgba(74, 144, 217, 0.13);
+      color: var(--steel-blue);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 12px;
+      white-space: nowrap;
+    }
+    .results-table .pill.pill-classi {
+      background: rgba(40, 167, 69, 0.12);
+      color: #1e7e34;
+    }
+    .results-table .pill.pill-conf-high {
+      background: rgba(255, 165, 0, 0.18);
+      color: #b35a00;
+    }
+    .results-table td.col-actions a {
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 0.78rem;
+      border-radius: 14px;
+      text-decoration: none;
+      margin-right: 4px;
+      font-weight: 600;
+    }
+    .results-table td.col-actions a.act-rate {
+      background: var(--steel-blue);
+      color: var(--white);
+    }
+    .results-table td.col-actions a.act-web {
+      background: rgba(0, 0, 0, 0.06);
+      color: var(--navy);
+    }
+    .results-table td.col-actions a:hover { opacity: 0.85; }
+    .empty-row {
+      text-align: center;
+      padding: 30px 12px !important;
+      color: var(--text-grey);
+      font-style: italic;
+    }
+    .pagination {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      border-top: 1px solid var(--border-grey);
+      font-size: 0.85rem;
+      color: var(--text-grey);
+    }
+    .pagination button {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 6px;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+    .pagination button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .pagination button:not(:disabled):hover { border-color: var(--steel-blue); color: var(--steel-blue); }
+
+    .cta-row {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .cta-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: var(--steel-blue);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .cta-btn-secondary {
+      background: var(--white);
+      color: var(--navy);
+      border: 1px solid var(--border-grey);
+    }
+
+    .disclaimer {
+      background: rgba(74, 144, 217, 0.08);
+      border-left: 3px solid var(--steel-blue);
+      padding: 12px 16px;
+      margin-top: 24px;
+      font-size: 0.82rem;
+      color: var(--text-dark);
+      line-height: 1.5;
+      border-radius: 0 6px 6px 0;
+    }
+
+    /* Email-gate modal — mirrors transload tool styling */
+    .email-gate-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 23, 42, 0.72);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+    .email-gate-overlay.visible { display: flex; }
+    .email-gate-modal {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 28px 28px 22px;
+      max-width: 460px;
+      width: 100%;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+    }
+    .email-gate-modal h3 {
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin: 0 0 8px;
+    }
+    .email-gate-modal p.lead {
+      color: var(--text-dark);
+      font-size: 0.95rem;
+      margin: 0 0 18px;
+      line-height: 1.45;
+    }
+    .email-gate-modal label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin: 10px 0 4px;
+    }
+    .email-gate-modal input[type="email"],
+    .email-gate-modal input[type="text"],
+    .email-gate-modal input[type="tel"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    .email-gate-modal input[type="email"]:focus,
+    .email-gate-modal input[type="text"]:focus,
+    .email-gate-modal input[type="tel"]:focus {
+      outline: none;
+      border-color: var(--steel-blue);
+    }
+    .email-gate-modal .gate-help {
+      font-size: 0.78rem;
+      color: var(--text-grey);
+      margin: 4px 0 0;
+    }
+    .email-gate-modal .consent-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: var(--text-dark);
+      align-items: flex-start;
+    }
+    .email-gate-modal .consent-row input { margin-top: 3px; }
+    .email-gate-modal .gate-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .email-gate-modal .gate-submit {
+      flex: 1;
+      padding: 11px;
+      background: var(--steel-blue);
+      color: var(--white);
+      border: 0;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    .email-gate-modal .gate-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .email-gate-modal .gate-error {
+      color: #d32f2f;
+      font-size: 0.85rem;
+      margin: 8px 0 0;
+      min-height: 1.2em;
+    }
+    .directory-content { display: none; }
+    .directory-content.unlocked { display: block; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog">Blog</a>
+        <a href="/courses">Courses</a>
+        <a href="/tools" class="active">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="tool-hero">
+    <span class="badge">Free Tool · Rail-Served Shippers</span>
+    <h1>Rail-Served Business Directory</h1>
+    <p>Find rail-served shippers, producers, and industrial sites by commodity and region. Estimates available — contact us at (601) 821-2199 for verified shipping options.</p>
+  </section>
+
+  <div class="directory-content" id="directoryContent">
+    <div class="directory-layout">
+      <aside class="filters-panel collapsed" id="filtersPanel">
+        <button type="button" class="filters-toggle" id="filtersToggle" aria-expanded="false">
+          <span>Filters &amp; Search</span>
+          <span class="chevron"></span>
+        </button>
+        <div class="filters-body">
+          <h3>Search</h3>
+          <input type="text" id="searchBox" placeholder="Company or city...">
+
+          <div class="filter-group">
+            <h3>State / Province</h3>
+            <select id="stateFilter">
+              <option value="">All states</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <h3>Nearest Class I</h3>
+            <select id="classiFilter">
+              <option value="">All carriers</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <h3>Commodity <span style="font-weight:400;text-transform:none;font-size:0.78rem;color:var(--text-grey)">(any)</span></h3>
+            <div class="filter-checkboxes" id="commodityFilters"></div>
+          </div>
+
+          <button type="button" class="filters-reset" id="resetFilters">Reset filters</button>
+        </div>
+      </aside>
+
+      <main class="results-panel">
+        <div class="results-stats">
+          <div>Showing <span class="count" id="resultsCount">0</span> of <span id="totalCount">0</span> rail-served sites</div>
+          <div id="filtersSummary" style="color:var(--text-grey);font-size:0.85rem;"></div>
+        </div>
+
+        <div class="help-banner">
+          <div class="help-text">
+            <strong>Found a site you want to ship to or from?</strong> Get an indicative rail rate in seconds — or call us to discuss your specific shipment.
+          </div>
+          <div class="help-actions">
+            <a href="tel:+16018212199" class="help-btn help-btn-tel">Call (601) 821-2199</a>
+            <a href="/tools/rail-rate-quote" class="help-btn">Get a Rail Rate</a>
+          </div>
+        </div>
+
+        <div id="map" aria-label="Map of rail-served businesses"></div>
+
+        <div class="results-table-wrap">
+          <table class="results-table" id="resultsTable">
+            <thead>
+              <tr>
+                <th data-sort="name">Company / Site <span class="sort-arrow">▼</span></th>
+                <th data-sort="city">City, State <span class="sort-arrow">▼</span></th>
+                <th data-sort="commodity">Commodity <span class="sort-arrow">▼</span></th>
+                <th>Class I</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="resultsBody"></tbody>
+          </table>
+          <div class="pagination">
+            <div id="pageInfo">Page 1 of 1</div>
+            <div>
+              <button type="button" id="prevPage" disabled>Previous</button>
+              <button type="button" id="nextPage" disabled>Next</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="disclaimer">
+          Listings compiled from SWL's internal commodity-flow map, transload directory, and lane history. Sites change ownership, capabilities, and rail-service status — confirm directly with the operator before committing freight. SWL provides indicative rail-rate estimates only; we do not guarantee rates. Steel Wheel Logistics is a rail logistics provider; we don't operate the listed facilities.
+        </div>
+
+        <div class="cta-row">
+          <a href="/tools/rail-rate-quote" class="cta-btn">Get an Indicative Rail Rate</a>
+          <a href="/contact?subject=Rail-served+business+question" class="cta-btn cta-btn-secondary">Contact Us</a>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Email-gate modal -->
+  <div class="email-gate-overlay visible" id="emailGateOverlay" role="dialog" aria-modal="true" aria-labelledby="emailGateTitle">
+    <div class="email-gate-modal">
+      <h3 id="emailGateTitle">Free access — one quick step</h3>
+      <p class="lead">Searchable directory of rail-served shippers, producers, and industrial sites. We'll only use your email to follow up if you ask us to help with a specific shipment.</p>
+      <form id="emailGateForm" novalidate>
+        <label for="leadEmail">Work email</label>
+        <input type="email" id="leadEmail" name="email" required autocomplete="email" placeholder="you@company.com">
+        <label for="leadName">Name <span style="font-weight:400;color:#888">(optional)</span></label>
+        <input type="text" id="leadName" name="name" autocomplete="name" placeholder="Your name" maxlength="200">
+        <label for="leadPhone">Phone <span style="font-weight:400;color:#888">(optional)</span></label>
+        <input type="tel" id="leadPhone" name="phone" autocomplete="tel" placeholder="(555) 555-5555" maxlength="60">
+        <label for="leadCompany">Company (optional)</label>
+        <input type="text" id="leadCompany" name="company" autocomplete="organization" placeholder="ACME Manufacturing">
+        <div class="gate-help">No newsletter spam. No data sharing. Just rail help when you need it.</div>
+        <div class="gate-error" id="leadEmailError"></div>
+        <label class="consent-row">
+          <input type="checkbox" id="leadConsent" checked>
+          <span>I agree to the use of my email for follow-up about rail shipping questions.</span>
+        </label>
+        <div class="gate-actions">
+          <button type="submit" class="gate-submit" id="leadSubmit">Unlock Directory</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+  <script>
+    const EMAIL_KEY = 'swl_rsb_lead_email';
+    const TOOL_SLUG = 'rail-served-businesses';
+    const FORMAT_RE = /^[A-Za-z0-9._%+\-]+@[A-Za-z0-9](?:[A-Za-z0-9\-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9\-]{0,61}[A-Za-z0-9])?)+$/;
+    const PAGE_SIZE = 50;
+
+    // ── Shared SWL email-unlock (cross-tool, 90-day TTL) ──
+    const SWL_EMAIL_KEY = 'swl_email';
+    const SWL_TS_KEY = 'swl_email_unlocked_at';
+    const SWL_TTL_MS = 90 * 86400 * 1000;
+    function swlReadSharedEmail() {
+      try {
+        const e = localStorage.getItem(SWL_EMAIL_KEY) || '';
+        const ts = localStorage.getItem(SWL_TS_KEY) || '';
+        if (!e || !ts) return '';
+        const t = Date.parse(ts);
+        if (!isFinite(t)) return '';
+        if (Date.now() - t > SWL_TTL_MS) return '';
+        return e;
+      } catch (_) { return ''; }
+    }
+    function swlWriteSharedEmail(email) {
+      try {
+        localStorage.setItem(SWL_EMAIL_KEY, email);
+        localStorage.setItem(SWL_TS_KEY, new Date().toISOString());
+      } catch (_) {}
+    }
+    function swlLeadFiredKey(slug) { return 'swl_lead_fired_' + slug; }
+    function swlIsLeadFired(slug) {
+      try { return sessionStorage.getItem(swlLeadFiredKey(slug)) === '1'; } catch (_) { return false; }
+    }
+    function swlMarkLeadFired(slug) {
+      try { sessionStorage.setItem(swlLeadFiredKey(slug), '1'); } catch (_) {}
+    }
+
+    let allBusinesses = [];
+    let commodityOptions = [];
+    let classiOptions = [];
+    let filtered = [];
+    let currentPage = 1;
+    let sortKey = 'name';
+    let sortDir = 'asc';
+    let map = null;
+    let markerCluster = null;
+    let markerByIndex = new Map();
+    let selectedIndex = -1;
+
+    // ─────────────────────── Email gate ───────────────────────
+
+    function cachedEmail() {
+      const shared = swlReadSharedEmail();
+      if (shared) return shared;
+      try { return sessionStorage.getItem(EMAIL_KEY) || ''; } catch (_) { return ''; }
+    }
+    function cacheEmail(email) {
+      swlWriteSharedEmail(email);
+      try { sessionStorage.setItem(EMAIL_KEY, email); } catch (_) {}
+    }
+    async function silentFireRsbLead() {
+      if (swlIsLeadFired(TOOL_SLUG)) return;
+      const email = swlReadSharedEmail();
+      if (!email) return;
+      swlMarkLeadFired(TOOL_SLUG);
+      try {
+        await fetch('/api/rail-served-business-lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, name: '', company: '', phone: '' }),
+        });
+      } catch (_) { /* best-effort */ }
+    }
+    function hideGate() {
+      document.getElementById('emailGateOverlay').classList.remove('visible');
+      document.getElementById('directoryContent').classList.add('unlocked');
+      setTimeout(() => { if (map) map.invalidateSize(); }, 60);
+    }
+    function showError(msg) {
+      document.getElementById('leadEmailError').textContent = msg || '';
+    }
+
+    document.getElementById('emailGateForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('leadEmail').value.trim().toLowerCase();
+      const company = document.getElementById('leadCompany').value.trim();
+      const name = (document.getElementById('leadName').value || '').trim().slice(0, 200);
+      const phone = (document.getElementById('leadPhone').value || '').trim().slice(0, 60);
+      const consent = document.getElementById('leadConsent').checked;
+      showError('');
+
+      if (!email || email.length > 254 || !FORMAT_RE.test(email)) {
+        showError('Please enter a valid email address.');
+        return;
+      }
+      if (!consent) {
+        showError('Please agree to receive follow-up about your question.');
+        return;
+      }
+      const submitBtn = document.getElementById('leadSubmit');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Unlocking...';
+
+      try {
+        const res = await fetch('/api/rail-served-business-lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, company, name, phone }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          showError(data.error || 'Could not save your request — please try again.');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Unlock Directory';
+          return;
+        }
+        cacheEmail(email);
+        swlMarkLeadFired(TOOL_SLUG);
+        hideGate();
+      } catch (err) {
+        cacheEmail(email);
+        swlMarkLeadFired(TOOL_SLUG);
+        hideGate();
+      }
+    });
+
+    if (cachedEmail()) {
+      hideGate();
+    } else {
+      document.getElementById('leadEmail').focus();
+    }
+
+    // ─────────────────────── Data load ───────────────────────
+
+    async function loadData() {
+      const res = await fetch('/tools/rail-served-businesses/data/businesses.json');
+      const data = await res.json();
+      allBusinesses = data.businesses || [];
+      commodityOptions = data.commodity_options || [];
+      classiOptions = data.classi_options || [];
+      buildFilterUI();
+      buildStateOptions();
+      buildClassiOptions();
+      initMap();
+      applyFilters();
+    }
+
+    function buildStateOptions() {
+      const states = Array.from(new Set(allBusinesses.map(b => b.state).filter(Boolean))).sort();
+      const sel = document.getElementById('stateFilter');
+      states.forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s;
+        opt.textContent = s;
+        sel.appendChild(opt);
+      });
+    }
+
+    function buildClassiOptions() {
+      const sel = document.getElementById('classiFilter');
+      classiOptions.forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c;
+        opt.textContent = c;
+        sel.appendChild(opt);
+      });
+    }
+
+    function buildFilterUI() {
+      const cBox = document.getElementById('commodityFilters');
+      commodityOptions.forEach(c => {
+        const id = 'cm-' + c.replace(/\W+/g, '');
+        const row = document.createElement('label');
+        row.className = 'filter-checkbox-row';
+        row.innerHTML = `<input type="checkbox" data-commodity="${c}" id="${id}"><span>${c}</span>`;
+        cBox.appendChild(row);
+      });
+      document.querySelectorAll('#commodityFilters input').forEach(el => {
+        el.addEventListener('change', applyFilters);
+      });
+      document.getElementById('searchBox').addEventListener('input', debounce(applyFilters, 120));
+      document.getElementById('stateFilter').addEventListener('change', applyFilters);
+      document.getElementById('classiFilter').addEventListener('change', applyFilters);
+      document.getElementById('resetFilters').addEventListener('click', () => {
+        document.getElementById('searchBox').value = '';
+        document.getElementById('stateFilter').value = '';
+        document.getElementById('classiFilter').value = '';
+        document.querySelectorAll('#commodityFilters input').forEach(el => { el.checked = false; });
+        applyFilters();
+      });
+      const fp = document.getElementById('filtersPanel');
+      const ft = document.getElementById('filtersToggle');
+      if (ft && fp) {
+        ft.addEventListener('click', () => {
+          const isOpen = !fp.classList.toggle('collapsed');
+          ft.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+      }
+    }
+
+    function debounce(fn, wait) {
+      let t;
+      return (...args) => {
+        clearTimeout(t);
+        t = setTimeout(() => fn(...args), wait);
+      };
+    }
+
+    // ─────────────────────── Filtering ───────────────────────
+
+    function activeCommodities() {
+      return Array.from(document.querySelectorAll('#commodityFilters input:checked'))
+        .map(el => el.dataset.commodity);
+    }
+
+    function applyFilters() {
+      const q = document.getElementById('searchBox').value.trim().toLowerCase();
+      const state = document.getElementById('stateFilter').value;
+      const classi = document.getElementById('classiFilter').value;
+      const cms = activeCommodities();
+      // Cross-tool funnel signal: if user is meaningfully filtering, fire
+      // one lead per session for the engagement record.
+      if (q || state || classi || cms.length) silentFireRsbLead();
+
+      filtered = allBusinesses.filter(b => {
+        if (state && b.state !== state) return false;
+        if (classi && b.nearest_class_i !== classi) return false;
+        if (q) {
+          const hay = (b.company_name + ' ' + b.city).toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        if (cms.length && !cms.includes(b.primary_commodity)) return false;
+        return true;
+      });
+
+      currentPage = 1;
+      renderResults();
+      renderMapMarkers();
+      renderFiltersSummary(state, classi, cms, q);
+    }
+
+    function renderFiltersSummary(state, classi, cms, q) {
+      const parts = [];
+      if (q) parts.push(`"${q}"`);
+      if (state) parts.push(state);
+      if (classi) parts.push(classi);
+      if (cms.length) parts.push(`${cms.length} commodit${cms.length === 1 ? 'y' : 'ies'}`);
+      document.getElementById('filtersSummary').textContent = parts.length ? `Filters: ${parts.join(' · ')}` : '';
+    }
+
+    // ─────────────────────── Sorting + Table render ───────────────────────
+
+    document.querySelectorAll('#resultsTable th[data-sort]').forEach(th => {
+      th.addEventListener('click', () => {
+        const key = th.dataset.sort;
+        if (sortKey === key) {
+          sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+        } else {
+          sortKey = key;
+          sortDir = 'asc';
+        }
+        document.querySelectorAll('#resultsTable th').forEach(x => {
+          x.classList.remove('sorted-asc', 'sorted-desc');
+        });
+        th.classList.add(sortDir === 'asc' ? 'sorted-asc' : 'sorted-desc');
+        renderResults();
+      });
+    });
+
+    function renderResults() {
+      const tbody = document.getElementById('resultsBody');
+      tbody.innerHTML = '';
+      document.getElementById('resultsCount').textContent = filtered.length.toLocaleString();
+      document.getElementById('totalCount').textContent = allBusinesses.length.toLocaleString();
+
+      if (!filtered.length) {
+        tbody.innerHTML = `<tr><td colspan="5" class="empty-row">No rail-served sites match the current filters. Try removing some.</td></tr>`;
+        document.getElementById('pageInfo').textContent = 'Page 0 of 0';
+        document.getElementById('prevPage').disabled = true;
+        document.getElementById('nextPage').disabled = true;
+        return;
+      }
+
+      const sorted = [...filtered].sort((a, b) => {
+        let av, bv;
+        if (sortKey === 'city') {
+          av = `${a.state} ${a.city}`; bv = `${b.state} ${b.city}`;
+        } else if (sortKey === 'commodity') {
+          av = a.primary_commodity || ''; bv = b.primary_commodity || '';
+        } else {
+          av = a.company_name; bv = b.company_name;
+        }
+        return sortDir === 'asc' ? av.localeCompare(bv) : bv.localeCompare(av);
+      });
+
+      const totalPages = Math.max(1, Math.ceil(sorted.length / PAGE_SIZE));
+      if (currentPage > totalPages) currentPage = totalPages;
+      const start = (currentPage - 1) * PAGE_SIZE;
+      const slice = sorted.slice(start, start + PAGE_SIZE);
+
+      const escape = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+      slice.forEach((b) => {
+        const realIdx = allBusinesses.indexOf(b);
+        const tr = document.createElement('tr');
+        tr.dataset.idx = realIdx;
+        if (realIdx === selectedIndex) tr.classList.add('row-selected');
+
+        const commodityPill = b.primary_commodity
+          ? `<span class="pill">${escape(b.primary_commodity)}</span>`
+          : '<span style="color:var(--text-grey);font-size:0.8rem;">—</span>';
+        const classiPill = b.nearest_class_i
+          ? `<span class="pill pill-classi">${escape(b.nearest_class_i)}</span>`
+          : '<span style="color:var(--text-grey);font-size:0.8rem;">—</span>';
+
+        const rateUrl = `/tools/rail-rate-quote/?origin_city=${encodeURIComponent(b.city || '')}&origin_state=${encodeURIComponent(b.state || '')}`;
+        const rateBtn = `<a href="${rateUrl}" class="act-rate" title="Get a rail rate from this origin">Get a rate</a>`;
+        const webBtn = b.website
+          ? `<a href="${escape(b.website)}" target="_blank" rel="noopener" class="act-web">Website</a>`
+          : '';
+
+        tr.innerHTML = `
+          <td class="col-loc"><strong>${escape(b.company_name)}</strong></td>
+          <td class="col-loc">${escape(b.city || '')}<span class="city-state">${escape(b.state || '')}</span></td>
+          <td>${commodityPill}</td>
+          <td>${classiPill}</td>
+          <td class="col-actions">${rateBtn}${webBtn}</td>
+        `;
+        tr.addEventListener('click', () => selectBusiness(realIdx));
+        tbody.appendChild(tr);
+      });
+
+      document.getElementById('pageInfo').textContent =
+        `Page ${currentPage} of ${totalPages} — ${start + 1}–${Math.min(start + PAGE_SIZE, sorted.length)} of ${sorted.length}`;
+      document.getElementById('prevPage').disabled = currentPage <= 1;
+      document.getElementById('nextPage').disabled = currentPage >= totalPages;
+    }
+
+    document.getElementById('prevPage').addEventListener('click', () => {
+      if (currentPage > 1) { currentPage--; renderResults(); }
+    });
+    document.getElementById('nextPage').addEventListener('click', () => {
+      currentPage++; renderResults();
+    });
+
+    // ─────────────────────── Map ───────────────────────
+
+    function initMap() {
+      map = L.map('map', { preferCanvas: true }).setView([39.5, -98.0], 4);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      }).addTo(map);
+      markerCluster = L.markerClusterGroup({
+        chunkedLoading: true,
+        spiderfyOnMaxZoom: true,
+      });
+      map.addLayer(markerCluster);
+    }
+
+    function renderMapMarkers() {
+      if (!markerCluster) return;
+      markerCluster.clearLayers();
+      markerByIndex = new Map();
+
+      filtered.forEach(b => {
+        if (typeof b.lat !== 'number' || typeof b.lon !== 'number') return;
+        const realIdx = allBusinesses.indexOf(b);
+        const marker = L.marker([b.lat, b.lon]);
+        const rateUrl = `/tools/rail-rate-quote/?origin_city=${encodeURIComponent(b.city || '')}&origin_state=${encodeURIComponent(b.state || '')}`;
+        const popup = `
+          <strong>${escapeAttr(b.company_name)}</strong><br>
+          ${escapeAttr(b.city || '')}, ${escapeAttr(b.state || '')}<br>
+          ${b.primary_commodity ? '<em>' + escapeAttr(b.primary_commodity) + '</em>' : ''}
+          ${b.nearest_class_i ? ' · ' + escapeAttr(b.nearest_class_i) : ''}
+          <br>
+          <a href="${escapeAttr(rateUrl)}">Get a rail rate from here &rarr;</a>
+        `;
+        marker.bindPopup(popup);
+        marker.on('click', () => selectBusiness(realIdx));
+        markerCluster.addLayer(marker);
+        markerByIndex.set(realIdx, marker);
+      });
+    }
+
+    function escapeAttr(s) {
+      return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+
+    function selectBusiness(idx) {
+      selectedIndex = idx;
+      // Engagement signal: clicked row or marker.
+      silentFireRsbLead();
+      const m = markerByIndex.get(idx);
+      if (m) {
+        markerCluster.zoomToShowLayer(m, () => m.openPopup());
+      }
+      document.querySelectorAll('#resultsBody tr').forEach(tr => tr.classList.remove('row-selected'));
+      const tr = document.querySelector(`#resultsBody tr[data-idx="${idx}"]`);
+      if (tr) {
+        tr.classList.add('row-selected');
+        tr.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    // Kick off
+    loadData().catch(err => {
+      console.error('Failed to load directory:', err);
+      document.getElementById('resultsBody').innerHTML =
+        '<tr><td colspan="5" class="empty-row">Could not load directory data. Please refresh the page.</td></tr>';
+    });
+  </script>
+</body>
+</html>

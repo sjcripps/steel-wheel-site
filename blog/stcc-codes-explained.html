@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="STCC codes explained for rail shippers. What Standard Transportation Commodity Codes are, how the 7 digits decode, and how to plug them into a rail rate estimator and rail-vs-truck calculator before you commit to a code on the BOL.">
+  <meta name="keywords" content="STCC codes explained, Standard Transportation Commodity Code, rail freight commodity codes, STCC code lookup, rail shipping classification, freight commodity codes, rail rate estimator, rail vs truck calculator">
+  <link rel="canonical" href="https://steelwheellogistics.com/blog/stcc-codes-explained">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <!-- Open Graph -->
+  <meta property="og:title" content="STCC Codes Explained: A Shipper's Quick Reference">
+  <meta property="og:description" content="STCC codes explained for rail shippers. Learn what Standard Transportation Commodity Codes are, how they work, and why getting them right affects your rates.">
+  <meta property="og:url" content="https://steelwheellogistics.com/blog/stcc-codes-explained">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="STCC Codes Explained: A Shipper's Quick Reference">
+  <meta name="twitter:description" content="STCC codes explained for rail shippers. Learn what Standard Transportation Commodity Codes are, how they work, and why getting them right affects your rates.">
+  <meta name="twitter:image" content="https://steelwheellogistics.com/images/logo-192.png">
+  <title>STCC Codes Explained: A Shipper's Quick Reference | Steel Wheel Logistics</title>
+  <link rel="stylesheet" href="/style.css?v=5">
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "STCC Codes Explained: A Shipper's Quick Reference",
+    "description": "STCC codes explained for rail shippers. Learn what Standard Transportation Commodity Codes are, how they work, and why getting them right affects your rates.",
+    "datePublished": "2026-04-11",
+    "dateModified": "2026-04-11",
+    "author": {
+      "@type": "Organization",
+      "name": "Steel Wheel Logistics"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Steel Wheel Logistics",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://steelwheellogistics.com/images/logo-192.png"
+      }
+    },
+    "url": "https://steelwheellogistics.com/blog/stcc-codes-explained",
+    "image": [
+      "https://steelwheellogistics.com/images/logo-192.png"
+    ],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://steelwheellogistics.com/blog/stcc-codes-explained"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is an STCC code in rail freight?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An STCC (Standard Transportation Commodity Code) is a 7-digit number used by railroads to classify every commodity shipped by rail. It determines which tariff rates apply, what equipment is required, and whether special handling rules are in effect."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I find the STCC code for my product?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start with your railroad's tariff publications or ask your rail logistics provider. The AAR's STCC directory is the official reference. You can also search by commodity description in railroad tariff databases. Your product's composition, form, and packaging all affect which code applies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if I use the wrong STCC code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Using the wrong STCC code can result in rate corrections (usually higher), reclassification penalties, rejected shipments, or compliance violations if hazmat codes are involved. Railroads audit STCC codes and will back-bill the difference if they find a mismatch."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between STCC and NMFC codes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "STCC codes are used exclusively for rail freight classification, while NMFC (National Motor Freight Classification) codes are used for trucking. They serve similar purposes — classifying commodities for pricing — but use different numbering systems and are maintained by different organizations (AAR vs NMFTA)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do STCC codes affect rail freight rates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. STCC codes are one of the primary factors that determine your rail freight rate. Each code maps to a tariff rate group, and different commodities carry different rate structures based on value, density, handling requirements, and competitive market factors."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RSWDYHVY7Z');
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog" class="active">Blog</a>
+        <a href="/courses">Courses</a>
+        <a href="/tools">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Blog Hero -->
+  <section class="blog-hero">
+    <div class="blog-breadcrumb">
+      <a href="/blog">Blog</a><span class="separator">/</span><span>Operations</span>
+    </div>
+    <h1>STCC Codes Explained: A Shipper's Quick Reference</h1>
+    <div class="blog-hero-meta">
+      <span>April 11, 2026</span>
+      <span class="dot">&middot;</span>
+      <span>10 min read</span>
+      <span class="dot">&middot;</span>
+      <span class="blog-tag">Operations</span>
+    </div>
+  </section>
+
+  <article class="blog-post">
+    <div class="blog-post-content">
+
+      <div class="blog-highlight">
+        <strong>Key fact:</strong> Every rail shipment in North America is classified by a 7-digit STCC code. Using the wrong one can mean overpaying on rates, triggering compliance issues, or having your shipment rejected at origin.
+      </div>
+
+      <p class="blog-lead">If you've ever looked at a rail freight bill of lading, you've seen a 7-digit number next to your commodity description. That's the STCC code — Standard Transportation Commodity Code — and it's one of the most important numbers in rail shipping. It tells the railroad what you're shipping, determines which rate applies, dictates equipment requirements, and flags whether special handling rules kick in. Most shippers never think about it until something goes wrong: a rate correction shows up on their invoice, a car gets held at origin, or a hazmat shipment gets rejected because the code doesn't match the placard. This guide breaks down how STCC codes work, how they're structured, and how to make sure you're using the right one.</p>
+
+      <nav class="blog-toc">
+        <div class="blog-toc-title">In This Guide</div>
+        <ol>
+          <li><a href="#what-are-stcc-codes">What Are STCC Codes?</a></li>
+          <li><a href="#how-stcc-codes-are-structured">How STCC Codes Are Structured</a></li>
+          <li><a href="#why-stcc-codes-matter">Why STCC Codes Matter to Shippers</a></li>
+          <li><a href="#common-stcc-codes">Common STCC Codes for Rail Commodities</a></li>
+          <li><a href="#hazmat-stcc-codes">Hazmat and the 49-Series STCC Codes</a></li>
+          <li><a href="#stcc-vs-nmfc">STCC vs NMFC: Rail Codes vs Trucking Codes</a></li>
+          <li><a href="#finding-your-stcc-code">How to Find the Right STCC Code</a></li>
+          <li><a href="#common-stcc-mistakes">Common STCC Mistakes and How to Avoid Them</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="what-are-stcc-codes">What Are STCC Codes?</h2>
+
+      <p>STCC stands for Standard Transportation Commodity Code. It's a 7-digit classification system maintained by the Association of American Railroads (AAR) that assigns a unique code to every commodity that moves by rail in North America. Think of it as the railroad's universal product catalog — every ton of coal, every carload of lumber, every tank car of ethanol has a corresponding STCC code that identifies exactly what it is.</p>
+
+      <p>The system was developed decades ago to standardize how railroads classify freight. Before STCC codes, each railroad had its own commodity descriptions and rate schedules, which made pricing inconsistent and billing disputes constant. The STCC system gave the industry a common language: a 7-digit number that means the same thing whether you're shipping on BNSF, Union Pacific, CSX, or Norfolk Southern.</p>
+
+      <p>STCC codes appear on virtually every rail shipping document you'll encounter. They show up on the bill of lading, the waybill, the freight bill, tariff publications, and rate quotes. If you're <a href="/blog/first-time-shipping-by-rail">shipping by rail for the first time</a>, you'll need to know your STCC code before you can get an accurate rate quote or book a car.</p>
+
+      <h2 id="how-stcc-codes-are-structured">How STCC Codes Are Structured</h2>
+
+      <p>An STCC code is a 7-digit number, and the digits aren't random. Each segment narrows the classification from broad category down to specific product. Understanding this hierarchy helps you verify you're using the right code and troubleshoot when something looks off.</p>
+
+      <h3>The Digit Breakdown</h3>
+
+      <p>Here's how the 7 digits break down, using crushed stone (STCC 1411210) as an example:</p>
+
+      <ul>
+        <li><strong>First 2 digits (14):</strong> Major commodity group — "Nonmetallic Minerals"</li>
+        <li><strong>Digits 3-4 (11):</strong> Subgroup — "Crushed and Broken Stone"</li>
+        <li><strong>Digits 5-7 (210):</strong> Specific commodity — "Crushed Stone, NEC (not elsewhere classified)"</li>
+      </ul>
+
+      <p>The structure works like a tree. The first two digits place you in a broad category (there are roughly 40+ major commodity groups). Each subsequent pair of digits gets more specific. By the time you reach all seven digits, you've identified the exact product.</p>
+
+      <h3>Major Commodity Groups</h3>
+
+      <p>The first two digits tell you the general category. Some of the most common groups rail shippers encounter:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>First 2 Digits</th>
+            <th>Commodity Group</th>
+            <th>Examples</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td>Farm Products</td>
+            <td>Wheat, corn, soybeans</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Metallic Ores</td>
+            <td>Iron ore, copper ore</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Coal</td>
+            <td>Bituminous, anthracite, lignite</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Nonmetallic Minerals</td>
+            <td>Sand, gravel, crushed stone</td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td>Food &amp; Kindred Products</td>
+            <td>Processed foods, sugar, beverages</td>
+          </tr>
+          <tr>
+            <td>24</td>
+            <td>Lumber &amp; Wood Products</td>
+            <td>Lumber, plywood, wood chips</td>
+          </tr>
+          <tr>
+            <td>28</td>
+            <td>Chemicals</td>
+            <td>Fertilizers, industrial chemicals, plastics</td>
+          </tr>
+          <tr>
+            <td>29</td>
+            <td>Petroleum &amp; Coal Products</td>
+            <td>Crude oil, diesel fuel, asphalt</td>
+          </tr>
+          <tr>
+            <td>32</td>
+            <td>Clay, Concrete, Glass</td>
+            <td>Cement, bricks, glass products</td>
+          </tr>
+          <tr>
+            <td>33</td>
+            <td>Primary Metals</td>
+            <td>Steel, aluminum, copper</td>
+          </tr>
+          <tr>
+            <td>40</td>
+            <td>Waste &amp; Scrap</td>
+            <td>Scrap metal, recyclables</td>
+          </tr>
+          <tr>
+            <td>46</td>
+            <td>Miscellaneous Mixed Shipments</td>
+            <td>Multimodal container freight</td>
+          </tr>
+          <tr>
+            <td>49</td>
+            <td>Hazardous Materials</td>
+            <td>Hazmat-classified commodities</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Notice that group 49 is special — it's reserved entirely for hazardous materials, which we'll cover in detail below.</p>
+
+      <h2 id="why-stcc-codes-matter">Why STCC Codes Matter to Shippers</h2>
+
+      <p>STCC codes aren't just administrative paperwork. They directly affect four things that hit your bottom line: rates, equipment, handling, and compliance.</p>
+
+      <h3>Rate Determination</h3>
+
+      <p>The STCC code is one of the primary inputs railroads use to calculate your freight rate. Railroad tariffs are organized by STCC code — each code maps to a specific rate group, and those rate groups have different pricing structures. Two commodities moving in the same type of car over the same route can have very different rates because their STCC codes place them in different rate categories.</p>
+
+      <p>This is why getting the code right matters financially. If your product gets classified under a higher-rated STCC code than it should be, you'll pay more per carload than necessary. And if a railroad audits the shipment and finds you've been using a lower-rated code than appropriate, they'll back-bill you for the difference — sometimes going back months. For a deeper look at how railroad pricing works, see our <a href="/blog/rail-freight-rates-how-pricing-works">guide to rail freight rates</a>, and run the candidate code through Steel Wheel's <a href="/tools/rail-rate-quote">rail rate estimator</a> for an indicative first-pass on what that classification implies for your specific lane. The estimator is not a binding quote and we do not guarantee rates — it's a defensible starting point before any conversation with a logistics provider.</p>
+
+      <h3>Equipment Assignment</h3>
+
+      <p>Different STCC codes require different <a href="/blog/rail-car-types-explained">types of railcars</a>. Grain (STCC 01) moves in covered hoppers. Crushed stone (STCC 14) moves in open-top hoppers or gondolas. Chemicals (STCC 28) often require tank cars with specific linings and fittings. When you provide your STCC code on a car order, the railroad uses it to determine what equipment to supply. A wrong code can result in the wrong car showing up at your facility — and reordering means delays and potential demurrage charges on the car you can't use.</p>
+
+      <h3>Handling and Routing</h3>
+
+      <p>Certain STCC codes trigger special handling requirements. High-value goods might get priority routing. Temperature-sensitive commodities might be restricted from certain routes or yards. Heavy-loading commodities affect which track segments the car can travel (some branch lines have lower weight limits). The STCC code tells the railroad's operations team how to handle your car from origin to destination.</p>
+
+      <h3>Regulatory Compliance</h3>
+
+      <p>For hazardous materials, the STCC code is a compliance requirement, not just a pricing tool. Hazmat shipments must carry the correct 49-series STCC code, and that code must match the UN/NA number, the placard, and the shipping description on the bill of lading. Mismatches can result in fines, shipment rejection, or — in serious cases — DOT enforcement action. The stakes are higher here than a rate correction.</p>
+
+      <h2 id="common-stcc-codes">Common STCC Codes for Rail Commodities</h2>
+
+      <p>Here are some of the most frequently used STCC codes across major rail commodity groups. If you're shipping any of these products, these are the codes you'll be working with:</p>
+
+      <h3>Farm Products (01-Series)</h3>
+      <ul>
+        <li><strong>0113210</strong> — Corn (field corn, shelled)</li>
+        <li><strong>0113230</strong> — Soybeans</li>
+        <li><strong>0113710</strong> — Wheat</li>
+        <li><strong>0113320</strong> — Sorghum grain</li>
+      </ul>
+      <p>Grain is one of the highest-volume rail commodities in North America. If you're an elevator operator or grain merchandiser, you'll use these codes on every shipment. See our <a href="/blog/shipping-grain-by-rail">grain shipping guide</a> for the full picture.</p>
+
+      <h3>Coal (11-Series)</h3>
+      <ul>
+        <li><strong>1121120</strong> — Bituminous coal</li>
+        <li><strong>1121220</strong> — Sub-bituminous coal</li>
+        <li><strong>1121320</strong> — Lignite</li>
+        <li><strong>1121420</strong> — Anthracite coal</li>
+      </ul>
+
+      <h3>Aggregates and Minerals (14-Series)</h3>
+      <ul>
+        <li><strong>1411210</strong> — Crushed stone, NEC</li>
+        <li><strong>1421110</strong> — Sand and gravel</li>
+        <li><strong>1455120</strong> — Raw calciumite (limestone)</li>
+        <li><strong>3241110</strong> — Portland cement (note: cement falls under 32-series as a manufactured product)</li>
+      </ul>
+
+      <h3>Metals (33-Series)</h3>
+      <ul>
+        <li><strong>3312110</strong> — Steel bars and shapes</li>
+        <li><strong>3312230</strong> — Steel plate</li>
+        <li><strong>3316120</strong> — Steel pipe and tubing</li>
+        <li><strong>3312340</strong> — Steel coils (hot-rolled)</li>
+      </ul>
+
+      <h3>Fertilizers (28-Series)</h3>
+      <ul>
+        <li><strong>2818142</strong> — Anhydrous ammonia</li>
+        <li><strong>2874110</strong> — Phosphate fertilizer</li>
+        <li><strong>2812530</strong> — Potash (potassium chloride)</li>
+        <li><strong>2871220</strong> — UAN solution (liquid nitrogen fertilizer)</li>
+      </ul>
+
+      <h3>Petroleum (29-Series)</h3>
+      <ul>
+        <li><strong>2911110</strong> — Gasoline</li>
+        <li><strong>2911230</strong> — Diesel fuel</li>
+        <li><strong>2911310</strong> — Crude petroleum</li>
+        <li><strong>2911500</strong> — Asphalt</li>
+      </ul>
+
+      <div class="blog-highlight">
+        <strong>Pro tip:</strong> Keep a reference list of the STCC codes you use regularly. When you need a rate quote, having the exact code ready eliminates back-and-forth and speeds up the quoting process.
+      </div>
+
+      <h2 id="hazmat-stcc-codes">Hazmat and the 49-Series STCC Codes</h2>
+
+      <p>The 49-series STCC codes deserve their own section because they work differently from standard commodity codes and carry real regulatory weight.</p>
+
+      <p>When a commodity is classified as hazardous material under DOT regulations (49 CFR), it gets a 49-series STCC code in addition to — or sometimes instead of — its standard commodity code. The 49-series code is built from the commodity's UN/NA identification number, which links it directly to the DOT hazmat table.</p>
+
+      <h3>How 49-Series Codes Are Structured</h3>
+
+      <p>A 49-series STCC code starts with "49" and incorporates the hazmat class and UN number. For example:</p>
+
+      <ul>
+        <li><strong>4905812</strong> — Anhydrous ammonia (Class 2.2, UN 1005)</li>
+        <li><strong>4918495</strong> — Ethanol (Class 3, UN 1170)</li>
+        <li><strong>4916040</strong> — Chlorine (Class 2.3, UN 1017)</li>
+      </ul>
+
+      <p>When shipping hazmat by rail, the 49-series code must appear on the bill of lading, and it must match the placard on the car, the shipping name in the commodity description, and the emergency response information. Railroads cross-reference all of these, and discrepancies will stop your shipment.</p>
+
+      <h3>Key Rules for Hazmat STCC Codes</h3>
+
+      <ol>
+        <li><strong>Always use the 49-series code</strong> — not the standard commodity code — for any hazmat shipment</li>
+        <li><strong>Match it to the UN/NA number exactly</strong> — the railroad will verify this against the placard</li>
+        <li><strong>Update codes when regulations change</strong> — DOT periodically reclassifies materials, and your STCC code must reflect current classifications</li>
+        <li><strong>Residue cars still need hazmat codes</strong> — a tank car that last contained a hazmat product is still considered hazmat until it's been cleaned and purged</li>
+      </ol>
+
+      <p>If you're shipping <a href="/blog/fertilizer-rail-shipping">fertilizers like anhydrous ammonia</a> or any petroleum products, you'll be dealing with 49-series codes regularly. Don't guess on these — get them wrong and you're looking at fines, not just rate adjustments.</p>
+
+      <h2 id="stcc-vs-nmfc">STCC vs NMFC: Rail Codes vs Trucking Codes</h2>
+
+      <p>If you ship by both rail and truck, you've probably encountered two different classification systems: STCC for rail and NMFC for trucking. They serve a similar purpose — classifying commodities for pricing — but they're completely separate systems maintained by different organizations.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>STCC (Rail)</th>
+            <th>NMFC (Trucking)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Maintained by</td>
+            <td>AAR (Association of American Railroads)</td>
+            <td>NMFTA (National Motor Freight Traffic Association)</td>
+          </tr>
+          <tr>
+            <td>Code format</td>
+            <td>7 digits</td>
+            <td>6 digits + sub-items</td>
+          </tr>
+          <tr>
+            <td>Classification basis</td>
+            <td>Commodity identity and characteristics</td>
+            <td>Density, stowability, handling, liability</td>
+          </tr>
+          <tr>
+            <td>Rate impact</td>
+            <td>Maps to railroad tariff rate groups</td>
+            <td>Maps to LTL freight classes (50-500)</td>
+          </tr>
+          <tr>
+            <td>Hazmat handling</td>
+            <td>49-series STCC codes</td>
+            <td>Hazmat class within NMFC item</td>
+          </tr>
+          <tr>
+            <td>Used by</td>
+            <td>Class I, short line, and regional railroads</td>
+            <td>LTL and truckload carriers</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>The key difference is philosophical. NMFC classification is heavily based on density (how much space your freight takes up relative to its weight), while STCC classification is based on what the commodity actually is. A carload of steel coils and a carload of crushed stone might have similar densities, but they have very different STCC codes — and very different rate structures — because the railroads price them based on commodity value, handling requirements, and market competition.</p>
+
+      <p>There's no direct crosswalk between STCC and NMFC codes. If you're transitioning freight from truck to rail (or using <a href="/blog/what-is-transloading">transloading</a> to combine both), you'll need to know the appropriate code for each mode separately. For shippers running the mode-shift math head-on, Steel Wheel's <a href="/tools/rail-vs-truck">rail vs truck calculator</a> takes the rail STCC plus the trucking equivalent and surfaces an all-in cost compare across both modes — useful when the freight class on the trucking side is what's actually driving the gap, not the STCC.</p>
+
+      <h2 id="finding-your-stcc-code">How to Find the Right STCC Code</h2>
+
+      <p>Finding the correct STCC code for your commodity is straightforward if you know where to look. Here's the process:</p>
+
+      <div class="blog-steps">
+        <div class="blog-step">
+          <div class="blog-step-number">1</div>
+          <div class="blog-step-content">
+            <h3>Start with the AAR STCC Directory</h3>
+            <p>The official STCC directory published by the AAR is the authoritative source. It lists every active code with full commodity descriptions. Your <a href="/services">rail logistics provider</a> should have access to the current edition and can look up codes for you.</p>
+          </div>
+        </div>
+        <div class="blog-step">
+          <div class="blog-step-number">2</div>
+          <div class="blog-step-content">
+            <h3>Check Railroad Tariff Publications</h3>
+            <p>Class I railroads publish their tariffs with STCC codes listed by commodity. If you're already working with a railroad, their pricing team can confirm the correct code for your product. Rate quotes typically include the STCC code, so you can verify it matches your commodity.</p>
+          </div>
+        </div>
+        <div class="blog-step">
+          <div class="blog-step-number">3</div>
+          <div class="blog-step-content">
+            <h3>Describe Your Product Precisely</h3>
+            <p>When looking up a code, be specific about what you're shipping. "Steel" isn't enough — the code differs for steel coils, steel plate, steel pipe, steel scrap, and structural steel. Similarly, "chemicals" could be dozens of different codes. The more specific your commodity description, the more accurate the code assignment.</p>
+          </div>
+        </div>
+        <div class="blog-step">
+          <div class="blog-step-number">4</div>
+          <div class="blog-step-content">
+            <h3>Consider the Form and Packaging</h3>
+            <p>The same basic material can have different STCC codes depending on its form. Raw iron ore has a different code than iron ore pellets. Bulk liquid caustic soda has a different code than bagged dry caustic soda. The physical form of your product — bulk, bagged, liquid, pelletized, coiled — can change the classification.</p>
+          </div>
+        </div>
+        <div class="blog-step">
+          <div class="blog-step-number">5</div>
+          <div class="blog-step-content">
+            <h3>Verify with Your Rail Logistics Provider</h3>
+            <p>Before locking in a code for a new commodity, confirm it with someone who deals with rail tariffs daily. A good rail logistics provider will verify the code, check that it matches the tariff rate you were quoted, and flag any hazmat implications you might have missed.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-highlight">
+        <strong>Important:</strong> STCC codes are periodically updated by the AAR. Codes can be added, retired, or reclassified. If you haven't shipped a particular commodity in a while, verify the code is still current before placing a car order.
+      </div>
+
+      <h2 id="common-stcc-mistakes">Common STCC Mistakes and How to Avoid Them</h2>
+
+      <p>After years of coordinating rail shipments, these are the STCC-related errors we see most often — and every one of them costs the shipper time or money.</p>
+
+      <h3>1. Using a Generic Code When a Specific One Exists</h3>
+
+      <p>Every commodity group has "NEC" (not elsewhere classified) catch-all codes. Some shippers default to these when a more specific code exists for their product. The problem: NEC codes often carry higher rates because railroads price them conservatively. If your specific product has its own STCC code, using it can mean a lower rate.</p>
+
+      <p>For example, shipping potash as "fertilizer materials, NEC" instead of using the specific potash code (2812530) could put you in a higher rate group. Always look for the most specific code that matches your product.</p>
+
+      <h3>2. Not Updating Codes When Products Change</h3>
+
+      <p>If your manufacturing process changes the composition, form, or classification of your product, the STCC code may need to change too. A shipper who starts producing a different grade of steel, switches from bulk to bagged product, or changes the chemical formulation of a product should verify the STCC code still applies. Using an outdated code is one of the most common triggers for railroad audits and rate corrections.</p>
+
+      <h3>3. Confusing Standard and Hazmat Codes</h3>
+
+      <p>A commodity can have both a standard STCC code (describing what it is) and a 49-series code (describing its hazmat classification). For hazmat shipments, you must use the 49-series code. Some shippers accidentally use the standard code on hazmat shipments, which can result in the car moving without proper hazmat routing and handling — a serious safety and compliance issue.</p>
+
+      <h3>4. Copying Codes from Old BOLs Without Verifying</h3>
+
+      <p>It's tempting to pull the STCC code from a previous bill of lading and reuse it. This works fine as long as the code hasn't been updated, your product hasn't changed, and the original code was correct in the first place. We've seen shippers carry forward an incorrect code for years, only discovering it during a railroad audit that results in a large back-billing for rate differences.</p>
+
+      <h3>5. Ignoring Packaging and Form Differences</h3>
+
+      <p>As mentioned above, the same base material in different forms can have different STCC codes. Crude oil in a tank car has a different code than petroleum coke in a gondola, even though both come from petroleum. If you're shipping the same basic commodity in a new form or packaging, double-check the code.</p>
+
+      <h2 id="stcc-codes-and-documentation">STCC Codes in Your Shipping Documents</h2>
+
+      <p>The STCC code appears in multiple places throughout the shipping process. Knowing where it shows up helps you verify consistency and catch errors before they become problems:</p>
+
+      <ul>
+        <li><strong>Bill of Lading (BOL):</strong> The STCC code is required on every rail bill of lading. It appears alongside the commodity description and, for hazmat, alongside the UN/NA number and proper shipping name.</li>
+        <li><strong>Waybill:</strong> The railroad generates a waybill from your BOL data, and the STCC code carries over. This is the document that travels with the car and determines routing and handling.</li>
+        <li><strong>Freight Bill / Invoice:</strong> Your freight charges are calculated based on the STCC code in the waybill. If the code on your invoice doesn't match what you put on the BOL, investigate — it may indicate a reclassification.</li>
+        <li><strong>Rate Quotes:</strong> When you request a rate quote, you'll provide the STCC code. The quote you receive is specific to that code, and using a different code on the actual shipment can invalidate the quoted rate.</li>
+        <li><strong>Car Orders:</strong> Your STCC code helps the railroad determine which equipment to supply. This is especially important for tank car specifications, where the commodity dictates lining, fittings, and safety features.</li>
+      </ul>
+
+      <p>Consistency across all of these documents is critical. If your BOL says one STCC code and your rate agreement references another, you're setting yourself up for a billing dispute. For more on rail shipping paperwork, check our <a href="/courses">supply chain courses</a> which cover documentation in detail.</p>
+
+      <section class="blog-faq" id="faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <h3>What is an STCC code in rail freight?</h3>
+          <p>An STCC (Standard Transportation Commodity Code) is a 7-digit number used by railroads to classify every commodity shipped by rail. It determines which tariff rates apply, what equipment is required, and whether special handling rules are in effect.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How do I find the STCC code for my product?</h3>
+          <p>Start with your railroad's tariff publications or ask your rail logistics provider. The AAR's STCC directory is the official reference. Your product's composition, form, and packaging all affect which code applies, so be as specific as possible when looking one up.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What happens if I use the wrong STCC code?</h3>
+          <p>Using the wrong STCC code can result in rate corrections (usually higher), reclassification penalties, rejected shipments, or compliance violations if hazmat codes are involved. Railroads audit STCC codes and will back-bill the difference if they find a mismatch.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What is the difference between STCC and NMFC codes?</h3>
+          <p>STCC codes are used exclusively for rail freight, while NMFC codes are used for trucking. They classify commodities for pricing but use different numbering systems and are maintained by different organizations — the AAR for STCC and the NMFTA for NMFC.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Do STCC codes affect rail freight rates?</h3>
+          <p>Yes. STCC codes are one of the primary factors that determine your rail freight rate. Each code maps to a tariff rate group, and different commodities carry different rate structures based on value, density, handling requirements, and market factors.</p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Author -->
+    <div class="blog-author">
+      <div class="blog-author-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+      </div>
+      <div class="blog-author-info">
+        <div class="blog-author-name">Steel Wheel Logistics</div>
+        <div class="blog-author-bio">We coordinate bulk rail freight across North America — from rate negotiation and car sourcing to transload coordination and tracking. Based in Mississippi, serving shippers nationwide.</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="blog-cta">
+      <h3>Ready to Ship by Rail?</h3>
+      <p>We'll evaluate your lanes and tell you straight whether rail makes sense for your freight. No obligation.</p>
+      <a href="/contact" class="btn btn-primary">Get a Free Quote</a>
+    </div>
+
+    <div class="blog-back">
+      <a href="/blog">&larr; Back to All Posts</a>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/tools">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

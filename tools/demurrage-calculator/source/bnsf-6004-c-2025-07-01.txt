@@ -1,0 +1,1030 @@
+         BNSF DEMURRAGE BOOK 6004-C
+
+         GENERAL AND SPECIFIC RAILCAR DEMURRAGE AND
+                 PRIVATE CAR STORAGE RULES
+
+
+                            APPLYING AT
+               POINTS ON THE BNSF RAILWAY COMPANY
+                 IN THE UNITED STATES AND CANADA
+
+
+              ALSO APPLICABLE ON INTRASTATE TRAFFIC
+
+
+
+
+Issued: June 3, 2025                       Effective: July 1, 2025
+Contents
+
+
+SECTION 1 - General Application ..................................................................................... 4
+   Exceptions ..................................................................................................................... 4
+   Method of Billing ............................................................................................................ 5
+   Credit / Payment Terms ................................................................................................. 5
+   Shipping/ Billing/ Forwarding Instructions ...................................................................... 5
+   Notification ..................................................................................................................... 6
+   Congestion Due to Rail Customer or Receiving Party ................................................... 6
+   Pipeline Management .................................................................................................... 6
+   Arbitration ...................................................................................................................... 6
+   Dispute Handling ........................................................................................................... 6
+   Weather, Labor Strikes, other Force Majeure claims ..................................................... 6
+   Claims for adjustments to a demurrage charge due to Customer property, plant, or
+   equipment outages will not be considered for demurrage billing adjustment where such
+   outages are within Customer’s reasonable control. ....................................................... 7
+   Unclaimed, Refused or Rejected Cars........................................................................... 7
+SECTION 2 – General Railcar Demurrage........................................................................ 8
+   Rail Controlled Equipment Held for Loading or Unloading............................................. 8
+   Rail Controlled Refrigerated Equipment Held for Loading or Unloading ........................ 8
+   Private Controlled Equipment Held for Loading or Unloading........................................ 9
+   Equipment Held for Purposes other than Loading or Unloading .................................... 9
+SECTION 3 - Additional Terms and Fees ....................................................................... 10
+   Charges on Cars Containing Explosives or Hazardous Materials. .............................. 10
+   Charges assessed under this sub-section cannot be offset by credits named in
+   previous sections. Charges on Cars Containing Inhalation Hazard and Explosives. ... 10
+   Charges on Heavy Duty Cars ...................................................................................... 11
+   Change of Want Date for Wind Trains ......................................................................... 11
+   Aviation (STCC 37299) Equipment Held for Purposes other than Loading or Unloading
+   ..................................................................................................................................... 11
+   Charges on Staged Cars in Excess of Shipper Agreement ......................................... 12
+SECTION 4 – Shuttle and Unit Train Demurrage ............................................................ 12
+   Shuttles Rules ............................................................................................................. 12
+   Shuttles Held for Loading ............................................................................................ 13
+   Shuttles Held for Unloading ......................................................................................... 13
+   Unit Crude Oil Trains (STCC 1311110) Held for Loading and Unloading Calculation . 14
+                                                                  2
+   Other Unit Trains Held for Loading and Unloading Calculation (Non-Unit Crude Oil
+   Trains) ......................................................................................................................... 14
+   Other Unit Train Free Time .......................................................................................... 15
+   Activities Other than Standard Train Operations ......................................................... 15
+   Pre-Release for Unit Trains ......................................................................................... 16
+   Trains Constructively Placed en Route to an Offline Location ..................................... 16
+   Planned and Unplanned Shutdown ............................................................................. 16
+SECTION 5 - Non-Chargeable Holidays ......................................................................... 17
+SECTION 6 - Index of Terms .......................................................................................... 19
+
+
+
+
+                                                                3
+SECTION 1 - General Application
+This Book, also referred to as the Tariff, specifies the rules governing demurrage, unit train / shuttle
+demurrage, private car storage, hazardous charges and storage rules applying at all points on the
+BNSF Railway Company (referred to as BNSF) network in the United States and Canada. It also
+applies at points on connecting carriers where, through agreement, BNSF maintains demurrage
+rules and charges. The rate in effect on the closing day event will be used to calculate charges, and
+all rates and charges are stated in United States dollars.
+
+The terms and conditions contained in this Tariff supersede and replace the former tariff (BNSF
+Demurrage Book 6004-B) and its predecessors.
+
+Demurrage is a charge that both compensates rail carriers for the expenses incurred when rail cars
+are detained beyond a specified period (i.e., free time) for loading or unloading, and serves as a
+penalty for undue car detention to encourage the efficient use of rail cars in the rail network. 49
+C.F.R. §1333.1.
+
+Any person receiving rail cars from BNSF for loading or unloading (defined herein as a receiving
+party) who detains the cars beyond the period of free time set forth in this Book may be assessed
+demurrage charges by BNSF. 49 C.F.R. §1333.3.
+
+Except for unit trains and shuttles, BNSF calculates and bills demurrage fees using a debits and
+credits system to calculate Chargeable Days. All days are chargeable, except specific days noted
+in Section 5 – Non-Chargeable Holidays.
+
+When a railcar is tendered by BNSF to a connecting carrier for delivery to the connecting carrier’s
+receiving party and that party is unwilling or unable to accept the railcar (and as a consequence
+railcar remains in BNSF’s custody and control), a demurrage charge will be assessed against that
+receiving party in accordance with the provisions of this Book. If the receiving party does not
+normally do business directly with BNSF, then the shipper will be responsible for all applicable
+charges.
+
+Empty and loaded railcars held short of the origin or waybilled destination are subject to governing
+provisions and charges of this Book. Empty and loaded cars consigned or waybilled for delivery to
+a connecting carrier or held on a connecting carrier per BNSF instructions or on railroad tracks
+under constructive placement, are subject to governing provisions and charges of this Book.
+Any specific provisions take precedence over general provisions, unless otherwise stated. See
+Section 6 for explanations of terms commonly used in this Book.
+
+ Exceptions
+
+ Rules and charges contained in this Book apply to all railroad and private marked railcars held
+ for or by rail customers with the following exceptions:
+
+         •   Cars for loading or unloading of BNSF company material.
+         •   Cars of refused or unclaimed freight to be sold by BNSF for the time held beyond
+             legal requirements.
+         •   Railroad owned cars, leased for storage of commodities, for intra-plant or intra-
+             terminal switching service, while held on lessees’ tracks.
+         •   Cars used for the purpose of testing loading and unloading procedures, new types of
+             dunnage or new types of equipment as authorized by BNSF.
+
+                                                   4
+         •   All Bi-level and / or Tri-level equipment used in transportation of motor vehicles.
+         •   Empty cars that are placed for loading but later rejected when properly reported to
+             BNSF as unsuitable for loading.
+
+Method of Billing
+
+Charges are invoiced on a monthly basis for cars with a closing event within the billing cycle and
+are calculated based on the provisions set forth in this Book. A closing event is defined as the event
+in a car cycle that closes the cycle and results in the calculation of time and applicable charges.
+
+If cars in a chargeable status do not have a closing event at the end of a billing cycle, then charges
+will be carried forward to the following billing cycle for applicable charges until closing event.
+
+Credit / Payment Terms
+
+Charges that accrue per this Book are due and payable according to BNSF’s Credit Terms as
+stated in BNSF Rules Book 6100 series. All payments must be paid in U.S. funds. Late payments
+on undisputed bills (30 days or more after due date) will be subject to finance charge outlined in
+BNSF Rule Book 6100, Section 3400-A (or any successor thereof).
+
+BNSF reserves the right, at its sole discretion, to cancel credit and require a rail customer or
+receiving party responsible for the payment of demurrage with a history of delinquency or non-
+payment of charges, not in bona fide dispute, to provide assurance for payment of those charges.
+Such “assurance” may include, but is not limited to, credit card payment upon incurrence of
+charges, cash deposit with BNSF, letter of credit, surety bond or other suitable form of security. A
+deposit or security will be equal to the average monthly demurrage bill as calculated over the past
+six months.
+
+It is within BNSF’s discretion to determine when issues of delinquency have been resolved and
+when the rail customer or receiving party is no longer required to maintain an assurance. Should
+service to the rail customer or receiving party no longer be required, security on deposit will be
+released and returned upon satisfaction of all outstanding invoices.
+
+Shipping/ Billing/ Forwarding Instructions
+
+A bill of lading or other suitable instructions must be given to an authorized representative of BNSF
+and contain all of the necessary information which allows for the immediate movement under either
+line haul or switching services provided by BNSF. When "shipping instructions" are furnished
+covering line haul movement, information must include the shipper, consignor, consignee,
+receiving parties, destination, route, commodity description, whether prepaid or collect, and full
+instructions relative to stop-offs.
+
+Advice received by BNSF to move a car from a shipper's loading or storage track to BNSF yard or
+hold track to be held for "shipping instructions," whether furnished by the party loading the car or
+another party, or a bill of lading or an order consigning the car to an agent of BNSF which has no
+beneficial interest in the lading, does not constitute "shipping instructions" or a release from
+demurrage/storage charges. Cars held for shipping instructions (aka “hold for billing”) will result in
+a charge of $420 per car plus applicable daily demurrage charge. (Please refer to BNSF Tariff
+Rules Book 6100-B Item 8020.)
+
+A bill of lading, or other suitable order, covering car(s) requiring clearance from all carriers in the
+routing will not constitute "shipping instructions" until clearance is received from all carriers in the
+routing.
+                                                   5
+Notification
+
+Notification will be delivered to the receiving party or any party on the waybill who is registered to
+receive notifications using the BNSF Customer Subscription Services on-line tool. Parties wishing
+to receive notifications must sign up using the on-line tool.
+
+Congestion Due to Rail Customer or Receiving Party
+
+If a rail customer’s or receiving party’s excessive accumulation of railcars results in operational
+congestion as determined by the carrier of the customer’s, receiving party’s and/or BNSF’s rail
+tracks, BNSF may impose an embargo against the customer’s or receiving party’s receipt of
+further railcars until congestion is eliminated.
+
+Pipeline Management
+
+Customers should not order more rail cars than their facility can hold. In order to assist customers
+in managing their pipeline of incoming rail cars the BNSF “Rail Central” online tool is available to
+manage, trace, and monitor rail car events. The Customer Dwell Management Tool (CDMT) is
+also available to manage the incoming flow of rail cars and to minimize dwell and demurrage
+charges. Customers needing access to these tools may register at www.bnsf.com or contact our
+E-Business team by calling 888-428-2673 and using the verbal prompts. BNSF representatives
+within the Demurrage team are also available to assist with these tools and to assist in strategy to
+reduce or eliminate dwell and demurrage charges. The team can be reached via email at
+DemurrageHelp@bnsf.com.
+
+Arbitration
+
+All disputes, claims, questions or controversies arising out of any charges assessed under the
+provisions of this book in the transportation of Grain or Grain Products shall be resolved by binding
+arbitration under the Arbitration Rules of the National Grain and Feed Association unless the parties
+agree to some other arbitration procedure.
+
+Dispute Handling
+
+If, by error, demurrage or storage charges are improperly assessed, charges will be adjusted to
+the amount that would have accrued but for such error. Questions or disputes relating to
+charges arising under the terms of this Book may be initiated through the BNSF Customer Dwell
+Management Tool (CDMT). Demurrage can be viewed as it accrues by using the CDMT tool and
+can be disputed prior to monthly billing and invoicing. Disputes will not be accepted after 30
+days past date of invoice.
+
+
+Weather, Labor Strikes, other Force Majeure claims
+
+Claims for adjustments to a demurrage charge due to Severe Weather, which include but are
+not limited to flood, storm, earthquake, tornado or other climatic condition, will be evaluated for
+relief provided that the facility production was stopped, shut down or otherwise unable to work
+due to aforementioned conditions impacting the facility.
+
+Claims for adjustments to demurrage charges due claiming Force Majeure does not excuse the
+customer (Payor of Freight or receiver) from charges. The customer remains responsible for
+paying published fees and costs associated with halting train movement, redirecting loaded and
+
+                                                  6
+empty trains, and resuming train operations, regardless of whether a force majeure condition
+exists.
+
+Claims for adjustments to a demurrage charge due to Strikes or Lockouts will be evaluated
+provided that the facility production was stopped, shut down or otherwise unable to work due to
+lack of railcars at the facility for at least three (3) days in duration.
+
+Claims for adjustments to a demurrage charge due to Customer property, plant, or
+equipment outages will not be considered for demurrage billing adjustment where
+such outages are within Customer’s reasonable control.
+
+Unclaimed, Refused or Rejected Cars
+
+Loaded cars held for more than 15 days after notification of constructive placement, and refused
+or rejected cars held more than 5 days will be subject to the following:
+
+   •   On day 16 after shipper has been notified of loaded cars held, shipper will be contacted
+       by BNSF for disposition of such cars. If disposition is not received from shipper within 5
+       days of such contact, the cars may be:
+          o Reverse routed back to shipper. Shipper will be responsible for all storage or
+              other charges accrued at hold point and freight charges to return car to origin.
+          o Considered abandoned and the contents may be sold via private sale or at
+              auction without periodical publication. Proceeds from the sale will be used to
+              satisfy charges due BNSF. Shipper will be responsible for any outstanding
+              charges or costs not covered by the proceeds from the sale. BNSF reserves the
+              right to bid at any sale.
+
+   •   On day 6 after shipper has been notified of refused or rejected cars, shipper will be
+       contacted by BNSF for disposition of such cars. If disposition is not received from
+       shipper within 5 days of such contact, the cars may be:
+           o Reverse routed back to shipper. Shipper will be responsible for all storage or
+              other charges accrued at hold point and freight charges to return car to origin.
+           o Considered abandoned and the contents may be sold via private sale or at
+              auction without periodical publication. Proceeds from the sale will be used to
+              satisfy charges due BNSF. Shipper will be responsible for any outstanding
+              charges or costs not covered by the proceeds from the sale. BNSF reserves the
+              right to bid at any sale.
+
+
+
+
+                                                7
+SECTION 2 – General Railcar Demurrage
+Chargeable Days are calculated by subtracting Credit Days from Debit Days. At the end of each
+month, Chargeable Days are calculated for each origin and destination facility and billed
+accordingly.
+
+Rail Controlled Equipment Held for Loading or Unloading
+
+Debit Days are calculated by adding both Constructive Placement and Industry Days. Constructive
+Placement Days occur when, upon arrival at a BNSF serving yard, cars are not ordered for
+placement at the customer’s facility. Constructive Placement Days at a designated serving yard or
+holding location selected at BNSF’s discretion begin from the first 12:01 a.m. after notification of
+car arrival until ordered for placement at the customer’s facility. Industry Days occur when rail-
+controlled cars are held at an origin or destination facility waiting to be released. Industry Days begin
+from the first 12:01 a.m. after the later of Actual Placement or Want Date (for loading only), until
+released.
+
+Note: Unit/Shuttle Trains constructively placed en route will be allowed No free time.
+
+Credit Days are days allowed to load or unload rail controlled equipment and are used to offset
+Debit Days. For rail controlled cars, two Credit Days per car will be allowed for loading or unloading.
+Credits can only be used to offset debits on the car under which they were earned. Any excess
+credits on an individual car cannot be carried forward in the calculation of demurrage charges on
+any other car. Excess credit days do not accrue for future months, carry over to other facilities, or
+apply to any other demurrage provisions published elsewhere in this Book.
+
+Extended Debit Days will be subject to an Extended Dwell Fee.
+
+   •   Chargeable Days 1 through 3 are billed at $210 per day base rate.
+
+   •   Chargeable Day 4 and above are billed at the $210 per day base rate plus an
+       Extended Dwell Fee of $290 per day (a total amount of $500 per day).
+
+ Day             Credit        Credit       Chargeable Chargeable Chargeable Chargeable
+                 Day 1         Day 2        Day 1      Day 2      Day 3      Day 4+
+
+ Demurrage       $0            $0           $210            $210            $210           $210 +
+ Rate (First                                                                               $290
+ two credit                                                                                (Extended
+ days are                                                                                  Dwell Fee)
+ free)                                                                                     = $500 total
+                                                                                           rate
+
+
+
+Rail Controlled Refrigerated Equipment Held for Loading or Unloading
+
+Debit Days are calculated by adding both Constructive Placement and Industry Days. Constructive
+Placement Days occur when, upon arrival at a BNSF serving yard, cars are not ordered for
+placement at the customer’s facility. Constructive Placement Days begin from the first 12:01 a.m.
+after notification of car arrival until ordered for placement at the customer’s facility. Industry Days
+occur when rail-controlled cars are held at an origin or destination facility waiting to be released.
+Industry Days begin from the first 12:01 a.m. after the later of Actual Placement or Want Date (for
+                                                   8
+loading only), until released.
+
+Credit Days are days allowed to load or unload rail controlled equipment and are used to offset
+Debit Days. For rail controlled refrigerated cars, one Credit Day per car will be allowed for loading
+or unloading. Credits can only be used to offset debits on the car under which they were earned.
+Any excess credits on an individual car cannot be carried forward in the calculation of demurrage
+charges on any other car. Excess credit days do not accrue for future months, carry over to other
+facilities, or apply to any other demurrage provisions published elsewhere in this Book.
+
+   •       Chargeable Days 1 through 4 are billed at a $315 per day base rate.
+
+   •       Chargeable Day 5 and above are billed at the $315 per day base rate plus an
+           Extended Dwell Fee of $285 per day (a total amount of $600 per day).
+
+ Day              Credit   Chargeable Chargeable Chargeable Chargeable Chargeable
+                  Day 1    Day 1      Day 2      Day 3      Day 4      Day 5+
+
+ Demurrage        $0       $315           315           315             315            $315 +
+ Rate (First                                                                           $285
+ credit day                                                                            (Extended
+ is free)                                                                              Dwell Fee)
+                                                                                       = $600 total
+                                                                                       rate
+
+
+Private Controlled Equipment Held for Loading or Unloading
+
+Chargeable Days occur when, upon arrival at a BNSF serving yard, cars are not able to be ordered
+for placement at the customer’s facility. Charges will begin at the first 12:01 a.m. after notification
+of car arrival and will continue while held on railroad tracks until order for placement is received.
+
+Extended dwell at a BNSF serving yard will be subject to an Extended Dwell Fee.
+
+       •    Chargeable Days 1 through 5 are billed at a $210 per day base rate.
+
+       •    Chargeable Day 6 and above are billed at the $210 base rate plus an Extended Dwell
+            Fee of $290 per day (a total amount of $500 per day).
+
+ Day              Chargeable      Chargeable    Chargeable    Chargeable    Chargeable    Chargeable
+                  Day 1           Day 2         Day 3         Day 4         Day 5         Day 6+
+
+
+ Demurrage $210                   $210          $210          $210          $210          $210 +
+ Rate (No                                                                                 $290
+ free credit                                                                              (Extended
+ days)                                                                                    Dwell Fee)
+                                                                                          = $500
+                                                                                          total rate
+
+
+
+Equipment Held for Purposes other than Loading or Unloading
+
+Occasionally either rail controlled or private controlled cars are held on rail controlled tracks while
+                                                   9
+awaiting shipper’s instructions, held for overweight reduction, held for a diversion request or
+consigned or waybilled for delivery to a connecting carrier.
+
+Chargeable Days will begin at the first 12:01 a.m. after Constructive Placement and will continue
+while held on railroad tracks, until request for disposition advice is received by BNSF or car is
+ordered or refused. On cars received from a connecting carrier, Chargeable Days will be computed
+from actual receipt by BNSF until date and time of disposition. Any excess credits on an individual
+car cannot be carried forward in the calculation of demurrage on any other car. Excess credit days
+do not accrue for future months, carry over to other facilities, or apply to any other demurrage
+provisions published elsewhere in this book.
+
+   •   Chargeable Days 1 through 5 are billed for all cars at $210 per day.
+
+   •   Chargeable Day 6 and above are billed the $210 base rate plus an Extended Dwell
+       Fee of $290 per day (a total amount of $500 per day).
+
+ Day           Chargeable     Chargeable     Chargeable    Chargeable    Chargeable     Chargeable
+               Day 1          Day 2          Day 3         Day 4         Day 5          Day 6+
+
+ Demurrage $210               $210           $210          $210          $210           $210 +
+ Rate (No                                                                               $290
+ free credit                                                                            (Extended
+ days)                                                                                  Dwell Fee)
+                                                                                        = $500
+                                                                                        total rate
+
+
+SECTION 3 - Additional Terms and Fees
+Charges on Cars Containing Explosives or Hazardous Materials.
+
+Any loaded car containing Explosives or Hazardous Materials that is held on BNSF tracks,
+including team tracks, is subject to an additional fee of $135 per day. The $135 per day charge will
+be in addition to, and run concurrent with, the applicable per day demurrage charge.
+
+Explosives are defined as Class A, B and C Explosives as named in Part 172, Commodity List,
+and Tariff Bureau of Explosives (BOE) 6000-Series.
+
+Hazardous Materials are defined as "Hazardous Wastes" and "Hazardous Substances" as named
+in Hazardous Materials Regulations of the U. S. Department of Transportation in 40 C.F.R. §§260
+through 263 and 49 C.F.R. §171.8 or any successors thereof.
+
+Charges assessed under this sub-section cannot be offset by credits named in
+previous sections. Charges on Cars Containing Inhalation Hazard and Explosives.
+
+BNSF will not allow the loading or unloading of any commodities listed in BNSF Rule Book 6100B,
+Section 1150 and 1158 (BNSF Rule Book 6100-series) on any team track owned or leased by
+BNSF. In the event of a conflict in this sub-section and with other parts of this Book, this sub-
+section will take precedence.
+
+Any loaded car containing hazardous commodities designated as toxic/poison inhalation hazard,
+radioactive material and explosives that is held on BNSF tracks, including team tracks, is subject
+                                                 10
+to a daily fee of $3,500. This fee will be in addition to, and run concurrent with, the applicable per
+day demurrage charge. Charges will be assessed on cars constructively placed, and cars without
+proper shipping instructions:
+
+   •   Received from a connecting carrier.
+   •   Pulled from private tracks.
+   •   Held on BNSF tracks, moving from the United States to Canada, or from Canada to the
+       United States or from Mexico to the United States, or from United States to Mexico that
+       require entry and/or government inspection. Cars will be considered released at time
+       clearance is obtained.
+
+
+Charges will be computed from the first hour after notification of constructive placement and continue
+until a closing event is received.
+
+Total hours will be divided by 24 to determine number of demurrage days. Charges will be
+assessed for each demurrage day, or fraction thereof, including Saturdays, Sundays and holidays.
+Charges assessed under this sub-section cannot be offset by credits named in previous sections.
+
+In addition to the above charges, consignees and consignors will be liable for all Federal, State,
+and Local penalties or fines which may be assessed for the holding of railroad-controlled cars on
+railroad-controlled tracks when the receiving party has impeded delivery of the car. Consignees
+and consignors will be responsible for any cost incurred by BNSF for providing protection or
+surveillance of any commodities subject to this sub-section while held on BNSF property.
+
+Charges on Heavy Duty Cars
+
+Any heavy-duty car that is held on BNSF tracks, including team tracks, is subject to an additional
+fee of $420 per day. The $420 per day charge will be in addition to, and run concurrent with, the
+applicable per day demurrage charge.
+
+Heavy Duty cars are defined as QTTX, KRL, LNAC, and ALT marked railcars with load limits in
+excess of 200,000 lbs. and any commercial, rail-controlled railcar with a load limit in excess of
+240,000 lbs.
+
+
+Other Exceptions
+   •   For Wind Cars (STCCs 3511206 – 3511209 & STCC 3533137), should power not stay
+       with the train, five (5) credit days per car will be allowed for loading and four (4) Credit
+       days per car will be allowed for unloading.
+   •   Customers with a scheduled service plan of one (1) day per week will receive seven (7)
+       total credit days to load or unload.
+   •   Customers with a scheduled service plan of two (2) days per week will receive four (4)
+       total credit days to load or unload.
+
+Change of Want Date for Wind Trains
+
+If the “Want Date” is changed for a wind train, demurrage charges are applicable immediately upon
+spotting of the train at the temporary holding location. Demurrage charges, as outlined in Section 2,
+will be computed from the time the train is spotted until its release to move to loading location.
+
+Aviation (STCC 37299) Equipment Held for Purposes other than Loading or Unloading
+                                                  11
+Occasionally either rail controlled or private controlled cars transporting aviation equipment are
+held on rail-controlled tracks while awaiting track capacity or other instructions at destination.
+Chargeable Days will begin at the first 12:01 a.m. after Constructive Placement and will continue
+while held on railroad tracks, until request for disposition advice is received by BNSF or car is
+ordered. On cars received from a connecting carrier, Chargeable Days will be computed from
+actual receipt by BNSF until date and time of disposition. Any excess credits on an individual car
+cannot be carried forward in the calculation of demurrage on any other car.
+
+Excess credit days do not accrue for future months, carry over to other facilities, or apply to any
+other demurrage provisions published elsewhere in this book.
+
+   •   Chargeable Days for all cars are billed at $525 per day. On cars received from a
+       connecting carrier, Chargeable Days will be computed from actual receipt by BNSF
+       until date and time of disposition. Any excess credits on an individual car cannot be
+       carried forward in the calculation of demurrage on any other car.
+
+ Charges on Staged Cars in Excess of Shipper Agreement
+
+If shipper has an executed demurrage or staging agreement with BNSF that allows shipper to stage
+a certain number of constructively placed cars on BNSF property at a contracted rate (the “subject
+equipment”), and the subject equipment reaches 85% or more of the car count or spots allowed for
+subject equipment, then shipper must engage in a discussion with BNSF about strategies to keep
+its subject equipment within the agreed amounts. If for at least three consecutive days the subject
+equipment has exceeded the allowed car count or spots, then BNSF may, at shipper’s expense,
+immediately (1) reverse route the excess subject equipment back to its origin at applicable tariff or
+contracted freight rate, (2) route excess subject equipment to the subject equipment’s AAR Circular
+OT-57 designated storage location at applicable tariff or contracted freight rate, or (3) route the
+excess subject equipment to a location that would, in BNSF’s reasonable discretion, allow BNSF to
+maintain the fluidity of its network, subject to charges as Special Freight Train Service provided in
+Item 3300 of BNSF Rules Book 6100-Series (or any successor thereof).
+
+SECTION 4 – Shuttle and Unit Train Demurrage
+This section applies to any party loading or unloading a train made up entirely of a single STCC
+code or commodity as defined below that is to be placed and released as required as a whole unit,
+and in which locomotive power remains with the train throughout loading/unloading unless
+otherwise provided. Charges, times and events described apply to rail-controlled and private
+equipment for all customers utilizing the defined rules and rates. Cars separated from a unit train
+for any reason will be treated under the provisions in Section 1 or Section 2 of this Book as
+determined by car ownership.
+
+Shuttles Rules
+
+Provisions regarding shuttle rules in this section are applicable to trains meeting the requirements of
+the Efficiency Program as outlined in Items 13500 & 13501 of BNSF Rate Book 4022 Series
+(Shuttles). Cars separated from a shuttle because of mechanical failure or other railroad issues
+and arriving at destination on different day than the shuttle will be treated as a single car and
+provided 5 credit days for unloading. Any excess days will be billed under Section 2- General Car
+Demurrage at $210 per day.
+
+
+
+                                                  12
+Cars identified as overloaded, having a shifted load or otherwise required to be set out due to
+Shipper or Shipper’s agent’s failure to conform to BNSF’s loading guidelines shall not be
+considered as a Straggler car and will be subject to applicable charges.
+
+
+Shuttles Held for Loading
+
+Loading is complete when train is in conformity with BNSF loading and clearance rules, advice the
+train is available for movement (Pre-Release submitted via BNSF web tools) has been received,
+and the shipping instructions have been furnished. Failure of train to meet the 4-hour advance
+completion time as declared will result in $100 per car charge.
+
+Release:
+
+Date and time that BNSF receives shipping instructions as required in BNSF Rate Book 4022 and
+advise that train is available for movement.
+
+Trains placed on industrial interchange tracks of a loader doing its own switching, including those
+tracks of an industrial switch line acting as agent of loader, must also be returned to the industrial
+interchange track for release.
+
+Calculation:
+
+ Constructive placement time will be computed from the time of constructive placement and
+ continue until train is ordered to spot or if constructively placed en route, charges will continue
+ until train departs hold point. Industry Time will be calculated from the later of Placement or Want
+ Date and time until loading is completed as defined in this sub-section.
+
+   •   Each train will be allowed 24 hours free time for loading at industry/customer facility.
+   •   Constructive placement en route will be allowed No free time.
+   •   Each hour or fraction of hour beyond free time will be charged at $1,050 per hour per train.
+
+Shuttles Held for Unloading
+
+Release:
+
+Date and time that BNSF receives advice that train is empty and available for movement (Pre-
+Release submitted via BNSF web tools). Trains placed on industrial interchange tracks of an
+unloader doing its own switching, including those tracks of an industrial switch line acting as agent
+of unloader, must be returned to the industrial interchange track for release in order to be
+considered available for movement. Failure of train to meet the 4-hour advance completion time
+as declared will result in $100 per car charge.
+
+Calculation:
+
+ Constructive placement time will be computed from the time of constructive placement and
+ continue until train is ordered to spot or if constructively placed en route, charges will continue
+ until train departs hold point. Industry Time will start when train is placed and continue until train is
+ released.
+
+   •   Each train will be allowed 24 hours free time for loading at industry/customer facility.
+   •   Constructive placement en route will be allowed No free time.
+
+                                                    13
+   •       Each hour or fraction of hour beyond free time will be charged at $1,050 per hour per train.
+
+Unit Crude Oil Trains (STCC 1311110) Held for Loading and Unloading Calculation
+
+Calculation:
+
+   •       Demurrage for constructive placement will be computed from the time of constructive
+           placement (CP) and will remain on demurrage until the train departs the CP location.
+   •       The total amount of CP time for each train will be added together and rounded to the nearest
+           hour. Up to 6 hours of CP Free Time will be given to each applicable train. When the 6
+           hours has expired and the train has not departed the CP location, demurrage fees will
+           commence from the start of constructive placement time at a rate of $1,050 per hour per
+           train.
+   •       Trains constructively placed enroute to an offline location will be governed as set forth
+           below in this Section 4.
+   •       Industry Time will be calculated from actual placement time (AP) until the train is released
+           for departure with proper billing in place (RI).
+   •       The Industry Time for all trains released back to BNSF within a calendar month will be
+           added together and divided by the number of trains released, resulting in an Average
+           Industry Time, which will be rounded down to the last completed hour.
+   •       If the Average Industry Time is greater than 24 hours, then demurrage charges will be
+           assessed by multiplying $315 by each hour in excess of 24 hours, multiplied by the total
+           number of trains released in the calendar month.
+   •       If the Average Industry Time is less than 18 hours, then demurrage credits will be given by
+           multiplying $315 by each hour less than 18 hours, multiplied by the total number of trains
+           released in the calendar month.
+   •       Accrued credits are to be used only to offset accrued constructive placement fees during
+           the same calendar month. Should the net of credits and debits reach zero, then no bill will
+           be assessed, and excess net credits are also zeroed out for that month.
+   •       All days are chargeable or eligible for credits.
+   •       Trains that have a ROP (release of power) are excluded in the factoring of demurrage and
+           credit calculations
+
+ Other Unit Trains Held for Loading and Unloading Calculation (Non-Unit Crude Oil
+ Trains)
+
+ Calculation:
+
+ Demurrage for constructive placement will be computed from the time of constructive placement
+ (CP), and will remain on demurrage until train departs hold location. Industry Time will be
+ calculated from placement time (AP) until the train is released for departure with proper billing in
+ place (RI).
+
+       •    Free Time and hourly rate for each train are listed below, except for trains constructively
+            placed en route which are subject to charges described within the Trains Constructively
+            Placed en route to an Offline Destination later in this Section 4.
+   •       For Other Unit Train Free Time, trains parked for constructive placement will be allowed
+           No free time. Industry Time will be rounded up to the nearest hour, from which free time
+           will be subtracted.
+   •       All days are chargeable, except as indicated in the Other Unit Train Holiday Table.
+
+
+
+                                                    14
+Other Unit Train Free Time
+
+ Commodity               STCC                                     Hourly Rate           Free Time
+ Broken/Crushed Stone    14219                                    $1,050                30 Hours
+ Dry Distilled Grains    20823* & 20859*                          $1,050                72 Hours
+ Fertilizer              2812534, 2812567, 2818170,               $1,050                36 Hours
+                         2819155, 2871235, 2871236,
+                         2871238, 2871313, 2871315
+ Gluten Feed             2042175                                  $1,050                72 Hours
+ Canola Meal             2093922                                  $1,050                48 Hours
+ Soybean Meal            2092314                                  $1,050                48 Hours
+ Taconite                10-111,10-112,10-113                     $1,050                 4 Hours
+ Grain Unit Trains       Containing 24 or more cars of 01137 $1,050                     48 Hours
+ All Other Unit Trains * Varies                                   $1,050                24 Hours
+    • * Note: for coal unit train details, refer to Tariff 6041-B
+
+
+
+
+Drop and Hook Unit Train Operations
+
+For unit trains where power from an inbound train is swapped to an outbound train, demurrage
+charges related to Industry Time will be calculated based on 24 hours Free Time.
+
+  •   Industry Time greater than 24 hours is chargeable at $1,050 per hour.
+  •   Constructive Placement is chargeable at $1,050 per hour from the start of constructive
+      placement until the train departs the hold location.
+
+
+
+Activities Other than Standard Train Operations
+
+Upon reasonable request by Shipper or Consignee, BNSF may remove locomotive power and
+release crew from a Shipper/Consignee location. Under these circumstances, the requesting
+party(ies) shall pay a release of power charge of $10,500 per occurrence, plus any miscellaneous
+switching charges that may apply. The release of power charge covers the removal and return of
+power for that train. A request to remove power may be considered reasonable when a designated
+unit train is to be stored for greater than 72 hours and the request is made prior to train arrival, or
+when more than 96 hours elapses without movement once the designated unit train is placed at
+the Shipper/Consignee location. In the event BNSF determines a request to be unreasonable
+under the terms stated above in this sub-section, demurrage charges will apply.
+
+If a unit train is to be stored greater than 72 hours and a Shipper or Consignee does not request
+power to be removed, BNSF may choose to remove power and a $10,500 release of power charge
+may apply in addition to the dwell accumulated through the time the power is released.
+
+Upon reasonable request by Shipper or Consignee, BNSF will deliver a Unit Train to or pick-up a
+Unit Train from a maintenance facility, storage track, interchange point or other location on the
+route-of-movement. If release of locomotive power is required, the requesting party(ies) shall pay
+BNSF a release of power charge of $10,500 per occurrence, plus any miscellaneous switching
+charges assessed by BNSF and any other carrier or entity that may apply.
+
+                                                  15
+ If BNSF is required to separate the loaded or empty train set into blocks of cars or singles,
+ additional switch fees will apply per BNSF Switching Book 8005-D.
+
+ If BNSF arrives at a maintenance facility, storage track, interchange or other location on the route-
+ of-movement to drop-off or pick-up a Unit Train and the Unit Train is not available for any reason,
+ an additional charge of $10,500 per occurrence shall apply.
+
+ If release of locomotive power occurs, all rail-controlled cars on industry tracks and private cars
+ on rail-controlled tracks will be assessed applicable charges per Sections 1 or 2 of this Book until
+ power is restored, in addition to the $10,500 removal of power fee.
+
+ If a Unit Train is held on rail-controlled tracks for private railcar repair, Shipper or Consignee will
+ be assessed a charge of $1,050 per hour to be calculated starting from the first hour the train is
+ held for repair.
+
+ These provisions are intended for the non-routine use by Shippers in response to extraordinary
+ circumstances and may not be used to circumvent otherwise applicable charges that may apply,
+ including charges resulting from the expiration of Loading or Unloading Free Time.
+
+ Pre-Release for Unit Trains
+
+ Shipper, Shipper’s agent or Receiving Party shall pre-release Unit Trains using the Unit Train Pre-
+ Release web feature at www.bnsf.com and following the Pre-Release web instructions. The Pre-
+ Release feature allows parties to notify BNSF of an estimated time when the Unit Train will be
+ made available, loaded or unloaded.
+
+If pre-release does not occur, train is considered actually placed and assessed charges as
+applicable until released.
+
+ Trains Constructively Placed en Route to an Offline Location
+
+ Any loaded or empty train destined to an offline station held at, or short of, interchange point will
+ be charged at $1,050 per hour. Demurrage will be computed from the time of constructive
+ placement and continue until train departs hold point. Each train constructively placed en route
+ will be allowed no free time.
+
+ All applicable charges will be due from the receiving party unwilling or unable to accept delivery.
+ If the receiving party does not normally do business directly with BNSF, then the shipper will be
+ responsible for all applicable charges.
+
+ Planned and Unplanned Shutdown
+
+ Planned shutdown information for Energy customers must be communicated in writing to the
+ BNSF Energy Desk at OPRDLenergydeskmgrs@BNSF.com and DemurrageHelp@BNSF.com.
+
+ Any outages impacting private equipment should also contact MKTDLPrivatecars@BNSF.com.
+
+ In the event of an unplanned shutdown, customer is responsible for demurrage charges for the
+ first 24-hour period after the load/unload window. If a situation calls for an extended shutdown,
+ then the customer must contact BNSF during the load/unload window for impact planning. An
+ email must be sent within 24 hours of the occurrence including date, time and the BNSF
+ individual notified.
+                                                   16
+SECTION 5 - Non-Chargeable Holidays
+The following days will be considered as Non-Chargeable Days for both rail controlled and private
+controlled equipment for Manifest Trains.
+
+
+ US Holiday                    Date                 Description
+ New Year’s Day                January 1
+ Martin Luther King Day        Varies               3rd Monday in January
+ Presidents’ Day               Varies               3rd Monday in February
+ Good Friday                   Varies               Friday before Easter
+ Easter Sunday                 Varies
+ Memorial Day                  Varies               Last Monday in May
+ Independence Day              July 4
+ Labor Day                     Varies               1st Monday in September
+ Thanksgiving Day              Varies               4th Thursday in November
+ Day after Thanksgiving        Varies
+ Christmas Eve                 December 24
+ Christmas Day                 December 25
+ New Year’s Eve                December 31
+
+
+ Canadian Holiday              Date                 Description
+ New Year’s Day                January 1
+ Good Friday                   Varies               Friday before Easter
+ Easter Sunday                 Varies
+ Victoria Day                  Varies               Monday preceding May 25
+ Canada Day                    July 1
+ Civic Holiday                 Varies               1st Monday in August
+ Labor Day                     Varies               1st Monday in September
+ Thanksgiving Day              Varies               2nd Monday in October
+ Remembrance Day               November 11
+ Christmas Eve                 December 24
+ Christmas Day                 December 25
+ Boxing Day                    December 26
+
+
+Shuttle Holiday Table: Applicable only to Ag Shuttles within Section 4
+
+                                            Start              Start     End              End
+ Stations              Day
+                                            Date               Time      Date             Time
+ Loading/Unloading     New Year’s           December 31        0001      January 2        0600
+ Loading/Unloading     Thanksgiving         Wednesday          1800      Friday           0600
+ Loading/Unloading     Christmas            December 24        0600      December 26      0600
+ Portland, OR          Each Month           2nd Wednesday      1500      2nd Wednesday    2400
+ Seattle, WA           Each Month           2nd Thursday       1500      2nd Thursday     2400
+ Tacoma, WA            Each Month           2nd Thursday       1500      2nd Thursday     2400
+ Vancouver, WA         Each Month           2nd Wednesday      1500      2nd Wednesday    2400
+ Longview, WA          Each Month           2nd Wednesday      1500      2nd Wednesday    2400
+ Kalama, WA            Each Month           2nd Wednesday      1500      2nd Wednesday    2400
+
+                                               17
+  •   Train Order Want Date: Date specified by customer or BNSF AG Operations or actual
+      placement of train for loading.
+  •   Train Order Want Time: Time is specified as constructive placement time or the time
+      specified by BNSF AG Operations.
+
+Other Unit Train Holiday Table: Applicable only to Unit trains within Section 4 (Not applicable to
+Unit Crude Oil Trains)
+
+                                              Start             Start   End                End
+ Stations              Day
+                                              Date              Time    Date               Time
+ Loading/Unloading     New Year’s             December 31       0600    January 2          0600
+ Loading/Unloading     Easter Sunday          Saturday prior    1800    Monday after       0600
+ Loading/Unloading     Independence Day       July 4            0700    July 5             0700
+ Loading/Unloading     Thanksgiving           Wednesday         1800    Friday             0600
+ Loading/Unloading     Christmas              December 24       0600    December 26        0600
+
+
+
+
+                                                18
+SECTION 6 - Index of Terms
+Actual Placement: When a car is placed in an accessible position for loading or unloading or at a
+point designated by the consignor, consignee or party loading or unloading the car or as
+reasonably designated as an accessible placement location by the railroad.
+
+Assigned Cars: The assignment of cars to a given shipper at a specific location as defined in Car
+Service Rule 16 and Car Hire Rule 22 as published in the Official Railway Equipment Register.
+
+Billing Cycle Record: A record for private car that is in constructive placement status awaiting
+disposition or order for placement at midnight on the last day of each billing cycle resulting in the
+computation of time and applicable charges.
+
+BNSF: BNSF Railway Company.
+
+Chargeable Day(s): The difference between the debits applied to a car minus any earned or
+allowed credits. Chargeable days multiplied by the applicable daily demurrage rate determines
+the chargeable amount.
+
+Debit Day(s): The days a car sits waiting to be placed at a customer facility or sitting a customer’s
+facility.
+
+Credit Day (s): The amount of free days allowed to load or unload a rail car. Credit Days are used
+to offset Debit Days when calculating Chargeable Days.
+
+Closing Event: The event in a car cycle that closes the cycle and results in computation of time
+and applicable charges.
+
+Commodity: The contents in the equipment (loaded or empty) described on the shipping
+instructions. The actual commodity corresponds to an associated STCC (See STTC).
+
+Consignee: The party designated on the bill of lading as the consignee or receiver. For purposes
+of this Tariff, the Consignee also includes the person or entity that receives the loaded railcars for
+unloading whether or not listed on the bill of lading as the consignee or receiver.
+
+Consignor: The party designated on the bill of lading as the consignor or shipper. For purposes
+of this Tariff, the Consignor also includes the person or entity that receives the empty railcars for
+loading whether or not listed on the bill of lading as the consignor or shipper.
+
+Constructive Placement: When a car cannot be actually placed or delivered because of any
+condition attributable to the consignee, consignor, loader or unloader, such car will be held by
+BNSF short of actual placement and notice will be sent or given to the party entitled to receive
+notification that the car is held awaiting disposition instructions. Such cars which have been placed
+by BNSF on private or other than team tracks, including lead tracks serving the loader or unloader,
+will be considered constructively placed without notice.
+
+Constructive Placement Time: The time from constructive placement notice until a car is ordered
+for placement.
+
+Disposition: Information, including shipping instructions and/or release, which allows the railroad
+to either tender or release the car.
+
+
+                                                 19
+Empty Release Information: Advice by unloader or consignee given to an authorized
+representative of BNSF that a car is partially or completely unloaded and available to BNSF.
+
+Extended Use Fee: A charge for a mechanical device used to control temperatures in refrigerated
+rail cars. EUF Day is a twenty-four (24) hour period or fraction thereof. The daily fee is in addition
+to standard demurrage charges.
+
+Free Time: Duration from the time that Actual Placement occurs that a receiving party is granted
+to load or unload the Unit Train. Demurrage charges begin to accrue when the allowed Free Hours
+for the identified commodity have been exceeded and a Release has not been communicated to
+BNSF though the required process.
+
+Shipping Instructions: A bill of lading or other suitable instructions given to an authorized
+representative of BNSF that contains all of the necessary information which allows for the
+immediate movement under either line haul or switching services provided by BNSF.
+
+Initial Placement: The actual placement, subsequent to arrival or interchange receipt at
+destination, of a private car on private tracks.
+
+Industrial Interchange Track: Designated delivery or receipt track or tracks for the exchange of
+cars between carrier and customer performing their own switching including industrial switch line
+acting as agent for Customer.
+
+Industry Time: The time from actual placement or notification of placement to team tracks until
+release and receipt of shipping instructions, if applicable. The time from interchange receipt of a
+loaded car or a loaded private car released and held on railroad controlled tracks until shipping
+instructions are received.
+
+Leased Track: A track leased to a customer through a written lease agreement and is considered
+the same as a private track for demurrage purposes.
+
+Loader: Party physically loading the car.
+
+Loading: The loading of a car, unit train or shuttle in conformity with BNSF loading and clearance
+rules, advice that the equipment is available for movement and the furnishing of shipping
+instructions.
+
+Loading Facility: Equipment necessary to load the desired commodity at origin to the Unit Train
+and any support facilities used in the handling of the desired commodity including rail trackage,
+storage facilities, load-out facilities and necessary systems used for moving the commodity from
+the storage and all intermediate phases to the load-out facility.
+
+LOGS: Loading Origin Guarantee Service is a guaranteed placement program.
+
+LUX Code: A code used by BNSF to identify transactions and sub-transactions related to
+demurrage.
+
+Non-Credit Customer: Any customer that has not established credit under the BNSF credit policy
+guidelines.
+
+Order in Customer: A customer who, by prior arrangement, has notified BNSF that cars shall not
+be placed, or considered to be placed, for loading or unloading, until BNSF has received an order
+
+                                                 20
+for placement from said customer. Until such order for placement is received, cars will be on
+constructive placement.
+
+Order in Time: In order for a car on constructive placement to be spotted at a customer's facility,
+the party entitled to receive the car must order the car for placement. This order in request must
+be made in accordance with the instructions provided by BNSF on the Constructive Placement
+Notice. The date and time that BNSF receives the order for placement will be considered the
+Order In Time and this time will be made part of that car's demurrage record, except when BNSF
+receives a request with a future order date, the request must include a date and time of the future
+order, and this date and time will be made part of that car’s demurrage record.
+
+Pre-Release: A notification given to the carrier by a customer advising train will be ready for
+movement in a set amount of time. A pre-release does not constitute a release for demurrage
+purposes.
+
+Private Car: A car which is not a railroad owned or controlled car.
+
+Private Track: Any track which is not owned or leased by a railroad.
+
+Public Delivery Track: Any track for use by the general public for loading and unloading (i.e. Team
+Track).
+
+Rail Equipment: Used in the transportation of goods between points on a rail network, including,
+but not limited to, locomotives and “Car(s)” which is equipment under ownership or control of
+BNSF, another carrier, or leased/owned by a private party.
+
+Railroad-Controlled Car: A car owned or controlled by a railroad including those bearing other
+than railroad reporting marks provided to a railroad directly by car companies or others for use by
+a railroad in serving any of its customers.
+
+Railroad-Controlled Tracks: Any track designated by BNSF not defined as a Leased Track or
+Private Track.
+
+Receiving Party: Any entity or person that receives or is supposed to receive rail cars from BNSF
+or on behalf of BNSF for loading or unloading including, but not limited to, shipper, consignor,
+consignee, operating customer, transloader, warehousemen, business park operators, industrial
+park operators, logistics park operators, agents and third party logistics providers.
+
+Refused Car: A car refused without being loaded or unloaded.
+
+Release: Except as otherwise provided in this Book, the term “release” means the notification
+received from loader or unloader that loading or unloading of a car has been completed and the
+car is available for movement and shipping instructions have been received.
+
+Reshipped/Reshipment: The entire original shipment is forwarded in the same car to another
+destination.
+
+Shipper: Person, party or legal entity shipping or arranging for the shipment of freight from origin,
+usually the person sending the shipping instructions (see Consignor). For purposes of this Tariff,
+the Shipper also includes the person or entity that receives the empty railcars for loading.
+
+Shuttles: A train loaded or unloaded by a customer under special provision of Section 4 of this
+Book.
+                                                 21
+Spot on Arrival: BNSF, without notification, will place cars for loading or unloading immediately
+upon their availability for placement.
+
+Spot on Arrival Customer: Cars for loading or unloading are ordered to the facility if capacity is
+available. If constructive placement of a car is necessary, the car will not be placed for loading or
+unloading until BNSF has received an order for placement. If a customer has elected automatic
+ordering of constructively placed cars, as cars are released and spotting capacity is made
+available, equipment will be ordered in.
+
+Storage Day: A twenty-four (24) hour period or fraction thereof.
+
+Straggler: Cars that were loaded or unloaded as part of a Shuttle but were removed from the
+Shuttle while en route to the identified loading or unloading facility by BNSF due to being identified
+as “bad order”. Cars removed from a Shuttle due to being overloaded, having a shifted load, or
+other reason attributed to the Shipper shall not be identified as a Straggler.
+
+Team Track: Any track designated by BNSF for use by the general public for loading and
+unloading (i.e. Public Delivery Track). Team Tracks are for limited use with no more than 52 cars
+per year to be shipped or received.
+
+Time: Local time applicable.
+
+Tendered for Delivery: All cars made available to a customer that have been constructively placed
+or ordered for placement on the same day.
+
+Unit Train: Any assemblage of like cars with BNSF-supplied locomotives and end-of-train devices
+necessary for the movement of a desired commodity of a particular STCC code.
+
+Unloader: Party physically unloading a car.
+
+Unloaded/Unloading: The complete or partial unloading of a car, unit train or shuttle and advice
+the equipment is available for movement and the furnishing of shipping instructions when
+required.
+
+Unloading Facility: Equipment necessary to unload the desired commodity at the destination from
+the Unit Train, and all support facilities necessary to the unloading of the desired commodity to a
+storage location, including rail trackage, unloading facilities and necessary systems used for
+moving the commodity from the unloading facility.
+
+Want Date: The date for which customer requested Rail-Controlled car for loading.
+
+
+
+
+                                                 22
+

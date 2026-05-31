@@ -1,0 +1,2486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free Rail Bill of Lading Builder — generate compliant rail BoLs in PDF and Word. Domestic, US to Mexico, US to Canada. Hazmat-aware (§172.204, §172.604, §172.704). From Steel Wheel Logistics.">
+  <title>Free Rail Bill of Lading Builder | Steel Wheel Logistics</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <link rel="canonical" href="https://steelwheellogistics.com/tools/rail-bol-builder">
+  <meta property="og:title" content="Free Rail Bill of Lading Builder | Steel Wheel Logistics">
+  <meta property="og:description" content="Free rail BoL generator. Domestic + cross-border + hazmat. PDF and Word output. Steel Wheel Logistics.">
+  <meta property="og:url" content="https://steelwheellogistics.com/tools/rail-bol-builder">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Rail Bill of Lading Builder | Steel Wheel Logistics">
+  <meta name="twitter:description" content="Free rail BoL generator. Domestic + cross-border + hazmat. PDF and Word output.">
+  <style>
+    /* Mirrors the demurrage-calculator + rail-rate-quote styling so the
+       tool family feels consistent. If brand colors change in style.css,
+       no edits needed here — we only override layout. */
+    .tool-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 48px 20px;
+      text-align: center;
+    }
+    .tool-hero h1 {
+      color: var(--white);
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .tool-hero p {
+      color: var(--steel-grey);
+      font-size: 1.05rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .tool-hero .badge {
+      display: inline-block;
+      background: rgba(74, 144, 217, 0.15);
+      color: var(--steel-blue);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tool-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+
+    .wizard {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .wizard-progress {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .wizard-step-pill {
+      flex: 1 1 80px;
+      background: var(--light-grey);
+      color: var(--text-light);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 8px 10px;
+      border-radius: 6px;
+      text-align: center;
+      letter-spacing: 0.3px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      user-select: none;
+    }
+    .wizard-step-pill.active {
+      background: var(--steel-blue);
+      color: var(--white);
+    }
+    .wizard-step-pill.completed {
+      background: rgba(74,144,217,0.12);
+      color: var(--steel-blue);
+      border-color: rgba(74,144,217,0.3);
+    }
+
+    .wizard-step { display: none; }
+    .wizard-step.active { display: block; }
+    .wizard-step h2 {
+      font-size: 1.25rem;
+      margin: 0 0 4px;
+    }
+    .wizard-step .step-help {
+      color: var(--text-light);
+      font-size: 0.92rem;
+      margin: 0 0 18px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 720px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+    .form-group { display: flex; flex-direction: column; }
+    .form-group.full-width { grid-column: 1 / -1; }
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .form-group label .hint {
+      font-weight: 400;
+      color: var(--text-light);
+      font-size: 0.78rem;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group input[type="number"],
+    .form-group input[type="date"],
+    .form-group select,
+    .form-group textarea {
+      padding: 9px 11px;
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      background: var(--white);
+      transition: border-color 0.2s;
+      font-family: inherit;
+    }
+    .form-group textarea { min-height: 80px; resize: vertical; }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--steel-blue);
+      box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.1);
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .radio-card {
+      flex: 1 1 200px;
+      border: 1px solid var(--border-grey);
+      border-radius: 10px;
+      padding: 14px 16px;
+      cursor: pointer;
+      transition: all 0.15s;
+      background: var(--white);
+    }
+    .radio-card:hover {
+      border-color: var(--steel-blue);
+      background: rgba(74,144,217,0.04);
+    }
+    .radio-card input { margin-right: 8px; }
+    .radio-card.selected {
+      border-color: var(--steel-blue);
+      background: rgba(74,144,217,0.08);
+      box-shadow: 0 0 0 2px rgba(74,144,217,0.15);
+    }
+    .radio-card .radio-label {
+      font-weight: 600;
+      color: var(--text-dark);
+      display: inline-block;
+    }
+    .radio-card .radio-sub {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.82rem;
+      color: var(--text-light);
+      margin-left: 22px;
+    }
+
+    .check-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 4px 0;
+      font-size: 0.92rem;
+      line-height: 1.4;
+      color: var(--text-body);
+      flex-wrap: wrap;
+    }
+    .check-row input { margin-top: 3px; flex-shrink: 0; }
+    .check-row label {
+      flex: 1 1 auto;
+      min-width: 0;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .wizard-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: var(--steel-blue);
+      color: var(--white);
+    }
+    .btn-primary:hover { background: var(--steel-blue-dark); }
+    .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+    .btn-secondary {
+      background: var(--white);
+      color: var(--navy);
+      border: 1px solid var(--border-grey);
+    }
+    .btn-secondary:hover { background: var(--light-grey); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-light);
+      padding: 10px 12px;
+    }
+    .btn-ghost:hover { color: var(--navy); }
+
+    .info-panel {
+      background: rgba(74, 144, 217, 0.06);
+      border-left: 3px solid var(--steel-blue);
+      padding: 12px 14px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.5;
+      margin: 12px 0;
+    }
+    .info-panel strong { color: var(--text-dark); }
+    .info-panel.warn {
+      background: rgba(217, 119, 6, 0.08);
+      border-left-color: #d97706;
+    }
+    .info-panel.danger {
+      background: rgba(220, 38, 38, 0.06);
+      border-left-color: #dc2626;
+    }
+    .info-panel.danger strong { color: #b91c1c; }
+
+    .verbatim-block {
+      background: #fafafa;
+      border: 1px dashed var(--border-grey);
+      padding: 12px 14px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: var(--text-body);
+      font-style: italic;
+      line-height: 1.55;
+      margin: 10px 0;
+    }
+    .verbatim-block::before {
+      content: '“';
+      font-size: 1.4em;
+      margin-right: 2px;
+      color: var(--text-light);
+    }
+    .verbatim-block::after {
+      content: '”';
+      font-size: 1.4em;
+      margin-left: 2px;
+      color: var(--text-light);
+    }
+
+    .templates-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 10px 14px;
+      background: var(--light-grey);
+      border-radius: 8px;
+      margin-bottom: 18px;
+      font-size: 0.88rem;
+    }
+    .templates-bar label { font-weight: 600; }
+    .templates-bar select {
+      padding: 6px 10px;
+      border: 1px solid var(--border-grey);
+      border-radius: 6px;
+      font-size: 0.88rem;
+      background: var(--white);
+    }
+    .templates-bar .templates-spacer { flex: 1; }
+    .templates-bar button {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      padding: 5px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .templates-bar button:hover { background: var(--steel-blue); color: var(--white); border-color: var(--steel-blue); }
+
+    .preview-section {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      padding: 20px;
+      max-height: 600px;
+      overflow-y: auto;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin: 14px 0;
+    }
+    .preview-section h3 {
+      font-size: 1rem;
+      margin: 14px 0 6px;
+      color: var(--navy);
+      border-bottom: 1px solid var(--light-grey);
+      padding-bottom: 4px;
+    }
+    .preview-section .preview-block-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    @media (max-width: 640px) {
+      .preview-section .preview-block-grid { grid-template-columns: 1fr; }
+    }
+    .preview-section .preview-block {
+      background: var(--light-grey);
+      padding: 10px 12px;
+      border-radius: 6px;
+    }
+    .preview-section .preview-label {
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 4px;
+      letter-spacing: 0.3px;
+    }
+    .preview-section table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin: 8px 0;
+    }
+    .preview-section th,
+    .preview-section td {
+      padding: 6px 8px;
+      border: 1px solid var(--border-grey);
+      text-align: left;
+    }
+    .preview-section th {
+      background: var(--light-grey);
+      font-weight: 600;
+    }
+    .preview-section .hazmat-er {
+      color: #b91c1c;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .error-msg {
+      color: var(--error-red);
+      font-size: 0.88rem;
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    /* Email-gate modal — same look as demurrage/rate-quote so users
+       recognise it across tools. */
+    .email-gate-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+    .email-gate-overlay.visible { display: flex; }
+    .email-gate-modal {
+      background: var(--white);
+      border-radius: 12px;
+      max-width: 460px;
+      width: 100%;
+      padding: 28px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+    }
+    .email-gate-modal h3 { margin: 0 0 8px; font-size: 1.2rem; color: var(--text-dark); }
+    .email-gate-modal p.lead {
+      margin: 0 0 18px; font-size: 0.92rem; color: var(--text-body); line-height: 1.5;
+    }
+    .email-gate-modal label {
+      display: block; font-size: 0.85rem; font-weight: 600;
+      color: var(--text-dark); margin-bottom: 6px;
+    }
+    .email-gate-modal input[type="email"],
+    .email-gate-modal input[type="text"],
+    .email-gate-modal input[type="tel"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    .email-gate-modal input:focus {
+      outline: none;
+      border-color: var(--steel-blue);
+      box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.1);
+    }
+    .email-gate-modal .field-spacer { height: 10px; }
+    .email-gate-modal .consent-row {
+      display: flex; align-items: flex-start; gap: 8px; margin: 12px 0 18px;
+      font-size: 0.85rem; color: var(--text-body); line-height: 1.4;
+    }
+    .email-gate-modal .gate-actions {
+      display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap;
+    }
+    .email-gate-modal .gate-cancel,
+    .email-gate-modal .gate-submit {
+      padding: 10px 18px; font-size: 0.95rem; border-radius: 8px; cursor: pointer; font-weight: 600;
+    }
+    .email-gate-modal .gate-cancel {
+      background: var(--white); color: var(--text-dark); border: 1px solid var(--border-grey);
+    }
+    .email-gate-modal .gate-submit {
+      background: var(--steel-blue); color: var(--white); border: none;
+    }
+    .email-gate-modal .gate-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .email-gate-modal .gate-error {
+      color: var(--error-red); font-size: 0.88rem; margin: 6px 0 12px; min-height: 1.1em;
+    }
+
+    /* Autocomplete dropdown — same lookup as rate-quote */
+    .ac-wrap { position: relative; }
+    .ac-list {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      max-height: 240px;
+      overflow-y: auto;
+      z-index: 50;
+      display: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .ac-list.visible { display: block; }
+    .ac-item {
+      padding: 8px 12px;
+      font-size: 0.92rem;
+      cursor: pointer;
+      border-bottom: 1px solid var(--light-grey);
+    }
+    .ac-item:last-child { border-bottom: none; }
+    .ac-item:hover, .ac-item.active { background: rgba(74,144,217,0.08); }
+
+    .download-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RSWDYHVY7Z');
+  </script>
+  <!-- jsPDF for client-side PDF generation -->
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js" defer></script>
+  <!-- docx 8.x via unpkg — exposes window.docx for client-side Word doc generation -->
+  <script src="https://unpkg.com/docx@8.5.0/build/index.umd.js" defer></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog">Blog</a>
+        <a href="/courses">Courses</a>
+        <a href="/tools" class="active">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="tool-hero">
+    <span class="badge">Free Tool · Compliant Rail BoL Generator</span>
+    <h1>Free Rail Bill of Lading Builder</h1>
+    <p>Generate a rail BoL in PDF and Word format. Supports domestic, US to Mexico, and US to Canada lanes. Hazmat-aware — auto-inserts §172.204 shipper certification, validates §172.604 emergency-response provider, and surfaces §172.704 training reminders.</p>
+  </section>
+
+  <!-- Main content -->
+  <div class="tool-layout">
+
+    <div class="wizard" id="wizard">
+
+      <!-- Templates bar -->
+      <div class="templates-bar" id="templatesBar" style="display:none">
+        <label for="templateSelect">Saved templates:</label>
+        <select id="templateSelect">
+          <option value="">— pick a template —</option>
+        </select>
+        <button type="button" id="loadTemplateBtn">Load</button>
+        <button type="button" id="deleteTemplateBtn">Delete</button>
+        <div class="templates-spacer"></div>
+        <button type="button" id="saveTemplateBtn">Save current as template</button>
+      </div>
+
+      <!-- Progress pills -->
+      <div class="wizard-progress" id="wizardProgress"></div>
+
+      <!-- Step 1 — Lane type -->
+      <div class="wizard-step active" data-step="1">
+        <h2>Step 1 — Lane Type</h2>
+        <p class="step-help">Pick the regulatory regime that applies. Cross-border lanes surface CBP, CARM, and Carta Porte reminders later in the form.</p>
+        <div class="radio-group" id="laneTypeGroup">
+          <label class="radio-card selected" data-value="domestic">
+            <input type="radio" name="lane_type" value="domestic" checked>
+            <span class="radio-label">Domestic</span>
+            <span class="radio-sub">US origin and US destination. Standard 49 CFR Part 1035.</span>
+          </label>
+          <label class="radio-card" data-value="us_mx">
+            <input type="radio" name="lane_type" value="us_mx">
+            <span class="radio-label">US to Mexico</span>
+            <span class="radio-sub">Adds Carta Porte 3.1 + Agente Aduanal + USMCA + AES.</span>
+          </label>
+          <label class="radio-card" data-value="us_ca">
+            <input type="radio" name="lane_type" value="us_ca">
+            <span class="radio-label">US to Canada</span>
+            <span class="radio-sub">Adds CARM + ACI eManifest + USMCA + AES.</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Step 2 — Parties -->
+      <div class="wizard-step" data-step="2">
+        <h2>Step 2 — Parties</h2>
+        <p class="step-help">Shipper (consignor) is the entity offering the freight. Consignee is the receiving party; a "c/o" party means the consignee receives at a third-party facility (transload, port).</p>
+
+        <h3 style="font-size:1rem;margin:14px 0 8px">Shipper / Consignor</h3>
+        <div class="form-grid">
+          <div class="form-group full-width">
+            <label for="shipper_name">Legal Name</label>
+            <input type="text" id="shipper_name" maxlength="120">
+          </div>
+          <div class="form-group full-width">
+            <label for="shipper_addr1">Address (line 1)</label>
+            <input type="text" id="shipper_addr1" maxlength="120">
+          </div>
+          <div class="form-group">
+            <label for="shipper_city">City</label>
+            <input type="text" id="shipper_city" maxlength="60">
+          </div>
+          <div class="form-group">
+            <label for="shipper_state">State / Province</label>
+            <input type="text" id="shipper_state" maxlength="40">
+          </div>
+          <div class="form-group">
+            <label for="shipper_zip">ZIP / Postal Code</label>
+            <input type="text" id="shipper_zip" maxlength="20">
+          </div>
+          <div class="form-group">
+            <label for="shipper_country">Country</label>
+            <select id="shipper_country">
+              <option value="US" selected>United States</option>
+              <option value="MX">Mexico</option>
+              <option value="CA">Canada</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="shipper_contact">Contact Name</label>
+            <input type="text" id="shipper_contact" maxlength="80">
+          </div>
+          <div class="form-group">
+            <label for="shipper_phone">Phone</label>
+            <input type="tel" id="shipper_phone" maxlength="40">
+          </div>
+          <div class="form-group full-width">
+            <label for="shipper_email">Contact Email</label>
+            <input type="email" id="shipper_email" maxlength="120">
+          </div>
+        </div>
+
+        <h3 style="font-size:1rem;margin:18px 0 8px">Consignee</h3>
+        <div class="form-grid">
+          <div class="form-group full-width">
+            <label for="consignee_name">Legal Name</label>
+            <input type="text" id="consignee_name" maxlength="120">
+          </div>
+          <div class="form-group full-width">
+            <label for="consignee_addr1">Address (line 1)</label>
+            <input type="text" id="consignee_addr1" maxlength="120">
+          </div>
+          <div class="form-group">
+            <label for="consignee_city">City</label>
+            <input type="text" id="consignee_city" maxlength="60">
+          </div>
+          <div class="form-group">
+            <label for="consignee_state">State / Province</label>
+            <input type="text" id="consignee_state" maxlength="40">
+          </div>
+          <div class="form-group">
+            <label for="consignee_zip">ZIP / Postal Code</label>
+            <input type="text" id="consignee_zip" maxlength="20">
+          </div>
+          <div class="form-group">
+            <label for="consignee_country">Country</label>
+            <select id="consignee_country">
+              <option value="US">United States</option>
+              <option value="MX">Mexico</option>
+              <option value="CA">Canada</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <div class="check-row">
+              <input type="checkbox" id="careof_toggle">
+              <label for="careof_toggle" style="font-weight:500;margin:0">
+                Consignee receives at a "c/o" (care-of) third-party facility
+              </label>
+            </div>
+            <div class="info-panel" id="careofExplainer" style="display:none">
+              <strong>§172.204 note on c/o parties:</strong> When freight is delivered to a transload, port, or third-party warehouse, the BoL lists the c/o party so the carrier knows where to physically deliver. The consignee remains the legal recipient — both names appear on the document.
+            </div>
+            <input type="text" id="careof_name" maxlength="120" placeholder="c/o party name (e.g., transload operator)" style="display:none;margin-top:6px">
+          </div>
+        </div>
+
+        <h3 style="font-size:1rem;margin:18px 0 8px">Bill-To and Freight Terms</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="freight_terms">Freight Terms</label>
+            <select id="freight_terms">
+              <option value="prepaid" selected>Prepaid (shipper pays)</option>
+              <option value="collect">Collect (consignee pays)</option>
+              <option value="third_party">3rd-Party Bill</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fob_terms">FOB Terms</label>
+            <select id="fob_terms">
+              <option value="origin">FOB Origin</option>
+              <option value="destination">FOB Destination</option>
+            </select>
+          </div>
+          <div class="form-group full-width" id="thirdPartyBlock" style="display:none">
+            <label for="third_party_name">3rd-Party Bill-To Party (name + address)</label>
+            <input type="text" id="third_party_name" maxlength="240" placeholder="ACME Logistics, 123 Main St, Houston TX 77001">
+          </div>
+          <div class="form-group full-width" id="collectNoRecourseBlock" style="display:none">
+            <div class="info-panel">
+              <strong>Collect (Consignor Non-Recourse) — 49 CFR Part 1035 Section 7.</strong>
+              For Collect shipments, the BoL document will include the verbatim non-recourse signature
+              statement below. NMFTA removed the front-of-form "Section 7" checkbox effective
+              2021-04-10; the contract clause still exists.
+            </div>
+            <div class="verbatim-block">Subject to Section 7 of the conditions of applicable bill of lading, if this shipment is to be delivered to the consignee without recourse on the consignor, the consignor shall sign the following statement: The carrier shall not make delivery of this shipment without payment of freight and all other lawful charges.</div>
+            <div class="check-row">
+              <input type="checkbox" id="non_recourse_sign">
+              <label for="non_recourse_sign" style="font-weight:500;margin:0">
+                Apply the consignor non-recourse signature statement to this BoL
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 — Shipment -->
+      <div class="wizard-step" data-step="3">
+        <h2>Step 3 — Shipment</h2>
+        <p class="step-help">Origin / destination cities use the same lookup as our rate-quote tool. Add equipment, car initials/numbers, and routing.</p>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="bol_number">BoL Number <span class="hint">(auto-filled; editable)</span></label>
+            <input type="text" id="bol_number" maxlength="40">
+          </div>
+          <div class="form-group">
+            <label for="bol_date">BoL Date</label>
+            <input type="date" id="bol_date">
+          </div>
+          <div class="form-group">
+            <label for="origin_city">Origin City, State <span class="hint">(start typing)</span></label>
+            <div class="ac-wrap">
+              <input type="text" id="origin_city" autocomplete="off" placeholder="Houston, TX">
+              <div class="ac-list" id="originAcList"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="destination_city">Destination City, State <span class="hint">(start typing)</span></label>
+            <div class="ac-wrap">
+              <input type="text" id="destination_city" autocomplete="off" placeholder="Chicago, IL">
+              <div class="ac-list" id="destinationAcList"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="originating_carrier">Originating Carrier (SCAC)</label>
+            <select id="originating_carrier">
+              <option value="">— select —</option>
+              <option value="BNSF">BNSF</option>
+              <option value="UP">UP (Union Pacific)</option>
+              <option value="NS">NS (Norfolk Southern)</option>
+              <option value="CSXT">CSXT (CSX)</option>
+              <option value="CPKC">CPKC (Canadian Pacific Kansas City)</option>
+              <option value="CN">CN (Canadian National)</option>
+              <option value="FXE">FXE (Ferromex)</option>
+              <option value="other">Other / Short line</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="delivering_carrier">Delivering Carrier (SCAC) <span class="hint">(optional)</span></label>
+            <input type="text" id="delivering_carrier" maxlength="20" placeholder="Same as originating if single-line">
+          </div>
+          <div class="form-group full-width">
+            <label for="route_via">Route Via Junction(s) <span class="hint">(optional, comma-separated for interline moves)</span></label>
+            <input type="text" id="route_via" maxlength="200" placeholder="e.g., BNSF – Chicago – NS">
+          </div>
+          <div class="form-group full-width">
+            <div class="check-row">
+              <input type="checkbox" id="rule_11_toggle">
+              <label for="rule_11_toggle" style="font-weight:500;margin:0">
+                Rule 11 split rate (each carrier rates its own segment)
+              </label>
+            </div>
+            <div id="rule11Block" style="display:none;margin-top:8px">
+              <div class="info-panel">
+                Under Rule 11, each carrier on the route rates its segment independently. The BoL records each segment separately with its own SCAC + junction + rate.
+              </div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="rule11_segment1">Segment 1 — SCAC + Junction + Rate</label>
+                  <input type="text" id="rule11_segment1" maxlength="120" placeholder="UP – Memphis – $2,800/car">
+                </div>
+                <div class="form-group">
+                  <label for="rule11_segment2">Segment 2 — SCAC + Junction + Rate</label>
+                  <input type="text" id="rule11_segment2" maxlength="120" placeholder="NS – Atlanta – $2,400/car">
+                </div>
+                <div class="form-group full-width">
+                  <label for="rule11_segment3">Segment 3 (optional)</label>
+                  <input type="text" id="rule11_segment3" maxlength="120" placeholder="If a 3rd interline carrier">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="equipment_type">Equipment Type</label>
+            <select id="equipment_type">
+              <option value="">— select —</option>
+              <option value="boxcar">Boxcar</option>
+              <option value="covered_hopper">Covered Hopper</option>
+              <option value="open_top_hopper">Open-Top Hopper</option>
+              <option value="gondola">Gondola</option>
+              <option value="flatcar">Flatcar</option>
+              <option value="tank_car">Tank Car</option>
+              <option value="autorack">Autorack</option>
+              <option value="centerbeam">Centerbeam</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="car_count">Number of Cars</label>
+            <input type="number" id="car_count" min="1" max="200" step="1" value="1">
+          </div>
+          <div class="form-group full-width">
+            <label for="car_numbers">Car Initials + Numbers <span class="hint">(one per line, or "TBD")</span></label>
+            <textarea id="car_numbers" placeholder="UPRR 123456&#10;TILX 654321&#10;TBD"></textarea>
+          </div>
+          <div class="form-group full-width" id="aarLoadingPanel" style="display:none">
+            <div class="info-panel">
+              <strong>AAR Open Top Loading Rules.</strong> Breakbulk loads on open-top equipment
+              (gondola, flatcar, mill gondola, bulkhead flatcar) must be loaded and braced per
+              the AAR Open Top Loading Rules Manual. Reference the applicable rule section in
+              special instructions on Step 7.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4 — Commodity -->
+      <div class="wizard-step" data-step="4">
+        <h2>Step 4 — Commodity</h2>
+        <p class="step-help">STCC code is required on the rail waybill (AAR Rule 5 + 110). Hazmat STCCs start with 49.</p>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="stcc_code">STCC Code <span class="hint">(7 digits)</span></label>
+            <input type="text" id="stcc_code" maxlength="9" placeholder="2031130">
+          </div>
+          <div class="form-group">
+            <label for="commodity_name">Commodity Name</label>
+            <input type="text" id="commodity_name" maxlength="120" placeholder="e.g., Grain, Soybean meal, Paper rolls">
+          </div>
+          <div class="form-group">
+            <label for="packaging_type">Packaging Type</label>
+            <select id="packaging_type">
+              <option value="bulk">Bulk</option>
+              <option value="breakbulk">Breakbulk</option>
+              <option value="palletized">Palletized</option>
+              <option value="containerized">Containerized (intermodal)</option>
+              <option value="drums">Drums / Totes / IBC</option>
+              <option value="bags">Bags / Sacks</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="weight_per_car">Weight per Car <span class="hint">(lbs)</span></label>
+            <input type="number" id="weight_per_car" min="0" step="100" placeholder="200000">
+          </div>
+          <div class="form-group">
+            <label for="total_weight">Total Weight (auto-calc) <span class="hint">(lbs)</span></label>
+            <input type="number" id="total_weight" min="0" step="1" readonly>
+          </div>
+          <div class="form-group">
+            <label for="declared_value">Declared Value <span class="hint">($, optional — triggers Released Value Limitation)</span></label>
+            <input type="number" id="declared_value" min="0" step="100" placeholder="0 for tariff default">
+          </div>
+          <div class="form-group full-width">
+            <label for="commodity_description">Full Description of Articles (for BoL)</label>
+            <textarea id="commodity_description" maxlength="500" placeholder="e.g., No. 2 Yellow Corn, in bulk, weight per car as marked"></textarea>
+          </div>
+          <div class="form-group full-width">
+            <div class="check-row">
+              <input type="checkbox" id="hazmat_toggle">
+              <label for="hazmat_toggle" style="font-weight:600;margin:0">
+                This shipment contains hazardous materials (HM Indicator = X)
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5 — Hazmat (conditional) -->
+      <div class="wizard-step" data-step="5">
+        <h2>Step 5 — Hazmat Details</h2>
+        <p class="step-help">Required when the shipment contains a hazardous material per 49 CFR Part 172. The BoL will include the §172.204 shipper's certification and §172.604 emergency-response phone.</p>
+
+        <div class="info-panel danger" id="hazmatPenaltyPanel">
+          <strong>PHMSA penalty disclosure.</strong> Falsification of the §172.204 certification or
+          listing an emergency-response phone without an active provider contract can subject
+          the shipper to civil penalties up to <strong>$238,809 per violation per day</strong>
+          (49 CFR 107.329, eff. Jan 2025).
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="un_number">UN / NA Number</label>
+            <input type="text" id="un_number" maxlength="10" placeholder="UN1203">
+          </div>
+          <div class="form-group">
+            <label for="hazard_class">Hazard Class</label>
+            <input type="text" id="hazard_class" maxlength="10" placeholder="3">
+          </div>
+          <div class="form-group">
+            <label for="packing_group">Packing Group</label>
+            <select id="packing_group">
+              <option value="">—</option>
+              <option value="I">I</option>
+              <option value="II">II</option>
+              <option value="III">III</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="subsidiary_risk">Subsidiary Risk <span class="hint">(if any)</span></label>
+            <input type="text" id="subsidiary_risk" maxlength="20" placeholder="e.g., 6.1">
+          </div>
+          <div class="form-group full-width">
+            <label for="proper_shipping_name">Proper Shipping Name <span class="hint">(per 49 CFR 172.101)</span></label>
+            <input type="text" id="proper_shipping_name" maxlength="200" placeholder="Gasoline">
+          </div>
+        </div>
+
+        <h3 style="font-size:1rem;margin:18px 0 8px">§172.604 Emergency Response Phone</h3>
+        <div class="info-panel">
+          <strong>Live-answer required.</strong> Per 49 CFR §172.604, the phone number must be
+          monitored 24/7 and answered by a person knowledgeable of the shipment (or with immediate
+          access to such a person). Answering machines, voicemail, and IVR systems are prohibited.
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="er_provider">Emergency Response Provider</label>
+            <select id="er_provider">
+              <option value="">— select —</option>
+              <option value="chemtrec">CHEMTREC (1-800-424-9300)</option>
+              <option value="verisk_3e">3E (Verisk 3E)</option>
+              <option value="infotrac">INFOTRAC</option>
+              <option value="chemtel">ChemTel</option>
+              <option value="self_provided">Self-provided (internal EHS on-call)</option>
+              <option value="other">Other commercial provider</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="er_contract" id="erContractLabel">Provider Contract Number</label>
+            <input type="text" id="er_contract" maxlength="20" placeholder="CCN12345">
+          </div>
+          <div class="form-group full-width">
+            <label for="er_phone">Emergency Phone Number</label>
+            <input type="tel" id="er_phone" maxlength="40" placeholder="1-800-424-9300">
+          </div>
+        </div>
+        <div class="info-panel danger" id="erContractWarn">
+          <strong>Contract verification required.</strong> You must have an active contract with this
+          provider before listing their number on a BoL. §172.604 requires the provider to have
+          access to your shipment data when the call is received. Listing a number without a
+          contract is a federal violation subject to PHMSA penalties up to $99,756 per violation.
+        </div>
+        <div class="info-panel warn" id="selfProvidedWarn" style="display:none">
+          <strong>Self-provided number — 24/7 live answer rule.</strong> Per 49 CFR §172.604(a)(3),
+          this phone number MUST be answered 24/7 by a real person with knowledge of this specific
+          shipment. Answering machines, voicemail menus, and IVR systems are prohibited. Verify
+          your on-call rotation can meet this standard before listing an internal number.
+        </div>
+
+        <h3 style="font-size:1rem;margin:18px 0 8px">§172.704 Hazmat Employee Training</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="trained_employee_name">Trained Employee Name</label>
+            <input type="text" id="trained_employee_name" maxlength="120">
+          </div>
+          <div class="form-group">
+            <label for="trained_employee_title">Title</label>
+            <input type="text" id="trained_employee_title" maxlength="80">
+          </div>
+          <div class="form-group full-width">
+            <label for="trained_employee_date">Most Recent Training Completion Date</label>
+            <input type="date" id="trained_employee_date">
+          </div>
+        </div>
+        <div class="info-panel warn" id="trainingStaleWarn" style="display:none">
+          <strong>Training is over 3 years old.</strong> Per §172.704(c)(2), hazmat employee
+          training must be refreshed at least once every 3 years. Confirm recurrent training
+          is current before tendering this shipment.
+        </div>
+
+        <h3 style="font-size:1rem;margin:18px 0 8px">§172.204 Shipper's Certification</h3>
+        <p class="step-help" style="margin-bottom:8px">The following verbatim statement will be inserted above the shipper signature line on the generated BoL.</p>
+        <div class="form-group">
+          <label for="cert_choice">Certification</label>
+          <select id="cert_choice">
+            <option value="domestic" selected>Domestic (default)</option>
+            <option value="international">International / IMDG / IATA-aligned</option>
+          </select>
+        </div>
+        <div class="verbatim-block" id="certDomesticText">This is to certify that the above-named materials are properly classified, described, packaged, marked and labeled, and are in proper condition for transportation according to the applicable regulations of the Department of Transportation.</div>
+        <div class="verbatim-block" id="certInternationalText" style="display:none">I hereby declare that the contents of this consignment are fully and accurately described above by the proper shipping name, and are classified, packaged, marked and labeled/placarded, and are in all respects in proper condition for transport according to applicable international and national governmental regulations.</div>
+      </div>
+
+      <!-- Step 6 — Cross-border (conditional) -->
+      <div class="wizard-step" data-step="6">
+        <h2 id="step6Title">Step 6 — Cross-Border</h2>
+        <p class="step-help" id="step6Help">Surfaces SAT Carta Porte / CARM / USMCA / AES reminders based on the lane type picked in Step 1.</p>
+
+        <!-- US→MX block -->
+        <div id="step6Mx" style="display:none">
+          <div class="info-panel">
+            <strong>Mexican Agente Aduanal.</strong> Recommended: licensed Agente Aduanal in the
+            aduana of crossing (Article 40 Ley Aduanera). Self-clearance is legally allowed via
+            RLA accreditation but rarely practical. Your Agente Aduanal's <em>patente</em> must
+            include the aduana you intend to cross at — confirm before booking.
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="agente_aduanal">Agente Aduanal Name + Patente</label>
+              <input type="text" id="agente_aduanal" maxlength="200" placeholder="e.g., Juan Pérez, Patente 1234">
+            </div>
+            <div class="form-group">
+              <label for="incoterms">INCOTERMS 2020</label>
+              <select id="incoterms">
+                <option value="">— select —</option>
+                <option value="EXW">EXW — Ex Works</option>
+                <option value="FCA">FCA — Free Carrier</option>
+                <option value="FOB">FOB — Free On Board</option>
+                <option value="CIF">CIF — Cost, Insurance, Freight</option>
+                <option value="CPT">CPT — Carriage Paid To</option>
+                <option value="CIP">CIP — Carriage and Insurance Paid To</option>
+                <option value="DAP">DAP — Delivered At Place</option>
+                <option value="DPU">DPU — Delivered At Place Unloaded</option>
+                <option value="DDP">DDP — Delivered Duty Paid</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="border_interchange_mx">Border Interchange</label>
+              <select id="border_interchange_mx">
+                <option value="">— select —</option>
+                <option value="eagle_pass">Eagle Pass / Piedras Negras (UP ↔ Ferromex)</option>
+                <option value="laredo">Laredo / Nuevo Laredo (CPKC)</option>
+                <option value="brownsville">Brownsville / Matamoros (CPKC)</option>
+                <option value="el_paso">El Paso / Cd. Juárez (UP/BNSF ↔ Ferromex)</option>
+                <option value="nogales">Nogales / Nogales (UP ↔ Ferromex)</option>
+                <option value="calexico">Calexico / Mexicali (BNSF ↔ Ferromex)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="commercial_invoice_ref">Commercial Invoice Ref</label>
+              <input type="text" id="commercial_invoice_ref" maxlength="80">
+            </div>
+            <div class="form-group">
+              <label for="aes_itn">AES ITN <span class="hint">(required when value &gt; $2,500)</span></label>
+              <input type="text" id="aes_itn" maxlength="40" placeholder="X20260516000000">
+            </div>
+            <div class="form-group full-width">
+              <div class="check-row">
+                <input type="checkbox" id="usmca_mx" checked>
+                <label for="usmca_mx" style="font-weight:500;margin:0">
+                  USMCA / T-MEC certification of origin applies (auto-inserts cert statement)
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="info-panel">
+            <strong>Carta Porte 3.1 preview.</strong> A full Carta Porte 3.1 XML generator (TipoTransp=04
+            for Ferroviario, ≥5 Ubicación nodes for rail) is shipping as a separate Steel Wheel tool.
+            For now, this BoL captures the basic shipment data the Agente Aduanal needs to file the
+            CFDI 4.0 + Complemento Carta Porte at the aduana.
+          </div>
+        </div>
+
+        <!-- US→CA block -->
+        <div id="step6Ca" style="display:none">
+          <div class="info-panel">
+            <strong>CARM Client Portal.</strong> Mandatory since Oct 2024 for all importers of
+            record into Canada. Self-account allowed (no Canadian broker required), but
+            CARM Client Portal registration + RM business number are required to release goods
+            and post your own RPP bond.
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="bn_rm">Canadian BN9-RM Number</label>
+              <input type="text" id="bn_rm" maxlength="20" placeholder="123456789RM0001">
+            </div>
+            <div class="form-group">
+              <label for="canadian_broker">Canadian Customs Broker <span class="hint">(optional)</span></label>
+              <input type="text" id="canadian_broker" maxlength="200">
+            </div>
+            <div class="form-group">
+              <label for="commercial_invoice_ref_ca">Commercial Invoice Ref</label>
+              <input type="text" id="commercial_invoice_ref_ca" maxlength="80">
+            </div>
+            <div class="form-group">
+              <label for="aes_itn_ca">AES ITN <span class="hint">(required when value &gt; $2,500)</span></label>
+              <input type="text" id="aes_itn_ca" maxlength="40" placeholder="X20260516000000">
+            </div>
+            <div class="form-group full-width">
+              <div class="check-row">
+                <input type="checkbox" id="usmca_ca" checked>
+                <label for="usmca_ca" style="font-weight:500;margin:0">
+                  USMCA / CUSMA certification of origin applies (auto-inserts cert statement)
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="info-panel">
+            <strong>ACI eManifest.</strong> Filed by the rail carrier at least 2 hours prior to arrival
+            at the First Port of Arrival in Canada (CBSA Memorandum D3-6-6). The data on this BoL
+            populates the carrier's filing — make sure shipper/consignee, commodity, weights, car
+            numbers, and seal numbers are accurate.
+          </div>
+        </div>
+
+        <!-- Domestic placeholder -->
+        <div id="step6Domestic" style="display:block">
+          <div class="info-panel">
+            <strong>Domestic lane.</strong> No cross-border filings required. The generated BoL
+            includes the verbatim 49 CFR Part 1035 contract language. Skip ahead to Step 7
+            for special instructions.
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 7 — Special instructions -->
+      <div class="wizard-step" data-step="7">
+        <h2>Step 7 — Special Instructions</h2>
+        <p class="step-help">Optional — securement, temperature constraints, notify party, accessorial requests. These render on the BoL under the commodity table.</p>
+        <div class="form-grid">
+          <div class="form-group full-width">
+            <label for="securement_notes">Securement / Loading Notes</label>
+            <textarea id="securement_notes" placeholder="e.g., Loaded and braced per AAR Open Top Loading Rules Manual, Section X.X"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="temp_constraints">Temperature Constraints</label>
+            <input type="text" id="temp_constraints" maxlength="120" placeholder="e.g., Maintain 32-40 F, reefer setpoint 36 F">
+          </div>
+          <div class="form-group">
+            <label for="accessorial_request">Accessorial Requests</label>
+            <input type="text" id="accessorial_request" maxlength="120" placeholder="e.g., Switching at origin, demurrage waiver">
+          </div>
+          <div class="form-group full-width">
+            <label for="notify_party">Notify Party <span class="hint">(optional)</span></label>
+            <input type="text" id="notify_party" maxlength="200" placeholder="Name + phone for arrival notification">
+          </div>
+          <div class="form-group full-width">
+            <label for="seal_numbers">Seal Numbers <span class="hint">(one per line)</span></label>
+            <textarea id="seal_numbers" placeholder="e.g., SWL-001234"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 8 — Preview + output -->
+      <div class="wizard-step" data-step="8">
+        <h2>Step 8 — Preview &amp; Download</h2>
+        <p class="step-help">Review what will land on the document, then export to PDF or Word. Save as a named template to reuse on repeat lanes.</p>
+
+        <div class="preview-section" id="bolPreview"></div>
+
+        <div class="download-actions">
+          <button type="button" class="btn btn-primary" id="downloadPdfBtn">Download PDF</button>
+          <button type="button" class="btn btn-primary" id="downloadDocxBtn">Download DOCX</button>
+          <button type="button" class="btn btn-secondary" id="saveTemplateBtnInline">Save as Template</button>
+          <button type="button" class="btn btn-secondary" id="emailCopyBtn">Email Me a Copy</button>
+        </div>
+        <p class="error-msg" id="downloadError"></p>
+      </div>
+
+      <!-- Wizard nav -->
+      <div class="wizard-nav">
+        <button type="button" class="btn btn-ghost" id="wizardPrev">&larr; Back</button>
+        <button type="button" class="btn btn-primary" id="wizardNext">Next &rarr;</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Email-gate modal -->
+  <div class="email-gate-overlay" id="emailGateOverlay" role="dialog" aria-modal="true" aria-labelledby="emailGateTitle">
+    <div class="email-gate-modal">
+      <h3 id="emailGateTitle">One step before your BoL</h3>
+      <p class="lead">Where should we send your bill of lading? We'll only contact you about this shipment unless you ask us to follow up on the broader lane.</p>
+      <form id="emailGateForm" novalidate>
+        <label for="leadEmail">Email address</label>
+        <input type="email" id="leadEmail" name="email" required autocomplete="email" placeholder="you@company.com">
+        <div class="field-spacer"></div>
+        <label for="leadName">Name <span style="font-weight:400;color:#888">(optional)</span></label>
+        <input type="text" id="leadName" name="name" autocomplete="name" maxlength="200">
+        <div class="field-spacer"></div>
+        <label for="leadPhone">Phone <span style="font-weight:400;color:#888">(optional)</span></label>
+        <input type="tel" id="leadPhone" name="phone" autocomplete="tel" maxlength="60">
+        <div class="gate-error" id="leadEmailError"></div>
+        <label class="consent-row">
+          <input type="checkbox" id="leadConsent" checked>
+          <span>I agree to receive my bill of lading by email and follow-up.</span>
+        </label>
+        <div class="gate-actions">
+          <button type="button" class="gate-cancel" id="leadCancel">Cancel</button>
+          <button type="submit" class="gate-submit" id="leadSubmit">Continue</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ──────────────────────────────────────────────────────────────
+    // Rail Bill of Lading Builder — pure client-side wizard.
+    //
+    // Architecture:
+    //   - Multi-step wizard over a single `state` object.
+    //   - PDF generated via jsPDF + autotable (matches demurrage-tool).
+    //   - DOCX generated via window.docx 8.x (UMD build from unpkg).
+    //   - Lead capture posts to /api/bol-lead with whatever lane state
+    //     we have at the moment (gate / pdf / docx / submit).
+    //   - Email-gate uses the shared swl_email 90-day localStorage cookie
+    //     so a user who unlocked any SWL tool skips the modal here.
+    //   - Templates serialize the state object into localStorage by name.
+    // ──────────────────────────────────────────────────────────────
+
+    const TOTAL_STEPS_MAX = 8;
+    const VERBATIM_172_204_DOMESTIC =
+      'This is to certify that the above-named materials are properly classified, described, packaged, marked and labeled, and are in proper condition for transportation according to the applicable regulations of the Department of Transportation.';
+    const VERBATIM_172_204_INTERNATIONAL =
+      'I hereby declare that the contents of this consignment are fully and accurately described above by the proper shipping name, and are classified, packaged, marked and labeled/placarded, and are in all respects in proper condition for transport according to applicable international and national governmental regulations.';
+    const VERBATIM_PART_1035_SECTION_7 =
+      'Subject to Section 7 of the conditions of applicable bill of lading, if this shipment is to be delivered to the consignee without recourse on the consignor, the consignor shall sign the following statement: The carrier shall not make delivery of this shipment without payment of freight and all other lawful charges.';
+    const USMCA_CERT_STATEMENT =
+      'I certify that the goods described in this document qualify as originating goods under USMCA / T-MEC / CUSMA. This certification is issued in accordance with Article 5.2 of the USMCA agreement.';
+
+    const ER_PROVIDERS = {
+      chemtrec: { label: 'CHEMTREC', phone: '1-800-424-9300', contractLabel: 'CCN (CHEMTREC Customer Number)', requireContract: true },
+      verisk_3e: { label: '3E (Verisk 3E)', phone: '', contractLabel: '3E Account Number', requireContract: true },
+      infotrac: { label: 'INFOTRAC', phone: '', contractLabel: 'INFOTRAC Account ID', requireContract: true },
+      chemtel: { label: 'ChemTel', phone: '', contractLabel: 'ChemTel Account ID', requireContract: true },
+      self_provided: { label: 'Self-provided', phone: '', contractLabel: '', requireContract: false },
+      other: { label: 'Other commercial provider', phone: '', contractLabel: 'Provider Account/Contract #', requireContract: true },
+    };
+
+    const EQUIPMENT_LABELS = {
+      boxcar: 'Boxcar',
+      covered_hopper: 'Covered Hopper',
+      open_top_hopper: 'Open-Top Hopper',
+      gondola: 'Gondola',
+      flatcar: 'Flatcar',
+      tank_car: 'Tank Car',
+      autorack: 'Autorack',
+      centerbeam: 'Centerbeam',
+    };
+
+    const LANE_LABELS = {
+      domestic: 'Domestic',
+      us_mx: 'US to Mexico',
+      us_ca: 'US to Canada',
+    };
+
+    const INTERCHANGE_LABELS_MX = {
+      eagle_pass: 'Eagle Pass / Piedras Negras (UP ↔ Ferromex)',
+      laredo: 'Laredo / Nuevo Laredo (CPKC)',
+      brownsville: 'Brownsville / Matamoros (CPKC)',
+      el_paso: 'El Paso / Cd. Juárez (UP/BNSF ↔ Ferromex)',
+      nogales: 'Nogales / Nogales (UP ↔ Ferromex)',
+      calexico: 'Calexico / Mexicali (BNSF ↔ Ferromex)',
+    };
+
+    let currentStep = 1;
+
+    // ───── Helpers ─────
+    function $(id) { return document.getElementById(id); }
+    function val(id) { return ($(id) || {}).value || ''; }
+    function chk(id) { return !!($(id) || {}).checked; }
+    function setVal(id, v) { const e = $(id); if (e) e.value = v == null ? '' : v; }
+    function setChk(id, v) { const e = $(id); if (e) e.checked = !!v; }
+
+    function genBolNumber() {
+      const d = new Date();
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth() + 1).padStart(2, '0');
+      const dd = String(d.getDate()).padStart(2, '0');
+      const rand = Math.random().toString(36).slice(2, 6).toUpperCase();
+      return `SWL-BOL-${yyyy}${mm}${dd}-${rand}`;
+    }
+
+    function todayIso() {
+      const d = new Date();
+      return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    }
+
+    function stripMd(s) {
+      if (s == null) return '';
+      let t = String(s);
+      t = t.replace(/<[^>]+>/g, '');
+      t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1');
+      t = t.replace(/\*\*([^*]+)\*\*/g, '$1');
+      t = t.replace(/`([^`]+)`/g, '$1');
+      t = t.replace(/\*+/g, '');
+      return t.trim();
+    }
+
+    function escHtml(s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
+    function fmtMoney(n) {
+      if (n == null || !Number.isFinite(Number(n))) return '—';
+      return '$' + Number(n).toLocaleString('en-US', { maximumFractionDigits: 0 });
+    }
+
+    // ───── Init defaults ─────
+    function initDefaults() {
+      setVal('bol_number', genBolNumber());
+      setVal('bol_date', todayIso());
+    }
+
+    // ───── Wizard navigation ─────
+    function visibleSteps() {
+      // Step 5 only if hazmat. Step 6 only if cross-border.
+      const out = [1, 2, 3, 4];
+      if (chk('hazmat_toggle')) out.push(5);
+      const lane = currentLane();
+      if (lane === 'us_mx' || lane === 'us_ca') out.push(6);
+      out.push(7, 8);
+      return out;
+    }
+
+    function currentLane() {
+      const radios = document.querySelectorAll('input[name="lane_type"]');
+      for (const r of radios) if (r.checked) return r.value;
+      return 'domestic';
+    }
+
+    function renderProgress() {
+      const bar = $('wizardProgress');
+      const steps = visibleSteps();
+      bar.innerHTML = '';
+      const labels = {
+        1: '1. Lane',
+        2: '2. Parties',
+        3: '3. Shipment',
+        4: '4. Commodity',
+        5: '5. Hazmat',
+        6: '6. Cross-Border',
+        7: '7. Special',
+        8: '8. Preview',
+      };
+      for (const s of steps) {
+        const el = document.createElement('div');
+        el.className = 'wizard-step-pill' + (s === currentStep ? ' active' : (steps.indexOf(s) < steps.indexOf(currentStep) ? ' completed' : ''));
+        el.textContent = labels[s];
+        el.dataset.step = String(s);
+        el.addEventListener('click', () => gotoStep(s));
+        bar.appendChild(el);
+      }
+    }
+
+    function showStep(n) {
+      document.querySelectorAll('.wizard-step').forEach(el => {
+        el.classList.toggle('active', String(el.dataset.step) === String(n));
+      });
+      // Hide next button on last step; hide back button on first.
+      $('wizardPrev').style.visibility = (n === visibleSteps()[0]) ? 'hidden' : 'visible';
+      const lastStep = visibleSteps()[visibleSteps().length - 1];
+      $('wizardNext').style.visibility = (n === lastStep) ? 'hidden' : 'visible';
+
+      if (n === 8) {
+        renderPreview();
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function gotoStep(n) {
+      currentStep = n;
+      renderProgress();
+      showStep(n);
+    }
+
+    function nextStep() {
+      const steps = visibleSteps();
+      const idx = steps.indexOf(currentStep);
+      if (idx === -1 || idx === steps.length - 1) return;
+      gotoStep(steps[idx + 1]);
+    }
+    function prevStep() {
+      const steps = visibleSteps();
+      const idx = steps.indexOf(currentStep);
+      if (idx <= 0) return;
+      gotoStep(steps[idx - 1]);
+    }
+
+    // ───── Lane-type radio cards ─────
+    document.querySelectorAll('.radio-card').forEach(card => {
+      card.addEventListener('click', () => {
+        document.querySelectorAll('.radio-card').forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        const input = card.querySelector('input');
+        if (input) { input.checked = true; }
+        updateCrossBorderPanels();
+        renderProgress();
+      });
+    });
+
+    function updateCrossBorderPanels() {
+      const lane = currentLane();
+      $('step6Mx').style.display = lane === 'us_mx' ? 'block' : 'none';
+      $('step6Ca').style.display = lane === 'us_ca' ? 'block' : 'none';
+      $('step6Domestic').style.display = lane === 'domestic' ? 'block' : 'none';
+      if (lane === 'us_mx') {
+        $('step6Title').textContent = 'Step 6 — Cross-Border (US to Mexico)';
+      } else if (lane === 'us_ca') {
+        $('step6Title').textContent = 'Step 6 — Cross-Border (US to Canada)';
+      } else {
+        $('step6Title').textContent = 'Step 6 — Cross-Border';
+      }
+    }
+
+    // ───── Conditional UI wiring ─────
+    $('careof_toggle').addEventListener('change', () => {
+      const on = chk('careof_toggle');
+      $('careofExplainer').style.display = on ? 'block' : 'none';
+      $('careof_name').style.display = on ? 'block' : 'none';
+    });
+
+    $('freight_terms').addEventListener('change', () => {
+      const v = val('freight_terms');
+      $('thirdPartyBlock').style.display = v === 'third_party' ? 'block' : 'none';
+      $('collectNoRecourseBlock').style.display = v === 'collect' ? 'block' : 'none';
+    });
+
+    $('rule_11_toggle').addEventListener('change', () => {
+      $('rule11Block').style.display = chk('rule_11_toggle') ? 'block' : 'none';
+    });
+
+    $('equipment_type').addEventListener('change', () => {
+      const v = val('equipment_type');
+      // Open-top equipment surfaces AAR loading rules panel
+      const isOpenTop = ['gondola', 'flatcar', 'open_top_hopper', 'centerbeam'].includes(v);
+      $('aarLoadingPanel').style.display = isOpenTop ? 'block' : 'none';
+    });
+
+    $('hazmat_toggle').addEventListener('change', () => {
+      renderProgress();
+    });
+
+    $('er_provider').addEventListener('change', () => {
+      const v = val('er_provider');
+      const def = ER_PROVIDERS[v];
+      if (def) {
+        if (def.phone) {
+          setVal('er_phone', def.phone);
+          $('er_phone').readOnly = true;
+        } else {
+          $('er_phone').readOnly = false;
+          if (v === 'self_provided') setVal('er_phone', '');
+        }
+        $('erContractLabel').textContent = def.contractLabel || 'Provider Contract Number';
+        $('er_contract').required = !!def.requireContract;
+        $('er_contract').style.opacity = def.requireContract ? '1' : '0.6';
+        $('er_contract').placeholder = def.requireContract ? def.contractLabel : '(not required for self-provided)';
+        $('erContractWarn').style.display = def.requireContract ? 'block' : 'none';
+        $('selfProvidedWarn').style.display = v === 'self_provided' ? 'block' : 'none';
+      } else {
+        $('er_phone').readOnly = false;
+        $('erContractLabel').textContent = 'Provider Contract Number';
+        $('erContractWarn').style.display = 'none';
+        $('selfProvidedWarn').style.display = 'none';
+      }
+    });
+
+    $('trained_employee_date').addEventListener('change', () => {
+      const v = val('trained_employee_date');
+      if (!v) { $('trainingStaleWarn').style.display = 'none'; return; }
+      const d = new Date(v);
+      const ageDays = (Date.now() - d.getTime()) / 86400000;
+      $('trainingStaleWarn').style.display = ageDays > 365 * 3 ? 'block' : 'none';
+    });
+
+    $('cert_choice').addEventListener('change', () => {
+      const v = val('cert_choice');
+      $('certDomesticText').style.display = v === 'domestic' ? 'block' : 'none';
+      $('certInternationalText').style.display = v === 'international' ? 'block' : 'none';
+    });
+
+    // Weight auto-calc
+    function recalcTotalWeight() {
+      const per = Number(val('weight_per_car')) || 0;
+      const cars = Math.max(1, Number(val('car_count')) || 1);
+      setVal('total_weight', per * cars);
+    }
+    $('weight_per_car').addEventListener('input', recalcTotalWeight);
+    $('car_count').addEventListener('input', recalcTotalWeight);
+
+    // ───── City autocomplete (reuses /api/rail-rate-cities) ─────
+    function setupAutocomplete(inputId, listId) {
+      const input = $(inputId);
+      const list = $(listId);
+      let timer = null;
+      let activeIdx = -1;
+      let items = [];
+
+      function renderList(results) {
+        items = results;
+        if (!results.length) { list.classList.remove('visible'); list.innerHTML = ''; return; }
+        list.innerHTML = results.map((r, i) =>
+          `<div class="ac-item" data-i="${i}">${escHtml(r.label || r.city + ', ' + r.state || '')}</div>`
+        ).join('');
+        list.classList.add('visible');
+        activeIdx = -1;
+        list.querySelectorAll('.ac-item').forEach(el => {
+          el.addEventListener('click', () => {
+            input.value = el.textContent;
+            list.classList.remove('visible');
+          });
+        });
+      }
+
+      input.addEventListener('input', () => {
+        const q = input.value.trim();
+        clearTimeout(timer);
+        if (q.length < 2) { list.classList.remove('visible'); return; }
+        timer = setTimeout(async () => {
+          try {
+            const res = await fetch(`/api/rail-rate-cities?q=${encodeURIComponent(q)}&limit=8`);
+            if (!res.ok) { list.classList.remove('visible'); return; }
+            const data = await res.json().catch(() => ({ results: [] }));
+            renderList(data.results || []);
+          } catch (e) {
+            list.classList.remove('visible');
+          }
+        }, 180);
+      });
+
+      input.addEventListener('blur', () => {
+        // Delay to allow click on a list item.
+        setTimeout(() => list.classList.remove('visible'), 180);
+      });
+    }
+    setupAutocomplete('origin_city', 'originAcList');
+    setupAutocomplete('destination_city', 'destinationAcList');
+
+    // ───── State (serialize) ─────
+    function captureState() {
+      return {
+        lane_type: currentLane(),
+        bol_number: val('bol_number'),
+        bol_date: val('bol_date'),
+        shipper: {
+          name: val('shipper_name'),
+          addr1: val('shipper_addr1'),
+          city: val('shipper_city'),
+          state: val('shipper_state'),
+          zip: val('shipper_zip'),
+          country: val('shipper_country'),
+          contact: val('shipper_contact'),
+          phone: val('shipper_phone'),
+          email: val('shipper_email'),
+        },
+        consignee: {
+          name: val('consignee_name'),
+          addr1: val('consignee_addr1'),
+          city: val('consignee_city'),
+          state: val('consignee_state'),
+          zip: val('consignee_zip'),
+          country: val('consignee_country'),
+        },
+        careof: chk('careof_toggle') ? val('careof_name') : '',
+        freight_terms: val('freight_terms'),
+        fob_terms: val('fob_terms'),
+        third_party: val('third_party_name'),
+        non_recourse_sign: chk('non_recourse_sign'),
+        shipment: {
+          origin: val('origin_city'),
+          destination: val('destination_city'),
+          originating_carrier: val('originating_carrier'),
+          delivering_carrier: val('delivering_carrier'),
+          route_via: val('route_via'),
+          rule_11: chk('rule_11_toggle'),
+          rule_11_segments: [val('rule11_segment1'), val('rule11_segment2'), val('rule11_segment3')].filter(Boolean),
+          equipment_type: val('equipment_type'),
+          car_count: Number(val('car_count')) || 1,
+          car_numbers: val('car_numbers').split('\n').map(s => s.trim()).filter(Boolean),
+        },
+        commodity: {
+          stcc: val('stcc_code'),
+          name: val('commodity_name'),
+          packaging: val('packaging_type'),
+          weight_per_car: Number(val('weight_per_car')) || 0,
+          total_weight: Number(val('total_weight')) || 0,
+          declared_value: Number(val('declared_value')) || 0,
+          description: val('commodity_description'),
+        },
+        hazmat: {
+          enabled: chk('hazmat_toggle'),
+          un_number: val('un_number'),
+          hazard_class: val('hazard_class'),
+          packing_group: val('packing_group'),
+          subsidiary_risk: val('subsidiary_risk'),
+          proper_shipping_name: val('proper_shipping_name'),
+          er_provider: val('er_provider'),
+          er_contract: val('er_contract'),
+          er_phone: val('er_phone'),
+          trained_employee_name: val('trained_employee_name'),
+          trained_employee_title: val('trained_employee_title'),
+          trained_employee_date: val('trained_employee_date'),
+          cert_choice: val('cert_choice'),
+        },
+        cross_border: {
+          // US-MX fields
+          agente_aduanal: val('agente_aduanal'),
+          incoterms: val('incoterms'),
+          border_interchange_mx: val('border_interchange_mx'),
+          commercial_invoice_ref: val('commercial_invoice_ref'),
+          aes_itn: val('aes_itn'),
+          usmca_mx: chk('usmca_mx'),
+          // US-CA fields
+          bn_rm: val('bn_rm'),
+          canadian_broker: val('canadian_broker'),
+          commercial_invoice_ref_ca: val('commercial_invoice_ref_ca'),
+          aes_itn_ca: val('aes_itn_ca'),
+          usmca_ca: chk('usmca_ca'),
+        },
+        special: {
+          securement_notes: val('securement_notes'),
+          temp_constraints: val('temp_constraints'),
+          accessorial_request: val('accessorial_request'),
+          notify_party: val('notify_party'),
+          seal_numbers: val('seal_numbers').split('\n').map(s => s.trim()).filter(Boolean),
+        },
+      };
+    }
+
+    function loadState(s) {
+      if (!s) return;
+      // Lane
+      document.querySelectorAll('input[name="lane_type"]').forEach(r => {
+        r.checked = (r.value === s.lane_type);
+      });
+      document.querySelectorAll('.radio-card').forEach(c => {
+        c.classList.toggle('selected', c.dataset.value === s.lane_type);
+      });
+      updateCrossBorderPanels();
+
+      setVal('bol_number', s.bol_number);
+      setVal('bol_date', s.bol_date);
+
+      const sh = s.shipper || {};
+      setVal('shipper_name', sh.name); setVal('shipper_addr1', sh.addr1);
+      setVal('shipper_city', sh.city); setVal('shipper_state', sh.state);
+      setVal('shipper_zip', sh.zip); setVal('shipper_country', sh.country);
+      setVal('shipper_contact', sh.contact); setVal('shipper_phone', sh.phone);
+      setVal('shipper_email', sh.email);
+
+      const co = s.consignee || {};
+      setVal('consignee_name', co.name); setVal('consignee_addr1', co.addr1);
+      setVal('consignee_city', co.city); setVal('consignee_state', co.state);
+      setVal('consignee_zip', co.zip); setVal('consignee_country', co.country);
+
+      setChk('careof_toggle', !!s.careof);
+      setVal('careof_name', s.careof || '');
+      $('careofExplainer').style.display = s.careof ? 'block' : 'none';
+      $('careof_name').style.display = s.careof ? 'block' : 'none';
+
+      setVal('freight_terms', s.freight_terms || 'prepaid');
+      setVal('fob_terms', s.fob_terms || 'origin');
+      setVal('third_party_name', s.third_party);
+      $('thirdPartyBlock').style.display = s.freight_terms === 'third_party' ? 'block' : 'none';
+      $('collectNoRecourseBlock').style.display = s.freight_terms === 'collect' ? 'block' : 'none';
+      setChk('non_recourse_sign', s.non_recourse_sign);
+
+      const sp = s.shipment || {};
+      setVal('origin_city', sp.origin); setVal('destination_city', sp.destination);
+      setVal('originating_carrier', sp.originating_carrier);
+      setVal('delivering_carrier', sp.delivering_carrier);
+      setVal('route_via', sp.route_via);
+      setChk('rule_11_toggle', sp.rule_11);
+      $('rule11Block').style.display = sp.rule_11 ? 'block' : 'none';
+      (sp.rule_11_segments || []).forEach((seg, i) => setVal(`rule11_segment${i + 1}`, seg));
+      setVal('equipment_type', sp.equipment_type);
+      setVal('car_count', sp.car_count || 1);
+      setVal('car_numbers', (sp.car_numbers || []).join('\n'));
+      // Loading panel
+      const isOpenTop = ['gondola', 'flatcar', 'open_top_hopper', 'centerbeam'].includes(sp.equipment_type);
+      $('aarLoadingPanel').style.display = isOpenTop ? 'block' : 'none';
+
+      const cm = s.commodity || {};
+      setVal('stcc_code', cm.stcc); setVal('commodity_name', cm.name);
+      setVal('packaging_type', cm.packaging || 'bulk');
+      setVal('weight_per_car', cm.weight_per_car);
+      setVal('total_weight', cm.total_weight);
+      setVal('declared_value', cm.declared_value);
+      setVal('commodity_description', cm.description);
+
+      const hm = s.hazmat || {};
+      setChk('hazmat_toggle', !!hm.enabled);
+      setVal('un_number', hm.un_number); setVal('hazard_class', hm.hazard_class);
+      setVal('packing_group', hm.packing_group); setVal('subsidiary_risk', hm.subsidiary_risk);
+      setVal('proper_shipping_name', hm.proper_shipping_name);
+      setVal('er_provider', hm.er_provider);
+      setVal('er_contract', hm.er_contract);
+      setVal('er_phone', hm.er_phone);
+      setVal('trained_employee_name', hm.trained_employee_name);
+      setVal('trained_employee_title', hm.trained_employee_title);
+      setVal('trained_employee_date', hm.trained_employee_date);
+      setVal('cert_choice', hm.cert_choice || 'domestic');
+      $('certDomesticText').style.display = (hm.cert_choice || 'domestic') === 'domestic' ? 'block' : 'none';
+      $('certInternationalText').style.display = hm.cert_choice === 'international' ? 'block' : 'none';
+      $('er_provider').dispatchEvent(new Event('change'));
+
+      const cb = s.cross_border || {};
+      setVal('agente_aduanal', cb.agente_aduanal);
+      setVal('incoterms', cb.incoterms);
+      setVal('border_interchange_mx', cb.border_interchange_mx);
+      setVal('commercial_invoice_ref', cb.commercial_invoice_ref);
+      setVal('aes_itn', cb.aes_itn);
+      setChk('usmca_mx', cb.usmca_mx);
+      setVal('bn_rm', cb.bn_rm); setVal('canadian_broker', cb.canadian_broker);
+      setVal('commercial_invoice_ref_ca', cb.commercial_invoice_ref_ca);
+      setVal('aes_itn_ca', cb.aes_itn_ca);
+      setChk('usmca_ca', cb.usmca_ca);
+
+      const sx = s.special || {};
+      setVal('securement_notes', sx.securement_notes);
+      setVal('temp_constraints', sx.temp_constraints);
+      setVal('accessorial_request', sx.accessorial_request);
+      setVal('notify_party', sx.notify_party);
+      setVal('seal_numbers', (sx.seal_numbers || []).join('\n'));
+
+      renderProgress();
+    }
+
+    // ───── Templates ─────
+    const TPL_PREFIX = 'swl_bol_template_';
+
+    function listTemplates() {
+      const out = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.startsWith(TPL_PREFIX)) {
+          out.push(k.slice(TPL_PREFIX.length));
+        }
+      }
+      return out.sort();
+    }
+
+    function refreshTemplateUI() {
+      const templates = listTemplates();
+      const sel = $('templateSelect');
+      sel.innerHTML = '<option value="">— pick a template —</option>' +
+        templates.map(n => `<option value="${escHtml(n)}">${escHtml(n)}</option>`).join('');
+      $('templatesBar').style.display = 'flex';
+    }
+
+    function saveTemplate() {
+      const name = prompt('Save current BoL state as template — name:');
+      if (!name) return;
+      const safe = name.trim().slice(0, 40);
+      if (!safe) return;
+      try {
+        localStorage.setItem(TPL_PREFIX + safe, JSON.stringify(captureState()));
+        refreshTemplateUI();
+        alert('Template saved: ' + safe);
+      } catch (e) {
+        alert('Could not save template (storage full?).');
+      }
+    }
+    function loadTemplate() {
+      const name = val('templateSelect');
+      if (!name) return;
+      const raw = localStorage.getItem(TPL_PREFIX + name);
+      if (!raw) return;
+      try {
+        const s = JSON.parse(raw);
+        loadState(s);
+        alert('Template loaded: ' + name);
+      } catch (e) {
+        alert('Could not load template.');
+      }
+    }
+    function deleteTemplate() {
+      const name = val('templateSelect');
+      if (!name) return;
+      if (!confirm('Delete template "' + name + '"?')) return;
+      localStorage.removeItem(TPL_PREFIX + name);
+      refreshTemplateUI();
+    }
+
+    // ───── Preview ─────
+    function renderPreview() {
+      const s = captureState();
+      const target = $('bolPreview');
+      const certText = s.hazmat.cert_choice === 'international'
+        ? VERBATIM_172_204_INTERNATIONAL : VERBATIM_172_204_DOMESTIC;
+      const erProviderLabel = (ER_PROVIDERS[s.hazmat.er_provider] || {}).label || '';
+
+      const partsHtml = `
+        <h3>Bill of Lading</h3>
+        <div class="preview-block-grid">
+          <div class="preview-block">
+            <div class="preview-label">BoL Number</div>
+            <div>${escHtml(s.bol_number)}</div>
+          </div>
+          <div class="preview-block">
+            <div class="preview-label">BoL Date</div>
+            <div>${escHtml(s.bol_date)}</div>
+          </div>
+        </div>
+
+        <div class="preview-block-grid">
+          <div class="preview-block">
+            <div class="preview-label">Shipper / Consignor</div>
+            <div>
+              <strong>${escHtml(s.shipper.name || '—')}</strong><br>
+              ${escHtml(s.shipper.addr1 || '')}<br>
+              ${escHtml(s.shipper.city || '')}, ${escHtml(s.shipper.state || '')} ${escHtml(s.shipper.zip || '')}<br>
+              ${escHtml(s.shipper.country || '')}<br>
+              Contact: ${escHtml(s.shipper.contact || '')} · ${escHtml(s.shipper.phone || '')}<br>
+              ${escHtml(s.shipper.email || '')}
+            </div>
+          </div>
+          <div class="preview-block">
+            <div class="preview-label">Consignee</div>
+            <div>
+              <strong>${escHtml(s.consignee.name || '—')}</strong><br>
+              ${escHtml(s.consignee.addr1 || '')}<br>
+              ${escHtml(s.consignee.city || '')}, ${escHtml(s.consignee.state || '')} ${escHtml(s.consignee.zip || '')}<br>
+              ${escHtml(s.consignee.country || '')}
+              ${s.careof ? `<br><em>c/o: ${escHtml(s.careof)}</em>` : ''}
+            </div>
+          </div>
+        </div>
+
+        <h3>Routing</h3>
+        <table>
+          <tr><th>Origin</th><td>${escHtml(s.shipment.origin || '—')}</td>
+              <th>Destination</th><td>${escHtml(s.shipment.destination || '—')}</td></tr>
+          <tr><th>Originating Carrier</th><td>${escHtml(s.shipment.originating_carrier || '—')}</td>
+              <th>Delivering Carrier</th><td>${escHtml(s.shipment.delivering_carrier || s.shipment.originating_carrier || '—')}</td></tr>
+          <tr><th>Route Via</th><td colspan="3">${escHtml(s.shipment.route_via || '—')}</td></tr>
+          ${s.shipment.rule_11 ? `<tr><th>Rule 11 Split</th><td colspan="3">${escHtml(s.shipment.rule_11_segments.join(' | ')) || 'enabled'}</td></tr>` : ''}
+          <tr><th>Equipment</th><td>${escHtml(EQUIPMENT_LABELS[s.shipment.equipment_type] || s.shipment.equipment_type || '—')}</td>
+              <th>Cars</th><td>${escHtml(s.shipment.car_count)}</td></tr>
+          <tr><th>Car Numbers</th><td colspan="3">${escHtml(s.shipment.car_numbers.join(', ') || 'TBD')}</td></tr>
+          <tr><th>Freight Terms</th><td>${escHtml(s.freight_terms)}</td>
+              <th>FOB Terms</th><td>${escHtml(s.fob_terms)}</td></tr>
+          ${s.third_party ? `<tr><th>3rd-Party Bill-To</th><td colspan="3">${escHtml(s.third_party)}</td></tr>` : ''}
+        </table>
+
+        <h3>Commodity</h3>
+        <table>
+          <tr><th>STCC</th><td>${escHtml(s.commodity.stcc || '—')}</td>
+              <th>Name</th><td>${escHtml(s.commodity.name || '—')}</td></tr>
+          <tr><th>Packaging</th><td>${escHtml(s.commodity.packaging)}</td>
+              <th>HM Indicator</th><td>${s.hazmat.enabled ? '<strong>X</strong>' : ''}</td></tr>
+          <tr><th>Weight / Car</th><td>${escHtml(s.commodity.weight_per_car)} lbs</td>
+              <th>Total Weight</th><td>${escHtml(s.commodity.total_weight)} lbs</td></tr>
+          ${s.commodity.declared_value ? `<tr><th>Declared Value</th><td colspan="3">${escHtml(fmtMoney(s.commodity.declared_value))}</td></tr>` : ''}
+          <tr><th>Description</th><td colspan="3">${escHtml(s.commodity.description || '—')}</td></tr>
+        </table>
+
+        ${s.hazmat.enabled ? `
+          <h3>Hazmat (§172.101 / §172.204 / §172.604 / §172.704)</h3>
+          <table>
+            <tr><th>UN/NA</th><td>${escHtml(s.hazmat.un_number || '—')}</td>
+                <th>Proper Shipping Name</th><td>${escHtml(s.hazmat.proper_shipping_name || '—')}</td></tr>
+            <tr><th>Class</th><td>${escHtml(s.hazmat.hazard_class || '—')}</td>
+                <th>Packing Group</th><td>${escHtml(s.hazmat.packing_group || '—')}</td></tr>
+            ${s.hazmat.subsidiary_risk ? `<tr><th>Subsidiary Risk</th><td colspan="3">${escHtml(s.hazmat.subsidiary_risk)}</td></tr>` : ''}
+            <tr><th colspan="4" class="hazmat-er">EMERGENCY CONTACT: ${escHtml((erProviderLabel ? erProviderLabel + ' ' : '') + (s.hazmat.er_phone || ''))} ${s.hazmat.er_contract ? '(Contract ' + escHtml(s.hazmat.er_contract) + ')' : ''}</th></tr>
+            <tr><th>Trained Employee</th><td colspan="3">${escHtml(s.hazmat.trained_employee_name || '—')}, ${escHtml(s.hazmat.trained_employee_title || '—')} — last trained ${escHtml(s.hazmat.trained_employee_date || '—')}</td></tr>
+          </table>
+          <div class="verbatim-block"><strong>§172.204 Shipper's Certification:</strong> ${escHtml(certText)}</div>
+          <p style="font-size:0.78rem;color:#888;margin:8px 0 0">
+            Falsification of this certification can subject the shipper to PHMSA civil penalties up to $238,809 per violation per day (49 CFR 107.329).
+          </p>
+        ` : ''}
+
+        ${s.lane_type === 'us_mx' ? `
+          <h3>Cross-Border — US to Mexico</h3>
+          <table>
+            <tr><th>Agente Aduanal</th><td colspan="3">${escHtml(s.cross_border.agente_aduanal || '—')}</td></tr>
+            <tr><th>INCOTERMS</th><td>${escHtml(s.cross_border.incoterms || '—')}</td>
+                <th>Border Interchange</th><td>${escHtml(INTERCHANGE_LABELS_MX[s.cross_border.border_interchange_mx] || s.cross_border.border_interchange_mx || '—')}</td></tr>
+            <tr><th>Commercial Invoice</th><td>${escHtml(s.cross_border.commercial_invoice_ref || '—')}</td>
+                <th>AES ITN</th><td>${escHtml(s.cross_border.aes_itn || '—')}</td></tr>
+            ${s.cross_border.usmca_mx ? `<tr><th>USMCA Cert</th><td colspan="3">Applied — see cert statement on document</td></tr>` : ''}
+          </table>
+          ${s.cross_border.usmca_mx ? `<div class="verbatim-block"><strong>USMCA / T-MEC Certification:</strong> ${escHtml(USMCA_CERT_STATEMENT)}</div>` : ''}
+        ` : ''}
+
+        ${s.lane_type === 'us_ca' ? `
+          <h3>Cross-Border — US to Canada</h3>
+          <table>
+            <tr><th>BN9-RM</th><td>${escHtml(s.cross_border.bn_rm || '—')}</td>
+                <th>Canadian Broker</th><td>${escHtml(s.cross_border.canadian_broker || '— self-account via CARM')}</td></tr>
+            <tr><th>Commercial Invoice</th><td>${escHtml(s.cross_border.commercial_invoice_ref_ca || '—')}</td>
+                <th>AES ITN</th><td>${escHtml(s.cross_border.aes_itn_ca || '—')}</td></tr>
+            ${s.cross_border.usmca_ca ? `<tr><th>USMCA Cert</th><td colspan="3">Applied — see cert statement on document</td></tr>` : ''}
+          </table>
+          <p style="font-size:0.82rem;margin:6px 0">ACI eManifest filed by rail carrier ≥ 2 hrs prior to First Port of Arrival (CBSA D3-6-6).</p>
+          ${s.cross_border.usmca_ca ? `<div class="verbatim-block"><strong>USMCA / CUSMA Certification:</strong> ${escHtml(USMCA_CERT_STATEMENT)}</div>` : ''}
+        ` : ''}
+
+        <h3>Special Instructions</h3>
+        <table>
+          <tr><th>Securement</th><td colspan="3">${escHtml(s.special.securement_notes || '—')}</td></tr>
+          <tr><th>Temperature</th><td>${escHtml(s.special.temp_constraints || '—')}</td>
+              <th>Accessorials</th><td>${escHtml(s.special.accessorial_request || '—')}</td></tr>
+          <tr><th>Notify Party</th><td colspan="3">${escHtml(s.special.notify_party || '—')}</td></tr>
+          <tr><th>Seal Numbers</th><td colspan="3">${escHtml(s.special.seal_numbers.join(', ') || '—')}</td></tr>
+        </table>
+
+        ${s.freight_terms === 'collect' && s.non_recourse_sign ? `
+          <h3>Consignor Non-Recourse (49 CFR Part 1035 Section 7)</h3>
+          <div class="verbatim-block">${escHtml(VERBATIM_PART_1035_SECTION_7)}</div>
+        ` : ''}
+
+        <h3>Carrier Acknowledgment</h3>
+        <p style="font-size:0.85rem;line-height:1.6;color:#444">
+          Received subject to the classifications and tariffs in effect on the date of issue of this bill of lading, the property described above in apparent good order, except as noted (contents and condition of contents of packages unknown), marked, consigned, and destined as indicated, which said carrier (the word carrier being understood throughout this contract as meaning any person or corporation in possession of the property under the contract) agrees to carry to its usual place of delivery at said destination, if on its route, otherwise to deliver to another carrier on the route to said destination. (49 CFR Part 1035)
+        </p>
+      `;
+      target.innerHTML = partsHtml;
+    }
+
+    // ───── Email-gate ─────
+    const SWL_EMAIL_KEY = 'swl_email';
+    const SWL_TS_KEY = 'swl_email_unlocked_at';
+    const SWL_TTL_MS = 90 * 86400 * 1000;
+    const FORMAT_RE = /^[A-Za-z0-9._%+\-]+@[A-Za-z0-9](?:[A-Za-z0-9\-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9\-]{0,61}[A-Za-z0-9])?)+$/;
+
+    function swlReadSharedEmail() {
+      try {
+        const e = localStorage.getItem(SWL_EMAIL_KEY) || '';
+        const ts = localStorage.getItem(SWL_TS_KEY) || '';
+        if (!e || !ts) return '';
+        const t = Date.parse(ts);
+        if (!isFinite(t)) return '';
+        if (Date.now() - t > SWL_TTL_MS) return '';
+        return e;
+      } catch (_) { return ''; }
+    }
+    function swlWriteSharedEmail(email) {
+      try {
+        localStorage.setItem(SWL_EMAIL_KEY, email);
+        localStorage.setItem(SWL_TS_KEY, new Date().toISOString());
+      } catch (_) {}
+    }
+    function cachedName() {
+      try { return sessionStorage.getItem('swl_lead_name') || ''; } catch (_) { return ''; }
+    }
+    function cachedPhone() {
+      try { return sessionStorage.getItem('swl_lead_phone') || ''; } catch (_) { return ''; }
+    }
+    function cacheContact(name, phone) {
+      try {
+        if (name) sessionStorage.setItem('swl_lead_name', name);
+        if (phone) sessionStorage.setItem('swl_lead_phone', phone);
+      } catch (_) {}
+    }
+
+    let pendingAction = null;
+    function gatedAction(action, runner) {
+      const stored = swlReadSharedEmail();
+      if (stored && FORMAT_RE.test(stored)) {
+        captureLead(stored, action).finally(() => runner());
+        return;
+      }
+      pendingAction = { action, runner };
+      $('emailGateOverlay').classList.add('visible');
+      setTimeout(() => $('leadEmail').focus(), 50);
+    }
+
+    async function captureLead(email, action) {
+      const s = captureState();
+      try {
+        const res = await fetch('/api/bol-lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email,
+            name: cachedName(),
+            phone: cachedPhone(),
+            action,
+            lane_type: s.lane_type,
+            hazmat: s.hazmat.enabled,
+            er_provider: s.hazmat.er_provider,
+            rule_11: s.shipment.rule_11,
+            equipment_type: s.shipment.equipment_type,
+            carrier: s.shipment.originating_carrier,
+            origin: s.shipment.origin,
+            destination: s.shipment.destination,
+            bol_number: s.bol_number,
+          }),
+        });
+        if (!res.ok) {
+          const data = await res.json().catch(() => ({}));
+          if (data.code && String(data.code).startsWith('email_')) {
+            try { localStorage.removeItem(SWL_EMAIL_KEY); } catch (_) {}
+            $('emailGateOverlay').classList.add('visible');
+            $('leadEmailError').textContent = data.error || 'Please enter a valid email address.';
+            return false;
+          }
+          console.warn('bol-lead non-email error:', data);
+        }
+        return true;
+      } catch (e) {
+        console.warn('bol-lead fetch failed:', e);
+        return true; // don't block UX on transient backend issues
+      }
+    }
+
+    $('leadCancel').addEventListener('click', () => {
+      $('emailGateOverlay').classList.remove('visible');
+      pendingAction = null;
+    });
+    $('emailGateOverlay').addEventListener('click', (e) => {
+      if (e.target.id === 'emailGateOverlay') {
+        $('emailGateOverlay').classList.remove('visible');
+        pendingAction = null;
+      }
+    });
+    $('emailGateForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const errEl = $('leadEmailError');
+      const email = (val('leadEmail') || '').trim().toLowerCase();
+      const name = (val('leadName') || '').trim().slice(0, 200);
+      const phone = (val('leadPhone') || '').trim().slice(0, 60);
+      errEl.textContent = '';
+      if (!email) { errEl.textContent = 'Email is required.'; return; }
+      if (!FORMAT_RE.test(email)) { errEl.textContent = 'Please enter a valid email address.'; return; }
+      if (!chk('leadConsent')) { errEl.textContent = 'Please agree to receive your BoL by email.'; return; }
+      swlWriteSharedEmail(email);
+      cacheContact(name, phone);
+      $('emailGateOverlay').classList.remove('visible');
+      const pa = pendingAction;
+      pendingAction = null;
+      const sent = await captureLead(email, pa ? pa.action : 'gate');
+      if (sent && pa) pa.runner();
+    });
+
+    // ───── PDF generation ─────
+    function generatePdf() {
+      if (!window.jspdf || !window.jspdf.jsPDF) {
+        $('downloadError').textContent = 'PDF generator still loading — try again in a moment.';
+        return;
+      }
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({ unit: 'pt', format: 'letter', orientation: 'landscape' });
+      const s = captureState();
+      const pageW = doc.internal.pageSize.getWidth();
+
+      // Header band
+      doc.setFillColor(26, 58, 92);
+      doc.rect(0, 0, pageW, 60, 'F');
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(16); doc.setFont('helvetica', 'bold');
+      doc.text('Steel Wheel Logistics — Rail Bill of Lading', 32, 28);
+      doc.setFontSize(9); doc.setFont('helvetica', 'normal');
+      doc.text(`BoL #: ${stripMd(s.bol_number)}`, pageW - 32, 22, { align: 'right' });
+      doc.text(`Date: ${stripMd(s.bol_date)}`, pageW - 32, 36, { align: 'right' });
+      doc.text(`Lane: ${LANE_LABELS[s.lane_type] || s.lane_type}`, pageW - 32, 50, { align: 'right' });
+
+      doc.setTextColor(0, 0, 0);
+      let y = 80;
+
+      // Shipper / Consignee block
+      doc.autoTable({
+        startY: y,
+        head: [['Shipper / Consignor', 'Consignee' + (s.careof ? ' (c/o ' + stripMd(s.careof) + ')' : '')]],
+        body: [[
+          [
+            stripMd(s.shipper.name),
+            stripMd(s.shipper.addr1),
+            `${stripMd(s.shipper.city)}, ${stripMd(s.shipper.state)} ${stripMd(s.shipper.zip)}`,
+            stripMd(s.shipper.country),
+            `Contact: ${stripMd(s.shipper.contact)} · ${stripMd(s.shipper.phone)}`,
+            stripMd(s.shipper.email),
+          ].filter(Boolean).join('\n'),
+          [
+            stripMd(s.consignee.name),
+            stripMd(s.consignee.addr1),
+            `${stripMd(s.consignee.city)}, ${stripMd(s.consignee.state)} ${stripMd(s.consignee.zip)}`,
+            stripMd(s.consignee.country),
+          ].filter(Boolean).join('\n'),
+        ]],
+        theme: 'grid',
+        headStyles: { fillColor: [74, 144, 217], textColor: 255, fontSize: 10 },
+        styles: { fontSize: 9, cellPadding: 6, valign: 'top' },
+        margin: { left: 32, right: 32 },
+      });
+      y = doc.lastAutoTable.finalY + 12;
+
+      // Routing / equipment
+      const routingBody = [
+        ['Origin', stripMd(s.shipment.origin) || '—', 'Destination', stripMd(s.shipment.destination) || '—'],
+        ['Originating Carrier (SCAC)', stripMd(s.shipment.originating_carrier) || '—', 'Delivering Carrier', stripMd(s.shipment.delivering_carrier) || stripMd(s.shipment.originating_carrier) || '—'],
+        ['Route Via', { content: stripMd(s.shipment.route_via) || '—', colSpan: 3 }],
+        ['Equipment', EQUIPMENT_LABELS[s.shipment.equipment_type] || stripMd(s.shipment.equipment_type) || '—', 'Cars', String(s.shipment.car_count)],
+        ['Car Numbers', { content: s.shipment.car_numbers.join(', ') || 'TBD', colSpan: 3 }],
+        ['Freight Terms', s.freight_terms, 'FOB Terms', s.fob_terms],
+      ];
+      if (s.shipment.rule_11) {
+        routingBody.push(['Rule 11 Split', { content: s.shipment.rule_11_segments.join(' | ') || 'enabled — see attached rate segments', colSpan: 3 }]);
+      }
+      if (s.third_party) {
+        routingBody.push(['3rd-Party Bill-To', { content: stripMd(s.third_party), colSpan: 3 }]);
+      }
+      doc.autoTable({
+        startY: y,
+        head: [['Routing & Equipment', '', '', '']],
+        body: routingBody,
+        theme: 'grid',
+        headStyles: { fillColor: [74, 144, 217], textColor: 255, fontSize: 10 },
+        styles: { fontSize: 9, cellPadding: 4 },
+        columnStyles: { 0: { fontStyle: 'bold', cellWidth: 130 }, 2: { fontStyle: 'bold', cellWidth: 130 } },
+        margin: { left: 32, right: 32 },
+      });
+      y = doc.lastAutoTable.finalY + 12;
+
+      // Commodity
+      doc.autoTable({
+        startY: y,
+        head: [['STCC', 'Description', 'Pkg', 'HM', 'Cars', 'Wt/Car (lb)', 'Total Wt (lb)']],
+        body: [[
+          stripMd(s.commodity.stcc) || '—',
+          stripMd(s.commodity.description || s.commodity.name) || '—',
+          s.commodity.packaging,
+          s.hazmat.enabled ? 'X' : '',
+          String(s.shipment.car_count),
+          s.commodity.weight_per_car ? Number(s.commodity.weight_per_car).toLocaleString('en-US') : '—',
+          s.commodity.total_weight ? Number(s.commodity.total_weight).toLocaleString('en-US') : '—',
+        ]],
+        theme: 'grid',
+        headStyles: { fillColor: [74, 144, 217], textColor: 255, fontSize: 9 },
+        styles: { fontSize: 9, cellPadding: 4 },
+        margin: { left: 32, right: 32 },
+      });
+      y = doc.lastAutoTable.finalY + 10;
+
+      // Hazmat block
+      if (s.hazmat.enabled) {
+        if (y > 480) { doc.addPage(); y = 40; }
+        const erProvLabel = (ER_PROVIDERS[s.hazmat.er_provider] || {}).label || '';
+        const erLine = `${erProvLabel ? erProvLabel + ' ' : ''}${stripMd(s.hazmat.er_phone) || ''}${s.hazmat.er_contract ? ' — Contract ' + stripMd(s.hazmat.er_contract) : ''}`;
+        doc.autoTable({
+          startY: y,
+          head: [['Hazardous Materials — 49 CFR Part 172']],
+          body: [
+            [`UN/NA: ${stripMd(s.hazmat.un_number)}   |   Proper Shipping Name: ${stripMd(s.hazmat.proper_shipping_name)}   |   Class: ${stripMd(s.hazmat.hazard_class)}   |   PG: ${stripMd(s.hazmat.packing_group)}${s.hazmat.subsidiary_risk ? '   |   Subsidiary Risk: ' + stripMd(s.hazmat.subsidiary_risk) : ''}`],
+            [{ content: 'EMERGENCY CONTACT: ' + erLine, styles: { textColor: [185, 28, 28], fontStyle: 'bold', fontSize: 12 } }],
+            [`Trained Hazmat Employee: ${stripMd(s.hazmat.trained_employee_name)}, ${stripMd(s.hazmat.trained_employee_title)} — last training ${stripMd(s.hazmat.trained_employee_date)} (§172.704)`],
+          ],
+          theme: 'grid',
+          headStyles: { fillColor: [185, 28, 28], textColor: 255, fontSize: 10 },
+          styles: { fontSize: 9, cellPadding: 5 },
+          margin: { left: 32, right: 32 },
+        });
+        y = doc.lastAutoTable.finalY + 8;
+
+        const certText = s.hazmat.cert_choice === 'international' ? VERBATIM_172_204_INTERNATIONAL : VERBATIM_172_204_DOMESTIC;
+        doc.setFontSize(9);
+        doc.setFont('helvetica', 'bold');
+        doc.text('Shipper\'s Certification (49 CFR §172.204):', 32, y);
+        y += 12;
+        doc.setFont('helvetica', 'italic');
+        const certWrap = doc.splitTextToSize(certText, pageW - 64);
+        doc.text(certWrap, 32, y);
+        y += certWrap.length * 11 + 6;
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(7);
+        doc.setTextColor(120, 120, 120);
+        doc.text('PHMSA: Falsification subject to civil penalties up to $238,809 per violation per day (49 CFR 107.329).', 32, y);
+        doc.setTextColor(0, 0, 0);
+        y += 14;
+      }
+
+      // Cross-border block
+      if (s.lane_type === 'us_mx' || s.lane_type === 'us_ca') {
+        if (y > 480) { doc.addPage(); y = 40; }
+        const cbHead = s.lane_type === 'us_mx' ? 'Cross-Border — US to Mexico' : 'Cross-Border — US to Canada';
+        const cbBody = [];
+        if (s.lane_type === 'us_mx') {
+          cbBody.push(['Agente Aduanal', stripMd(s.cross_border.agente_aduanal) || '—']);
+          cbBody.push(['INCOTERMS', s.cross_border.incoterms || '—']);
+          cbBody.push(['Border Interchange', INTERCHANGE_LABELS_MX[s.cross_border.border_interchange_mx] || s.cross_border.border_interchange_mx || '—']);
+          cbBody.push(['Commercial Invoice Ref', stripMd(s.cross_border.commercial_invoice_ref) || '—']);
+          cbBody.push(['AES ITN', stripMd(s.cross_border.aes_itn) || '—']);
+          cbBody.push(['USMCA Certification', s.cross_border.usmca_mx ? 'Applied (see statement below)' : 'Not applied']);
+        } else {
+          cbBody.push(['Canadian BN9-RM', stripMd(s.cross_border.bn_rm) || '—']);
+          cbBody.push(['Canadian Broker', stripMd(s.cross_border.canadian_broker) || 'Self-account via CARM']);
+          cbBody.push(['Commercial Invoice Ref', stripMd(s.cross_border.commercial_invoice_ref_ca) || '—']);
+          cbBody.push(['AES ITN', stripMd(s.cross_border.aes_itn_ca) || '—']);
+          cbBody.push(['USMCA Certification', s.cross_border.usmca_ca ? 'Applied (see statement below)' : 'Not applied']);
+          cbBody.push(['ACI eManifest', 'Filed by carrier ≥ 2 hrs before First Port of Arrival (CBSA D3-6-6)']);
+        }
+        doc.autoTable({
+          startY: y,
+          head: [[cbHead]],
+          body: cbBody.map(r => [{ content: r[0] + ': ' + r[1] }]),
+          theme: 'grid',
+          headStyles: { fillColor: [74, 144, 217], textColor: 255, fontSize: 10 },
+          styles: { fontSize: 9, cellPadding: 4 },
+          margin: { left: 32, right: 32 },
+        });
+        y = doc.lastAutoTable.finalY + 8;
+        if ((s.lane_type === 'us_mx' && s.cross_border.usmca_mx) || (s.lane_type === 'us_ca' && s.cross_border.usmca_ca)) {
+          doc.setFontSize(9);
+          doc.setFont('helvetica', 'italic');
+          const usmcaWrap = doc.splitTextToSize('USMCA/CUSMA/T-MEC: ' + USMCA_CERT_STATEMENT, pageW - 64);
+          doc.text(usmcaWrap, 32, y);
+          y += usmcaWrap.length * 11 + 6;
+          doc.setFont('helvetica', 'normal');
+        }
+      }
+
+      // Special instructions
+      if (y > 460) { doc.addPage(); y = 40; }
+      const specialBody = [];
+      if (s.special.securement_notes) specialBody.push(['Securement', s.special.securement_notes]);
+      if (s.special.temp_constraints) specialBody.push(['Temperature', s.special.temp_constraints]);
+      if (s.special.accessorial_request) specialBody.push(['Accessorials', s.special.accessorial_request]);
+      if (s.special.notify_party) specialBody.push(['Notify Party', s.special.notify_party]);
+      if (s.special.seal_numbers.length) specialBody.push(['Seal Numbers', s.special.seal_numbers.join(', ')]);
+      if (specialBody.length) {
+        doc.autoTable({
+          startY: y,
+          head: [['Special Instructions', '']],
+          body: specialBody,
+          theme: 'grid',
+          headStyles: { fillColor: [74, 144, 217], textColor: 255, fontSize: 10 },
+          styles: { fontSize: 9, cellPadding: 4 },
+          columnStyles: { 0: { fontStyle: 'bold', cellWidth: 130 } },
+          margin: { left: 32, right: 32 },
+        });
+        y = doc.lastAutoTable.finalY + 10;
+      }
+
+      // Collect non-recourse
+      if (s.freight_terms === 'collect' && s.non_recourse_sign) {
+        if (y > 460) { doc.addPage(); y = 40; }
+        doc.setFont('helvetica', 'bold'); doc.setFontSize(10);
+        doc.text('Consignor Non-Recourse Endorsement (49 CFR Part 1035 Section 7):', 32, y);
+        y += 12;
+        doc.setFont('helvetica', 'italic'); doc.setFontSize(9);
+        const nrWrap = doc.splitTextToSize(VERBATIM_PART_1035_SECTION_7, pageW - 64);
+        doc.text(nrWrap, 32, y);
+        y += nrWrap.length * 11 + 8;
+        doc.setFont('helvetica', 'normal');
+        doc.text('Consignor Signature: _______________________________   Date: _______________', 32, y);
+        y += 18;
+      }
+
+      // Signature block
+      if (y > 460) { doc.addPage(); y = 40; }
+      doc.setFontSize(9); doc.setFont('helvetica', 'normal');
+      const ack = 'Received subject to the classifications and tariffs in effect on the date of issue of this bill of lading, the property described above in apparent good order, except as noted (contents and condition of contents of packages unknown), marked, consigned, and destined as indicated. (49 CFR Part 1035)';
+      const ackWrap = doc.splitTextToSize(ack, pageW - 64);
+      doc.text(ackWrap, 32, y);
+      y += ackWrap.length * 11 + 14;
+
+      doc.setFont('helvetica', 'bold');
+      doc.text('Shipper Signature: _______________________________   Date: ' + (s.bol_date || '________'), 32, y);
+      y += 18;
+      doc.text('Carrier Acknowledgment: _______________________________   Date: _______________', 32, y);
+      y += 22;
+
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(7); doc.setTextColor(120, 120, 120);
+      doc.text(`Generated by Steel Wheel Logistics Bill of Lading Builder — steelwheellogistics.com   |   ${stripMd(s.bol_number)}   |   ${new Date().toISOString()}`, 32, y);
+
+      doc.save(`${s.bol_number || 'rail-bol'}.pdf`);
+      if (typeof gtag === 'function') gtag('event', 'bol_pdf_download', { event_category: 'tools' });
+    }
+
+    // ───── DOCX generation ─────
+    function generateDocx() {
+      if (!window.docx) {
+        $('downloadError').textContent = 'DOCX generator still loading — try again in a moment.';
+        return;
+      }
+      const D = window.docx;
+      const s = captureState();
+      const para = (text, opts = {}) => new D.Paragraph({
+        children: [new D.TextRun({ text: stripMd(text || ''), bold: !!opts.bold, italics: !!opts.italics, color: opts.color || undefined, size: opts.size || 20 })],
+        spacing: opts.spacing || { after: 100 },
+        heading: opts.heading,
+      });
+      const heading = (text, lvl) => new D.Paragraph({
+        text: stripMd(text), heading: lvl || D.HeadingLevel.HEADING_2,
+      });
+      const kvRow = (k, v) => new D.TableRow({
+        children: [
+          new D.TableCell({ width: { size: 30, type: D.WidthType.PERCENTAGE }, children: [new D.Paragraph({ children: [new D.TextRun({ text: stripMd(k), bold: true, size: 20 })] })] }),
+          new D.TableCell({ width: { size: 70, type: D.WidthType.PERCENTAGE }, children: [new D.Paragraph({ children: [new D.TextRun({ text: stripMd(v || ''), size: 20 })] })] }),
+        ],
+      });
+      const kvTable = (rows) => new D.Table({
+        width: { size: 100, type: D.WidthType.PERCENTAGE },
+        rows: rows.map(([k, v]) => kvRow(k, v)),
+      });
+
+      const children = [];
+      children.push(new D.Paragraph({
+        children: [new D.TextRun({ text: 'Steel Wheel Logistics — Rail Bill of Lading', bold: true, size: 32 })],
+        spacing: { after: 100 },
+      }));
+      children.push(para(`BoL #: ${s.bol_number}    Date: ${s.bol_date}    Lane: ${LANE_LABELS[s.lane_type] || s.lane_type}`, { italics: true }));
+
+      children.push(heading('Shipper / Consignor'));
+      children.push(kvTable([
+        ['Name', s.shipper.name],
+        ['Address', `${s.shipper.addr1}\n${s.shipper.city}, ${s.shipper.state} ${s.shipper.zip}\n${s.shipper.country}`],
+        ['Contact', `${s.shipper.contact} · ${s.shipper.phone}`],
+        ['Email', s.shipper.email],
+      ]));
+
+      children.push(heading('Consignee' + (s.careof ? ` (c/o ${s.careof})` : '')));
+      children.push(kvTable([
+        ['Name', s.consignee.name],
+        ['Address', `${s.consignee.addr1}\n${s.consignee.city}, ${s.consignee.state} ${s.consignee.zip}\n${s.consignee.country}`],
+      ]));
+
+      children.push(heading('Routing & Equipment'));
+      const routingRows = [
+        ['Origin', s.shipment.origin],
+        ['Destination', s.shipment.destination],
+        ['Originating Carrier', s.shipment.originating_carrier],
+        ['Delivering Carrier', s.shipment.delivering_carrier || s.shipment.originating_carrier],
+        ['Route Via', s.shipment.route_via],
+        ['Equipment', EQUIPMENT_LABELS[s.shipment.equipment_type] || s.shipment.equipment_type],
+        ['Cars', String(s.shipment.car_count)],
+        ['Car Numbers', s.shipment.car_numbers.join(', ') || 'TBD'],
+        ['Freight Terms', s.freight_terms],
+        ['FOB Terms', s.fob_terms],
+      ];
+      if (s.shipment.rule_11) routingRows.push(['Rule 11 Split', s.shipment.rule_11_segments.join(' | ') || 'enabled']);
+      if (s.third_party) routingRows.push(['3rd-Party Bill-To', s.third_party]);
+      children.push(kvTable(routingRows));
+
+      children.push(heading('Commodity'));
+      children.push(kvTable([
+        ['STCC', s.commodity.stcc],
+        ['Name', s.commodity.name],
+        ['Packaging', s.commodity.packaging],
+        ['HM Indicator', s.hazmat.enabled ? 'X' : ''],
+        ['Weight per Car', s.commodity.weight_per_car ? `${Number(s.commodity.weight_per_car).toLocaleString('en-US')} lb` : ''],
+        ['Total Weight', s.commodity.total_weight ? `${Number(s.commodity.total_weight).toLocaleString('en-US')} lb` : ''],
+        ['Declared Value', s.commodity.declared_value ? fmtMoney(s.commodity.declared_value) : ''],
+        ['Description', s.commodity.description],
+      ]));
+
+      if (s.hazmat.enabled) {
+        children.push(heading('Hazardous Materials — 49 CFR Part 172'));
+        const erProvLabel = (ER_PROVIDERS[s.hazmat.er_provider] || {}).label || '';
+        const erLine = `${erProvLabel ? erProvLabel + ' ' : ''}${s.hazmat.er_phone}${s.hazmat.er_contract ? ' — Contract ' + s.hazmat.er_contract : ''}`;
+        children.push(kvTable([
+          ['UN/NA Number', s.hazmat.un_number],
+          ['Proper Shipping Name', s.hazmat.proper_shipping_name],
+          ['Hazard Class', s.hazmat.hazard_class],
+          ['Packing Group', s.hazmat.packing_group],
+          ['Subsidiary Risk', s.hazmat.subsidiary_risk],
+        ]));
+        children.push(new D.Paragraph({
+          children: [new D.TextRun({ text: 'EMERGENCY CONTACT: ' + erLine, bold: true, color: 'B91C1C', size: 24 })],
+          spacing: { before: 100, after: 100 },
+        }));
+        children.push(para(`Trained Hazmat Employee: ${s.hazmat.trained_employee_name}, ${s.hazmat.trained_employee_title} — last training ${s.hazmat.trained_employee_date} (§172.704)`));
+        const certText = s.hazmat.cert_choice === 'international' ? VERBATIM_172_204_INTERNATIONAL : VERBATIM_172_204_DOMESTIC;
+        children.push(para('Shipper\'s Certification (49 CFR §172.204):', { bold: true }));
+        children.push(para(certText, { italics: true }));
+        children.push(para('PHMSA: Falsification subject to civil penalties up to $238,809 per violation per day (49 CFR 107.329).', { size: 16, color: '808080' }));
+      }
+
+      if (s.lane_type === 'us_mx') {
+        children.push(heading('Cross-Border — US to Mexico'));
+        children.push(kvTable([
+          ['Agente Aduanal', s.cross_border.agente_aduanal],
+          ['INCOTERMS', s.cross_border.incoterms],
+          ['Border Interchange', INTERCHANGE_LABELS_MX[s.cross_border.border_interchange_mx] || s.cross_border.border_interchange_mx],
+          ['Commercial Invoice Ref', s.cross_border.commercial_invoice_ref],
+          ['AES ITN', s.cross_border.aes_itn],
+          ['USMCA', s.cross_border.usmca_mx ? 'Applied' : 'Not applied'],
+        ]));
+        if (s.cross_border.usmca_mx) children.push(para('USMCA / T-MEC: ' + USMCA_CERT_STATEMENT, { italics: true }));
+      } else if (s.lane_type === 'us_ca') {
+        children.push(heading('Cross-Border — US to Canada'));
+        children.push(kvTable([
+          ['Canadian BN9-RM', s.cross_border.bn_rm],
+          ['Canadian Broker', s.cross_border.canadian_broker || 'Self-account via CARM'],
+          ['Commercial Invoice Ref', s.cross_border.commercial_invoice_ref_ca],
+          ['AES ITN', s.cross_border.aes_itn_ca],
+          ['USMCA', s.cross_border.usmca_ca ? 'Applied' : 'Not applied'],
+          ['ACI eManifest', 'Filed by carrier ≥ 2 hrs before First Port of Arrival (CBSA D3-6-6)'],
+        ]));
+        if (s.cross_border.usmca_ca) children.push(para('USMCA / CUSMA: ' + USMCA_CERT_STATEMENT, { italics: true }));
+      }
+
+      const specialRows = [];
+      if (s.special.securement_notes) specialRows.push(['Securement', s.special.securement_notes]);
+      if (s.special.temp_constraints) specialRows.push(['Temperature', s.special.temp_constraints]);
+      if (s.special.accessorial_request) specialRows.push(['Accessorials', s.special.accessorial_request]);
+      if (s.special.notify_party) specialRows.push(['Notify Party', s.special.notify_party]);
+      if (s.special.seal_numbers.length) specialRows.push(['Seal Numbers', s.special.seal_numbers.join(', ')]);
+      if (specialRows.length) {
+        children.push(heading('Special Instructions'));
+        children.push(kvTable(specialRows));
+      }
+
+      if (s.freight_terms === 'collect' && s.non_recourse_sign) {
+        children.push(heading('Consignor Non-Recourse Endorsement (49 CFR Part 1035 Section 7)'));
+        children.push(para(VERBATIM_PART_1035_SECTION_7, { italics: true }));
+        children.push(para('Consignor Signature: _______________________________   Date: _______________'));
+      }
+
+      children.push(heading('Carrier Acknowledgment'));
+      children.push(para('Received subject to the classifications and tariffs in effect on the date of issue of this bill of lading, the property described above in apparent good order, except as noted (contents and condition of contents of packages unknown), marked, consigned, and destined as indicated. (49 CFR Part 1035)'));
+      children.push(para('Shipper Signature: _______________________________   Date: ' + (s.bol_date || '________'), { bold: true }));
+      children.push(para('Carrier Acknowledgment: _______________________________   Date: _______________', { bold: true }));
+      children.push(para(`Generated by Steel Wheel Logistics Bill of Lading Builder — steelwheellogistics.com   |   ${s.bol_number}   |   ${new Date().toISOString()}`, { size: 14, color: '808080' }));
+
+      const doc = new D.Document({ sections: [{ children }] });
+      D.Packer.toBlob(doc).then(blob => {
+        const a = document.createElement('a');
+        const url = URL.createObjectURL(blob);
+        a.href = url;
+        a.download = `${s.bol_number || 'rail-bol'}.docx`;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 100);
+        if (typeof gtag === 'function') gtag('event', 'bol_docx_download', { event_category: 'tools' });
+      }).catch(err => {
+        console.error('DOCX generation failed:', err);
+        $('downloadError').textContent = 'DOCX generation failed — please try again.';
+      });
+    }
+
+    // ───── Wiring ─────
+    $('wizardNext').addEventListener('click', () => nextStep());
+    $('wizardPrev').addEventListener('click', () => prevStep());
+
+    $('downloadPdfBtn').addEventListener('click', () => {
+      gatedAction('pdf', () => { renderPreview(); generatePdf(); });
+    });
+    $('downloadDocxBtn').addEventListener('click', () => {
+      gatedAction('docx', () => { renderPreview(); generateDocx(); });
+    });
+    $('saveTemplateBtnInline').addEventListener('click', () => {
+      gatedAction('template_save', () => saveTemplate());
+    });
+    $('emailCopyBtn').addEventListener('click', () => {
+      gatedAction('email_copy', () => {
+        // Fire a fresh capture-lead with action=submit so the customer
+        // email goes out. The captureLead above (action=email_copy) is
+        // gated-only; this second call triggers the Resend pipeline.
+        const email = swlReadSharedEmail();
+        if (email) captureLead(email, 'submit').then(() => alert('A copy is on the way to ' + email));
+      });
+    });
+
+    $('saveTemplateBtn').addEventListener('click', () => saveTemplate());
+    $('loadTemplateBtn').addEventListener('click', () => loadTemplate());
+    $('deleteTemplateBtn').addEventListener('click', () => deleteTemplate());
+
+    // ───── Boot ─────
+    initDefaults();
+    updateCrossBorderPanels();
+    renderProgress();
+    showStep(1);
+    refreshTemplateUI();
+    if (!listTemplates().length) $('templatesBar').style.display = 'none';
+
+    // ───── Smoke-test hooks ─────
+    window.__bolCaptureState = captureState;
+    window.__bolGotoStep = gotoStep;
+    window.__bolLoadState = loadState;
+  </script>
+
+</body>
+</html>

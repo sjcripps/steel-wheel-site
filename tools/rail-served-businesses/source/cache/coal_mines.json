@@ -1,0 +1,678 @@
+[
+ {
+  "company_name": "Eagle Butte Mine (Alpha Met)",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "thermal_coal",
+   "PRB"
+  ],
+  "industry_naics": "",
+  "state": "WY",
+  "county": "",
+  "city": "Gillette",
+  "lat": 44.2911,
+  "lon": -105.5022,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Belle Ayr Mine (Alpha Met)",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "thermal_coal",
+   "PRB"
+  ],
+  "industry_naics": "",
+  "state": "WY",
+  "county": "",
+  "city": "Wright",
+  "lat": 43.9667,
+  "lon": -105.45,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Antelope Mine (Cloud Peak)",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "thermal_coal",
+   "PRB"
+  ],
+  "industry_naics": "",
+  "state": "WY",
+  "county": "",
+  "city": "Wright",
+  "lat": 43.7286,
+  "lon": -105.3856,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cordero Rojo Mine (Cloud Peak)",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "thermal_coal",
+   "PRB"
+  ],
+  "industry_naics": "",
+  "state": "WY",
+  "county": "",
+  "city": "Wright",
+  "lat": 44.0667,
+  "lon": -105.2167,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Spring Creek Mine (Navajo Transitional)",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "thermal_coal",
+   "PRB"
+  ],
+  "industry_naics": "",
+  "state": "MT",
+  "county": "",
+  "city": "Decker",
+  "lat": 45.0036,
+  "lon": -106.7989,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Decker Coal Mine",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "thermal_coal"
+  ],
+  "industry_naics": "",
+  "state": "MT",
+  "county": "",
+  "city": "Decker",
+  "lat": 45.0036,
+  "lon": -106.7989,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Rosebud Mine (Westmoreland)",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "thermal_coal"
+  ],
+  "industry_naics": "",
+  "state": "MT",
+  "county": "",
+  "city": "Colstrip",
+  "lat": 45.8847,
+  "lon": -106.6417,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Buckskin Mine (Kiewit)",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "thermal_coal",
+   "PRB"
+  ],
+  "industry_naics": "",
+  "state": "WY",
+  "county": "",
+  "city": "Gillette",
+  "lat": 44.4225,
+  "lon": -105.6086,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Coal Creek Mine (Peabody)",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "thermal_coal",
+   "PRB"
+  ],
+  "industry_naics": "",
+  "state": "WY",
+  "county": "",
+  "city": "Gillette",
+  "lat": 43.8589,
+  "lon": -105.4872,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Caballo Mine (Peabody)",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "thermal_coal",
+   "PRB"
+  ],
+  "industry_naics": "",
+  "state": "WY",
+  "county": "",
+  "city": "Wright",
+  "lat": 43.9425,
+  "lon": -105.35,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Foresight Energy Williamson Mine",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "thermal_coal",
+   "Illinois_Basin"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Johnston City",
+  "lat": 37.8253,
+  "lon": -88.9281,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Foresight Energy Macoupin Mine",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "thermal_coal"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Carlinville",
+  "lat": 39.279,
+  "lon": -89.8814,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Alliance Resource Hamilton Mine",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "thermal_coal"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "McLeansboro",
+  "lat": 38.0922,
+  "lon": -88.5345,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Alliance Resource River View Mine",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "thermal_coal"
+  ],
+  "industry_naics": "",
+  "state": "KY",
+  "county": "",
+  "city": "Sebree",
+  "lat": 37.5848,
+  "lon": -87.531,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Alliance Resource Gibson County Mine",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "thermal_coal"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Princeton",
+  "lat": 38.3553,
+  "lon": -87.5675,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Hallador Bear Run Mine",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "thermal_coal"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Dugger",
+  "lat": 39.0648,
+  "lon": -87.2572,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Murray American Marshall County Mine",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "metallurgical_coal"
+  ],
+  "industry_naics": "",
+  "state": "WV",
+  "county": "",
+  "city": "Cameron",
+  "lat": 39.8268,
+  "lon": -80.5715,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Murray American Marion County Mine",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "thermal_coal"
+  ],
+  "industry_naics": "",
+  "state": "WV",
+  "county": "",
+  "city": "Metz",
+  "lat": 39.619,
+  "lon": -80.4173,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Alpha Met Resources Cumberland Mine",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "metallurgical_coal"
+  ],
+  "industry_naics": "",
+  "state": "PA",
+  "county": "",
+  "city": "Waynesburg",
+  "lat": 39.8961,
+  "lon": -80.1817,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Arch Resources Leer Mine",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "metallurgical_coal"
+  ],
+  "industry_naics": "",
+  "state": "WV",
+  "county": "",
+  "city": "Grafton",
+  "lat": 39.3428,
+  "lon": -80.0192,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Warrior Met Coal Brookwood Mine",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "metallurgical_coal"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Brookwood",
+  "lat": 33.2548,
+  "lon": -87.3247,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Coronado Buchanan Mine",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "metallurgical_coal"
+  ],
+  "industry_naics": "",
+  "state": "VA",
+  "county": "",
+  "city": "Mavisdale",
+  "lat": 37.2476,
+  "lon": -82.0779,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Ramaco Resources Berwind Mine",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "metallurgical_coal"
+  ],
+  "industry_naics": "",
+  "state": "WV",
+  "county": "",
+  "city": "War",
+  "lat": 37.3014,
+  "lon": -81.6829,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "coal_mines",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ }
+]

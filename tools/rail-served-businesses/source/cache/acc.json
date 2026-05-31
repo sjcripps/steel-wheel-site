@@ -1,0 +1,2234 @@
+[
+ {
+  "company_name": "ExxonMobil Baton Rouge Chemical",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "petrochemicals",
+   "olefins"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Baton Rouge",
+  "lat": 30.5125,
+  "lon": -91.1862,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "ExxonMobil Beaumont Chemical",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "polyethylene",
+   "olefins"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Beaumont",
+  "lat": 30.086,
+  "lon": -94.1018,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "ExxonMobil Mont Belvieu Plastics",
+  "dba": "",
+  "primary_commodity": "plastics",
+  "commodity_subtypes": [
+   "polyethylene"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Mont Belvieu",
+  "lat": 29.848,
+  "lon": -94.8852,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Dow Midland Operations",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "specialty_chemicals",
+   "silicones"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Midland",
+  "lat": 43.6156,
+  "lon": -84.2472,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Dow Plaquemine Operations",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "polyethylene",
+   "ethylene"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Plaquemine",
+  "lat": 30.286,
+  "lon": -91.2348,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Dow Texas Operations",
+  "dba": "",
+  "primary_commodity": "plastics",
+  "commodity_subtypes": [
+   "polyethylene",
+   "ethylene"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Freeport",
+  "lat": 28.9544,
+  "lon": -95.3597,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Dow Seadrift Operations",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "ethylene_oxide"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Seadrift",
+  "lat": 28.4116,
+  "lon": -96.711,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Dow St. Charles Operations",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "ethylene_glycol",
+   "ethylene"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Hahnville",
+  "lat": 29.9786,
+  "lon": -90.4097,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Dow Pittsburg Operations",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "specialty_chemicals"
+  ],
+  "industry_naics": "",
+  "state": "CA",
+  "county": "",
+  "city": "Pittsburg",
+  "lat": 38.028,
+  "lon": -121.8849,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "LyondellBasell Channelview Complex",
+  "dba": "",
+  "primary_commodity": "plastics",
+  "commodity_subtypes": [
+   "polyethylene",
+   "propylene"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Channelview",
+  "lat": 29.7886,
+  "lon": -95.1166,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "LyondellBasell La Porte Complex",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "acetic_acid",
+   "vinyl_acetate"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "La Porte",
+  "lat": 29.6827,
+  "lon": -95.026,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "LyondellBasell Corpus Christi",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "MTBE"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Corpus Christi",
+  "lat": 27.8006,
+  "lon": -97.3964,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "LyondellBasell Bayport Underwood",
+  "dba": "",
+  "primary_commodity": "plastics",
+  "commodity_subtypes": [
+   "polypropylene"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Pasadena",
+  "lat": 29.6911,
+  "lon": -95.2091,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "LyondellBasell Morris Plant",
+  "dba": "",
+  "primary_commodity": "plastics",
+  "commodity_subtypes": [
+   "polypropylene"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Morris",
+  "lat": 41.3578,
+  "lon": -88.422,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Chevron Phillips Cedar Bayou Plant",
+  "dba": "",
+  "primary_commodity": "plastics",
+  "commodity_subtypes": [
+   "polyethylene",
+   "alpha_olefins"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Baytown",
+  "lat": 29.7891,
+  "lon": -94.9483,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Chevron Phillips Pasadena Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "styrene"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Pasadena",
+  "lat": 29.6911,
+  "lon": -95.2091,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Chevron Phillips Sweeny Plant",
+  "dba": "",
+  "primary_commodity": "plastics",
+  "commodity_subtypes": [
+   "polyethylene",
+   "ethane_cracker"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Old Ocean",
+  "lat": 29.0699,
+  "lon": -95.6916,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Chevron Phillips Borger Petrochemical",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "specialty_chemicals"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Borger",
+  "lat": 35.6678,
+  "lon": -101.3974,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Chevron Phillips Conroe Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "polysulfides"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Conroe",
+  "lat": 30.3119,
+  "lon": -95.4561,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Chevron Phillips Drilling Specialties Bartlesville",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "specialty_chemicals"
+  ],
+  "industry_naics": "",
+  "state": "OK",
+  "county": "",
+  "city": "Bartlesville",
+  "lat": 36.7475,
+  "lon": -95.9808,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Chevron Phillips Orange Plant",
+  "dba": "",
+  "primary_commodity": "plastics",
+  "commodity_subtypes": [
+   "polyethylene"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Orange",
+  "lat": 30.093,
+  "lon": -93.7366,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "BASF Geismar Site",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "ammonia",
+   "methylamines"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Geismar",
+  "lat": 30.2199,
+  "lon": -91.0089,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "BASF Freeport Site",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "acrylic_acid",
+   "specialty_chemicals"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Freeport",
+  "lat": 28.9544,
+  "lon": -95.3597,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "BASF Wyandotte Site",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "intermediates"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Wyandotte",
+  "lat": 42.2143,
+  "lon": -83.1593,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "BASF Beaumont Site",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "dispersion_chemicals"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Beaumont",
+  "lat": 30.086,
+  "lon": -94.1018,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "BASF Hannibal Site",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "agrochemicals"
+  ],
+  "industry_naics": "",
+  "state": "MO",
+  "county": "",
+  "city": "Palmyra",
+  "lat": 39.7965,
+  "lon": -91.524,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Westlake Lake Charles Vinyls",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "chlorine",
+   "vinyls"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Lake Charles",
+  "lat": 30.2103,
+  "lon": -93.2658,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Westlake Calvert City PVC",
+  "dba": "",
+  "primary_commodity": "plastics",
+  "commodity_subtypes": [
+   "PVC"
+  ],
+  "industry_naics": "",
+  "state": "KY",
+  "county": "",
+  "city": "Calvert City",
+  "lat": 37.0345,
+  "lon": -88.3517,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Westlake Geismar Vinyls",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "vinyls"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Geismar",
+  "lat": 30.2199,
+  "lon": -91.0089,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Westlake Plaquemine PVC",
+  "dba": "",
+  "primary_commodity": "plastics",
+  "commodity_subtypes": [
+   "PVC"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Plaquemine",
+  "lat": 30.286,
+  "lon": -91.2348,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Olin Freeport Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "chlor_alkali"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Freeport",
+  "lat": 28.9544,
+  "lon": -95.3597,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Olin Plaquemine Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "chlor_alkali"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Plaquemine",
+  "lat": 30.286,
+  "lon": -91.2348,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Olin McIntosh Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "chlor_alkali"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "McIntosh",
+  "lat": 31.2613,
+  "lon": -88.0314,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Olin Niagara Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "chlor_alkali"
+  ],
+  "industry_naics": "",
+  "state": "NY",
+  "county": "",
+  "city": "Niagara Falls",
+  "lat": 43.0962,
+  "lon": -79.0377,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Olin St. Gabriel Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "epoxy_resins"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "St. Gabriel",
+  "lat": 30.257,
+  "lon": -91.0982,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Eastman Kingsport Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "acetate",
+   "specialty_polymers"
+  ],
+  "industry_naics": "",
+  "state": "TN",
+  "county": "",
+  "city": "Kingsport",
+  "lat": 36.5484,
+  "lon": -82.5618,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Eastman Longview Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "plasticizers"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Longview",
+  "lat": 32.5007,
+  "lon": -94.7405,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Eastman Texas City Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "specialty_chemicals"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Texas City",
+  "lat": 29.3838,
+  "lon": -94.9027,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Air Products Houston Hydrogen",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "hydrogen",
+   "industrial_gases"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Pasadena",
+  "lat": 29.6911,
+  "lon": -95.2091,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Air Products Port Arthur",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "hydrogen"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Port Arthur",
+  "lat": 29.885,
+  "lon": -93.94,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Linde La Porte Hydrogen",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "hydrogen",
+   "industrial_gases"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "La Porte",
+  "lat": 29.6827,
+  "lon": -95.026,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Linde Geismar",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "industrial_gases"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Geismar",
+  "lat": 30.2199,
+  "lon": -91.0089,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Linde Convent Hydrogen",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "hydrogen"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Convent",
+  "lat": 30.0224,
+  "lon": -90.8367,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Honeywell Geismar Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "fluorochemicals"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Geismar",
+  "lat": 30.2199,
+  "lon": -91.0089,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Honeywell Hopewell Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "nylon_resins",
+   "ammonium_sulfate"
+  ],
+  "industry_naics": "",
+  "state": "VA",
+  "county": "",
+  "city": "Hopewell",
+  "lat": 37.3043,
+  "lon": -77.2872,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Honeywell Baton Rouge Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "fluorochemicals"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Baton Rouge",
+  "lat": 30.5125,
+  "lon": -91.1862,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "DuPont Sabine River Works",
+  "dba": "",
+  "primary_commodity": "plastics",
+  "commodity_subtypes": [
+   "specialty_polymers"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Orange",
+  "lat": 30.093,
+  "lon": -93.7366,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "DuPont Camden Plant",
+  "dba": "",
+  "primary_commodity": "plastics",
+  "commodity_subtypes": [
+   "nylon_resins"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Camden",
+  "lat": 34.2465,
+  "lon": -80.6068,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "DuPont Memphis Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "specialty_chemicals"
+  ],
+  "industry_naics": "",
+  "state": "TN",
+  "county": "",
+  "city": "Memphis",
+  "lat": 35.1495,
+  "lon": -90.049,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "DuPont Spruance Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "aramid_fiber"
+  ],
+  "industry_naics": "",
+  "state": "VA",
+  "county": "",
+  "city": "Richmond",
+  "lat": 37.5127,
+  "lon": -77.4869,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Celanese Bay City Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "acetic_acid",
+   "vinyl_acetate"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Bay City",
+  "lat": 28.9828,
+  "lon": -95.9694,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Celanese Clear Lake Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "acetic_acid"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Pasadena",
+  "lat": 29.6911,
+  "lon": -95.2091,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Celanese Bishop Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "chemical_intermediates"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Bishop",
+  "lat": 27.5872,
+  "lon": -97.7964,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Celanese Pampa Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "acetate_chemicals"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Pampa",
+  "lat": 35.5361,
+  "lon": -100.9598,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Huntsman Conroe Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "MDI",
+   "polyurethanes"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Conroe",
+  "lat": 30.3119,
+  "lon": -95.4561,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Huntsman Port Neches Olefins",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "MTBE",
+   "olefins"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Port Neches",
+  "lat": 29.9885,
+  "lon": -93.9586,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "INEOS Olefins Chocolate Bayou",
+  "dba": "",
+  "primary_commodity": "plastics",
+  "commodity_subtypes": [
+   "polypropylene",
+   "ethylene"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Alvin",
+  "lat": 29.3244,
+  "lon": -95.1769,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "INEOS Battleground Bayport",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "acrylonitrile"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Pasadena",
+  "lat": 29.6911,
+  "lon": -95.2091,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "INEOS Lima Refining Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "aromatic_chemicals"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Lima",
+  "lat": 40.7426,
+  "lon": -84.1052,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Formosa Plastics Point Comfort",
+  "dba": "",
+  "primary_commodity": "plastics",
+  "commodity_subtypes": [
+   "polyethylene",
+   "PVC"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Point Comfort",
+  "lat": 28.6791,
+  "lon": -96.5566,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Formosa Plastics Baton Rouge",
+  "dba": "",
+  "primary_commodity": "plastics",
+  "commodity_subtypes": [
+   "PVC"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Baton Rouge",
+  "lat": 30.5125,
+  "lon": -91.1862,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Shintech Plaquemine PVC",
+  "dba": "",
+  "primary_commodity": "plastics",
+  "commodity_subtypes": [
+   "PVC"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Plaquemine",
+  "lat": 30.286,
+  "lon": -91.2348,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Shintech Freeport PVC",
+  "dba": "",
+  "primary_commodity": "plastics",
+  "commodity_subtypes": [
+   "PVC"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Freeport",
+  "lat": 28.9544,
+  "lon": -95.3597,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Mosaic Faustina Phosphate",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "phosphate_fertilizer"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "St. James",
+  "lat": 30.0286,
+  "lon": -90.7878,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Mosaic Bartow Phosphate",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "phosphate_fertilizer"
+  ],
+  "industry_naics": "",
+  "state": "FL",
+  "county": "",
+  "city": "Bartow",
+  "lat": 27.8964,
+  "lon": -81.8431,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Mosaic New Wales Phosphate",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "phosphate_fertilizer"
+  ],
+  "industry_naics": "",
+  "state": "FL",
+  "county": "",
+  "city": "Mulberry",
+  "lat": 27.8956,
+  "lon": -82.0428,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CF Industries Donaldsonville Nitrogen",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "ammonia",
+   "urea"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Donaldsonville",
+  "lat": 30.09,
+  "lon": -91.0145,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CF Industries Yazoo City Nitrogen",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "ammonia",
+   "urea"
+  ],
+  "industry_naics": "",
+  "state": "MS",
+  "county": "",
+  "city": "Yazoo City",
+  "lat": 32.8552,
+  "lon": -90.4053,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CF Industries Verdigris Nitrogen",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "ammonia",
+   "urea"
+  ],
+  "industry_naics": "",
+  "state": "OK",
+  "county": "",
+  "city": "Verdigris",
+  "lat": 36.2403,
+  "lon": -95.6964,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CF Industries Port Neal Nitrogen",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "ammonia",
+   "urea"
+  ],
+  "industry_naics": "",
+  "state": "IA",
+  "county": "",
+  "city": "Sergeant Bluff",
+  "lat": 42.4103,
+  "lon": -96.3597,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "PPG Lake Charles Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "chlor_alkali",
+   "specialty_chemicals"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Lake Charles",
+  "lat": 30.2103,
+  "lon": -93.2658,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Methanex Geismar Methanol",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "methanol"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Geismar",
+  "lat": 30.2199,
+  "lon": -91.0089,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Ascend Performance Materials Decatur",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "nylon_intermediates"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Decatur",
+  "lat": 34.6059,
+  "lon": -86.9833,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Ascend Performance Materials Pensacola",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "nylon_intermediates"
+  ],
+  "industry_naics": "",
+  "state": "FL",
+  "county": "",
+  "city": "Pensacola",
+  "lat": 30.4213,
+  "lon": -87.2169,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Sasol Lake Charles Chemicals",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "ethylene",
+   "alcohols"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Westlake",
+  "lat": 30.2371,
+  "lon": -93.2466,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Tosoh Greensboro Plant",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "specialty_chemicals"
+  ],
+  "industry_naics": "",
+  "state": "NC",
+  "county": "",
+  "city": "Greensboro",
+  "lat": 36.0726,
+  "lon": -79.792,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "tank_car"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "acc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ }
+]

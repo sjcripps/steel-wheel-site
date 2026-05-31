@@ -1,0 +1,887 @@
+[
+  {
+    "slug": "seasonal-trends-rail-freight-rates",
+    "title": "Seasonal Trends in Rail Freight: What Drives Rate Changes",
+    "description": "Seasonal trends in rail freight: how grain harvest, construction season, winter weather, fuel cycles, and Q4 peak demand move rail rates across the year.",
+    "date": "2026-05-28",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "seasonal trends rail freight",
+      "cost strategy",
+      "rail freight rate changes",
+      "rail rate seasonality",
+      "grain harvest rail rates",
+      "rail peak season",
+      "rail fuel surcharge seasonal"
+    ]
+  },
+  {
+    "slug": "hazmat-shipping-by-rail",
+    "title": "Hazmat Shipping by Rail: Regulations, Classes, and Compliance",
+    "description": "Hazmat shipping by rail: the 9 hazard classes, 49 CFR 171-180 framework, DOT-117 tank car phase-in, placarding, TIH routing, and 2025 PHMSA penalty max.",
+    "date": "2026-05-23",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "hazmat shipping rail",
+      "hazmat & compliance",
+      "9 hazard classes",
+      "49 CFR 171-180",
+      "DOT-117 tank car",
+      "HM-251",
+      "TIH PIH routing",
+      "PHMSA penalties",
+      "rail hazmat compliance"
+    ]
+  },
+  {
+    "slug": "environmental-benefits-rail-freight",
+    "title": "The Environmental Case for Rail: Why Shippers Are Making the Switch",
+    "description": "The environmental benefits of rail freight: roughly 4x the fuel efficiency of trucks, up to 75% lower emissions per ton-mile, and how to report the savings.",
+    "date": "2026-05-21",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "environmental benefits rail freight",
+      "sustainability",
+      "rail freight emissions",
+      "rail vs truck emissions",
+      "rail fuel efficiency",
+      "Scope 3 freight emissions",
+      "sustainable freight"
+    ]
+  },
+  {
+    "slug": "rail-freight-transit-times",
+    "title": "Rail Freight Transit Times: What to Expect and How to Plan",
+    "description": "Rail freight transit times explained: what to expect on a typical move, the moving parts that drive variability, how to plan inventory around rail, and the realistic vs truck comparison.",
+    "date": "2026-05-19",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail freight transit times",
+      "operations",
+      "rail transit time",
+      "rail vs truck transit",
+      "rail freight planning",
+      "trip plan"
+    ]
+  },
+  {
+    "slug": "rail-bill-of-lading-vs-waybill",
+    "title": "Rail Bill of Lading vs Waybill: What's the Difference? (2026 Guide)",
+    "description": "Rail bill of lading vs waybill: the BoL is the shipper's contract document; the waybill is the railroad's internal routing record. Here's exactly who creates each and why confusing them costs you.",
+    "date": "2026-05-16",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail bill of lading vs waybill",
+      "documentation",
+      "rail waybill",
+      "rail BoL",
+      "AAR Form 1",
+      "electronic waybill",
+      "EDI 404"
+    ]
+  },
+  {
+    "slug": "rail-bill-of-lading-template",
+    "title": "Free Rail Bill of Lading Template (2026) + Field-by-Field Walkthrough",
+    "description": "Free rail bill of lading template with every required field walked through. AAR Form 1 / NMFTA-aligned, hazmat-ready, generates a compliant PDF in under 60 seconds.",
+    "date": "2026-05-16",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail bill of lading template",
+      "documentation",
+      "free rail BoL",
+      "AAR Form 1",
+      "uniform straight bill of lading rail",
+      "NMFTA BoL"
+    ]
+  },
+  {
+    "slug": "hazmat-rail-bill-of-lading-49-cfr-172",
+    "title": "Hazmat Rail Bill of Lading: 49 CFR 172 Compliance Guide (2026)",
+    "description": "Hazmat rail bill of lading guide: \u00a7172.204 shipper certification (verbatim text), \u00a7172.604 emergency response phone, \u00a7172.704 employee training. 2025 PHMSA penalty max $238,809.",
+    "date": "2026-05-16",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "hazmat rail bill of lading",
+      "hazmat & compliance",
+      "49 CFR 172",
+      "172.204 certification",
+      "172.604 emergency response",
+      "PHMSA penalties 2025",
+      "rail hazmat shipping papers"
+    ]
+  },
+  {
+    "slug": "section-7-no-recourse-post-2021",
+    "title": "Section 7 / No-Recourse: How Consignor Liability Works After the 2021 NMFTA Change",
+    "description": "Section 7 / no-recourse on rail BoLs after NMFTA Supplement 1 (April 2021): the checkbox is gone but the 49 CFR Part 1035 contract clause still exists. Here's the consignor signature statement that invokes non-recourse today.",
+    "date": "2026-05-16",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "section 7 bill of lading",
+      "documentation",
+      "no recourse rail BoL",
+      "consignor non-recourse",
+      "NMFTA supplement 1 2021",
+      "49 CFR 1035",
+      "collect freight liability"
+    ]
+  },
+  {
+    "slug": "order-bill-of-lading-vs-straight-bill-of-lading",
+    "title": "Order Bill of Lading vs Straight Bill of Lading on Rail Moves (2026)",
+    "description": "Order bill of lading vs straight bill of lading on rail: negotiable vs non-negotiable, letter-of-credit angles, when to use each, and how rail's limited use of negotiable BoLs differs from ocean freight.",
+    "date": "2026-05-16",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "order bill of lading vs straight",
+      "documentation",
+      "negotiable bill of lading rail",
+      "straight bill of lading rail",
+      "letter of credit rail"
+    ]
+  },
+  {
+    "slug": "rule-11-rail-rates-explained",
+    "title": "Rule 11 Rail Rates Explained: Split-Rate Moves and How to BoL Them (2026)",
+    "description": "Rule 11 rail rates: how interlined split-rate moves work, why they often beat single-line rates, junction selection, and how to BoL a Rule 11 move with each carrier rated independently.",
+    "date": "2026-05-16",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rule 11 rail freight",
+      "pricing & tariffs",
+      "rule 11 railroad",
+      "rule 11 split rates",
+      "interline rail rates",
+      "AAR rule 11"
+    ]
+  },
+  {
+    "slug": "consignee-vs-care-of-party-rail",
+    "title": "Consignee vs Care-of Party on a Rail Bill of Lading (2026 Guide)",
+    "description": "Consignee vs care-of party on a rail BoL: when to use \"c/o,\" who controls delivery, claim implications, and how the railroad uses each field. Transload, port, and third-party facility scenarios.",
+    "date": "2026-05-16",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "consignee vs care of",
+      "documentation",
+      "rail BoL care of party",
+      "c/o rail shipment",
+      "third party facility rail",
+      "transload consignee"
+    ]
+  },
+  {
+    "slug": "cross-border-rail-bill-of-lading-mexico",
+    "title": "Cross-Border Rail Bill of Lading to Mexico: Carta Porte 3.1, Pedimento, and AES (2026)",
+    "description": "Cross-border rail BoL US\u2192MX: Carta Porte 3.1 (TipoTransp=04 NOT 02), Agente Aduanal vs Article 40 self-clearance, Pedimento at SAT VUCEM, AES ITN for US exports >$2,500. 6 commercial interchanges.",
+    "date": "2026-05-16",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "cross border rail bill of lading mexico",
+      "cross-border",
+      "carta porte 3.1 rail",
+      "TipoTransp 04",
+      "agente aduanal rail",
+      "pedimento",
+      "AES ITN rail Mexico"
+    ]
+  },
+  {
+    "slug": "cross-border-rail-bill-of-lading-canada",
+    "title": "Cross-Border Rail Bill of Lading to Canada: CARM, ACI eManifest, and USMCA (2026)",
+    "description": "Cross-border rail BoL US\u2192CA: CARM Client Portal registration mandatory since Oct 2024, ACI eManifest filed by carrier 2hr before arrival, RPP bond, USMCA certification. Canadian customs broker is OPTIONAL post-CARM.",
+    "date": "2026-05-16",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "cross border rail bill of lading canada",
+      "cross-border",
+      "CARM rail shipping",
+      "ACI eManifest rail",
+      "RPP bond Canada",
+      "CBSA D3-6-6",
+      "USMCA rail"
+    ]
+  },
+  {
+    "slug": "stcc-vs-nmfc-vs-hts-codes",
+    "title": "STCC vs NMFC vs HTS Codes: Which One Goes on Your Rail BoL? (2026)",
+    "description": "STCC vs NMFC vs HTS codes: STCC=rail commodity, NMFC=LTL truck classification, HTS=customs duties. Each serves a different system. Here's exactly which code goes where on a rail BoL.",
+    "date": "2026-05-16",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "STCC vs NMFC",
+      "documentation",
+      "STCC vs HTS",
+      "NMFC vs HTS",
+      "rail commodity codes",
+      "standard transportation commodity code"
+    ]
+  },
+  {
+    "slug": "customs-broker-for-rail-when-you-need-one",
+    "title": "Customs Broker for Rail: When You Actually Need One (and When You Don't) \u2014 2026",
+    "description": "Customs broker for rail: US broker is OPTIONAL (self-file ACE/AES with continuous bond), Canada broker OPTIONAL post-CARM 2024, Mexico Agente Aduanal dominant-but-not-strictly-mandatory under Article 40.",
+    "date": "2026-05-16",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "customs broker for rail",
+      "cross-border",
+      "self file customs rail",
+      "rail customs broker cost",
+      "ACE AES rail import",
+      "CARM broker optional"
+    ]
+  },
+  {
+    "slug": "hazmat-emergency-response-phone-chemtrec-3e-infotrac",
+    "title": "Rail Hazmat Emergency Response Phone: CHEMTREC, 3E, INFOTRAC and the \u00a7172.604 Rules (2026)",
+    "description": "Hazmat rail BoL emergency response phone: \u00a7172.604 live-answer rule, CHEMTREC vs 3E vs INFOTRAC vs ChemTel comparison, self-provided requirements. Listing a number without a contract = federal violation up to $99,756/day.",
+    "date": "2026-05-16",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail hazmat emergency response phone",
+      "hazmat & compliance",
+      "CHEMTREC",
+      "INFOTRAC vs CHEMTREC",
+      "3E hazmat phone",
+      "49 CFR 172.604"
+    ]
+  },
+  {
+    "slug": "breakbulk-rail-bol-securement-aar-loading-rules",
+    "title": "Breakbulk Rail BoL + AAR Loading Rules: Securement Compliance (2026)",
+    "description": "Breakbulk rail BoL: AAR Open Top Loading Rules, Closed Car Pamphlets, Pamphlet 34 for tank cars, OT-55-R Key Train rules. Which rule applies, how to reference it on the BoL, and the loaded-and-braced compliance language.",
+    "date": "2026-05-16",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "breakbulk rail",
+      "AAR loading rules",
+      "securement",
+      "OT-55-R",
+      "Pamphlet 34",
+      "operations"
+    ],
+    "category": "Operations",
+    "read_minutes": 7
+  },
+  {
+    "slug": "carm-registration-guide-us-rail-shippers",
+    "title": "CARM Registration Guide for US Rail Shippers (2026)",
+    "description": "CARM Client Portal registration guide for US shippers exporting to Canada by rail: BN9 + RM4 setup, GCKey authentication, RPP bond posting, CAD filing. Mandatory since October 2024.",
+    "date": "2026-05-16",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "CARM",
+      "cross-border rail",
+      "Canada customs",
+      "BN9",
+      "RM4",
+      "GCKey",
+      "cross-border"
+    ],
+    "category": "Cross-Border",
+    "read_minutes": 7
+  },
+  {
+    "slug": "dot-hazmat-employee-certification-rail",
+    "title": "DOT Hazmat Employee Training for Rail Shippers: 49 CFR \u00a7172.704 (2026)",
+    "description": "49 CFR \u00a7172.704 hazmat employee training for rail shippers: 5 training categories, 90-day initial / 3-year recurrent, who counts as a hazmat employee. PHMSA training-violation min $617. Recordkeeping required for employment + 90 days.",
+    "date": "2026-05-16",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "hazmat training",
+      "49 CFR 172.704",
+      "PHMSA",
+      "hazmat employee",
+      "rail safety"
+    ],
+    "category": "Hazmat & Compliance",
+    "read_minutes": 7
+  },
+  {
+    "slug": "free-astray-rail-cars",
+    "title": "Free Astray Rail Cars: How the Railroad-Replaces-at-No-Charge Rule Works (2026)",
+    "description": "Free astray rail cars: when the railroad delivered to the wrong destination or stranded the car, free astray returns it to the correct destination at no charge to the shipper. Eligibility, BoL handling, and how to claim it.",
+    "date": "2026-05-16",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "free astray",
+      "rail car misroute",
+      "carrier liability",
+      "operations"
+    ],
+    "category": "Operations",
+    "read_minutes": 7
+  },
+  {
+    "slug": "rail-bol-diversion-reconsignment",
+    "title": "Diversion and Reconsignment on a Rail BoL: How to Redirect a Car in Transit (2026)",
+    "description": "Rail BoL diversion and reconsignment: how to redirect a car after it's been tendered to the railroad. Process, accessorial fees ($150-500+), AAR Mileage Tariff 18006 considerations, and BoL amendment mechanics.",
+    "date": "2026-05-16",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "diversion",
+      "reconsignment",
+      "rail BoL amendment",
+      "AAR Mileage Tariff 18006",
+      "accessorials"
+    ],
+    "category": "Documentation",
+    "read_minutes": 7
+  },
+  {
+    "slug": "self-filing-rail-customs-ace-aes-continuous-bond",
+    "title": "Self-Filing Rail Customs: ACE, AES, and the Continuous Bond Economics (2026)",
+    "description": "Self-file rail customs: ACE entry filing with CBP, AES export filing via AESDirect, continuous bond ($50K min, ~$400-700/yr) vs single-entry bonds. Break-even vs broker fees at 100-200 entries/yr.",
+    "date": "2026-05-16",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "ACE",
+      "AES",
+      "self-file customs",
+      "continuous bond",
+      "CBP",
+      "AESDirect",
+      "cross-border"
+    ],
+    "category": "Cross-Border",
+    "read_minutes": 7
+  },
+  {
+    "slug": "shipper-load-and-count-vs-carrier-load-rail",
+    "title": "Shipper Load and Count vs Carrier Load on a Rail BoL (2026)",
+    "description": "SLC vs Carrier Load on a rail BoL: when SLC limits the railroad's liability for shortage, when carrier-load opens the railroad to full piece-count liability, and what the Carmack claim implications are.",
+    "date": "2026-05-16",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "shipper load and count",
+      "SLC",
+      "carrier load",
+      "Carmack Amendment",
+      "rail liability"
+    ],
+    "category": "Documentation",
+    "read_minutes": 7
+  },
+  {
+    "slug": "transloading-vs-direct-rail",
+    "title": "Transloading vs Direct Rail Service: Choosing the Right Option",
+    "description": "Transloading vs direct rail compared: how each works, what they cost, when transload wins, when a private spur wins. A shipper's complete decision guide.",
+    "date": "2026-05-16",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "transloading vs direct rail",
+      "operations",
+      "direct rail service",
+      "rail transload",
+      "private rail spur",
+      "rail siding",
+      "transload cost",
+      "rail-served facility"
+    ]
+  },
+  {
+    "slug": "rail-freight-glossary",
+    "title": "Rail Freight Glossary: 50+ Terms Every Shipper Should Know",
+    "description": "Rail freight glossary: 50+ terms every shipper should know. Equipment, operations, pricing, documentation, carriers, and regulatory terms defined in plain English.",
+    "date": "2026-05-14",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail freight glossary",
+      "reference",
+      "rail shipping terms",
+      "rail freight terminology",
+      "railcar glossary",
+      "multimodal definition",
+      "STCC"
+    ]
+  },
+  {
+    "slug": "rail-freight-statistics-2026",
+    "title": "Rail Freight by the Numbers: 2026 Industry Statistics",
+    "description": "Rail freight statistics 2026: network size, carloads, modal share, fuel efficiency, safety, and pricing. The numbers shippers should know, sourced from AAR, BTS, and EIA.",
+    "date": "2026-05-12",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail freight statistics 2026",
+      "industry data",
+      "AAR carload data",
+      "rail vs truck statistics",
+      "rail fuel efficiency",
+      "freight rail modal share"
+    ]
+  },
+  {
+    "slug": "how-to-choose-rail-freight-partner",
+    "title": "How to Choose a Rail Freight Logistics Partner: A Shipper's Guide",
+    "description": "How to choose a rail freight logistics partner: the eight criteria that matter, the red flags to walk away from, and the questions to ask before signing.",
+    "date": "2026-05-09",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "choose rail freight logistics partner",
+      "getting started",
+      "rail logistics partner",
+      "vet rail freight provider",
+      "rail logistics company",
+      "rail partner selection"
+    ]
+  },
+  {
+    "slug": "rail-logistics-course-free-online",
+    "title": "Free Rail Logistics Course: 10 Modules to Master Bulk Rail Freight",
+    "description": "Free rail logistics course from Steel Wheel Logistics: 10 modules covering rail freight fundamentals, equipment, pricing, transloading, demurrage, PSR, and how to build a rail strategy.",
+    "date": "2026-05-07",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail logistics course",
+      "courses & training",
+      "rail freight training",
+      "free rail course",
+      "transloading course",
+      "demurrage course",
+      "Class I railroad training",
+      "supply chain rail education"
+    ]
+  },
+  {
+    "slug": "how-to-get-rail-shipping-quote",
+    "title": "How to Get a Rail Shipping Quote: A Shipper's Guide",
+    "description": "How to get a rail shipping quote: what info to gather, who to ask, what's actually included, and how to compare estimates. A shipper's practical guide.",
+    "date": "2026-05-07",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail shipping quote",
+      "getting started",
+      "rail freight pricing",
+      "rail logistics quote",
+      "rail rate request",
+      "indicative estimate"
+    ]
+  },
+  {
+    "slug": "building-business-case-for-rail",
+    "title": "Building a Business Case for Rail: What Your CFO Needs to See",
+    "description": "Build a business case for rail your CFO will actually approve. Cost model, working capital, risk assumptions, and the financial framing finance teams expect.",
+    "date": "2026-05-05",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "business case for rail",
+      "cost strategy",
+      "rail freight ROI",
+      "CFO rail freight",
+      "rail vs truck financial analysis",
+      "modal shift business case"
+    ]
+  },
+  {
+    "slug": "switch-from-trucking-to-rail",
+    "title": "How to Switch from Trucking to Rail: A Transition Guide",
+    "description": "Switch from trucking to rail with a clear transition plan. Lane selection, partner setup, transload prep, pilot moves, and how to dodge the common pitfalls.",
+    "date": "2026-05-02",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "truck to rail transition",
+      "getting started",
+      "switch from trucking to rail",
+      "rail freight transition",
+      "modal shift to rail",
+      "rail logistics transition"
+    ]
+  },
+  {
+    "slug": "evaluate-if-rail-makes-sense",
+    "title": "How to Evaluate If Rail Makes Sense for Your Business",
+    "description": "Rail shipping evaluation framework: how to assess if rail makes sense for your freight. Six factors, real cost math, and red flags every shipper should check.",
+    "date": "2026-04-30",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail shipping evaluation",
+      "cost strategy",
+      "evaluate rail freight",
+      "rail vs truck decision",
+      "rail freight feasibility",
+      "when to use rail"
+    ]
+  },
+  {
+    "slug": "rail-shipping-for-small-businesses",
+    "title": "Rail Shipping for Small Businesses: What You Need to Know",
+    "description": "Rail shipping for small businesses: when it pays, what the volume thresholds really are, transload and shared-car options, and how to start without owning track.",
+    "date": "2026-04-28",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail shipping small business",
+      "getting started",
+      "transload",
+      "small shipper rail",
+      "rail without siding",
+      "low volume rail"
+    ]
+  },
+  {
+    "slug": "rail-freight-documentation-guide",
+    "title": "Rail Freight Documentation: BOLs, Waybills, and What You Need",
+    "description": "Rail freight documentation explained: bill of lading, waybill, STCC codes, hazmat papers, and routing. The shipper's guide to the paperwork that moves cars.",
+    "date": "2026-04-25",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail freight documentation",
+      "operations",
+      "bill of lading",
+      "waybill",
+      "hazmat shipping papers",
+      "STCC codes"
+    ]
+  },
+  {
+    "slug": "private-rail-spur-cost",
+    "title": "Private Rail Spur: Costs, Requirements, and Is It Worth It?",
+    "description": "Private rail spur cost guide: track, turnouts, crossings, permits, and connection fees. See real budget ranges and find out if a spur pays off for your facility.",
+    "date": "2026-04-23",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "private rail spur cost",
+      "cost strategy",
+      "rail spur construction",
+      "industrial rail siding",
+      "spur ROI",
+      "sidetrack agreement"
+    ]
+  },
+  {
+    "slug": "railcar-inspection-checklist",
+    "title": "Railcar Inspection Checklist Before Loading: A Shipper's Guide",
+    "description": "Railcar inspection checklist before loading: structural, mechanical, interior, and documentation checks shippers must make before releasing a bad order car.",
+    "date": "2026-04-21",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "railcar inspection checklist",
+      "operations",
+      "pre-loading inspection",
+      "bad order car",
+      "AAR interchange",
+      "tank car inspection"
+    ]
+  },
+  {
+    "slug": "rail-fuel-surcharges-calculated",
+    "title": "How Rail Fuel Surcharges Are Calculated: A Shipper's Guide",
+    "description": "How rail fuel surcharges are calculated: the indexes, trigger prices, mileage formulas, contract caps, and audit checks every shipper should know.",
+    "date": "2026-04-18",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail fuel surcharge",
+      "cost strategy",
+      "fuel surcharge calculation",
+      "HDF index",
+      "STB fuel surcharge",
+      "fuel surcharge audit"
+    ]
+  },
+  {
+    "slug": "rail-freight-invoice-explained",
+    "title": "Rail Freight Invoice Explained: Line Items, Charges, and What to Check",
+    "description": "Rail freight invoice explained: line items, charges, fuel surcharges, accessorials, and what to audit. Catch billing errors before you pay with this shipper guide.",
+    "date": "2026-04-16",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail freight invoice",
+      "cost strategy",
+      "freight invoice audit",
+      "accessorial charges",
+      "fuel surcharge",
+      "demurrage"
+    ]
+  },
+  {
+    "slug": "how-to-file-rail-freight-claim",
+    "title": "How to File a Rail Freight Claim: Step by Step",
+    "description": "How to file a rail freight claim for damaged or lost cargo. Step-by-step process, required documents, deadlines, and tips to maximize your claim recovery.",
+    "date": "2026-04-14",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail freight claim",
+      "operations",
+      "freight damage claim",
+      "railroad claims process",
+      "Carmack Amendment"
+    ]
+  },
+  {
+    "slug": "stcc-codes-explained",
+    "title": "STCC Codes Explained: A Shipper's Quick Reference",
+    "description": "STCC codes explained for rail shippers. Learn what Standard Transportation Commodity Codes are, how they work, and why getting them right affects your rates.",
+    "date": "2026-04-11",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "STCC codes explained",
+      "operations",
+      "commodity codes",
+      "rail classification",
+      "freight documentation"
+    ]
+  },
+  {
+    "slug": "common-mistakes-new-rail-shippers",
+    "title": "7 Common Mistakes First-Time Rail Shippers Make (and How to Avoid Them)",
+    "description": "Avoid costly mistakes rail shippers make on their first shipments. Learn the 7 most common errors and how to prevent demurrage, wrong equipment, and delays.",
+    "date": "2026-04-09",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "mistakes rail shippers",
+      "getting started",
+      "new rail shipper",
+      "demurrage",
+      "rail equipment",
+      "rail freight tips"
+    ]
+  },
+  {
+    "slug": "railroad-interchange-guide",
+    "title": "Railroad Interchange Guide: How Freight Moves Between Carriers",
+    "description": "Railroad interchange explained: how freight cars transfer between carriers, what causes delays, interchange agreements, and how shippers can protect shipments.",
+    "date": "2026-04-07",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "railroad interchange guide",
+      "operations",
+      "freight interchange",
+      "carrier interchange",
+      "interchange agreement",
+      "AAR interchange rules"
+    ]
+  },
+  {
+    "slug": "short-line-vs-class-i-railroads",
+    "title": "Short Line vs Class I Railroads: What Shippers Need to Know",
+    "description": "Short line vs Class I railroads explained for shippers: how they differ in service, pricing, and operations, and why both matter for your freight.",
+    "date": "2026-04-04",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "short line vs class I railroads",
+      "fundamentals",
+      "short line railroad",
+      "Class I railroad",
+      "railroad classification",
+      "railroad interchange"
+    ]
+  },
+  {
+    "slug": "rail-freight-rates-how-pricing-works",
+    "title": "How Rail Freight Rates Work: Tariffs, Contracts, and Negotiation",
+    "description": "Rail freight rates explained: how tariffs and contracts work, what drives pricing, fuel surcharges, and how to negotiate better rates for your shipments.",
+    "date": "2026-03-31",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail freight rates",
+      "railroad tariffs",
+      "rail contracts",
+      "fuel surcharge rail",
+      "negotiate rail rates",
+      "cost strategy"
+    ]
+  },
+  {
+    "slug": "unit-trains-vs-manifest-service",
+    "title": "Unit Trains vs Manifest Service: Which Is Right for Your Freight?",
+    "description": "Unit trains vs manifest service \u2014 how each rail shipping method works, what they cost, and which one fits your freight volume. A practical guide for shippers.",
+    "date": "2026-03-28",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "unit train vs manifest",
+      "fundamentals",
+      "rail service types",
+      "bulk rail freight",
+      "manifest train",
+      "multi-car rates"
+    ]
+  },
+  {
+    "slug": "demurrage-fees-how-to-avoid",
+    "title": "How to Avoid and Dispute Rail Demurrage Fees: A Shipper's Playbook",
+    "description": "Avoid and dispute rail demurrage fees with proven strategies. Cost breakdowns, dispute templates, and operational checklists to protect your freight budget.",
+    "date": "2026-03-26",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "demurrage fees rail",
+      "demurrage dispute",
+      "cost strategy",
+      "railcar turnaround",
+      "demurrage prevention"
+    ]
+  },
+  {
+    "slug": "rail-car-types-explained",
+    "title": "Rail Car Types Explained: Hoppers, Tank Cars, Gondolas, and More",
+    "description": "Rail car types explained \u2014 hoppers, tank cars, gondolas, flatcars, boxcars, and more. Which railcar fits your commodity and how to pick the right equipment.",
+    "date": "2026-03-24",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail car types",
+      "fundamentals",
+      "hopper car",
+      "tank car",
+      "gondola",
+      "flatcar",
+      "boxcar",
+      "rail freight equipment"
+    ]
+  },
+  {
+    "slug": "first-time-shipping-by-rail",
+    "title": "How to Ship by Rail for the First Time: A Step-by-Step Checklist",
+    "description": "Learn how to ship by rail for the first time. A step-by-step checklist covering equipment, documentation, pricing, and logistics for new rail shippers.",
+    "date": "2026-03-21",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "how to ship by rail",
+      "getting started",
+      "rail freight checklist",
+      "new rail shipper",
+      "first shipment"
+    ]
+  },
+  {
+    "slug": "bulk-commodity-shipping-by-rail",
+    "title": "Bulk Commodity Shipping by Rail: Aggregates, Steel, Fertilizer, and More",
+    "description": "Bulk commodity shipping by rail handles aggregates, steel, fertilizer, grain, and more. Equipment, costs, and logistics for high-volume rail freight shipments.",
+    "date": "2026-03-19",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "bulk commodity shipping rail",
+      "commodity guide",
+      "bulk rail freight",
+      "unit trains",
+      "manifest service",
+      "transloading"
+    ]
+  },
+  {
+    "slug": "steel-metals-rail-shipping",
+    "title": "Steel and Metals Rail Shipping: Equipment, Loading, and Logistics Guide",
+    "description": "Ship steel and metals by rail using gondolas, coil cars, and flatcars. Equipment, loading rules, scrap logistics, and cost factors for metal rail freight.",
+    "date": "2026-03-17",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "steel metals rail shipping",
+      "commodity guide",
+      "gondola",
+      "coil car",
+      "scrap metal",
+      "steel logistics"
+    ]
+  },
+  {
+    "slug": "rail-demurrage-fees-guide",
+    "title": "Rail Demurrage Fees: What They Cost and How to Minimize Charges",
+    "description": "Rail demurrage fees cost $75-$300+ per railcar per day. Learn how demurrage works, what triggers charges, and proven strategies to minimize detention costs.",
+    "date": "2026-03-17",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "demurrage fees",
+      "rail costs",
+      "railcar detention",
+      "cost strategy",
+      "demurrage prevention"
+    ]
+  },
+  {
+    "slug": "fertilizer-rail-shipping",
+    "title": "Fertilizer by Rail: Seasonal Planning and Cost Optimization",
+    "description": "Plan fertilizer rail shipments around seasonal demand cycles. Equipment, costs, storage, and timing strategies for nitrogen, phosphate, and potash by rail.",
+    "date": "2026-03-14",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "fertilizer rail shipping",
+      "commodity guide",
+      "seasonal planning",
+      "potash",
+      "nitrogen",
+      "phosphate",
+      "covered hopper"
+    ]
+  },
+  {
+    "slug": "aggregate-construction-materials-rail",
+    "title": "Shipping Aggregates by Rail: The Construction Materials Guide",
+    "description": "Learn how to ship aggregates and construction materials by rail. Equipment, costs, transloading, and logistics for stone, sand, gravel, and cement shipments.",
+    "date": "2026-03-12",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "aggregate rail shipping",
+      "construction materials",
+      "commodity guide",
+      "crushed stone",
+      "transloading",
+      "open top hopper"
+    ]
+  },
+  {
+    "slug": "how-railroad-classification-yards-work",
+    "title": "How Railroad Classification Yards Work: Sorting Freight Across America",
+    "description": "Learn how railroad classification yards sort and route freight cars across America. Hump yards, flat yards, automation, and what it means for your shipments.",
+    "date": "2026-03-11",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "classification yards",
+      "rail operations",
+      "how it works",
+      "freight sorting",
+      "hump yard"
+    ]
+  },
+  {
+    "slug": "shipping-grain-by-rail",
+    "title": "Shipping Grain by Rail: The Complete Guide",
+    "description": "Learn how to ship grain by rail \u2014 equipment, costs, seasonal trends, and unit train logistics. A practical guide for grain shippers and elevator operators.",
+    "date": "2026-03-10",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "grain",
+      "commodity guide",
+      "rail freight",
+      "unit trains",
+      "covered hoppers"
+    ]
+  },
+  {
+    "slug": "what-is-transloading",
+    "title": "What Is Transloading? How It Connects Rail to Your Door",
+    "description": "Transloading transfers freight between rail and truck at specialized facilities. Learn how it works, what it costs, and when your shipments need it.",
+    "date": "2026-02-28",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "transloading",
+      "operations",
+      "rail freight",
+      "logistics"
+    ]
+  },
+  {
+    "slug": "rail-vs-truck-freight-cost-comparison",
+    "title": "Rail vs Truck Freight Cost: When Rail Saves You Money",
+    "description": "Compare rail vs truck freight costs per ton-mile. Learn when rail saves money, where trucking wins, and how to find the break-even point for your shipments.",
+    "date": "2026-02-26",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail vs truck",
+      "freight cost",
+      "cost comparison",
+      "shipping"
+    ]
+  },
+  {
+    "slug": "how-rail-freight-shipping-works",
+    "title": "How Rail Freight Shipping Works: A Complete Guide for Shippers",
+    "description": "Learn how rail freight shipping works from booking to delivery. A practical guide for shippers covering the process, key players, service types, and what to expect.",
+    "date": "2026-02-26",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail freight",
+      "fundamentals",
+      "shipping guide",
+      "logistics"
+    ]
+  }
+]

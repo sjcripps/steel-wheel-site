@@ -1,0 +1,437 @@
+[
+ {
+  "company_name": "GM Wentzville Assembly",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "MO",
+  "county": "",
+  "city": "Wentzville",
+  "lat": 38.8139,
+  "lon": -90.8527,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "unloading",
+   "autoracks"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "auto_assembly",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "GM Lansing Delta Township Assembly",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Lansing",
+  "lat": 42.6981,
+  "lon": -84.4769,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "unloading",
+   "autoracks"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "auto_assembly",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "GM Lordstown Assembly (Foxconn)",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Lordstown",
+  "lat": 41.1731,
+  "lon": -80.8553,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "unloading",
+   "autoracks"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "auto_assembly",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Stellantis Belvidere Assembly",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Belvidere",
+  "lat": 42.2639,
+  "lon": -88.8442,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "unloading",
+   "autoracks"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "auto_assembly",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Stellantis Sterling Heights Assembly",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Sterling Heights",
+  "lat": 42.5803,
+  "lon": -83.0302,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "unloading",
+   "autoracks"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "auto_assembly",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Stellantis Toledo Assembly",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Toledo",
+  "lat": 41.6635,
+  "lon": -83.5552,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "unloading",
+   "autoracks"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "auto_assembly",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Stellantis Warren Truck Assembly",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Warren",
+  "lat": 42.5145,
+  "lon": -83.0146,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "unloading",
+   "autoracks"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "auto_assembly",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Ford Kansas City Assembly",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "MO",
+  "county": "",
+  "city": "Claycomo",
+  "lat": 39.2034,
+  "lon": -94.4983,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "unloading",
+   "autoracks"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "auto_assembly",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Ford Dearborn Truck Plant",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Dearborn",
+  "lat": 42.3199,
+  "lon": -83.1772,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "unloading",
+   "autoracks"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "auto_assembly",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Ford Chicago Assembly",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Chicago",
+  "lat": 41.7158,
+  "lon": -87.6033,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "unloading",
+   "autoracks"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "auto_assembly",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Ford Flat Rock Assembly",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Flat Rock",
+  "lat": 42.0975,
+  "lon": -83.2944,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "unloading",
+   "autoracks"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "auto_assembly",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Ford Wayne Assembly",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Wayne",
+  "lat": 42.2814,
+  "lon": -83.3863,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "unloading",
+   "autoracks"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "auto_assembly",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Toyota Princeton Indiana Plant",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Princeton",
+  "lat": 38.3553,
+  "lon": -87.5675,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "unloading",
+   "autoracks"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "auto_assembly",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Toyota San Antonio Truck",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "San Antonio",
+  "lat": 29.4241,
+  "lon": -98.4936,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "unloading",
+   "autoracks"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "auto_assembly",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Mitsubishi Cement Lucerne Valley",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "CA",
+  "county": "",
+  "city": "Lucerne Valley",
+  "lat": 34.4392,
+  "lon": -116.9714,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "unloading",
+   "autoracks"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "auto_assembly",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ }
+]

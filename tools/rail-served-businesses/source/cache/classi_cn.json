@@ -1,0 +1,114 @@
+[
+ {
+  "company_name": "Mosaic Belle Plaine Potash",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "potash"
+  ],
+  "industry_naics": "",
+  "state": "SK",
+  "county": "",
+  "city": "Belle Plaine",
+  "lat": 50.4258,
+  "lon": -105.184,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_cn",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nutrien Lanigan Potash",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "potash"
+  ],
+  "industry_naics": "",
+  "state": "SK",
+  "county": "",
+  "city": "Lanigan",
+  "lat": 51.8554,
+  "lon": -104.9742,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_cn",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CN Memphis Intermodal",
+  "dba": "",
+  "primary_commodity": "intermodal",
+  "commodity_subtypes": [
+   "intermodal"
+  ],
+  "industry_naics": "",
+  "state": "TN",
+  "county": "",
+  "city": "Memphis",
+  "lat": 35.1495,
+  "lon": -90.049,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_cn",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CN Geismar Industrial Park",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "chemicals"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Geismar",
+  "lat": 30.2199,
+  "lon": -91.0089,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_cn",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ }
+]

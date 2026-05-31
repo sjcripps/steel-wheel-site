@@ -1,0 +1,1718 @@
+[
+ {
+  "company_name": "Continental Tire Clinton Plant",
+  "dba": "",
+  "primary_commodity": "general",
+  "commodity_subtypes": [
+   "tires"
+  ],
+  "industry_naics": "",
+  "state": "MS",
+  "county": "",
+  "city": "Clinton",
+  "lat": 32.3414,
+  "lon": -90.3243,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Yokohama Tire West Point Plant",
+  "dba": "",
+  "primary_commodity": "general",
+  "commodity_subtypes": [
+   "tires"
+  ],
+  "industry_naics": "",
+  "state": "MS",
+  "county": "",
+  "city": "West Point",
+  "lat": 33.6076,
+  "lon": -88.6489,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nissan Canton Assembly",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "MS",
+  "county": "",
+  "city": "Canton",
+  "lat": 32.6107,
+  "lon": -90.0317,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "PACCAR Engine Columbus",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "truck_engines"
+  ],
+  "industry_naics": "",
+  "state": "MS",
+  "county": "",
+  "city": "Columbus",
+  "lat": 33.5089,
+  "lon": -88.4786,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Honda Manufacturing Alabama",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Lincoln",
+  "lat": 33.6126,
+  "lon": -86.1233,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Mazda Toyota Manufacturing Huntsville",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Huntsville",
+  "lat": 34.7304,
+  "lon": -86.5861,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Boeing Decatur Plant",
+  "dba": "",
+  "primary_commodity": "general",
+  "commodity_subtypes": [
+   "aerospace"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Decatur",
+  "lat": 34.6059,
+  "lon": -86.9833,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "GE Aviation Auburn",
+  "dba": "",
+  "primary_commodity": "general",
+  "commodity_subtypes": [
+   "aerospace"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Auburn",
+  "lat": 32.6098,
+  "lon": -85.4808,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Kronospan Eastaboga MDF",
+  "dba": "",
+  "primary_commodity": "forest_products",
+  "commodity_subtypes": [
+   "MDF",
+   "particleboard"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Eastaboga",
+  "lat": 33.6629,
+  "lon": -86.0319,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Tesla Gigafactory Texas",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles",
+   "battery"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Austin",
+  "lat": 30.2188,
+  "lon": -97.6172,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Samsung Austin Semiconductor",
+  "dba": "",
+  "primary_commodity": "general",
+  "commodity_subtypes": [
+   "semiconductors"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Austin",
+  "lat": 30.4022,
+  "lon": -97.671,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Texas Instruments Sherman Fab",
+  "dba": "",
+  "primary_commodity": "general",
+  "commodity_subtypes": [
+   "semiconductors"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Sherman",
+  "lat": 33.6357,
+  "lon": -96.6089,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "TPCO Tube Manufacturing Gregory",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "OCTG",
+   "tubular_steel"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Gregory",
+  "lat": 27.9239,
+  "lon": -97.292,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Vista Proppants Voca Sand",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "frac_sand"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Voca",
+  "lat": 30.9963,
+  "lon": -99.1459,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Black Mountain Sand Vest",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "frac_sand"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Vest",
+  "lat": 31.5868,
+  "lon": -103.486,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Atlas Sand Company Kermit",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "frac_sand"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Kermit",
+  "lat": 31.8523,
+  "lon": -103.0917,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Shintech Plaquemine Expansion",
+  "dba": "",
+  "primary_commodity": "plastics",
+  "commodity_subtypes": [
+   "PVC"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Plaquemine",
+  "lat": 30.286,
+  "lon": -91.2348,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cleco Madison Lignite Mine",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "lignite"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Mansfield",
+  "lat": 32.0387,
+  "lon": -93.7138,
+  "rail_served": "Y",
+  "nearest_class_i": "KCS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Citgo Lake Charles Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Lake Charles",
+  "lat": 30.2103,
+  "lon": -93.2658,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Phillips 66 Lake Charles Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Westlake",
+  "lat": 30.2371,
+  "lon": -93.2466,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Marathon Garyville Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Garyville",
+  "lat": 30.0541,
+  "lon": -90.6195,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Hyundai Metaplant Bryan County",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles",
+   "battery"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Ellabell",
+  "lat": 32.1696,
+  "lon": -81.4715,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Kia Georgia Assembly",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "West Point",
+  "lat": 32.8779,
+  "lon": -85.183,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "SK Battery America Commerce",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "battery"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Commerce",
+  "lat": 34.2042,
+  "lon": -83.4571,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Rivian Stanton Springs Plant",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Social Circle",
+  "lat": 33.6584,
+  "lon": -83.714,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Erlanger Glove Albany Plant",
+  "dba": "",
+  "primary_commodity": "general",
+  "commodity_subtypes": [
+   "industrial_distribution"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Albany",
+  "lat": 31.5785,
+  "lon": -84.1557,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Ford BlueOval City",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles",
+   "battery"
+  ],
+  "industry_naics": "",
+  "state": "TN",
+  "county": "",
+  "city": "Stanton",
+  "lat": 35.4615,
+  "lon": -89.4214,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nissan Smyrna Assembly",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "TN",
+  "county": "",
+  "city": "Smyrna",
+  "lat": 35.9828,
+  "lon": -86.5186,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Eastman Kingsport Specialty Chemicals",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "specialty_polymers"
+  ],
+  "industry_naics": "",
+  "state": "TN",
+  "county": "",
+  "city": "Kingsport",
+  "lat": 36.5484,
+  "lon": -82.5618,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Ford Louisville Assembly Plant",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "KY",
+  "county": "",
+  "city": "Louisville",
+  "lat": 38.1786,
+  "lon": -85.6936,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Toyota Georgetown Plant",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "KY",
+  "county": "",
+  "city": "Georgetown",
+  "lat": 38.2098,
+  "lon": -84.5588,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Ford BlueOval SK Glendale Battery",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "battery"
+  ],
+  "industry_naics": "",
+  "state": "KY",
+  "county": "",
+  "city": "Glendale",
+  "lat": 37.602,
+  "lon": -85.9038,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Subaru Indiana Automotive Lafayette",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Lafayette",
+  "lat": 40.4167,
+  "lon": -86.8753,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "GM Fort Wayne Assembly",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Roanoke",
+  "lat": 40.9656,
+  "lon": -85.3735,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Honda Greensburg Assembly",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Greensburg",
+  "lat": 39.337,
+  "lon": -85.4836,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Stellantis Kokomo Transmission",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "transmissions"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Kokomo",
+  "lat": 40.4864,
+  "lon": -86.1336,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Honda Marysville Auto Plant",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Marysville",
+  "lat": 40.2364,
+  "lon": -83.3672,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Honda East Liberty Plant",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "East Liberty",
+  "lat": 40.2645,
+  "lon": -83.5904,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Intel Ohio One Fab",
+  "dba": "",
+  "primary_commodity": "general",
+  "commodity_subtypes": [
+   "semiconductors"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "New Albany",
+  "lat": 40.085,
+  "lon": -82.8088,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Kraft Heinz Massillon Plant",
+  "dba": "",
+  "primary_commodity": "food_grain",
+  "commodity_subtypes": [
+   "packaged_food"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Massillon",
+  "lat": 40.7967,
+  "lon": -81.5215,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "BMW Spartanburg Plant",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Greer",
+  "lat": 34.9388,
+  "lon": -82.2275,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Volvo Cars Charleston",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Ridgeville",
+  "lat": 33.0873,
+  "lon": -80.3162,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Boeing Charleston 787 Plant",
+  "dba": "",
+  "primary_commodity": "general",
+  "commodity_subtypes": [
+   "aerospace"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "North Charleston",
+  "lat": 32.8546,
+  "lon": -79.9748,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Michelin Anderson Plant",
+  "dba": "",
+  "primary_commodity": "general",
+  "commodity_subtypes": [
+   "tires"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Anderson",
+  "lat": 34.5034,
+  "lon": -82.6501,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Michelin Lexington Plant",
+  "dba": "",
+  "primary_commodity": "general",
+  "commodity_subtypes": [
+   "tires"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Lexington",
+  "lat": 33.9818,
+  "lon": -81.2362,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "John Deere Waterloo Works",
+  "dba": "",
+  "primary_commodity": "general",
+  "commodity_subtypes": [
+   "agricultural_equipment"
+  ],
+  "industry_naics": "",
+  "state": "IA",
+  "county": "",
+  "city": "Waterloo",
+  "lat": 42.4928,
+  "lon": -92.3426,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "John Deere Davenport Works",
+  "dba": "",
+  "primary_commodity": "general",
+  "commodity_subtypes": [
+   "construction_equipment"
+  ],
+  "industry_naics": "",
+  "state": "IA",
+  "county": "",
+  "city": "Davenport",
+  "lat": 41.5236,
+  "lon": -90.5151,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "John Deere Ottumwa Works",
+  "dba": "",
+  "primary_commodity": "general",
+  "commodity_subtypes": [
+   "agricultural_equipment"
+  ],
+  "industry_naics": "",
+  "state": "IA",
+  "county": "",
+  "city": "Ottumwa",
+  "lat": 41.0203,
+  "lon": -92.4115,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Caterpillar East Peoria Plant",
+  "dba": "",
+  "primary_commodity": "general",
+  "commodity_subtypes": [
+   "construction_equipment"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "East Peoria",
+  "lat": 40.6664,
+  "lon": -89.5803,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Caterpillar Decatur Plant",
+  "dba": "",
+  "primary_commodity": "general",
+  "commodity_subtypes": [
+   "mining_equipment"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Decatur",
+  "lat": 39.8403,
+  "lon": -88.9548,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Mitsubishi Motors Normal Plant",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Normal",
+  "lat": 40.5142,
+  "lon": -88.9906,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Rivian Normal Plant",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Normal",
+  "lat": 40.5142,
+  "lon": -88.9906,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Vinfast Chatham County",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "NC",
+  "county": "",
+  "city": "Moncure",
+  "lat": 35.6304,
+  "lon": -79.079,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Toyota Battery Plant Liberty",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "battery"
+  ],
+  "industry_naics": "",
+  "state": "NC",
+  "county": "",
+  "city": "Liberty",
+  "lat": 35.8513,
+  "lon": -79.5717,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Big River Steel Mill 2 Osceola",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "flat_rolled"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Osceola",
+  "lat": 35.7143,
+  "lon": -89.9692,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Hyundai Steel Cabot Plant",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "sheet_steel"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Cabot",
+  "lat": 34.9745,
+  "lon": -92.0162,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Goodyear Lawton Plant",
+  "dba": "",
+  "primary_commodity": "general",
+  "commodity_subtypes": [
+   "tires"
+  ],
+  "industry_naics": "",
+  "state": "OK",
+  "county": "",
+  "city": "Lawton",
+  "lat": 34.6088,
+  "lon": -98.3897,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Boeing Oklahoma City Maintenance",
+  "dba": "",
+  "primary_commodity": "general",
+  "commodity_subtypes": [
+   "aerospace"
+  ],
+  "industry_naics": "",
+  "state": "OK",
+  "county": "",
+  "city": "Oklahoma City",
+  "lat": 35.4676,
+  "lon": -97.5164,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Halliburton Duncan Manufacturing",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "oilfield_services"
+  ],
+  "industry_naics": "",
+  "state": "OK",
+  "county": "",
+  "city": "Duncan",
+  "lat": 34.5023,
+  "lon": -97.9578,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "state_indev",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ }
+]

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="STCC vs NMFC vs HTS codes: STCC=rail commodity, NMFC=LTL truck classification, HTS=customs duties. Each serves a different system. Here's exactly which code goes where on a rail BoL, with cross-border conditions.">
+  <meta name="keywords" content="STCC vs NMFC, STCC vs HTS, NMFC vs HTS, rail commodity codes, standard transportation commodity code, NMFC item rail, HTS code rail BoL">
+  <link rel="canonical" href="https://steelwheellogistics.com/blog/stcc-vs-nmfc-vs-hts-codes">
+  <meta property="og:title" content="STCC vs NMFC vs HTS Codes: Which One Goes on Your Rail BoL? (2026)">
+  <meta property="og:description" content="STCC vs NMFC vs HTS codes: STCC=rail commodity, NMFC=LTL truck classification, HTS=customs duties. Each serves a different system. Here's exactly which code goes where on a rail BoL, with cross-border conditions.">
+  <meta property="og:url" content="https://steelwheellogistics.com/blog/stcc-vs-nmfc-vs-hts-codes">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="STCC vs NMFC vs HTS Codes: Which One Goes on Your Rail BoL? (2026)">
+  <meta name="twitter:description" content="STCC vs NMFC vs HTS codes: STCC=rail commodity, NMFC=LTL truck classification, HTS=customs duties. Each serves a different system. Here's exactly which code goes where on a rail BoL, with cross-border conditions.">
+  <title>STCC vs NMFC vs HTS Codes: Which One Goes on Your Rail BoL? (2026) | Steel Wheel Logistics</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "STCC vs NMFC vs HTS Codes: Which One Goes on Your Rail BoL? (2026)",
+  "description": "STCC vs NMFC vs HTS codes: STCC=rail commodity, NMFC=LTL truck classification, HTS=customs duties. Each serves a different system. Here's exactly which code goes where on a rail BoL, with cross-border conditions.",
+  "datePublished": "2026-05-16",
+  "dateModified": "2026-05-16",
+  "author": {
+    "@type": "Organization",
+    "name": "Steel Wheel Logistics"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Steel Wheel Logistics",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://steelwheellogistics.com/images/logo-192.png"
+    }
+  },
+  "url": "https://steelwheellogistics.com/blog/stcc-vs-nmfc-vs-hts-codes",
+  "image": [
+    "https://steelwheellogistics.com/images/logo-192.png"
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://steelwheellogistics.com/blog/stcc-vs-nmfc-vs-hts-codes"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What's the difference between STCC and NMFC codes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "STCC (Standard Transportation Commodity Code, 7 digits) is a rail commodity code maintained by Railinc for railroad rating; required on every rail BoL line. NMFC (National Motor Freight Classification, 6 digits + sub-item) is an LTL trucking classification maintained by NMFTA that drives LTL freight class (50-500); optional on rail BoLs, more relevant on intermodal/TOFC moves that touch LTL."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between STCC and HTS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "STCC is a US-only rail commodity code used by Railinc for railroad rating and AAR statistics. HTS (Harmonized Tariff Schedule) is the global customs classification system maintained by the World Customs Organization at the 6-digit level and extended by national authorities (HTSUS for US imports, Schedule B for US exports, Fracci\u00f3n Arancelaria for Mexico, Canadian Customs Tariff for Canada). HTS drives duty rates and is required on cross-border BoLs per 19 CFR \u00a7123.91."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need STCC on every rail BoL?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. AAR Rules 5 and 110 require the STCC on every commodity line of a rail BoL. Without an STCC, the originating carrier can't rate the move on the electronic waybill. For hazmat shipments, the STCC must be from the Railinc Hazmat STCC file (codes starting with \"49\")."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When is HTS required on a rail BoL?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On cross-border moves. Per 19 CFR \u00a7123.91, the rail BoL must show at minimum the 6-digit HTS classification with weight for sealed containers entering the US. US exports require Schedule B (10-digit) on AES filings and on the BoL when applicable. US-to-MX moves need 10-digit Fracci\u00f3n Arancelaria; US-to-CA moves need 10-digit Canadian Customs Tariff."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are hazmat STCC codes different from regular STCC codes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Hazmat STCCs are maintained in a separate Railinc file (the Hazmat STCC layout) and always start with the leading digits \"49\" (e.g., 4905755 for UN1203 Gasoline). Non-hazmat STCCs use other leading digits (01-46). The 49-prefix is the validation signal that a commodity line should trigger the hazmat compliance block on the BoL."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I leave NMFC blank on a rail BoL?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Usually yes. NMFC is optional on rail BoLs. It's more commonly populated on intermodal (TOFC/COFC) moves where the freight may be reclassified at a transload to LTL trucks for final delivery and the LTL class matters. Pure carload rail BoLs typically leave the NMFC field blank."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RSWDYHVY7Z');
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog" class="active">Blog</a>
+        <a href="/courses">Courses</a>
+        <a href="/tools">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Blog Hero -->
+  <section class="blog-hero">
+    <div class="blog-breadcrumb">
+      <a href="/blog">Blog</a><span class="separator">/</span><span>Documentation</span>
+    </div>
+    <h1>STCC vs NMFC vs HTS Codes: Which One Goes on Your Rail BoL? (2026)</h1>
+    <div class="blog-hero-meta">
+      <span>May 16, 2026</span>
+      <span class="dot">&middot;</span>
+      <span>9 min read</span>
+      <span class="dot">&middot;</span>
+      <span class="blog-tag">Documentation</span>
+    </div>
+  </section>
+  <!-- Article -->
+  <article class="blog-post">
+    <div class="blog-post-content">
+
+      <div class="blog-highlight">
+        <strong>Key fact:</strong> Three separate code systems live on your rail BoL because three separate regulatory and rating regimes use them. <strong>STCC</strong> is the rail commodity code Railinc maintains for railroad rating. <strong>NMFC</strong> is the LTL trucking classification used by NMFTA. <strong>HTS</strong> is the customs tariff code US CBP, Canadian CBSA, and Mexican SAT use for duty calculation. Each goes in a different field; each comes from a different authority.
+      </div>
+
+      <p class="blog-lead">If you've ever stared at a rail BoL wondering which commodity code goes in which field, you're not alone. The three systems were built for different purposes by different authorities, and they overlap in confusing ways. Here's the strict distinction, with the conditions where each is required or optional.</p>
+
+      <nav class="blog-toc">
+        <div class="blog-toc-title">In This Guide</div>
+        <ol>
+          <li><a href="#one-paragraph">The One-Paragraph Summary</a></li>
+          <li><a href="#stcc">STCC: Standard Transportation Commodity Code (Rail)</a></li>
+          <li><a href="#nmfc">NMFC: National Motor Freight Classification (LTL Truck)</a></li>
+          <li><a href="#hts">HTS / HTSUS: Customs Tariff Codes</a></li>
+          <li><a href="#which-goes-where">Which Code Goes Where on the Rail BoL</a></li>
+          <li><a href="#cross-border">Cross-Border Conditions</a></li>
+          <li><a href="#hazmat-stcc">The 49-Prefix Hazmat STCC</a></li>
+          <li><a href="#bol-builder">Using the BoL Builder Validators</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="one-paragraph">The One-Paragraph Summary</h2>
+
+      <p>On a rail BoL, the STCC is always required (the railroad rates the waybill against it). The NMFC item is optional and only relevant when the move involves intermodal or TOFC where the LTL classification matters. The HTS code is required on cross-border moves (per 19 CFR §123.91, 6-digit minimum; 10-digit HTSUS for US imports; 10-digit Fracción Arancelaria for Mexico).</p>
+
+      <h2 id="stcc">STCC: Standard Transportation Commodity Code (Rail)</h2>
+
+      <p>The Standard Transportation Commodity Code is a 7-digit numeric code maintained by <a href="https://public.railinc.com/resources/standard-transportation-commodity-code" target="_blank" rel="noopener">Railinc</a>, the AAR's data subsidiary. Every commodity moved by rail has an STCC. The railroad's electronic waybill is rated against the STCC, accessorials are triggered by the STCC, and the AAR's commodity statistics are aggregated by STCC.</p>
+
+      <p>STCC structure: 7 digits, often presented as <code>NN-NNN-NN</code>. Leading digits group commodity families:</p>
+      <ul>
+        <li><strong>01-04:</strong> Agricultural products (grain, fruit, livestock)</li>
+        <li><strong>10:</strong> Metallic ores</li>
+        <li><strong>11:</strong> Coal</li>
+        <li><strong>13-14:</strong> Crude petroleum, natural gas, nonmetallic minerals</li>
+        <li><strong>20-24:</strong> Food products, beverages, tobacco</li>
+        <li><strong>26:</strong> Pulp, paper, and allied products</li>
+        <li><strong>28:</strong> Chemicals</li>
+        <li><strong>29:</strong> Petroleum products (refined)</li>
+        <li><strong>32:</strong> Stone, clay, concrete, glass</li>
+        <li><strong>33:</strong> Primary metal products</li>
+        <li><strong>34-38:</strong> Fabricated metal, machinery, electrical, transportation equipment, instruments</li>
+        <li><strong>40-46:</strong> Waste/scrap, special handling, mail, containers, intermodal</li>
+        <li><strong>49:</strong> <strong>Hazardous materials</strong> (separate file at Railinc)</li>
+      </ul>
+
+      <p>Required on every rail BoL line per AAR Rules 5 and 110. Without an STCC, the railroad can't rate the move.</p>
+
+      <h2 id="nmfc">NMFC: National Motor Freight Classification (LTL Truck)</h2>
+
+      <p>The National Motor Freight Classification is the LTL trucking classification system maintained by the <a href="https://www.nmfta.org/" target="_blank" rel="noopener">NMFTA</a> (National Motor Freight Traffic Association). It groups commodities into 18 freight classes (Class 50 through Class 500) based on density, stowability, handling, and liability. The class drives LTL rates.</p>
+
+      <p>NMFC items are 6 digits, sometimes followed by a sub-item (e.g., <code>121200-01</code>). The NMF 100 series book is the canonical publication ($200/yr subscription).</p>
+
+      <p>On a rail BoL, NMFC is optional. It's more commonly populated on intermodal (TOFC/COFC) moves where the freight may be reclassified at a transload to LTL trucks for final delivery. Most pure carload rail BoLs leave NMFC blank.</p>
+
+      <h2 id="hts">HTS / HTSUS: Customs Tariff Codes</h2>
+
+      <p>The Harmonized Tariff Schedule is the global commodity classification system maintained by the World Customs Organization at the 6-digit level. National authorities extend it:</p>
+      <ul>
+        <li><strong>HTSUS</strong> (US): 10-digit, maintained by USITC for imports into the US</li>
+        <li><strong>Schedule B</strong> (US exports): 10-digit, maintained by US Census Bureau</li>
+        <li><strong>Canadian Customs Tariff</strong>: 10-digit, maintained by CBSA</li>
+        <li><strong>Fracción Arancelaria</strong> (Mexico): 8-10 digit, maintained by SAT</li>
+      </ul>
+
+      <p>HTS drives duty rates, USMCA eligibility, AES filings, and the Pedimento / CARM declarations. Per <a href="https://www.law.cornell.edu/cfr/text/19/123.91" target="_blank" rel="noopener">19 CFR §123.91</a>, the rail BoL on a cross-border move must show at minimum the 6-digit HTS classification with weight for sealed containers.</p>
+
+      <h2 id="which-goes-where">Which Code Goes Where on the Rail BoL</h2>
+
+      <p>On the commodity row of a standard rail BoL:</p>
+      <ul>
+        <li><strong>Description of articles:</strong> freetext + STCC + (hazmat) proper shipping name</li>
+        <li><strong>STCC code:</strong> 7 digits, required, in its own field</li>
+        <li><strong>NMFC item:</strong> 6 digits + sub-item, optional, in its own field</li>
+        <li><strong>HTS code:</strong> 6-10 digits, conditional (required on cross-border per §123.91)</li>
+      </ul>
+
+      <p>Common shipper mistake: putting an HTS code in the STCC field, or vice versa. The railroad's rating engine fails because the codes don't match either's catalog. The free <a href="/tools/rail-bol-builder">Rail BoL Builder</a> validates STCC against the parsed Railinc catalog and HTS against the USITC HTSUS so you can't accidentally swap them.</p>
+
+      <h2 id="cross-border">Cross-Border Conditions</h2>
+
+      <p><strong>US to Mexico:</strong> the BoL needs both STCC (for the rail leg) and Fracción Arancelaria (10-digit MX customs code). The Carta Porte 3.1 complement uses BienesTransp (8-digit CPV code from a separate SAT catalog) plus FraccionArancelaria for the customs side. See our <a href="/blog/cross-border-rail-bill-of-lading-mexico">MX cross-border guide</a>.</p>
+
+      <p><strong>US to Canada:</strong> STCC for the rail leg + Canadian Customs Tariff code (10-digit) for the CBSA filing. See our <a href="/blog/cross-border-rail-bill-of-lading-canada">CA cross-border guide</a>.</p>
+
+      <p><strong>US to overseas via rail-to-port:</strong> STCC + Schedule B (10-digit US export classification) + the ocean BoL HTS for the destination country's customs. The rail leg uses STCC; the ocean leg uses Schedule B for AES and HTS for arrival.</p>
+
+      <h2 id="hazmat-stcc">The 49-Prefix Hazmat STCC</h2>
+
+      <p>Hazmat STCCs are maintained in a separate Railinc file. They start with "49" as the leading 2 digits (e.g., <code>4905755</code> for UN1203 Gasoline). When you check the HM indicator on a BoL line, the STCC validation expects a 49-prefix code.</p>
+
+      <p>This is independent of the UN identification number that appears in the proper shipping description (UN1203, Gasoline, 3, PG II). The UN number identifies the substance globally; the 49-STCC identifies it for rail rating purposes. Both go on the BoL.</p>
+
+      <h2 id="bol-builder">Using the BoL Builder Validators</h2>
+
+      <p>The free <a href="/tools/rail-bol-builder">Rail BoL Builder</a> validates each code against its source catalog:</p>
+      <ul>
+        <li><strong>STCC:</strong> autocomplete from the parsed Railinc STCC catalog</li>
+        <li><strong>NMFC:</strong> optional, format-validated against the NMF 100 pattern</li>
+        <li><strong>HTS:</strong> validated against the USITC HTSUS (US imports), Schedule B (US exports), CBSA Tariff (CA), or Fracción Arancelaria (MX) catalogs depending on cross-border mode</li>
+        <li><strong>Hazmat lines:</strong> STCC required to start with "49"</li>
+      </ul>
+
+      <p>Clean code data on the BoL means clean waybill data at the railroad, clean customs filings on cross-border moves, and fewer invoice disputes downstream. <a href="/tools/rail-bol-builder">Open the BoL Builder &rarr;</a></p>
+
+      <section class="blog-faq" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <h3>What's the difference between STCC and NMFC codes?</h3>
+          <p>STCC (Standard Transportation Commodity Code, 7 digits) is a rail commodity code maintained by Railinc for railroad rating; required on every rail BoL line. NMFC (National Motor Freight Classification, 6 digits + sub-item) is an LTL trucking classification maintained by NMFTA that drives LTL freight class (50-500); optional on rail BoLs, more relevant on intermodal/TOFC moves that touch LTL.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What's the difference between STCC and HTS?</h3>
+          <p>STCC is a US-only rail commodity code used by Railinc for railroad rating and AAR statistics. HTS (Harmonized Tariff Schedule) is the global customs classification system maintained by the World Customs Organization at the 6-digit level and extended by national authorities (HTSUS for US imports, Schedule B for US exports, Fracción Arancelaria for Mexico, Canadian Customs Tariff for Canada). HTS drives duty rates and is required on cross-border BoLs per 19 CFR §123.91.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do I need STCC on every rail BoL?</h3>
+          <p>Yes. AAR Rules 5 and 110 require the STCC on every commodity line of a rail BoL. Without an STCC, the originating carrier can't rate the move on the electronic waybill. For hazmat shipments, the STCC must be from the Railinc Hazmat STCC file (codes starting with "49").</p>
+        </div>
+        <div class="faq-item">
+          <h3>When is HTS required on a rail BoL?</h3>
+          <p>On cross-border moves. Per 19 CFR §123.91, the rail BoL must show at minimum the 6-digit HTS classification with weight for sealed containers entering the US. US exports require Schedule B (10-digit) on AES filings and on the BoL when applicable. US-to-MX moves need 10-digit Fracción Arancelaria; US-to-CA moves need 10-digit Canadian Customs Tariff.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Are hazmat STCC codes different from regular STCC codes?</h3>
+          <p>Yes. Hazmat STCCs are maintained in a separate Railinc file (the Hazmat STCC layout) and always start with the leading digits "49" (e.g., 4905755 for UN1203 Gasoline). Non-hazmat STCCs use other leading digits (01-46). The 49-prefix is the validation signal that a commodity line should trigger the hazmat compliance block on the BoL.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I leave NMFC blank on a rail BoL?</h3>
+          <p>Usually yes. NMFC is optional on rail BoLs. It's more commonly populated on intermodal (TOFC/COFC) moves where the freight may be reclassified at a transload to LTL trucks for final delivery and the LTL class matters. Pure carload rail BoLs typically leave the NMFC field blank.</p>
+        </div>
+      </section>
+
+    <div class="blog-cta">
+      <h3>Generate Your Rail Bill of Lading in 60 Seconds &mdash; Free</h3>
+      <p>Stop assembling BoLs from PDF scans and spreadsheets. Our free <a href="/tools/rail-bol-builder">Rail Bill of Lading Builder</a> renders an AAR-compliant, hazmat-ready BoL with §172.204 certification, §172.604 emergency phone block, and Section 7 non-recourse signature line built in. Email-gated PDF download. No account needed.</p>
+      <a href="/tools/rail-bol-builder" class="btn btn-primary">Open the BoL Builder &rarr;</a>
+      <p style="margin-top:0.75rem; font-size:0.95rem;">Questions on a complex hazmat or cross-border move? Call <a href="tel:+16018212199">(601) 821-2199</a>.</p>
+    </div>
+    </div>
+
+    <!-- Author -->
+    <div class="blog-author">
+      <div class="blog-author-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+      </div>
+      <div class="blog-author-info">
+        <div class="blog-author-name">Steel Wheel Logistics</div>
+        <div class="blog-author-bio">We coordinate bulk rail freight across North America &mdash; from rate negotiation and car sourcing to transload coordination, BoL preparation, and tracking. Based in Mississippi, serving shippers nationwide.</div>
+      </div>
+    </div>
+
+    <!-- Related Articles -->
+    <div class="blog-related">
+      <h3>Keep Reading</h3>
+      <ul>
+        <li><a href="/blog/rail-bill-of-lading-template">Free Rail Bill of Lading Template (2026) + Field-by-Field Walkthrough</a></li>
+        <li><a href="/blog/rail-bill-of-lading-vs-waybill">Rail Bill of Lading vs Waybill: What's the Difference?</a></li>
+        <li><a href="/blog/hazmat-rail-bill-of-lading-49-cfr-172">Hazmat Rail Bill of Lading: 49 CFR 172 Compliance Guide (2026)</a></li>
+        <li><a href="/blog/section-7-no-recourse-post-2021">Section 7 / No-Recourse: How Consignor Liability Works After the 2021 NMFTA Change</a></li>
+        <li><a href="/blog/order-bill-of-lading-vs-straight-bill-of-lading">Order Bill of Lading vs Straight Bill of Lading on Rail Moves</a></li>
+        <li><a href="/blog/rule-11-rail-rates-explained">Rule 11 Rail Rates Explained: Split-Rate Moves and How to BoL Them</a></li>
+        <li><a href="/blog/consignee-vs-care-of-party-rail">Consignee vs Care-of Party on a Rail Bill of Lading</a></li>
+        <li><a href="/blog/cross-border-rail-bill-of-lading-mexico">Cross-Border Rail Bill of Lading to Mexico: Carta Porte 3.1, Pedimento, and AES</a></li>
+      </ul>
+    </div>
+
+    <div class="blog-back">
+      <a href="/blog">&larr; Back to All Posts</a>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/tools">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

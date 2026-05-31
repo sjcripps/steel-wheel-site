@@ -1,0 +1,67 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-05-31T18:15:00Z",
+  "car_types": [
+    {
+      "id": "covered_hopper",
+      "name": "Covered Hopper",
+      "capacity_tons": 100,
+      "typical_commodities": ["grain", "chemicals", "aggregates"],
+      "load_factor": 0.85,
+      "dwell_days": 3,
+      "annual_trips": 25
+    },
+    {
+      "id": "gondola",
+      "name": "Gondola",
+      "capacity_tons": 100,
+      "typical_commodities": ["steel", "coal", "aggregates"],
+      "load_factor": 0.90,
+      "dwell_days": 4,
+      "annual_trips": 22
+    },
+    {
+      "id": "boxcar",
+      "name": "Boxcar",
+      "capacity_tons": 80,
+      "typical_commodities": ["paper", "machinery", "manufactured goods"],
+      "load_factor": 0.75,
+      "dwell_days": 5,
+      "annual_trips": 20
+    },
+    {
+      "id": "tank_car",
+      "name": "Tank Car",
+      "capacity_tons": 120,
+      "typical_commodities": ["chemicals", "crude", "liquid fuels"],
+      "load_factor": 0.80,
+      "dwell_days": 6,
+      "annual_trips": 18
+    },
+    {
+      "id": "flat_car",
+      "name": "Flat Car",
+      "capacity_tons": 50,
+      "typical_commodities": ["machinery", "auto parts", "containers"],
+      "load_factor": 0.70,
+      "dwell_days": 4,
+      "annual_trips": 23
+    },
+    {
+      "id": "reefer",
+      "name": "Refrigerated Car",
+      "capacity_tons": 90,
+      "typical_commodities": ["perishables", "meat", "frozen foods"],
+      "load_factor": 0.85,
+      "dwell_days": 2,
+      "annual_trips": 30
+    }
+  ],
+  "input_params": {
+    "annual_tonnage": "Your total annual volume in tons",
+    "shipping_lanes": "Number of active shipping lanes",
+    "avg_trip_days": "Average days per trip (pickup to delivery)",
+    "peak_factor": "Peak season multiplier (1.0-1.5)",
+    "target_utilization": "Target car utilization % (70-90%)"
+  }
+}

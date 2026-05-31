@@ -1,0 +1,86 @@
+[
+ {
+  "company_name": "Nutrien Cory Potash",
+  "dba": "",
+  "primary_commodity": "chemicals",
+  "commodity_subtypes": [
+   "potash"
+  ],
+  "industry_naics": "",
+  "state": "SK",
+  "county": "",
+  "city": "Saskatoon",
+  "lat": 52.1332,
+  "lon": -106.67,
+  "rail_served": "Y",
+  "nearest_class_i": "CPKC",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_cpkc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CPKC Kansas City Intermodal",
+  "dba": "",
+  "primary_commodity": "intermodal",
+  "commodity_subtypes": [
+   "intermodal"
+  ],
+  "industry_naics": "",
+  "state": "MO",
+  "county": "",
+  "city": "Kansas City",
+  "lat": 39.0997,
+  "lon": -94.5786,
+  "rail_served": "Y",
+  "nearest_class_i": "CPKC",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_cpkc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CPKC Wylie Texas Intermodal",
+  "dba": "",
+  "primary_commodity": "intermodal",
+  "commodity_subtypes": [
+   "intermodal"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Wylie",
+  "lat": 33.0151,
+  "lon": -96.5388,
+  "rail_served": "Y",
+  "nearest_class_i": "CPKC",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_cpkc",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ }
+]

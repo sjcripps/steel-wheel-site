@@ -1,0 +1,2279 @@
+[
+ {
+  "company_name": "Nucor Steel Berkeley",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "sheet_steel",
+   "scrap"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Huger",
+  "lat": 33.0481,
+  "lon": -79.8278,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel Crawfordsville",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "flat_rolled_steel"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Crawfordsville",
+  "lat": 40.0411,
+  "lon": -86.8744,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel Hickman",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "sheet_steel"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Hickman",
+  "lat": 35.782,
+  "lon": -89.992,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel Decatur",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "sheet_steel"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Trinity",
+  "lat": 34.6082,
+  "lon": -87.0894,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel Tuscaloosa",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "plate_steel"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Tuscaloosa",
+  "lat": 33.2098,
+  "lon": -87.5692,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel Gallatin",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "sheet_steel"
+  ],
+  "industry_naics": "",
+  "state": "KY",
+  "county": "",
+  "city": "Ghent",
+  "lat": 38.7392,
+  "lon": -85.079,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel Sedalia",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "rebar"
+  ],
+  "industry_naics": "",
+  "state": "MO",
+  "county": "",
+  "city": "Sedalia",
+  "lat": 38.7045,
+  "lon": -93.2283,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel Frostproof",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "rebar"
+  ],
+  "industry_naics": "",
+  "state": "FL",
+  "county": "",
+  "city": "Frostproof",
+  "lat": 27.7456,
+  "lon": -81.5306,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel Brandenburg",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "plate_steel"
+  ],
+  "industry_naics": "",
+  "state": "KY",
+  "county": "",
+  "city": "Brandenburg",
+  "lat": 37.9956,
+  "lon": -86.1697,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel Marion",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "rebar"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Marion",
+  "lat": 40.5867,
+  "lon": -83.1285,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel Norfolk",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "sbq_bar"
+  ],
+  "industry_naics": "",
+  "state": "NE",
+  "county": "",
+  "city": "Norfolk",
+  "lat": 42.0285,
+  "lon": -97.417,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel Birmingham",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "rebar"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Birmingham",
+  "lat": 33.5207,
+  "lon": -86.8025,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel Jackson",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "rebar"
+  ],
+  "industry_naics": "",
+  "state": "MS",
+  "county": "",
+  "city": "Flowood",
+  "lat": 32.3273,
+  "lon": -90.1351,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel Jewett",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "structural"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Jewett",
+  "lat": 31.3635,
+  "lon": -96.1502,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel Kankakee",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "rebar"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Bourbonnais",
+  "lat": 41.1539,
+  "lon": -87.8612,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel Lexington",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "rebar"
+  ],
+  "industry_naics": "",
+  "state": "NC",
+  "county": "",
+  "city": "Lexington",
+  "lat": 35.824,
+  "lon": -80.2534,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel Memphis",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "sbq_bar"
+  ],
+  "industry_naics": "",
+  "state": "TN",
+  "county": "",
+  "city": "Memphis",
+  "lat": 35.1495,
+  "lon": -90.049,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel Nebraska",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "structural",
+   "rebar"
+  ],
+  "industry_naics": "",
+  "state": "NE",
+  "county": "",
+  "city": "Norfolk",
+  "lat": 42.0285,
+  "lon": -97.417,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel Plymouth",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "sbq_bar"
+  ],
+  "industry_naics": "",
+  "state": "UT",
+  "county": "",
+  "city": "Plymouth",
+  "lat": 41.8794,
+  "lon": -112.1466,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel Seattle",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "rebar"
+  ],
+  "industry_naics": "",
+  "state": "WA",
+  "county": "",
+  "city": "Seattle",
+  "lat": 47.5773,
+  "lon": -122.3349,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel South Carolina",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "sbq_bar"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Darlington",
+  "lat": 34.2998,
+  "lon": -79.8761,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel Texas",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "structural"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Jewett",
+  "lat": 31.3635,
+  "lon": -96.1502,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel Utah",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "rebar"
+  ],
+  "industry_naics": "",
+  "state": "UT",
+  "county": "",
+  "city": "Plymouth",
+  "lat": 41.8794,
+  "lon": -112.1466,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor Steel Auburn",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "rebar"
+  ],
+  "industry_naics": "",
+  "state": "NY",
+  "county": "",
+  "city": "Auburn",
+  "lat": 42.9317,
+  "lon": -76.5661,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Nucor-Yamato Steel",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "structural"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Blytheville",
+  "lat": 35.9272,
+  "lon": -89.9189,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Steel Dynamics Butler Flat Roll Mill",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "sheet_steel",
+   "flat_rolled"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Butler",
+  "lat": 41.4289,
+  "lon": -84.8674,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Steel Dynamics Columbus Mill",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "sheet_steel"
+  ],
+  "industry_naics": "",
+  "state": "MS",
+  "county": "",
+  "city": "Columbus",
+  "lat": 33.5089,
+  "lon": -88.4786,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Steel Dynamics Sinton Complex",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "sheet_steel",
+   "flat_rolled"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Sinton",
+  "lat": 28.0364,
+  "lon": -97.5083,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Steel Dynamics Roanoke Bar Division",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "bar_steel"
+  ],
+  "industry_naics": "",
+  "state": "VA",
+  "county": "",
+  "city": "Roanoke",
+  "lat": 37.271,
+  "lon": -79.9414,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Steel Dynamics Pittsboro Mill",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "bar_steel"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Pittsboro",
+  "lat": 39.8669,
+  "lon": -86.4111,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Steel Dynamics Engineered Bar Pittsboro",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "sbq_bar"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Pittsboro",
+  "lat": 39.8669,
+  "lon": -86.4111,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "OmniSource (SDI) Memphis",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "scrap"
+  ],
+  "industry_naics": "",
+  "state": "TN",
+  "county": "",
+  "city": "Memphis",
+  "lat": 35.1495,
+  "lon": -90.049,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cleveland-Cliffs Burns Harbor Works",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "integrated_steel"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Burns Harbor",
+  "lat": 41.6411,
+  "lon": -87.1681,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cleveland-Cliffs Cleveland Works",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "integrated_steel"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Cleveland",
+  "lat": 41.4794,
+  "lon": -81.6853,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cleveland-Cliffs Middletown Works",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "integrated_steel"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Middletown",
+  "lat": 39.5151,
+  "lon": -84.3983,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cleveland-Cliffs Dearborn Works",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "integrated_steel"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Dearborn",
+  "lat": 42.3199,
+  "lon": -83.1772,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cleveland-Cliffs Indiana Harbor Works",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "integrated_steel"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "East Chicago",
+  "lat": 41.6603,
+  "lon": -87.4597,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cleveland-Cliffs Toledo HBI Plant",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "hbi",
+   "iron_briquette"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Toledo",
+  "lat": 41.6635,
+  "lon": -83.5552,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cleveland-Cliffs Empire Iron Mine",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "iron_ore",
+   "taconite"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Palmer",
+  "lat": 46.4452,
+  "lon": -87.5764,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cleveland-Cliffs Tilden Mine",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "iron_ore",
+   "taconite"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Ishpeming",
+  "lat": 46.4878,
+  "lon": -87.6726,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cleveland-Cliffs Northshore Mining",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "iron_ore"
+  ],
+  "industry_naics": "",
+  "state": "MN",
+  "county": "",
+  "city": "Silver Bay",
+  "lat": 47.2945,
+  "lon": -91.2576,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cleveland-Cliffs Hibbing Taconite",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "iron_ore"
+  ],
+  "industry_naics": "",
+  "state": "MN",
+  "county": "",
+  "city": "Hibbing",
+  "lat": 47.4276,
+  "lon": -92.9377,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cleveland-Cliffs Riverdale Coke",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "coke"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Calvert",
+  "lat": 31.1573,
+  "lon": -88.0245,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cleveland-Cliffs Mansfield Works",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "stainless_steel"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Mansfield",
+  "lat": 40.7584,
+  "lon": -82.5154,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "U.S. Steel Gary Works",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "integrated_steel"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Gary",
+  "lat": 41.6428,
+  "lon": -87.3106,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "U.S. Steel Mon Valley Works Edgar Thomson",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "integrated_steel"
+  ],
+  "industry_naics": "",
+  "state": "PA",
+  "county": "",
+  "city": "Braddock",
+  "lat": 40.4006,
+  "lon": -79.8617,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "U.S. Steel Mon Valley Works Clairton Coke",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "coke"
+  ],
+  "industry_naics": "",
+  "state": "PA",
+  "county": "",
+  "city": "Clairton",
+  "lat": 40.292,
+  "lon": -79.8814,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "U.S. Steel Mon Valley Works Irvin Plant",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "flat_rolled"
+  ],
+  "industry_naics": "",
+  "state": "PA",
+  "county": "",
+  "city": "West Mifflin",
+  "lat": 40.3737,
+  "lon": -79.9089,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "U.S. Steel Granite City Works",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "integrated_steel"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Granite City",
+  "lat": 38.7028,
+  "lon": -90.1487,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "U.S. Steel Fairfield Works",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "tubular_steel"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Fairfield",
+  "lat": 33.4937,
+  "lon": -86.8967,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "U.S. Steel Lone Star Tubular",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "tubular_steel",
+   "OCTG"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Lone Star",
+  "lat": 32.9374,
+  "lon": -94.705,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "U.S. Steel Big River Steel Works",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "flat_rolled",
+   "advanced_high_strength"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Osceola",
+  "lat": 35.7143,
+  "lon": -89.9692,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "U.S. Steel Big River 2 Works",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "flat_rolled"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Osceola",
+  "lat": 35.7143,
+  "lon": -89.9692,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "U.S. Steel Minntac Iron Mine",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "iron_ore",
+   "taconite"
+  ],
+  "industry_naics": "",
+  "state": "MN",
+  "county": "",
+  "city": "Mountain Iron",
+  "lat": 47.5359,
+  "lon": -92.6249,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "U.S. Steel Keetac Iron Mine",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "iron_ore",
+   "taconite"
+  ],
+  "industry_naics": "",
+  "state": "MN",
+  "county": "",
+  "city": "Keewatin",
+  "lat": 47.4011,
+  "lon": -93.0791,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "U.S. Steel Midwest Plant",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "sheet_galvanized"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Portage",
+  "lat": 41.5683,
+  "lon": -87.1759,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "AM/NS Calvert",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "sheet_steel"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Calvert",
+  "lat": 31.1573,
+  "lon": -88.0245,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "ArcelorMittal Princeton Coal Mine",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "metallurgical_coal"
+  ],
+  "industry_naics": "",
+  "state": "WV",
+  "county": "",
+  "city": "Princeton",
+  "lat": 37.3673,
+  "lon": -81.0976,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CMC Steel Texas (Seguin)",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "rebar",
+   "merchant_bar"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Seguin",
+  "lat": 29.5688,
+  "lon": -97.9647,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CMC Steel Oklahoma",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "rebar",
+   "structural"
+  ],
+  "industry_naics": "",
+  "state": "OK",
+  "county": "",
+  "city": "Durant",
+  "lat": 33.9937,
+  "lon": -96.3711,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CMC Steel South Carolina",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "rebar"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Cayce",
+  "lat": 33.954,
+  "lon": -81.0731,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CMC Steel Arizona",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "rebar"
+  ],
+  "industry_naics": "",
+  "state": "AZ",
+  "county": "",
+  "city": "Mesa",
+  "lat": 33.4152,
+  "lon": -111.8315,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CMC Steel Alabama",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "rebar"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Birmingham",
+  "lat": 33.5207,
+  "lon": -86.8025,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CMC Steel Berkeley (formerly NSP)",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "rebar"
+  ],
+  "industry_naics": "",
+  "state": "AZ",
+  "county": "",
+  "city": "Mesa",
+  "lat": 33.4152,
+  "lon": -111.8315,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "SSAB Americas Mobile Mill",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "plate_steel"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Axis",
+  "lat": 30.9613,
+  "lon": -88.0356,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "SSAB Americas Iowa Mill",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "plate_steel"
+  ],
+  "industry_naics": "",
+  "state": "IA",
+  "county": "",
+  "city": "Montpelier",
+  "lat": 41.475,
+  "lon": -90.8167,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "North American Stainless Ghent",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "stainless_steel"
+  ],
+  "industry_naics": "",
+  "state": "KY",
+  "county": "",
+  "city": "Ghent",
+  "lat": 38.7392,
+  "lon": -85.079,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Worthington Steel Columbus",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "processed_steel"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Columbus",
+  "lat": 39.9612,
+  "lon": -82.9988,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Worthington Steel Decatur",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "processed_steel"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Decatur",
+  "lat": 34.6059,
+  "lon": -86.9833,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Olympic Steel Bettendorf",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "processed_steel"
+  ],
+  "industry_naics": "",
+  "state": "IA",
+  "county": "",
+  "city": "Bettendorf",
+  "lat": 41.5236,
+  "lon": -90.5151,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Olympic Steel Cleveland",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "processed_steel"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Bedford Heights",
+  "lat": 41.4053,
+  "lon": -81.529,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Tenaris Bay City Mill",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "OCTG",
+   "tubular_steel"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Bay City",
+  "lat": 28.9828,
+  "lon": -95.9694,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Tenaris Houston Plant",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "tubular_steel"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Houston",
+  "lat": 29.7604,
+  "lon": -95.3698,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Atlas Tube Blytheville",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "HSS_tube"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Blytheville",
+  "lat": 35.9272,
+  "lon": -89.9189,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Atlas Tube Plymouth",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "HSS_tube"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Plymouth",
+  "lat": 42.3714,
+  "lon": -83.4702,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Outokumpu Calvert",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "stainless_steel"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Calvert",
+  "lat": 31.1573,
+  "lon": -88.0245,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Edw. C. Levy Detroit Slag",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "slag",
+   "construction_aggregate"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Detroit",
+  "lat": 42.3314,
+  "lon": -83.0458,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Ryerson Chicago Service Center",
+  "dba": "",
+  "primary_commodity": "steel",
+  "commodity_subtypes": [
+   "processed_steel"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Plainfield",
+  "lat": 41.6155,
+  "lon": -88.2042,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unloading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "aisi",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ }
+]

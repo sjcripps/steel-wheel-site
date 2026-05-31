@@ -1,0 +1,200 @@
+[
+ {
+  "company_name": "Black Thunder Mine (Arch Resources)",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "thermal_coal",
+   "PRB"
+  ],
+  "industry_naics": "",
+  "state": "WY",
+  "county": "",
+  "city": "Wright",
+  "lat": 43.69,
+  "lon": -105.2486,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_bnsf",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "North Antelope Rochelle Mine (Peabody)",
+  "dba": "",
+  "primary_commodity": "coal",
+  "commodity_subtypes": [
+   "thermal_coal",
+   "PRB"
+  ],
+  "industry_naics": "",
+  "state": "WY",
+  "county": "",
+  "city": "Wright",
+  "lat": 43.6839,
+  "lon": -105.4422,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_bnsf",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Kraft Heinz Iowa City Plant",
+  "dba": "",
+  "primary_commodity": "food_grain",
+  "commodity_subtypes": [
+   "packaged_food"
+  ],
+  "industry_naics": "",
+  "state": "IA",
+  "county": "",
+  "city": "Iowa City",
+  "lat": 41.6611,
+  "lon": -91.5302,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_bnsf",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "BNSF Logistics Park Chicago",
+  "dba": "",
+  "primary_commodity": "intermodal",
+  "commodity_subtypes": [
+   "intermodal"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Joliet",
+  "lat": 41.525,
+  "lon": -88.0817,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_bnsf",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "BNSF Alliance Texas Intermodal",
+  "dba": "",
+  "primary_commodity": "intermodal",
+  "commodity_subtypes": [
+   "intermodal"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Fort Worth",
+  "lat": 32.9899,
+  "lon": -97.317,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_bnsf",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "BNSF Memphis Intermodal",
+  "dba": "",
+  "primary_commodity": "intermodal",
+  "commodity_subtypes": [
+   "intermodal"
+  ],
+  "industry_naics": "",
+  "state": "TN",
+  "county": "",
+  "city": "Memphis",
+  "lat": 35.1495,
+  "lon": -90.049,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_bnsf",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "BNSF Hobart Yard LA",
+  "dba": "",
+  "primary_commodity": "intermodal",
+  "commodity_subtypes": [
+   "intermodal"
+  ],
+  "industry_naics": "",
+  "state": "CA",
+  "county": "",
+  "city": "Commerce",
+  "lat": 34.0061,
+  "lon": -118.1597,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_bnsf",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ }
+]

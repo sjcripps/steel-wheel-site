@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Searchable directory of 900+ rail storage facilities across North America — filter by state, commodity, and rail capabilities. Steel Wheel Logistics.">
+  <title>Rail Storage Locator | Steel Wheel Logistics</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <link rel="canonical" href="https://steelwheellogistics.com/tools/storage-locator">
+  <meta property="og:title" content="Rail Storage Locator | Steel Wheel Logistics">
+  <meta property="og:description" content="Searchable directory of 900+ North American rail storage facilities — filter by state, commodity, and rail capabilities.">
+  <meta property="og:url" content="https://steelwheellogistics.com/tools/storage-locator">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+
+  <style>
+    .tool-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 48px 20px;
+      text-align: center;
+    }
+    .tool-hero h1 {
+      color: var(--white);
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .tool-hero p {
+      color: var(--steel-grey);
+      font-size: 1.05rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .tool-hero .badge {
+      display: inline-block;
+      background: rgba(74, 144, 217, 0.15);
+      color: var(--steel-blue);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .directory-layout {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 30px 20px 60px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 900px) {
+      .directory-layout { grid-template-columns: 1fr; }
+      .filters-panel { position: static; max-height: none; overflow-y: visible; }
+      .filters-panel.collapsed .filters-body { display: none; }
+    }
+
+    .filters-panel {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 18px;
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+    }
+    .filters-panel h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 0 0 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .filter-section { margin-bottom: 18px; }
+    .filter-section label { display: flex; gap: 8px; margin-bottom: 8px; font-size: 0.9rem; cursor: pointer; align-items: center; }
+    .filter-section input[type="checkbox"] { cursor: pointer; }
+    .search-box { width: 100%; padding: 10px; border: 1px solid var(--border-grey); border-radius: 6px; margin-bottom: 16px; font-size: 0.9rem; }
+
+    .results-panel { display: flex; flex-direction: column; gap: 20px; }
+    #map { height: 400px; border-radius: 12px; border: 1px solid var(--border-grey); margin-bottom: 20px; }
+
+    .facilities-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .facilities-table th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 12px 14px;
+      text-align: left;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+      font-size: 0.85rem;
+    }
+    .facilities-table th:hover { background: var(--navy-light); }
+    .facilities-table td { padding: 12px 14px; border-bottom: 1px solid var(--border-grey); }
+    .facilities-table tr:hover { background: rgba(74, 144, 217, 0.05); }
+    .facility-name { font-weight: 600; color: var(--navy); }
+    .facility-operator { font-size: 0.85rem; color: var(--steel-grey); }
+    .badge-pill {
+      display: inline-block;
+      background: rgba(74, 144, 217, 0.1);
+      color: var(--steel-blue);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      margin-right: 4px;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 20px;
+      padding: 20px 0;
+    }
+    .pagination button {
+      padding: 8px 12px;
+      border: 1px solid var(--border-grey);
+      background: var(--white);
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: var(--navy);
+    }
+    .pagination button:hover { background: var(--light-grey); }
+    .pagination button.active { background: var(--navy); color: var(--white); }
+    .pagination button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+    }
+    .modal.active { display: flex; justify-content: center; align-items: center; }
+    .modal-content {
+      background-color: var(--white);
+      padding: 32px;
+      border-radius: 12px;
+      max-width: 420px;
+      width: 90%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .modal-content h2 { margin: 0 0 12px; font-size: 1.3rem; color: var(--navy); }
+    .modal-content p { margin: 0 0 20px; color: var(--steel-grey); font-size: 0.95rem; }
+    .modal-content input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border-grey);
+      border-radius: 6px;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+      box-sizing: border-box;
+    }
+    .modal-content .checkbox-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      gap: 8px;
+    }
+    .modal-content button {
+      width: 100%;
+      padding: 12px;
+      background: var(--navy);
+      color: var(--white);
+      border: 0;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .modal-content button:hover { background: var(--navy-light); }
+    .modal-content button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .no-results { text-align: center; padding: 40px 20px; color: var(--steel-grey); }
+  </style>
+</head>
+<body>
+  <div class="tool-hero">
+    <div class="badge">900+ Facilities</div>
+    <h1>Rail Storage Locator</h1>
+    <p>Find verified rail storage facilities, transload centers, and distribution hubs across North America. Filter by commodity type and rail capabilities.</p>
+  </div>
+
+  <div class="directory-layout">
+    <aside class="filters-panel">
+      <h3>Filters</h3>
+      <input type="text" class="search-box" id="searchBox" placeholder="Search by name or city...">
+
+      <div class="filter-section">
+        <h4 style="margin: 0 0 10px; font-size: 0.85rem; text-transform: uppercase; color: var(--navy);">State</h4>
+        <select id="stateFilter" style="width: 100%; padding: 8px; border: 1px solid var(--border-grey); border-radius: 4px;">
+          <option value="">All States</option>
+        </select>
+      </div>
+
+      <div class="filter-section">
+        <h4 style="margin: 0 0 10px; font-size: 0.85rem; text-transform: uppercase; color: var(--navy);">Commodities</h4>
+        <div id="commodityFilters"></div>
+      </div>
+
+      <div class="filter-section">
+        <h4 style="margin: 0 0 10px; font-size: 0.85rem; text-transform: uppercase; color: var(--navy);">Capabilities</h4>
+        <div id="capabilityFilters"></div>
+      </div>
+    </aside>
+
+    <section class="results-panel">
+      <div id="map"></div>
+
+      <div style="background: var(--white); border: 1px solid var(--border-grey); border-radius: 12px; padding: 18px;">
+        <h3 style="margin: 0 0 16px; color: var(--navy);">Results (<span id="resultCount">0</span>)</h3>
+        <table class="facilities-table">
+          <thead>
+            <tr>
+              <th onclick="sortTable('name')">Facility Name ↕</th>
+              <th onclick="sortTable('state')">State ↕</th>
+              <th>Commodities</th>
+              <th>Capabilities</th>
+              <th>Contact</th>
+            </tr>
+          </thead>
+          <tbody id="facilitiesTable">
+            <tr><td colspan="5" style="text-align: center; padding: 40px;">Loading facilities...</td></tr>
+          </tbody>
+        </table>
+        <div class="pagination" id="pagination"></div>
+      </div>
+    </section>
+  </div>
+
+  <div id="emailModal" class="modal">
+    <div class="modal-content">
+      <h2>Get Facility Details</h2>
+      <p>Enter your email to view full contact information and access exclusive facility data.</p>
+      <input type="email" id="modalEmail" placeholder="your@email.com" required>
+      <div class="checkbox-group">
+        <input type="checkbox" id="agreementCheckbox" checked>
+        <label for="agreementCheckbox" style="margin: 0; font-size: 0.85rem;">I agree to receive facility listings</label>
+      </div>
+      <button id="submitEmailBtn" onclick="submitEmail()">Get Details</button>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-WBkoXxNB7GoCjB70rL7d64zXTkkwSBwAMDkGcYsJUo=" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+  <script>
+    let allFacilities = [];
+    let filteredFacilities = [];
+    let sortColumn = 'name';
+    let sortAsc = true;
+    let currentPage = 1;
+    const itemsPerPage = 20;
+
+    const emailModal = document.getElementById('emailModal');
+    const modalEmail = document.getElementById('modalEmail');
+
+    window.__storageLocatorData = {
+      commodities: [],
+      capabilities: [],
+      facilities: []
+    };
+
+    async function loadData() {
+      try {
+        const response = await fetch('/tools/storage-locator/data/storage-locator.json');
+        const data = await response.json();
+        
+        allFacilities = data.facilities;
+        window.__storageLocatorData.facilities = allFacilities;
+        window.__storageLocatorData.commodities = data.commodity_options;
+        window.__storageLocatorData.capabilities = data.capability_options;
+
+        populateFilters(data.commodity_options, data.capability_options);
+        applyFilters();
+        initMap();
+      } catch (error) {
+        console.error('Error loading facilities:', error);
+        document.getElementById('facilitiesTable').innerHTML = '<tr><td colspan="5" style="text-align: center; padding: 40px; color: red;">Error loading facilities. Please refresh the page.</td></tr>';
+      }
+    }
+
+    function populateFilters(commodities, capabilities) {
+      const states = [...new Set(allFacilities.map(f => f.state))].sort();
+      const stateSelect = document.getElementById('stateFilter');
+      states.forEach(state => {
+        const option = document.createElement('option');
+        option.value = state;
+        option.textContent = state;
+        stateSelect.appendChild(option);
+      });
+
+      const commodityDiv = document.getElementById('commodityFilters');
+      commodities.forEach(c => {
+        const label = document.createElement('label');
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.value = c;
+        checkbox.onchange = applyFilters;
+        label.appendChild(checkbox);
+        label.appendChild(document.createTextNode(c));
+        commodityDiv.appendChild(label);
+      });
+
+      const capabilityDiv = document.getElementById('capabilityFilters');
+      capabilities.forEach(cap => {
+        const label = document.createElement('label');
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.value = cap;
+        checkbox.onchange = applyFilters;
+        label.appendChild(checkbox);
+        label.appendChild(document.createTextNode(cap));
+        capabilityDiv.appendChild(label);
+      });
+    }
+
+    function applyFilters() {
+      const search = document.getElementById('searchBox').value.toLowerCase();
+      const state = document.getElementById('stateFilter').value;
+      const selectedCommodities = Array.from(document.querySelectorAll('#commodityFilters input:checked')).map(c => c.value);
+      const selectedCapabilities = Array.from(document.querySelectorAll('#capabilityFilters input:checked')).map(c => c.value);
+
+      filteredFacilities = allFacilities.filter(f => {
+        const matchSearch = !search || f.name.toLowerCase().includes(search) || f.city.toLowerCase().includes(search);
+        const matchState = !state || f.state === state;
+        const matchCommodity = selectedCommodities.length === 0 || selectedCommodities.some(c => f.commodities.includes(c));
+        const matchCapability = selectedCapabilities.length === 0 || selectedCapabilities.some(cap => f.capabilities.includes(cap));
+        return matchSearch && matchState && matchCommodity && matchCapability;
+      });
+
+      currentPage = 1;
+      renderTable();
+      updateMap();
+    }
+
+    function sortTable(col) {
+      if (sortColumn === col) sortAsc = !sortAsc;
+      else { sortColumn = col; sortAsc = true; }
+
+      filteredFacilities.sort((a, b) => {
+        const aVal = a[sortColumn] || '';
+        const bVal = b[sortColumn] || '';
+        return sortAsc ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+      });
+
+      renderTable();
+    }
+
+    function renderTable() {
+      const start = (currentPage - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+      const page = filteredFacilities.slice(start, end);
+
+      document.getElementById('resultCount').textContent = filteredFacilities.length;
+
+      const tbody = document.getElementById('facilitiesTable');
+      tbody.innerHTML = page.length > 0 ? page.map(f => `
+        <tr onclick="showModal()">
+          <td><div class="facility-name">${f.name}</div><div class="facility-operator">${f.operator}</div></td>
+          <td>${f.city}, ${f.state}</td>
+          <td>${f.commodities.map(c => `<span class="badge-pill">${c}</span>`).join('')}</td>
+          <td>${f.capabilities.slice(0, 2).map(cap => `<span class="badge-pill">${cap}</span>`).join('')}${f.capabilities.length > 2 ? `<span class="badge-pill">+${f.capabilities.length - 2}</span>` : ''}</td>
+          <td>${f.contact || 'Contact SWL'}</td>
+        </tr>
+      `).join('') : '<tr><td colspan="5" class="no-results">No facilities match your filters.</td></tr>';
+
+      renderPagination();
+    }
+
+    function renderPagination() {
+      const totalPages = Math.ceil(filteredFacilities.length / itemsPerPage);
+      const pagination = document.getElementById('pagination');
+      pagination.innerHTML = '';
+
+      if (totalPages <= 1) return;
+
+      const prev = document.createElement('button');
+      prev.textContent = 'Previous';
+      prev.disabled = currentPage === 1;
+      prev.onclick = () => { currentPage--; renderTable(); };
+      pagination.appendChild(prev);
+
+      for (let i = 1; i <= Math.min(totalPages, 5); i++) {
+        const btn = document.createElement('button');
+        btn.textContent = i;
+        btn.className = currentPage === i ? 'active' : '';
+        btn.onclick = () => { currentPage = i; renderTable(); };
+        pagination.appendChild(btn);
+      }
+
+      const next = document.createElement('button');
+      next.textContent = 'Next';
+      next.disabled = currentPage === totalPages;
+      next.onclick = () => { currentPage++; renderTable(); };
+      pagination.appendChild(next);
+    }
+
+    let map, markerCluster;
+    function initMap() {
+      map = L.map('map').setView([39.8283, -98.5795], 4);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors',
+        maxZoom: 19
+      }).addTo(map);
+
+      markerCluster = L.markerClusterGroup();
+      updateMap();
+    }
+
+    function updateMap() {
+      if (!markerCluster) return;
+      markerCluster.clearLayers();
+
+      filteredFacilities.forEach(f => {
+        const marker = L.circleMarker([f.lat, f.lng], {
+          radius: 6,
+          fillColor: '#4A90D9',
+          color: '#1a3a52',
+          weight: 2,
+          opacity: 0.8,
+          fillOpacity: 0.6
+        });
+        marker.bindPopup(`<strong>${f.name}</strong><br>${f.city}, ${f.state}<br>${f.operator}`);
+        markerCluster.addLayer(marker);
+      });
+
+      map.addLayer(markerCluster);
+    }
+
+    function showModal() {
+      const stored = sessionStorage.getItem('storage-locator-email');
+      if (stored) {
+        modalEmail.value = stored;
+        submitEmail();
+      } else {
+        emailModal.classList.add('active');
+      }
+    }
+
+    async function submitEmail() {
+      const email = modalEmail.value.trim();
+      if (!email) {
+        alert('Please enter your email');
+        return;
+      }
+
+      document.getElementById('submitEmailBtn').disabled = true;
+
+      try {
+        const response = await fetch('/api/storage-locator-lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: email,
+            facility_count: filteredFacilities.length,
+            filters_applied: {
+              state: document.getElementById('stateFilter').value,
+              commodities: Array.from(document.querySelectorAll('#commodityFilters input:checked')).map(c => c.value),
+              capabilities: Array.from(document.querySelectorAll('#capabilityFilters input:checked')).map(c => c.value)
+            }
+          })
+        });
+
+        if (response.ok) {
+          sessionStorage.setItem('storage-locator-email', email);
+          emailModal.classList.remove('active');
+          alert('Thank you! Check your email for facility details.');
+        } else {
+          const data = await response.json();
+          alert(data.error || 'Error submitting email. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Network error. Please try again.');
+      } finally {
+        document.getElementById('submitEmailBtn').disabled = false;
+      }
+    }
+
+    document.getElementById('stateFilter').addEventListener('change', applyFilters);
+    document.getElementById('searchBox').addEventListener('input', applyFilters);
+
+    loadData();
+  </script>
+</body>
+</html>

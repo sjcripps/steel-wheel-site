@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free railcar selector tool — enter your commodity, weight, and shipment details to get matched with the best railcar type for your freight move.">
+  <title>Railcar Selector Tool | Steel Wheel Logistics</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <link rel="canonical" href="https://steelwheellogistics.com/tools/railcar-selector">
+  <meta property="og:title" content="Railcar Selector Tool | Steel Wheel Logistics">
+  <meta property="og:description" content="Free railcar selector — get matched with the best railcar type for your commodity and shipment requirements.">
+  <meta property="og:url" content="https://steelwheellogistics.com/tools/railcar-selector">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+  <style>
+    /* Railcar Selector — Page-specific styles */
+    .tool-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 48px 20px;
+      text-align: center;
+    }
+    .tool-hero h1 {
+      color: var(--white);
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .tool-hero p {
+      color: var(--steel-grey);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .tool-hero .badge {
+      display: inline-block;
+      background: rgba(74, 144, 217, 0.15);
+      color: var(--steel-blue);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tool-layout {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    /* Form */
+    .selector-form {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .selector-form h2 {
+      font-size: 1.3rem;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--light-grey);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 640px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .form-group label .hint {
+      font-weight: 400;
+      color: var(--text-light);
+      font-size: 0.8rem;
+    }
+    .form-group select,
+    .form-group input[type="number"] {
+      padding: 10px 12px;
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      background: var(--white);
+      transition: border-color 0.2s;
+    }
+    .form-group select:focus,
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--steel-blue);
+      box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.1);
+    }
+
+    .submit-row {
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .submit-btn {
+      background: var(--steel-blue);
+      color: var(--white);
+      border: none;
+      padding: 12px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .submit-btn:hover { background: var(--steel-blue-dark); }
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .submit-btn .spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: var(--white);
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .error-msg {
+      color: var(--error-red);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* Results */
+    .results-section {
+      margin-top: 40px;
+      display: none;
+    }
+    .results-section.visible { display: block; }
+    .results-section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+    .results-commodity {
+      color: var(--steel-blue);
+      font-weight: 600;
+    }
+
+    .match-cards {
+      display: grid;
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .match-card {
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 24px;
+      background: var(--white);
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: box-shadow 0.2s;
+    }
+    .match-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    .match-rank {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .match-rank.rank-1 { background: var(--steel-blue); }
+    .match-rank.rank-2 { background: var(--steel-grey); }
+    .match-rank.rank-3 { background: var(--navy-light); }
+    .match-body { flex: 1; }
+    .match-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .match-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .match-fit {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .fit-strong { background: #e6f4ea; color: #1a7f37; }
+    .fit-good { background: #fff8e1; color: #b8860b; }
+    .fit-poor { background: #fce8e6; color: #c62828; }
+    .match-score {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+    .match-desc {
+      color: var(--text-body);
+      font-size: 0.92rem;
+      margin-bottom: 8px;
+    }
+    .match-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.82rem;
+      color: var(--text-light);
+    }
+    .match-meta span { display: flex; align-items: center; gap: 4px; }
+
+    @media (max-width: 640px) {
+      .match-card { flex-direction: column; gap: 12px; }
+    }
+
+    /* Flags & Questions */
+    .info-box {
+      margin-top: 20px;
+      padding: 20px 24px;
+      border-radius: 10px;
+      font-size: 0.92rem;
+    }
+    .info-box h3 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+    .info-box ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .info-box li { margin-bottom: 4px; }
+    .flags-box {
+      background: #fff8e1;
+      border: 1px solid #ffe082;
+    }
+    .flags-box h3 { color: #b8860b; }
+    .questions-box {
+      background: var(--light-grey);
+      border: 1px solid var(--border-grey);
+    }
+    .swl-note {
+      background: rgba(74, 144, 217, 0.06);
+      border: 1px solid rgba(74, 144, 217, 0.2);
+    }
+    .swl-note p {
+      margin: 0;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+
+    /* CTAs */
+    .cta-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 32px;
+    }
+    @media (max-width: 640px) {
+      .cta-cards { grid-template-columns: 1fr; }
+    }
+    .cta-card {
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .cta-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+    .cta-card p {
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .cta-card ul {
+      margin: 0 0 16px;
+      padding-left: 18px;
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+    .cta-consult {
+      background: var(--light-grey);
+      border: 1px solid var(--border-grey);
+    }
+    .cta-consult .cta-btn {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--white);
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .cta-consult .cta-btn:hover { background: var(--navy-light); }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RSWDYHVY7Z');
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog">Blog</a>
+        <a href="/courses">Courses</a>
+        <a href="/tools" class="active">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="tool-hero">
+    <span class="badge">Free Tool</span>
+    <h1>Railcar Selector</h1>
+    <p>Enter your commodity and shipment details to find the best railcar type for your freight move. Instant results, no sign-up required.</p>
+  </section>
+
+  <!-- Main content -->
+  <div class="tool-layout">
+
+    <!-- Form -->
+    <div class="selector-form">
+      <h2>Shipment Details</h2>
+      <form id="selectorForm">
+        <div class="form-grid">
+
+          <div class="form-group full-width">
+            <label for="commodity">Commodity</label>
+            <select id="commodity" required>
+              <option value="">Loading commodities...</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="product_form">Product Form</label>
+            <select id="product_form" required>
+              <option value="">Select form</option>
+              <option value="dry_bulk">Dry Bulk</option>
+              <option value="liquid">Liquid</option>
+              <option value="dimensional">Dimensional</option>
+              <option value="bundled">Bundled</option>
+              <option value="palletized">Palletized</option>
+              <option value="oversized">Oversized</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="weight_tons">Weight <span class="hint">(tons)</span></label>
+            <input type="number" id="weight_tons" min="1" max="500" step="1" placeholder="e.g. 100" required>
+          </div>
+
+          <div class="form-group">
+            <label for="unloading_method">Unloading Method</label>
+            <select id="unloading_method" required>
+              <option value="">Select method</option>
+              <option value="gravity">Gravity</option>
+              <option value="pneumatic">Pneumatic</option>
+              <option value="crane">Crane</option>
+              <option value="forklift">Forklift</option>
+              <option value="conveyor">Conveyor</option>
+              <option value="dump">Dump</option>
+              <option value="unsure">Unsure</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="export_move">Export Move</label>
+            <select id="export_move">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="covered_needed">Covered Needed</label>
+            <select id="covered_needed">
+              <option value="unknown">Unknown</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="moisture_sensitive">Moisture Sensitive</label>
+            <select id="moisture_sensitive">
+              <option value="unknown">Unknown</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="contamination_sensitive">Contamination Sensitive</label>
+            <select id="contamination_sensitive">
+              <option value="unknown">Unknown</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="hazmat">Hazmat</label>
+            <select id="hazmat">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="transload_involved">Transload Involved</label>
+            <select id="transload_involved">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="origin_rail_served">Origin Rail-Served</label>
+            <select id="origin_rail_served">
+              <option value="unknown">Unknown</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="destination_rail_served">Destination Rail-Served</label>
+            <select id="destination_rail_served">
+              <option value="unknown">Unknown</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="submit-row">
+          <button type="submit" class="submit-btn" id="submitBtn">Find Best Railcar</button>
+          <span class="error-msg" id="errorMsg"></span>
+        </div>
+      </form>
+    </div>
+
+    <!-- Results -->
+    <div class="results-section" id="resultsSection">
+      <h2>Results for <span class="results-commodity" id="resultsCommodity"></span></h2>
+
+      <div class="match-cards" id="matchCards"></div>
+
+      <!-- Global flags -->
+      <div class="info-box flags-box" id="flagsBox" style="display:none">
+        <h3>Important Flags</h3>
+        <ul id="flagsList"></ul>
+      </div>
+
+      <!-- SWL Note -->
+      <div class="info-box swl-note" id="swlNote" style="display:none">
+        <p id="swlNoteText"></p>
+      </div>
+
+      <!-- Readiness questions -->
+      <div class="info-box questions-box" id="questionsBox" style="display:none">
+        <h3>Questions to Consider</h3>
+        <ul id="questionsList"></ul>
+      </div>
+
+      <!-- CTAs -->
+      <div class="cta-cards" id="ctaCards"></div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const API_BASE = 'https://tools.steelwheellogistics.com';
+
+    // Load commodities on page load
+    async function loadCommodities() {
+      const sel = document.getElementById('commodity');
+      try {
+        const res = await fetch(`${API_BASE}/api/commodities`);
+        const data = await res.json();
+        sel.innerHTML = '<option value="">Select a commodity</option>';
+        data.commodities.forEach(c => {
+          const opt = document.createElement('option');
+          opt.value = c.id;
+          opt.textContent = c.name;
+          sel.appendChild(opt);
+        });
+      } catch (e) {
+        sel.innerHTML = '<option value="">Failed to load commodities</option>';
+      }
+    }
+    loadCommodities();
+
+    // Form submit
+    document.getElementById('selectorForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      const errEl = document.getElementById('errorMsg');
+      errEl.textContent = '';
+
+      const payload = {
+        commodity_id: document.getElementById('commodity').value,
+        product_form: document.getElementById('product_form').value,
+        weight_tons: parseInt(document.getElementById('weight_tons').value, 10),
+        export_move: document.getElementById('export_move').value === 'true',
+        covered_needed: document.getElementById('covered_needed').value,
+        moisture_sensitive: document.getElementById('moisture_sensitive').value,
+        contamination_sensitive: document.getElementById('contamination_sensitive').value,
+        hazmat: document.getElementById('hazmat').value === 'true',
+        transload_involved: document.getElementById('transload_involved').value === 'true',
+        unloading_method: document.getElementById('unloading_method').value,
+        origin_rail_served: document.getElementById('origin_rail_served').value,
+        destination_rail_served: document.getElementById('destination_rail_served').value
+      };
+
+      if (!payload.commodity_id || !payload.product_form || !payload.weight_tons || !payload.unloading_method) {
+        errEl.textContent = 'Please fill in all required fields.';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner"></span>Analyzing...';
+
+      try {
+        const res = await fetch(`${API_BASE}/api/assess`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          throw new Error(err.message || `Server error (${res.status})`);
+        }
+
+        const data = await res.json();
+        renderResults(data);
+      } catch (err) {
+        errEl.textContent = err.message || 'Something went wrong. Please try again.';
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = 'Find Best Railcar';
+      }
+    });
+
+    function fitClass(label) {
+      const l = label.toLowerCase();
+      if (l.includes('strong')) return 'fit-strong';
+      if (l.includes('good')) return 'fit-good';
+      return 'fit-poor';
+    }
+
+    function renderResults(data) {
+      const section = document.getElementById('resultsSection');
+      section.classList.add('visible');
+
+      document.getElementById('resultsCommodity').textContent = data.commodity_name;
+
+      // Match cards
+      const cardsEl = document.getElementById('matchCards');
+      cardsEl.innerHTML = data.top_matches.map((m, i) => `
+        <div class="match-card">
+          <div class="match-rank rank-${i + 1}">#${i + 1}</div>
+          <div class="match-body">
+            <div class="match-header">
+              <span class="match-name">${m.name}</span>
+              <span class="match-fit ${fitClass(m.fit_label)}">${m.fit_label}</span>
+              <span class="match-score">Score: ${m.score}/100</span>
+            </div>
+            <p class="match-desc">${m.description}</p>
+            <div class="match-meta">
+              <span>Payload: ${m.payload_tons_min}&ndash;${m.payload_tons_max} tons</span>
+              <span>${m.is_covered ? 'Covered' : 'Open'}</span>
+              ${m.primary_concern ? `<span>Note: ${m.primary_concern}</span>` : ''}
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      // Flags
+      const flagsBox = document.getElementById('flagsBox');
+      const flagsList = document.getElementById('flagsList');
+      if (data.global_flags && data.global_flags.length > 0) {
+        flagsList.innerHTML = data.global_flags.map(f => `<li>${f}</li>`).join('');
+        flagsBox.style.display = 'block';
+      } else {
+        flagsBox.style.display = 'none';
+      }
+
+      // SWL Note
+      const swlNote = document.getElementById('swlNote');
+      const swlNoteText = document.getElementById('swlNoteText');
+      if (data.swl_note) {
+        swlNoteText.textContent = data.swl_note;
+        swlNote.style.display = 'block';
+      } else {
+        swlNote.style.display = 'none';
+      }
+
+      // Questions
+      const qBox = document.getElementById('questionsBox');
+      const qList = document.getElementById('questionsList');
+      if (data.readiness_questions && data.readiness_questions.length > 0) {
+        qList.innerHTML = data.readiness_questions.map(q => `<li>${q}</li>`).join('');
+        qBox.style.display = 'block';
+      } else {
+        qBox.style.display = 'none';
+      }
+
+      // CTAs
+      const ctaEl = document.getElementById('ctaCards');
+      let ctaHtml = '';
+
+      if (data.swl_cta) {
+        const s = data.swl_cta;
+        ctaHtml += `
+          <div class="cta-card cta-consult">
+            <h3>${s.headline}</h3>
+            <p>${s.body}</p>
+            <a href="${s.cta_url}" class="cta-btn">${s.cta_label}</a>
+          </div>
+        `;
+      }
+
+      ctaEl.innerHTML = ctaHtml;
+
+      // Scroll to results
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  </script>
+
+</body>
+</html>

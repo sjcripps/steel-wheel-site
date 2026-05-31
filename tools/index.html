@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free rail logistics tools from Steel Wheel Logistics. Estimate rail rates, pick the right railcar, and scope your move in seconds.">
+  <title>Free Rail Logistics Tools | Steel Wheel Logistics</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <link rel="canonical" href="https://steelwheellogistics.com/tools/">
+  <meta property="og:title" content="Free Rail Logistics Tools | Steel Wheel Logistics">
+  <meta property="og:description" content="Free rail logistics tools — rate estimator, railcar selector, and more.">
+  <meta property="og:url" content="https://steelwheellogistics.com/tools/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+  <style>
+    .tools-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 56px 20px;
+      text-align: center;
+    }
+    .tools-hero h1 {
+      color: var(--white);
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+    .tools-hero p {
+      color: var(--steel-grey);
+      font-size: 1.1rem;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .tools-section {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 56px 20px 72px;
+    }
+    .tools-section .card-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 720px) {
+      .tools-section .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .tools-section .card {
+      display: flex;
+      flex-direction: column;
+    }
+    .tools-section .card .card-cta {
+      margin-top: auto;
+      padding-top: 20px;
+    }
+    .tools-section .card .card-cta a {
+      display: inline-block;
+      background: var(--steel-blue);
+      color: var(--white);
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .tools-section .card .card-cta a:hover {
+      background: var(--steel-blue-dark);
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RSWDYHVY7Z');
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog">Blog</a>
+        <a href="/courses">Courses</a>
+        <a href="/tools" class="active">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="tools-hero">
+    <h1>Free Rail Logistics Tools</h1>
+    <p>Practical tools for shippers — estimate a rail rate, pick the right car for your commodity, scope your next move. Built on STB and BTS data, free to use.</p>
+  </section>
+
+  <!-- Tools grid -->
+  <section class="tools-section">
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </div>
+        <h3>Rail Rate Estimator</h3>
+        <p>Get an indicative tariff estimate for any U.S. rail lane in seconds. Pick origin, destination, commodity, and car type — we route the lane and quote a realistic carload rate.</p>
+        <div class="card-cta">
+          <a href="/tools/rail-rate-quote">Estimate a Rate &rarr;</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><rect x="1" y="6" width="18" height="11" rx="2"/><path d="M19 10h3l-3-4"/><circle cx="6" cy="19" r="2"/><circle cx="15" cy="19" r="2"/></svg>
+        </div>
+        <h3>Railcar Selector</h3>
+        <p>Not sure which railcar fits your freight? Enter your commodity, weight, and shipment details — we match you with the best car type for your move.</p>
+        <div class="card-cta">
+          <a href="/tools/railcar-selector">Pick a Railcar &rarr;</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 4v4"/><path d="M16 4v4"/></svg>
+        </div>
+        <h3>Demurrage Calculator</h3>
+        <p>Estimate rail demurrage exposure on a held car using current Class I rate structures. Pick equipment, days held, and surcharges — get an itemized per-car and grand-total breakdown.</p>
+        <div class="card-cta">
+          <a href="/tools/demurrage-calculator">Calculate Demurrage &rarr;</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3>Transload Directory</h3>
+        <p>Searchable directory of 800+ transload facilities across North America. Filter by state, commodity, and on-site capabilities — get the operator name, contact, and website in one place.</p>
+        <div class="card-cta">
+          <a href="/tools/transload-directory">Browse Directory &rarr;</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/><path d="M5 11l2 2 4-4"/></svg>
+        </div>
+        <h3>Rail Storage Locator</h3>
+        <p>Find 900+ verified rail storage facilities and distribution hubs from Norfolk Southern, CSX, BNSF, and KCS. Filter by state, commodity type, and rail capabilities — get contact info and facility details.</p>
+        <div class="card-cta">
+          <a href="/tools/storage-locator">Locate Storage &rarr;</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M6 3v18"/><path d="M18 3v18"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><rect x="7" y="4" width="3" height="2" fill="currentColor"/><rect x="14" y="4" width="3" height="2" fill="currentColor"/></svg>
+        </div>
+        <h3>Rail Fleet Calculator</h3>
+        <p>Calculate your optimal fleet size, composition, and car mix. Input annual tonnage, trip duration, and utilization targets — get recommendations for baseline and peak season fleet requirements.</p>
+        <div class="card-cta">
+          <a href="/tools/rail-fleet-calculator">Calculate Fleet &rarr;</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 18h18"/><path d="M7 18V8"/><path d="M11 18V12"/><path d="M15 18V6"/><path d="M19 18V10"/></svg>
+        </div>
+        <h3>Rail-vs-Truck Mode-Shift Calculator</h3>
+        <p>Compare rail and truck side-by-side on any U.S. lane. Per-load cost, annual spend, and CO2e emissions delta — using URCS 2024 rail costs, ATRI 2025 trucking averages, and EPA SmartWay 2024 emission factors.</p>
+        <div class="card-cta">
+          <a href="/tools/rail-vs-truck">Compare Modes &rarr;</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="3"/><path d="M12 2C7.6 2 4 5.6 4 10c0 5 8 12 8 12s8-7 8-12c0-4.4-3.6-8-8-8z"/></svg>
+        </div>
+        <h3>Rail-Served Business Directory</h3>
+        <p>Find rail-served shippers, producers, and industrial sites by commodity and region. Filter by state, Class I carrier, and commodity — cross-link straight to a rail-rate estimate from any origin.</p>
+        <div class="card-cta">
+          <a href="/tools/rail-served-businesses">Browse Directory &rarr;</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M2 12h20"/><path d="M12 2v20"/><circle cx="12" cy="12" r="9"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10"/><path d="M12 2a15 15 0 0 0-4 10 15 15 0 0 0 4 10"/></svg>
+        </div>
+        <h3>Commodity Flow Map</h3>
+        <p>Origins, ports, rail hubs, and border crossings across North America. 29 hand-curated rail freight hubs you can click to see what moves through them — pull an indicative rate from any origin.</p>
+        <div class="card-cta">
+          <a href="/tools/commodity-flow-map">Explore the Map &rarr;</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/><line x1="10" y1="9" x2="11" y2="9"/></svg>
+        </div>
+        <h3>Free Rail Bill of Lading Builder</h3>
+        <p>Generate compliant rail BoLs in PDF and Word format. Supports domestic, US to Mexico, and US to Canada lanes. Hazmat-aware — auto-inserts §172.204 shipper certification and validates §172.604 emergency-response provider contract.</p>
+        <div class="card-cta">
+          <a href="/tools/rail-bol-builder">Build a Bill of Lading &rarr;</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm3 7h-6v-2h6v2z"/></svg>
+        </div>
+        <h3>Railcar Sublease Board</h3>
+        <p>List excess railcars or find cars you need — connect directly with shippers. Search by car type, geography, and timeline. No broker fees.</p>
+        <div class="card-cta">
+          <a href="/tools/sublease-board">Browse Board &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+[
+ {
+  "company_name": "Toyota Texas (San Antonio plant)",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles",
+   "automotive_parts"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "San Antonio",
+  "lat": 29.4241,
+  "lon": -98.4936,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_up",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "GM Arlington Assembly",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Arlington",
+  "lat": 32.7357,
+  "lon": -97.1081,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_up",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Tesla Austin Gigafactory",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles",
+   "battery"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Austin",
+  "lat": 30.2188,
+  "lon": -97.6172,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_up",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Toyota Mississippi (Blue Springs)",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "MS",
+  "county": "",
+  "city": "Blue Springs",
+  "lat": 34.4259,
+  "lon": -88.8714,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_up",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "UP Global IV Intermodal Joliet",
+  "dba": "",
+  "primary_commodity": "intermodal",
+  "commodity_subtypes": [
+   "intermodal"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Joliet",
+  "lat": 41.525,
+  "lon": -88.0817,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_up",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "UP Long Beach Intermodal",
+  "dba": "",
+  "primary_commodity": "intermodal",
+  "commodity_subtypes": [
+   "intermodal"
+  ],
+  "industry_naics": "",
+  "state": "CA",
+  "county": "",
+  "city": "Long Beach",
+  "lat": 33.7701,
+  "lon": -118.1937,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_up",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ }
+]

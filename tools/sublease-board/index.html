@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Connect directly with shippers — list excess railcars or find cars you need. Steel Wheel Logistics.">
+  <title>Railcar Sublease Board | Steel Wheel Logistics</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <link rel="canonical" href="https://steelwheellogistics.com/tools/sublease-board">
+  <meta property="og:title" content="Railcar Sublease Board | Steel Wheel Logistics">
+  <meta property="og:description" content="List excess railcars or find cars you need — connect directly with shippers.">
+  <meta property="og:url" content="https://steelwheellogistics.com/tools/sublease-board">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+
+  <style>
+    .tool-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 48px 20px;
+      text-align: center;
+    }
+    .tool-hero h1 {
+      color: var(--white);
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .tool-hero p {
+      color: var(--steel-grey);
+      font-size: 1.05rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .tool-hero .badge {
+      display: inline-block;
+      background: rgba(74, 144, 217, 0.15);
+      color: var(--steel-blue);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .board-layout {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 30px 20px 60px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 900px) {
+      .board-layout { grid-template-columns: 1fr; }
+      .filters-panel {
+        position: static;
+        max-height: none;
+        overflow-y: visible;
+      }
+      .filters-panel.collapsed .filters-body { display: none; }
+    }
+    @media (max-width: 900px) {
+      .filters-toggle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background: var(--navy);
+        color: var(--white);
+        border: 0;
+        border-radius: 6px;
+        padding: 10px 14px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        margin-bottom: 12px;
+      }
+      .filters-toggle .chevron::after { content: "▼"; font-size: 0.7rem; }
+      .filters-panel.collapsed .filters-toggle .chevron::after { content: "▶"; }
+      #map { height: 280px; }
+    }
+    @media (min-width: 901px) {
+      .filters-toggle { display: none; }
+    }
+
+    .filters-panel {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 18px;
+      align-self: start;
+      position: sticky;
+      top: 12px;
+      max-height: calc(100vh - 24px);
+      overflow-y: auto;
+    }
+    .filters-panel h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin: 0 0 10px;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .filters-panel input[type="text"],
+    .filters-panel select {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid var(--border-grey);
+      border-radius: 6px;
+      font-size: 0.9rem;
+      box-sizing: border-box;
+      margin-bottom: 14px;
+    }
+    .filter-group {
+      border-top: 1px solid var(--border-grey);
+      padding-top: 12px;
+      margin-bottom: 14px;
+    }
+    .filter-group h3 { margin-bottom: 8px; }
+    .filter-checkboxes {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      max-height: 260px;
+      overflow-y: auto;
+    }
+    .filter-checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+    .filter-checkbox-row input { margin: 0; cursor: pointer; }
+    .filters-reset {
+      width: 100%;
+      padding: 8px;
+      background: var(--steel-grey);
+      color: var(--white);
+      border: 0;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .filters-reset:hover { background: var(--navy); }
+
+    .add-listing-btn {
+      width: 100%;
+      padding: 12px;
+      background: var(--steel-blue);
+      color: var(--white);
+      border: 0;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .add-listing-btn:hover { background: var(--steel-blue-dark); }
+
+    .results-panel { min-width: 0; }
+    .results-stats {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+    }
+    .results-stats .count {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 1.05rem;
+    }
+
+    .view-toggle {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .view-toggle button {
+      flex: 1;
+      padding: 8px 12px;
+      background: var(--light-grey);
+      border: 1px solid var(--border-grey);
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      transition: all 0.2s;
+    }
+    .view-toggle button.active {
+      background: var(--steel-blue);
+      color: var(--white);
+      border-color: var(--steel-blue);
+    }
+
+    #map {
+      height: 500px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .listings-table {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .listings-table table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .listings-table th {
+      padding: 12px 14px;
+      text-align: left;
+      background: var(--light-grey);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      border-bottom: 1px solid var(--border-grey);
+      cursor: pointer;
+      user-select: none;
+    }
+    .listings-table th:hover { background: #e8edf3; }
+    .listings-table th .sort-indicator { margin-left: 4px; }
+    .listings-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border-grey);
+      color: var(--text-dark);
+    }
+    .listings-table tr:hover { background: rgba(74, 144, 217, 0.04); }
+    .listings-table .listing-type-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .listing-type-badge.offering {
+      background: rgba(31, 138, 76, 0.12);
+      color: #1f8a4c;
+    }
+    .listing-type-badge.seeking {
+      background: rgba(248, 180, 0, 0.12);
+      color: #b8860b;
+    }
+    .listings-empty {
+      padding: 48px 20px;
+      text-align: center;
+      color: var(--text-light);
+    }
+    .listings-empty h3 { font-size: 1.2rem; margin-bottom: 8px; color: var(--text-dark); }
+
+    .pagination {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .pagination button {
+      padding: 8px 12px;
+      border: 1px solid var(--border-grey);
+      background: var(--white);
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    .pagination button:hover { border-color: var(--steel-blue); }
+    .pagination button.active {
+      background: var(--steel-blue);
+      color: var(--white);
+      border-color: var(--steel-blue);
+    }
+    .pagination button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    /* Email-gate modal */
+    .email-gate-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+    .email-gate-overlay.visible { display: flex; }
+    .email-gate-modal {
+      background: var(--white);
+      border-radius: 12px;
+      max-width: 600px;
+      width: 100%;
+      padding: 28px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .email-gate-modal h3 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+      color: var(--text-dark);
+    }
+    .email-gate-modal p.lead {
+      margin: 0 0 18px;
+      font-size: 0.92rem;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+    .listing-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .listing-form .field-full { grid-column: 1 / -1; }
+    .form-field {
+      display: flex;
+      flex-direction: column;
+    }
+    .form-field label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      padding: 10px 12px;
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      outline: none;
+      border-color: var(--steel-blue);
+      box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.1);
+    }
+    .form-field .hint {
+      font-weight: 400;
+      color: #888;
+      font-size: 0.8rem;
+      margin-top: 2px;
+    }
+    .gate-error {
+      color: var(--error-red);
+      font-size: 0.88rem;
+      margin: 6px 0 12px;
+      min-height: 1.1em;
+    }
+    .gate-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      grid-column: 1 / -1;
+    }
+    .gate-cancel {
+      background: var(--white);
+      color: var(--text-dark);
+      border: 1px solid var(--border-grey);
+      padding: 10px 18px;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .gate-submit {
+      background: var(--steel-blue);
+      color: var(--white);
+      border: none;
+      padding: 10px 22px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .gate-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .consent-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--text-body);
+      line-height: 1.4;
+      grid-column: 1 / -1;
+    }
+    .consent-row input { margin-top: 3px; }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RSWDYHVY7Z');
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog">Blog</a>
+        <a href="/courses">Courses</a>
+        <a href="/tools" class="active">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="tool-hero">
+    <span class="badge">Community Board</span>
+    <h1>Railcar Sublease Board</h1>
+    <p>Connect directly with other shippers — list excess railcars you need to move or find cars available for sublease. No broker fees.</p>
+  </section>
+
+  <!-- Main content -->
+  <div class="board-layout">
+
+    <!-- Filters sidebar -->
+    <div class="filters-panel">
+      <button class="filters-toggle" onclick="this.parentElement.classList.toggle('collapsed')">
+        <span>Filters</span>
+        <span class="chevron"></span>
+      </button>
+      <div class="filters-body">
+        <button class="add-listing-btn" onclick="openListingForm()">+ Add Listing</button>
+
+        <div class="filter-group">
+          <h3>Type</h3>
+          <div class="filter-checkboxes">
+            <label class="filter-checkbox-row">
+              <input type="checkbox" id="typeOffering" onchange="applyFilters()"> Offering
+            </label>
+            <label class="filter-checkbox-row">
+              <input type="checkbox" id="typeSeeking" onchange="applyFilters()"> Seeking
+            </label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h3>Car Type</h3>
+          <div class="filter-checkboxes">
+            <label class="filter-checkbox-row"><input type="checkbox" value="boxcar" onchange="applyFilters()"> Boxcar</label>
+            <label class="filter-checkbox-row"><input type="checkbox" value="gondola" onchange="applyFilters()"> Gondola</label>
+            <label class="filter-checkbox-row"><input type="checkbox" value="flatcar" onchange="applyFilters()"> Flatcar</label>
+            <label class="filter-checkbox-row"><input type="checkbox" value="hopper" onchange="applyFilters()"> Hopper</label>
+            <label class="filter-checkbox-row"><input type="checkbox" value="tank" onchange="applyFilters()"> Tank</label>
+            <label class="filter-checkbox-row"><input type="checkbox" value="reefer" onchange="applyFilters()"> Reefer</label>
+            <label class="filter-checkbox-row"><input type="checkbox" value="autorack" onchange="applyFilters()"> Autorack</label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h3>Geography</h3>
+          <input type="text" id="originFilter" placeholder="Origin..." onchange="applyFilters()">
+          <input type="text" id="destFilter" placeholder="Destination..." onchange="applyFilters()">
+        </div>
+
+        <button class="filters-reset" onclick="resetFilters()">Reset Filters</button>
+      </div>
+    </div>
+
+    <!-- Results panel -->
+    <div class="results-panel">
+      <div class="results-stats">
+        <div>
+          <span class="count" id="resultCount">0</span> listings
+        </div>
+      </div>
+
+      <div class="view-toggle">
+        <button class="active" onclick="switchView('map')">Map</button>
+        <button onclick="switchView('table')">Table</button>
+      </div>
+
+      <div id="mapContainer" style="display: block;">
+        <div id="map"></div>
+      </div>
+
+      <div id="tableContainer" style="display: none;">
+        <div class="listings-table">
+          <table>
+            <thead>
+              <tr>
+                <th onclick="sortTable('type')">Type <span class="sort-indicator" id="sortType"></span></th>
+                <th onclick="sortTable('car_type')">Equipment <span class="sort-indicator" id="sortCar"></span></th>
+                <th onclick="sortTable('quantity')">Qty <span class="sort-indicator" id="sortQty"></span></th>
+                <th onclick="sortTable('origin')">Origin <span class="sort-indicator" id="sortOrigin"></span></th>
+                <th onclick="sortTable('destination')">Destination <span class="sort-indicator" id="sortDest"></span></th>
+                <th onclick="sortTable('posted_date')">Posted <span class="sort-indicator" id="sortPosted"></span></th>
+                <th>Contact</th>
+              </tr>
+            </thead>
+            <tbody id="listingsBody">
+            </tbody>
+          </table>
+          <div class="listings-empty" id="emptyState">
+            <h3>No listings match your filters</h3>
+            <p>Try adjusting your search or add a new listing.</p>
+          </div>
+        </div>
+        <div class="pagination" id="pagination"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Email-gate modal for new listing -->
+  <div class="email-gate-overlay" id="emailGateOverlay" role="dialog" aria-modal="true" aria-labelledby="emailGateTitle">
+    <div class="email-gate-modal">
+      <h3 id="emailGateTitle">Add Your Listing</h3>
+      <p class="lead">Publish your railcar listing to the board — other shippers will contact you directly.</p>
+      <form id="listingForm" novalidate>
+        <div class="form-field">
+          <label for="listingType">Type *</label>
+          <select id="listingType" required>
+            <option value="">Select one...</option>
+            <option value="offering">Offering cars for sublease</option>
+            <option value="seeking">Seeking cars to sublease</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="carType">Car Type *</label>
+          <select id="carType" required>
+            <option value="">Select one...</option>
+            <option value="boxcar">Boxcar</option>
+            <option value="gondola">Gondola</option>
+            <option value="flatcar">Flatcar</option>
+            <option value="hopper">Hopper</option>
+            <option value="tank">Tank</option>
+            <option value="reefer">Reefer</option>
+            <option value="autorack">Autorack</option>
+            <option value="mixed">Mixed</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="quantity">Quantity *</label>
+          <input type="number" id="quantity" min="1" max="500" required placeholder="Number of cars">
+        </div>
+
+        <div class="form-field field-full">
+          <label for="origin">Origin (City, ST) *</label>
+          <input type="text" id="origin" required placeholder="e.g. Memphis, TN">
+        </div>
+
+        <div class="form-field field-full">
+          <label for="destination">Destination (City, ST) *</label>
+          <input type="text" id="destination" required placeholder="e.g. Houston, TX">
+        </div>
+
+        <div class="form-field field-full">
+          <label for="pricing">Pricing <span class="hint">(optional)</span></label>
+          <input type="text" id="pricing" placeholder="e.g. $X per car or $/mile">
+        </div>
+
+        <div class="form-field field-full">
+          <label for="timeline">Timeline <span class="hint">(optional)</span></label>
+          <input type="text" id="timeline" placeholder="e.g. Pickup 6/15 - 6/30">
+        </div>
+
+        <div class="form-field field-full">
+          <label for="email">Email *</label>
+          <input type="email" id="email" required placeholder="you@company.com" autocomplete="email">
+          <div class="hint">We'll use this to contact you about your listing.</div>
+        </div>
+
+        <div class="form-field field-full">
+          <label for="name">Name <span class="hint">(optional)</span></label>
+          <input type="text" id="name" placeholder="Your name" autocomplete="name" maxlength="200">
+        </div>
+
+        <div class="form-field field-full">
+          <label for="phone">Phone <span class="hint">(optional)</span></label>
+          <input type="tel" id="phone" placeholder="(555) 555-5555" autocomplete="tel" maxlength="60">
+        </div>
+
+        <div class="gate-error" id="leadError"></div>
+
+        <label class="consent-row">
+          <input type="checkbox" id="consent" checked>
+          <span>I agree to have my listing published on the board and to be contacted about this shipment.</span>
+        </label>
+
+        <div class="gate-actions">
+          <button type="button" class="gate-cancel" onclick="closeListingForm()">Cancel</button>
+          <button type="submit" class="gate-submit" id="submitBtn">Publish Listing</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+  <script>
+    let listings = [];
+    let filteredListings = [];
+    let currentPage = 1;
+    const itemsPerPage = 10;
+    let currentSort = { field: 'posted_date', asc: false };
+    let map = null;
+    let markerCluster = null;
+
+    const cityCoords = {
+      'Memphis, TN': [35.1495, -90.0490],
+      'Houston, TX': [29.7604, -95.3698],
+      'Dallas, TX': [32.7767, -96.7970],
+      'Chicago, IL': [41.8781, -87.6298],
+      'Atlanta, GA': [33.7490, -84.3880],
+      'Jacksonville, FL': [30.3322, -81.6557],
+      'Kansas City, MO': [39.0997, -94.5786],
+      'Los Angeles, CA': [34.0522, -118.2437],
+      'New York, NY': [40.7128, -74.0060],
+      'Philadelphia, PA': [39.9526, -75.1652],
+    };
+
+    async function loadListings() {
+      try {
+        const res = await fetch('./data/listings.json');
+        listings = await res.json();
+        applyFilters();
+      } catch (err) {
+        console.error('Failed to load listings:', err);
+      }
+    }
+
+    function getCoords(city) {
+      const normalized = city.split(',').map(s => s.trim()).join(', ');
+      return cityCoords[normalized] || [38.5, -95.5]; // Default to center US
+    }
+
+    function initMap() {
+      if (map) return;
+      map = L.map('map').setView([38.5, -95.5], 4);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+      markerCluster = L.markerClusterGroup();
+      map.addLayer(markerCluster);
+    }
+
+    function updateMap() {
+      if (!map) initMap();
+      markerCluster.clearLayers();
+      filteredListings.forEach(listing => {
+        const coords = getCoords(listing.origin);
+        const marker = L.marker(coords);
+        const popupText = `
+          <strong>${listing.listing_type === 'offering' ? 'Offering' : 'Seeking'}</strong><br>
+          ${listing.quantity} ${listing.car_type} car${listing.quantity !== 1 ? 's' : ''}<br>
+          ${listing.origin} → ${listing.destination}<br>
+          ${listing.email}
+        `;
+        marker.bindPopup(popupText);
+        markerCluster.addLayer(marker);
+      });
+    }
+
+    function updateTable() {
+      const tbody = document.getElementById('listingsBody');
+      const empty = document.getElementById('emptyState');
+      const start = (currentPage - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+      const page = filteredListings.slice(start, end);
+
+      if (page.length === 0) {
+        tbody.style.display = 'none';
+        empty.style.display = 'block';
+      } else {
+        tbody.style.display = '';
+        empty.style.display = 'none';
+        tbody.innerHTML = page.map(listing => `
+          <tr>
+            <td><span class="listing-type-badge ${listing.listing_type}">${listing.listing_type === 'offering' ? 'Offering' : 'Seeking'}</span></td>
+            <td>${listing.car_type}</td>
+            <td>${listing.quantity}</td>
+            <td>${listing.origin}</td>
+            <td>${listing.destination}</td>
+            <td>${new Date(listing.posted_date).toLocaleDateString()}</td>
+            <td><a href="mailto:${listing.email}" style="color: var(--steel-blue); text-decoration: none;">Contact</a></td>
+          </tr>
+        `).join('');
+      }
+
+      updatePagination();
+    }
+
+    function updatePagination() {
+      const total = Math.ceil(filteredListings.length / itemsPerPage);
+      const paginationEl = document.getElementById('pagination');
+      paginationEl.innerHTML = '';
+      for (let i = 1; i <= total; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = i;
+        btn.className = i === currentPage ? 'active' : '';
+        btn.onclick = () => { currentPage = i; updateTable(); };
+        paginationEl.appendChild(btn);
+      }
+    }
+
+    function applyFilters() {
+      const typeOffering = document.getElementById('typeOffering').checked;
+      const typeSeeking = document.getElementById('typeSeeking').checked;
+      const origin = document.getElementById('originFilter').value.toLowerCase();
+      const destination = document.getElementById('destFilter').value.toLowerCase();
+
+      const carTypeCheckboxes = Array.from(document.querySelectorAll('.filter-checkboxes input[type="checkbox"]:nth-of-type(n+3)'))
+        .filter(cb => cb.checked)
+        .map(cb => cb.value);
+
+      filteredListings = listings.filter(listing => {
+        if (typeOffering || typeSeeking) {
+          if (typeOffering && listing.listing_type !== 'offering') return false;
+          if (typeSeeking && listing.listing_type !== 'seeking') return false;
+        }
+        if (carTypeCheckboxes.length > 0 && !carTypeCheckboxes.includes(listing.car_type)) return false;
+        if (origin && !listing.origin.toLowerCase().includes(origin)) return false;
+        if (destination && !listing.destination.toLowerCase().includes(destination)) return false;
+        return true;
+      });
+
+      if (currentSort.field) {
+        filteredListings.sort((a, b) => {
+          const aVal = a[currentSort.field];
+          const bVal = b[currentSort.field];
+          if (aVal < bVal) return currentSort.asc ? -1 : 1;
+          if (aVal > bVal) return currentSort.asc ? 1 : -1;
+          return 0;
+        });
+      }
+
+      currentPage = 1;
+      document.getElementById('resultCount').textContent = filteredListings.length;
+      updateMap();
+      updateTable();
+    }
+
+    function sortTable(field) {
+      if (currentSort.field === field) {
+        currentSort.asc = !currentSort.asc;
+      } else {
+        currentSort.field = field;
+        currentSort.asc = false;
+      }
+      applyFilters();
+    }
+
+    function resetFilters() {
+      document.getElementById('typeOffering').checked = false;
+      document.getElementById('typeSeeking').checked = false;
+      document.getElementById('originFilter').value = '';
+      document.getElementById('destFilter').value = '';
+      document.querySelectorAll('.filter-checkboxes input[type="checkbox"]').forEach(cb => cb.checked = false);
+      applyFilters();
+    }
+
+    function switchView(view) {
+      document.querySelectorAll('.view-toggle button').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      if (view === 'map') {
+        document.getElementById('mapContainer').style.display = 'block';
+        document.getElementById('tableContainer').style.display = 'none';
+        if (map) map.invalidateSize();
+      } else {
+        document.getElementById('mapContainer').style.display = 'none';
+        document.getElementById('tableContainer').style.display = 'block';
+      }
+    }
+
+    function openListingForm() {
+      document.getElementById('emailGateOverlay').classList.add('visible');
+    }
+
+    function closeListingForm() {
+      document.getElementById('emailGateOverlay').classList.remove('visible');
+      document.getElementById('listingForm').reset();
+      document.getElementById('leadError').textContent = '';
+    }
+
+    document.getElementById('listingForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const errorEl = document.getElementById('leadError');
+      errorEl.textContent = '';
+
+      const email = document.getElementById('email').value.trim().toLowerCase();
+      const listingType = document.getElementById('listingType').value;
+      const carType = document.getElementById('carType').value;
+      const quantity = parseInt(document.getElementById('quantity').value);
+      const origin = document.getElementById('origin').value.trim();
+      const destination = document.getElementById('destination').value.trim();
+      const pricing = document.getElementById('pricing').value.trim();
+      const timeline = document.getElementById('timeline').value.trim();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="spinner"></span>Submitting...';
+
+      try {
+        const res = await fetch('/api/sublease-lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email, listing_type: listingType, car_type: carType,
+            quantity, origin, destination, pricing, timeline, name, phone
+          })
+        });
+
+        const data = await res.json();
+        if (!res.ok) {
+          errorEl.textContent = data.error || 'Something went wrong';
+          return;
+        }
+
+        // Add to local listings
+        const newListing = {
+          listing_id: Date.now().toString(),
+          shipper_email: email,
+          listing_type: listingType,
+          car_type: carType,
+          quantity,
+          origin,
+          destination,
+          pricing: pricing || null,
+          timeline: timeline || null,
+          posted_date: new Date().toISOString(),
+          expires_date: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
+          contact_method: 'email',
+          email: email
+        };
+        listings.push(newListing);
+
+        closeListingForm();
+        applyFilters();
+        alert('Listing published successfully! Other shippers will contact you at ' + email);
+      } catch (err) {
+        errorEl.textContent = 'Network error: ' + err.message;
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Publish Listing';
+      }
+    });
+
+    // Init
+    loadListings();
+    initMap();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+{
+ "scraped_at": "2026-05-06T02:37:03.299666+00:00",
+ "scraped_index_url": "https://www.gwrr.com/success-stories",
+ "records": [
+  {
+   "company_name": "Drax Biomass Bastrop Pellet Mill",
+   "primary_commodity": "forest_products",
+   "commodity_subtypes": [
+    "wood_pellets",
+    "biomass"
+   ],
+   "industry_naics": "32199",
+   "state": "LA",
+   "city": "Bastrop",
+   "lat": 32.7793,
+   "lon": -91.9118,
+   "nearest_class_i": "UP",
+   "capabilities": [
+    "rail_spur",
+    "loading",
+    "unit_train"
+   ],
+   "shortline_rmark": "alm",
+   "shortline_name": "Arkansas Louisiana & Mississippi Railroad",
+   "source_note": "Drax wood-pellet mill in Bastrop, LA \u2014 ships pellets via ALM shortline to UP interchange in Collinston, then to Port of Greater Baton Rouge for export to UK; ~10,000 carloads/year per G&W",
+   "scraped_url": "https://www.gwrr.com/success-stories/drax-gets-wood-pellets-louisiana-uk-help-rail-link-inc",
+   "scraped_at": "2026-05-06T02:36:56.843726+00:00"
+  },
+  {
+   "company_name": "Georgia-Pacific Wauna Mill",
+   "primary_commodity": "forest_products",
+   "commodity_subtypes": [
+    "tissue",
+    "paper"
+   ],
+   "industry_naics": "32212",
+   "state": "OR",
+   "city": "Clatskanie",
+   "lat": 46.1404,
+   "lon": -123.2406,
+   "nearest_class_i": "BNSF",
+   "capabilities": [
+    "rail_spur",
+    "loading"
+   ],
+   "shortline_rmark": "pnwr",
+   "shortline_name": "Portland & Western Railroad",
+   "source_note": "Georgia-Pacific Wauna tissue/paper mill near Clatskanie, OR \u2014 served by P&W shortline; G&W published case study during COVID-19 demand surge",
+   "scraped_url": "https://www.gwrr.com/success-stories/georgia-pacific-moves-paper-products-during-pandemic-help-portland-and-western-railroad",
+   "scraped_at": "2026-05-06T02:36:57.585128+00:00"
+  },
+  {
+   "company_name": "Tyson Foods Pittsburg Poultry Feed Mill",
+   "primary_commodity": "grain",
+   "commodity_subtypes": [
+    "feed_grain",
+    "corn",
+    "soybean_meal"
+   ],
+   "industry_naics": "31111",
+   "state": "OK",
+   "city": "Pittsburg",
+   "lat": 34.7036,
+   "lon": -95.8528,
+   "nearest_class_i": "UP",
+   "capabilities": [
+    "rail_spur",
+    "unloading",
+    "unit_train"
+   ],
+   "shortline_rmark": "kiam",
+   "shortline_name": "Kiamichi Railroad",
+   "source_note": "Tyson Foods mega poultry feed mill in Pittsburg, OK \u2014 served by Kiamichi Railroad (G&W subsidiary)",
+   "scraped_url": "https://www.gwrr.com/success-stories/kiamichi-railroad-provides-maximum-logistics-flexibility-tyson-foods-mega-poultry-feed-mill",
+   "scraped_at": "2026-05-06T02:36:58.334476+00:00"
+  },
+  {
+   "company_name": "Morning Star Williams Tomato Processing",
+   "primary_commodity": "food_grain",
+   "commodity_subtypes": [
+    "tomato_paste",
+    "food"
+   ],
+   "industry_naics": "31142",
+   "state": "CA",
+   "city": "Williams",
+   "lat": 39.1543,
+   "lon": -122.1494,
+   "nearest_class_i": "UP",
+   "capabilities": [
+    "rail_spur",
+    "loading"
+   ],
+   "shortline_rmark": "cfnr",
+   "shortline_name": "California Northern Railroad",
+   "source_note": "Morning Star is the world's largest tomato processor; Williams CA facility served by California Northern (G&W); also Los Banos plant (separate)",
+   "scraped_url": "https://www.gwrr.com/success-stories/morning-star-and-california-northern-railroad-keep-food-supply-during-pandemic",
+   "scraped_at": "2026-05-06T02:36:59.079402+00:00"
+  },
+  {
+   "company_name": "Procter & Gamble Cincinnati Manufacturing",
+   "primary_commodity": "chemicals",
+   "commodity_subtypes": [
+    "consumer_chemicals",
+    "sanitizer"
+   ],
+   "industry_naics": "32561",
+   "state": "OH",
+   "city": "Cincinnati",
+   "lat": 39.1031,
+   "lon": -84.512,
+   "nearest_class_i": "CSXT",
+   "capabilities": [
+    "rail_spur",
+    "unloading",
+    "tank_car"
+   ],
+   "shortline_rmark": "iory",
+   "shortline_name": "Indiana & Ohio Railway",
+   "source_note": "P&G Cincinnati manufacturing complex \u2014 served by Indiana & Ohio Railway (G&W subsidiary) for sanitizer feedstock during 2020 demand surge",
+   "scraped_url": "https://www.gwrr.com/success-stories/procter-and-gamble-meets-sanitizer-demand-during-pandemic-indiana-and-ohio-railway",
+   "scraped_at": "2026-05-06T02:36:59.817219+00:00"
+  },
+  {
+   "company_name": "Tomahawk Railway Customer Warehouse",
+   "primary_commodity": "forest_products",
+   "commodity_subtypes": [
+    "paper",
+    "lumber"
+   ],
+   "industry_naics": "32212",
+   "state": "WI",
+   "city": "Tomahawk",
+   "lat": 45.4719,
+   "lon": -89.729,
+   "nearest_class_i": "CN",
+   "capabilities": [
+    "rail_spur",
+    "transload",
+    "warehousing"
+   ],
+   "shortline_rmark": "tr",
+   "shortline_name": "Tomahawk Railway",
+   "source_note": "Tomahawk Railway combined-rail/warehousing operation in Tomahawk, WI \u2014 serves Wisconsin Northwoods forest-products mills; CN interchange",
+   "scraped_url": "https://www.gwrr.com/success-stories/tomahawk-railways-unique-operation-fulfills-customer-warehousing-needs",
+   "scraped_at": "2026-05-06T02:37:00.571066+00:00"
+  },
+  {
+   "company_name": "Columbus & Ohio River Rail Road customer base",
+   "primary_commodity": "general",
+   "commodity_subtypes": [
+    "food",
+    "consumer_goods",
+    "paper"
+   ],
+   "industry_naics": "",
+   "state": "OH",
+   "city": "Coshocton",
+   "lat": 40.2717,
+   "lon": -81.8593,
+   "nearest_class_i": "NS",
+   "capabilities": [
+    "rail_spur",
+    "manifest"
+   ],
+   "shortline_rmark": "cusf",
+   "shortline_name": "Columbus & Ohio River Rail Road",
+   "source_note": "C&OR (G&W) serves food/consumer-goods/paper shippers in Eastern Ohio \u2014 Coshocton hub on NS interchange",
+   "scraped_url": "https://www.gwrr.com/success-stories/columbus-ohio-river-rail-road-gets-essentials-to-market-during-pandemic",
+   "scraped_at": "2026-05-06T02:37:01.303439+00:00"
+  },
+  {
+   "company_name": "Carroll County Bureau of Engineering",
+   "primary_commodity": "aggregates",
+   "commodity_subtypes": [
+    "stone",
+    "salt",
+    "road_materials"
+   ],
+   "industry_naics": "21232",
+   "state": "MD",
+   "city": "Westminster",
+   "lat": 39.5754,
+   "lon": -76.9967,
+   "nearest_class_i": "CSXT",
+   "capabilities": [
+    "rail_spur",
+    "unloading"
+   ],
+   "shortline_rmark": "mmid",
+   "shortline_name": "Maryland Midland Railway",
+   "source_note": "Maryland Midland (G&W) serves Carroll County stone/salt operations; key inbound for road maintenance materials",
+   "scraped_url": "https://www.gwrr.com/success-stories/maryland-midland-railway-team-willing-get-hands-dirty-county-bureau",
+   "scraped_at": "2026-05-06T02:37:02.048059+00:00"
+  },
+  {
+   "company_name": "Mega Rail Terminal at Port of Savannah",
+   "primary_commodity": "intermodal",
+   "commodity_subtypes": [
+    "containers",
+    "autos"
+   ],
+   "industry_naics": "48821",
+   "state": "GA",
+   "city": "Savannah",
+   "lat": 32.1311,
+   "lon": -81.1622,
+   "nearest_class_i": "NS",
+   "capabilities": [
+    "intermodal",
+    "port",
+    "rail_dockside",
+    "unit_train"
+   ],
+   "shortline_rmark": "sava",
+   "shortline_name": "Savannah Port Terminal Railroad",
+   "source_note": "Savannah Port Terminal Railroad (G&W) provides switching at Mega Rail Terminal \u2014 Garden City Terminal, NS + CSXT dual-served intermodal hub",
+   "scraped_url": "https://www.gwrr.com/success-stories/savannah-port-terminal-railroad-service-include-mega-rail-terminal",
+   "scraped_at": "2026-05-06T02:37:02.798578+00:00"
+  }
+ ],
+ "smoke": [
+  {
+   "slug": "drax-gets-wood-pellets-louisiana-uk-help-rail-link-inc",
+   "status": "ok",
+   "records": 1
+  },
+  {
+   "slug": "georgia-pacific-moves-paper-products-during-pandemic-help-portland-and-western-railroad",
+   "status": "ok",
+   "records": 1
+  },
+  {
+   "slug": "kiamichi-railroad-provides-maximum-logistics-flexibility-tyson-foods-mega-poultry-feed-mill",
+   "status": "ok",
+   "records": 1
+  },
+  {
+   "slug": "morning-star-and-california-northern-railroad-keep-food-supply-during-pandemic",
+   "status": "ok",
+   "records": 1
+  },
+  {
+   "slug": "procter-and-gamble-meets-sanitizer-demand-during-pandemic-indiana-and-ohio-railway",
+   "status": "ok",
+   "records": 1
+  },
+  {
+   "slug": "tomahawk-railways-unique-operation-fulfills-customer-warehousing-needs",
+   "status": "ok",
+   "records": 1
+  },
+  {
+   "slug": "columbus-ohio-river-rail-road-gets-essentials-to-market-during-pandemic",
+   "status": "ok",
+   "records": 1
+  },
+  {
+   "slug": "maryland-midland-railway-team-willing-get-hands-dirty-county-bureau",
+   "status": "ok",
+   "records": 1
+  },
+  {
+   "slug": "savannah-port-terminal-railroad-service-include-mega-rail-terminal",
+   "status": "ok",
+   "records": 1
+  }
+ ]
+}

@@ -1,0 +1,114 @@
+[
+ {
+  "company_name": "Volkswagen Chattanooga",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "TN",
+  "county": "",
+  "city": "Chattanooga",
+  "lat": 35.0456,
+  "lon": -85.3097,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_ns",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Mercedes-Benz Vance Plant",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Vance",
+  "lat": 33.1725,
+  "lon": -87.2358,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_ns",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Hyundai Montgomery Plant",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Montgomery",
+  "lat": 32.3792,
+  "lon": -86.3077,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_ns",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "NS Crescent Corridor Greer",
+  "dba": "",
+  "primary_commodity": "intermodal",
+  "commodity_subtypes": [
+   "intermodal"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Greer",
+  "lat": 34.9388,
+  "lon": -82.2275,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_ns",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ }
+]

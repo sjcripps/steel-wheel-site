@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 1: Rail Freight Fundamentals — Steel Wheel Logistics</title>
+<meta name="description" content="Learn how freight railroads work, types of rail service, rail car equipment, how shipments move, and when rail beats trucking. Free course from Steel Wheel Logistics.">
+<link rel="canonical" href="https://steelwheellogistics.com/courses/rail-freight-fundamentals">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --brand-navy: #1a2332;
+    --brand-steel: #2d3e50;
+    --brand-blue: #3b82f6;
+    --brand-blue-light: #dbeafe;
+    --brand-orange: #f59e0b;
+    --brand-orange-light: #fef3c7;
+    --brand-green: #10b981;
+    --brand-green-light: #d1fae5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #4a5568;
+    --text-muted: #718096;
+    --bg-white: #ffffff;
+    --bg-light: #f7f8fc;
+    --border: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-white);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  @media print {
+    body { font-size: 11pt; line-height: 1.5; }
+    .hero { padding: 40px 0; }
+    .hero h1 { font-size: 28pt; }
+    section { page-break-inside: avoid; }
+    .part-divider { page-break-before: always; }
+    .no-print { display: none; }
+    .container { max-width: 100%; padding: 0 20px; }
+  }
+
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: linear-gradient(135deg, var(--brand-navy) 0%, var(--brand-steel) 100%);
+    color: white;
+    padding: 64px 0 56px;
+    text-align: center;
+  }
+  .hero .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.9);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .hero .subtitle {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.8);
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+  .hero .brand {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    margin-top: 24px;
+  }
+
+  /* ── Scope Setter ── */
+  /* ── Video Player ── */
+  .video-section {
+    margin: 32px 0 40px;
+    padding: 24px;
+    background: var(--bg-light);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+  .video-section h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .video-section video {
+    width: 100%;
+    border-radius: 8px;
+    background: #000;
+  }
+  .video-section .video-note {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .scope-setter {
+    background: var(--brand-blue-light);
+    border-left: 4px solid var(--brand-blue);
+    border-radius: 0 8px 8px 0;
+    padding: 24px 28px;
+    margin: 40px 0 32px;
+  }
+  .scope-setter h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--brand-steel);
+    margin-bottom: 12px;
+  }
+  .scope-setter ul { list-style: none; padding: 0; }
+  .scope-setter li {
+    padding: 4px 0;
+    padding-left: 24px;
+    position: relative;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+  }
+  .scope-setter li::before { position: absolute; left: 0; font-size: 1rem; }
+  .scope-setter li.yes::before { content: "\2713"; color: var(--brand-green); font-weight: 700; }
+  .scope-setter li.no::before { content: "\2717"; color: #e53e3e; font-weight: 700; }
+
+  /* ── Module Outline ── */
+  .outline {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 32px 0 48px;
+  }
+  @media (max-width: 600px) { .outline { grid-template-columns: 1fr; } }
+  .outline-card {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+  }
+  .outline-card h4 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--brand-blue);
+    margin-bottom: 14px;
+  }
+  .outline-card ul { list-style: none; padding: 0; }
+  .outline-card li {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    padding: 3px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+  .outline-card li::before {
+    content: "\25B8";
+    position: absolute;
+    left: 0;
+    color: var(--brand-blue);
+  }
+
+  /* ── Part Dividers ── */
+  .part-divider {
+    background: var(--brand-navy);
+    color: white;
+    text-align: center;
+    padding: 48px 0;
+    margin: 56px 0 40px;
+    border-radius: 12px;
+  }
+  .part-divider .part-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--brand-orange);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .part-divider h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+  }
+  .part-divider .part-sub {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.6);
+    margin-top: 8px;
+  }
+
+  /* ── Sections ── */
+  section { margin-bottom: 48px; }
+  section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--brand-navy);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+  section h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--brand-steel);
+    margin: 20px 0 10px;
+  }
+  section p {
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+    font-size: 0.97rem;
+  }
+  section ul, section ol { padding-left: 24px; margin-bottom: 16px; }
+  section li {
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+  }
+  section li strong { color: var(--text-primary); }
+
+  /* ── Callout Boxes ── */
+  .callout {
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 0.93rem;
+  }
+  .callout.insight {
+    background: var(--brand-orange-light);
+    border-left: 4px solid var(--brand-orange);
+  }
+  .callout.key {
+    background: var(--brand-green-light);
+    border-left: 4px solid var(--brand-green);
+  }
+  .callout.example {
+    background: #f0f4ff;
+    border-left: 4px solid var(--brand-blue);
+  }
+  .callout strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── Compare Grid ── */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 24px 0;
+  }
+  @media (max-width: 600px) { .compare-grid { grid-template-columns: 1fr; } }
+  .compare-card {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+  }
+  .compare-card h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--brand-navy);
+    margin-bottom: 12px;
+  }
+  .compare-card ul { list-style: none; padding: 0; }
+  .compare-card li {
+    padding: 3px 0 3px 20px;
+    position: relative;
+    font-size: 0.92rem;
+  }
+  .compare-card li::before {
+    content: "\25B8";
+    position: absolute;
+    left: 0;
+    color: var(--brand-blue);
+  }
+
+  /* ── Flow Grid ── */
+  .flow-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+  @media (max-width: 600px) { .flow-grid { grid-template-columns: 1fr; } }
+  .flow-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  .flow-card .flow-icon {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+  }
+  .flow-card h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--brand-navy);
+    margin-bottom: 8px;
+  }
+  .flow-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* ── Metric Cards ── */
+  .metric-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+  @media (max-width: 600px) { .metric-grid { grid-template-columns: 1fr; } }
+  .metric-card {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+  }
+  .metric-card h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--brand-navy);
+    margin-bottom: 4px;
+  }
+  .metric-card .formula {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--brand-blue);
+    background: rgba(59,130,246,0.08);
+    padding: 4px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 6px 0 8px;
+  }
+  .metric-card p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  /* ── Three-Column ── */
+  .three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+  @media (max-width: 600px) { .three-col { grid-template-columns: 1fr; } }
+  .col-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .col-card h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--brand-navy);
+    margin-bottom: 10px;
+  }
+  .col-card ul { list-style: none; padding: 0; }
+  .col-card li {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    padding: 2px 0;
+  }
+  .col-card .tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--brand-blue);
+    background: var(--brand-blue-light);
+    padding: 3px 10px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
+
+  /* ── Shipment Flow Diagram ── */
+  .shipment-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 28px 0;
+    flex-wrap: wrap;
+  }
+  .shipment-node {
+    background: var(--bg-light);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 110px;
+  }
+  .shipment-node .step-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--brand-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .shipment-node .label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+    font-weight: 600;
+  }
+  .shipment-arrow {
+    font-size: 1.4rem;
+    color: var(--text-muted);
+  }
+
+  /* ── Checkpoint ── */
+  .checkpoint {
+    background: var(--brand-green-light);
+    border: 2px solid var(--brand-green);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin: 40px 0;
+  }
+  .checkpoint h3 {
+    color: #065f46;
+    font-size: 1.1rem;
+    margin-bottom: 14px;
+  }
+  .checkpoint ul { list-style: none; padding: 0; }
+  .checkpoint li {
+    padding: 4px 0 4px 28px;
+    position: relative;
+    font-size: 0.95rem;
+    color: #065f46;
+  }
+  .checkpoint li::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: var(--brand-green);
+  }
+
+  /* ── Takeaways ── */
+  .takeaways {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    margin: 48px 0 32px;
+  }
+  .takeaways h2 {
+    border: none;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+  }
+  .takeaways ol { padding-left: 24px; }
+  .takeaways li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+  }
+  .takeaways li strong { color: var(--text-primary); }
+
+  /* ── Next Module ── */
+  .next-module {
+    background: linear-gradient(135deg, var(--brand-navy) 0%, var(--brand-steel) 100%);
+    color: white;
+    text-align: center;
+    padding: 48px 32px;
+    border-radius: 12px;
+    margin: 48px 0 40px;
+  }
+  .next-module .next-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--brand-orange);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .next-module h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: white;
+    border: none;
+    padding: 0;
+    margin-bottom: 8px;
+  }
+  .next-module p {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.95rem;
+  }
+
+  /* ── Footer ── */
+  footer {
+    text-align: center;
+    padding: 32px 0;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── Course Nav Bar ── */
+  .course-nav {
+    background: var(--brand-navy);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  .course-nav a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .course-nav a:hover {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+  }
+  .course-nav .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .course-nav .nav-left .back-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    color: #93c5fd;
+  }
+  .course-nav .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .course-nav .nav-right a.active {
+    background: rgba(59, 130, 246, 0.3);
+    color: #fff;
+  }
+  @media (max-width: 600px) {
+    .course-nav { padding: 10px 16px; }
+    .course-nav .nav-left .home-link { display: none; }
+  }
+  @media print { .course-nav { display: none; } }
+</style>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RSWDYHVY7Z');
+  </script>
+</head>
+<body>
+
+<!-- ════════════════════════════ NAV BAR ════════════════════════════ -->
+<nav class="course-nav no-print">
+  <div class="nav-left">
+    <a href="/" class="back-link">&#8592; Steel Wheel</a>
+    <a href="/courses" class="home-link">All Courses</a>
+  </div>
+  <div class="nav-right">
+    <a href="/courses/rail-freight-fundamentals" class="active">Module 1</a>
+    <a href="/courses/working-with-railroads">Module 2</a>
+  </div>
+</nav>
+
+<!-- ════════════════════════════ HERO ════════════════════════════ -->
+<header class="hero">
+  <div class="container">
+    <div class="badge">Module 1</div>
+    <h1>Rail Freight Fundamentals</h1>
+    <p class="subtitle">How the railroad network works and when rail is the smart move</p>
+    <p class="brand">Steel Wheel Logistics &nbsp;|&nbsp; Rail Logistics Academy</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- ════════════════════ VIDEO ════════════════════ -->
+  <div class="video-section no-print">
+    <h3>&#127909; Watch This Module</h3>
+    <video controls preload="metadata" poster="/media/module-1-rail-freight-fundamentals-thumb.jpg">
+      <source src="/media/module-1-rail-freight-fundamentals.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p class="video-note">Prefer reading? Scroll down for the full written module.</p>
+  </div>
+
+  <!-- ════════════════════ SCOPE SETTER ════════════════════ -->
+  <div class="scope-setter">
+    <h3>What This Module Covers</h3>
+    <ul>
+      <li class="yes">How the North American railroad network is structured</li>
+      <li class="yes">Types of rail service: carload, unit train, multimodal</li>
+      <li class="yes">Rail car types and what they carry</li>
+      <li class="yes">How a rail shipment actually moves from A to B</li>
+      <li class="yes">When rail beats trucking — and when it doesn't</li>
+      <li class="no">Not covering pricing details or contracts (that's Module 2)</li>
+      <li class="no">Not covering hazmat regulations in depth (that's Module 2)</li>
+    </ul>
+  </div>
+
+  <!-- ════════════════════ OUTLINE ════════════════════ -->
+  <div class="outline">
+    <div class="outline-card">
+      <h4>Part A — The Railroad Network</h4>
+      <ul>
+        <li>Class I railroads &amp; their territories</li>
+        <li>Regional &amp; short line railroads</li>
+        <li>Types of rail service</li>
+        <li>Rail car types &amp; what they haul</li>
+        <li>Key rail terminology</li>
+      </ul>
+    </div>
+    <div class="outline-card">
+      <h4>Part B — Shipping by Rail</h4>
+      <ul>
+        <li>How a rail shipment moves</li>
+        <li>Classification yards &amp; interchanges</li>
+        <li>Rail vs. truck: cost &amp; speed</li>
+        <li>Commodities that move by rail</li>
+        <li>The role of a rail logistics provider</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!--                        PART A                              -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <div class="part-divider">
+    <div class="part-label">Part A</div>
+    <h2>The Railroad Network</h2>
+    <p class="part-sub">Structure &nbsp;&bull;&nbsp; Service Types &nbsp;&bull;&nbsp; Equipment</p>
+  </div>
+
+
+  <!-- ── Class I Railroads ── -->
+  <section>
+    <h2>Class I Railroads: The Big Six</h2>
+    <p>The North American freight railroad network is dominated by six Class I railroads — carriers with annual revenue over $900 million. These are the long-haul backbone of rail freight. Between them, they operate roughly 140,000 miles of track and handle about 70% of all U.S. rail freight revenue.</p>
+
+    <div class="three-col">
+      <div class="col-card">
+        <span class="tag">Western U.S.</span>
+        <h4>BNSF Railway</h4>
+        <ul>
+          <li>Owned by Berkshire Hathaway</li>
+          <li>32,500 route miles</li>
+          <li>Strong in multimodal, coal, grain</li>
+          <li>Dominates West Coast ports</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <span class="tag">Western U.S.</span>
+        <h4>Union Pacific (UP)</h4>
+        <ul>
+          <li>Largest U.S. railroad by revenue</li>
+          <li>32,200 route miles</li>
+          <li>Major chemical &amp; industrial shipper</li>
+          <li>Gulf Coast &amp; West Coast reach</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <span class="tag">Eastern U.S.</span>
+        <h4>CSX Transportation</h4>
+        <ul>
+          <li>21,000 route miles</li>
+          <li>Strong in coal, aggregates, autos</li>
+          <li>East Coast &amp; Southeast</li>
+          <li>Major multimodal network</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="three-col">
+      <div class="col-card">
+        <span class="tag">Eastern U.S.</span>
+        <h4>Norfolk Southern (NS)</h4>
+        <ul>
+          <li>19,500 route miles</li>
+          <li>Coal, multimodal, metals</li>
+          <li>East Coast &amp; Midwest reach</li>
+          <li>Major auto carrier</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <span class="tag">Canada + U.S.</span>
+        <h4>Canadian National (CN)</h4>
+        <ul>
+          <li>Only railroad spanning Canada coast-to-coast</li>
+          <li>Reaches Gulf of Mexico</li>
+          <li>Strong in grain &amp; petroleum</li>
+          <li>~20,000 route miles</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <span class="tag">Canada + U.S.</span>
+        <h4>CPKC (CP Kansas City)</h4>
+        <ul>
+          <li>Merged CP + KCS in 2023</li>
+          <li>First single-line Canada–Mexico railroad</li>
+          <li>~20,000 route miles</li>
+          <li>Strong in cross-border freight</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout insight">
+      <strong>Why this matters to shippers</strong>
+      Most long-haul rail shipments touch at least one Class I railroad. If your freight moves 500+ miles by rail, you're almost certainly dealing with one of these carriers. Knowing their territories helps you understand routing options and potential bottlenecks.
+    </div>
+  </section>
+
+
+  <!-- ── Regionals & Short Lines ── -->
+  <section>
+    <h2>Regional &amp; Short Line Railroads</h2>
+    <p>Below the Class I carriers are roughly 600 regional and short line railroads. These smaller carriers are the "first mile / last mile" of rail freight — they connect shippers' facilities to the Class I network.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <h4>Regional Railroads</h4>
+        <ul>
+          <li>Revenue $40M–$900M annually</li>
+          <li>Typically 400–1,500 route miles</li>
+          <li>Serve specific geographic corridors</li>
+          <li>Often former Class I branch lines</li>
+        </ul>
+      </div>
+      <div class="compare-card">
+        <h4>Short Line Railroads</h4>
+        <ul>
+          <li>Revenue under $40M annually</li>
+          <li>Typically under 400 route miles</li>
+          <li>First/last mile service to shippers</li>
+          <li>Handle switching, local delivery</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout key">
+      <strong>The interchange</strong>
+      When a short line picks up cars from a shipper's facility and delivers them to a Class I railroad (or vice versa), that handoff is called an interchange. Understanding where interchanges happen is critical — it's where delays often occur and where coordination matters most.
+    </div>
+  </section>
+
+
+  <!-- ── Types of Rail Service ── -->
+  <section>
+    <h2>Types of Rail Service</h2>
+    <p>Not all rail freight moves the same way. There are three main service types, and the economics are very different for each.</p>
+
+    <div class="flow-grid">
+      <div class="flow-card">
+        <div class="flow-icon">🚃</div>
+        <h4>Carload (Manifest)</h4>
+        <p>Individual cars from different shippers grouped into trains at classification yards. Flexible but slower — cars get switched between trains. 1–15 cars per shipper.</p>
+      </div>
+      <div class="flow-card">
+        <div class="flow-icon">🚂</div>
+        <h4>Unit Train</h4>
+        <p>A full train (80–120 cars) of one commodity from one origin to one destination. No switching, no classification. Fastest, cheapest per-ton rail service. Coal, grain, crude oil.</p>
+      </div>
+      <div class="flow-card">
+        <div class="flow-icon">📦</div>
+        <h4>Multimodal</h4>
+        <p>Containers or trailers that ride on rail flatcars for the long haul, then transfer to trucks for local delivery. Competes directly with over-the-road trucking.</p>
+      </div>
+    </div>
+
+    <div class="callout example">
+      <strong>Unit train economics</strong>
+      A unit train of 110 cars carrying coal moves about 12,000 tons in a single trip — the equivalent of roughly 400 truckloads. The railroad gives significant rate discounts for unit trains because they don't need classification yard handling and they keep the network fluid. If you're shipping enough volume, unit trains are the most cost-effective way to move bulk commodities.
+    </div>
+  </section>
+
+
+  <!-- ── Rail Car Types ── -->
+  <section>
+    <h2>Rail Car Types</h2>
+    <p>Different commodities require different cars. Knowing which car type moves which product is fundamental to rail logistics.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <h4>Covered Hopper</h4>
+        <ul>
+          <li>Enclosed top, gravity-discharge bottom</li>
+          <li>Hauls: grain, cement, sand, plastic pellets, flour</li>
+          <li>Protects cargo from weather</li>
+          <li>Most common car for dry bulk</li>
+        </ul>
+      </div>
+      <div class="compare-card">
+        <h4>Open-Top Hopper</h4>
+        <ul>
+          <li>No roof — loaded from above</li>
+          <li>Hauls: coal, aggregates, ballast, ore</li>
+          <li>Gravity discharge through bottom gates</li>
+          <li>Commodity doesn't need weather protection</li>
+        </ul>
+      </div>
+      <div class="compare-card">
+        <h4>Gondola</h4>
+        <ul>
+          <li>Open-top, flat-bottom or drop-bottom</li>
+          <li>Hauls: scrap metal, steel coils, lumber, aggregates</li>
+          <li>Loaded by crane, conveyor, or dump truck</li>
+          <li>Versatile — handles irregular-shaped loads</li>
+        </ul>
+      </div>
+      <div class="compare-card">
+        <h4>Tank Car</h4>
+        <ul>
+          <li>Cylindrical — liquid and gas transport</li>
+          <li>Hauls: chemicals, petroleum, ethanol, food-grade oils</li>
+          <li>DOT-regulated (especially hazmat)</li>
+          <li>Pressurized or non-pressurized variants</li>
+        </ul>
+      </div>
+      <div class="compare-card">
+        <h4>Boxcar</h4>
+        <ul>
+          <li>Fully enclosed with sliding side doors</li>
+          <li>Hauls: paper, packaged goods, auto parts, canned goods</li>
+          <li>Protects cargo from weather and theft</li>
+          <li>Being displaced by multimodal containers</li>
+        </ul>
+      </div>
+      <div class="compare-card">
+        <h4>Flatcar / Centerbeam</h4>
+        <ul>
+          <li>Flat deck — no sides or roof</li>
+          <li>Hauls: lumber, steel beams, machinery, military equipment</li>
+          <li>Centerbeam variant: vertical divider for lumber/drywall</li>
+          <li>TOFC/COFC: trailers/containers ride on flatcars</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout insight">
+      <strong>Private vs. railroad-owned cars</strong>
+      Some cars are owned by the railroad, but many are privately owned — by shippers, leasing companies, or car-supply firms. If you ship high volumes regularly, leasing your own cars can save significantly vs. paying railroad-supplied car rates. The trade-off is the capital commitment and maintenance responsibility.
+    </div>
+  </section>
+
+
+  <!-- ── Key Terminology ── -->
+  <section>
+    <h2>Key Rail Terminology</h2>
+    <p>Rail has its own language. Here are the terms you'll encounter constantly when working with railroads.</p>
+
+    <div class="metric-grid">
+      <div class="metric-card">
+        <h4>Waybill</h4>
+        <p>The railroad's shipping document. Contains origin, destination, commodity, car number, routing, and rate. Every car that moves has a waybill.</p>
+      </div>
+      <div class="metric-card">
+        <h4>Bill of Lading (BOL)</h4>
+        <p>The shipper's contract with the carrier. Specifies what's being shipped, quantity, origin/destination. Legal document of ownership.</p>
+      </div>
+      <div class="metric-card">
+        <h4>Demurrage</h4>
+        <p>Penalty charges when you keep a railroad's car past the free time allowed for loading/unloading. Typically $75–$200/car/day. Adds up fast.</p>
+      </div>
+      <div class="metric-card">
+        <h4>Per Diem</h4>
+        <p>Daily rental fee charged for using a privately-owned car. Owed by the railroad holding the car to the car's owner. Usually $30–$80/day.</p>
+      </div>
+      <div class="metric-card">
+        <h4>Interchange</h4>
+        <p>The point where one railroad hands off cars to another railroad. Where short lines meet Class I carriers, or where two Class I territories meet.</p>
+      </div>
+      <div class="metric-card">
+        <h4>Switching / Spotting</h4>
+        <p>Switching = moving cars within a yard or between tracks. Spotting = placing a car at a specific location (loading dock, siding) for the shipper.</p>
+      </div>
+      <div class="metric-card">
+        <h4>Siding / Spur</h4>
+        <p>A short section of track branching off the main line, usually at a shipper's facility. Where cars are spotted for loading/unloading.</p>
+      </div>
+      <div class="metric-card">
+        <h4>Classification Yard</h4>
+        <p>A large rail yard where incoming trains are broken apart and individual cars are sorted and reassembled into new outbound trains based on destination.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── Part A Checkpoint ── -->
+  <div class="checkpoint">
+    <h3>Part A Checkpoint</h3>
+    <p style="margin-bottom: 12px; color: #065f46;">You now understand the structure:</p>
+    <ul>
+      <li>The six Class I railroads and their geographic territories</li>
+      <li>How regional and short line railroads connect shippers to the network</li>
+      <li>Three types of rail service: carload, unit train, multimodal</li>
+      <li>Six main car types and what commodities they carry</li>
+      <li>Core rail terminology that you'll use every day in this industry</li>
+    </ul>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!--                        PART B                              -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <div class="part-divider">
+    <div class="part-label">Part B</div>
+    <h2>Shipping by Rail</h2>
+    <p class="part-sub">Shipment Flow &nbsp;&bull;&nbsp; Rail vs. Truck &nbsp;&bull;&nbsp; Commodities</p>
+  </div>
+
+
+  <!-- ── How a Rail Shipment Moves ── -->
+  <section>
+    <h2>How a Rail Shipment Moves</h2>
+    <p>A typical carload shipment goes through several stages from origin to destination. Understanding this flow helps you anticipate transit times and potential delays.</p>
+
+    <div class="shipment-flow">
+      <div class="shipment-node">
+        <div class="step-num">Step 1</div>
+        <div class="label">Car Spotted</div>
+      </div>
+      <div class="shipment-arrow">&rarr;</div>
+      <div class="shipment-node">
+        <div class="step-num">Step 2</div>
+        <div class="label">Loaded</div>
+      </div>
+      <div class="shipment-arrow">&rarr;</div>
+      <div class="shipment-node">
+        <div class="step-num">Step 3</div>
+        <div class="label">Origin Yard</div>
+      </div>
+      <div class="shipment-arrow">&rarr;</div>
+      <div class="shipment-node">
+        <div class="step-num">Step 4</div>
+        <div class="label">Line Haul</div>
+      </div>
+      <div class="shipment-arrow">&rarr;</div>
+      <div class="shipment-node">
+        <div class="step-num">Step 5</div>
+        <div class="label">Dest. Yard</div>
+      </div>
+      <div class="shipment-arrow">&rarr;</div>
+      <div class="shipment-node">
+        <div class="step-num">Step 6</div>
+        <div class="label">Delivered</div>
+      </div>
+    </div>
+
+    <ol>
+      <li><strong>Car spotted at shipper's facility</strong> — Empty car placed on the shipper's siding or at a transload facility</li>
+      <li><strong>Shipper loads the car</strong> — Commodity loaded, car sealed, paperwork (waybill/BOL) submitted</li>
+      <li><strong>Local switch crew picks up</strong> — Car moved to the origin classification yard</li>
+      <li><strong>Classification &amp; line haul</strong> — Car sorted into an outbound train, travels the main line. May pass through multiple classification yards if the route involves interchange between railroads</li>
+      <li><strong>Destination yard</strong> — Car arrives and is sorted for local delivery</li>
+      <li><strong>Local delivery</strong> — Switch crew spots the car at the receiver's facility for unloading</li>
+    </ol>
+
+    <div class="callout insight">
+      <strong>Where the time goes</strong>
+      On a 1,500-mile carload move, the actual line-haul running time might be 3 days. But the total transit time is often 7–10 days because of the time spent sitting in classification yards waiting to be sorted into the next train. Unit trains skip this entirely — which is why they're so much faster.
+    </div>
+  </section>
+
+
+  <!-- ── Rail vs Truck ── -->
+  <section>
+    <h2>Rail vs. Truck: When Each Wins</h2>
+    <p>Rail and trucking aren't enemies — they serve different niches. The key is knowing when each mode makes economic sense.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <h4>Rail Wins When</h4>
+        <ul>
+          <li>Distance is 500+ miles</li>
+          <li>Shipment is heavy/bulky (bulk commodities)</li>
+          <li>Volume is high and consistent</li>
+          <li>Speed is not the top priority</li>
+          <li>You're shipping 100+ tons per move</li>
+          <li>Origin and destination are rail-served</li>
+        </ul>
+      </div>
+      <div class="compare-card">
+        <h4>Truck Wins When</h4>
+        <ul>
+          <li>Distance is under 500 miles</li>
+          <li>Shipment is time-sensitive</li>
+          <li>Destination isn't rail-served</li>
+          <li>Volume is small or irregular</li>
+          <li>Door-to-door flexibility needed</li>
+          <li>Frequent, small deliveries</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="metric-grid">
+      <div class="metric-card">
+        <h4>Rail Cost Advantage</h4>
+        <div class="formula">~3-4x more fuel efficient than truck</div>
+        <p>One train can move the tonnage of 300+ trucks</p>
+        <p>Cost per ton-mile: rail ~$0.02–0.04 vs truck ~$0.08–0.15</p>
+      </div>
+      <div class="metric-card">
+        <h4>Truck Speed Advantage</h4>
+        <div class="formula">Door-to-door, typically 2-3x faster</div>
+        <p>No classification yards, no interchange delays</p>
+        <p>Flexible pickup and delivery scheduling</p>
+      </div>
+    </div>
+
+    <div class="callout key">
+      <strong>The real decision</strong>
+      For bulk commodities moving long distances, rail isn't just cheaper — it's the only practical option. You can't economically move 12,000 tons of coal by truck. For manufactured goods and consumer products, it's usually a cost-vs-speed calculation. Multimodal tries to give you the best of both: rail economics for the long haul, truck flexibility for the first/last mile.
+    </div>
+  </section>
+
+
+  <!-- ── What Moves by Rail ── -->
+  <section>
+    <h2>What Moves by Rail</h2>
+    <p>Rail carries about 40% of all U.S. freight tonnage. Here are the major commodity groups.</p>
+
+    <div class="three-col">
+      <div class="col-card">
+        <span class="tag">Energy</span>
+        <h4>Coal &amp; Petroleum</h4>
+        <ul>
+          <li>Coal: still ~20% of rail revenue</li>
+          <li>Crude oil: unit trains to refineries</li>
+          <li>Ethanol: major Midwest product</li>
+          <li>Natural gas liquids</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <span class="tag">Agriculture</span>
+        <h4>Grain &amp; Farm Products</h4>
+        <ul>
+          <li>Wheat, corn, soybeans</li>
+          <li>Export terminals (Gulf, PNW)</li>
+          <li>Feed mills &amp; ethanol plants</li>
+          <li>Fertilizers (potash, urea)</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <span class="tag">Industrial</span>
+        <h4>Chemicals &amp; Materials</h4>
+        <ul>
+          <li>Industrial chemicals (chlorine, caustic soda)</li>
+          <li>Aggregates (sand, gravel, crushed stone)</li>
+          <li>Steel, metals, lumber</li>
+          <li>Cement &amp; construction materials</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout example">
+      <strong>Rail's sweet spot</strong>
+      The pattern is clear: heavy, bulky, non-time-sensitive commodities that move in large quantities between fixed points. If you're shipping 10 containers of electronics from LA to Chicago, multimodal is your play. If you're shipping 100 cars of grain from Kansas to the Gulf, that's a unit train.
+    </div>
+  </section>
+
+
+  <!-- ── Role of a Rail Logistics Provider ── -->
+  <section>
+    <h2>The Role of a Rail Logistics Provider</h2>
+    <p>Most shippers don't work directly with railroads. They work with a rail logistics provider who handles the complexity. Here's what that relationship looks like.</p>
+
+    <div class="flow-grid">
+      <div class="flow-card">
+        <div class="flow-icon">🏭</div>
+        <h4>The Shipper</h4>
+        <p>Needs to move commodity from A to B. May not have rail expertise, railroad relationships, or time to manage rail operations.</p>
+      </div>
+      <div class="flow-card">
+        <div class="flow-icon">🤝</div>
+        <h4>Rail Logistics Provider</h4>
+        <p>Coordinates between shipper and railroads. Handles routing, rate negotiation, car supply, tracking, and problem resolution.</p>
+      </div>
+      <div class="flow-card">
+        <div class="flow-icon">🚂</div>
+        <h4>The Railroad</h4>
+        <p>Owns the track and equipment. Moves the freight. Sets rates and service levels. Massive operations — hard to navigate alone.</p>
+      </div>
+    </div>
+
+    <p>A rail logistics provider adds value by:</p>
+    <ul>
+      <li><strong>Rate negotiation</strong> — Leveraging volume and relationships to get competitive pricing</li>
+      <li><strong>Routing optimization</strong> — Choosing the best route considering transit time, interchanges, and reliability</li>
+      <li><strong>Car supply management</strong> — Ensuring empty cars are available when the shipper needs them</li>
+      <li><strong>Tracking &amp; visibility</strong> — Monitoring shipments and proactively handling exceptions</li>
+      <li><strong>Problem resolution</strong> — When cars go missing, get misrouted, or sit in yards too long</li>
+      <li><strong>Transload coordination</strong> — Arranging truck-to-rail or rail-to-truck transfers when needed</li>
+    </ul>
+
+    <div class="callout key">
+      <strong>Why it matters</strong>
+      Railroads are built to move trains, not to hold your hand. Their customer service infrastructure is designed for high-volume, repeat shippers. A rail logistics provider bridges that gap — especially for mid-size shippers who need rail economics but don't ship enough to command railroad attention on their own.
+    </div>
+  </section>
+
+
+  <!-- ── Key Takeaways ── -->
+  <div class="takeaways">
+    <h2>Key Takeaways</h2>
+    <ol>
+      <li><strong>Six Class I railroads</strong> handle ~70% of U.S. rail freight revenue. Know their territories.</li>
+      <li><strong>Short lines are the first/last mile</strong> — they connect your facility to the Class I network at interchange points.</li>
+      <li><strong>Three service types:</strong> carload (flexible, slower), unit train (cheapest per-ton, bulk only), multimodal (competes with trucking).</li>
+      <li><strong>Six main car types</strong> — each designed for specific commodities. Covered hoppers, open hoppers, gondolas, tank cars, boxcars, and flatcars.</li>
+      <li><strong>Rail shipments move through classification yards</strong> — that's where most transit time is consumed, not on the main line.</li>
+      <li><strong>Rail beats trucking on cost</strong> for heavy, bulk freight over 500+ miles. Truck wins on speed and flexibility for shorter distances.</li>
+      <li><strong>Rail carries 40% of U.S. freight tonnage</strong> — mostly coal, grain, chemicals, aggregates, petroleum, and multimodal containers.</li>
+      <li><strong>A rail logistics provider</strong> bridges the gap between shippers and railroads — handling coordination, rates, car supply, and problem resolution.</li>
+    </ol>
+  </div>
+
+
+  <!-- ════════════════════ STUDY GUIDE ════════════════════ -->
+  <section style="margin-top:56px; background:var(--bg-light); border-radius:12px; padding:2.5rem; border:1px solid var(--border);">
+    <h2 style="display:flex; align-items:center; gap:10px; margin-bottom:1.5rem;">
+      <span style="background:var(--brand-green); color:#fff; width:36px; height:36px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:1rem;">&#128203;</span>
+      Study Guide
+    </h2>
+
+    <div style="margin-bottom:2rem;">
+      <h3 style="font-size:1.1rem; color:var(--brand-navy); margin-bottom:0.75rem;">Review Questions</h3>
+      <ol style="padding-left:1.25rem; color:var(--text-secondary); line-height:2;">
+        <li>Name the six Class I railroads and identify whether each primarily serves the eastern or western U.S. (or both).</li>
+        <li>What is the role of short line railroads, and what happens at an interchange point?</li>
+        <li>Explain the difference between carload, unit train, and multimodal service. When would you use each?</li>
+        <li>A shipper needs to move 5,000 tons of grain from Nebraska to a Gulf Coast export terminal. Which type of rail service makes the most sense and why?</li>
+        <li>You need to ship 200 tons of industrial chemicals 300 miles. Would you recommend rail or truck? What factors would change your answer?</li>
+        <li>What is demurrage, and why should a shipper care about it?</li>
+        <li>Describe the six steps of how a carload shipment moves from shipper to receiver.</li>
+        <li>What value does a rail logistics provider add that a shipper wouldn't get by working directly with a railroad?</li>
+      </ol>
+    </div>
+
+    <div>
+      <h3 style="font-size:1.1rem; color:var(--brand-navy); margin-bottom:0.75rem;">Glossary</h3>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1rem;">
+        <div style="background:#fff; padding:1rem; border-radius:8px; border:1px solid var(--border);">
+          <strong style="color:var(--brand-navy);">Class I Railroad</strong>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-top:4px;">A freight railroad with annual revenue exceeding $900M. Six operate in North America: BNSF, UP, CSX, NS, CN, and CPKC.</p>
+        </div>
+        <div style="background:#fff; padding:1rem; border-radius:8px; border:1px solid var(--border);">
+          <strong style="color:var(--brand-navy);">Unit Train</strong>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-top:4px;">A dedicated train (80–120 cars) carrying a single commodity from one origin to one destination. No classification yard stops. Most cost-effective rail service.</p>
+        </div>
+        <div style="background:#fff; padding:1rem; border-radius:8px; border:1px solid var(--border);">
+          <strong style="color:var(--brand-navy);">Multimodal</strong>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-top:4px;">Freight that moves in containers or trailers using multiple transportation modes (typically rail + truck). Container rides a flatcar for the long haul, then transfers to a truck chassis.</p>
+        </div>
+        <div style="background:#fff; padding:1rem; border-radius:8px; border:1px solid var(--border);">
+          <strong style="color:var(--brand-navy);">Classification Yard</strong>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-top:4px;">A large rail yard where trains are disassembled and individual cars are sorted by destination, then reassembled into new outbound trains.</p>
+        </div>
+        <div style="background:#fff; padding:1rem; border-radius:8px; border:1px solid var(--border);">
+          <strong style="color:var(--brand-navy);">Demurrage</strong>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-top:4px;">Charges assessed when a railroad-owned car is held by a shipper/receiver beyond the allotted free time for loading or unloading.</p>
+        </div>
+        <div style="background:#fff; padding:1rem; border-radius:8px; border:1px solid var(--border);">
+          <strong style="color:var(--brand-navy);">Interchange</strong>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-top:4px;">The physical location and process where one railroad hands off cars to another railroad. Where short lines connect to Class I networks.</p>
+        </div>
+        <div style="background:#fff; padding:1rem; border-radius:8px; border:1px solid var(--border);">
+          <strong style="color:var(--brand-navy);">Covered Hopper</strong>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-top:4px;">An enclosed rail car with gravity-discharge bottom gates. Used for dry bulk commodities that need weather protection: grain, cement, sand, plastic pellets.</p>
+        </div>
+        <div style="background:#fff; padding:1rem; border-radius:8px; border:1px solid var(--border);">
+          <strong style="color:var(--brand-navy);">Waybill</strong>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-top:4px;">The railroad's primary shipping document for each car. Contains origin, destination, commodity, routing instructions, and rate information.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Related Blog Posts ── -->
+  <section class="lesson-card" style="margin-top: 40px;">
+    <h2>Related Reading</h2>
+    <p>Go deeper on specific topics from this module:</p>
+    <ul style="line-height: 1.9;">
+      <li><a href="/blog/how-rail-freight-shipping-works">How Rail Freight Shipping Works</a> &mdash; the full origin-to-destination path</li>
+      <li><a href="/blog/rail-car-types-explained">Rail Car Types Explained</a> &mdash; which car for which commodity</li>
+      <li><a href="/blog/railroad-interchange-guide">Railroad Interchange Guide</a> &mdash; how Class I and short lines connect</li>
+      <li><a href="/blog/how-railroad-classification-yards-work">How Classification Yards Work</a> &mdash; behind the scenes of car sorting</li>
+      <li><a href="/blog/first-time-shipping-by-rail">First-Time Shipper&rsquo;s Guide</a> &mdash; checklist before your first carload</li>
+      <li><a href="/blog/rail-vs-truck-freight-cost-comparison">Rail vs. Truck Cost Comparison</a> &mdash; when rail wins</li>
+    </ul>
+  </section>
+
+  <!-- ── Related Courses ── -->
+  <section class="lesson-card" style="margin-top: 40px;">
+    <h2>Continue Learning</h2>
+    <p>Other modules in the Rail Logistics Academy:</p>
+    <ul style="line-height: 1.9;">
+      <li><a href="/courses/working-with-railroads">Working with Railroads</a> &mdash; pricing, car supply, demurrage</li>
+      <li><a href="/courses/railroad-pricing">Railroad Pricing</a> &mdash; negotiate rates and decode tariffs</li>
+      <li><a href="/courses/demurrage">Demurrage Mastery</a> &mdash; avoid the #1 surprise cost</li>
+      <li><a href="/courses/transloading">Transloading</a> &mdash; extending rail to non-rail destinations</li>
+      <li><a href="/courses/bulk-commodity-deep-dives">Bulk Commodity Deep Dives</a> &mdash; commodity-specific shipping playbooks</li>
+    </ul>
+  </section>
+
+  <!-- ── Next Module ── -->
+  <a href="/courses/working-with-railroads" style="text-decoration:none; display:block;">
+    <div class="next-module" style="cursor:pointer; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.01)'" onmouseout="this.style.transform='scale(1)'">
+      <div class="next-label">Up Next</div>
+      <h2>Module 2: Working with Railroads</h2>
+      <p>Pricing, car supply, transloading, demurrage, tracking, and compliance &rarr;</p>
+    </div>
+  </a>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div style="margin-bottom:12px;">
+      <a href="/" style="color:var(--brand-blue); text-decoration:none; font-weight:500;">Home</a> &nbsp;|&nbsp;
+      <a href="/courses" style="color:var(--brand-blue); text-decoration:none; font-weight:500;">All Courses</a> &nbsp;|&nbsp;
+      <a href="/blog" style="color:var(--brand-blue); text-decoration:none; font-weight:500;">Blog</a> &nbsp;|&nbsp;
+      <a href="/tools">Tools</a>
+      <a href="/contact">Contact Us</a>
+    </div>
+    Steel Wheel Logistics &nbsp;|&nbsp; Rail Logistics Academy &nbsp;|&nbsp; Module 1
+  </div>
+</footer>
+
+</body>
+</html>

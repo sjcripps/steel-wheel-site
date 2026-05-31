@@ -1,0 +1,142 @@
+[
+ {
+  "company_name": "Honda Marysville Auto",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Marysville",
+  "lat": 40.2364,
+  "lon": -83.3672,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_csxt",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Ford Louisville Assembly",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "KY",
+  "county": "",
+  "city": "Louisville",
+  "lat": 38.1786,
+  "lon": -85.6936,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_csxt",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "GM Spring Hill Assembly",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "TN",
+  "county": "",
+  "city": "Spring Hill",
+  "lat": 35.751,
+  "lon": -86.93,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_csxt",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "BMW Spartanburg Plant",
+  "dba": "",
+  "primary_commodity": "automotive",
+  "commodity_subtypes": [
+   "finished_vehicles"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Greer",
+  "lat": 34.9388,
+  "lon": -82.2275,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_csxt",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CSX North Baltimore Intermodal",
+  "dba": "",
+  "primary_commodity": "intermodal",
+  "commodity_subtypes": [
+   "intermodal"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "North Baltimore",
+  "lat": 41.1808,
+  "lon": -83.6774,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "classi_csxt",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ }
+]

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Consignee vs care-of party on a rail BoL: when to use &quot;c/o,&quot; who controls delivery, claim implications, and how the railroad uses each field. The transload, port, and third-party-facility scenarios explained.">
+  <meta name="keywords" content="consignee vs care of, rail BoL care of party, c/o rail shipment, third party facility rail, transload consignee, rail bill of lading c/o">
+  <link rel="canonical" href="https://steelwheellogistics.com/blog/consignee-vs-care-of-party-rail">
+  <meta property="og:title" content="Consignee vs Care-of Party on a Rail Bill of Lading (2026 Guide)">
+  <meta property="og:description" content="Consignee vs care-of party on a rail BoL: when to use &quot;c/o,&quot; who controls delivery, claim implications, and how the railroad uses each field. The transload, port, and third-party-facility scenarios explained.">
+  <meta property="og:url" content="https://steelwheellogistics.com/blog/consignee-vs-care-of-party-rail">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Consignee vs Care-of Party on a Rail Bill of Lading (2026 Guide)">
+  <meta name="twitter:description" content="Consignee vs care-of party on a rail BoL: when to use &quot;c/o,&quot; who controls delivery, claim implications, and how the railroad uses each field. The transload, port, and third-party-facility scenarios explained.">
+  <title>Consignee vs Care-of Party on a Rail Bill of Lading (2026 Guide) | Steel Wheel Logistics</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Consignee vs Care-of Party on a Rail Bill of Lading (2026 Guide)",
+  "description": "Consignee vs care-of party on a rail BoL: when to use \"c/o,\" who controls delivery, claim implications, and how the railroad uses each field. The transload, port, and third-party-facility scenarios explained.",
+  "datePublished": "2026-05-16",
+  "dateModified": "2026-05-16",
+  "author": {
+    "@type": "Organization",
+    "name": "Steel Wheel Logistics"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Steel Wheel Logistics",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://steelwheellogistics.com/images/logo-192.png"
+    }
+  },
+  "url": "https://steelwheellogistics.com/blog/consignee-vs-care-of-party-rail",
+  "image": [
+    "https://steelwheellogistics.com/images/logo-192.png"
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://steelwheellogistics.com/blog/consignee-vs-care-of-party-rail"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What's the difference between consignee and care-of party on a rail BoL?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The consignee is the named legal recipient of the freight \u2014 the party with title to the goods and contractual obligations under the BoL. The care-of (c/o) party is the operator of the physical facility where the car is placed for unloading, when that's not the consignee's own facility. Common c/o scenarios: public transloads, port operators, contract bulk terminals, 3PL warehouses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I use a care-of party on the BoL?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When the destination facility is not the consignee's own real estate. Examples: shipping resin to a manufacturer's customer via a transload (transload operator is c/o, customer is consignee); shipping grain for export via a port elevator (port operator is c/o, US export entity is consignee); shipping chemicals to a contract bulk terminal (terminal operator is c/o, distribution subsidiary is consignee)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who is liable for rail demurrage &mdash; consignee or c/o?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Per 49 CFR Part 1333 and the STB rules, the railroad can bill demurrage to the consignor, consignee, or any other party named on the BoL. In practice, both consignee and c/o can end up on the invoice. Address demurrage allocation in your contract with the c/o operator; most transloads pass demurrage through to the consignee but some bundle it into the transload fee."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the c/o party file the Carmack claim if cargo is damaged?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Generally no \u2014 the consignee files the Carmack claim because the consignee holds title at destination. The c/o is a service provider, not the cargo owner. But the c/o is usually the party in physical possession at unload, so an inspection protocol (photos, seal records, damage notes) is critical to preserve evidence for the consignee's eventual claim."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I render consignee and c/o on a rail BoL?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Render the consignee block first (legal recipient), then the c/o block immediately below with \"c/o\" prefix. The routing destination uses the c/o physical address. The free Steel Wheel Rail BoL Builder at steelwheellogistics.com/tools/rail-bol-builder exposes the c/o field as an optional block below the consignee block and handles the layout automatically."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the c/o be the legal consignee?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If the operator of the destination facility also owns the cargo, yes \u2014 they're just the consignee, with no c/o needed. The c/o construct exists specifically for the case where ownership and physical handling are separate parties. If they're the same party, you don't need a c/o block."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RSWDYHVY7Z');
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog" class="active">Blog</a>
+        <a href="/courses">Courses</a>
+        <a href="/tools">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Blog Hero -->
+  <section class="blog-hero">
+    <div class="blog-breadcrumb">
+      <a href="/blog">Blog</a><span class="separator">/</span><span>Documentation</span>
+    </div>
+    <h1>Consignee vs Care-of Party on a Rail Bill of Lading (2026 Guide)</h1>
+    <div class="blog-hero-meta">
+      <span>May 16, 2026</span>
+      <span class="dot">&middot;</span>
+      <span>8 min read</span>
+      <span class="dot">&middot;</span>
+      <span class="blog-tag">Documentation</span>
+    </div>
+  </section>
+  <!-- Article -->
+  <article class="blog-post">
+    <div class="blog-post-content">
+
+      <div class="blog-highlight">
+        <strong>Key fact:</strong> The <em>consignee</em> is the legal recipient of the freight &mdash; the party who has title at destination and who's listed as the contractual recipient on the BoL contract. The <em>care-of party</em> (c/o) is the physical address where the railroad places the car for unloading when that location is not the consignee's own facility. The two are distinct: the consignee owns the cargo; the c/o party operates the facility.
+      </div>
+
+      <p class="blog-lead">If your destination is a public transload, a port operator, a contract bulk terminal, or any third-party facility that isn't your own real estate, you need to know how to fill the consignee and care-of fields on the BoL correctly. Get it wrong and the railroad places the car for the wrong party, or worse, releases the cargo to a party with no legal claim. Here's exactly when c/o applies and how it interacts with delivery, demurrage, and claims.</p>
+
+      <nav class="blog-toc">
+        <div class="blog-toc-title">In This Guide</div>
+        <ol>
+          <li><a href="#definitions">Strict Definitions</a></li>
+          <li><a href="#when-co">When to Use Care-Of</a></li>
+          <li><a href="#how-to-render">How to Render on the BoL</a></li>
+          <li><a href="#delivery-implications">Delivery and Constructive Placement</a></li>
+          <li><a href="#demurrage-implications">Demurrage Liability</a></li>
+          <li><a href="#claims-implications">Claims and Title</a></li>
+          <li><a href="#scenarios">Common Scenarios Walked Through</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="definitions">Strict Definitions</h2>
+
+      <p><strong>Consignee:</strong> the party named on the BoL as the legal recipient of the freight. Has title to the goods at destination per the underlying contract of sale + FOB terms. Bears the contractual obligation to pay freight charges on Collect terms (unless a signed Section 7 statement disclaims; see our <a href="/blog/section-7-no-recourse-post-2021">Section 7 explainer</a>). On a damage or shortage claim, the consignee is typically the proper claimant under Carmack.</p>
+
+      <p><strong>Care-of party (c/o):</strong> the operator of the physical facility where the car is placed at destination, when that facility is not the consignee's own. Has operational control of the car during unload &mdash; assigns a track, calls in placement, accepts the car, supervises unloading. Does not have title to the cargo and is not the contractual recipient.</p>
+
+      <p>The shorthand: the consignee is who <em>owns</em> the freight; the c/o is who <em>handles</em> the freight at destination.</p>
+
+      <h2 id="when-co">When to Use Care-Of</h2>
+
+      <p>Four common scenarios:</p>
+
+      <h3>1. Public transload facilities</h3>
+      <p>You're a manufacturer in the Midwest shipping resin to a coastal customer. The customer doesn't have rail access. You route the car to a public transload (see <a href="/tools/transload-directory">our transload directory</a>), where the contents are transferred to trucks for final delivery. Your BoL consignee is the end customer (who owns the resin); the c/o is the transload operator (who handles the car).</p>
+
+      <h3>2. Port operators (rail-to-vessel)</h3>
+      <p>You're a US exporter shipping grain rail-to-port. The end buyer is overseas. Your BoL consignee is your export agent or trading-company subsidiary (the entity contractually receiving in the US); the c/o is the port terminal operator that places the car at the elevator track.</p>
+
+      <h3>3. Contract bulk terminals</h3>
+      <p>You're shipping chemicals to a regional distribution terminal that's owned by a third party but contracted to service multiple customers. Your BoL consignee is your own facility or sales subsidiary; the c/o is the terminal operator who placards the car at the right track for your unload.</p>
+
+      <h3>4. Vendor-managed inventory and third-party warehouses</h3>
+      <p>Your consignee is the buyer (legal owner of inventory in a vendor-managed arrangement) but the cargo is physically going to a 3PL warehouse the buyer doesn't operate. The 3PL is the c/o.</p>
+
+      <h2 id="how-to-render">How to Render on the BoL</h2>
+
+      <p>Standard convention on a rail BoL:</p>
+
+      <pre style="background:#f5f7fa; padding:1rem; border-left:4px solid #1a3d6c; overflow-x:auto;">
+Consignee:
+  Acme Distribution Inc.
+  1500 Main Street, Suite 200
+  Atlanta, GA 30303
+
+c/o Watco Terminal Operations
+  500 Industrial Pkwy
+  Atlanta, GA 30315
+</pre>
+
+      <p>The c/o block renders <em>below</em> the consignee block, with "c/o" prefix. The destination address on the routing line is the c/o address (where the car physically goes), not the consignee address. Both addresses appear on the BoL; the railroad uses the c/o address for placement and the consignee identity for legal notice.</p>
+
+      <p>The <a href="/tools/rail-bol-builder">free Rail BoL Builder</a> exposes the c/o field as an optional block below the consignee block. When populated, the PDF renders both addresses with the "c/o" prefix on the operator and uses the c/o address as the routing destination.</p>
+
+      <h2 id="delivery-implications">Delivery and Constructive Placement</h2>
+
+      <p>The railroad delivers the car to the c/o facility's track. Constructive placement notice (the railroad's notification that the car is ready for unload) typically goes to <em>both</em> the consignee and the c/o, depending on the BoL annotations and the carrier's customer setup. The consignee owns the freight and needs to know it has arrived; the c/o operates the unload.</p>
+
+      <p>Cross-border CBP notification rules (19 CFR §123.91) require the BoL to identify the "consignee's complete name and address (or ID number)" &mdash; this is the legal consignee, not the c/o. Listing only the c/o on a cross-border move is a CBP manifest error.</p>
+
+      <h2 id="demurrage-implications">Demurrage Liability</h2>
+
+      <p>Per <a href="https://www.law.cornell.edu/cfr/text/49/1333" target="_blank" rel="noopener">49 CFR Part 1333</a> and the STB demurrage rules, the railroad is generally permitted to bill demurrage to "the consignor, consignee, or any other party named on the bill of lading or otherwise entitled to demurrage notice." This means both the consignee and the c/o can end up on the demurrage invoice if their roles aren't clear.</p>
+
+      <p>Practical tip: address demurrage liability in your contracts with the c/o operator. Most transload operators bill demurrage through to the consignee as a pass-through; some absorb it as part of the transload fee. Get it in writing before the first car arrives. The <a href="/tools/demurrage-calculator">free demurrage calculator</a> can help model exposure on multi-car flows through a transload.</p>
+
+      <h2 id="claims-implications">Claims and Title</h2>
+
+      <p>If cargo arrives damaged or short, the Carmack claim is filed by the party with title at destination &mdash; usually the consignee, not the c/o. The c/o is a service provider; it doesn't own the cargo. However, the c/o may be required to inspect the car on arrival and document any visible damage, because the consignee isn't physically present.</p>
+
+      <p>Best practice: include an inspection protocol in your c/o contract. Photos of seal numbers, car number, visible damage, and unload date. These become evidence if a Carmack claim ends up in dispute.</p>
+
+      <h2 id="scenarios">Common Scenarios Walked Through</h2>
+
+      <h3>Scenario A: Resin to retailer through transload</h3>
+      <ul>
+        <li><strong>Consignor (shipper):</strong> ABC Chemical Co., Houston TX</li>
+        <li><strong>Consignee:</strong> Retailer Corp., Atlanta GA (the legal owner of the resin at destination)</li>
+        <li><strong>c/o:</strong> Watco Atlanta Transload Operations, Atlanta GA (the facility where the car places)</li>
+        <li><strong>Routing destination:</strong> Atlanta, GA, NS Inman Yard (the c/o's serving yard)</li>
+      </ul>
+
+      <h3>Scenario B: Grain export through Gulf port</h3>
+      <ul>
+        <li><strong>Consignor:</strong> Plains Grain Co-op, Wichita KS</li>
+        <li><strong>Consignee:</strong> ABC Trading USA Inc., Houston TX (US arm of the international buyer)</li>
+        <li><strong>c/o:</strong> Houston Grain Terminal LLC, Houston TX (port operator)</li>
+        <li><strong>Routing destination:</strong> Houston, TX, UP elevator track</li>
+      </ul>
+
+      <h3>Scenario C: Chemicals to contract terminal</h3>
+      <ul>
+        <li><strong>Consignor:</strong> XYZ Specialty Chemicals Inc., New Orleans LA</li>
+        <li><strong>Consignee:</strong> XYZ Specialty Chemicals Distribution Inc., Chicago IL (sister entity / distribution arm)</li>
+        <li><strong>c/o:</strong> Heartland Industrial Terminal, Joliet IL (contract terminal operator)</li>
+        <li><strong>Routing destination:</strong> Joliet, IL, BNSF Logistics Park</li>
+      </ul>
+
+      <p>Each scenario keeps the legal consignee separate from the physical operator. That's the whole point of the c/o field.</p>
+
+      <section class="blog-faq" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <h3>What's the difference between consignee and care-of party on a rail BoL?</h3>
+          <p>The consignee is the named legal recipient of the freight &mdash; the party with title to the goods and contractual obligations under the BoL. The care-of (c/o) party is the operator of the physical facility where the car is placed for unloading, when that's not the consignee's own facility. Common c/o scenarios: public transloads, port operators, contract bulk terminals, 3PL warehouses.</p>
+        </div>
+        <div class="faq-item">
+          <h3>When should I use a care-of party on the BoL?</h3>
+          <p>When the destination facility is not the consignee's own real estate. Examples: shipping resin to a manufacturer's customer via a transload (transload operator is c/o, customer is consignee); shipping grain for export via a port elevator (port operator is c/o, US export entity is consignee); shipping chemicals to a contract bulk terminal (terminal operator is c/o, distribution subsidiary is consignee).</p>
+        </div>
+        <div class="faq-item">
+          <h3>Who is liable for rail demurrage &mdash; consignee or c/o?</h3>
+          <p>Per 49 CFR Part 1333 and the STB rules, the railroad can bill demurrage to the consignor, consignee, or any other party named on the BoL. In practice, both consignee and c/o can end up on the invoice. Address demurrage allocation in your contract with the c/o operator; most transloads pass demurrage through to the consignee but some bundle it into the transload fee.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Does the c/o party file the Carmack claim if cargo is damaged?</h3>
+          <p>Generally no &mdash; the consignee files the Carmack claim because the consignee holds title at destination. The c/o is a service provider, not the cargo owner. But the c/o is usually the party in physical possession at unload, so an inspection protocol (photos, seal records, damage notes) is critical to preserve evidence for the consignee's eventual claim.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do I render consignee and c/o on a rail BoL?</h3>
+          <p>Render the consignee block first (legal recipient), then the c/o block immediately below with "c/o" prefix. The routing destination uses the c/o physical address. The free Steel Wheel Rail BoL Builder at steelwheellogistics.com/tools/rail-bol-builder exposes the c/o field as an optional block below the consignee block and handles the layout automatically.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can the c/o be the legal consignee?</h3>
+          <p>If the operator of the destination facility also owns the cargo, yes &mdash; they're just the consignee, with no c/o needed. The c/o construct exists specifically for the case where ownership and physical handling are separate parties. If they're the same party, you don't need a c/o block.</p>
+        </div>
+      </section>
+
+    <div class="blog-cta">
+      <h3>Generate Your Rail Bill of Lading in 60 Seconds &mdash; Free</h3>
+      <p>Stop assembling BoLs from PDF scans and spreadsheets. Our free <a href="/tools/rail-bol-builder">Rail Bill of Lading Builder</a> renders an AAR-compliant, hazmat-ready BoL with §172.204 certification, §172.604 emergency phone block, and Section 7 non-recourse signature line built in. Email-gated PDF download. No account needed.</p>
+      <a href="/tools/rail-bol-builder" class="btn btn-primary">Open the BoL Builder &rarr;</a>
+      <p style="margin-top:0.75rem; font-size:0.95rem;">Questions on a complex hazmat or cross-border move? Call <a href="tel:+16018212199">(601) 821-2199</a>.</p>
+    </div>
+    </div>
+
+    <!-- Author -->
+    <div class="blog-author">
+      <div class="blog-author-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+      </div>
+      <div class="blog-author-info">
+        <div class="blog-author-name">Steel Wheel Logistics</div>
+        <div class="blog-author-bio">We coordinate bulk rail freight across North America &mdash; from rate negotiation and car sourcing to transload coordination, BoL preparation, and tracking. Based in Mississippi, serving shippers nationwide.</div>
+      </div>
+    </div>
+
+    <!-- Related Articles -->
+    <div class="blog-related">
+      <h3>Keep Reading</h3>
+      <ul>
+        <li><a href="/blog/rail-bill-of-lading-template">Free Rail Bill of Lading Template (2026) + Field-by-Field Walkthrough</a></li>
+        <li><a href="/blog/rail-bill-of-lading-vs-waybill">Rail Bill of Lading vs Waybill: What's the Difference?</a></li>
+        <li><a href="/blog/hazmat-rail-bill-of-lading-49-cfr-172">Hazmat Rail Bill of Lading: 49 CFR 172 Compliance Guide (2026)</a></li>
+        <li><a href="/blog/section-7-no-recourse-post-2021">Section 7 / No-Recourse: How Consignor Liability Works After the 2021 NMFTA Change</a></li>
+        <li><a href="/blog/order-bill-of-lading-vs-straight-bill-of-lading">Order Bill of Lading vs Straight Bill of Lading on Rail Moves</a></li>
+        <li><a href="/blog/rule-11-rail-rates-explained">Rule 11 Rail Rates Explained: Split-Rate Moves and How to BoL Them</a></li>
+        <li><a href="/blog/cross-border-rail-bill-of-lading-mexico">Cross-Border Rail Bill of Lading to Mexico: Carta Porte 3.1, Pedimento, and AES</a></li>
+        <li><a href="/blog/cross-border-rail-bill-of-lading-canada">Cross-Border Rail Bill of Lading to Canada: CARM, ACI eManifest, and USMCA</a></li>
+      </ul>
+    </div>
+
+    <div class="blog-back">
+      <a href="/blog">&larr; Back to All Posts</a>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/tools">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

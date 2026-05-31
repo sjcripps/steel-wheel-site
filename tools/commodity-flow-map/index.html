@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive map of 65+ major rail freight hubs across North America — origins, ports, inland ports, barge hubs, and border crossings. Steel Wheel Logistics.">
+  <title>Commodity Flow Map | Steel Wheel Logistics</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <link rel="canonical" href="https://steelwheellogistics.com/tools/commodity-flow-map">
+  <meta property="og:title" content="Commodity Flow Map | Steel Wheel Logistics">
+  <meta property="og:description" content="Origins, ports, rail hubs, and border crossings across North America — 65+ major rail freight hubs you can click to explore.">
+  <meta property="og:url" content="https://steelwheellogistics.com/tools/commodity-flow-map">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+
+  <style>
+    .tool-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 48px 20px;
+      text-align: center;
+    }
+    .tool-hero h1 {
+      color: var(--white);
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .tool-hero p {
+      color: var(--steel-grey);
+      font-size: 1.05rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .tool-hero .badge {
+      display: inline-block;
+      background: rgba(74, 144, 217, 0.15);
+      color: var(--steel-blue);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .map-layout {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 30px 20px 60px;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 24px;
+    }
+    @media (max-width: 980px) {
+      .map-layout { grid-template-columns: 1fr; }
+      .side-panel {
+        position: static;
+        max-height: none;
+      }
+      #map { height: 60vh; min-height: 400px; }
+
+      /* Mobile: shrink legend + collapse by default; tap header to expand. */
+      .leaflet-control.legend-control {
+        max-width: 170px;
+        padding: 6px 8px;
+        font-size: 0.78rem;
+      }
+      .legend-control h4 {
+        cursor: pointer;
+        margin: 0;
+        padding-right: 14px;
+        position: relative;
+      }
+      .legend-control h4::after {
+        content: '▾';
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 0.9rem;
+        line-height: 1;
+        transition: transform 0.15s ease;
+      }
+      .legend-control.collapsed h4::after { transform: rotate(-90deg); }
+      .legend-control.collapsed .legend-row,
+      .legend-control.collapsed .legend-toggle-all { display: none; }
+      .legend-control:not(.collapsed) h4 { margin-bottom: 6px; }
+    }
+
+    #map {
+      width: 100%;
+      height: calc(100vh - 220px);
+      min-height: 520px;
+      max-height: 760px;
+      border-radius: 12px;
+      border: 1px solid var(--border-grey);
+      background: #f4f6fa;
+    }
+
+    /* Legend control overlaid on the map */
+    .leaflet-control.legend-control {
+      background: var(--white);
+      padding: 10px 12px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      font-size: 0.82rem;
+      line-height: 1.35;
+      max-width: 220px;
+    }
+    .legend-control h4 {
+      margin: 0 0 6px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: var(--navy);
+    }
+    .legend-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 0;
+      cursor: pointer;
+      user-select: none;
+    }
+    .legend-row input { margin: 0; cursor: pointer; }
+    .legend-row .swatch {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid var(--white);
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
+    }
+    .legend-row .layer-label {
+      flex: 1;
+      color: var(--text-dark);
+    }
+    .legend-row .layer-count {
+      color: var(--text-grey);
+      font-size: 0.74rem;
+    }
+    .legend-row.layer-hidden .layer-label { color: var(--text-grey); text-decoration: line-through; }
+
+    .legend-toggle-all {
+      display: block;
+      width: 100%;
+      margin-top: 6px;
+      padding: 4px 6px;
+      font-size: 0.74rem;
+      background: transparent;
+      border: 1px solid var(--border-grey);
+      border-radius: 6px;
+      cursor: pointer;
+      color: var(--text-dark);
+    }
+    .legend-toggle-all:hover { border-color: var(--steel-blue); color: var(--steel-blue); }
+
+    /* Side panel — initially shows the welcome state */
+    .side-panel {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 0;
+      align-self: start;
+      position: sticky;
+      top: 12px;
+      max-height: calc(100vh - 24px);
+      overflow-y: auto;
+    }
+    .side-panel-inner { padding: 18px 20px; }
+    .side-panel h2 {
+      font-size: 1.1rem;
+      color: var(--navy);
+      margin: 0 0 4px;
+    }
+    .side-panel .panel-sub {
+      font-size: 0.82rem;
+      color: var(--text-grey);
+      margin: 0 0 12px;
+    }
+    .side-panel .panel-pill {
+      display: inline-block;
+      background: rgba(74, 144, 217, 0.12);
+      color: var(--steel-blue);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin: 4px 6px 0 0;
+    }
+    .side-panel .panel-pill.cat { background: rgba(40, 167, 69, 0.12); color: #1e7e34; }
+    .side-panel p.panel-desc {
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: var(--text-dark);
+      margin: 12px 0;
+    }
+    .side-panel .panel-meta {
+      font-size: 0.85rem;
+      color: var(--text-dark);
+      margin: 6px 0;
+    }
+    .side-panel .panel-meta strong {
+      color: var(--navy);
+      display: block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 2px;
+    }
+    .side-panel .panel-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .side-panel .panel-cta {
+      display: block;
+      text-align: center;
+      padding: 10px 14px;
+      background: var(--steel-blue);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+    .side-panel .panel-cta:hover { opacity: 0.9; }
+    .side-panel .panel-cta-secondary {
+      background: var(--white);
+      color: var(--navy);
+      border: 1px solid var(--border-grey);
+    }
+    .side-panel .panel-empty {
+      color: var(--text-grey);
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+
+    .map-help {
+      background: rgba(74, 144, 217, 0.08);
+      border: 1px solid rgba(74, 144, 217, 0.25);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 14px;
+      font-size: 0.88rem;
+      color: var(--text-dark);
+    }
+    .map-help strong { color: var(--navy); }
+
+    .disclaimer {
+      background: rgba(74, 144, 217, 0.08);
+      border-left: 3px solid var(--steel-blue);
+      padding: 12px 16px;
+      margin-top: 18px;
+      font-size: 0.82rem;
+      color: var(--text-dark);
+      line-height: 1.5;
+      border-radius: 0 6px 6px 0;
+    }
+
+    /* Email-gate modal — mirrors transload-directory styling */
+    .email-gate-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 23, 42, 0.72);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+    .email-gate-overlay.visible { display: flex; }
+    .email-gate-modal {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 28px 28px 22px;
+      max-width: 460px;
+      width: 100%;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+    }
+    .email-gate-modal h3 {
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin: 0 0 8px;
+    }
+    .email-gate-modal p.lead {
+      color: var(--text-dark);
+      font-size: 0.95rem;
+      margin: 0 0 18px;
+      line-height: 1.45;
+    }
+    .email-gate-modal label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin: 10px 0 4px;
+    }
+    .email-gate-modal input[type="email"],
+    .email-gate-modal input[type="text"],
+    .email-gate-modal input[type="tel"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    .email-gate-modal input:focus { outline: none; border-color: var(--steel-blue); }
+    .email-gate-modal .gate-help {
+      font-size: 0.78rem;
+      color: var(--text-grey);
+      margin: 4px 0 0;
+    }
+    .email-gate-modal .consent-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: var(--text-dark);
+      align-items: flex-start;
+    }
+    .email-gate-modal .consent-row input { margin-top: 3px; }
+    .email-gate-modal .gate-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .email-gate-modal .gate-submit {
+      flex: 1;
+      padding: 11px;
+      background: var(--steel-blue);
+      color: var(--white);
+      border: 0;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    .email-gate-modal .gate-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .email-gate-modal .gate-error {
+      color: #d32f2f;
+      font-size: 0.85rem;
+      margin: 8px 0 0;
+      min-height: 1.2em;
+    }
+    .map-content { display: none; }
+    .map-content.unlocked { display: block; }
+
+    /* Custom div-icon marker */
+    .hub-marker {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog">Blog</a>
+        <a href="/courses">Courses</a>
+        <a href="/tools" class="active">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="tool-hero">
+    <span class="badge">Free Tool · 65+ Rail Freight Hubs</span>
+    <h1>North American Commodity Flow Map</h1>
+    <p>Origins, ports, inland ports, barge hubs, and border crossings — the rail freight hubs that move grain, coal, chemicals, forest products, autos, and intermodal freight across the continent. Click a hub to see what moves through it and pull a rate from there.</p>
+  </section>
+
+  <div class="map-content" id="mapContent">
+    <div class="map-layout">
+      <main>
+        <div class="map-help">
+          <strong>How to use:</strong> Toggle layers in the legend to filter by hub type. Click any marker to see what moves through that hub and pull an indicative rate from that origin.
+        </div>
+        <div id="map" aria-label="Map of major North American commodity flow hubs"></div>
+        <div class="disclaimer">
+          Hub list is curated for shipper orientation. Capabilities, carrier coverage, and lane economics change frequently — talk to us before committing freight. Steel Wheel Logistics is a rail logistics provider; we do not operate the listed hubs and we do not offer binding rates from any of them.
+        </div>
+      </main>
+
+      <aside class="side-panel" id="sidePanel">
+        <div class="side-panel-inner" id="sidePanelInner">
+          <h2>Pick a hub</h2>
+          <p class="panel-sub">Click any marker to see what moves through it.</p>
+          <p class="panel-empty">Coal &amp; potash origins, Gulf and East Coast export ports, the major inland intermodal hubs, river-rail barge transfer points, and the US/Mexico and US/Canada rail gateways.</p>
+          <div class="panel-actions">
+            <a href="/tools/rail-rate-quote" class="panel-cta">Get a Rail Rate Quote &rarr;</a>
+            <a href="/contact?subject=Commodity+flow+question" class="panel-cta panel-cta-secondary">Talk to us about a lane</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Email-gate modal -->
+  <div class="email-gate-overlay visible" id="emailGateOverlay" role="dialog" aria-modal="true" aria-labelledby="emailGateTitle">
+    <div class="email-gate-modal">
+      <h3 id="emailGateTitle">Free access — one quick step</h3>
+      <p class="lead">65+ hand-curated rail freight hubs across North America — origins, ports, inland ports, barge hubs, and border crossings. We'll only use your email if you ask us to help with a specific lane.</p>
+      <form id="emailGateForm" novalidate>
+        <label for="leadEmail">Work email</label>
+        <input type="email" id="leadEmail" name="email" required autocomplete="email" placeholder="you@company.com">
+        <label for="leadName">Name <span style="font-weight:400;color:#888">(optional)</span></label>
+        <input type="text" id="leadName" name="name" autocomplete="name" placeholder="Your name" maxlength="200">
+        <label for="leadPhone">Phone <span style="font-weight:400;color:#888">(optional)</span></label>
+        <input type="tel" id="leadPhone" name="phone" autocomplete="tel" placeholder="(555) 555-5555" maxlength="60">
+        <label for="leadCompany">Company (optional)</label>
+        <input type="text" id="leadCompany" name="company" autocomplete="organization" placeholder="ACME Manufacturing">
+        <div class="gate-help">No newsletter spam. No data sharing. Just rail help when you need it.</div>
+        <div class="gate-error" id="leadEmailError"></div>
+        <label class="consent-row">
+          <input type="checkbox" id="leadConsent" checked>
+          <span>I agree to the use of my email for follow-up about rail freight questions.</span>
+        </label>
+        <div class="gate-actions">
+          <button type="submit" class="gate-submit" id="leadSubmit">Unlock Map</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+  <script>
+    const EMAIL_KEY = 'swl_commodity_flow_lead_email';
+    const TOOL_SLUG = 'commodity-flow-map';
+    const FORMAT_RE = /^[A-Za-z0-9._%+\-]+@[A-Za-z0-9](?:[A-Za-z0-9\-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9\-]{0,61}[A-Za-z0-9])?)+$/;
+
+    // ── Shared SWL email-unlock (cross-tool, 90-day TTL) ──
+    const SWL_EMAIL_KEY = 'swl_email';
+    const SWL_TS_KEY = 'swl_email_unlocked_at';
+    const SWL_TTL_MS = 90 * 86400 * 1000;
+    function swlReadSharedEmail() {
+      try {
+        const e = localStorage.getItem(SWL_EMAIL_KEY) || '';
+        const ts = localStorage.getItem(SWL_TS_KEY) || '';
+        if (!e || !ts) return '';
+        const t = Date.parse(ts);
+        if (!isFinite(t)) return '';
+        if (Date.now() - t > SWL_TTL_MS) return '';
+        return e;
+      } catch (_) { return ''; }
+    }
+    function swlWriteSharedEmail(email) {
+      try {
+        localStorage.setItem(SWL_EMAIL_KEY, email);
+        localStorage.setItem(SWL_TS_KEY, new Date().toISOString());
+      } catch (_) {}
+    }
+    function swlLeadFiredKey(slug) { return 'swl_lead_fired_' + slug; }
+    function swlIsLeadFired(slug) {
+      try { return sessionStorage.getItem(swlLeadFiredKey(slug)) === '1'; } catch (_) { return false; }
+    }
+    function swlMarkLeadFired(slug) {
+      try { sessionStorage.setItem(swlLeadFiredKey(slug), '1'); } catch (_) {}
+    }
+
+    let map = null;
+    let layerGroups = new Map();      // layerKey -> L.layerGroup
+    let layerVisible = new Map();     // layerKey -> bool
+    let allHubs = [];
+    let hubsById = new Map();
+    let layersMeta = [];
+
+    function escapeHtml(s) {
+      return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+
+    // ─────────────────────── Email gate ───────────────────────
+
+    function cachedEmail() {
+      // Prefer shared cross-tool unlock (90-day TTL); fall back to legacy
+      // per-tool keys for users who unlocked before this migration.
+      const shared = swlReadSharedEmail();
+      if (shared) return shared;
+      try { return localStorage.getItem(EMAIL_KEY) || sessionStorage.getItem(EMAIL_KEY) || ''; } catch (_) { return ''; }
+    }
+    function cacheEmail(email) {
+      swlWriteSharedEmail(email);
+      // Keep legacy keys for back-compat during rollout.
+      try { localStorage.setItem(EMAIL_KEY, email); } catch (_) {}
+      try { sessionStorage.setItem(EMAIL_KEY, email); } catch (_) {}
+    }
+    async function silentFireCommodityFlowLead() {
+      if (swlIsLeadFired(TOOL_SLUG)) return;
+      const email = swlReadSharedEmail();
+      if (!email) return;
+      swlMarkLeadFired(TOOL_SLUG); // mark first to prevent races
+      try {
+        await fetch('/api/commodity-flow-lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, name: '', company: '', phone: '' }),
+        });
+      } catch (_) { /* best-effort */ }
+    }
+    function hideGate() {
+      document.getElementById('emailGateOverlay').classList.remove('visible');
+      document.getElementById('mapContent').classList.add('unlocked');
+      // Map needs a size invalidation after the container becomes visible.
+      setTimeout(() => { if (map) map.invalidateSize(); applyFocusFromUrl(); }, 60);
+    }
+    function showError(msg) {
+      document.getElementById('leadEmailError').textContent = msg || '';
+    }
+
+    document.getElementById('emailGateForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('leadEmail').value.trim().toLowerCase();
+      const company = document.getElementById('leadCompany').value.trim();
+      const name = (document.getElementById('leadName').value || '').trim().slice(0, 200);
+      const phone = (document.getElementById('leadPhone').value || '').trim().slice(0, 60);
+      const consent = document.getElementById('leadConsent').checked;
+      showError('');
+
+      if (!email || email.length > 254 || !FORMAT_RE.test(email)) {
+        showError('Please enter a valid email address.');
+        return;
+      }
+      if (!consent) {
+        showError('Please agree to receive follow-up about your question.');
+        return;
+      }
+      const submitBtn = document.getElementById('leadSubmit');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Unlocking...';
+
+      try {
+        const res = await fetch('/api/commodity-flow-lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, company, name, phone }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          showError(data.error || 'Could not save your request — please try again.');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Unlock Map';
+          return;
+        }
+        cacheEmail(email);
+        swlMarkLeadFired(TOOL_SLUG);
+        hideGate();
+      } catch (err) {
+        // Network failure — let them in anyway. Data is local; we'll capture
+        // next time they come back.
+        cacheEmail(email);
+        swlMarkLeadFired(TOOL_SLUG);
+        hideGate();
+      }
+    });
+
+    if (cachedEmail()) {
+      hideGate();
+    } else {
+      document.getElementById('leadEmail').focus();
+    }
+
+    // ─────────────────────── Data load + map ───────────────────────
+
+    async function loadData() {
+      const res = await fetch('/tools/commodity-flow-map/data/hubs.json');
+      const data = await res.json();
+      allHubs = data.hubs || [];
+      layersMeta = data.layers || [];
+      allHubs.forEach(h => hubsById.set(h.id, h));
+      initMap();
+      buildLayers();
+      buildLegend();
+    }
+
+    function initMap() {
+      map = L.map('map', { preferCanvas: true, scrollWheelZoom: true })
+        .setView([39.5, -98.0], 4);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      }).addTo(map);
+    }
+
+    function makeIcon(layerMeta) {
+      const html = `<div class="hub-marker" style="background:${layerMeta.color};">${layerMeta.emoji}</div>`;
+      return L.divIcon({
+        className: 'hub-divicon',
+        html,
+        iconSize: [22, 22],
+        iconAnchor: [11, 11],
+        popupAnchor: [0, -8],
+      });
+    }
+
+    function buildLayers() {
+      const metaByKey = new Map(layersMeta.map(m => [m.key, m]));
+      layersMeta.forEach(m => {
+        const lg = L.layerGroup();
+        layerGroups.set(m.key, lg);
+        layerVisible.set(m.key, true);
+        lg.addTo(map);
+      });
+
+      allHubs.forEach(h => {
+        if (typeof h.lat !== 'number' || typeof h.lon !== 'number') return;
+        const meta = metaByKey.get(h.layer);
+        if (!meta) return;
+        const marker = L.marker([h.lat, h.lon], { icon: makeIcon(meta), title: h.name });
+        marker.on('click', () => selectHub(h.id));
+        layerGroups.get(h.layer).addLayer(marker);
+      });
+    }
+
+    function buildLegend() {
+      const layerCounts = new Map();
+      allHubs.forEach(h => {
+        layerCounts.set(h.layer, (layerCounts.get(h.layer) || 0) + 1);
+      });
+
+      const legend = L.control({ position: 'topright' });
+      legend.onAdd = () => {
+        const div = L.DomUtil.create('div', 'leaflet-control legend-control');
+        // Default-collapsed on mobile (<=980px) so the legend doesn't cover the map.
+        if (window.matchMedia && window.matchMedia('(max-width: 980px)').matches) {
+          div.classList.add('collapsed');
+        }
+        div.innerHTML = '<h4>Hub Types</h4>';
+        const heading = div.querySelector('h4');
+        heading.addEventListener('click', () => div.classList.toggle('collapsed'));
+        layersMeta.forEach(m => {
+          const id = `legend-${m.key}`;
+          const count = layerCounts.get(m.key) || 0;
+          const row = document.createElement('label');
+          row.className = 'legend-row';
+          row.dataset.layer = m.key;
+          row.innerHTML = `
+            <input type="checkbox" id="${id}" checked data-layer="${m.key}">
+            <span class="swatch" style="background:${m.color};"></span>
+            <span class="layer-label">${m.emoji} ${escapeHtml(m.label)}</span>
+            <span class="layer-count">${count}</span>`;
+          div.appendChild(row);
+        });
+        const toggleAll = document.createElement('button');
+        toggleAll.type = 'button';
+        toggleAll.className = 'legend-toggle-all';
+        toggleAll.textContent = 'Hide all / Show all';
+        div.appendChild(toggleAll);
+
+        // Stop map drag from grabbing legend clicks.
+        L.DomEvent.disableClickPropagation(div);
+        L.DomEvent.disableScrollPropagation(div);
+
+        div.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+          cb.addEventListener('change', () => {
+            const key = cb.dataset.layer;
+            const lg = layerGroups.get(key);
+            if (!lg) return;
+            if (cb.checked) {
+              lg.addTo(map);
+              layerVisible.set(key, true);
+              cb.closest('.legend-row').classList.remove('layer-hidden');
+            } else {
+              map.removeLayer(lg);
+              layerVisible.set(key, false);
+              cb.closest('.legend-row').classList.add('layer-hidden');
+            }
+          });
+        });
+        toggleAll.addEventListener('click', () => {
+          const anyHidden = Array.from(layerVisible.values()).some(v => !v);
+          // If any are off, turn all on; otherwise turn all off.
+          const target = anyHidden;
+          div.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+            if (cb.checked !== target) {
+              cb.checked = target;
+              cb.dispatchEvent(new Event('change'));
+            }
+          });
+        });
+        return div;
+      };
+      legend.addTo(map);
+    }
+
+    function categoryLabel(cat) {
+      const m = {
+        origin: 'Origin region',
+        port: 'Port',
+        break_bulk_port: 'Break-bulk port',
+        inland_port: 'Inland port',
+        rail_hub: 'Rail hub',
+        barge_hub: 'Barge hub',
+        border: 'Border crossing',
+        border_crossing: 'Border crossing',
+      };
+      return m[cat] || cat || 'Hub';
+    }
+
+    function commodityLabel(c) {
+      const m = {
+        coal: 'Coal',
+        iron_ore: 'Iron ore',
+        steel: 'Steel',
+        auto: 'Automotive',
+        grain: 'Grain',
+        crude_oil: 'Crude oil',
+        chemicals: 'Chemicals / potash',
+        forest_products: 'Forest products',
+        intermodal: 'Intermodal',
+        multi_modal: 'Multi-modal',
+        cross_border: 'Cross-border',
+        ports: 'Port traffic',
+      };
+      return m[c] || c || '';
+    }
+
+    function selectHub(id) {
+      const h = hubsById.get(id);
+      if (!h) return;
+      // Pan to the marker.
+      map.setView([h.lat, h.lon], Math.max(map.getZoom(), 5), { animate: true });
+      renderSidePanel(h);
+      // Cross-tool funnel signal: if user came in unlocked via shared
+      // localStorage, fire one lead per session for engagement tracking.
+      silentFireCommodityFlowLead();
+    }
+
+    function renderSidePanel(h) {
+      const inner = document.getElementById('sidePanelInner');
+      const gmaps = `https://www.google.com/maps/?q=${encodeURIComponent(h.lat + ',' + h.lon)}`;
+      const rateQs = new URLSearchParams();
+      if (h.city)  rateQs.set('origin_city', h.city);
+      if (h.state) rateQs.set('origin_state', h.state);
+      const rateUrl = `/tools/rail-rate-quote?${rateQs.toString()}`;
+
+      const cityState = [h.city, h.state].filter(Boolean).join(', ');
+      const classI = h.nearest_class_i || '';
+      const classIBadges = classI
+        ? classI.split(/[,/]/).map(s => s.trim()).filter(Boolean).map(s =>
+            `<span class="panel-pill cat">${escapeHtml(s)}</span>`).join('')
+        : '<span class="panel-empty">Not specified</span>';
+
+      inner.innerHTML = `
+        <h2>${escapeHtml(h.name)}</h2>
+        <p class="panel-sub">${escapeHtml(cityState || categoryLabel(h.category))}</p>
+
+        <div>
+          <span class="panel-pill">${escapeHtml(commodityLabel(h.primary_commodity))}</span>
+          <span class="panel-pill cat">${escapeHtml(categoryLabel(h.category))}</span>
+        </div>
+
+        <p class="panel-desc">${escapeHtml(h.description) || '<em>No description available.</em>'}</p>
+
+        <div class="panel-meta">
+          <strong>Nearest Class I</strong>
+          <div>${classIBadges}</div>
+        </div>
+
+        <div class="panel-meta">
+          <strong>Coordinates</strong>
+          <div>${Number(h.lat).toFixed(3)}, ${Number(h.lon).toFixed(3)}
+            &middot; <a href="${gmaps}" target="_blank" rel="noopener">View on Google Maps &rarr;</a>
+          </div>
+        </div>
+
+        <div class="panel-actions">
+          <a href="${rateUrl}" class="panel-cta">Get a Rail Rate from this Hub &rarr;</a>
+          <a href="/contact?subject=${encodeURIComponent('Lane question: ' + h.name)}" class="panel-cta panel-cta-secondary">Discuss this lane</a>
+        </div>
+      `;
+      // On mobile, scroll to the panel for visibility.
+      if (window.innerWidth < 980) {
+        document.getElementById('sidePanel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function applyFocusFromUrl() {
+      const params = new URLSearchParams(location.search);
+      const focus = params.get('focus');
+      if (!focus) return;
+      // Match by hub id, slug, or fuzzy name.
+      let hit = hubsById.get(focus);
+      if (!hit) {
+        hit = allHubs.find(h => h.slug === focus.toLowerCase());
+      }
+      if (!hit) {
+        const needle = focus.toLowerCase();
+        hit = allHubs.find(h => (h.name || '').toLowerCase().includes(needle)
+          || (h.city || '').toLowerCase().includes(needle));
+      }
+      if (hit) selectHub(hit.id);
+    }
+
+    // Kick off
+    loadData().catch(err => {
+      console.error('Failed to load commodity flow map data:', err);
+      document.getElementById('sidePanelInner').innerHTML =
+        '<p class="panel-empty">Could not load hub data. Please refresh the page.</p>';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rule 11 rail rates: how interlined split-rate moves work, why they often beat single-line rates, junction selection, and how to BoL a Rule 11 move with each carrier rated independently. Free BoL Builder with Rule 11 toggle.">
+  <meta name="keywords" content="rule 11 rail freight, rule 11 railroad, rule 11 split rates, interline rail rates, AAR rule 11, junction rate rail, two-carrier rail BoL">
+  <link rel="canonical" href="https://steelwheellogistics.com/blog/rule-11-rail-rates-explained">
+  <meta property="og:title" content="Rule 11 Rail Rates Explained: Split-Rate Moves and How to BoL Them (2026)">
+  <meta property="og:description" content="Rule 11 rail rates: how interlined split-rate moves work, why they often beat single-line rates, junction selection, and how to BoL a Rule 11 move with each carrier rated independently. Free BoL Builder with Rule 11 toggle.">
+  <meta property="og:url" content="https://steelwheellogistics.com/blog/rule-11-rail-rates-explained">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rule 11 Rail Rates Explained: Split-Rate Moves and How to BoL Them (2026)">
+  <meta name="twitter:description" content="Rule 11 rail rates: how interlined split-rate moves work, why they often beat single-line rates, junction selection, and how to BoL a Rule 11 move with each carrier rated independently. Free BoL Builder with Rule 11 toggle.">
+  <title>Rule 11 Rail Rates Explained: Split-Rate Moves and How to BoL Them (2026) | Steel Wheel Logistics</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Rule 11 Rail Rates Explained: Split-Rate Moves and How to BoL Them (2026)",
+  "description": "Rule 11 rail rates: how interlined split-rate moves work, why they often beat single-line rates, junction selection, and how to BoL a Rule 11 move with each carrier rated independently. Free BoL Builder with Rule 11 toggle.",
+  "datePublished": "2026-05-16",
+  "dateModified": "2026-05-16",
+  "author": {
+    "@type": "Organization",
+    "name": "Steel Wheel Logistics"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Steel Wheel Logistics",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://steelwheellogistics.com/images/logo-192.png"
+    }
+  },
+  "url": "https://steelwheellogistics.com/blog/rule-11-rail-rates-explained",
+  "image": [
+    "https://steelwheellogistics.com/images/logo-192.png"
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://steelwheellogistics.com/blog/rule-11-rail-rates-explained"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Rule 11 in railroad freight?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rule 11 is an AAR rule that lets two or more railroads each publish their own independent rate for a leg of an interlined move. The shipper picks the junction; each carrier rates and invoices its own segment. The alternative is a joint through-rate where the originating carrier publishes a single rate for the entire move. Rule 11 often saves 10-30% on long-haul interlined moves by removing through-rate margin and giving the shipper junction-selection control."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does a Rule 11 move differ from a joint through-rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On Rule 11, each carrier rates and bills its own segment independently. The BoL records each segment separately with its own SCAC and rate. On a joint through-rate, the originating carrier publishes one rate covering the entire move and settles internally with the delivering carrier. Rule 11 typically has lower margin but more administrative overhead (two invoices, split liability at junction)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why are Rule 11 rates often cheaper?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Three drivers: (1) no through-rate margin or interline settlement risk allowance; (2) shipper-controlled junction selection lets you route through the most competitive interchange; (3) you negotiate each carrier separately, applying competitive pressure on each segment instead of one combined rate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I write up a Rule 11 move on a rail bill of lading?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Record each rate segment as its own row: originating SCAC + rate from origin to junction, the junction name, delivering SCAC + rate from junction to destination. Total charges sum across segments. Annotate the freight terms block with \"RULE 11 SPLIT - SEE RATE SEGMENTS.\" Tools like the Steel Wheel BoL Builder expose a Rule 11 toggle that renders the segment table automatically."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the most common Rule 11 junctions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Memphis (BNSF/UP west to NS/CSX east), St. Louis (BNSF/UP/CPKC west to NS/CSX east), Chicago (all Class I crossroads), New Orleans (BNSF/UP to NS/CSX with KCS), Birmingham (NS/CSX with western connections), and Kansas City (BNSF/UP/CPKC hub). Choice depends on commodity, equipment, and which carriers serve your origin and destination directly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the downside of Rule 11 vs a joint through-rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Three trade-offs: (1) liability under Carmack typically splits at the junction, so damage claims may need to be filed separately against the responsible carrier; (2) tracing complexity \u2014 two carrier portals instead of one (often handled by a 3PL); (3) demurrage exposure can stack if a car is held at the junction beyond the originating carrier's free time before the delivering carrier picks up."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RSWDYHVY7Z');
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog" class="active">Blog</a>
+        <a href="/courses">Courses</a>
+        <a href="/tools">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Blog Hero -->
+  <section class="blog-hero">
+    <div class="blog-breadcrumb">
+      <a href="/blog">Blog</a><span class="separator">/</span><span>Pricing & Tariffs</span>
+    </div>
+    <h1>Rule 11 Rail Rates Explained: Split-Rate Moves and How to BoL Them (2026)</h1>
+    <div class="blog-hero-meta">
+      <span>May 16, 2026</span>
+      <span class="dot">&middot;</span>
+      <span>10 min read</span>
+      <span class="dot">&middot;</span>
+      <span class="blog-tag">Pricing & Tariffs</span>
+    </div>
+  </section>
+  <!-- Article -->
+  <article class="blog-post">
+    <div class="blog-post-content">
+
+      <div class="blog-highlight">
+        <strong>Key fact:</strong> A "Rule 11" move is a multi-carrier (interlined) rail move where each carrier rates its own segment independently rather than the originating carrier publishing a joint through-rate. Shippers often save 10-30% on long-haul interlined moves by structuring Rule 11 instead of accepting the originating carrier's joint rate. The BoL records each segment separately with its own SCAC + rate.
+      </div>
+
+      <p class="blog-lead">If your move runs across two or more Class I railroads, you have a routing-and-rating choice. You can accept the originating carrier's joint through-rate (Rule 12 / single-factor), or you can structure the move as Rule 11 &mdash; each carrier prices its own leg, the rates publish independently, the BoL records each segment. For high-volume corridors that cross carrier boundaries, Rule 11 is often the cheaper option. Here's how it works.</p>
+
+      <nav class="blog-toc">
+        <div class="blog-toc-title">In This Guide</div>
+        <ol>
+          <li><a href="#what-is-rule11">What Rule 11 Actually Is</a></li>
+          <li><a href="#vs-joint">Rule 11 vs Joint Through-Rate (Rule 12)</a></li>
+          <li><a href="#why-cheaper">Why Rule 11 Is Often Cheaper</a></li>
+          <li><a href="#junction-selection">Junction Selection Matters</a></li>
+          <li><a href="#concrete-example">Concrete Example: BNSF + NS at Memphis</a></li>
+          <li><a href="#bol-mechanics">How to BoL a Rule 11 Move</a></li>
+          <li><a href="#trade-offs">Trade-offs: Liability, Tracing, Demurrage</a></li>
+          <li><a href="#bol-builder">Using the Free BoL Builder for Rule 11</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="what-is-rule11">What Rule 11 Actually Is</h2>
+
+      <p>Rule 11 is an AAR rule (codified in the rail tariff publication system) that lets two or more railroads each publish their own independent rate for a leg of an interlined move. Each carrier handles its own pricing, billing, and customer relationship for the segment it controls. The shipper receives separate invoices from each carrier &mdash; or, in modern practice, a consolidated invoice from a logistics provider that pre-pays each carrier and rolls them up.</p>
+
+      <p>Compare this to a <strong>joint through-rate</strong> (the more traditional way of pricing interline moves), where the originating carrier publishes a single rate that covers the entire move and then settles internally with the delivering carrier via per-revenue-mile-allocation or interline accounting. The shipper sees one rate, gets one invoice, deals with one carrier customer service. Easier on paper, but the joint rate sometimes carries margin that the originating carrier extracts to cover the settlement risk.</p>
+
+      <h2 id="vs-joint">Rule 11 vs Joint Through-Rate</h2>
+
+      <table style="width:100%; border-collapse:collapse; margin:1rem 0;">
+        <thead>
+          <tr style="background:#1a3d6c; color:white;">
+            <th style="padding:0.6rem; text-align:left; border:1px solid #ccc;"></th>
+            <th style="padding:0.6rem; text-align:left; border:1px solid #ccc;">Rule 11 (split)</th>
+            <th style="padding:0.6rem; text-align:left; border:1px solid #ccc;">Joint Through-Rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:0.6rem; border:1px solid #ccc;"><strong>Rate structure</strong></td>
+            <td style="padding:0.6rem; border:1px solid #ccc;">Independent rate per segment</td>
+            <td style="padding:0.6rem; border:1px solid #ccc;">Single combined rate, origin to destination</td>
+          </tr>
+          <tr>
+            <td style="padding:0.6rem; border:1px solid #ccc;"><strong>Invoicing</strong></td>
+            <td style="padding:0.6rem; border:1px solid #ccc;">Separate invoices per carrier (or consolidated by 3PL)</td>
+            <td style="padding:0.6rem; border:1px solid #ccc;">Single invoice from originating carrier</td>
+          </tr>
+          <tr>
+            <td style="padding:0.6rem; border:1px solid #ccc;"><strong>Negotiation leverage</strong></td>
+            <td style="padding:0.6rem; border:1px solid #ccc;">Shipper negotiates each carrier separately</td>
+            <td style="padding:0.6rem; border:1px solid #ccc;">Single counterparty</td>
+          </tr>
+          <tr>
+            <td style="padding:0.6rem; border:1px solid #ccc;"><strong>Junction choice</strong></td>
+            <td style="padding:0.6rem; border:1px solid #ccc;">Shipper picks junction; each carrier rates to/from it</td>
+            <td style="padding:0.6rem; border:1px solid #ccc;">Originating carrier picks junction</td>
+          </tr>
+          <tr>
+            <td style="padding:0.6rem; border:1px solid #ccc;"><strong>BoL</strong></td>
+            <td style="padding:0.6rem; border:1px solid #ccc;">Multiple rate segments, each with SCAC</td>
+            <td style="padding:0.6rem; border:1px solid #ccc;">Single rate line</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="why-cheaper">Why Rule 11 Is Often Cheaper</h2>
+
+      <p>Three drivers:</p>
+
+      <h3>1. No through-rate margin</h3>
+      <p>When the originating carrier publishes a joint through-rate, it often builds in an allowance for interline settlement risk and administrative overhead. Rule 11 removes that allowance &mdash; each carrier is paid directly by the shipper and doesn't absorb settlement risk for someone else's leg.</p>
+
+      <h3>2. Shipper-controlled junction selection</h3>
+      <p>On Rule 11, the shipper picks the junction. That matters because some junctions are cheaper than others &mdash; the carriers there have less competition, more capacity, or pre-existing reciprocal switching arrangements. The originating carrier on a joint rate routes through whatever junction minimizes its own internal cost, not yours.</p>
+
+      <h3>3. Separate carrier negotiation</h3>
+      <p>You can shop your origin-to-junction segment against multiple BNSF lanes, then independently shop your junction-to-destination segment against NS or CSX lanes. On a joint rate, you negotiate against one carrier and that's it.</p>
+
+      <h2 id="junction-selection">Junction Selection Matters</h2>
+
+      <p>Common high-volume interchange points:</p>
+
+      <ul>
+        <li><strong>Memphis, TN</strong> &mdash; BNSF/UP west to NS/CSX east. One of the busiest reciprocal junctions in the system.</li>
+        <li><strong>St. Louis, MO</strong> &mdash; BNSF/UP/CPKC west to NS/CSX east.</li>
+        <li><strong>Chicago, IL</strong> &mdash; the great Class I crossroads. BRC and IHB switching add complexity but also competition.</li>
+        <li><strong>New Orleans, LA</strong> &mdash; gateway between BNSF/UP and NS/CSX with KCS connections.</li>
+        <li><strong>Birmingham, AL</strong> &mdash; NS/CSX with western connections via BNSF and UP.</li>
+        <li><strong>Kansas City, MO/KS</strong> &mdash; major BNSF/UP/CPKC hub.</li>
+      </ul>
+
+      <p>Switching costs and dwell time at each junction vary. For a sensitive move, ask each carrier for an indicative rate at each candidate junction before locking the routing. Our <a href="/tools/rail-rate-quote">free rail rate quote tool</a> returns indicative carload estimates and supports Rule 11 routing scenarios.</p>
+
+      <h2 id="concrete-example">Concrete Example: BNSF + NS at Memphis</h2>
+
+      <p>Shipper moves 5 covered hopper cars of corn from Wichita, KS to Atlanta, GA &mdash; roughly 1,000 miles total. Carrier coverage: BNSF handles Wichita; NS handles Atlanta. Memphis is the natural junction.</p>
+
+      <p><strong>Joint through-rate from BNSF:</strong> $4,800/car, single invoice.</p>
+
+      <p><strong>Rule 11 alternative:</strong></p>
+      <ul>
+        <li>BNSF: Wichita to Memphis, $2,400/car</li>
+        <li>NS: Memphis to Atlanta, $2,000/car</li>
+        <li>Total: $4,400/car &mdash; $400 (8%) cheaper than the joint rate</li>
+      </ul>
+
+      <p>Over 60 cars/year, that's $24,000 in savings on a single lane. On busier corridors with higher volumes, the % savings can range higher.</p>
+
+      <p>Caveat: the Rule 11 number above assumes the shipper can secure the NS rate directly. Some shippers don't have NS direct accounts and have to route the Rule 11 through a 3PL or rail broker. That intermediation has its own cost (typically $50-150/car). When the volume is right, it still pencils out.</p>
+
+      <h2 id="bol-mechanics">How to BoL a Rule 11 Move</h2>
+
+      <p>The BoL for a Rule 11 move records each rate segment separately:</p>
+      <ul>
+        <li><strong>Originating carrier SCAC + rate</strong> &mdash; in the example above: BNSF, $2,400/car, Wichita to Memphis</li>
+        <li><strong>Junction</strong> &mdash; Memphis, TN</li>
+        <li><strong>Delivering carrier SCAC + rate</strong> &mdash; NS, $2,000/car, Memphis to Atlanta</li>
+        <li><strong>Total charges</strong> &mdash; sum of segments</li>
+        <li><strong>Annotation</strong> &mdash; "RULE 11 SPLIT &mdash; SEE RATE SEGMENTS" in the freight terms block</li>
+      </ul>
+
+      <p>The originating carrier's electronic waybill will reference the Rule 11 designation and the segment break at the junction. Each carrier issues its own invoice (or, for shippers using a 3PL, the 3PL pre-pays each and rolls up).</p>
+
+      <h2 id="trade-offs">Trade-offs: Liability, Tracing, Demurrage</h2>
+
+      <p>Rule 11 has costs not just savings:</p>
+
+      <ul>
+        <li><strong>Liability gaps:</strong> on a joint through-rate, the originating carrier is generally liable for the entire move under Carmack. On Rule 11, liability splits at the junction &mdash; you may have to file a claim against the delivering carrier separately if damage occurs after handoff.</li>
+        <li><strong>Tracing complexity:</strong> two carrier customer service portals to monitor instead of one. Most 3PLs and rail logistics providers handle the unified tracing for shippers.</li>
+        <li><strong>Demurrage exposure:</strong> demurrage rules and free time may differ between carriers. If a car is held at the junction beyond the originating carrier's free time, you may incur demurrage on the BNSF segment even though the NS hasn't picked up yet. Our <a href="/tools/demurrage-calculator">demurrage calculator</a> models this exposure across multiple carrier rate structures.</li>
+      </ul>
+
+      <h2 id="bol-builder">Using the Free BoL Builder for Rule 11</h2>
+
+      <p>The free <a href="/tools/rail-bol-builder">Rail Bill of Lading Builder</a> exposes a "Rule 11 Split" toggle in the freight-terms block. When enabled:</p>
+      <ul>
+        <li>The BoL renders a segment table with 2+ rows.</li>
+        <li>Each row captures originating SCAC, delivering SCAC, junction, and rate.</li>
+        <li>The PDF renders "RULE 11 SPLIT &mdash; SEE RATE SEGMENTS" in the freight terms block.</li>
+        <li>The total charges line auto-sums across segments.</li>
+        <li>Junction dropdown pre-populates with the high-volume interchange list.</li>
+      </ul>
+
+      <p>For shippers comparing joint-rate vs Rule 11 quotes side-by-side, our <a href="/tools/rail-rate-quote">free rail rate quote tool</a> returns indicative estimates that you can stack against carrier-quoted joint rates. If you're running consistent volume across two carriers, the Rule 11 math is worth checking on every lane. <a href="/tools/rail-bol-builder">Open the BoL Builder &rarr;</a></p>
+
+      <section class="blog-faq" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <h3>What is Rule 11 in railroad freight?</h3>
+          <p>Rule 11 is an AAR rule that lets two or more railroads each publish their own independent rate for a leg of an interlined move. The shipper picks the junction; each carrier rates and invoices its own segment. The alternative is a joint through-rate where the originating carrier publishes a single rate for the entire move. Rule 11 often saves 10-30% on long-haul interlined moves by removing through-rate margin and giving the shipper junction-selection control.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How does a Rule 11 move differ from a joint through-rate?</h3>
+          <p>On Rule 11, each carrier rates and bills its own segment independently. The BoL records each segment separately with its own SCAC and rate. On a joint through-rate, the originating carrier publishes one rate covering the entire move and settles internally with the delivering carrier. Rule 11 typically has lower margin but more administrative overhead (two invoices, split liability at junction).</p>
+        </div>
+        <div class="faq-item">
+          <h3>Why are Rule 11 rates often cheaper?</h3>
+          <p>Three drivers: (1) no through-rate margin or interline settlement risk allowance; (2) shipper-controlled junction selection lets you route through the most competitive interchange; (3) you negotiate each carrier separately, applying competitive pressure on each segment instead of one combined rate.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do I write up a Rule 11 move on a rail bill of lading?</h3>
+          <p>Record each rate segment as its own row: originating SCAC + rate from origin to junction, the junction name, delivering SCAC + rate from junction to destination. Total charges sum across segments. Annotate the freight terms block with "RULE 11 SPLIT - SEE RATE SEGMENTS." Tools like the Steel Wheel BoL Builder expose a Rule 11 toggle that renders the segment table automatically.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What are the most common Rule 11 junctions?</h3>
+          <p>Memphis (BNSF/UP west to NS/CSX east), St. Louis (BNSF/UP/CPKC west to NS/CSX east), Chicago (all Class I crossroads), New Orleans (BNSF/UP to NS/CSX with KCS), Birmingham (NS/CSX with western connections), and Kansas City (BNSF/UP/CPKC hub). Choice depends on commodity, equipment, and which carriers serve your origin and destination directly.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What's the downside of Rule 11 vs a joint through-rate?</h3>
+          <p>Three trade-offs: (1) liability under Carmack typically splits at the junction, so damage claims may need to be filed separately against the responsible carrier; (2) tracing complexity &mdash; two carrier portals instead of one (often handled by a 3PL); (3) demurrage exposure can stack if a car is held at the junction beyond the originating carrier's free time before the delivering carrier picks up.</p>
+        </div>
+      </section>
+
+    <div class="blog-cta">
+      <h3>Generate Your Rail Bill of Lading in 60 Seconds &mdash; Free</h3>
+      <p>Stop assembling BoLs from PDF scans and spreadsheets. Our free <a href="/tools/rail-bol-builder">Rail Bill of Lading Builder</a> renders an AAR-compliant, hazmat-ready BoL with §172.204 certification, §172.604 emergency phone block, and Section 7 non-recourse signature line built in. Email-gated PDF download. No account needed.</p>
+      <a href="/tools/rail-bol-builder" class="btn btn-primary">Open the BoL Builder &rarr;</a>
+      <p style="margin-top:0.75rem; font-size:0.95rem;">Questions on a complex hazmat or cross-border move? Call <a href="tel:+16018212199">(601) 821-2199</a>.</p>
+    </div>
+    </div>
+
+    <!-- Author -->
+    <div class="blog-author">
+      <div class="blog-author-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+      </div>
+      <div class="blog-author-info">
+        <div class="blog-author-name">Steel Wheel Logistics</div>
+        <div class="blog-author-bio">We coordinate bulk rail freight across North America &mdash; from rate negotiation and car sourcing to transload coordination, BoL preparation, and tracking. Based in Mississippi, serving shippers nationwide.</div>
+      </div>
+    </div>
+
+    <!-- Related Articles -->
+    <div class="blog-related">
+      <h3>Keep Reading</h3>
+      <ul>
+        <li><a href="/blog/rail-bill-of-lading-template">Free Rail Bill of Lading Template (2026) + Field-by-Field Walkthrough</a></li>
+        <li><a href="/blog/rail-bill-of-lading-vs-waybill">Rail Bill of Lading vs Waybill: What's the Difference?</a></li>
+        <li><a href="/blog/hazmat-rail-bill-of-lading-49-cfr-172">Hazmat Rail Bill of Lading: 49 CFR 172 Compliance Guide (2026)</a></li>
+        <li><a href="/blog/section-7-no-recourse-post-2021">Section 7 / No-Recourse: How Consignor Liability Works After the 2021 NMFTA Change</a></li>
+        <li><a href="/blog/order-bill-of-lading-vs-straight-bill-of-lading">Order Bill of Lading vs Straight Bill of Lading on Rail Moves</a></li>
+        <li><a href="/blog/consignee-vs-care-of-party-rail">Consignee vs Care-of Party on a Rail Bill of Lading</a></li>
+        <li><a href="/blog/cross-border-rail-bill-of-lading-mexico">Cross-Border Rail Bill of Lading to Mexico: Carta Porte 3.1, Pedimento, and AES</a></li>
+        <li><a href="/blog/cross-border-rail-bill-of-lading-canada">Cross-Border Rail Bill of Lading to Canada: CARM, ACI eManifest, and USMCA</a></li>
+      </ul>
+    </div>
+
+    <div class="blog-back">
+      <a href="/blog">&larr; Back to All Posts</a>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/tools">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

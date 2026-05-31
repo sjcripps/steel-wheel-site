@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 6: Surviving PSR — Steel Wheel Logistics</title>
+<meta name="description" content="Precision Scheduled Railroading changed everything. Learn what PSR means for shippers, how it affects service, and practical strategies to adapt your operations.">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+<link rel="canonical" href="https://steelwheellogistics.com/courses/surviving-psr">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  :root {
+    --brand-navy: #1a2332;
+    --brand-steel: #2d3e50;
+    --brand-blue: #3b82f6;
+    --brand-blue-light: #dbeafe;
+    --brand-orange: #f59e0b;
+    --brand-orange-light: #fef3c7;
+    --brand-green: #10b981;
+    --brand-green-light: #d1fae5;
+    --text-primary: #1a1a2e;
+    --text-secondary: #4a5568;
+    --text-muted: #718096;
+    --bg-white: #ffffff;
+    --bg-light: #f7f8fc;
+    --border: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-white);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  .container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, var(--brand-navy) 0%, var(--brand-steel) 100%);
+    color: white;
+    padding: 64px 0 56px;
+    text-align: center;
+  }
+  .hero .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.9);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .hero h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 12px; }
+  .hero .subtitle { font-size: 1.15rem; color: rgba(255,255,255,0.8); font-weight: 400; margin-bottom: 8px; }
+  .hero .brand { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 24px; }
+
+  /* Video */
+  .video-section {
+    margin: 32px 0 40px;
+    padding: 24px;
+    background: var(--bg-light);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+  .video-section h3 {
+    font-size: 1.1rem; font-weight: 600; color: var(--text-primary);
+    margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+  }
+  .video-section video { width: 100%; border-radius: 8px; background: #000; }
+  .video-section .video-note { margin-top: 10px; font-size: 0.85rem; color: var(--text-muted); }
+
+  /* Scope setter */
+  .scope-setter {
+    background: var(--brand-blue-light);
+    border-left: 4px solid var(--brand-blue);
+    border-radius: 0 8px 8px 0;
+    padding: 24px 28px;
+    margin: 40px 0 32px;
+  }
+  .scope-setter h3 { font-size: 1.05rem; font-weight: 700; color: var(--brand-steel); margin-bottom: 12px; }
+  .scope-setter ul { list-style: none; padding: 0; }
+  .scope-setter li {
+    padding: 4px 0 4px 24px; position: relative;
+    color: var(--text-secondary); font-size: 0.95rem;
+  }
+  .scope-setter li::before { content: "\2713"; position: absolute; left: 0; color: var(--brand-green); font-weight: 700; }
+
+  /* Outline */
+  .outline { display: grid; gap: 20px; margin: 32px 0 48px; }
+  .outline-card {
+    background: var(--bg-light); border: 1px solid var(--border);
+    border-radius: 10px; padding: 24px;
+  }
+  .outline-card h4 {
+    font-size: 0.9rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; color: var(--brand-blue);
+  }
+
+  /* Part dividers */
+  .part-divider {
+    background: var(--brand-navy); color: white; text-align: center;
+    padding: 48px 0; margin: 56px 0 40px; border-radius: 12px;
+  }
+  .part-divider .part-label {
+    font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;
+    color: var(--brand-orange); font-weight: 600; margin-bottom: 8px;
+  }
+  .part-divider h2 { font-size: 1.8rem; font-weight: 800; }
+  .part-divider .part-sub { font-size: 0.95rem; color: rgba(255,255,255,0.6); margin-top: 8px; }
+
+  /* Sections */
+  section { margin-bottom: 48px; }
+  section h2 {
+    font-size: 1.5rem; font-weight: 700; color: var(--brand-navy);
+    margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--border);
+  }
+  section p { color: var(--text-secondary); margin-bottom: 14px; font-size: 0.97rem; }
+  section ul { padding-left: 24px; margin-bottom: 16px; }
+  section li { color: var(--text-secondary); margin-bottom: 6px; font-size: 0.95rem; }
+  section li strong { color: var(--text-primary); }
+
+  /* Navigation */
+  .module-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 32px 0; margin-top: 48px;
+    border-top: 2px solid var(--border);
+    gap: 16px; flex-wrap: wrap;
+  }
+  .module-nav a {
+    color: var(--brand-blue); text-decoration: none; font-weight: 600;
+    font-size: 0.95rem; transition: color 0.2s;
+  }
+  .module-nav a:hover { color: #2563eb; }
+  .module-nav .nav-prev { text-align: left; }
+  .module-nav .nav-next { text-align: right; margin-left: auto; }
+
+  /* Header */
+  .site-header { background: #fff; border-bottom: 1px solid var(--border); padding: 0.75rem 1.5rem; position: sticky; top: 0; z-index: 100; }
+  .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+  .logo-name { font-weight: 700; font-size: 1.1rem; color: #1a2332; }
+  .logo-tagline { font-size: 0.75rem; color: #64748b; display: block; }
+  .main-nav { display: flex; gap: 1.5rem; }
+  .main-nav a { color: #475569; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+  .main-nav a:hover, .main-nav a.active { color: #3b82f6; }
+  .nav-toggle { display: none; }
+  @media (max-width: 768px) {
+    .nav-toggle { display: block; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-toggle span { display: block; width: 22px; height: 2px; background: #475569; margin: 5px 0; }
+    .main-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; flex-direction: column; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); }
+    .main-nav.open { display: flex; }
+  }
+
+  /* Footer */
+  .site-footer { background: #1a2332; color: #94a3b8; padding: 2rem 1.5rem; margin-top: 4rem; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { color: #94a3b8; text-decoration: none; font-size: 0.85rem; }
+  .footer-links a:hover { color: #fff; }
+</style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RSWDYHVY7Z');
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog">Blog</a>
+        <a href="/courses" class="active">Courses</a>
+        <a href="/tools">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="container">
+      <div class="badge">Module 6 of 10</div>
+      <h1>Surviving PSR</h1>
+      <p class="subtitle">The Shipper&#x27;s Playbook</p>
+      <p class="brand">Steel Wheel Logistics | Bulk Rail Freight Mastery</p>
+    </div>
+  </div>
+
+  <div class="container">
+    
+    <div class="video-section">
+      <h3>📹 Watch the Full Module</h3>
+      <video controls preload="metadata" playsinline poster="/media/module-6-surviving-psr-thumb.jpg">
+        <source src="/media/module-6-surviving-psr.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="video-note">Narrated lecture with slides. 19MB</p>
+    </div>
+    
+    <div class="scope-setter">
+      <h3>What This Module Covers</h3>
+      <ul><li>What PSR actually is and why every Class I adopted it</li><li>Impact on shippers</li><li>How PSR prioritizes traffic types</li><li>Adapting your operations to the new reality</li><li>Working with your railroad rep under PSR</li><li>Short-line alternatives for carload freight</li><li>The STB&#x27;s role</li><li>Shipper advocacy organizations</li></ul>
+    </div>
+    
+    <div class="outline" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+      <div class="outline-card"><h4>Understanding PSR</h4></div><div class="outline-card"><h4>Adapting Your Operations</h4></div>
+    </div>
+    
+    <div class="part-divider">
+      <div class="part-label">Part A</div>
+      <h2>Understanding PSR</h2>
+      <div class="part-sub">What it is, why it happened, and what it means for shippers</div>
+    </div>
+    <section>
+      <h2>What Is Precision Scheduled Railroading?</h2>
+      <ul><li>Operating philosophy created by Hunter Harrison (Illinois Central, CN, CSX, CP)</li><li>Core principle: move cars on a fixed schedule, not when a train is &#x27;full enough&#x27;</li><li>Every asset (car, locomotive, crew, track) must be utilized to maximum efficiency</li><li>Reduces classification yard operations — cars go point-to-point where possible</li><li>Fewer, longer trains replace many shorter trains</li><li>Aggressive cost reduction: headcount, yards, assets, complexity</li><li>Wall Street LOVES it: operating ratios dropped from 70%+ to sub-60%</li><li>Adopted by ALL 6 Class I railroads between 2012-2020</li></ul>
+    </section>
+    <section>
+      <h2>PSR Impact: What It Costs YOU (2017-2025)</h2>
+      <ul><li>Transit Time. +20-40%</li><li>Carload shipments take longer</li><li>Fewer trains, longer routes</li><li>Yard closures add miles</li><li>Plan for 7-14 day manifest moves</li><li>Yards Closed. ~100+</li><li>Classification yards shuttered</li><li>Fewer sorting points</li><li>Longer yard-to-yard hauls</li><li>Some reopened under pressure</li><li>Demurrage Costs. +71%</li><li>Industry-wide surge in charges</li><li>Aggressive constructive placement</li><li>Less free time at many facilities</li><li>Avg shipper: $50K-$200K/yr more</li><li>Carload Volume. -15%</li><li>Manifest traffic declined</li><li>Some shippers left for truck</li><li>Service quality dropped</li><li>PSR shed &#x27;unprofitable&#x27; traffic</li></ul>
+    </section>
+    <section>
+      <h2>How PSR Prioritizes Your Traffic</h2>
+      <p>Traffic Type. PSR Priority. Avg Transit. Rate Trend. Multimodal. HIGHEST. Scheduled. Stable. Unit Train. HIGH. 2-5 days. Competitive. Multi-Car Block. MEDIUM. 5-8 days. Rising. Single Carload. LOW. 7-14 days. Rising fast. Short-Haul Carload. LOWEST. 7-21 days. Pushed to truck.</p>
+    </section>
+    <section>
+      <h2>&quot;Rates Are Up and Service Is Down&quot; — The Shipper Experience</h2>
+      <ul><li>TRANSIT TIME: Carload shipments take 20-40% longer than pre-PSR</li><li>RELIABILITY: On-time performance has dropped; ETAs are less trustworthy</li><li>DEMURRAGE: Charges up 71% as railroads monetize dwell more aggressively</li><li>CAR SUPPLY: Fewer railroad-owned cars available; private car fleets now essential</li><li>SWITCHING: Some local service reduced to 3x/week or less (was daily)</li><li>YARD CLOSURES: Your car may now travel 200+ extra miles to reach a yard</li><li>SMALL SHIPPERS: Hit hardest — not enough volume to get attention</li><li>The fundamental tension: railroads optimized for shareholders, not shippers</li></ul>
+    </section>
+    <div class="part-divider">
+      <div class="part-label">Part B</div>
+      <h2>Adapting Your Operations</h2>
+      <div class="part-sub">Practical strategies for surviving and thriving under PSR</div>
+    </div>
+    <section>
+      <h2>PSR Impact &amp; Shipper Response</h2>
+      <ul><li>What PSR Costs Shippers</li><li>Demurrage up 71% — longer cycles, tighter free time</li><li>Transit adds 20-40% — manifest moves now 7-14 days</li><li>Inventory carrying costs up — need more safety stock</li><li>Car supply squeezed — must lease private fleet</li><li>Truck backup spend — critical lanes need Plan B</li><li>Lost customers — service failures drive buyers away. ⚙️</li><li>Operational Wins You Control</li><li>Faster car turns cut demurrage immediately</li><li>Predictable loading windows earn railroad priority</li><li>Buffer inventory absorbs transit variability</li><li>Private fleet leasing gives car supply independence</li><li>Pre-stage inbound/outbound to reduce dwell to zero</li><li>Invest in siding upgrades for faster throughput. 💪</li><li>How to Win Back Rate &amp; Service</li><li>Volume commitments unlock 10-20% rate discounts</li><li>Service-level agreements with penalty clauses</li><li>Short-line alternatives for carload freight</li><li>STB complaint leverage (R/VC 180% threshold)</li><li>Document every failure — data wins negotiations</li><li>Join NITL/MARS for collective shipper voice</li></ul>
+    </section>
+    <section>
+      <h2>Working With Your Railroad Rep Under PSR</h2>
+      <ul><li>What They CAN Do</li><li>Escalate specific service issues</li><li>Negotiate rate structures and terms</li><li>Provide car supply commitments (with volume)</li><li>Adjust placement schedules</li><li>Waive or reduce demurrage (case by case)</li><li>Connect you with operations team for problem-solving</li><li>What They CAN&#x27;T Do</li><li>Override the operating plan (trains run on schedule)</li><li>Guarantee manifest transit times (too many variables)</li><li>Provide unlimited car supply (fleet is sized tighter)</li><li>Reopen closed yards or restore daily switching</li><li>Lower rates below their cost floor</li><li>Change PSR — it&#x27;s a corporate philosophy, not a policy</li></ul>
+    </section>
+    <section>
+      <h2>The Short-Line Alternative</h2>
+      <ul><li>Short-line railroads often provide BETTER carload service than Class I under PSR</li><li>They&#x27;re in the carload business — it&#x27;s their entire revenue model</li><li>More flexible switching schedules (daily service is common)</li><li>Better communication and responsiveness (you know the GM by name)</li><li>Can provide transload and terminal services that Class I&#x27;s have cut</li><li>Often competitive on rates for short-haul and regional moves. 603 short lines across North America — check if one serves your area</li><li>Limitation: they interchange with Class I for long-haul, so transit time still depends on the Class I</li></ul>
+    </section>
+    <section>
+      <h2>The STB&#x27;s Role: Your Regulatory Backstop</h2>
+      <ul><li>Surface Transportation Board: federal agency regulating railroad rates and service</li><li>Common Carrier Obligation: railroads MUST provide service to any shipper who requests it</li><li>Rate Reasonableness Challenge: captive shippers can challenge rates above R/VC 180%</li><li>Competitive Switching: proposed rule allowing shipper access to a second carrier ($3-5K switching fee)</li><li>Reciprocal Switching: Canada already has this; US is debating it under current STB chair</li><li>Service complaints: STB can investigate and order railroads to improve service</li><li>Reality check: STB proceedings are expensive ($500K-$2M+) and slow (years)</li><li>But the THREAT of an STB complaint has negotiating value — railroads know the rules</li></ul>
+    </section>
+    <section>
+      <h2>Shipper Advocacy Organizations</h2>
+      <p>🏛️. NITL. National Industrial Transportation League. Largest shipper advocacy group. Lobbies Congress and STB. Annual conference with railroads. Rate and service benchmarking. Legal resources for rate challenges. 🏭. MARS. Manufacturers Alliance for Rail Shippers. Focus on captive shipper issues. Competitive switching advocacy. Coalition with agricultural shippers. Testifies at STB hearings. Strong chemical industry participation. 🗺️. NEARS. NE Association of Rail Shippers. Regional focus (NE corridor). Ports and multimodal issues. Smaller, more accessible. Good networking for eastern shippers. Annual meeting and workshops.</p>
+    </section>
+    <section>
+      <h2>PSR Survival Checkpoint</h2>
+      <p>✓ You understand what PSR is and why railroads adopted it. ✓ You know how PSR prioritizes traffic (multimodal &gt; unit &gt; carload). ✓ You can adapt your operations: faster turns, buffer inventory, predictable loading. ✓ You know when short-line railroads are a better option. ✓ You understand the STB&#x27;s role and when to use it as leverage. ✓ You know the major shipper advocacy organizations and their focus.</p>
+    </section>
+    <section>
+      <h2>📋 Practical Exercise: PSR Impact Assessment</h2>
+      <ul><li>Evaluate your current rail service under PSR:. 1</li><li>Pull your transit time data for the past 12 months. - Average transit time by lane | On-time percentage | Trend (improving/declining?). 2</li><li>Pull your demurrage data for the same period. - Monthly charges | Root causes | Trend. 3</li><li>Document service issues: missed switches, late deliveries, car shortages. 4</li><li>Calculate the total PSR cost impact:. - Increased transit time x inventory carrying cost. - Demurrage increase vs. 3 years ago. - Additional fleet leasing to compensate for longer cycles. 5</li><li>Identify your top 3 adaptation priorities. 6</li><li>Build a 90-day action plan with specific, measurable targets</li></ul>
+    </section>
+    <section>
+      <h2>STUDY GUIDE</h2>
+      <p>Module 6 Review. Key Terms • Review Questions • Practical Assignments.</p>
+    </section>
+    <section>
+      <h2>Key Terms</h2>
+      <ul><li>Precision Scheduled Railroading — efficiency-focused operating model</li><li>Operating Ratio</li><li>Operating expenses / revenue; PSR targets sub-60%</li><li>Manifest Train</li><li>Mixed-commodity train; most affected by PSR cuts</li><li>Competitive Switching</li><li>Proposed rule allowing access to a second railroad carrier</li><li>Common Carrier Obligation</li><li>Railroad&#x27;s legal duty to serve any shipper requesting service</li><li>Surface Transportation Board — federal railroad regulator</li><li>National Industrial Transportation League — shipper advocacy</li><li>Hunter Harrison</li><li>Railroad executive who created PSR (IC, CN, CSX, CP)</li><li>Reciprocal Switching</li><li>Mandatory interchange access between carriers (exists in Canada)</li></ul>
+    </section>
+    <section>
+      <h2>Review Questions</h2>
+      <p>1. What is PSR and who created it?. 2. Why did Wall Street push railroads to adopt PSR?. 3. How does PSR prioritize different types of rail traffic?. 4. What operational changes can shippers make to adapt to PSR?. 5. When is a short-line railroad a better option than a Class I?. 6. What is competitive switching and why do shippers want it?. 7. What is the common carrier obligation and how does it protect shippers?. 8. Name the 3 major shipper advocacy organizations and their focus areas.</p>
+    </section>
+    <section>
+      <h2>Practical Assignment</h2>
+      <ul><li>Step 1: Collect your rail service data: transit times, on-time %, demurrage, car supply issues</li><li>Step 2: Calculate the financial impact of PSR on your operations (vs. 3 years ago)</li><li>Step 3: Identify which of your lanes are most affected by PSR (longest delays, highest demurrage)</li><li>Step 4: Research short-line alternatives for your worst-performing lanes</li><li>Step 5: Draft a service improvement request letter to your railroad representative</li><li>Step 6: Join (or research) NITL or MARS — attend their next meeting or webinar</li><li>Step 7: Build a 90-day PSR adaptation plan with measurable targets</li><li>Step 8: Present your findings and plan to your supply chain leadership team</li></ul>
+    </section>
+    <section>
+      <h2>Key Takeaways</h2>
+      <p>✅ PSR is permanent — every Class I has adopted it and Wall Street demands it continue. ✅ Carload shippers are the most affected: longer transit, higher demurrage, less reliability. ✅ Adapt your operations: faster car turns, buffer inventory, predictable loading windows. ✅ Short-line railroads are often the best option for carload freight under PSR. ✅ Document every service failure — you need data for negotiations and STB complaints. ✅ The STB is your regulatory backstop, but proceedings are expensive and slow. ✅ Shipper advocacy matters — NITL, MARS, and NEARS give you a collective voice. ✅ The best defense is operational excellence + commercial leverage + regulatory awareness.</p>
+    </section>
+    <section>
+      <h2>COMING UP NEXT</h2>
+      <ul><li>Module 7: Bulk Commodity Deep Dives</li><li>Each commodity has its own rules</li><li>Learn yours</li></ul>
+    </section>
+
+    <div class="module-nav">
+      <a href="/courses/transloading" class="nav-prev">← Module 5: Transloading</a>
+      <a href="/courses" style="color: var(--text-muted);">All Modules</a>
+      <a href="/courses/bulk-commodity-deep-dives" class="nav-next">Module 7: Bulk Commodity Deep Dives →</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/tools">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

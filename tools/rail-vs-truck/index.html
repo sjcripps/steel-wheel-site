@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free Rail-vs-Truck Mode-Shift Calculator — compare rail and truck per-load cost, annual spend, and CO2e emissions on any U.S. lane. Steel Wheel Logistics.">
+  <title>Rail-vs-Truck Mode-Shift Calculator | Steel Wheel Logistics</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <link rel="canonical" href="https://steelwheellogistics.com/tools/rail-vs-truck">
+  <meta property="og:title" content="Rail-vs-Truck Mode-Shift Calculator | Steel Wheel Logistics">
+  <meta property="og:description" content="Free indicative comparison of rail vs truck cost + emissions on any U.S. lane. URCS rail costs + DAT spot-market trucking + EPA SmartWay 2024 factors.">
+  <meta property="og:url" content="https://steelwheellogistics.com/tools/rail-vs-truck">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+  <style>
+    /* Mode-Shift Calculator styles. Mirror the demurrage-calculator + rail-
+       rate-quote tools so the customer feels one product family. If brand
+       colors / radii change in those siblings, sync here too. */
+    .tool-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 48px 20px;
+      text-align: center;
+    }
+    .tool-hero h1 {
+      color: var(--white);
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .tool-hero p {
+      color: var(--steel-grey);
+      font-size: 1.05rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .tool-hero .badge {
+      display: inline-block;
+      background: rgba(74, 144, 217, 0.15);
+      color: var(--steel-blue);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tool-layout {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    .quote-form {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .quote-form h2 {
+      font-size: 1.3rem;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--light-grey);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 640px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+    .form-group { display: flex; flex-direction: column; }
+    .form-group.full-width { grid-column: 1 / -1; }
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .form-group label .hint {
+      font-weight: 400;
+      color: var(--text-light);
+      font-size: 0.8rem;
+    }
+    .form-group select,
+    .form-group input[type="text"],
+    .form-group input[type="number"] {
+      padding: 10px 12px;
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      background: var(--white);
+      transition: border-color 0.2s;
+    }
+    .form-group select:focus,
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--steel-blue);
+      box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.1);
+    }
+
+    /* City typeahead — copied verbatim from rail-rate-quote so the UX
+       reads identically across both tools. */
+    .city-typeahead { position: relative; }
+    .city-suggest {
+      position: absolute;
+      top: calc(100% + 2px);
+      left: 0;
+      right: 0;
+      max-height: 280px;
+      overflow-y: auto;
+      margin: 0;
+      padding: 4px 0;
+      list-style: none;
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      z-index: 30;
+    }
+    .city-suggest li {
+      padding: 8px 14px;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+    .city-suggest li:hover,
+    .city-suggest li.active {
+      background: #eef3f9;
+      color: var(--steel-blue-dark);
+    }
+    .city-suggest li .city-pop {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      flex-shrink: 0;
+    }
+    .city-suggest .city-empty {
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      cursor: default;
+    }
+
+    /* Volume-mode toggle (carloads vs tons). */
+    .volume-toggle {
+      display: inline-flex;
+      gap: 0;
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 6px;
+    }
+    .volume-toggle button {
+      background: var(--white);
+      color: var(--text-dark);
+      border: none;
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .volume-toggle button.active {
+      background: var(--steel-blue);
+      color: var(--white);
+    }
+    .volume-toggle button:not(.active):hover {
+      background: var(--light-grey);
+    }
+
+    .submit-row {
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .submit-btn {
+      background: var(--steel-blue);
+      color: var(--white);
+      border: none;
+      padding: 12px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .submit-btn:hover { background: var(--steel-blue-dark); }
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .submit-btn .spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: var(--white);
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .error-msg {
+      color: var(--error-red);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .loading-panel {
+      display: none;
+      margin-top: 24px;
+      padding: 32px 24px;
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .loading-panel.active { display: block; }
+    .loading-panel .big-spinner {
+      display: inline-block;
+      width: 48px;
+      height: 48px;
+      border: 4px solid #e6ebf2;
+      border-top-color: var(--steel-blue);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 16px;
+    }
+    .loading-panel .loading-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--steel-blue-dark);
+      margin: 0 0 6px;
+    }
+    .loading-panel .loading-step {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin: 0;
+      min-height: 1.4em;
+    }
+
+    .results-section {
+      margin-top: 40px;
+      display: none;
+    }
+    .results-section.visible { display: block; }
+    .result-card {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .result-card h2 {
+      font-size: 1.25rem;
+      margin-bottom: 4px;
+    }
+    .result-summary {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+
+    /* Headline cells: 3-up, with the savings cell as the primary call-out. */
+    .headline-block {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 720px) {
+      .headline-block { grid-template-columns: 1fr; }
+    }
+    .estimate-cell {
+      background: var(--light-grey);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+    .estimate-cell.primary {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: var(--white);
+    }
+    .estimate-cell.win {
+      background: linear-gradient(135deg, #1a6b3f 0%, #228b57 100%);
+      color: var(--white);
+    }
+    .estimate-cell .label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+    .estimate-cell.primary .label,
+    .estimate-cell.win .label { color: rgba(255,255,255,0.78); }
+    .estimate-cell .value {
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.1;
+    }
+    .estimate-cell.primary .value,
+    .estimate-cell.win .value { color: var(--white); }
+    .estimate-cell .sub {
+      font-size: 0.82rem;
+      margin-top: 4px;
+      color: var(--text-light);
+    }
+    .estimate-cell.primary .sub,
+    .estimate-cell.win .sub { color: rgba(255,255,255,0.85); }
+
+    /* Comparison table for per-load + annual breakdown. */
+    .comparison-table {
+      margin: 0 0 24px;
+      font-size: 0.92rem;
+    }
+    .comparison-table h3 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+    .comparison-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--light-grey);
+    }
+    .comparison-table th {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: var(--text-light);
+      font-weight: 600;
+      background: var(--light-grey);
+    }
+    .comparison-table td.num,
+    .comparison-table th.num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .comparison-table tr.total-row td {
+      font-weight: 700;
+      background: rgba(74, 144, 217, 0.06);
+      border-top: 2px solid var(--steel-blue);
+    }
+    .comparison-table .delta-up { color: var(--error-red); font-weight: 600; }
+    .comparison-table .delta-down { color: #1a6b3f; font-weight: 600; }
+    .comparison-table .delta-flat { color: var(--text-light); }
+
+    .emissions-block {
+      margin: 0 0 24px;
+      padding: 18px 20px;
+      background: rgba(34, 139, 87, 0.06);
+      border-left: 3px solid #228b57;
+      border-radius: 6px;
+    }
+    .emissions-block h3 {
+      font-size: 1rem;
+      margin: 0 0 10px;
+      color: #1a6b3f;
+    }
+    .emissions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+      margin-top: 8px;
+    }
+    @media (max-width: 640px) {
+      .emissions-grid { grid-template-columns: 1fr; }
+    }
+    .emissions-cell .label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 2px;
+    }
+    .emissions-cell .value {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .lane-summary {
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--light-grey);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .lane-summary .lane-cities {
+      flex: 1;
+      min-width: 240px;
+    }
+    .lane-summary .lane-cities .od-pair {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+    .lane-summary .lane-cities .od-arrow {
+      color: var(--steel-blue);
+      margin: 0 8px;
+    }
+    .lane-summary .lane-cities .lane-meta {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+    .lane-summary .lane-miles {
+      text-align: right;
+    }
+    .lane-summary .lane-miles .miles-num {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--steel-blue);
+      line-height: 1;
+    }
+    .lane-summary .lane-miles .miles-label {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      margin-top: 4px;
+    }
+
+    .distance-band-note {
+      padding: 12px 16px;
+      background: rgba(74, 144, 217, 0.07);
+      border-left: 3px solid var(--steel-blue);
+      border-radius: 6px;
+      font-size: 0.92rem;
+      color: var(--text-body);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .disclaimer {
+      background: var(--light-grey);
+      border-left: 3px solid var(--steel-blue);
+      padding: 16px 20px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-top: 8px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--steel-blue);
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .cta-btn:hover { background: var(--steel-blue-dark); color: var(--white); }
+    .cta-btn-secondary {
+      background: var(--white);
+      color: var(--navy);
+      border: 1px solid var(--border-grey);
+    }
+    .cta-btn-secondary:hover {
+      background: var(--light-grey);
+      color: var(--navy);
+    }
+
+    .below-form-help {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    .info-callout {
+      margin-top: 20px;
+      padding: 14px 16px;
+      background: rgba(74, 144, 217, 0.06);
+      border-left: 3px solid var(--steel-blue);
+      border-radius: 6px;
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+
+    /* Email-gate modal — verbatim from sibling tools so UX is identical. */
+    .email-gate-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+    .email-gate-overlay.visible { display: flex; }
+    .email-gate-modal {
+      background: var(--white);
+      border-radius: 12px;
+      max-width: 460px;
+      width: 100%;
+      padding: 28px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+    }
+    .email-gate-modal h3 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+      color: var(--text-dark);
+    }
+    .email-gate-modal p.lead {
+      margin: 0 0 18px;
+      font-size: 0.92rem;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+    .email-gate-modal label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .email-gate-modal input[type="email"],
+    .email-gate-modal input[type="text"],
+    .email-gate-modal input[type="tel"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    .email-gate-modal input:focus {
+      outline: none;
+      border-color: var(--steel-blue);
+      box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.1);
+    }
+    .email-gate-modal .field-spacer { height: 10px; }
+    .email-gate-modal .gate-help {
+      margin: 6px 0 14px;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+    .email-gate-modal .consent-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin: 12px 0 18px;
+      font-size: 0.85rem;
+      color: var(--text-body);
+      line-height: 1.4;
+    }
+    .email-gate-modal .consent-row input { margin-top: 3px; }
+    .email-gate-modal .gate-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+    .email-gate-modal .gate-cancel {
+      background: var(--white);
+      color: var(--text-dark);
+      border: 1px solid var(--border-grey);
+      padding: 10px 18px;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .email-gate-modal .gate-submit {
+      background: var(--steel-blue);
+      color: var(--white);
+      border: none;
+      padding: 10px 22px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .email-gate-modal .gate-error {
+      color: var(--error-red);
+      font-size: 0.88rem;
+      margin: 6px 0 12px;
+      min-height: 1.1em;
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RSWDYHVY7Z');
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog">Blog</a>
+        <a href="/courses">Courses</a>
+        <a href="/tools" class="active">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="tool-hero">
+    <span class="badge">Free Tool · Mode-Shift Calculator</span>
+    <h1>Rail-vs-Truck Mode-Shift Calculator</h1>
+    <p>Compare rail and truck side-by-side on any U.S. lane. Per-load cost, annual spend, and CO2e emissions delta — using URCS 2024 rail costs, DAT spot-market trucking averages, and EPA SmartWay 2024 emission factors.</p>
+  </section>
+
+  <!-- Main content -->
+  <div class="tool-layout">
+
+    <!-- Form -->
+    <div class="quote-form">
+      <h2>Lane &amp; Volume</h2>
+      <form id="modeForm" autocomplete="off">
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="origin">Origin <span class="hint">(City, ST)</span></label>
+            <div class="city-typeahead">
+              <input type="text" id="origin" placeholder="Start typing a city..." autocomplete="off" required>
+              <ul class="city-suggest" id="originSuggest" role="listbox" hidden></ul>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="destination">Destination <span class="hint">(City, ST)</span></label>
+            <div class="city-typeahead">
+              <input type="text" id="destination" placeholder="Start typing a city..." autocomplete="off" required>
+              <ul class="city-suggest" id="destinationSuggest" role="listbox" hidden></ul>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="commodity">Commodity</label>
+            <select id="commodity" required>
+              <option value="">Loading...</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="car_type">Car Type</label>
+            <select id="car_type" required>
+              <option value="">Loading...</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="weight_per_car_tons">Weight per Car <span class="hint">(short tons)</span></label>
+            <input type="number" id="weight_per_car_tons" min="1" max="200" step="1" value="100" required>
+          </div>
+
+          <div class="form-group">
+            <label>Annual Volume</label>
+            <div class="volume-toggle" role="tablist" aria-label="Volume input mode">
+              <button type="button" id="volModeCarloads" class="active" data-mode="carloads">Carloads/year</button>
+              <button type="button" id="volModeTons" data-mode="tons">Tons/year</button>
+            </div>
+            <input type="number" id="annual_volume" min="1" max="2000000" step="1" value="1200" required>
+            <span class="hint" id="volumeHint">carloads/year</span>
+          </div>
+
+          <div class="form-group">
+            <label for="truck_rate_per_mile">Current Truck Rate <span class="hint">(optional, $/mile)</span></label>
+            <input type="number" id="truck_rate_per_mile" min="0" max="20" step="0.01" placeholder="Auto-derived from current diesel price">
+          </div>
+
+          <div class="form-group">
+            <label for="drayage_origin_miles">Drayage at Origin <span class="hint">(optional, miles)</span></label>
+            <input type="number" id="drayage_origin_miles" min="0" max="500" step="1" placeholder="default: 25">
+          </div>
+
+          <div class="form-group">
+            <label for="drayage_dest_miles">Drayage at Destination <span class="hint">(optional, miles)</span></label>
+            <input type="number" id="drayage_dest_miles" min="0" max="500" step="1" placeholder="default: 25">
+          </div>
+
+        </div>
+
+        <div class="submit-row">
+          <button type="submit" class="submit-btn" id="submitBtn">Compare Rail vs Truck</button>
+          <span class="error-msg" id="errorMsg"></span>
+        </div>
+        <p class="below-form-help">
+          Indicative comparison only — based on URCS 2024 rail costs, DAT spot-market trucking averages, and EPA SmartWay 2024 emission factors. We do not guarantee rates.
+        </p>
+
+        <div class="info-callout">
+          <strong>Tip:</strong> Enter your actual contracted truck rate for the most realistic comparison. If you leave it blank, we use $2.30/mi DAT National Spot Avg dry van linehaul plus an auto-derived fuel surcharge using the OOIDA-standard formula (HDF − $1.20) ÷ 6.5 mpg, refreshed monthly from EIA diesel prices. The breakdown shows in your results.
+        </div>
+      </form>
+    </div>
+
+    <!-- Loading panel -->
+    <div class="loading-panel" id="loadingPanel" role="status" aria-live="polite">
+      <div class="big-spinner" aria-hidden="true"></div>
+      <p class="loading-title">Comparing modes...</p>
+      <p class="loading-step" id="loadingStep">Resolving rail routing...</p>
+    </div>
+
+    <!-- Results -->
+    <div class="results-section" id="resultsSection">
+      <div class="result-card">
+
+        <div class="lane-summary">
+          <div class="lane-cities">
+            <div class="od-pair">
+              <span id="rOrigin"></span>
+              <span class="od-arrow">&rarr;</span>
+              <span id="rDest"></span>
+            </div>
+            <div class="lane-meta" id="rLaneMeta"></div>
+          </div>
+          <div class="lane-miles">
+            <div class="miles-num" id="rLaneMiles"></div>
+            <div class="miles-label">rail miles</div>
+          </div>
+        </div>
+
+        <div class="headline-block">
+          <div class="estimate-cell">
+            <div class="label">Rail · Annual</div>
+            <div class="value" id="rRailAnnual"></div>
+            <div class="sub" id="rRailPerLoad"></div>
+          </div>
+          <div class="estimate-cell">
+            <div class="label">Truck · Annual</div>
+            <div class="value" id="rTruckAnnual"></div>
+            <div class="sub" id="rTruckPerLoad"></div>
+          </div>
+          <div class="estimate-cell" id="rSavingsCell">
+            <div class="label" id="rSavingsLabel">Estimated Annual Savings</div>
+            <div class="value" id="rSavingsValue"></div>
+            <div class="sub" id="rSavingsSub"></div>
+          </div>
+        </div>
+
+        <div class="distance-band-note" id="rBandNote"></div>
+
+        <div class="comparison-table">
+          <h3>Per-Load &amp; Annual Comparison</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th class="num">Rail</th>
+                <th class="num">Truck</th>
+                <th class="num">Δ</th>
+              </tr>
+            </thead>
+            <tbody id="comparisonBody"></tbody>
+          </table>
+        </div>
+
+        <div class="emissions-block">
+          <h3>Emissions Delta · EPA SmartWay 2024 factors</h3>
+          <div class="emissions-grid">
+            <div class="emissions-cell">
+              <div class="label">Rail (tons CO2e/yr)</div>
+              <div class="value" id="rRailCo2"></div>
+            </div>
+            <div class="emissions-cell">
+              <div class="label">Truck (tons CO2e/yr)</div>
+              <div class="value" id="rTruckCo2"></div>
+            </div>
+            <div class="emissions-cell">
+              <div class="label" id="rCo2DeltaLabel">Annual CO2e Avoided</div>
+              <div class="value" id="rCo2Delta"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="disclaimer">
+          Indicative comparison using URCS 2024 rail costs + DAT spot-market trucking averages + EPA SmartWay 2024 emission factors. Steel Wheel Logistics does not guarantee rates. Contact us for a binding rate.
+        </div>
+
+        <div class="cta-row">
+          <a href="tel:+16018212199" class="cta-btn">Get a Binding Rate · (601) 821-2199</a>
+          <a href="/contact.html?subject=Rail-vs-Truck+question" class="cta-btn cta-btn-secondary">Email a Sales Rep</a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Email-gate modal -->
+  <div class="email-gate-overlay" id="emailGateOverlay" role="dialog" aria-modal="true" aria-labelledby="emailGateTitle">
+    <div class="email-gate-modal">
+      <h3 id="emailGateTitle">One step before your comparison</h3>
+      <p class="lead">Where should we send your mode-shift analysis? We use it to follow up if you'd like to talk through the lane in detail.</p>
+      <form id="emailGateForm" novalidate>
+        <label for="leadEmail">Email address</label>
+        <input type="email" id="leadEmail" name="email" required autocomplete="email" placeholder="you@company.com">
+        <div class="field-spacer"></div>
+        <label for="leadName">Name <span style="font-weight:400;color:#888">(optional)</span></label>
+        <input type="text" id="leadName" name="name" autocomplete="name" placeholder="Your name" maxlength="200">
+        <div class="field-spacer"></div>
+        <label for="leadPhone">Phone <span style="font-weight:400;color:#888">(optional)</span></label>
+        <input type="tel" id="leadPhone" name="phone" autocomplete="tel" placeholder="(555) 555-5555" maxlength="60">
+        <div class="gate-help">We'll only contact you about your mode-shift analysis.</div>
+        <div class="gate-error" id="leadEmailError"></div>
+        <label class="consent-row">
+          <input type="checkbox" id="leadConsent" checked>
+          <span>I agree to receive my analysis by email and follow-up.</span>
+        </label>
+        <div class="gate-actions">
+          <button type="button" class="gate-cancel" id="leadCancel">Cancel</button>
+          <button type="submit" class="gate-submit" id="leadSubmit">Get My Analysis</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const QUOTE_URL = '/api/rail-vs-truck-quote';
+    const LEAD_URL  = '/api/rail-vs-truck-lead';
+    const TOOLS_BASE = 'https://tools.steelwheellogistics.com';
+
+    // ── Reference data: commodities + car-types pulled from the same Bun
+    // ── proxy that backs the rate-quote tool. New commodities flow through
+    // ── automatically without a UI rebuild.
+    const cityCache = new Map();
+    function attachCityTypeahead(inputId, listId) {
+      const input = document.getElementById(inputId);
+      const list = document.getElementById(listId);
+      let activeIdx = -1;
+      let lastQuery = '';
+      let debounceTimer = null;
+
+      function close() {
+        list.hidden = true;
+        list.innerHTML = '';
+        activeIdx = -1;
+      }
+      function render(results) {
+        if (!results || results.length === 0) {
+          list.innerHTML = '<li class="city-empty">No matches — try a different spelling or check the state.</li>';
+          list.hidden = false;
+          return;
+        }
+        list.innerHTML = results.map((r, i) => {
+          const popLabel = r.population >= 1000000
+            ? (r.population / 1e6).toFixed(1) + 'M'
+            : (r.population / 1000).toFixed(0) + 'k';
+          return `<li role="option" data-label="${r.label}" data-idx="${i}">
+            <span>${r.label}</span><span class="city-pop">${popLabel}</span></li>`;
+        }).join('');
+        list.hidden = false;
+        activeIdx = -1;
+      }
+      async function fetchSuggestions(q) {
+        if (cityCache.has(q)) return cityCache.get(q);
+        try {
+          const res = await fetch(`${TOOLS_BASE}/api/rail-rate-cities?q=${encodeURIComponent(q)}&limit=10`);
+          if (!res.ok) return [];
+          const data = await res.json();
+          const results = Array.isArray(data.results) ? data.results : [];
+          cityCache.set(q, results);
+          return results;
+        } catch (_) { return []; }
+      }
+
+      input.addEventListener('input', () => {
+        const q = input.value.trim();
+        if (q.length < 2) { close(); return; }
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(async () => {
+          if (q === lastQuery) return;
+          lastQuery = q;
+          const results = await fetchSuggestions(q);
+          if (input.value.trim() !== q) return;
+          render(results);
+        }, 200);
+      });
+      input.addEventListener('focus', () => {
+        if (input.value.trim().length >= 2 && list.children.length > 0) list.hidden = false;
+      });
+      input.addEventListener('blur', () => { setTimeout(close, 150); });
+      input.addEventListener('keydown', (e) => {
+        if (list.hidden) return;
+        const items = list.querySelectorAll('li[role="option"]');
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          activeIdx = Math.min(activeIdx + 1, items.length - 1);
+          items.forEach((el, i) => el.classList.toggle('active', i === activeIdx));
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          activeIdx = Math.max(activeIdx - 1, 0);
+          items.forEach((el, i) => el.classList.toggle('active', i === activeIdx));
+        } else if (e.key === 'Enter' && activeIdx >= 0) {
+          e.preventDefault();
+          input.value = items[activeIdx].dataset.label;
+          close();
+        } else if (e.key === 'Escape') {
+          close();
+        }
+      });
+      list.addEventListener('mousedown', (e) => {
+        const li = e.target.closest('li[role="option"]');
+        if (!li) return;
+        e.preventDefault();
+        input.value = li.dataset.label;
+        close();
+      });
+    }
+
+    async function loadDropdowns() {
+      const [commRes, carRes] = await Promise.all([
+        fetch(`${TOOLS_BASE}/api/rail-rate-commodities`).then(r => r.json()).catch(() => null),
+        fetch(`${TOOLS_BASE}/api/rail-rate-car-types`).then(r => r.json()).catch(() => null),
+      ]);
+      const commSel = document.getElementById('commodity');
+      const carSel  = document.getElementById('car_type');
+
+      if (commRes && Array.isArray(commRes.commodities)) {
+        commSel.innerHTML = '<option value="">Select a commodity</option>' +
+          commRes.commodities.map(c => `<option value="${c.id}" data-default-car="${c.default_car}">${c.name}</option>`).join('');
+      } else {
+        commSel.innerHTML = '<option value="">Failed to load</option>';
+      }
+      if (carRes && Array.isArray(carRes.car_types)) {
+        carSel.innerHTML = '<option value="">Select a car type</option>' +
+          carRes.car_types.map(c => `<option value="${c.id}" data-lbs="${c.default_lbs}">${c.name}</option>`).join('');
+      } else {
+        carSel.innerHTML = '<option value="">Failed to load</option>';
+      }
+      // Auto-pick default car when commodity changes + adjust default tons.
+      commSel.addEventListener('change', () => {
+        const opt = commSel.options[commSel.selectedIndex];
+        const def = opt && opt.dataset.defaultCar;
+        if (def && carSel.querySelector(`option[value="${def}"]`)) {
+          carSel.value = def;
+          const carOpt = carSel.options[carSel.selectedIndex];
+          if (carOpt && carOpt.dataset.lbs) {
+            const tons = Math.round(Number(carOpt.dataset.lbs) / 2000);
+            if (tons > 0) document.getElementById('weight_per_car_tons').value = tons;
+          }
+        }
+      });
+      carSel.addEventListener('change', () => {
+        const carOpt = carSel.options[carSel.selectedIndex];
+        if (carOpt && carOpt.dataset.lbs) {
+          const tons = Math.round(Number(carOpt.dataset.lbs) / 2000);
+          if (tons > 0) document.getElementById('weight_per_car_tons').value = tons;
+        }
+      });
+    }
+
+    loadDropdowns();
+    attachCityTypeahead('origin', 'originSuggest');
+    attachCityTypeahead('destination', 'destinationSuggest');
+
+    // Volume-mode toggle. Default = carloads. When user flips to tons, the
+    // numeric input means "tons/year" — backend converts via weight_per_car.
+    let volumeMode = 'carloads';
+    function setVolumeMode(mode) {
+      volumeMode = mode;
+      document.getElementById('volModeCarloads').classList.toggle('active', mode === 'carloads');
+      document.getElementById('volModeTons').classList.toggle('active', mode === 'tons');
+      document.getElementById('volumeHint').textContent = mode === 'carloads' ? 'carloads/year' : 'tons/year';
+    }
+    document.getElementById('volModeCarloads').addEventListener('click', () => setVolumeMode('carloads'));
+    document.getElementById('volModeTons').addEventListener('click', () => setVolumeMode('tons'));
+
+    // ── Formatters ──
+    function fmtMoney(n) {
+      if (n == null || isNaN(n)) return '—';
+      return '$' + Math.round(Number(n)).toLocaleString('en-US');
+    }
+    function fmtMoneyMillions(n) {
+      if (n == null || isNaN(n)) return '—';
+      const v = Number(n);
+      if (Math.abs(v) >= 1e6) return '$' + (v / 1e6).toFixed(2) + 'M';
+      if (Math.abs(v) >= 1e3) return '$' + (v / 1e3).toFixed(0) + 'K';
+      return '$' + Math.round(v).toLocaleString('en-US');
+    }
+    function fmtNum(n) {
+      if (n == null || isNaN(n)) return '—';
+      return Number(n).toLocaleString('en-US', { maximumFractionDigits: 0 });
+    }
+
+    // ── Email-gate state. Cross-tool: shared SWL unlock (90-day TTL).
+    const EMAIL_KEY = 'swl_modeshift_lead_email';
+    const NAME_KEY  = 'swl_modeshift_lead_name';
+    const PHONE_KEY = 'swl_modeshift_lead_phone';
+    const TOOL_SLUG = 'rail-vs-truck';
+    const FORMAT_RE = /^[A-Za-z0-9._%+\-]+@[A-Za-z0-9](?:[A-Za-z0-9\-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9\-]{0,61}[A-Za-z0-9])?)+$/;
+
+    // ── Shared SWL email-unlock (cross-tool, 90-day TTL) ──
+    const SWL_EMAIL_KEY = 'swl_email';
+    const SWL_TS_KEY = 'swl_email_unlocked_at';
+    const SWL_TTL_MS = 90 * 86400 * 1000;
+    function swlReadSharedEmail() {
+      try {
+        const e = localStorage.getItem(SWL_EMAIL_KEY) || '';
+        const ts = localStorage.getItem(SWL_TS_KEY) || '';
+        if (!e || !ts) return '';
+        const t = Date.parse(ts);
+        if (!isFinite(t)) return '';
+        if (Date.now() - t > SWL_TTL_MS) return '';
+        return e;
+      } catch (_) { return ''; }
+    }
+    function swlWriteSharedEmail(email) {
+      try {
+        localStorage.setItem(SWL_EMAIL_KEY, email);
+        localStorage.setItem(SWL_TS_KEY, new Date().toISOString());
+      } catch (_) {}
+    }
+    function swlLeadFiredKey(slug) { return 'swl_lead_fired_' + slug; }
+    function swlIsLeadFired(slug) {
+      try { return sessionStorage.getItem(swlLeadFiredKey(slug)) === '1'; } catch (_) { return false; }
+    }
+    function swlMarkLeadFired(slug) {
+      try { sessionStorage.setItem(swlLeadFiredKey(slug), '1'); } catch (_) {}
+    }
+
+    function cachedEmail() {
+      const shared = swlReadSharedEmail();
+      if (shared) return shared;
+      try { return sessionStorage.getItem(EMAIL_KEY) || ''; } catch (_) { return ''; }
+    }
+    function cacheEmail(email) {
+      swlWriteSharedEmail(email);
+      try { sessionStorage.setItem(EMAIL_KEY, email); } catch (_) {}
+    }
+    function cachedName() {
+      try { return sessionStorage.getItem(NAME_KEY) || ''; } catch (_) { return ''; }
+    }
+    function cachedPhone() {
+      try { return sessionStorage.getItem(PHONE_KEY) || ''; } catch (_) { return ''; }
+    }
+    function cacheContact(name, phone) {
+      try {
+        if (name) sessionStorage.setItem(NAME_KEY, name);
+        if (phone) sessionStorage.setItem(PHONE_KEY, phone);
+      } catch (_) {}
+    }
+
+    function showGate() {
+      const overlay = document.getElementById('emailGateOverlay');
+      overlay.classList.add('visible');
+      const input = document.getElementById('leadEmail');
+      input.value = cachedEmail();
+      const nameInput = document.getElementById('leadName');
+      const phoneInput = document.getElementById('leadPhone');
+      if (nameInput && !nameInput.value) nameInput.value = cachedName();
+      if (phoneInput && !phoneInput.value) phoneInput.value = cachedPhone();
+      document.getElementById('leadEmailError').textContent = '';
+      setTimeout(() => input.focus(), 50);
+    }
+    function hideGate() {
+      document.getElementById('emailGateOverlay').classList.remove('visible');
+    }
+
+    document.getElementById('leadCancel').addEventListener('click', () => {
+      hideGate();
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = false;
+      btn.innerHTML = 'Compare Rail vs Truck';
+    });
+    document.getElementById('emailGateOverlay').addEventListener('click', (e) => {
+      if (e.target.id === 'emailGateOverlay') {
+        hideGate();
+        const btn = document.getElementById('submitBtn');
+        btn.disabled = false;
+        btn.innerHTML = 'Compare Rail vs Truck';
+      }
+    });
+
+    function readForm() {
+      const origin = document.getElementById('origin').value.trim();
+      const destination = document.getElementById('destination').value.trim();
+      const commodity = document.getElementById('commodity').value;
+      const car_type = document.getElementById('car_type').value;
+      const weight_per_car_tons = Number(document.getElementById('weight_per_car_tons').value) || 100;
+      const annualVolume = Number(document.getElementById('annual_volume').value) || 0;
+      const truckRateRaw = document.getElementById('truck_rate_per_mile').value;
+      const truck_rate_per_mile = truckRateRaw === '' ? null : Number(truckRateRaw);
+      const drayOriginRaw = document.getElementById('drayage_origin_miles').value;
+      const drayDestRaw = document.getElementById('drayage_dest_miles').value;
+      const drayage_origin_miles = drayOriginRaw === '' ? null : Number(drayOriginRaw);
+      const drayage_dest_miles = drayDestRaw === '' ? null : Number(drayDestRaw);
+
+      const payload = {
+        origin, destination, commodity, car_type,
+        weight_per_car_tons,
+        truck_rate_per_mile,
+        drayage_origin_miles,
+        drayage_dest_miles,
+      };
+      if (volumeMode === 'tons') {
+        payload.annual_tons = annualVolume;
+      } else {
+        payload.annual_carloads = annualVolume;
+      }
+      return payload;
+    }
+
+    function validateForm(p) {
+      if (!p.origin || !p.destination || !p.commodity || !p.car_type) {
+        return 'Please fill in origin, destination, commodity, and car type.';
+      }
+      const vol = volumeMode === 'tons' ? p.annual_tons : p.annual_carloads;
+      if (!vol || vol <= 0) return 'Please enter your annual volume.';
+      if (p.weight_per_car_tons <= 0 || p.weight_per_car_tons > 200) {
+        return 'Weight per car must be 1-200 tons.';
+      }
+      if (p.truck_rate_per_mile != null && (p.truck_rate_per_mile <= 0 || p.truck_rate_per_mile > 20)) {
+        return 'Truck rate per mile must be 0-20.';
+      }
+      return null;
+    }
+
+    let lastResult = null;
+    let lastPayload = null;
+
+    function renderResults(d) {
+      lastResult = d;
+      const route = d.route_summary || {};
+      document.getElementById('rOrigin').textContent = route.origin || '';
+      document.getElementById('rDest').textContent = route.destination || '';
+      const carriers = (route.carriers || []).join(' / ');
+      const annualCarloads = Number(d.annual_carloads || 0);
+      const carName = d.car_type ? d.car_type.name : '';
+      const commName = d.commodity ? d.commodity.name : '';
+      const wt = Number(d.weight_per_car_tons || 0);
+      const meta = [
+        commName,
+        carName,
+        wt ? `${wt}t/car` : '',
+        annualCarloads ? `${fmtNum(annualCarloads)} carloads/yr` : '',
+        carriers ? `via ${carriers}` : '',
+      ].filter(Boolean).join(' · ');
+      document.getElementById('rLaneMeta').textContent = meta;
+      document.getElementById('rLaneMiles').textContent = fmtNum(d.lane_miles);
+
+      const rail = d.rail || {};
+      const truck = d.truck || {};
+      const cmp = d.comparison || {};
+
+      document.getElementById('rRailAnnual').textContent = fmtMoneyMillions(rail.annual_total);
+      document.getElementById('rRailPerLoad').textContent =
+        rail.total_per_load ? `${fmtMoney(rail.total_per_load)}/load · ${fmtNum(annualCarloads)} loads` : '';
+
+      const truckLoads = truck.loads_needed_annually || 0;
+      document.getElementById('rTruckAnnual').textContent = fmtMoneyMillions(truck.annual_total);
+      let truckPerLoadStr = truck.cost_per_load
+        ? `${fmtMoney(truck.cost_per_load)}/load · ${fmtNum(truckLoads)} loads @ ${truck.max_tons_per_load}t`
+        : '';
+      if (truck.rate_source === 'market_dynamic' && truck.linehaul_per_mile != null && truck.fsc_per_mile != null && truck.hdf_per_gal != null) {
+        truckPerLoadStr += ` · $${truck.rate_per_mile.toFixed(2)}/mi (linehaul $${truck.linehaul_per_mile.toFixed(2)} + fuel $${truck.fsc_per_mile.toFixed(2)} at $${truck.hdf_per_gal.toFixed(2)}/gal diesel)`;
+      } else if (truck.rate_source === 'user_entered') {
+        truckPerLoadStr += ` · $${truck.rate_per_mile.toFixed(2)}/mi (your entered rate)`;
+      }
+      document.getElementById('rTruckPerLoad').textContent = truckPerLoadStr;
+
+      // Savings cell — green if rail wins, neutral if truck wins.
+      const savCell = document.getElementById('rSavingsCell');
+      const savings = Number(cmp.annual_savings_dollars || 0);
+      const railWins = !!cmp.rail_wins;
+      savCell.classList.remove('win', 'primary');
+      if (railWins) {
+        savCell.classList.add('win');
+        document.getElementById('rSavingsLabel').textContent = 'Estimated Annual Savings (Rail)';
+      } else {
+        savCell.classList.add('primary');
+        document.getElementById('rSavingsLabel').textContent = 'Truck Lower By';
+      }
+      document.getElementById('rSavingsValue').textContent = fmtMoneyMillions(Math.abs(savings));
+      const pct = (railWins && truck.annual_total)
+        ? Math.round((savings / truck.annual_total) * 100)
+        : (!railWins && rail.annual_total
+          ? Math.round((Math.abs(savings) / rail.annual_total) * 100) : 0);
+      document.getElementById('rSavingsSub').textContent = pct
+        ? `${pct}% ${railWins ? 'lower vs truck' : 'lower vs rail'}`
+        : '';
+
+      document.getElementById('rBandNote').textContent = cmp.distance_band_note || '';
+
+      // Per-load + annual comparison table.
+      const tbody = document.getElementById('comparisonBody');
+      const railLineHaul = Number(rail.line_haul_total || 0);
+      const railFsc = Number(rail.fsc_total || 0);
+      const railIc = Number(rail.interchange_fee_total || 0);
+      const railDray = Number(rail.drayage_cost_per_load || 0);
+      const railTotal = Number(rail.total_per_load || 0);
+      const truckCost = Number(truck.cost_per_load || 0);
+      function deltaCell(rv, tv) {
+        if (!Number.isFinite(rv) || !Number.isFinite(tv)) return '<td class="num">—</td>';
+        const diff = tv - rv;
+        if (Math.abs(diff) < 1) return '<td class="num delta-flat">—</td>';
+        const sign = diff > 0 ? '+' : '−';
+        const cls = diff > 0 ? 'delta-down' : 'delta-up';
+        return `<td class="num ${cls}">${sign}${fmtMoney(Math.abs(diff))}</td>`;
+      }
+      const rows = [];
+      // Per-load rows.
+      rows.push(`<tr>
+        <td>Line haul (per rail load · per truck load)</td>
+        <td class="num">${fmtMoney(railLineHaul + railFsc + railIc)}</td>
+        <td class="num">${fmtMoney(truckCost)}</td>
+        ${deltaCell(railLineHaul + railFsc + railIc, truckCost)}
+      </tr>`);
+      rows.push(`<tr>
+        <td>Drayage (origin + destination, rail only)</td>
+        <td class="num">${fmtMoney(railDray)}</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+      </tr>`);
+      rows.push(`<tr class="total-row">
+        <td>Per-load total</td>
+        <td class="num">${fmtMoney(railTotal)}</td>
+        <td class="num">${fmtMoney(truckCost)}</td>
+        ${deltaCell(railTotal, truckCost)}
+      </tr>`);
+      // Annual rows.
+      const railAnnual = Number(rail.annual_total || 0);
+      const truckAnnual = Number(truck.annual_total || 0);
+      rows.push(`<tr>
+        <td>Loads per year</td>
+        <td class="num">${fmtNum(annualCarloads)}</td>
+        <td class="num">${fmtNum(truckLoads)}</td>
+        <td class="num delta-flat">—</td>
+      </tr>`);
+      rows.push(`<tr class="total-row">
+        <td>Annual total</td>
+        <td class="num">${fmtMoneyMillions(railAnnual)}</td>
+        <td class="num">${fmtMoneyMillions(truckAnnual)}</td>
+        ${deltaCell(railAnnual, truckAnnual)}
+      </tr>`);
+      tbody.innerHTML = rows.join('');
+
+      // Emissions block.
+      document.getElementById('rRailCo2').textContent = fmtNum(rail.co2e_tons_per_year);
+      document.getElementById('rTruckCo2').textContent = fmtNum(truck.co2e_tons_per_year);
+      const co2Saved = Number(cmp.co2e_saved_tons_per_year || 0);
+      const co2DelLabel = document.getElementById('rCo2DeltaLabel');
+      if (co2Saved >= 0) {
+        co2DelLabel.textContent = 'Annual CO2e Avoided (Rail)';
+      } else {
+        co2DelLabel.textContent = 'Annual CO2e Higher (Rail)';
+      }
+      document.getElementById('rCo2Delta').textContent = fmtNum(Math.abs(co2Saved));
+
+      const section = document.getElementById('resultsSection');
+      section.classList.add('visible');
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Best-effort lead capture — fires after a successful compute. Failures
+    // are logged but never block the user from seeing their result.
+    async function captureLead(email, payload, result) {
+      // One fire per session per tool — prevents API spam on re-runs.
+      if (swlIsLeadFired(TOOL_SLUG)) return true;
+      swlMarkLeadFired(TOOL_SLUG);
+      try {
+        const cmp = result.comparison || {};
+        const railRow = result.rail || {};
+        const truckRow = result.truck || {};
+        const commName = result.commodity ? result.commodity.name : payload.commodity;
+        const carName = result.car_type ? result.car_type.name : payload.car_type;
+        const annualCarloads = Number(result.annual_carloads || payload.annual_carloads || 0);
+        const leadBody = {
+          email,
+          name: cachedName(),
+          phone: cachedPhone(),
+          origin: payload.origin,
+          destination: payload.destination,
+          commodity: payload.commodity,
+          commodity_name: commName,
+          car_type: payload.car_type,
+          car_type_name: carName,
+          weight_per_car_tons: payload.weight_per_car_tons,
+          annual_carloads: annualCarloads,
+          truck_rate_per_mile: payload.truck_rate_per_mile,
+          drayage_origin_miles: payload.drayage_origin_miles,
+          drayage_dest_miles: payload.drayage_dest_miles,
+          rail_annual_total: railRow.annual_total,
+          truck_annual_total: truckRow.annual_total,
+          annual_savings_dollars: cmp.annual_savings_dollars,
+          co2e_saved_tons_per_year: cmp.co2e_saved_tons_per_year,
+          lane_miles: result.lane_miles,
+        };
+        const res = await fetch(LEAD_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(leadBody),
+        });
+        if (!res.ok) {
+          const data = await res.json().catch(() => ({}));
+          if (data.code && String(data.code).startsWith('email_')) {
+            try { sessionStorage.removeItem(EMAIL_KEY); } catch (_) {}
+            showGate();
+            document.getElementById('leadEmailError').textContent =
+              data.error || 'Please enter a valid email address.';
+            return false;
+          }
+          console.warn('rail-vs-truck-lead non-email error:', data);
+        }
+      } catch (e) {
+        console.warn('rail-vs-truck-lead fetch failed:', e);
+      }
+      return true;
+    }
+
+    async function runCompare(email) {
+      const btn = document.getElementById('submitBtn');
+      const errEl = document.getElementById('errorMsg');
+      const loadingPanel = document.getElementById('loadingPanel');
+      const loadingStep = document.getElementById('loadingStep');
+      const resultsSection = document.getElementById('resultsSection');
+      errEl.textContent = '';
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner"></span>Calculating...';
+      resultsSection.classList.remove('visible');
+      loadingPanel.classList.add('active');
+      const STEPS = [
+        'Resolving rail routing on the U.S. network...',
+        'Calculating rail line haul + fuel surcharges...',
+        'Computing truck side at your $/mile rate...',
+        'Layering EPA SmartWay emission factors...',
+        'Almost there — finalizing your comparison...',
+      ];
+      let stepIdx = 0;
+      const stepTimer = setInterval(() => {
+        stepIdx = Math.min(stepIdx + 1, STEPS.length - 1);
+        loadingStep.textContent = STEPS[stepIdx];
+      }, 2400);
+      try { loadingPanel.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (_) {}
+
+      const payload = readForm();
+      lastPayload = payload;
+      try {
+        const res = await fetch(QUOTE_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          throw new Error(data.error || `Server error (${res.status})`);
+        }
+        renderResults(data);
+        // Lead capture is best-effort + can pop the gate back if the email
+        // bounces server-side validation.
+        const okToShow = await captureLead(email, payload, data);
+        if (typeof gtag === 'function') {
+          gtag('event', 'rail_vs_truck_compare', {
+            event_category: 'tools',
+            event_label: payload.commodity,
+            value: Math.round(Number((data.comparison || {}).annual_savings_dollars) || 0),
+          });
+        }
+      } catch (err) {
+        errEl.textContent = err.message || 'Could not generate comparison. Please try again.';
+      } finally {
+        clearInterval(stepTimer);
+        loadingPanel.classList.remove('active');
+        btn.disabled = false;
+        btn.innerHTML = 'Compare Rail vs Truck';
+      }
+    }
+
+    document.getElementById('modeForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const errEl = document.getElementById('errorMsg');
+      errEl.textContent = '';
+      const payload = readForm();
+      const validationErr = validateForm(payload);
+      if (validationErr) { errEl.textContent = validationErr; return; }
+
+      const stored = cachedEmail();
+      if (stored && FORMAT_RE.test(stored)) {
+        runCompare(stored);
+      } else {
+        showGate();
+      }
+    });
+
+    document.getElementById('emailGateForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input  = document.getElementById('leadEmail');
+      const errEl  = document.getElementById('leadEmailError');
+      const consent = document.getElementById('leadConsent');
+
+      const email = (input.value || '').trim().toLowerCase();
+      const name  = (document.getElementById('leadName').value || '').trim().slice(0, 200);
+      const phone = (document.getElementById('leadPhone').value || '').trim().slice(0, 60);
+      errEl.textContent = '';
+
+      if (!email) { errEl.textContent = 'Email is required.'; return; }
+      if (!FORMAT_RE.test(email)) {
+        errEl.textContent = 'Please enter a valid email address.'; return;
+      }
+      if (!consent.checked) {
+        errEl.textContent = 'Please agree to receive your analysis by email.'; return;
+      }
+
+      cacheEmail(email);
+      cacheContact(name, phone);
+      hideGate();
+      runCompare(email);
+    });
+  </script>
+
+</body>
+</html>

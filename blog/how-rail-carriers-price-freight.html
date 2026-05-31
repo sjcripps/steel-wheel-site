@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How rail carriers price freight: URCS methodology, tariff structure, cost drivers, R/VC ratios, and why rates differ across carriers. Understanding railroad pricing logic with real BNSF tariff examples.">
+  <meta name="keywords" content="rail carrier pricing, how rail carriers price freight, URCS methodology, railroad tariff structure, rail freight rates, carrier pricing logic, tariff interpretation, rail pricing methodology">
+  <link rel="canonical" href="https://steelwheellogistics.com/blog/how-rail-carriers-price-freight">
+  <meta property="og:title" content="How Rail Carriers Price Freight: URCS Methodology and Tariff Logic">
+  <meta property="og:description" content="How rail carriers price freight: URCS methodology, tariff structure, cost drivers, R/VC ratios, and why rates differ across carriers. Understanding railroad pricing logic with real BNSF tariff examples.">
+  <meta property="og:url" content="https://steelwheellogistics.com/blog/how-rail-carriers-price-freight">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How Rail Carriers Price Freight: URCS Methodology and Tariff Logic">
+  <meta name="twitter:description" content="How rail carriers price freight: URCS methodology, tariff structure, cost drivers, R/VC ratios, and why rates differ across carriers. Understanding railroad pricing logic.">
+  <title>How Rail Carriers Price Freight: URCS Methodology and Tariff Logic | Steel Wheel Logistics</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How Rail Carriers Price Freight: URCS Methodology and Tariff Logic",
+    "description": "Understanding how rail carriers set rates: URCS cost drivers, tariff structure interpretation, R/VC ratios, and the methodology that connects costs to published prices.",
+    "datePublished": "2026-05-23",
+    "dateModified": "2026-05-23",
+    "author": {
+      "@type": "Organization",
+      "name": "Steel Wheel Logistics"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Steel Wheel Logistics",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://steelwheellogistics.com/images/logo-192.png"
+      }
+    },
+    "url": "https://steelwheellogistics.com/blog/how-rail-carriers-price-freight",
+    "image": [
+      "https://steelwheellogistics.com/images/logo-192.png"
+    ],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://steelwheellogistics.com/blog/how-rail-carriers-price-freight"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is URCS and how do railroads use it for pricing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "URCS (Uniform Railroad Costing System) is a Surface Transportation Board-published methodology that railroads use to calculate the cost of moving freight. It applies eight primary cost drivers (gross ton-miles, crew expenses, fuel, depreciation, casualties, and others) to determine the variable cost of any shipment. Railroads then apply an R/VC ratio (revenue-to-variable-cost markup) to set a published rate that covers costs and generates margin. Different carriers use different R/VC ratios, which explains why rates differ across the network."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the eight URCS cost drivers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The eight primary URCS cost drivers are: (1) Gross Ton-Miles (GTM) — the primary volume metric, (2) Crew, (3) Fuel, (4) Depreciation & Inflation, (5) Casualties & Insurance, (6) Maintenance of way, (7) Maintenance of equipment, and (8) General and administrative. Each cost driver is weighted by the type of traffic and the specific shipment's characteristics. The STB publishes annual coefficients for each cost driver that railroads apply to calculate baseline costs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is an R/VC ratio and why do different railroads use different ratios?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "R/VC (Revenue-to-Variable-Cost) is the markup applied to variable costs to set a published tariff rate. A 1.5x R/VC means the railroad charges 50% above variable cost; a 1.8x R/VC charges 80% above cost. Different railroads publish different R/VC ratios because they operate different networks, face different competitive pressures, and have different cost structures. The STB publishes R/VC ratios by railroad and commodity category — you can look up a specific railroad's R/VC for your commodity to understand their baseline pricing strategy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I read a railroad tariff to understand the base rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A railroad tariff lists Item numbers (specific commodity/lane combinations), base rates (per car or per ton), and applicable rules (minimum weight, car type, etc.). The Item number tells you the exact commodity classification (STCC code) and origin-destination lane. The rate column shows the tariff price. Surcharges (fuel, handling, etc.) are listed separately. To find your specific rate: (1) identify your commodity's STCC code, (2) locate the origin-destination lane in the tariff, (3) find the matching Item number, and (4) read the rate and any applicable conditions. Most railroads publish tariffs online or provide them through rate bureaus."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do rates differ for the same commodity on different carriers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rates differ for several reasons: (1) Different R/VC ratios — carriers price at different markups above cost, (2) Different route costs — one carrier's line between two cities may have higher operating costs than another's, (3) Competitive pressure — if a lane has multiple carrier options, rates fall, (4) Equipment availability — carriers with tight equipment supply can price higher, and (5) Customer mix — carriers optimizing for different customer segments may undercut or premium-price specific commodity-lane combinations. Using URCS methodology to back into variable costs helps explain the baseline, but published rates also reflect market positioning and competitive dynamics."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do tariff multipliers and commodity adjustments work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Railroad tariffs often use base rates with adjustments rather than listing every lane individually. A tariff might publish a base rate for 'grain, carload, Midwest to South,' then apply multipliers or adjustments by specific origin-destination pair. For example: base rate $2,000, then '+20%' for a specific geography or '-10%' for a high-volume lane. These multipliers compress the tariff size while allowing rate variation by lane. To find your exact rate, you must identify your commodity's Item number, find the base rate, then scan the tariff for any applicable adjustments or surcharges that modify the final price."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What role do surcharges play in the final freight cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The published tariff rate is the base — but your actual invoice includes surcharges and accessorials. Common surcharges include fuel (indexed to diesel prices), handling (if the commodity requires special care), and car hire (if interchange railroads are involved). Accessorials include demurrage (holding charges past free time), switching, storage, and reconsignment. These items are separate line items on your invoice and can add 20-40% or more to the base rate in some cases. Always ask for the complete tariff and accessorial schedule when evaluating a rate quote — the base rate tells only part of the story."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do negotiated contracts differ from published tariff rates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Published tariffs are the railroad's highest prices — designed for spot traffic with no volume commitment. Negotiated contracts offer volume-based discounts in exchange for minimum shipment commitments. A contract might establish a rate 15-30% below the published tariff for a specific commodity-lane pair, with minimum annual tonnage requirements. Contracts are negotiated bilaterally between shipper and railroad (or through a logistics provider) and remain confidential. The tariff floor is what you pay if you can't negotiate a contract or don't meet the minimum volumes."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RSWDYHVY7Z');
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog" class="active">Blog</a>
+        <a href="/courses">Courses</a>
+        <a href="/tools">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Blog Hero -->
+  <section class="blog-hero">
+    <div class="blog-breadcrumb">
+      <a href="/blog">Blog</a><span class="separator">/</span><span>Pricing &amp; Strategy</span>
+    </div>
+    <h1>How Rail Carriers Price Freight: URCS Methodology and Tariff Logic</h1>
+    <div class="blog-hero-meta">
+      <span>May 23, 2026</span>
+      <span class="dot">&middot;</span>
+      <span>13 min read</span>
+      <span class="dot">&middot;</span>
+      <span class="blog-tag">Pricing &amp; Strategy</span>
+    </div>
+  </section>
+
+  <article class="blog-post">
+    <div class="blog-post-content">
+
+      <div class="blog-highlight">
+        <strong>Key fact:</strong> Railroads don't set prices by guessing. They apply the Surface Transportation Board's published URCS (Uniform Railroad Costing System) methodology — eight cost drivers, carrier-specific R/VC ratios, and published tariffs. Understanding this methodology explains why two carriers quote different rates for the same lane, and how to identify a competitive rate.
+      </div>
+
+      <p class="blog-lead">Rail pricing looks opaque from the outside. A shipper calls two railroads, gets two quotes on the same lane, and wonders how one arrived at $2,400 per car and the other at $2,700. The difference isn't arbitrary. Every major rail carrier follows a published methodology — called URCS (Uniform Railroad Costing System) — to calculate the baseline cost of moving freight, then applies a markup formula to set a published rate. Understanding how this system works gives you visibility into whether a quote is competitive, what drives price differences across carriers, and where you have room to negotiate.</p>
+
+      <nav class="blog-toc">
+        <div class="blog-toc-title">In This Guide</div>
+        <ol>
+          <li><a href="#what-is-urcs">What Is URCS and Why It Matters</a></li>
+          <li><a href="#eight-cost-drivers">The Eight URCS Cost Drivers</a></li>
+          <li><a href="#rvc-ratios">R/VC Ratios: From Cost to Published Price</a></li>
+          <li><a href="#tariff-structure">How Tariff Rates Are Structured</a></li>
+          <li><a href="#bnsf-worked-example">Worked Example: BNSF Tariff Interpretation</a></li>
+          <li><a href="#why-rates-differ">Why Rates Differ Across Carriers</a></li>
+          <li><a href="#surcharges-accessorials">Surcharges and Accessorials: The Hidden Costs</a></li>
+          <li><a href="#contracts-vs-tariffs">Negotiated Contracts vs. Published Tariffs</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="what-is-urcs">What Is URCS and Why It Matters</h2>
+
+      <p>URCS stands for Uniform Railroad Costing System. It's a methodology published by the Surface Transportation Board (STB) — the federal agency that regulates rail transportation. Every Class I railroad uses URCS (or a closely related variant) as the foundation for setting tariff rates. Understanding URCS doesn't require deep accounting expertise; it's fundamentally about understanding what questions a railroad asks when pricing your freight.</p>
+
+      <p>The basic logic is straightforward:</p>
+
+      <ol>
+        <li><strong>Calculate variable cost:</strong> Use URCS to determine what it actually costs the railroad to move your specific shipment (based on weight, distance, commodity type, equipment, and route).</li>
+        <li><strong>Apply a markup:</strong> The railroad then applies an R/VC ratio — a revenue-to-variable-cost markup — to set a published price that covers variable cost plus fixed costs and generates profit margin.</li>
+        <li><strong>Publish the rate:</strong> The result is published as a tariff rate, available to any shipper.</li>
+      </ol>
+
+      <p>Why does this matter for you? Because it means rail rates aren't mysterious. A carrier's published rate should be roughly proportional to the actual cost of moving your freight, adjusted by their competitive position and capacity constraints. If you understand URCS, you can work backward from a quote to understand what assumptions the carrier made, and whether those assumptions are reasonable for your shipment.</p>
+
+      <h2 id="eight-cost-drivers">The Eight URCS Cost Drivers</h2>
+
+      <p>URCS pricing centers on eight primary cost categories. The STB publishes annual coefficients for each cost driver — essentially, the cost per unit per category. Railroads apply these coefficients to your specific shipment to calculate baseline variable cost.</p>
+
+      <p>Here are the eight cost drivers:</p>
+
+      <h3>1. Gross Ton-Miles (GTM)</h3>
+
+      <p>The primary volume metric. A gross ton-mile is one ton of freight (including the car weight) moved one mile. A 100-ton car moved 500 miles = 50,000 gross ton-miles. GTM is the fundamental unit railroads use to allocate fuel, crew, and locomotive costs. It's the biggest variable cost driver. The STB publishes an annual cost coefficient for GTM (e.g., $0.002 per GTM); multiply that by your shipment's GTMs and you get a large portion of your variable cost.</p>
+
+      <h3>2. Crew Expenses</h3>
+
+      <p>Labor costs for train crews (engineers, conductors, helpers). Crew costs are allocated based on the train's size, the route, and the shipment's contribution to the total train tonnage. The STB cost coefficient reflects average crew labor costs per unit of traffic.</p>
+
+      <h3>3. Fuel Costs</h3>
+
+      <p>Diesel and other locomotive fuel. Fuel costs are allocated based on fuel consumption — which correlates strongly with tonnage moved and distance. The STB coefficients are updated periodically to reflect fuel price changes, but the core principle is that heavier, longer moves consume more fuel.</p>
+
+      <h3>4. Depreciation &amp; Inflation</h3>
+
+      <p>The cost of maintaining and replacing rail infrastructure, locomotives, and rolling stock. This is a fixed-cost allocation based on usage. A car that moves more tonnage per year absorbs less depreciation cost per ton than one that sits idle. The URCS coefficient allocates this cost based on estimated asset utilization.</p>
+
+      <h3>5. Casualties &amp; Insurance</h3>
+
+      <p>Loss and damage claims, casualty insurance, and accident-related costs. These are allocated across all traffic based on historical loss ratios by commodity and route. Hazardous materials, for example, might carry a higher casualty cost allocation than grain.</p>
+
+      <h3>6. Maintenance of Way (Track &amp; Infrastructure)</h3>
+
+      <p>The cost of maintaining rail, ties, ballast, bridges, and associated track infrastructure. This is largely a fixed cost allocated across all traffic. Heavy commodities like coal and aggregates cause more wear and might carry a slightly higher per-ton allocation, but the difference is usually small because the allocation method is relatively standard across the STB's methodology.</p>
+
+      <h3>7. Maintenance of Equipment (Cars &amp; Locomotives)</h3>
+
+      <p>The cost of servicing and repairing railcars and locomotives. Higher-tonnage moves accumulate more maintenance cost per car. The STB coefficients vary by car type (covered hoppers cost more to maintain than gondolas) and reflect the cost of regular servicing, major repairs, and rebuilds.</p>
+
+      <h3>8. General &amp; Administrative</h3>
+
+      <p>Corporate overhead, billing, customer service, and administrative costs not captured elsewhere. These are allocated as a percentage of total cost across all traffic. The STB methodology usually allocates G&amp;A as a fixed percentage of other variable costs.</p>
+
+      <p style="margin-top: 1.5rem; padding: 1rem; background: #f5f7fa; border-left: 4px solid #1a3d6c;">The STB publishes URCS cost coefficients annually. They're publicly available and updated to reflect economic changes and carrier cost structures. A shipper or freight forwarder can download the current year's coefficients and apply them to their shipment's characteristics to estimate baseline variable cost — which is the foundation under any tariff rate quote.</p>
+
+      <h2 id="rvc-ratios">R/VC Ratios: From Cost to Published Price</h2>
+
+      <p>Once a railroad calculates variable cost using URCS, it needs to set a published price that covers variable cost, fixed costs, and profit. That's where the R/VC ratio comes in.</p>
+
+      <p><strong>R/VC stands for Revenue-to-Variable-Cost.</strong> It's the markup applied to variable cost to arrive at the published tariff rate.</p>
+
+      <p><strong>Example:</strong> Suppose URCS calculation shows variable cost = $2,000. The railroad applies a 1.5x R/VC ratio. Published rate = $2,000 × 1.5 = $3,000.</p>
+
+      <p>The difference ($1,000 in this example) covers fixed costs, allocated overhead, and profit margin. Every railroad publishes its own R/VC ratio — or a range of R/VC ratios by commodity and route type. The STB maintains a record of published R/VC ratios by carrier.</p>
+
+      <p>This matters because <strong>different railroads publish different R/VC ratios.</strong> One carrier might operate at a 1.4x R/VC on grain; another at 1.6x. On the same 500-mile lane with the same variable cost, this difference alone can push rates apart by 10-15%. Add in competitive positioning and equipment availability, and the spread widens.</p>
+
+      <p>Key points about R/VC ratios:</p>
+
+      <ul>
+        <li><strong>They're published.</strong> Railroads file their R/VC ratios with the STB, and they're available for shipper review. You can look up a specific carrier's R/VC for your commodity category.</li>
+        <li><strong>They vary by commodity.</strong> A railroad might operate at 1.4x R/VC on coal (a commodity with thin margins and limited truck competition) but 1.6x on chemicals (with more truck competition and higher value). The R/VC reflects the carrier's competitive position and margin requirements in each market segment.</li>
+        <li><strong>They're subject to competitive pressure.</strong> If two railroads serve the same lane, their R/VC ratios for that lane tend to converge downward. If one carrier has a monopoly (or near-monopoly) on a route, the R/VC can be higher.</li>
+      </ul>
+
+      <h2 id="tariff-structure">How Tariff Rates Are Structured</h2>
+
+      <p>The published rates you see in a railroad tariff are the result of URCS calculations and R/VC markup. But tariff structure itself — how the rates are organized — is worth understanding because it affects how you locate your specific rate.</p>
+
+      <h3>Item Numbers and Commodity Specificity</h3>
+
+      <p>A railroad tariff is organized by Item numbers. Each Item number corresponds to a specific commodity (identified by STCC code) moving on a specific origin-destination lane or lane group. The tariff lists the Item number, the commodity description, the base rate, applicable rules (minimum weight, car type, etc.), and any surcharges.</p>
+
+      <p><strong>Example Item:</strong> "Item 12345: Grain, carload, minimum 90 tons, covered hopper only, origin Kansas City area, destination Gulf ports, rate $1,850 per car."</p>
+
+      <p>To find your rate, you need to identify your commodity's STCC code, locate the origin-destination lane pair, and find the matching Item. Most tariffs are indexed by commodity and origin-destination, making the lookup relatively straightforward (though tariff documents can be hundreds of pages).</p>
+
+      <h3>Base Rates vs. Multipliers</h3>
+
+      <p>Modern tariffs often use a base-rate structure with multipliers rather than listing every origin-destination pair individually. A tariff might publish a base rate for "Grain, carload, Midwest origin, South destination," then apply location-specific adjustments:</p>
+
+      <ul>
+        <li>Base rate: $1,800</li>
+        <li>Kansas City area: Add 5% = $1,890</li>
+        <li>Iowa origin: Subtract 3% = $1,746</li>
+      </ul>
+
+      <p>This structure compresses the tariff while allowing rate variation by specific geography. When reading a tariff, you must identify not just the base Item, but also any applicable adjustments that modify the final rate.</p>
+
+      <h3>Minimum Weight and Car Type Rules</h3>
+
+      <p>Most tariff Items specify a minimum weight to qualify for the rate. A rate might be published per carload with a "minimum 90 tons" requirement. If you load 85 tons, you may not qualify — the railroad might either reject the shipment or apply a higher per-ton rate. Car type is often specified: "covered hopper only" or "gondola or hopper." Using the wrong car type can void the rate or trigger a surcharge.</p>
+
+      <h2 id="bnsf-worked-example">Worked Example: BNSF Tariff Interpretation</h2>
+
+      <p>Let's walk through a concrete example using BNSF, which maintains publicly accessible tariff documents. (Note: This example is illustrative; actual BNSF rates and Item numbers change regularly.)</p>
+
+      <p><strong>Scenario:</strong> You want to ship fertilizer (potash, dry bulk) from Carlsbad, New Mexico to Kansas City, Missouri in a covered hopper car, minimum 100 tons.</p>
+
+      <p><strong>Step 1: Identify the Commodity</strong><br>
+      Potash, dry, in bulk = STCC code 2879. This is a standard commodity code.</p>
+
+      <p><strong>Step 2: Locate the BNSF Tariff</strong><br>
+      BNSF maintains tariff files on their website or through industry rate bureaus. For this commodity and lane, you'd find a BNSF tariff covering "fertilizer materials" or "potash."</p>
+
+      <p><strong>Step 3: Find the Item Number</strong><br>
+      The tariff has an index organized by commodity and geography. You'd search for "Potash, Carlsbad to Kansas City" and find an Item number — let's say Item 5021.</p>
+
+      <p><strong>Step 4: Read the Item Details</strong><br>
+      "Item 5021: Potash, granular, Carlsbad, NM origin, Kansas City, MO destination, carload minimum 100 tons, covered hopper required, rate $1,625 per car."</p>
+
+      <p><strong>Step 5: Check for Surcharges and Adjustments</strong><br>
+      The tariff would also note:</p>
+
+      <ul>
+        <li>Current fuel surcharge: +12% (index to diesel prices, updated monthly)</li>
+        <li>Switching charge: $75 (if Kansas City facility requires switching)</li>
+        <li>Car supply fee: None (included in rate)</li>
+      </ul>
+
+      <p><strong>Step 6: Calculate Total Cost</strong></p>
+
+      <ul>
+        <li>Base rate: $1,625</li>
+        <li>Fuel surcharge (12%): +$195 = $1,820</li>
+        <li>Switching: +$75 = $1,895</li>
+        <li><strong>Total per car: $1,895</strong></li>
+      </ul>
+
+      <p><strong>Understanding the Pricing Logic:</strong> BNSF's $1,625 base rate reflects URCS variable cost plus their R/VC markup. For this lane (about 800 miles, bulk commodity, single-car service), the variable cost might be roughly $1,100–$1,200, with the markup covering fixed costs and margin. The fuel surcharge is indexed to diesel prices monthly — if diesel spikes, the surcharge increases. Switching is allocated because BNSF's Kansas City facility requires movement within the yard.</p>
+
+      <p>This example shows how tariff structure, URCS logic, and real-world charges combine to produce your final invoice price. The base rate isn't arbitrary; it's the result of cost calculations plus markup. Surcharges and accessorials are separate and must be accounted for when comparing quotes.</p>
+
+      <h2 id="why-rates-differ">Why Rates Differ Across Carriers</h2>
+
+      <p>Now that you understand URCS and R/VC ratios, the question becomes: why do two railroads quote differently on the same lane? Several factors drive the spread:</p>
+
+      <h3>Different R/VC Ratios</h3>
+
+      <p>If carrier A operates at 1.45x R/VC and carrier b at 1.65x R/VC on the same commodity, and both start from the same URCS variable cost, carrier B's tariff rate will be roughly 13% higher. This is the most straightforward driver of rate differences.</p>
+
+      <h3>Different Route Costs</h3>
+
+      <p>The URCS calculation is route-specific. If two carriers serve the same origin and destination but via different network paths, their variable costs can differ significantly. Carrier A might route freight via a low-cost line with good equipment positioning; Carrier B via a longer, more expensive path. Their URCS calculations produce different baseline costs, which flow through to published rates. This is especially pronounced on interchange lanes where one carrier has a more direct network than the other.</p>
+
+      <h3>Competitive Positioning</h3>
+
+      <p>On a lane with multiple carrier options, rates fall as carriers compete. On a lane with limited competition, rates can be higher even if variable costs are identical. A carrier with a monopoly on a lane can maintain a higher R/VC ratio because shippers have fewer alternatives. Competitive lanes in the U.S. (like Northeast coal, Texas chemicals, Midwest grain) typically have lower rates than less-competitive routes.</p>
+
+      <h3>Equipment Availability</h3>
+
+      <p>When a car type is scarce, the railroad that owns available equipment can price higher. During spring fertilizer season, covered hoppers are tight. Railroads with excess hoppers can offer slightly lower rates to fill that capacity. Railroads with tight supply can maintain higher rates. This is a short-term market dynamic that overlays the URCS baseline.</p>
+
+      <h3>Customer Mix and Volume Tier</h3>
+
+      <p>Railroads apply different R/VC ratios depending on shipper volume and relationship. A high-volume shipper might get a 1.35x R/VC on a commodity, while a spot shipper gets 1.55x on the same lane. This isn't published in the public tariff — it emerges during contract negotiation — but it explains why two shippers can get different rates on the same freight.</p>
+
+      <h2 id="surcharges-accessorials">Surcharges and Accessorials: The Hidden Costs</h2>
+
+      <p>The published base rate is the foundation, but your actual freight cost includes surcharges and accessorial charges that aren't always obvious.</p>
+
+      <h3>Fuel Surcharges</h3>
+
+      <p>Nearly all railroads index fuel surcharges to U.S. Department of Energy weekly diesel price reports. When diesel rises above a published threshold, the surcharge kicks in and increases as diesel climbs. When diesel falls, the surcharge decreases. Fuel surcharges are usually published as a percentage of the base rate, updated monthly. On a base rate of $2,000 with a 15% surcharge, you pay an extra $300 per car — but that $300 fluctuates with fuel markets.</p>
+
+      <h3>Handling and Special Services</h3>
+
+      <p>Some commodities require special handling: hazmat placarding, protective loading, temperature control, or expedited processing. Railroads charge separately for these services. A surcharge might add 5-10% to your base rate if the commodity requires special care.</p>
+
+      <h3>Car Supply and Seasonal Fees</h3>
+
+      <p>During tight supply periods, some railroads impose car supply surcharges or prioritization fees. These are temporary charges that appear during peak seasons when demand exceeds available equipment.</p>
+
+      <h3>Demurrage, Switching, and Accessorials</h3>
+
+      <p>Beyond the freight rate itself, you'll encounter charges for <a href="/blog/demurrage-fees-how-to-avoid">demurrage</a> (holding cars beyond free time), switching (moving cars within a terminal), storage, reconsignment, and car hire on interchange lanes. These charges are published separately in accessorial tariffs and can significantly increase total cost. A shipment with a $2,000 line-haul rate might incur $400 in demurrage charges if the destination facility is slow to unload.</p>
+
+      <p>When evaluating a rate quote, always ask for the complete tariff plus all applicable surcharges and accessorials. The base rate tells only part of the story.</p>
+
+      <h2 id="contracts-vs-tariffs">Negotiated Contracts vs. Published Tariffs</h2>
+
+      <p>Everything described above applies to published tariffs — the rates available to any shipper with no commitment. But most high-volume shippers operate under <a href="/blog/rail-freight-rates-how-pricing-works">negotiated contracts</a>, which follow a different logic.</p>
+
+      <p>A contract rate is negotiated bilaterally between shipper and railroad (or negotiated through a <a href="/services">rail logistics provider</a>). The contract typically specifies:</p>
+
+      <ul>
+        <li>A fixed rate (or range of rates) for specific commodities and lanes</li>
+        <li>Minimum annual tonnage commitment</li>
+        <li>Contract duration (usually 1–3 years)</li>
+        <li>Escalation formula (if multi-year)</li>
+      </ul>
+
+      <p><strong>Contract rates are usually 15–30% below published tariff rates</strong> because they eliminate uncertainty for the railroad. The shipper commits to volume; the railroad commits to capacity and a stable rate.</p>
+
+      <p>Tariffs serve as the ceiling. If you can't negotiate a contract, or if you're a spot shipper, you pay the published tariff rate. But for shippers with regular, predictable freight, contract pricing is available — and understanding URCS and tariff logic helps you benchmark whether the contract rate the railroad offers is genuinely competitive.</p>
+
+      <h2>Reading Between the Lines: Building Negotiating Leverage</h2>
+
+      <p>Understanding URCS and tariff structure gives you negotiating leverage in three ways:</p>
+
+      <p><strong>1. You can challenge unreasonable rates.</strong> If a railroad quotes you a rate that implies a 2.0x R/VC when their published ratio is 1.5x, you can ask why. The rate might be justified (specialized equipment, route constraints, competitive disadvantage), but you can have the conversation from a position of knowledge rather than guessing.</p>
+
+      <p><strong>2. You can benchmark across carriers.</strong> If Carrier A quotes $2,400 and Carrier B quotes $2,200 on the same lane, you can investigate the difference. Different R/VC ratios? Different route assumptions? Equipment availability? Or is one carrier simply more competitive on this specific lane? Knowing what you're looking at helps you negotiate with data.</p>
+
+      <p><strong>3. You can optimize timing and lane structure.</strong> Shippers with flexible freight patterns can negotiate better rates by concentrating volume on specific lanes during off-peak seasons, consolidating small shipments into larger volumes, or committing to longer contract terms. Understanding URCS logic (cost is driven primarily by tonnage and distance) helps you structure offers that improve the railroad's economics and give them room to discount.</p>
+
+      <p>If you want a rate estimate that doesn't require calling the railroad directly, Steel Wheel Logistics offers a <a href="/tools/rail-rate-quote">same-day rail rate calculator</a> that applies URCS-based costing methodology to estimate tariff rates. The tool returns a directional estimate using published URCS coefficients and carrier R/VC ratios, plus current fuel surcharges. It's not a binding quote, but it gives you a baseline to compare against published tariffs or carrier quotes.</p>
+
+      <section class="blog-faq" id="faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <h3>What is URCS and how do railroads use it for pricing?</h3>
+          <p>URCS (Uniform Railroad Costing System) is a Surface Transportation Board-published methodology that railroads use to calculate the variable cost of moving freight. It applies eight primary cost drivers (gross ton-miles, crew, fuel, depreciation, casualties, maintenance of way, maintenance of equipment, and general/admin) to determine baseline cost. Railroads then apply an R/VC ratio (revenue-to-variable-cost markup) to set a published tariff rate. Understanding URCS helps you see that published rates are based on cost calculations, not arbitrary pricing.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What does R/VC ratio mean and why does it matter?</h3>
+          <p>R/VC (Revenue-to-Variable-Cost) is the markup applied to variable cost to set a published rate. A 1.5x R/VC means the published rate is 50% above variable cost. Different railroads publish different R/VC ratios (e.g., 1.4x on coal, 1.6x on chemicals), and different carriers use different ratios for the same commodity. This is one of the primary reasons rates differ across railroads on the same lane. The STB publishes R/VC ratios by carrier and commodity category.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How do I find and interpret a railroad's published tariff for my commodity?</h3>
+          <p>Railroad tariffs are organized by Item number, with each Item specifying a commodity (STCC code), origin-destination lane, base rate, minimum weight, and car type requirements. Most railroads publish tariffs online or through rate bureaus indexed by commodity and geography. To find your rate: identify your commodity's STCC code, locate the origin-destination pair, find the matching Item, and read the base rate plus any applicable surcharges (fuel, handling, switching, etc.). The complete tariff includes rules and exceptions that modify the base rate.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Why do two railroads quote different rates on the same lane?</h3>
+          <p>Rates differ due to: (1) Different R/VC ratios—railroads publish different markups above variable cost, (2) Different route costs—carriers may route via different network paths with different cost profiles, (3) Competitive positioning—lanes with multiple carriers see lower rates than monopoly routes, (4) Equipment availability—tight supply periods enable higher pricing, and (5) Customer volume tier—large-volume shippers get better rates than spot shippers via contract negotiations. URCS provides the floor, but published rates also reflect market positioning.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What surcharges and accessorials are typically added to the base rate?</h3>
+          <p>Common additions to the base tariff rate include: fuel surcharges (indexed to diesel prices, usually 10-15% of base rate), handling charges for special commodities, switching fees (if the destination requires yard movement), demurrage (charges for holding cars beyond free time), storage, car hire on interchange lanes, and reconsignment fees if destination changes after billing. These are published separately in accessorial tariffs. Total freight cost can be 20-40% higher than the base rate after surcharges and accessorials are applied.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How do negotiated contracts differ from published tariff rates, and what discounts should I expect?</h3>
+          <p>Published tariffs are the railroad's highest prices—available to any shipper with no volume commitment. Negotiated contracts offer volume-based discounts (typically 15-30% below tariff rates) in exchange for minimum annual tonnage commitments and contract duration. Contracts are confidential and negotiated bilaterally or through a rail logistics provider. The tariff rate is your floor if you can't negotiate a contract or can't meet minimum volumes. For shippers with regular freight, contract pricing is almost always available.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can I use URCS methodology to estimate my own freight costs?</h3>
+          <p>Yes, but it requires access to the STB's published URCS cost coefficients and the carrier's R/VC ratio for your commodity. You apply the coefficients to your shipment's characteristics (tonnage, distance, car type, commodity category) to estimate variable cost, then multiply by the carrier's R/VC ratio to estimate the published tariff rate. In practice, this is complex because route costs vary and R/VC ratios are specific to commodity and competitive context. Steel Wheel Logistics offers a <a href="/tools/rail-rate-quote">rate calculator</a> that applies URCS methodology to return an indicative estimate—accurate enough for comparison shopping, but not a binding quote.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How often do tariff rates and fuel surcharges change?</h3>
+          <p>Published base tariff rates can change at any time, but in practice most railroads publish rate changes a few times per year or less frequently unless market conditions shift dramatically. Fuel surcharges, by contrast, are indexed to weekly diesel price reports and typically update monthly or more frequently depending on the carrier. When evaluating a quote, always verify current fuel surcharge levels and confirm the tariff rate validity date.</p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Author -->
+    <div class="blog-author">
+      <div class="blog-author-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+      </div>
+      <div class="blog-author-info">
+        <div class="blog-author-name">Steel Wheel Logistics</div>
+        <div class="blog-author-bio">We coordinate bulk rail freight across North America — from rate negotiation and car sourcing to transload coordination and tracking. Based in Mississippi, serving shippers nationwide.</div>
+      </div>
+    </div>
+
+    <!-- Keep Reading Section -->
+    <div class="blog-keep-reading">
+      <h3>Keep Reading</h3>
+      <ul>
+        <li><a href="/blog/rail-freight-rates-how-pricing-works">How Rail Freight Rates Work: Tariffs, Contracts, and Negotiation</a> — Understand the practical difference between tariffs and contracts, and how to negotiate better rates.</li>
+        <li><a href="/blog/bulk-commodity-shipping-by-rail">Bulk Commodity Shipping by Rail</a> — Equipment selection, unit trains vs. manifest service, and seasonal pricing dynamics for major bulk commodities.</li>
+        <li><a href="/blog/demurrage-fees-how-to-avoid">Demurrage Fees: How to Avoid Them</a> — One of the highest-impact cost levers in rail shipping. Understanding demurrage charges and optimizing your loading strategy.</li>
+        <li><a href="/blog/rail-vs-truck-freight-cost-comparison">Rail vs. Truck: Freight Cost Comparison</a> — When does rail beat trucking, and by how much? The economics of rail vs. truck for specific lanes and commodities.</li>
+      </ul>
+    </div>
+
+    <!-- CTA -->
+    <div class="blog-cta">
+      <h3>Ready to Get a Competitive Rate?</h3>
+      <p>Try our free URCS-based rate calculator to estimate what your freight should cost. Then compare against published tariffs to see if you're getting a fair quote.</p>
+      <a href="/tools/rail-rate-quote" class="btn btn-primary">Get a Rate Estimate</a>
+    </div>
+
+    <div class="blog-back">
+      <a href="/blog">&larr; Back to All Posts</a>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/tools">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

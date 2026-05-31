@@ -1,0 +1,2273 @@
+[
+ {
+  "company_name": "Vulcan Materials McCook Quarry",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "crushed_stone",
+   "limestone"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "McCook",
+  "lat": 41.795,
+  "lon": -87.8311,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Vulcan Materials Reed Quarry",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "crushed_stone",
+   "limestone"
+  ],
+  "industry_naics": "",
+  "state": "KY",
+  "county": "",
+  "city": "Grand Rivers",
+  "lat": 37.0039,
+  "lon": -88.2345,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Vulcan Materials Calera Quarry",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "crushed_stone",
+   "limestone"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Calera",
+  "lat": 33.1043,
+  "lon": -86.753,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Vulcan Materials Bessemer Quarry",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "crushed_stone"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Bessemer",
+  "lat": 33.4019,
+  "lon": -86.9542,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Vulcan Materials Tampa Quarry",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "limestone",
+   "sand"
+  ],
+  "industry_naics": "",
+  "state": "FL",
+  "county": "",
+  "city": "Tampa",
+  "lat": 27.9506,
+  "lon": -82.4572,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Vulcan Materials Brownwood Quarry",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "limestone"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Brownwood",
+  "lat": 31.7093,
+  "lon": -98.9909,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Vulcan Materials Knippa Trap Rock",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "trap_rock",
+   "ballast"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Knippa",
+  "lat": 29.2868,
+  "lon": -99.6394,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Vulcan Materials San Antonio Quarry",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "limestone"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "San Antonio",
+  "lat": 29.4241,
+  "lon": -98.4936,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Vulcan Materials Pleasanton Quarry",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "sand_gravel"
+  ],
+  "industry_naics": "",
+  "state": "CA",
+  "county": "",
+  "city": "Pleasanton",
+  "lat": 37.6624,
+  "lon": -121.8747,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Martin Marietta Beckmann Quarry",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "limestone",
+   "crushed_stone"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "San Antonio",
+  "lat": 29.6378,
+  "lon": -98.5022,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Martin Marietta Three Rivers Quarry",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "limestone"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Three Rivers",
+  "lat": 28.4664,
+  "lon": -98.1789,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Martin Marietta Castle Hayne Quarry",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "limestone"
+  ],
+  "industry_naics": "",
+  "state": "NC",
+  "county": "",
+  "city": "Castle Hayne",
+  "lat": 34.354,
+  "lon": -77.9,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Martin Marietta Wake Stone Quarry",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "granite"
+  ],
+  "industry_naics": "",
+  "state": "NC",
+  "county": "",
+  "city": "Knightdale",
+  "lat": 35.7873,
+  "lon": -78.4805,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Martin Marietta Conemaugh Plant",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "PA",
+  "county": "",
+  "city": "Davidsville",
+  "lat": 40.235,
+  "lon": -78.9283,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Martin Marietta Ferndale Quarry",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "sand_gravel"
+  ],
+  "industry_naics": "",
+  "state": "WA",
+  "county": "",
+  "city": "Ferndale",
+  "lat": 48.8462,
+  "lon": -122.591,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Martin Marietta Three Forks Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "MT",
+  "county": "",
+  "city": "Three Forks",
+  "lat": 45.893,
+  "lon": -111.55,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Martin Marietta Midlothian Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Midlothian",
+  "lat": 32.4824,
+  "lon": -97.0436,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Martin Marietta Hunter Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "New Braunfels",
+  "lat": 29.703,
+  "lon": -98.1245,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Martin Marietta Sugar Creek Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "MO",
+  "county": "",
+  "city": "Sugar Creek",
+  "lat": 39.1109,
+  "lon": -94.4346,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CRH Pennsy Supply Hummelstown Quarry",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "limestone"
+  ],
+  "industry_naics": "",
+  "state": "PA",
+  "county": "",
+  "city": "Hummelstown",
+  "lat": 40.262,
+  "lon": -76.7066,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CRH Tilcon Mount Hope Quarry",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "trap_rock"
+  ],
+  "industry_naics": "",
+  "state": "NJ",
+  "county": "",
+  "city": "Wharton",
+  "lat": 40.9051,
+  "lon": -74.5808,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CRH Stavola Tinton Falls Quarry",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "trap_rock"
+  ],
+  "industry_naics": "",
+  "state": "NJ",
+  "county": "",
+  "city": "Tinton Falls",
+  "lat": 40.2956,
+  "lon": -74.0995,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CRH Ash Grove Cement Foreman",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Foreman",
+  "lat": 33.7176,
+  "lon": -94.3955,
+  "rail_served": "Y",
+  "nearest_class_i": "KCS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CRH Ash Grove Cement Inkom",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "ID",
+  "county": "",
+  "city": "Inkom",
+  "lat": 42.7972,
+  "lon": -112.2538,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CRH Ash Grove Cement Chanute",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "KS",
+  "county": "",
+  "city": "Chanute",
+  "lat": 37.6792,
+  "lon": -95.4572,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CRH Ash Grove Cement Louisville",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "NE",
+  "county": "",
+  "city": "Louisville",
+  "lat": 41.0008,
+  "lon": -96.1606,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CRH Ash Grove Cement Seattle",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "WA",
+  "county": "",
+  "city": "Seattle",
+  "lat": 47.6062,
+  "lon": -122.3321,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CRH Ash Grove Cement Durkee",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "OR",
+  "county": "",
+  "city": "Durkee",
+  "lat": 44.5915,
+  "lon": -117.4595,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Heidelberg Materials Mitchell Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Mitchell",
+  "lat": 38.7339,
+  "lon": -86.4736,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Heidelberg Materials Permanente Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "CA",
+  "county": "",
+  "city": "Cupertino",
+  "lat": 37.323,
+  "lon": -122.0322,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Heidelberg Materials Speed Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Speed",
+  "lat": 38.4356,
+  "lon": -85.7997,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Heidelberg Materials Tehachapi Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "CA",
+  "county": "",
+  "city": "Tehachapi",
+  "lat": 35.1322,
+  "lon": -118.449,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Heidelberg Materials Redding Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "CA",
+  "county": "",
+  "city": "Redding",
+  "lat": 40.5865,
+  "lon": -122.3917,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Heidelberg Materials Independence Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "KS",
+  "county": "",
+  "city": "Independence",
+  "lat": 37.2242,
+  "lon": -95.7083,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Heidelberg Materials Bath Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "PA",
+  "county": "",
+  "city": "Bath",
+  "lat": 40.725,
+  "lon": -75.3897,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Heidelberg Materials Evansville Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "PA",
+  "county": "",
+  "city": "Evansville",
+  "lat": 40.4867,
+  "lon": -75.8825,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Heidelberg Materials Picard Quarry",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "sand_gravel"
+  ],
+  "industry_naics": "",
+  "state": "WA",
+  "county": "",
+  "city": "Quincy",
+  "lat": 47.2342,
+  "lon": -119.8528,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Eagle Materials Sugar Creek Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "MO",
+  "county": "",
+  "city": "Sugar Creek",
+  "lat": 39.1109,
+  "lon": -94.4346,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Eagle Materials Tulsa Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "OK",
+  "county": "",
+  "city": "Tulsa",
+  "lat": 36.154,
+  "lon": -95.9928,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Eagle Materials Mountain Cement Laramie",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "WY",
+  "county": "",
+  "city": "Laramie",
+  "lat": 41.3114,
+  "lon": -105.5911,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Eagle Materials Nevada Cement Fernley",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "NV",
+  "county": "",
+  "city": "Fernley",
+  "lat": 39.608,
+  "lon": -119.2516,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Lhoist Calera Plant",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "lime"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Calera",
+  "lat": 33.1043,
+  "lon": -86.753,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Lhoist Salem Plant",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "lime"
+  ],
+  "industry_naics": "",
+  "state": "KY",
+  "county": "",
+  "city": "Salem",
+  "lat": 37.2645,
+  "lon": -88.2445,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Lhoist Clifton Plant",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "lime"
+  ],
+  "industry_naics": "",
+  "state": "PA",
+  "county": "",
+  "city": "Clifton",
+  "lat": 40.0517,
+  "lon": -76.505,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Lhoist Ripley Plant",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "lime"
+  ],
+  "industry_naics": "",
+  "state": "WV",
+  "county": "",
+  "city": "Ripley",
+  "lat": 38.8198,
+  "lon": -81.7115,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Carmeuse Maysville Plant",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "lime",
+   "limestone"
+  ],
+  "industry_naics": "",
+  "state": "KY",
+  "county": "",
+  "city": "Maysville",
+  "lat": 38.6418,
+  "lon": -83.7444,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Carmeuse Pittsburgh Plant",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "lime"
+  ],
+  "industry_naics": "",
+  "state": "PA",
+  "county": "",
+  "city": "Pittsburgh",
+  "lat": 40.4406,
+  "lon": -79.9959,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Carmeuse River Quarry Black River Falls",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "industrial_sand"
+  ],
+  "industry_naics": "",
+  "state": "WI",
+  "county": "",
+  "city": "Black River Falls",
+  "lat": 44.2944,
+  "lon": -90.8513,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "GCC of America Pueblo Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "CO",
+  "county": "",
+  "city": "Pueblo",
+  "lat": 38.2544,
+  "lon": -104.6092,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "GCC of America Trident Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "MT",
+  "county": "",
+  "city": "Three Forks",
+  "lat": 45.893,
+  "lon": -111.55,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "GCC of America Rapid City Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "SD",
+  "county": "",
+  "city": "Rapid City",
+  "lat": 44.0805,
+  "lon": -103.231,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Holcim Ste. Genevieve Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "MO",
+  "county": "",
+  "city": "Bloomsdale",
+  "lat": 38.0089,
+  "lon": -90.2392,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Holcim Holly Hill Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "SC",
+  "county": "",
+  "city": "Holly Hill",
+  "lat": 33.3187,
+  "lon": -80.4115,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Holcim Theodore Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Theodore",
+  "lat": 30.5474,
+  "lon": -88.1786,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Holcim Devil's Slide Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "UT",
+  "county": "",
+  "city": "Morgan",
+  "lat": 41.0354,
+  "lon": -111.6605,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Holcim Joppa Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Joppa",
+  "lat": 37.2117,
+  "lon": -88.8472,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Holcim Florence Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "CO",
+  "county": "",
+  "city": "Florence",
+  "lat": 38.3839,
+  "lon": -105.1119,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Holcim Hagerstown Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "MD",
+  "county": "",
+  "city": "Hagerstown",
+  "lat": 39.6418,
+  "lon": -77.72,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Continental Cement Hannibal Plant",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "MO",
+  "county": "",
+  "city": "Hannibal",
+  "lat": 39.708,
+  "lon": -91.3585,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Continental Cement Davenport Plant",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "IA",
+  "county": "",
+  "city": "Buffalo",
+  "lat": 41.4592,
+  "lon": -90.7196,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Buzzi Unicem Cape Girardeau Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "MO",
+  "county": "",
+  "city": "Cape Girardeau",
+  "lat": 37.3059,
+  "lon": -89.5181,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Buzzi Unicem Pryor Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "OK",
+  "county": "",
+  "city": "Pryor",
+  "lat": 36.3084,
+  "lon": -95.3186,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Buzzi Unicem Stockertown Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "PA",
+  "county": "",
+  "city": "Stockertown",
+  "lat": 40.7587,
+  "lon": -75.2779,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Buzzi Unicem Maryneal Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Sweetwater",
+  "lat": 32.4709,
+  "lon": -100.406,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Buzzi Unicem Greencastle Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Greencastle",
+  "lat": 39.6447,
+  "lon": -86.8645,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Buzzi Unicem Festus Cement",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "MO",
+  "county": "",
+  "city": "Festus",
+  "lat": 38.2207,
+  "lon": -90.3957,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "U.S. Silica Sparta Plant",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "industrial_sand",
+   "frac_sand"
+  ],
+  "industry_naics": "",
+  "state": "WI",
+  "county": "",
+  "city": "Sparta",
+  "lat": 43.9444,
+  "lon": -90.8131,
+  "rail_served": "Y",
+  "nearest_class_i": "CP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "U.S. Silica Mauricetown Plant",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "industrial_sand"
+  ],
+  "industry_naics": "",
+  "state": "PA",
+  "county": "",
+  "city": "Tunkhannock",
+  "lat": 41.539,
+  "lon": -75.9483,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "U.S. Silica Berkeley Springs Plant",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "industrial_sand"
+  ],
+  "industry_naics": "",
+  "state": "WV",
+  "county": "",
+  "city": "Berkeley Springs",
+  "lat": 39.6256,
+  "lon": -78.2275,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "U.S. Silica Ottawa Plant",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "industrial_sand"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Ottawa",
+  "lat": 41.3456,
+  "lon": -88.8425,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "U.S. Silica Tyler Plant",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "industrial_sand",
+   "frac_sand"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Tyler",
+  "lat": 32.3513,
+  "lon": -95.3011,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "U.S. Silica Crane Plant",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "frac_sand"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Crane",
+  "lat": 31.3954,
+  "lon": -102.3504,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Hi-Crush Kermit Sand Mine",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "frac_sand"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Kermit",
+  "lat": 31.8523,
+  "lon": -103.0917,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Hi-Crush Whitehall Plant",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "frac_sand"
+  ],
+  "industry_naics": "",
+  "state": "WI",
+  "county": "",
+  "city": "Whitehall",
+  "lat": 44.3697,
+  "lon": -91.3149,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Hi-Crush Wyeville Plant",
+  "dba": "",
+  "primary_commodity": "aggregates",
+  "commodity_subtypes": [
+   "frac_sand"
+  ],
+  "industry_naics": "",
+  "state": "WI",
+  "county": "",
+  "city": "Wyeville",
+  "lat": 43.9886,
+  "lon": -90.4128,
+  "rail_served": "Y",
+  "nearest_class_i": "CP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Texas Industries (TXI/Martin Marietta) Hunter Plant",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "New Braunfels",
+  "lat": 29.703,
+  "lon": -98.1245,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Capitol Aggregates Cement Plant",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "San Antonio",
+  "lat": 29.4241,
+  "lon": -98.4936,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Alamo Cement Co.",
+  "dba": "",
+  "primary_commodity": "cement",
+  "commodity_subtypes": [
+   "portland_cement"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "San Antonio",
+  "lat": 29.4241,
+  "lon": -98.4936,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "nssga",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ }
+]

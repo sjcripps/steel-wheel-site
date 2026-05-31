@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free rail demurrage calculator — estimate per-car and total demurrage charges using current Class I rate structures. Steel Wheel Logistics.">
+  <title>Rail Demurrage Calculator | Steel Wheel Logistics</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <link rel="canonical" href="https://steelwheellogistics.com/tools/demurrage-calculator">
+  <meta property="og:title" content="Rail Demurrage Calculator | Steel Wheel Logistics">
+  <meta property="og:description" content="Free rail demurrage estimator using current Class I rates. Itemized per-car breakdown.">
+  <meta property="og:url" content="https://steelwheellogistics.com/tools/demurrage-calculator">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+  <style>
+    /* Tool styles intentionally mirror /tools/rail-rate-quote/index.html so
+       both calculators feel like one product family. If you change brand
+       colors or button radii here, change them there too. */
+    .tool-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 48px 20px;
+      text-align: center;
+    }
+    .tool-hero h1 {
+      color: var(--white);
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .tool-hero p {
+      color: var(--steel-grey);
+      font-size: 1.05rem;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .tool-hero .badge {
+      display: inline-block;
+      background: rgba(74, 144, 217, 0.15);
+      color: var(--steel-blue);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tool-layout {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    .quote-form {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .quote-form h2 {
+      font-size: 1.3rem;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--light-grey);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 640px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+    .form-group { display: flex; flex-direction: column; }
+    .form-group.full-width { grid-column: 1 / -1; }
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .form-group label .hint {
+      font-weight: 400;
+      color: var(--text-light);
+      font-size: 0.8rem;
+    }
+    .form-group select,
+    .form-group input[type="text"],
+    .form-group input[type="number"] {
+      padding: 10px 12px;
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      background: var(--white);
+      transition: border-color 0.2s;
+    }
+    .form-group select:focus,
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--steel-blue);
+      box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.1);
+    }
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 0;
+      font-size: 0.92rem;
+      color: var(--text-body);
+      line-height: 1.45;
+    }
+    .checkbox-row input { margin-top: 3px; }
+    .checkbox-row .check-help {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+
+    .submit-row {
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .submit-btn {
+      background: var(--steel-blue);
+      color: var(--white);
+      border: none;
+      padding: 12px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .submit-btn:hover { background: var(--steel-blue-dark); }
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .submit-btn .spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: var(--white);
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .error-msg {
+      color: var(--error-red);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .results-section {
+      margin-top: 40px;
+      display: none;
+    }
+    .results-section.visible { display: block; }
+    .result-card {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .result-card h2 {
+      font-size: 1.25rem;
+      margin-bottom: 4px;
+    }
+    .result-summary {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+
+    .estimate-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 640px) {
+      .estimate-block { grid-template-columns: 1fr; }
+    }
+    .estimate-cell {
+      background: var(--light-grey);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+    .estimate-cell.primary {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: var(--white);
+    }
+    .estimate-cell .label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+    .estimate-cell.primary .label { color: rgba(255,255,255,0.7); }
+    .estimate-cell .value {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.1;
+    }
+    .estimate-cell.primary .value { color: var(--white); }
+    .estimate-cell .sub {
+      font-size: 0.82rem;
+      margin-top: 4px;
+      color: var(--text-light);
+    }
+    .estimate-cell.primary .sub { color: rgba(255,255,255,0.75); }
+
+    .legs-table {
+      margin: 0 0 20px;
+      font-size: 0.92rem;
+    }
+    .legs-table h3 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+    .legs-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .legs-table th, .legs-table td {
+      padding: 8px 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--light-grey);
+    }
+    .legs-table th {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: var(--text-light);
+      font-weight: 600;
+      background: var(--light-grey);
+    }
+    .legs-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .legs-table tr.subtotal-row td {
+      font-weight: 700;
+      background: rgba(74, 144, 217, 0.06);
+      border-top: 2px solid var(--steel-blue);
+    }
+    .legs-table tr.fee-row td {
+      background: rgba(74, 144, 217, 0.04);
+      color: var(--text-body);
+      font-size: 0.9rem;
+    }
+    .legs-table tr.free-row td {
+      color: var(--text-light);
+      font-style: italic;
+    }
+
+    .disclaimer {
+      background: var(--light-grey);
+      border-left: 3px solid var(--steel-blue);
+      padding: 16px 20px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-top: 8px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--steel-blue);
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .cta-btn:hover { background: var(--steel-blue-dark); color: var(--white); }
+    .cta-btn-secondary {
+      background: var(--white);
+      color: var(--navy);
+      border: 1px solid var(--border-grey);
+    }
+    .cta-btn-secondary:hover {
+      background: var(--light-grey);
+      color: var(--navy);
+    }
+
+    .below-form-help {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    .info-callout {
+      margin-top: 20px;
+      padding: 14px 16px;
+      background: rgba(74, 144, 217, 0.06);
+      border-left: 3px solid var(--steel-blue);
+      border-radius: 6px;
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+
+    /* Email-gate modal — copy/pasted styling from rail-rate-quote so the UX
+       reads identical to the customer. */
+    .email-gate-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+    .email-gate-overlay.visible { display: flex; }
+    .email-gate-modal {
+      background: var(--white);
+      border-radius: 12px;
+      max-width: 460px;
+      width: 100%;
+      padding: 28px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+    }
+    .email-gate-modal h3 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+      color: var(--text-dark);
+    }
+    .email-gate-modal p.lead {
+      margin: 0 0 18px;
+      font-size: 0.92rem;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+    .email-gate-modal label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .email-gate-modal input[type="email"],
+    .email-gate-modal input[type="text"],
+    .email-gate-modal input[type="tel"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    .email-gate-modal input[type="email"]:focus,
+    .email-gate-modal input[type="text"]:focus,
+    .email-gate-modal input[type="tel"]:focus {
+      outline: none;
+      border-color: var(--steel-blue);
+      box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.1);
+    }
+    .email-gate-modal .field-spacer { height: 10px; }
+    .email-gate-modal .gate-help {
+      margin: 6px 0 14px;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+    .email-gate-modal .consent-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin: 12px 0 18px;
+      font-size: 0.85rem;
+      color: var(--text-body);
+      line-height: 1.4;
+    }
+    .email-gate-modal .consent-row input { margin-top: 3px; }
+    .email-gate-modal .gate-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+    .email-gate-modal .gate-cancel {
+      background: var(--white);
+      color: var(--text-dark);
+      border: 1px solid var(--border-grey);
+      padding: 10px 18px;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .email-gate-modal .gate-submit {
+      background: var(--steel-blue);
+      color: var(--white);
+      border: none;
+      padding: 10px 22px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .email-gate-modal .gate-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .email-gate-modal .gate-error {
+      color: var(--error-red);
+      font-size: 0.88rem;
+      margin: 6px 0 12px;
+      min-height: 1.1em;
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RSWDYHVY7Z');
+  </script>
+  <!-- jsPDF + autotable for client-side PDF generation -->
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js" defer></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog">Blog</a>
+        <a href="/courses">Courses</a>
+        <a href="/tools" class="active">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="tool-hero">
+    <span class="badge">Free Tool · Rail Demurrage Estimator</span>
+    <h1>Rail Demurrage Calculator</h1>
+    <p>Estimate per-car demurrage exposure on a held railcar using current Class I rate structures. Plug in equipment type, cars held, days held, and any surcharges.</p>
+  </section>
+
+  <!-- Main content -->
+  <div class="tool-layout">
+
+    <!-- Form -->
+    <div class="quote-form">
+      <h2>Demurrage Inputs</h2>
+      <form id="calcForm" autocomplete="off">
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="equipment_type">Equipment Type</label>
+            <select id="equipment_type" required>
+              <option value="rail_controlled">Rail-Controlled (standard) — 2 free credit days</option>
+              <option value="reefer">Rail-Controlled Refrigerated (Reefer) — 1 free credit day</option>
+              <option value="private">Private-Controlled — 0 free credit days</option>
+              <option value="other_purposes">Held for Other Purposes (instructions, diversion, transfer) — 0 free</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="num_cars">Number of Cars</label>
+            <input type="number" id="num_cars" min="1" max="500" step="1" value="1" required>
+          </div>
+
+          <div class="form-group">
+            <label for="days_held">Debit Days per Car <span class="hint">(chargeable + credit, see help)</span></label>
+            <input type="number" id="days_held" min="1" max="120" step="1" value="5" required>
+          </div>
+
+          <div class="form-group">
+            <label>&nbsp;</label>
+            <div class="checkbox-row">
+              <input type="checkbox" id="hazmat">
+              <label for="hazmat" style="font-weight: 500; margin-bottom: 0;">
+                Loaded car contains hazardous materials
+                <span class="check-help">+$135/car/day, applies to ALL days held (including credit days)</span>
+              </label>
+            </div>
+            <div class="checkbox-row">
+              <input type="checkbox" id="hold_for_instructions">
+              <label for="hold_for_instructions" style="font-weight: 500; margin-bottom: 0;">
+                Held for shipping instructions ("hold for billing")
+                <span class="check-help">One-time $420/car charge plus daily demurrage</span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="submit-row">
+          <button type="submit" class="submit-btn" id="submitBtn">Calculate Demurrage</button>
+          <span class="error-msg" id="errorMsg"></span>
+        </div>
+        <p class="below-form-help">
+          <strong>Debit Days</strong> = total calendar days the railroad held the car, minus non-chargeable holidays
+          (manifest trains only). The calculator subtracts free credit days automatically.
+          For binding numbers, Class I railroads compute Debit Days from constructive placement timestamps.
+        </p>
+
+        <div class="info-callout">
+          <strong>Tip:</strong> Free credit days are <em>per car</em>, not per shipment. 5 cars held
+          3 days each = 5 separate 2-day credit windows, not "15 days collectively." This calculator
+          handles that automatically.
+        </div>
+      </form>
+    </div>
+
+    <!-- Results -->
+    <div class="results-section" id="resultsSection">
+      <div class="result-card">
+
+        <h2 id="rTitle">Demurrage Estimate</h2>
+        <div class="result-summary" id="rSummary"></div>
+
+        <div class="estimate-block">
+          <div class="estimate-cell">
+            <div class="label">Per Car</div>
+            <div class="value" id="rPerCar"></div>
+            <div class="sub" id="rPerCarSub"></div>
+          </div>
+          <div class="estimate-cell primary">
+            <div class="label">Total — All Cars</div>
+            <div class="value" id="rTotal"></div>
+            <div class="sub" id="rTotalSub"></div>
+          </div>
+        </div>
+
+        <div class="legs-table">
+          <h3>Per-Car Breakdown</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th class="num">Days</th>
+                <th class="num">Rate</th>
+                <th class="num">Subtotal</th>
+              </tr>
+            </thead>
+            <tbody id="breakdownBody"></tbody>
+          </table>
+        </div>
+
+        <div class="disclaimer" id="disclaimer">
+          This is an estimate only. Actual charges depend on car ownership, commodity, applicable
+          holiday calendar, constructive-placement timing, and customer-specific tariff agreements.
+          Steel Wheel Logistics is informational only — the line-haul railroad bills demurrage.
+          For account-specific numbers, contact us at (601) 821-2199.
+        </div>
+
+        <div class="cta-row">
+          <a href="/contact.html?subject=Demurrage+question" class="cta-btn">Contact Us</a>
+          <a href="tel:+16018212199" class="cta-btn cta-btn-secondary">Call (601) 821-2199</a>
+          <button type="button" class="cta-btn cta-btn-secondary" id="downloadPdfBtn" style="cursor:pointer">Download Estimate PDF</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Email-gate modal -->
+  <div class="email-gate-overlay" id="emailGateOverlay" role="dialog" aria-modal="true" aria-labelledby="emailGateTitle">
+    <div class="email-gate-modal">
+      <h3 id="emailGateTitle">One step before your estimate</h3>
+      <p class="lead">Where should we send your demurrage estimate? We use it to follow up if you'd like help reducing dwell on your account.</p>
+      <form id="emailGateForm" novalidate>
+        <label for="leadEmail">Email address</label>
+        <input type="email" id="leadEmail" name="email" required autocomplete="email" placeholder="you@company.com">
+        <div class="field-spacer"></div>
+        <label for="leadName">Name <span style="font-weight:400;color:#888">(optional)</span></label>
+        <input type="text" id="leadName" name="name" autocomplete="name" placeholder="Your name" maxlength="200">
+        <div class="field-spacer"></div>
+        <label for="leadPhone">Phone <span style="font-weight:400;color:#888">(optional)</span></label>
+        <input type="tel" id="leadPhone" name="phone" autocomplete="tel" placeholder="(555) 555-5555" maxlength="60">
+        <div class="gate-help">We'll only contact you about your demurrage question.</div>
+        <div class="gate-error" id="leadEmailError"></div>
+        <label class="consent-row">
+          <input type="checkbox" id="leadConsent" checked>
+          <span>I agree to receive my estimate by email and follow-up.</span>
+        </label>
+        <div class="gate-actions">
+          <button type="button" class="gate-cancel" id="leadCancel">Cancel</button>
+          <button type="submit" class="gate-submit" id="leadSubmit">Get My Estimate</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Rate table is the single source of truth. Baseline rates derived
+    // ── from a Class I demurrage tariff (effective 2025-07-01). Each
+    // ── carrier publishes its own — re-pull whenever a new effective
+    // ── date posts (historically Q2 each year). If you update these
+    // ── rates, bump RATE_BOOK_VERSION below.
+    const RATE_BOOK_VERSION = 'Class I demurrage rate guide, current as of July 2025';
+
+    const RATES = {
+      rail_controlled: {
+        label: 'Rail-Controlled (standard)',
+        free_days: 2,
+        base_days: 3,           // chargeable days at base rate after free
+        base_rate: 210,
+        edf_rate: 500,          // total rate (base + EDF) once tier flips
+      },
+      reefer: {
+        label: 'Rail-Controlled Refrigerated (Reefer)',
+        free_days: 1,
+        base_days: 4,
+        base_rate: 315,
+        edf_rate: 600,
+      },
+      private: {
+        label: 'Private-Controlled',
+        free_days: 0,
+        base_days: 5,
+        base_rate: 210,
+        edf_rate: 500,
+      },
+      other_purposes: {
+        label: 'Held for Other Purposes',
+        free_days: 0,
+        base_days: 5,
+        base_rate: 210,
+        edf_rate: 500,
+      },
+    };
+
+    const HAZMAT_PER_DAY  = 135;     // per car, runs concurrent with daily rate
+                                     // and applies even on credit/free days.
+    const HOLD_FOR_INSTR  = 420;     // one-time per car for "hold for billing"
+
+    // ── Compute per-car breakdown.
+    // days_held = "Debit Days" — total chargeable calendar days the carrier
+    // held the car (caller is expected to have already subtracted
+    // non-chargeable holidays per the carrier's holiday table). The
+    // calculator applies free credit days, then base-rate, then
+    // extended-dwell-fee tiers.
+    function computePerCar(equipType, daysHeld, hazmat, holdForInstr) {
+      const r = RATES[equipType];
+      if (!r) throw new Error('Unknown equipment type: ' + equipType);
+
+      const lines = [];
+
+      // Free credit days
+      const freeUsed = Math.min(daysHeld, r.free_days);
+      if (freeUsed > 0) {
+        lines.push({
+          kind: 'free',
+          label: 'Free credit days',
+          days: freeUsed,
+          rate: 0,
+          subtotal: 0,
+        });
+      }
+      let chargeable = Math.max(0, daysHeld - r.free_days);
+
+      // Base-rate chargeable tier
+      const baseTierDays = Math.min(chargeable, r.base_days);
+      if (baseTierDays > 0) {
+        lines.push({
+          kind: 'base',
+          label: `Base rate (Chargeable Days 1-${r.base_days})`,
+          days: baseTierDays,
+          rate: r.base_rate,
+          subtotal: baseTierDays * r.base_rate,
+        });
+      }
+      chargeable -= baseTierDays;
+
+      // Extended-dwell-fee tier
+      if (chargeable > 0) {
+        lines.push({
+          kind: 'edf',
+          label: `Extended Dwell (Day ${r.base_days + 1}+)`,
+          days: chargeable,
+          rate: r.edf_rate,
+          subtotal: chargeable * r.edf_rate,
+        });
+      }
+
+      // Hazmat surcharge — applies to ALL days held (most carriers state:
+      // "Charges assessed under this sub-section cannot be offset by
+      // credits named in previous sections"). Runs concurrent with the
+      // base/EDF rate.
+      if (hazmat && daysHeld > 0) {
+        lines.push({
+          kind: 'hazmat',
+          label: 'Hazmat / Explosives surcharge (all days)',
+          days: daysHeld,
+          rate: HAZMAT_PER_DAY,
+          subtotal: daysHeld * HAZMAT_PER_DAY,
+        });
+      }
+
+      // Hold-for-shipping-instructions one-time fee
+      if (holdForInstr) {
+        lines.push({
+          kind: 'hold',
+          label: 'Hold for shipping instructions (one-time)',
+          days: 1,
+          rate: HOLD_FOR_INSTR,
+          subtotal: HOLD_FOR_INSTR,
+        });
+      }
+
+      const perCar = lines.reduce((s, l) => s + l.subtotal, 0);
+      return { lines, perCar };
+    }
+
+    function fmtMoney(n) {
+      if (n == null || isNaN(n)) return '—';
+      return '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    }
+    function fmtNum(n) {
+      return Number(n).toLocaleString('en-US', { maximumFractionDigits: 0 });
+    }
+    // Defensive: scrub any markdown / HTML / AI-style markers from text fields
+    // before they land in the customer-facing PDF. Backend strings are plain
+    // prose today; this guards against future AI-sourced content leaking
+    // **bold** / *italic* / # heading / [link](url) / `code` into the PDF.
+    function stripMarkdown(s) {
+      if (s == null) return '';
+      let t = String(s);
+      t = t.replace(/<[^>]+>/g, '');
+      t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1');
+      t = t.replace(/\*\*([^*]+)\*\*/g, '$1');
+      t = t.replace(/__([^_]+)__/g, '$1');
+      t = t.replace(/(^|\s)\*([^*\n]+)\*(?=\s|$|[.,;:!?])/g, '$1$2');
+      t = t.replace(/(^|\s)_([^_\n]+)_(?=\s|$|[.,;:!?])/g, '$1$2');
+      t = t.replace(/`([^`]+)`/g, '$1');
+      t = t.split('\n').map(line =>
+        line.replace(/^\s*([#>]+|[-*+]|\d+\.)\s+/, '')).join('\n');
+      t = t.replace(/\*+/g, '');
+      t = t.split('\n').map(l => l.replace(/\s+$/, '')).join('\n');
+      t = t.replace(/\n{3,}/g, '\n\n');
+      return t.trim();
+    }
+
+    // ── Email-gate state. Cross-tool: a shared SWL unlock (90-day TTL in
+    // ── localStorage) lets a user who unlocked any other SWL tool skip the
+    // ── modal here. Per-session contact (name/phone) still lives in
+    // ── sessionStorage since those are tool-form fields, not unlock state.
+    const EMAIL_KEY = 'swl_demurrage_lead_email';
+    const NAME_KEY  = 'swl_demurrage_lead_name';
+    const PHONE_KEY = 'swl_demurrage_lead_phone';
+    const TOOL_SLUG = 'demurrage-calculator';
+    const FORMAT_RE = /^[A-Za-z0-9._%+\-]+@[A-Za-z0-9](?:[A-Za-z0-9\-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9\-]{0,61}[A-Za-z0-9])?)+$/;
+
+    // ── Shared SWL email-unlock (cross-tool, 90-day TTL) ──
+    const SWL_EMAIL_KEY = 'swl_email';
+    const SWL_TS_KEY = 'swl_email_unlocked_at';
+    const SWL_TTL_MS = 90 * 86400 * 1000;
+    function swlReadSharedEmail() {
+      try {
+        const e = localStorage.getItem(SWL_EMAIL_KEY) || '';
+        const ts = localStorage.getItem(SWL_TS_KEY) || '';
+        if (!e || !ts) return '';
+        const t = Date.parse(ts);
+        if (!isFinite(t)) return '';
+        if (Date.now() - t > SWL_TTL_MS) return '';
+        return e;
+      } catch (_) { return ''; }
+    }
+    function swlWriteSharedEmail(email) {
+      try {
+        localStorage.setItem(SWL_EMAIL_KEY, email);
+        localStorage.setItem(SWL_TS_KEY, new Date().toISOString());
+      } catch (_) {}
+    }
+    function swlLeadFiredKey(slug) { return 'swl_lead_fired_' + slug; }
+    function swlIsLeadFired(slug) {
+      try { return sessionStorage.getItem(swlLeadFiredKey(slug)) === '1'; } catch (_) { return false; }
+    }
+    function swlMarkLeadFired(slug) {
+      try { sessionStorage.setItem(swlLeadFiredKey(slug), '1'); } catch (_) {}
+    }
+
+    function cachedEmail() {
+      const shared = swlReadSharedEmail();
+      if (shared) return shared;
+      try { return sessionStorage.getItem(EMAIL_KEY) || ''; } catch (_) { return ''; }
+    }
+    function cacheEmail(email) {
+      swlWriteSharedEmail(email);
+      try { sessionStorage.setItem(EMAIL_KEY, email); } catch (_) {}
+    }
+    function cachedName() {
+      try { return sessionStorage.getItem(NAME_KEY) || ''; } catch (_) { return ''; }
+    }
+    function cachedPhone() {
+      try { return sessionStorage.getItem(PHONE_KEY) || ''; } catch (_) { return ''; }
+    }
+    function cacheContact(name, phone) {
+      try {
+        if (name) sessionStorage.setItem(NAME_KEY, name);
+        if (phone) sessionStorage.setItem(PHONE_KEY, phone);
+      } catch (_) {}
+    }
+
+    function showGate() {
+      const overlay = document.getElementById('emailGateOverlay');
+      overlay.classList.add('visible');
+      const input = document.getElementById('leadEmail');
+      input.value = cachedEmail();
+      const nameInput = document.getElementById('leadName');
+      const phoneInput = document.getElementById('leadPhone');
+      if (nameInput && !nameInput.value) nameInput.value = cachedName();
+      if (phoneInput && !phoneInput.value) phoneInput.value = cachedPhone();
+      document.getElementById('leadEmailError').textContent = '';
+      setTimeout(() => input.focus(), 50);
+    }
+    function hideGate() {
+      document.getElementById('emailGateOverlay').classList.remove('visible');
+    }
+
+    document.getElementById('leadCancel').addEventListener('click', () => {
+      hideGate();
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = false;
+      btn.innerHTML = 'Calculate Demurrage';
+    });
+
+    document.getElementById('emailGateOverlay').addEventListener('click', (e) => {
+      if (e.target.id === 'emailGateOverlay') {
+        hideGate();
+        const btn = document.getElementById('submitBtn');
+        btn.disabled = false;
+        btn.innerHTML = 'Calculate Demurrage';
+      }
+    });
+
+    function readForm() {
+      const equipType = document.getElementById('equipment_type').value;
+      const numCars = Math.max(1, Math.floor(Number(document.getElementById('num_cars').value) || 1));
+      const daysHeld = Math.max(0, Math.floor(Number(document.getElementById('days_held').value) || 0));
+      const hazmat = document.getElementById('hazmat').checked;
+      const holdForInstr = document.getElementById('hold_for_instructions').checked;
+      return { equipType, numCars, daysHeld, hazmat, holdForInstr };
+    }
+
+    // Track last successful render so the PDF download button can rebuild
+    // the same numbers without re-reading the form (which the user may have
+    // mutated since calculate).
+    let lastInput = null;
+    let lastCalc = null;
+
+    function renderResults(input, calc) {
+      lastInput = input;
+      lastCalc = calc;
+      const r = RATES[input.equipType];
+      document.getElementById('rTitle').textContent =
+        `Demurrage Estimate — ${input.numCars} car${input.numCars === 1 ? '' : 's'}, ${input.daysHeld} day${input.daysHeld === 1 ? '' : 's'} each`;
+
+      const surcharges = [];
+      if (input.hazmat) surcharges.push('hazmat');
+      if (input.holdForInstr) surcharges.push('hold for instructions');
+      const surchargeStr = surcharges.length ? ` · ${surcharges.join(' + ')}` : '';
+      document.getElementById('rSummary').textContent =
+        `${r.label}${surchargeStr} · ${RATE_BOOK_VERSION}`;
+
+      document.getElementById('rPerCar').textContent = fmtMoney(calc.perCar);
+      document.getElementById('rPerCarSub').textContent =
+        `${input.daysHeld} day${input.daysHeld === 1 ? '' : 's'} held per car`;
+
+      const total = calc.perCar * input.numCars;
+      document.getElementById('rTotal').textContent = fmtMoney(total);
+      document.getElementById('rTotalSub').textContent =
+        `${input.numCars} car${input.numCars === 1 ? '' : 's'} × ${fmtMoney(calc.perCar)}/car`;
+
+      // Breakdown table
+      const body = document.getElementById('breakdownBody');
+      const rows = calc.lines.map(l => {
+        const cls = l.kind === 'free' ? 'free-row' : (l.kind === 'hazmat' || l.kind === 'hold') ? 'fee-row' : '';
+        const rateCell = l.rate === 0 ? '—' : (l.kind === 'hold' ? `${fmtMoney(l.rate)}/car` : `${fmtMoney(l.rate)}/day`);
+        const daysCell = l.kind === 'hold' ? '1 (one-time)' : fmtNum(l.days);
+        return `<tr class="${cls}">
+          <td>${l.label}</td>
+          <td class="num">${daysCell}</td>
+          <td class="num">${rateCell}</td>
+          <td class="num">${fmtMoney(l.subtotal)}</td>
+        </tr>`;
+      });
+      rows.push(`<tr class="subtotal-row">
+        <td colspan="3">Per-Car Total</td>
+        <td class="num">${fmtMoney(calc.perCar)}</td>
+      </tr>`);
+      if (input.numCars > 1) {
+        rows.push(`<tr class="subtotal-row" style="border-top:1px solid var(--light-grey)">
+          <td colspan="3">Grand Total — ${input.numCars} cars</td>
+          <td class="num">${fmtMoney(total)}</td>
+        </tr>`);
+      }
+      body.innerHTML = rows.join('');
+
+      const section = document.getElementById('resultsSection');
+      section.classList.add('visible');
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    async function captureLead(email, input, calc) {
+      // Best-effort — if it fails, we still show the result. The lead may
+      // get retried by Telegram fallback on the server side anyway.
+      // Skip API call if we already fired for this tool this session
+      // (prevents API spam when a user runs multiple calcs).
+      if (swlIsLeadFired(TOOL_SLUG)) return true;
+      swlMarkLeadFired(TOOL_SLUG);
+      try {
+        const total = calc.perCar * input.numCars;
+        const res = await fetch('/api/demurrage-lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email,
+            name: cachedName(),
+            phone: cachedPhone(),
+            equipment_type: input.equipType,
+            num_cars: input.numCars,
+            days_held: input.daysHeld,
+            hazmat: input.hazmat,
+            hold_for_instructions: input.holdForInstr,
+            per_car_estimate: calc.perCar,
+            total_estimate: total,
+          }),
+        });
+        if (!res.ok) {
+          const data = await res.json().catch(() => ({}));
+          // Email validation problems pop the gate back open.
+          if (data.code && String(data.code).startsWith('email_')) {
+            try { sessionStorage.removeItem(EMAIL_KEY); } catch (_) {}
+            showGate();
+            document.getElementById('leadEmailError').textContent = data.error || 'Please enter a valid email address.';
+            return false;
+          }
+          // Non-email errors: don't block the customer experience. Log + go.
+          console.warn('demurrage-lead non-email error:', data);
+        }
+      } catch (e) {
+        console.warn('demurrage-lead fetch failed:', e);
+      }
+      return true;
+    }
+
+    async function runCalc(email) {
+      const btn = document.getElementById('submitBtn');
+      const errEl = document.getElementById('errorMsg');
+      errEl.textContent = '';
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner"></span>Calculating...';
+
+      const input = readForm();
+      if (input.daysHeld <= 0) {
+        errEl.textContent = 'Days Held must be at least 1.';
+        btn.disabled = false;
+        btn.innerHTML = 'Calculate Demurrage';
+        return;
+      }
+
+      const calc = computePerCar(input.equipType, input.daysHeld, input.hazmat, input.holdForInstr);
+      const okToShow = await captureLead(email, input, calc);
+      if (!okToShow) {
+        btn.disabled = false;
+        btn.innerHTML = 'Calculate Demurrage';
+        return;
+      }
+      renderResults(input, calc);
+
+      if (typeof gtag === 'function') {
+        const total = calc.perCar * input.numCars;
+        gtag('event', 'demurrage_calc', {
+          event_category: 'tools',
+          event_label: input.equipType,
+          value: Math.round(total),
+        });
+        gtag('event', 'demurrage_lead_capture', {
+          event_category: 'tools',
+          event_label: input.equipType,
+        });
+      }
+
+      btn.disabled = false;
+      btn.innerHTML = 'Calculate Demurrage';
+    }
+
+    document.getElementById('calcForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const errEl = document.getElementById('errorMsg');
+      errEl.textContent = '';
+
+      const stored = cachedEmail();
+      if (stored && FORMAT_RE.test(stored)) {
+        runCalc(stored);
+      } else {
+        showGate();
+      }
+    });
+
+    document.getElementById('emailGateForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input  = document.getElementById('leadEmail');
+      const errEl  = document.getElementById('leadEmailError');
+      const consent = document.getElementById('leadConsent');
+
+      const email = (input.value || '').trim().toLowerCase();
+      const name  = (document.getElementById('leadName').value || '').trim().slice(0, 200);
+      const phone = (document.getElementById('leadPhone').value || '').trim().slice(0, 60);
+      errEl.textContent = '';
+
+      if (!email) {
+        errEl.textContent = 'Email is required.';
+        return;
+      }
+      if (!FORMAT_RE.test(email)) {
+        errEl.textContent = 'Please enter a valid email address.';
+        return;
+      }
+      if (!consent.checked) {
+        errEl.textContent = 'Please agree to receive your estimate by email.';
+        return;
+      }
+
+      cacheEmail(email);
+      cacheContact(name, phone);
+      hideGate();
+      runCalc(email);
+    });
+
+    // ── Smoke-test hook: window.__demurrageCompute lets us run the math from
+    // ── the browser console (or a headless test harness) without going
+    // ── through the form. Keeps the function pure + testable.
+    window.__demurrageCompute = computePerCar;
+    window.__demurrageRates = RATES;
+
+    // ────────────────────── PDF Download ──────────────────────
+    function buildEstimateId() {
+      const d = new Date();
+      const yyyymmdd = d.getFullYear().toString() +
+        String(d.getMonth() + 1).padStart(2, '0') +
+        String(d.getDate()).padStart(2, '0');
+      const rand = Math.random().toString(36).slice(2, 6).toUpperCase();
+      return `SWL-DM-${yyyymmdd}-${rand}`;
+    }
+
+    function generateDemurragePdf() {
+      if (!lastInput || !lastCalc) return;
+      if (!window.jspdf || !window.jspdf.jsPDF) {
+        alert('PDF generator is still loading — please try again in a moment.');
+        return;
+      }
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({ unit: 'pt', format: 'letter' });
+
+      const r = RATES[lastInput.equipType];
+      const total = lastCalc.perCar * lastInput.numCars;
+      const surcharges = [];
+      if (lastInput.hazmat) surcharges.push('hazmat');
+      if (lastInput.holdForInstr) surcharges.push('hold for instructions');
+      const surchargeRow = surcharges.length ? surcharges.join(' + ') : 'None';
+
+      const estimateId = buildEstimateId();
+      const dateStr = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+      // Header
+      doc.setFillColor(26, 58, 92);
+      doc.rect(0, 0, doc.internal.pageSize.getWidth(), 70, 'F');
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(18);
+      doc.setFont('helvetica', 'bold');
+      doc.text('Steel Wheel Logistics', 40, 32);
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'normal');
+      doc.text('Demurrage Estimate', 40, 50);
+      doc.setFontSize(9);
+      doc.text('(601) 821-2199  |  steelwheellogistics.com', doc.internal.pageSize.getWidth() - 40, 50, { align: 'right' });
+
+      doc.setTextColor(0, 0, 0);
+      let y = 100;
+
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'bold');
+      doc.text(`Estimate ID: ${estimateId}`, 40, y);
+      doc.text(`Generated: ${dateStr}`, doc.internal.pageSize.getWidth() - 40, y, { align: 'right' });
+      y += 24;
+
+      const custEmail = stripMarkdown(cachedEmail() || '');
+      const custName  = stripMarkdown(cachedName() || '');
+      if (custEmail || custName) {
+        doc.setFont('helvetica', 'bold');
+        doc.text('Prepared For:', 40, y);
+        doc.setFont('helvetica', 'normal');
+        if (custName) { doc.text(custName, 130, y); y += 14; }
+        if (custEmail) { doc.text(custEmail, custName ? 130 : 130, custName ? y : y); y += 14; }
+        y += 6;
+      }
+
+      // Scenario summary
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(12);
+      doc.text('Scenario Summary', 40, y);
+      y += 10;
+      doc.autoTable({
+        startY: y,
+        head: [['Field', 'Value']],
+        body: [
+          ['Equipment', stripMarkdown(r.label)],
+          ['Cars', String(lastInput.numCars)],
+          ['Days Held (per car)', String(lastInput.daysHeld)],
+          ['Surcharges', stripMarkdown(surchargeRow)],
+        ],
+        theme: 'grid',
+        headStyles: { fillColor: [74, 144, 217], textColor: 255, fontSize: 10 },
+        styles: { fontSize: 10, cellPadding: 5 },
+        columnStyles: { 0: { cellWidth: 160, fontStyle: 'bold' } },
+        margin: { left: 40, right: 40 },
+      });
+      y = doc.lastAutoTable.finalY + 16;
+
+      // Per-day rate breakdown
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(12);
+      doc.text('Per-Car Breakdown', 40, y);
+      const lineRows = lastCalc.lines.map(l => {
+        const rateCell = l.rate === 0 ? '—' :
+          (l.kind === 'hold' ? `${fmtMoney(l.rate)}/car` : `${fmtMoney(l.rate)}/day`);
+        const daysCell = l.kind === 'hold' ? '1 (one-time)' : fmtNum(l.days);
+        return [stripMarkdown(l.label), daysCell, rateCell, fmtMoney(l.subtotal)];
+      });
+      doc.autoTable({
+        startY: y + 6,
+        head: [['Component', 'Days', 'Rate', 'Subtotal']],
+        body: lineRows,
+        theme: 'grid',
+        headStyles: { fillColor: [74, 144, 217], textColor: 255, fontSize: 10 },
+        styles: { fontSize: 10, cellPadding: 4 },
+        columnStyles: { 1: { halign: 'right' }, 2: { halign: 'right' }, 3: { halign: 'right' } },
+        margin: { left: 40, right: 40 },
+      });
+      y = doc.lastAutoTable.finalY + 14;
+
+      // Totals
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(12);
+      doc.text('Totals', 40, y);
+      const totalsBody = [
+        ['Per-Car Total', fmtMoney(lastCalc.perCar)],
+      ];
+      if (lastInput.numCars > 1) {
+        totalsBody.push([`Grand Total — ${lastInput.numCars} cars`, fmtMoney(total)]);
+      }
+      doc.autoTable({
+        startY: y + 6,
+        body: totalsBody,
+        theme: 'plain',
+        styles: { fontSize: 11, cellPadding: 4 },
+        columnStyles: { 0: { cellWidth: 360, fontStyle: 'bold' }, 1: { halign: 'right' } },
+        margin: { left: 40, right: 40 },
+        didParseCell: function(data) {
+          if (data.row.index === totalsBody.length - 1) {
+            data.cell.styles.fillColor = [240, 246, 252];
+            data.cell.styles.fontStyle = 'bold';
+            data.cell.styles.fontSize = 12;
+          }
+        },
+      });
+      y = doc.lastAutoTable.finalY + 18;
+
+      // Disclaimer + source
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(9);
+      doc.setTextColor(80, 80, 80);
+      const disc = stripMarkdown(
+        'This is an estimate only. Each Class I railroad publishes its own ' +
+        'demurrage tariff, so actual charges vary by carrier, equipment ' +
+        'ownership, commodity, applicable holiday calendar, constructive-' +
+        'placement timing, and customer-specific tariff agreements. Steel ' +
+        'Wheel Logistics is informational only — the line-haul railroad bills ' +
+        'demurrage. For account-specific numbers, contact us at (601) 821-2199.');
+      const discWrap = doc.splitTextToSize(disc, doc.internal.pageSize.getWidth() - 80);
+      doc.text(discWrap, 40, y);
+      y += discWrap.length * 11 + 14;
+
+      doc.setFontSize(9);
+      doc.setTextColor(40, 40, 40);
+      doc.text(
+        'For account-specific numbers: call (601) 821-2199 or email info@steelwheellogistics.com',
+        40, y);
+      y += 12;
+      doc.setTextColor(120, 120, 120);
+      doc.text('steelwheellogistics.com  |  © 2026 Steel Wheel Logistics', 40, y);
+
+      doc.save(`${estimateId}.pdf`);
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'demurrage_pdf_download', {
+          event_category: 'tools',
+          event_label: lastInput.equipType,
+          value: Math.round(total),
+        });
+      }
+    }
+
+    document.getElementById('downloadPdfBtn').addEventListener('click', generateDemurragePdf);
+  </script>
+
+</body>
+</html>

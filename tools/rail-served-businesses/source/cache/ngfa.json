@@ -1,0 +1,2208 @@
+[
+ {
+  "company_name": "ADM Decatur Soybean Complex",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans",
+   "corn",
+   "soybean_oil"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Decatur",
+  "lat": 39.8403,
+  "lon": -88.9548,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "ADM Cedar Rapids Plant",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "corn",
+   "ethanol",
+   "wet_milling"
+  ],
+  "industry_naics": "",
+  "state": "IA",
+  "county": "",
+  "city": "Cedar Rapids",
+  "lat": 41.9779,
+  "lon": -91.6656,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "ADM Clinton Wet Mill",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "corn",
+   "wet_milling"
+  ],
+  "industry_naics": "",
+  "state": "IA",
+  "county": "",
+  "city": "Clinton",
+  "lat": 41.8444,
+  "lon": -90.1887,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "ADM Peoria Soybean",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans",
+   "soybean_oil"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Peoria",
+  "lat": 40.6936,
+  "lon": -89.589,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "ADM Quincy Soybean",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Quincy",
+  "lat": 39.9356,
+  "lon": -91.4099,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "ADM Mexico Mill",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "MO",
+  "county": "",
+  "city": "Mexico",
+  "lat": 39.17,
+  "lon": -91.883,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "ADM Milling Beech Grove",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "wheat",
+   "flour"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Beech Grove",
+  "lat": 39.7223,
+  "lon": -86.0833,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "ADM Lincoln Crush",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "NE",
+  "county": "",
+  "city": "Lincoln",
+  "lat": 40.8136,
+  "lon": -96.7026,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "ADM Columbus Crush",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "ethanol",
+   "corn"
+  ],
+  "industry_naics": "",
+  "state": "NE",
+  "county": "",
+  "city": "Columbus",
+  "lat": 41.4297,
+  "lon": -97.3683,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "ADM Marshall Soybean",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "MN",
+  "county": "",
+  "city": "Marshall",
+  "lat": 44.4469,
+  "lon": -95.7889,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "ADM Mankato Crush",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "MN",
+  "county": "",
+  "city": "Mankato",
+  "lat": 44.1636,
+  "lon": -93.9993,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "ADM Frankfort Soybean",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Frankfort",
+  "lat": 40.2797,
+  "lon": -86.5108,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "ADM Lubbock Cottonseed",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "cottonseed",
+   "vegetable_oil"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Lubbock",
+  "lat": 33.5779,
+  "lon": -101.8552,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "ADM Velva Sunflower Crush",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "sunflower_seed"
+  ],
+  "industry_naics": "",
+  "state": "ND",
+  "county": "",
+  "city": "Velva",
+  "lat": 48.0563,
+  "lon": -100.9314,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "ADM Enderlin Soybean",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "ND",
+  "county": "",
+  "city": "Enderlin",
+  "lat": 46.6253,
+  "lon": -97.6062,
+  "rail_served": "Y",
+  "nearest_class_i": "CP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "ADM Destrehan Export",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "corn",
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Destrehan",
+  "lat": 29.9461,
+  "lon": -90.3661,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "ADM Reserve Export",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "corn",
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Reserve",
+  "lat": 30.0552,
+  "lon": -90.5495,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cargill Blair Corn Mill",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "corn",
+   "ethanol"
+  ],
+  "industry_naics": "",
+  "state": "NE",
+  "county": "",
+  "city": "Blair",
+  "lat": 41.5439,
+  "lon": -96.1356,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cargill Dayton Soybean",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Dayton",
+  "lat": 39.7589,
+  "lon": -84.1916,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cargill Eddyville Plant",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "corn",
+   "wet_milling"
+  ],
+  "industry_naics": "",
+  "state": "IA",
+  "county": "",
+  "city": "Eddyville",
+  "lat": 41.1614,
+  "lon": -92.6371,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cargill Iowa Falls Plant",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "corn"
+  ],
+  "industry_naics": "",
+  "state": "IA",
+  "county": "",
+  "city": "Iowa Falls",
+  "lat": 42.5197,
+  "lon": -93.2519,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cargill Sidney Soybean",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Sidney",
+  "lat": 40.2842,
+  "lon": -84.1555,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cargill Cedar Rapids Plant",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "corn",
+   "wet_milling"
+  ],
+  "industry_naics": "",
+  "state": "IA",
+  "county": "",
+  "city": "Cedar Rapids",
+  "lat": 41.9779,
+  "lon": -91.6656,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cargill Westchester Wheat",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "wheat",
+   "flour"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Westchester",
+  "lat": 41.8503,
+  "lon": -87.8862,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cargill Wahpeton Soybean",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "ND",
+  "county": "",
+  "city": "Wahpeton",
+  "lat": 46.2655,
+  "lon": -96.6075,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cargill Memphis Cottonseed",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "cottonseed"
+  ],
+  "industry_naics": "",
+  "state": "TN",
+  "county": "",
+  "city": "Memphis",
+  "lat": 35.1495,
+  "lon": -90.049,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cargill Kansas City Crush",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "MO",
+  "county": "",
+  "city": "Kansas City",
+  "lat": 39.0997,
+  "lon": -94.5786,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cargill Albany Soybean",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "peanuts",
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "GA",
+  "county": "",
+  "city": "Albany",
+  "lat": 31.5785,
+  "lon": -84.1557,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cargill West Sacramento Crush",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "safflower",
+   "vegetable_oil"
+  ],
+  "industry_naics": "",
+  "state": "CA",
+  "county": "",
+  "city": "West Sacramento",
+  "lat": 38.5805,
+  "lon": -121.5302,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cargill Lafayette Soybean",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Lafayette",
+  "lat": 40.4167,
+  "lon": -86.8753,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Cargill Reserve Grain Export",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "corn",
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Reserve",
+  "lat": 30.0552,
+  "lon": -90.5495,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Bunge Destrehan Export",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans",
+   "corn"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Destrehan",
+  "lat": 29.9461,
+  "lon": -90.3661,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Bunge Decatur Soybean",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "AL",
+  "county": "",
+  "city": "Decatur",
+  "lat": 34.6059,
+  "lon": -86.9833,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Bunge Council Bluffs Crush",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "IA",
+  "county": "",
+  "city": "Council Bluffs",
+  "lat": 41.2619,
+  "lon": -95.8608,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Bunge Danville Soybean",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Danville",
+  "lat": 40.1244,
+  "lon": -87.63,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Bunge Cairo Crush",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "IL",
+  "county": "",
+  "city": "Cairo",
+  "lat": 37.005,
+  "lon": -89.1762,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Bunge Decatur Crush",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Decatur",
+  "lat": 40.8303,
+  "lon": -84.9292,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Bunge Marks Soybean",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "MS",
+  "county": "",
+  "city": "Marks",
+  "lat": 34.2562,
+  "lon": -90.2742,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Bunge Crete Crush",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "NE",
+  "county": "",
+  "city": "Crete",
+  "lat": 40.6253,
+  "lon": -96.9606,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Bunge Emporia Crush",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "KS",
+  "county": "",
+  "city": "Emporia",
+  "lat": 38.4039,
+  "lon": -96.1817,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Bunge Bradley Crush",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Bradley",
+  "lat": 33.0987,
+  "lon": -93.6557,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CHS McPherson Refinery",
+  "dba": "",
+  "primary_commodity": "petroleum",
+  "commodity_subtypes": [
+   "refined_products"
+  ],
+  "industry_naics": "",
+  "state": "KS",
+  "county": "",
+  "city": "McPherson",
+  "lat": 38.3708,
+  "lon": -97.6645,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CHS Fairmont Soybean",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "MN",
+  "county": "",
+  "city": "Fairmont",
+  "lat": 43.652,
+  "lon": -94.4611,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CHS Hutchinson Wheat",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "wheat"
+  ],
+  "industry_naics": "",
+  "state": "KS",
+  "county": "",
+  "city": "Hutchinson",
+  "lat": 38.0608,
+  "lon": -97.9298,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CHS Annison Wheat Terminal",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "wheat",
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "MN",
+  "county": "",
+  "city": "Mankato",
+  "lat": 44.1636,
+  "lon": -93.9993,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CHS Myrtle Grove Export",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "corn",
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Belle Chasse",
+  "lat": 29.728,
+  "lon": -89.9747,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CHS Council Bluffs Wheat",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "wheat"
+  ],
+  "industry_naics": "",
+  "state": "IA",
+  "county": "",
+  "city": "Council Bluffs",
+  "lat": 41.2619,
+  "lon": -95.8608,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CHS Spiritwood Plant",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "wheat",
+   "barley"
+  ],
+  "industry_naics": "",
+  "state": "ND",
+  "county": "",
+  "city": "Spiritwood",
+  "lat": 46.9239,
+  "lon": -98.5589,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "The Andersons Maumee Grain",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "corn",
+   "wheat"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Maumee",
+  "lat": 41.5631,
+  "lon": -83.6536,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "The Andersons Albion Grain",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "corn"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Albion",
+  "lat": 42.2431,
+  "lon": -84.753,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "The Andersons Logansport Ethanol",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "ethanol",
+   "corn"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Logansport",
+  "lat": 40.7544,
+  "lon": -86.3567,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "The Andersons Greenville Ethanol",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "ethanol",
+   "corn"
+  ],
+  "industry_naics": "",
+  "state": "OH",
+  "county": "",
+  "city": "Greenville",
+  "lat": 40.1042,
+  "lon": -84.633,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "The Andersons Marathon Ethanol",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "ethanol",
+   "corn"
+  ],
+  "industry_naics": "",
+  "state": "MI",
+  "county": "",
+  "city": "Albion",
+  "lat": 42.2431,
+  "lon": -84.753,
+  "rail_served": "Y",
+  "nearest_class_i": "NS",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "AGP Hastings Soybean",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "NE",
+  "county": "",
+  "city": "Hastings",
+  "lat": 40.5861,
+  "lon": -98.3897,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "AGP Eagle Grove Soybean",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "IA",
+  "county": "",
+  "city": "Eagle Grove",
+  "lat": 42.6597,
+  "lon": -93.9038,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "AGP Sergeant Bluff Soybean",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "IA",
+  "county": "",
+  "city": "Sergeant Bluff",
+  "lat": 42.4103,
+  "lon": -96.3597,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "AGP Aberdeen Soybean",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "SD",
+  "county": "",
+  "city": "Aberdeen",
+  "lat": 45.4647,
+  "lon": -98.4865,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "AGP Dawson Soybean",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "MN",
+  "county": "",
+  "city": "Dawson",
+  "lat": 44.9303,
+  "lon": -96.0586,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "AGP St. Joseph Soybean",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "MO",
+  "county": "",
+  "city": "St. Joseph",
+  "lat": 39.7675,
+  "lon": -94.8467,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Riceland Stuttgart Mill",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "rice"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Stuttgart",
+  "lat": 34.5005,
+  "lon": -91.5526,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Riceland Jonesboro Mill",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "rice"
+  ],
+  "industry_naics": "",
+  "state": "AR",
+  "county": "",
+  "city": "Jonesboro",
+  "lat": 35.8423,
+  "lon": -90.7043,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "POET Bioprocessing Mitchell",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "ethanol"
+  ],
+  "industry_naics": "",
+  "state": "SD",
+  "county": "",
+  "city": "Mitchell",
+  "lat": 43.7094,
+  "lon": -98.0298,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "POET Bioprocessing Marion",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "ethanol"
+  ],
+  "industry_naics": "",
+  "state": "IA",
+  "county": "",
+  "city": "Marion",
+  "lat": 42.0345,
+  "lon": -91.5979,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "POET Bioprocessing Cloverdale",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "ethanol"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Cloverdale",
+  "lat": 39.5198,
+  "lon": -86.7964,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "POET Bioprocessing Macon",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "ethanol"
+  ],
+  "industry_naics": "",
+  "state": "MO",
+  "county": "",
+  "city": "Macon",
+  "lat": 39.7423,
+  "lon": -92.4724,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "POET Bioprocessing Ashton",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "ethanol"
+  ],
+  "industry_naics": "",
+  "state": "IA",
+  "county": "",
+  "city": "Ashton",
+  "lat": 43.3097,
+  "lon": -95.7853,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Valero Renewables Albion",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "ethanol"
+  ],
+  "industry_naics": "",
+  "state": "NE",
+  "county": "",
+  "city": "Albion",
+  "lat": 41.6925,
+  "lon": -98.0014,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Valero Renewables Mount Vernon",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "ethanol"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Mount Vernon",
+  "lat": 37.932,
+  "lon": -87.8956,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Scoular Salina Grain",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "wheat",
+   "milo"
+  ],
+  "industry_naics": "",
+  "state": "KS",
+  "county": "",
+  "city": "Salina",
+  "lat": 38.8403,
+  "lon": -97.6114,
+  "rail_served": "Y",
+  "nearest_class_i": "UP",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Scoular Andrews Pulse Crops",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "pulse_crops",
+   "specialty_grain"
+  ],
+  "industry_naics": "",
+  "state": "TX",
+  "county": "",
+  "city": "Andrews",
+  "lat": 32.3187,
+  "lon": -102.5457,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Owensboro Grain Soybean",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "KY",
+  "county": "",
+  "city": "Owensboro",
+  "lat": 37.7741,
+  "lon": -87.1132,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CGB Enterprises Mt. Vernon Export",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "corn",
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "IN",
+  "county": "",
+  "city": "Mount Vernon",
+  "lat": 37.932,
+  "lon": -87.8956,
+  "rail_served": "Y",
+  "nearest_class_i": "CSXT",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CGB Enterprises Faulkton Wheat",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "wheat"
+  ],
+  "industry_naics": "",
+  "state": "SD",
+  "county": "",
+  "city": "Faulkton",
+  "lat": 45.0356,
+  "lon": -99.124,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "Zen-Noh Convent Export",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "corn",
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Convent",
+  "lat": 30.0224,
+  "lon": -90.8367,
+  "rail_served": "Y",
+  "nearest_class_i": "CN",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ },
+ {
+  "company_name": "CGB Cargo Liberty Export",
+  "dba": "",
+  "primary_commodity": "grain",
+  "commodity_subtypes": [
+   "corn",
+   "soybeans"
+  ],
+  "industry_naics": "",
+  "state": "LA",
+  "county": "",
+  "city": "Belle Chasse",
+  "lat": 29.728,
+  "lon": -89.9747,
+  "rail_served": "Y",
+  "nearest_class_i": "BNSF",
+  "capabilities": [
+   "rail_spur",
+   "loading",
+   "unit_train"
+  ],
+  "capacity_tpy": null,
+  "contact_name": "",
+  "contact_email": "",
+  "contact_phone": "",
+  "website": "",
+  "source": "ngfa",
+  "source_confidence": "medium",
+  "last_verified_at": "2026-05-06"
+ }
+]

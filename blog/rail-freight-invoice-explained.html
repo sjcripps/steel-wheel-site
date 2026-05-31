@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rail freight invoice and freight bill explained: line haul charge, fuel surcharge, accessorial charges, STCC codes, rate authority, and how to run an invoice reconciliation that catches billing errors before payment.">
+  <meta name="keywords" content="rail freight invoice, rail freight bill, freight bill, freight invoice reconciliation, what is a freight bill, freight invoice audit, rail invoice audit, line haul charge, accessorial charges, fuel surcharge, STCC code, rate authority, rail freight billing, billing dispute rail">
+  <link rel="canonical" href="https://steelwheellogistics.com/blog/rail-freight-invoice-explained">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Rail Freight Invoice Explained: Line Items, Charges, and What to Check">
+  <meta property="og:description" content="Rail freight invoice and freight bill explained: line haul charge, fuel surcharge, accessorial charges, STCC codes, rate authority, and how to run an invoice reconciliation that catches billing errors before payment.">
+  <meta property="og:url" content="https://steelwheellogistics.com/blog/rail-freight-invoice-explained">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rail Freight Invoice Explained: Line Items, Charges, and What to Check">
+  <meta name="twitter:description" content="Rail freight invoice and freight bill explained: line haul charge, fuel surcharge, accessorial charges, STCC codes, rate authority, and how to run an invoice reconciliation that catches billing errors before payment.">
+  <meta name="twitter:image" content="https://steelwheellogistics.com/images/logo-192.png">
+  <title>Rail Freight Invoice Explained: Line Items, Charges, and What to Check | Steel Wheel Logistics</title>
+  <link rel="stylesheet" href="/style.css?v=5">
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Rail Freight Invoice Explained: Line Items, Charges, and What to Check",
+    "description": "Rail freight invoice explained: line items, charges, fuel surcharges, accessorials, and what to audit. Catch billing errors before you pay with this shipper guide.",
+    "datePublished": "2026-04-16",
+    "dateModified": "2026-04-16",
+    "author": {
+      "@type": "Organization",
+      "name": "Steel Wheel Logistics"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Steel Wheel Logistics",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://steelwheellogistics.com/images/logo-192.png"
+      }
+    },
+    "url": "https://steelwheellogistics.com/blog/rail-freight-invoice-explained",
+    "image": [
+      "https://steelwheellogistics.com/images/logo-192.png"
+    ],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://steelwheellogistics.com/blog/rail-freight-invoice-explained"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are the main line items on a rail freight invoice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A typical rail freight invoice includes the base line haul charge, fuel surcharge, accessorial charges (demurrage, switching, storage, weighing), and sometimes interchange or joint line charges when multiple carriers are involved. Taxes and regulatory fees may also appear depending on the commodity and route."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I audit a rail freight invoice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Match every line to a source document: the bill of lading for origin and destination, the contract or tariff for the agreed rate, the published fuel surcharge schedule for the applicable month, and your own facility records for any accessorial charge. If a line item does not match, flag it immediately and dispute it in writing before the payment terms expire."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long do I have to dispute a rail freight invoice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most railroad tariffs and contracts give shippers a limited window to dispute billing errors, typically 60 to 180 days from the invoice date. After that window closes, overcharges become much harder to recover. Always review invoices promptly and file disputes in writing with supporting documentation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between a freight bill and an invoice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A freight bill is the carrier's itemized statement of transportation charges for a single shipment. An invoice is the billing document sent to the payer, which can cover one shipment or consolidate multiple freight bills. The terms are often used interchangeably, but the freight bill is the underlying detail and the invoice is the summary you actually pay."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who is responsible for paying the rail freight invoice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The bill of lading designates the billing party, usually marked as prepaid (shipper pays) or collect (consignee pays). On third-party billing arrangements, a named party other than shipper or consignee takes responsibility. Whoever is listed as the billing party on the BOL is the one the railroad pursues for payment, regardless of any private agreement between shipper and receiver."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is freight invoice reconciliation on rail shipments?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Freight invoice reconciliation is the line-by-line comparison of a rail freight invoice against the bill of lading, the rate authority (contract or tariff), the published fuel surcharge schedule for the waybill month, and your facility records for any accessorial event. The goal is to catch overcharges, duplicate billings, and rate authority errors before the invoice is paid, since most tariffs and contracts allow only 60 to 180 days to dispute a billing error."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is an STCC code and why does it matter on a rail freight invoice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "STCC stands for Standard Transportation Commodity Code, a seven-digit numeric code that classifies the commodity being shipped. Rail rates and tariffs are organized by STCC, so the wrong STCC on an invoice can trigger a higher rate category. Always verify the STCC on the invoice matches both the bill of lading and the actual commodity. STCC mismatches are one of the most expensive rail invoice errors and one of the easiest to catch with a reconciliation step."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is the rail fuel surcharge calculated on an invoice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each Class I railroad publishes its own fuel surcharge program. Most are calculated either as a percentage of the base line haul rate or as a dollars-per-mile adder, with the trigger price and escalator indexed to the U.S. Department of Energy's weekly On-Highway Diesel Fuel Price or a Surface Transportation Board quarterly fuel index. The surcharge applied is the one in effect for the waybill month, not the billing or delivery month — auditing this is one of the most common ways to catch invoice errors."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RSWDYHVY7Z');
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog" class="active">Blog</a>
+        <a href="/courses">Courses</a>
+        <a href="/tools">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Blog Hero -->
+  <section class="blog-hero">
+    <div class="blog-breadcrumb">
+      <a href="/blog">Blog</a><span class="separator">/</span><span>Cost &amp; Strategy</span>
+    </div>
+    <h1>Rail Freight Invoice Explained: Line Items, Charges, and What to Check</h1>
+    <div class="blog-hero-meta">
+      <span>April 16, 2026</span>
+      <span class="dot">&middot;</span>
+      <span>11 min read</span>
+      <span class="dot">&middot;</span>
+      <span class="blog-tag">Cost &amp; Strategy</span>
+    </div>
+  </section>
+
+  <article class="blog-post">
+    <div class="blog-post-content">
+
+      <div class="blog-highlight">
+        <strong>Key fact:</strong> Freight audit firms routinely find billing errors on 3 to 5 percent of rail invoices they review. On a mid-sized shipper running 500 cars a year, that can add up to tens of thousands of dollars in recoverable overcharges — money that walks out the door quietly when nobody audits the bill.
+      </div>
+
+      <p class="blog-lead">A rail freight invoice looks simple until you actually try to read one. Base charge, fuel, accessorials, a handful of abbreviations, a total at the bottom. Pay it and move on. That habit is how shippers end up overpaying for years on rates that were negotiated down months ago, or paying demurrage for cars that were released on time, or getting charged a switching fee that was supposed to be included in the line haul.</p>
+
+      <p>This guide breaks down every line item you will see on a rail freight invoice, what each charge actually represents, and exactly what to check before you cut the payment. If you ship more than a handful of cars a year, the time you spend auditing invoices is some of the highest-return work in your freight operation.</p>
+
+      <nav class="blog-toc">
+        <div class="blog-toc-title">In This Guide</div>
+        <ol>
+          <li><a href="#invoice-vs-freight-bill">Invoice vs. Freight Bill: Know What You're Reading</a></li>
+          <li><a href="#header-information">The Header: Who, What, Where, When</a></li>
+          <li><a href="#line-haul">Line Item: Line Haul Charge</a></li>
+          <li><a href="#fuel-surcharge">Line Item: Fuel Surcharge</a></li>
+          <li><a href="#accessorial-charges">Line Item: Accessorial Charges</a></li>
+          <li><a href="#interchange-charges">Line Item: Interchange and Joint Line Charges</a></li>
+          <li><a href="#taxes-fees">Line Item: Taxes and Regulatory Fees</a></li>
+          <li><a href="#invoice-audit">How to Audit a Rail Freight Invoice</a></li>
+          <li><a href="#common-errors">Common Billing Errors to Watch For</a></li>
+          <li><a href="#dispute-process">How to Dispute an Invoice Charge</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ol>
+      </nav>
+
+      <!-- Section 1 -->
+      <h2 id="invoice-vs-freight-bill">Invoice vs. Freight Bill: Know What You're Reading</h2>
+
+      <p>Shippers often use "freight bill" and "invoice" interchangeably, and in practice nobody will correct you. But the two documents serve slightly different purposes, and the distinction matters when you're reconciling charges.</p>
+
+      <p>A <strong>freight bill</strong> is the carrier's itemized statement of charges for a single shipment. It lists the car, the commodity, the origin and destination, the rate authority, and every charge tied to that move. It is the source of truth for a particular car.</p>
+
+      <p>An <strong>invoice</strong> is the billing document sent to whoever owes the money. It can be a single freight bill wrapped in an invoice header, or it can be a consolidated statement that groups dozens or hundreds of freight bills into a single payable. Large shippers typically receive weekly or monthly consolidated invoices rather than one invoice per car.</p>
+
+      <p>When you audit, you audit at the freight bill level. The consolidated invoice total only tells you what you owe in aggregate; the freight bill tells you whether that aggregate is right.</p>
+
+      <!-- Section 2 -->
+      <h2 id="header-information">The Header: Who, What, Where, When</h2>
+
+      <p>Before you look at a single charge, verify the header information. If any of this is wrong, every line item below it is suspect.</p>
+
+      <ul>
+        <li><strong>Carrier name and SCAC:</strong> The Standard Carrier Alpha Code identifies the billing railroad (e.g., BNSF, UP, CSXT, NS). If you moved on a short line and the bill comes from a Class I, that's possible on a joint move but worth verifying.</li>
+        <li><strong>Shipper and consignee:</strong> Must match the bill of lading exactly. A misspelling or wrong party can create problems later on claims or billing disputes.</li>
+        <li><strong>Origin and destination:</strong> Check the rate station or FSAC (Freight Station Accounting Code) on both ends. Rates are based on specific rate stations, not cities. Two facilities five miles apart can have completely different rates.</li>
+        <li><strong>Car initial and number:</strong> The reporting mark and number (e.g., BNSF 437821). Confirm it matches the BOL and the actual car you shipped.</li>
+        <li><strong>Commodity and <a href="/blog/stcc-codes-explained">STCC code</a>:</strong> The Standard Transportation Commodity Code determines the rate category. Wrong STCC is one of the most common billing errors — and one of the most expensive.</li>
+        <li><strong>Weight:</strong> The billed weight, the origin weight, and (if applicable) the reweigh weight. Rates are typically per net ton or per 100 pounds, so weight errors translate directly to dollar errors.</li>
+        <li><strong>Waybill date and delivery date:</strong> These drive accessorial windows (free time for loading/unloading) and the fuel surcharge month.</li>
+      </ul>
+
+      <!-- Section 3 -->
+      <h2 id="line-haul">Line Item: Line Haul Charge</h2>
+
+      <p>The line haul charge — sometimes listed as "freight charge" or "base rate" — is the core transportation fee for moving the car from origin to destination. It is almost always the largest single line on the invoice. Before the invoice arrives, you can use our <a href="/tools/rail-rate-quote">free rail rate estimator</a> to model what a fair line-haul charge should look like for your lane and commodity, then compare the actual charge against that benchmark.</p>
+
+      <p>Line haul charges come from one of two rate authorities:</p>
+
+      <h3>Tariff Rate</h3>
+      <p>A published, publicly available rate for a specific origin-destination-commodity combination. Tariffs are the default pricing mechanism when no contract exists. Each rate has an item number, an STCC range, a weight basis, and expiration terms. If your invoice cites a tariff, pull that tariff and verify the rate matches.</p>
+
+      <h3>Contract Rate</h3>
+      <p>A negotiated rate that overrides the tariff for shipments covered by the contract. Contracts will have a contract number, a term, specific lanes, and often volume commitments. The invoice should reference the contract number; if it doesn't, or if it references a tariff when a contract should apply, that's the first thing to flag.</p>
+
+      <p>The line haul is typically quoted as a rate per net ton, per 100 pounds (CWT), or as a flat rate per car. Multiply the rate by the billing weight and you should arrive at the line haul charge shown on the invoice. If the math doesn't work, something is off — either the rate, the weight, or the rate basis. Detailed mechanics of <a href="/blog/rail-freight-rates-how-pricing-works">how rail freight rates are structured</a> make it easier to spot discrepancies.</p>
+
+      <!-- Section 4 -->
+      <h2 id="fuel-surcharge">Line Item: Fuel Surcharge</h2>
+
+      <p>Fuel surcharge (FSC) is a separate line item that adjusts for changes in diesel prices. Every Class I railroad publishes its own fuel surcharge program with a specific trigger price, escalator, and reference index — usually the Department of Energy's weekly On-Highway Diesel Fuel Price or a quarterly Surface Transportation Board index.</p>
+
+      <p>The FSC is typically calculated as either a percentage of the base rate (mileage-based) or a dollars-per-mile adder. The applicable rate depends on the <strong>month of shipment</strong>, not the month you get the invoice. A car that shipped in March will carry March's fuel surcharge even if it delivers in April and gets billed in May.</p>
+
+      <p>What to check on the FSC line:</p>
+
+      <ul>
+        <li><strong>The correct month is being applied.</strong> FSC tables reset monthly. A billing system that pulls the wrong month will systematically over- or under-charge.</li>
+        <li><strong>The FSC program matches your contract.</strong> Some contracts cap fuel surcharge, use a different index, or exempt FSC entirely on certain lanes. Make sure the invoice respects the contract terms.</li>
+        <li><strong>The calculation method is right.</strong> Percentage vs. per-mile gives very different results on long-haul moves. Verify the basis.</li>
+      </ul>
+
+      <div class="blog-highlight">
+        <strong>Audit tip:</strong> Fuel surcharge is one of the most commonly mis-applied line items on rail invoices. Pull the railroad's published FSC schedule for the shipment month and compare it to what was billed. If you run volume, build a spreadsheet that automates this check.
+      </div>
+
+      <!-- Section 5 -->
+      <h2 id="accessorial-charges">Line Item: Accessorial Charges</h2>
+
+      <p>Accessorials are any charges beyond the line haul and fuel surcharge. They cover services or events outside the normal movement of the car. This is where billing errors tend to cluster, because accessorials depend on events at specific facilities and specific times.</p>
+
+      <h3>Common Accessorial Charges</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Charge</th>
+            <th>What It's For</th>
+            <th>What to Check</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Demurrage</strong></td>
+            <td>Detention of railcars beyond allowed free time at origin or destination</td>
+            <td>Verify the arrival and release timestamps against your facility records. Confirm free time per the tariff.</td>
+          </tr>
+          <tr>
+            <td><strong>Switching</strong></td>
+            <td>Moving cars within a terminal, to/from a private siding, or between yards</td>
+            <td>Check if the switch was actually performed and whether it was already included in the line haul.</td>
+          </tr>
+          <tr>
+            <td><strong>Storage</strong></td>
+            <td>Holding loaded or empty cars at a railroad-controlled track beyond agreed terms</td>
+            <td>Confirm the storage was requested or necessary; verify per-day rate and duration.</td>
+          </tr>
+          <tr>
+            <td><strong>Weighing</strong></td>
+            <td>Track scale use at an origin, destination, or intermediate location</td>
+            <td>Make sure the weighing was requested and that the charge isn't duplicated across carriers.</td>
+          </tr>
+          <tr>
+            <td><strong>Reconsignment/Diversion</strong></td>
+            <td>Changing the consignee or destination after the car has shipped</td>
+            <td>Check the diversion request date; charges escalate sharply the later the change is made.</td>
+          </tr>
+          <tr>
+            <td><strong>Equipment charges</strong></td>
+            <td>Use of railroad-supplied cars, special loading devices, or hazmat equipment</td>
+            <td>Verify the equipment was actually used and that private-car shipments aren't being charged carrier car rates.</td>
+          </tr>
+          <tr>
+            <td><strong>Cleaning</strong></td>
+            <td>Interior cleaning of cars between loads, often for food-grade or chemical commodities</td>
+            <td>Confirm cleaning was performed and certified; check for duplication if you did the cleaning yourself.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Demurrage deserves its own audit process. It is the single largest source of unnecessary accessorial spend for most shippers, and the single most disputable line item when charges are wrong. Our separate guide on <a href="/blog/demurrage-fees-how-to-avoid">how to avoid and dispute demurrage</a> walks through the full playbook.</p>
+
+      <!-- Section 6 -->
+      <h2 id="interchange-charges">Line Item: Interchange and Joint Line Charges</h2>
+
+      <p>When a shipment moves over more than one railroad, the line haul may be presented as a single through-rate or as separate carrier segments. On a through-rate, you see one line haul number and the carriers settle the split among themselves. On a joint line bill, you see each carrier's portion broken out.</p>
+
+      <p>Joint line invoicing is common when a <a href="/blog/short-line-vs-class-i-railroads">short line railroad</a> originates or terminates the movement and a Class I handles the long haul in between. Make sure the segments add up to the contracted through-rate if you negotiated one, and make sure no carrier is double-billing for the same mileage.</p>
+
+      <p>Interchange charges proper (the cost of physically handing the car from one railroad to another at an <a href="/blog/railroad-interchange-guide">interchange point</a>) are typically absorbed into the line haul and rarely appear as a standalone line item to shippers. If you see one, question it.</p>
+
+      <!-- Section 7 -->
+      <h2 id="taxes-fees">Line Item: Taxes and Regulatory Fees</h2>
+
+      <p>Taxes on rail freight are limited compared to trucking, but a few fees may appear:</p>
+
+      <ul>
+        <li><strong>Hazmat response fees:</strong> A per-shipment or per-car fee on certain hazardous materials to fund emergency response training.</li>
+        <li><strong>Inspection fees:</strong> In some cases, third-party inspection costs flow through the invoice.</li>
+        <li><strong>Import/export and border fees:</strong> On cross-border moves (Canada, Mexico), customs-related fees may appear.</li>
+        <li><strong>State fees:</strong> Rare on interstate rail, but some states apply specific fees to particular commodity classes.</li>
+      </ul>
+
+      <p>These should be small relative to the line haul. If you see an unusual tax or fee line, ask what the regulatory basis is — it's fair game to request the citation.</p>
+
+      <!-- Section 8 -->
+      <h2 id="invoice-audit">How to Audit a Rail Freight Invoice</h2>
+
+      <p>A defensible audit process is repeatable, documented, and done before payment is released. Here's a four-step framework you can run on every invoice.</p>
+
+      <div class="blog-steps">
+        <div class="blog-step">
+          <div class="blog-step-number">1</div>
+          <div class="blog-step-content">
+            <strong>Match invoice to BOL.</strong> Every header field — shipper, consignee, origin, destination, car number, commodity, weight, waybill date — should match the bill of lading. Any mismatch is a flag, not automatically an error, but worth an explanation.
+          </div>
+        </div>
+        <div class="blog-step">
+          <div class="blog-step-number">2</div>
+          <div class="blog-step-content">
+            <strong>Verify the rate authority.</strong> Pull the contract or tariff cited on the invoice. Confirm the origin, destination, and commodity fall within that authority's scope and that the effective date covers the waybill date. Recalculate the line haul from the rate basis and the billed weight.
+          </div>
+        </div>
+        <div class="blog-step">
+          <div class="blog-step-number">3</div>
+          <div class="blog-step-content">
+            <strong>Verify the fuel surcharge.</strong> Pull the railroad's FSC schedule for the waybill month. Confirm the index value, the applicable formula, and the resulting charge. Check it against any contract-specific FSC terms.
+          </div>
+        </div>
+        <div class="blog-step">
+          <div class="blog-step-number">4</div>
+          <div class="blog-step-content">
+            <strong>Validate every accessorial.</strong> For each accessorial line, confirm the event actually occurred (demurrage days against gate logs, switching against facility records, storage against requested hold orders). Verify the rate in the tariff and the quantity billed.
+          </div>
+        </div>
+      </div>
+
+      <p>For shippers running more than 100 cars a year, building out a pre-payment audit is effectively free money — the captured overcharges typically more than cover the analyst time. If you're just starting to formalize this, a simple spreadsheet with BOL-to-invoice reconciliation columns will catch most errors. Our <a href="/courses">rail operations courses</a> walk through the full workflow for shippers building this capability internally.</p>
+
+      <!-- Section 9 -->
+      <h2 id="common-errors">Common Billing Errors to Watch For</h2>
+
+      <p>After auditing thousands of rail invoices, the same handful of errors show up over and over. Knowing the pattern makes them faster to catch.</p>
+
+      <h3>Wrong Rate Authority Applied</h3>
+      <p>The most expensive error. A contracted lane gets billed at the tariff rate because the carrier's system didn't pull the contract, and you pay a premium you didn't agree to. Always verify the contract number is referenced on every invoice for shipments under contract.</p>
+
+      <h3>Weight Errors</h3>
+      <p>Rail rates are weight-driven. A car that shipped at 190,000 pounds but was billed at 200,000 pounds is a 5 percent overcharge on every rate-related line. Common causes: reweigh discrepancies not applied, wrong minimum weight defaulting, tare weight confusion.</p>
+
+      <h3>Duplicate Accessorials</h3>
+      <p>Getting billed twice for the same switch, the same weighing, or the same demurrage event. Usually a billing system artifact when a charge gets recorded on both the originating and delivering carrier's bills on a joint move.</p>
+
+      <h3>Demurrage on Non-Demurrage Days</h3>
+      <p>Free time clocks are paused on weekends and holidays in many tariffs (though not all). If a carrier is counting Sundays in the free time window, you may be paying for days that should have been exempt. Pull the specific demurrage tariff and verify.</p>
+
+      <h3>Fuel Surcharge on Excluded Charges</h3>
+      <p>Fuel surcharge is supposed to apply to the line haul base only, not to accessorials. Some billing systems calculate FSC on the whole invoice, which inflates it. Check the base on which the FSC is computed.</p>
+
+      <h3>STCC Mismatch</h3>
+      <p>Commodity codes drive rates. A shipment of granulated urea (STCC 2871923) billed as bulk fertilizer under a generic code may draw a different — and higher — rate. Verify STCC matches both the BOL and the actual commodity description.</p>
+
+      <h3>Wrong Rate Station</h3>
+      <p>Rates are specific to rate stations, not cities. An origin listed as "Houston" could be any of a dozen rate stations with different pricing. Verify the FSAC or rate station name on the invoice matches the actual origin on the BOL.</p>
+
+      <!-- Section 10 -->
+      <h2 id="dispute-process">How to Dispute an Invoice Charge</h2>
+
+      <p>When you find an error, do not simply short-pay the invoice and move on. That triggers collection calls, damages your account standing, and rarely resolves anything. Formal disputes work better.</p>
+
+      <div class="blog-steps">
+        <div class="blog-step">
+          <div class="blog-step-number">1</div>
+          <div class="blog-step-content">
+            <strong>File the dispute in writing, promptly.</strong> Most tariffs and contracts specify a dispute window — 60, 90, or 180 days from invoice date are common. After that window closes, overcharges become effectively unrecoverable. File as soon as you catch the error.
+          </div>
+        </div>
+        <div class="blog-step">
+          <div class="blog-step-number">2</div>
+          <div class="blog-step-content">
+            <strong>Cite the specific charge, the specific reason, and the specific authority.</strong> "Demurrage charged 4 days, facility records show car released on day 2 of free time — see attached gate log" is far more effective than "demurrage looks high."
+          </div>
+        </div>
+        <div class="blog-step">
+          <div class="blog-step-number">3</div>
+          <div class="blog-step-content">
+            <strong>Submit supporting documentation.</strong> Contract excerpts, tariff pages, gate logs, weight tickets, correspondence. The more you hand the claims analyst, the faster they can approve a credit.
+          </div>
+        </div>
+        <div class="blog-step">
+          <div class="blog-step-number">4</div>
+          <div class="blog-step-content">
+            <strong>Pay the undisputed portion.</strong> If the invoice is $10,000 and $1,200 is disputed, pay $8,800 on time and note the dispute on the remainder. This protects your credit terms while the dispute works.
+          </div>
+        </div>
+        <div class="blog-step">
+          <div class="blog-step-number">5</div>
+          <div class="blog-step-content">
+            <strong>Escalate if stalled.</strong> If you don't get a response within the tariff's specified timeframe, escalate to the carrier's pricing manager or your account representative. Severe or repeated billing issues can be raised with the Surface Transportation Board, but that's rare.
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-highlight">
+        <strong>Bottom line:</strong> A rail freight invoice is a contract in action. Every line should tie back to a rate, a tariff, a BOL, or a documented event at your facility. Shippers who treat invoices as a review step — not a pay-on-receipt formality — consistently run lower freight costs than shippers who don't. The work is boring, it's detail-heavy, and it pays for itself every time.
+      </div>
+
+      <!-- FAQ Section -->
+      <section class="blog-faq" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <h3>What are the main line items on a rail freight invoice?</h3>
+          <p>A typical rail freight invoice includes the base line haul charge, fuel surcharge, accessorial charges (demurrage, switching, storage, weighing), and sometimes interchange or joint line charges when multiple carriers are involved. Taxes and regulatory fees may also appear depending on the commodity and route.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do I audit a rail freight invoice?</h3>
+          <p>Match every line to a source document: the bill of lading for origin and destination, the contract or tariff for the agreed rate, the published fuel surcharge schedule for the applicable month, and your own facility records for any accessorial charge. If a line item does not match, flag it and dispute it in writing before the payment terms expire.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How long do I have to dispute a rail freight invoice?</h3>
+          <p>Most railroad tariffs and contracts give shippers a limited window to dispute billing errors, typically 60 to 180 days from the invoice date. After that window closes, overcharges become much harder to recover. Always review invoices promptly and file disputes in writing with supporting documentation.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What is the difference between a freight bill and an invoice?</h3>
+          <p>A freight bill is the carrier's itemized statement of transportation charges for a single shipment. An invoice is the billing document sent to the payer, which can cover one shipment or consolidate multiple freight bills. The terms are often used interchangeably, but the freight bill is the underlying detail and the invoice is the summary you pay.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Who is responsible for paying the rail freight invoice?</h3>
+          <p>The bill of lading designates the billing party, usually marked as prepaid (shipper pays) or collect (consignee pays). On third-party billing arrangements, a named party other than shipper or consignee takes responsibility. Whoever is listed as the billing party on the BOL is the one the railroad pursues for payment, regardless of any private agreement between shipper and receiver.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What is freight invoice reconciliation on rail shipments?</h3>
+          <p>Freight invoice reconciliation is the line-by-line comparison of a rail freight invoice against the bill of lading, the rate authority (contract or tariff), the published fuel surcharge schedule for the waybill month, and your facility records for any accessorial event. The goal is to catch overcharges, duplicate billings, and rate authority errors before the invoice is paid — most tariffs and contracts allow only 60 to 180 days to dispute a billing error.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What is an STCC code and why does it matter on a rail freight invoice?</h3>
+          <p>STCC stands for Standard Transportation Commodity Code, a seven-digit numeric code that classifies the commodity being shipped. Rail rates and tariffs are organized by STCC, so the wrong STCC on an invoice can trigger a higher rate category. Always verify the STCC on the invoice matches both the bill of lading and the actual commodity. STCC mismatches are one of the most expensive rail invoice errors and one of the easiest to catch with a reconciliation step.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How is the rail fuel surcharge calculated on an invoice?</h3>
+          <p>Each Class I railroad publishes its own fuel surcharge program. Most are calculated either as a percentage of the base line haul rate or as a dollars-per-mile adder, indexed to the U.S. Department of Energy's weekly On-Highway Diesel Fuel Price or a Surface Transportation Board quarterly fuel index. The surcharge applied is the one in effect for the waybill month, not the billing or delivery month — auditing this is one of the most common ways to catch invoice errors.</p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Author -->
+    <div class="blog-author">
+      <div class="blog-author-icon">
+        <img src="/images/logo.png" alt="Steel Wheel Logistics" width="48" height="48">
+      </div>
+      <div class="blog-author-info">
+        <div class="blog-author-name">Steel Wheel Logistics</div>
+        <div class="blog-author-bio">We coordinate bulk rail freight across North America — from rate negotiation and car sourcing to transload coordination and tracking. Based in Mississippi, serving shippers nationwide.</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="blog-cta">
+      <h3>Paying More Than You Should on Rail Freight?</h3>
+      <p>We audit rail invoices and negotiate rates for shippers who don't have the internal bandwidth to do it themselves. Get a review of your current freight spend — no obligation.</p>
+      <a href="/contact" class="btn btn-primary">Get a Free Quote</a>
+    </div>
+
+    <div class="blog-back">
+      <a href="/blog">&larr; Back to All Posts</a>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/tools">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

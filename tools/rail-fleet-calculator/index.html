@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rail fleet calculator — determine optimal car fleet size, composition, and utilization for your rail shipping operations.">
+  <title>Rail Fleet Calculator | Steel Wheel Logistics</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <link rel="canonical" href="https://steelwheellogistics.com/tools/rail-fleet-calculator">
+  <meta property="og:title" content="Rail Fleet Calculator | Steel Wheel Logistics">
+  <meta property="og:description" content="Calculate your optimal rail fleet size, car mix, and utilization rates for any commodity or shipping pattern.">
+  <meta property="og:url" content="https://steelwheellogistics.com/tools/rail-fleet-calculator">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+
+  <style>
+    .tool-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 48px 20px;
+      text-align: center;
+    }
+    .tool-hero h1 {
+      color: var(--white);
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .tool-hero p {
+      color: var(--steel-grey);
+      font-size: 1.05rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .calculator-layout {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    .calculator-section {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 24px;
+    }
+
+    .calculator-section h2 {
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin: 0 0 24px;
+      border-bottom: 2px solid var(--steel-blue);
+      padding-bottom: 12px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .input-group input, .input-group select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border-grey);
+      border-radius: 6px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    .input-group small {
+      display: block;
+      color: var(--steel-grey);
+      margin-top: 4px;
+      font-size: 0.85rem;
+    }
+
+    .input-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    button {
+      padding: 12px 24px;
+      border: 0;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+
+    .btn-calculate {
+      background: var(--navy);
+      color: var(--white);
+      flex: 1;
+    }
+
+    .btn-calculate:hover {
+      background: var(--navy-light);
+    }
+
+    .btn-reset {
+      background: var(--light-grey);
+      color: var(--navy);
+      flex: 1;
+    }
+
+    .btn-reset:hover {
+      background: var(--border-grey);
+    }
+
+    .results {
+      display: none;
+    }
+
+    .results.active {
+      display: block;
+    }
+
+    .result-card {
+      background: rgba(74, 144, 217, 0.08);
+      border-left: 4px solid var(--steel-blue);
+      padding: 20px;
+      margin-bottom: 16px;
+      border-radius: 6px;
+    }
+
+    .result-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 1rem;
+    }
+
+    .result-value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--steel-blue);
+      margin: 8px 0;
+    }
+
+    .result-unit {
+      font-size: 0.85rem;
+      color: var(--steel-grey);
+    }
+
+    .fleet-composition {
+      margin-top: 24px;
+    }
+
+    .fleet-composition h3 {
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .fleet-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px;
+      border-bottom: 1px solid var(--border-grey);
+      font-size: 0.95rem;
+    }
+
+    .fleet-row:last-child {
+      border-bottom: 0;
+    }
+
+    .fleet-name {
+      font-weight: 600;
+      color: var(--navy);
+      width: 40%;
+    }
+
+    .fleet-value {
+      text-align: right;
+      color: var(--steel-blue);
+      font-weight: 600;
+    }
+
+    .utilization-meter {
+      margin-top: 16px;
+      padding: 16px;
+      background: var(--light-grey);
+      border-radius: 6px;
+    }
+
+    .meter-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+      color: var(--steel-grey);
+    }
+
+    .meter-bar {
+      width: 100%;
+      height: 8px;
+      background: var(--border-grey);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .meter-fill {
+      height: 100%;
+      background: var(--steel-blue);
+      transition: width 0.3s;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--white);
+      padding: 32px;
+      border-radius: 12px;
+      max-width: 420px;
+      width: 90%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .modal-content h2 {
+      margin: 0 0 12px;
+      font-size: 1.3rem;
+      color: var(--navy);
+    }
+
+    .modal-content p {
+      margin: 0 0 20px;
+      color: var(--steel-grey);
+      font-size: 0.95rem;
+    }
+
+    .modal-content input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border-grey);
+      border-radius: 6px;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+      box-sizing: border-box;
+    }
+
+    .modal-content .checkbox-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      gap: 8px;
+    }
+
+    .modal-content button {
+      width: 100%;
+      padding: 12px;
+      background: var(--navy);
+      color: var(--white);
+      border: 0;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .modal-content button:hover {
+      background: var(--navy-light);
+    }
+
+    .info-box {
+      background: rgba(74, 144, 217, 0.1);
+      border-left: 4px solid var(--steel-blue);
+      padding: 16px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      color: var(--navy);
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .metric {
+      padding: 16px;
+      background: var(--light-grey);
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .metric-label {
+      font-size: 0.85rem;
+      color: var(--steel-grey);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .metric-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--steel-blue);
+    }
+  </style>
+</head>
+<body>
+  <div class="tool-hero">
+    <h1>Rail Fleet Calculator</h1>
+    <p>Determine your optimal rail car fleet size, composition, and utilization rates for any commodity or shipping volume. Data-driven fleet planning for peak and baseline operations.</p>
+  </div>
+
+  <div class="calculator-layout">
+    <div class="calculator-section">
+      <h2>Inputs</h2>
+
+      <div class="info-box">
+        📊 Enter your annual volume, typical trip duration, and target utilization. We'll calculate fleet size and optimal car mix.
+      </div>
+
+      <div class="input-row">
+        <div class="input-group">
+          <label for="annualTonnage">Annual Tonnage</label>
+          <input type="number" id="annualTonnage" placeholder="50,000" min="0" step="1000">
+          <small>Your total annual volume in tons</small>
+        </div>
+
+        <div class="input-group">
+          <label for="commodity">Primary Commodity</label>
+          <select id="commodity">
+            <option value="grain">Grain (Covered Hopper)</option>
+            <option value="steel">Steel (Gondola)</option>
+            <option value="paper">Paper/Lumber (Boxcar)</option>
+            <option value="chemicals">Chemicals (Tank Car)</option>
+            <option value="auto">Auto Parts (Flat Car)</option>
+            <option value="perishables">Perishables (Reefer)</option>
+            <option value="mixed">Mixed Commodities</option>
+          </select>
+          <small>Affects recommended car type and capacity</small>
+        </div>
+
+        <div class="input-group">
+          <label for="tripDays">Average Trip Duration</label>
+          <input type="number" id="tripDays" placeholder="14" min="1" step="0.5">
+          <small>Days from pickup to delivery</small>
+        </div>
+
+        <div class="input-group">
+          <label for="peakFactor">Peak Season Multiplier</label>
+          <input type="number" id="peakFactor" placeholder="1.2" min="1" max="2" step="0.1">
+          <small>1.0 = baseline, 1.5 = 50% above average</small>
+        </div>
+
+        <div class="input-group">
+          <label for="targetUtil">Target Utilization %</label>
+          <input type="number" id="targetUtil" placeholder="85" min="50" max="100" step="5">
+          <small>% of car capacity you want loaded (70-90% typical)</small>
+        </div>
+
+        <div class="input-group">
+          <label for="dwellDays">Expected Dwell Time</label>
+          <input type="number" id="dwellDays" placeholder="4" min="1" step="0.5">
+          <small>Days car sits at facility waiting/loading</small>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button class="btn-calculate" onclick="calculateFleet()">Calculate Fleet</button>
+        <button class="btn-reset" onclick="resetForm()">Reset</button>
+      </div>
+    </div>
+
+    <div id="resultsSection" class="calculator-section results">
+      <h2>Fleet Analysis</h2>
+
+      <div class="metric-grid">
+        <div class="metric">
+          <div class="metric-label">Cars Needed</div>
+          <div class="metric-value" id="totalCars">0</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Peak Fleet</div>
+          <div class="metric-value" id="peakFleet">0</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Avg Utilization</div>
+          <div class="metric-value" id="avgUtil">0%</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Annual Trips</div>
+          <div class="metric-value" id="annualTrips">0</div>
+        </div>
+      </div>
+
+      <div class="result-card">
+        <h3>Baseline Fleet Size</h3>
+        <div class="result-value" id="baselineFleet">0</div>
+        <div class="result-unit">cars needed for average operations</div>
+      </div>
+
+      <div class="result-card">
+        <h3>Peak Fleet Size</h3>
+        <div class="result-value" id="peakFleetSize">0</div>
+        <div class="result-unit">cars needed for peak season</div>
+      </div>
+
+      <div class="fleet-composition">
+        <h3>Recommended Fleet Composition</h3>
+        <div id="fleetMix"></div>
+      </div>
+
+      <div class="utilization-meter">
+        <div class="meter-label">
+          <span>Fleet Utilization</span>
+          <span id="utilPercent">0%</span>
+        </div>
+        <div class="meter-bar">
+          <div class="meter-fill" id="utilBar" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <div class="result-card" style="margin-top: 20px;">
+        <h3>Key Metrics</h3>
+        <div class="fleet-row">
+          <span class="fleet-name">Tons per Trip:</span>
+          <span class="fleet-value" id="tonsPerTrip">0</span>
+        </div>
+        <div class="fleet-row">
+          <span class="fleet-name">Annual Car-Days Required:</span>
+          <span class="fleet-value" id="carDays">0</span>
+        </div>
+        <div class="fleet-row">
+          <span class="fleet-name">Days to Cycle Fleet:</span>
+          <span class="fleet-value" id="cycleTime">0</span>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px; padding: 16px; background: rgba(74, 144, 217, 0.05); border-radius: 6px;">
+        <p style="margin: 0; font-size: 0.9rem; color: var(--steel-grey);">
+          💡 <strong>Next Step:</strong> Contact us at (601) 821-2199 or fill out the form below to discuss your specific fleet requirements, leasing options, and cost optimization strategies.
+        </p>
+      </div>
+    </div>
+
+    <div class="calculator-section" style="margin-top: 40px;">
+      <h2>Get Fleet Planning Consultation</h2>
+      <p style="color: var(--steel-grey); margin-bottom: 20px;">Share your results with our rail logistics team. We'll provide lease options, carrier partnerships, and cost analysis.</p>
+      <button class="btn-calculate" onclick="showEmailModal()" style="width: 100%;">Get Expert Recommendation →</button>
+    </div>
+  </div>
+
+  <div id="emailModal" class="modal">
+    <div class="modal-content">
+      <h2>Fleet Planning Consultation</h2>
+      <p>Enter your email to receive a customized fleet analysis and lease options.</p>
+      <input type="email" id="modalEmail" placeholder="your@email.com" required>
+      <div class="checkbox-group">
+        <input type="checkbox" id="agreementCheckbox" checked>
+        <label for="agreementCheckbox" style="margin: 0; font-size: 0.85rem;">I agree to receive fleet planning recommendations</label>
+      </div>
+      <button onclick="submitEmail()">Send My Fleet Analysis</button>
+    </div>
+  </div>
+
+  <script>
+    window.__fleetCalculatorData = {
+      carTypes: {},
+      inputs: {}
+    };
+
+    const carTypes = {
+      covered_hopper: { name: 'Covered Hopper', capacity: 100, dwell: 3 },
+      gondola: { name: 'Gondola', capacity: 100, dwell: 4 },
+      boxcar: { name: 'Boxcar', capacity: 80, dwell: 5 },
+      tank_car: { name: 'Tank Car', capacity: 120, dwell: 6 },
+      flat_car: { name: 'Flat Car', capacity: 50, dwell: 4 },
+      reefer: { name: 'Reefer', capacity: 90, dwell: 2 }
+    };
+
+    const commodityToCar = {
+      grain: 'covered_hopper',
+      steel: 'gondola',
+      paper: 'boxcar',
+      chemicals: 'tank_car',
+      auto: 'flat_car',
+      perishables: 'reefer',
+      mixed: 'covered_hopper'
+    };
+
+    function calculateFleet() {
+      const annualTonnage = parseFloat(document.getElementById('annualTonnage').value) || 0;
+      const commodity = document.getElementById('commodity').value;
+      const tripDays = parseFloat(document.getElementById('tripDays').value) || 14;
+      const peakFactor = parseFloat(document.getElementById('peakFactor').value) || 1.2;
+      const targetUtil = parseFloat(document.getElementById('targetUtil').value) || 85;
+      const dwellDays = parseFloat(document.getElementById('dwellDays').value) || 4;
+
+      if (annualTonnage <= 0) {
+        alert('Please enter annual tonnage');
+        return;
+      }
+
+      const carType = commodityToCar[commodity];
+      const car = carTypes[carType];
+      const totalDays = tripDays + dwellDays;
+      const tripsPerYear = 365 / totalDays;
+      const tonsPerTrip = (annualTonnage / tripsPerYear);
+      const carsNeeded = Math.ceil(tonsPerTrip / (car.capacity * (targetUtil / 100)));
+
+      const baselineFleet = Math.ceil(carsNeeded * (totalDays / 365 * tripsPerYear));
+      const peakFleet = Math.ceil(baselineFleet * peakFactor);
+      const carDays = (carsNeeded * totalDays);
+      const annualTrips = Math.floor(tripsPerYear);
+      const cycleTime = Math.round(totalDays);
+      const avgUtil = Math.round(((tonsPerTrip / (carsNeeded * car.capacity)) * 100));
+
+      // Update results
+      document.getElementById('totalCars').textContent = carsNeeded;
+      document.getElementById('peakFleet').textContent = peakFleet;
+      document.getElementById('avgUtil').textContent = avgUtil + '%';
+      document.getElementById('annualTrips').textContent = annualTrips;
+      document.getElementById('baselineFleet').textContent = baselineFleet;
+      document.getElementById('peakFleetSize').textContent = peakFleet;
+      document.getElementById('utilPercent').textContent = avgUtil + '%';
+      document.getElementById('utilBar').style.width = (avgUtil / 100) * 100 + '%';
+      document.getElementById('tonsPerTrip').textContent = Math.round(tonsPerTrip).toLocaleString();
+      document.getElementById('carDays').textContent = Math.round(carDays).toLocaleString();
+      document.getElementById('cycleTime').textContent = cycleTime + ' days';
+
+      // Fleet mix
+      const mixHtml = `
+        <div class="fleet-row">
+          <span class="fleet-name">${car.name}:</span>
+          <span class="fleet-value">${baselineFleet} cars (baseline)</span>
+        </div>
+        <div class="fleet-row">
+          <span class="fleet-name">Peak Fleet:</span>
+          <span class="fleet-value">${peakFleet} cars</span>
+        </div>
+        <div class="fleet-row">
+          <span class="fleet-name">Capacity per Car:</span>
+          <span class="fleet-value">${car.capacity} tons</span>
+        </div>
+      `;
+      document.getElementById('fleetMix').innerHTML = mixHtml;
+
+      document.getElementById('resultsSection').classList.add('active');
+      window.__fleetCalculatorData.inputs = {
+        annualTonnage,
+        commodity,
+        tripDays,
+        peakFactor,
+        targetUtil,
+        baselineFleet,
+        peakFleet
+      };
+    }
+
+    function resetForm() {
+      document.getElementById('annualTonnage').value = '';
+      document.getElementById('tripDays').value = '';
+      document.getElementById('peakFactor').value = '';
+      document.getElementById('targetUtil').value = '';
+      document.getElementById('dwellDays').value = '';
+      document.getElementById('resultsSection').classList.remove('active');
+    }
+
+    function showEmailModal() {
+      const stored = sessionStorage.getItem('fleet-calc-email');
+      if (stored) {
+        document.getElementById('modalEmail').value = stored;
+        submitEmail();
+      } else {
+        document.getElementById('emailModal').classList.add('active');
+      }
+    }
+
+    async function submitEmail() {
+      const email = document.getElementById('modalEmail').value.trim();
+      if (!email) {
+        alert('Please enter your email');
+        return;
+      }
+
+      document.querySelector('#emailModal button').disabled = true;
+
+      try {
+        const response = await fetch('/api/fleet-calculator-lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: email,
+            calculator_inputs: window.__fleetCalculatorData.inputs
+          })
+        });
+
+        if (response.ok) {
+          sessionStorage.setItem('fleet-calc-email', email);
+          document.getElementById('emailModal').classList.remove('active');
+          alert('Thank you! We\'ll send you a personalized fleet analysis at your email.');
+        } else {
+          const data = await response.json();
+          alert(data.error || 'Error submitting. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Network error. Please try again.');
+      } finally {
+        document.querySelector('#emailModal button').disabled = false;
+      }
+    }
+
+    document.addEventListener('keyup', (e) => {
+      if (e.key === 'Escape') document.getElementById('emailModal').classList.remove('active');
+    });
+  </script>
+</body>
+</html>
