@@ -683,7 +683,11 @@
 
     async function loadListings() {
       try {
-        const res = await fetch('./data/listings.json');
+        // Absolute path: cleanUrls serves this page at /tools/sublease-board
+        // (no trailing slash), so a relative './data/...' resolves to
+        // /tools/data/... and 404s. Anchor to the tool's own directory.
+        const res = await fetch('/tools/sublease-board/data/listings.json');
+        if (!res.ok) throw new Error(`listings fetch ${res.status}`);
         listings = await res.json();
         applyFilters();
       } catch (err) {
