@@ -59,7 +59,12 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     for (const lane of lanes) {
-      xml += `  <url>\n    <loc>https://steelwheellogistics.com${lane.url}</loc>\n    <lastmod>${lane.lastmod}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n`;
+      // Strip trailing slash: cleanUrls/trailingSlash:false makes the site
+      // 308-redirect /rates/.../  ->  /rates/...  so the slash form is non-canonical.
+      // Listing the redirecting URL in the sitemap left ~270 rate pages un-indexed
+      // ("Discovered/unknown — currently not indexed"). Emit the canonical URL.
+      const canonical = lane.url.replace(/\/$/, '');
+      xml += `  <url>\n    <loc>https://steelwheellogistics.com${canonical}</loc>\n    <lastmod>${lane.lastmod}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n`;
     }
 
     xml += `</urlset>`;
