@@ -27,7 +27,11 @@
     {
       "source": "/sitemap.xml",
       "destination": "/api/sitemap"
-    }
+    },
+    { "source": "/api/commodity-flow-lead", "destination": "/api/tool-lead?tool=commodity-flow" },
+    { "source": "/api/fleet-calculator-lead", "destination": "/api/tool-lead?tool=fleet-calculator" },
+    { "source": "/api/storage-locator-lead", "destination": "/api/tool-lead?tool=storage-locator" },
+    { "source": "/api/sublease-lead", "destination": "/api/tool-lead?tool=sublease" }
   ],
   "headers": [
     {
