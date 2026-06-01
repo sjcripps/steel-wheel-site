@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { existsSync, readFileSync } from 'fs';
+import { readFileSync } from 'fs';
 import { join } from 'path';
 
 export default function handler(req: VercelRequest, res: VercelResponse) {
@@ -8,13 +8,12 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
     const posts = JSON.parse(readFileSync(postsPath, 'utf-8'));
     const citiesPath = join(process.cwd(), 'cities.json');
     const cities = JSON.parse(readFileSync(citiesPath, 'utf-8'));
-    // Programmatic lane pages (added 2026-05-05). Only loaded if the
-    // generator has run and produced /rates/lanes.json. Sitemap stays valid
-    // even when the file is absent.
-    const lanesPath = join(process.cwd(), 'rates', 'lanes.json');
-    const lanes: Array<{ url: string; lastmod: string }> = existsSync(lanesPath)
-      ? JSON.parse(readFileSync(lanesPath, 'utf-8'))
-      : [];
+    // NOTE: the ~359 programmatic /rates lane pages are intentionally EXCLUDED
+    // from the sitemap (2026-06-01). GSC showed 27 impressions / 0 clicks across
+    // all of them over 90d — no search demand — and they were diluting the
+    // domain's quality signal. They're also noindex'd via X-Robots-Tag in
+    // vercel.json. Real cost-related search demand is served by the blog + the
+    // rate-quote tool instead.
     const today = new Date().toISOString().split("T")[0];
 
     const staticPages = [
@@ -56,15 +55,6 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
 
     for (const city of cities) {
       xml += `  <url>\n    <loc>https://steelwheellogistics.com/rail-freight/${city.slug}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n`;
-    }
-
-    for (const lane of lanes) {
-      // Strip trailing slash: cleanUrls/trailingSlash:false makes the site
-      // 308-redirect /rates/.../  ->  /rates/...  so the slash form is non-canonical.
-      // Listing the redirecting URL in the sitemap left ~270 rate pages un-indexed
-      // ("Discovered/unknown — currently not indexed"). Emit the canonical URL.
-      const canonical = lane.url.replace(/\/$/, '');
-      xml += `  <url>\n    <loc>https://steelwheellogistics.com${canonical}</loc>\n    <lastmod>${lane.lastmod}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n`;
     }
 
     xml += `</urlset>`;
