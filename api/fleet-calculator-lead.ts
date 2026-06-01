@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 const DISPOSABLE_DOMAINS = new Set([
   'mailinator.com', '10minutemail.com', 'guerrillamail.com', 'temp-mail.org',
@@ -35,22 +35,33 @@ async function validateEmail(email: string): Promise<{ valid: boolean; error?: s
   return { valid: true };
 }
 
-export async function POST(req: NextRequest) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    return res.status(204).end();
+  }
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
   try {
-    const body = await req.json();
+    const body = (req.body && typeof req.body === 'object') ? req.body : {};
     const email = body.email?.trim().toLowerCase();
 
     if (!email) {
-      return NextResponse.json({ error: 'Email required' }, { status: 400 });
+      return res.status(400).json({ error: 'Email required' });
     }
 
     const validation = await validateEmail(email);
     if (!validation.valid) {
-      return NextResponse.json({ error: validation.error }, { status: 400 });
+      return res.status(400).json({ error: validation.error });
     }
 
-    const clientIp = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'unknown';
-    const userAgent = req.headers.get('user-agent') || 'unknown';
+    const clientIp = (req.headers['x-forwarded-for'] || req.headers['x-real-ip'] || 'unknown').toString();
+    const userAgent = (req.headers['user-agent'] || 'unknown').toString();
 
     const leadRecord = {
       timestamp: new Date().toISOString(),
@@ -63,7 +74,7 @@ export async function POST(req: NextRequest) {
     };
 
     if (leadRecord.is_synthetic) {
-      return NextResponse.json({ ok: true, synthetic: true });
+      return res.status(200).json({ ok: true, synthetic: true });
     }
 
     const sinks = { s3: false, telegram: false };
@@ -102,13 +113,13 @@ export async function POST(req: NextRequest) {
       console.error('Telegram send failed:', err);
     }
 
-    return NextResponse.json({
+    return res.status(200).json({
       ok: true,
       sinks: sinks,
       message: 'Lead captured successfully'
     });
   } catch (error) {
     console.error('API error:', error);
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+    return res.status(500).json({ error: 'Internal server error' });
   }
 }
