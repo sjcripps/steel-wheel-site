@@ -720,7 +720,8 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-RSWDYHVY7Z');
-  </script>
+    gtag('config', 'AW-946771513'); // Google Ads (Steel Wheel — Search) conversion tracking
+</script>
   <!-- jsPDF 2.5.x — pure client-side PDF generation. Loaded async so it doesn't
        block the LCP; the Download PDF button checks window.jspdf before firing. -->
   <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js" defer></script>
@@ -802,7 +803,7 @@
 
           <div class="form-group">
             <label for="weight_tons">Weight per Car <span class="hint">(tons, default 100)</span></label>
-            <input type="number" id="weight_tons" min="1" max="500" step="1" value="100" required>
+            <input type="number" id="weight_tons" min="1" max="130" step="1" value="100" required>
           </div>
 
         </div>
@@ -1119,7 +1120,7 @@
 
       if (commRes && Array.isArray(commRes.commodities)) {
         commSel.innerHTML = '<option value="">Select a commodity</option>' +
-          commRes.commodities.map(c => `<option value="${c.id}" data-default-car="${c.default_car}">${c.name}</option>`).join('');
+          commRes.commodities.map(c => `<option value="${c.id}" data-default-car="${c.default_car}" data-allowed-cars="${(c.allowed_cars||[c.default_car]).join(',')}">${c.name}</option>`).join('');
       } else {
         commSel.innerHTML = '<option value="">Failed to load</option>';
       }
@@ -1131,14 +1132,25 @@
         carSel.innerHTML = '<option value="">Failed to load</option>';
       }
 
-      // Auto-select the recommended car when commodity changes
-      commSel.addEventListener('change', () => {
+      // Restrict car types to those valid for the chosen commodity, and auto-select
+      // the recommended car. Prevents wrong-equipment pairings (e.g. machinery in a
+      // gondola) at the source; the rate engine enforces the same rule as a backstop.
+      function applyCarRestrictions() {
         const opt = commSel.options[commSel.selectedIndex];
         const def = opt && opt.dataset.defaultCar;
-        if (def && carSel.querySelector(`option[value="${def}"]`)) {
+        const allowed = (opt && opt.dataset.allowedCars) ? opt.dataset.allowedCars.split(',') : null;
+        Array.from(carSel.options).forEach(o => {
+          if (!o.value) return;
+          const ok = !allowed || allowed.includes(o.value);
+          o.disabled = !ok;
+          o.hidden = !ok;
+        });
+        if (def && carSel.querySelector(`option[value="${def}"]`) &&
+            (!carSel.value || (allowed && !allowed.includes(carSel.value)))) {
           carSel.value = def;
         }
-      });
+      }
+      commSel.addEventListener('change', applyCarRestrictions);
     }
 
     loadDropdowns();
@@ -1241,7 +1253,15 @@
     }
     function swlLeadFiredKey(slug) { return 'swl_lead_fired_' + slug; }
     function swlMarkLeadFired(slug) {
-      try { sessionStorage.setItem(swlLeadFiredKey(slug), '1'); } catch (_) {}
+      try {
+        var key = swlLeadFiredKey(slug);
+        var already = sessionStorage.getItem(key) === '1';
+        sessionStorage.setItem(key, '1');
+        // Fire the Google Ads conversion once per session (lead captured = email gate passed).
+        if (!already && typeof gtag === 'function') {
+          gtag('event', 'conversion', { 'send_to': 'AW-946771513/xZWXCKHwxbgcELmsusMD' });
+        }
+      } catch (_) {}
     }
 
     function cachedEmail() {

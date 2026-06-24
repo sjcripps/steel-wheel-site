@@ -58,8 +58,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (!carType) {
     return res.status(400).json({ error: 'car_type is required' });
   }
-  if (!Number.isFinite(weightTons) || weightTons <= 0 || weightTons > 500) {
-    return res.status(400).json({ error: 'weight_tons must be a number between 1 and 500' });
+  if (!Number.isFinite(weightTons) || weightTons <= 0) {
+    return res.status(400).json({ error: 'weight_tons must be a positive number' });
   }
   // Defense-in-depth — refuse intermodal at the edge as well as in Python.
   if (commodity === 'intermodal' || carType === 'intermodal-flatcar') {
