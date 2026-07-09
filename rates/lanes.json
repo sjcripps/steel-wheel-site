@@ -1,223 +1,247 @@
 [
   {
     "url": "/rates/ny/new-york-city/to/ca/los-angeles/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-ca-los-angeles-grain",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "grain",
-    "miles": 2981.2,
-    "rate": 17357.0
+    "miles": 2980.8,
+    "rate": 17749.0
   },
   {
     "url": "/rates/ca/los-angeles/to/ny/new-york-city/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-ny-new-york-city-steel",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "steel",
-    "miles": 2981.2,
-    "rate": 20056.0
+    "miles": 2980.8,
+    "rate": 20339.0
   },
   {
     "url": "/rates/ny/new-york-city/to/az/phoenix/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-az-phoenix-plastic",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Phoenix",
     "dest_state": "AZ",
     "commodity_id": "plastic",
-    "miles": 2655.4,
-    "rate": 18973.0
+    "miles": 2654.9,
+    "rate": 19395.0
   },
   {
     "url": "/rates/az/phoenix/to/ny/new-york-city/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "az-phoenix-ny-new-york-city-paper",
     "origin_city": "Phoenix",
     "origin_state": "AZ",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "paper",
-    "miles": 2731.8,
-    "rate": 20235.0
+    "miles": 2654.9,
+    "rate": 20260.0
   },
   {
     "url": "/rates/ny/new-york-city/to/ca/san-diego/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-ca-san-diego-coal",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "San Diego",
     "dest_state": "CA",
     "commodity_id": "coal",
-    "miles": 3030.0,
-    "rate": 15136.0
+    "miles": 3029.6,
+    "rate": 16418.0
   },
   {
     "url": "/rates/ca/san-diego/to/ny/new-york-city/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-san-diego-ny-new-york-city-grain",
     "origin_city": "San Diego",
     "origin_state": "CA",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "grain",
-    "miles": 3106.4,
-    "rate": 18083.0
+    "miles": 3029.6,
+    "rate": 18513.0
   },
   {
     "url": "/rates/ny/new-york-city/to/tx/houston/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-tx-houston-steel",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Houston",
     "dest_state": "TX",
     "commodity_id": "steel",
-    "miles": 1724.0,
-    "rate": 15188.0
+    "miles": 1678.9,
+    "rate": 16209.0
   },
   {
     "url": "/rates/tx/houston/to/ny/new-york-city/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-houston-ny-new-york-city-plastic",
     "origin_city": "Houston",
     "origin_state": "TX",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "plastic",
-    "miles": 1724.0,
-    "rate": 15707.0
+    "miles": 1678.9,
+    "rate": 15967.0
   },
   {
     "url": "/rates/ca/los-angeles/to/ny/brooklyn/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-ny-brooklyn-paper",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "Brooklyn",
     "dest_state": "NY",
     "commodity_id": "paper",
-    "miles": 2982.0,
-    "rate": 21673.0
+    "miles": 2981.6,
+    "rate": 21954.0
   },
   {
     "url": "/rates/ny/brooklyn/to/ca/los-angeles/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-ca-los-angeles-coal",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "coal",
-    "miles": 2982.0,
-    "rate": 14984.0
+    "miles": 2981.6,
+    "rate": 15621.0
   },
   {
     "url": "/rates/ny/new-york-city/to/ca/san-jose/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-ca-san-jose-grain",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "San Jose",
     "dest_state": "CA",
     "commodity_id": "grain",
-    "miles": 3143.0,
-    "rate": 17055.0
+    "miles": 3130.8,
+    "rate": 17293.0
   },
   {
     "url": "/rates/ca/san-jose/to/ny/new-york-city/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-san-jose-ny-new-york-city-steel",
     "origin_city": "San Jose",
     "origin_state": "CA",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "steel",
-    "miles": 3143.0,
-    "rate": 19749.0
+    "miles": 3130.8,
+    "rate": 20151.0
   },
   {
     "url": "/rates/ca/los-angeles/to/ny/queens/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-ny-queens-plastic",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "Queens",
     "dest_state": "NY",
     "commodity_id": "plastic",
-    "miles": 2991.7,
-    "rate": 21094.0
+    "miles": 2991.2,
+    "rate": 21377.0
   },
   {
     "url": "/rates/ny/queens/to/ca/los-angeles/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-queens-ca-los-angeles-paper",
     "origin_city": "Queens",
     "origin_state": "NY",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "paper",
-    "miles": 2991.7,
-    "rate": 21072.0
+    "miles": 2991.2,
+    "rate": 21354.0
   },
   {
     "url": "/rates/ny/new-york-city/to/tx/san-antonio/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-tx-san-antonio-coal",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "San Antonio",
     "dest_state": "TX",
     "commodity_id": "coal",
-    "miles": 1871.9,
-    "rate": 12473.0
+    "miles": 1855.0,
+    "rate": 12750.0
   },
   {
     "url": "/rates/tx/san-antonio/to/ny/new-york-city/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-san-antonio-ny-new-york-city-grain",
     "origin_city": "San Antonio",
     "origin_state": "TX",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "grain",
-    "miles": 1871.9,
-    "rate": 14160.0
+    "miles": 1855.0,
+    "rate": 14411.0
   },
   {
     "url": "/rates/ny/new-york-city/to/ca/san-francisco/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-ca-san-francisco-steel",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "San Francisco",
     "dest_state": "CA",
     "commodity_id": "steel",
-    "miles": 3168.2,
-    "rate": 19895.0
+    "miles": 3156.0,
+    "rate": 20224.0
   },
   {
     "url": "/rates/ca/san-francisco/to/ny/new-york-city/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-san-francisco-ny-new-york-city-plastic",
     "origin_city": "San Francisco",
     "origin_state": "CA",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "plastic",
-    "miles": 3168.2,
-    "rate": 21300.0
+    "miles": 3156.0,
+    "rate": 21719.0
+  },
+  {
+    "url": "/rates/il/chicago/to/ca/los-angeles/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "il-chicago-ca-los-angeles-coal",
+    "origin_city": "Chicago",
+    "origin_state": "IL",
+    "dest_city": "Los Angeles",
+    "dest_state": "CA",
+    "commodity_id": "coal",
+    "miles": 2110.8,
+    "rate": 10380.0
+  },
+  {
+    "url": "/rates/ny/new-york-city/to/il/chicago/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-new-york-city-il-chicago-grain",
+    "origin_city": "New York City",
+    "origin_state": "NY",
+    "dest_city": "Chicago",
+    "dest_state": "IL",
+    "commodity_id": "grain",
+    "miles": 881.1,
+    "rate": 8392.0
   },
   {
     "url": "/rates/il/chicago/to/ny/new-york-city/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "il-chicago-ny-new-york-city-steel",
     "origin_city": "Chicago",
     "origin_state": "IL",
@@ -225,11 +249,11 @@
     "dest_state": "NY",
     "commodity_id": "steel",
     "miles": 881.1,
-    "rate": 10129.0
+    "rate": 10146.0
   },
   {
     "url": "/rates/ny/new-york-city/to/wa/seattle/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-wa-seattle-plastic",
     "origin_city": "New York City",
     "origin_state": "NY",
@@ -237,23 +261,95 @@
     "dest_state": "WA",
     "commodity_id": "plastic",
     "miles": 3011.4,
-    "rate": 20478.0
+    "rate": 20516.0
+  },
+  {
+    "url": "/rates/wa/seattle/to/ny/new-york-city/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "wa-seattle-ny-new-york-city-paper",
+    "origin_city": "Seattle",
+    "origin_state": "WA",
+    "dest_city": "New York City",
+    "dest_state": "NY",
+    "commodity_id": "paper",
+    "miles": 3011.4,
+    "rate": 21438.0
+  },
+  {
+    "url": "/rates/ny/new-york-city/to/tx/dallas/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-new-york-city-tx-dallas-coal",
+    "origin_city": "New York City",
+    "origin_state": "NY",
+    "dest_city": "Dallas",
+    "dest_state": "TX",
+    "commodity_id": "coal",
+    "miles": 1629.8,
+    "rate": 13424.0
+  },
+  {
+    "url": "/rates/tx/dallas/to/ny/new-york-city/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "tx-dallas-ny-new-york-city-grain",
+    "origin_city": "Dallas",
+    "origin_state": "TX",
+    "dest_city": "New York City",
+    "dest_state": "NY",
+    "commodity_id": "grain",
+    "miles": 1629.8,
+    "rate": 14849.0
+  },
+  {
+    "url": "/rates/ny/new-york-city/to/hi/honolulu/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-new-york-city-hi-honolulu-steel",
+    "origin_city": "New York City",
+    "origin_state": "NY",
+    "dest_city": "Honolulu",
+    "dest_state": "HI",
+    "commodity_id": "steel",
+    "miles": 3239.9,
+    "rate": 21271.0
+  },
+  {
+    "url": "/rates/hi/honolulu/to/ny/new-york-city/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "hi-honolulu-ny-new-york-city-plastic",
+    "origin_city": "Honolulu",
+    "origin_state": "HI",
+    "dest_city": "New York City",
+    "dest_state": "NY",
+    "commodity_id": "plastic",
+    "miles": 3239.9,
+    "rate": 22026.0
   },
   {
     "url": "/rates/ca/los-angeles/to/pa/philadelphia/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-pa-philadelphia-paper",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "Philadelphia",
     "dest_state": "PA",
     "commodity_id": "paper",
-    "miles": 2900.3,
-    "rate": 20050.0
+    "miles": 2899.9,
+    "rate": 20330.0
+  },
+  {
+    "url": "/rates/pa/philadelphia/to/ca/los-angeles/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "pa-philadelphia-ca-los-angeles-coal",
+    "origin_city": "Philadelphia",
+    "origin_state": "PA",
+    "dest_city": "Los Angeles",
+    "dest_state": "CA",
+    "commodity_id": "coal",
+    "miles": 2899.9,
+    "rate": 14423.0
   },
   {
     "url": "/rates/ny/new-york-city/to/or/portland/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-or-portland-grain",
     "origin_city": "New York City",
     "origin_state": "NY",
@@ -261,11 +357,11 @@
     "dest_state": "OR",
     "commodity_id": "grain",
     "miles": 3053.0,
-    "rate": 18400.0
+    "rate": 18189.0
   },
   {
     "url": "/rates/or/portland/to/ny/new-york-city/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "or-portland-ny-new-york-city-steel",
     "origin_city": "Portland",
     "origin_state": "OR",
@@ -273,83 +369,107 @@
     "dest_state": "NY",
     "commodity_id": "steel",
     "miles": 3053.0,
-    "rate": 20969.0
+    "rate": 20758.0
+  },
+  {
+    "url": "/rates/ca/los-angeles/to/ny/manhattan/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-los-angeles-ny-manhattan-plastic",
+    "origin_city": "Los Angeles",
+    "origin_state": "CA",
+    "dest_city": "Manhattan",
+    "dest_state": "NY",
+    "commodity_id": "plastic",
+    "miles": 2993.4,
+    "rate": 23072.0
+  },
+  {
+    "url": "/rates/ny/manhattan/to/ca/los-angeles/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-manhattan-ca-los-angeles-paper",
+    "origin_city": "Manhattan",
+    "origin_state": "NY",
+    "dest_city": "Los Angeles",
+    "dest_state": "CA",
+    "commodity_id": "paper",
+    "miles": 2993.4,
+    "rate": 24373.0
   },
   {
     "url": "/rates/ca/los-angeles/to/ny/the-bronx/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-ny-the-bronx-coal",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "The Bronx",
     "dest_state": "NY",
     "commodity_id": "coal",
-    "miles": 3004.6,
-    "rate": 17638.0
+    "miles": 3004.2,
+    "rate": 18028.0
   },
   {
     "url": "/rates/ny/the-bronx/to/ca/los-angeles/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-the-bronx-ca-los-angeles-grain",
     "origin_city": "The Bronx",
     "origin_state": "NY",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "grain",
-    "miles": 3004.6,
-    "rate": 19363.0
+    "miles": 3004.2,
+    "rate": 19761.0
   },
   {
     "url": "/rates/ny/new-york-city/to/tx/austin/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-tx-austin-steel",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Austin",
     "dest_state": "TX",
     "commodity_id": "steel",
-    "miles": 1795.3,
-    "rate": 16125.0
+    "miles": 1778.4,
+    "rate": 16347.0
   },
   {
     "url": "/rates/tx/austin/to/ny/new-york-city/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-austin-ny-new-york-city-plastic",
     "origin_city": "Austin",
     "origin_state": "TX",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "plastic",
-    "miles": 1795.3,
-    "rate": 16619.0
+    "miles": 1778.4,
+    "rate": 16858.0
   },
   {
     "url": "/rates/ny/new-york-city/to/nv/las-vegas/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-nv-las-vegas-paper",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Las Vegas",
     "dest_state": "NV",
     "commodity_id": "paper",
-    "miles": 2810.3,
-    "rate": 19770.0
+    "miles": 2798.1,
+    "rate": 20124.0
   },
   {
     "url": "/rates/nv/las-vegas/to/ny/new-york-city/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "nv-las-vegas-ny-new-york-city-coal",
     "origin_city": "Las Vegas",
     "origin_state": "NV",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "coal",
-    "miles": 2810.3,
-    "rate": 14078.0
+    "miles": 2798.1,
+    "rate": 14481.0
   },
   {
     "url": "/rates/ny/new-york-city/to/tx/fort-worth/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-tx-fort-worth-grain",
     "origin_city": "New York City",
     "origin_state": "NY",
@@ -357,11 +477,11 @@
     "dest_state": "TX",
     "commodity_id": "grain",
     "miles": 1659.2,
-    "rate": 15021.0
+    "rate": 15051.0
   },
   {
     "url": "/rates/tx/fort-worth/to/ny/new-york-city/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-fort-worth-ny-new-york-city-steel",
     "origin_city": "Fort Worth",
     "origin_state": "TX",
@@ -369,11 +489,11 @@
     "dest_state": "NY",
     "commodity_id": "steel",
     "miles": 1659.2,
-    "rate": 16279.0
+    "rate": 16309.0
   },
   {
     "url": "/rates/ca/los-angeles/to/tx/houston/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-tx-houston-plastic",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
@@ -381,11 +501,11 @@
     "dest_state": "TX",
     "commodity_id": "plastic",
     "miles": 1623.2,
-    "rate": 11953.0
+    "rate": 11969.0
   },
   {
     "url": "/rates/tx/houston/to/ca/los-angeles/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-houston-ca-los-angeles-paper",
     "origin_city": "Houston",
     "origin_state": "TX",
@@ -393,431 +513,491 @@
     "dest_state": "CA",
     "commodity_id": "paper",
     "miles": 1623.2,
-    "rate": 12379.0
+    "rate": 12395.0
   },
   {
     "url": "/rates/ny/new-york-city/to/ca/fresno/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-ca-fresno-coal",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Fresno",
     "dest_state": "CA",
     "commodity_id": "coal",
-    "miles": 3089.0,
-    "rate": 14944.0
+    "miles": 3088.5,
+    "rate": 15595.0
   },
   {
     "url": "/rates/ca/fresno/to/ny/new-york-city/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-fresno-ny-new-york-city-grain",
     "origin_city": "Fresno",
     "origin_state": "CA",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "grain",
-    "miles": 3089.0,
-    "rate": 17544.0
+    "miles": 3088.5,
+    "rate": 17954.0
   },
   {
     "url": "/rates/ny/new-york-city/to/ca/sacramento/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-ca-sacramento-steel",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Sacramento",
     "dest_state": "CA",
     "commodity_id": "steel",
-    "miles": 3051.6,
-    "rate": 19520.0
+    "miles": 3039.4,
+    "rate": 19851.0
+  },
+  {
+    "url": "/rates/ca/sacramento/to/ny/new-york-city/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-sacramento-ny-new-york-city-plastic",
+    "origin_city": "Sacramento",
+    "origin_state": "CA",
+    "dest_city": "New York City",
+    "dest_state": "NY",
+    "commodity_id": "plastic",
+    "miles": 3039.4,
+    "rate": 21329.0
   },
   {
     "url": "/rates/ny/new-york-city/to/tx/el-paso/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-tx-el-paso-paper",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "El Paso",
     "dest_state": "TX",
     "commodity_id": "paper",
-    "miles": 2314.3,
-    "rate": 17851.0
+    "miles": 2237.5,
+    "rate": 18000.0
   },
   {
     "url": "/rates/tx/el-paso/to/ny/new-york-city/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-el-paso-ny-new-york-city-coal",
     "origin_city": "El Paso",
     "origin_state": "TX",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "coal",
-    "miles": 2314.3,
-    "rate": 12874.0
+    "miles": 2237.5,
+    "rate": 13507.0
   },
   {
     "url": "/rates/ny/new-york-city/to/co/denver/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-co-denver-grain",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Denver",
     "dest_state": "CO",
     "commodity_id": "grain",
-    "miles": 1895.1,
-    "rate": 14136.0
+    "miles": 1882.9,
+    "rate": 14455.0
   },
   {
     "url": "/rates/co/denver/to/ny/new-york-city/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "co-denver-ny-new-york-city-steel",
     "origin_city": "Denver",
     "origin_state": "CO",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "steel",
-    "miles": 1895.1,
-    "rate": 16232.0
+    "miles": 1882.9,
+    "rate": 16678.0
   },
   {
     "url": "/rates/ny/new-york-city/to/ca/long-beach/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-ca-long-beach-plastic",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Long Beach",
     "dest_state": "CA",
     "commodity_id": "plastic",
-    "miles": 2998.2,
-    "rate": 21226.0
+    "miles": 2997.7,
+    "rate": 21508.0
   },
   {
     "url": "/rates/ca/long-beach/to/ny/new-york-city/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-long-beach-ny-new-york-city-paper",
     "origin_city": "Long Beach",
     "origin_state": "CA",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "paper",
-    "miles": 2998.2,
-    "rate": 22150.0
+    "miles": 2997.7,
+    "rate": 22431.0
   },
   {
     "url": "/rates/ny/new-york-city/to/az/tucson/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-az-tucson-coal",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Tucson",
     "dest_state": "AZ",
     "commodity_id": "coal",
-    "miles": 2534.0,
-    "rate": 13776.0
+    "miles": 2533.6,
+    "rate": 14344.0
   },
   {
     "url": "/rates/az/tucson/to/ny/new-york-city/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "az-tucson-ny-new-york-city-grain",
     "origin_city": "Tucson",
     "origin_state": "AZ",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "grain",
-    "miles": 2610.5,
-    "rate": 16129.0
+    "miles": 2533.6,
+    "rate": 16427.0
   },
   {
     "url": "/rates/ny/brooklyn/to/az/phoenix/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-az-phoenix-steel",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
     "dest_city": "Phoenix",
     "dest_state": "AZ",
     "commodity_id": "steel",
-    "miles": 2656.2,
-    "rate": 18001.0
+    "miles": 2655.7,
+    "rate": 18506.0
   },
   {
     "url": "/rates/az/phoenix/to/ny/brooklyn/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "az-phoenix-ny-brooklyn-plastic",
     "origin_city": "Phoenix",
     "origin_state": "AZ",
     "dest_city": "Brooklyn",
     "dest_state": "NY",
     "commodity_id": "plastic",
-    "miles": 2732.6,
-    "rate": 20210.0
+    "miles": 2655.7,
+    "rate": 19772.0
   },
   {
     "url": "/rates/ny/new-york-city/to/ca/oakland/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-ca-oakland-paper",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Oakland",
     "dest_state": "CA",
     "commodity_id": "paper",
-    "miles": 3109.6,
-    "rate": 20925.0
+    "miles": 3097.4,
+    "rate": 21273.0
+  },
+  {
+    "url": "/rates/ca/oakland/to/ny/new-york-city/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-oakland-ny-new-york-city-coal",
+    "origin_city": "Oakland",
+    "origin_state": "CA",
+    "dest_city": "New York City",
+    "dest_state": "NY",
+    "commodity_id": "coal",
+    "miles": 3097.4,
+    "rate": 15253.0
   },
   {
     "url": "/rates/ny/brooklyn/to/ca/san-diego/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-ca-san-diego-grain",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
     "dest_city": "San Diego",
     "dest_state": "CA",
     "commodity_id": "grain",
-    "miles": 3030.8,
-    "rate": 17424.0
+    "miles": 3030.4,
+    "rate": 18285.0
   },
   {
     "url": "/rates/ca/san-diego/to/ny/brooklyn/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-san-diego-ny-brooklyn-steel",
     "origin_city": "San Diego",
     "origin_state": "CA",
     "dest_city": "Brooklyn",
     "dest_state": "NY",
     "commodity_id": "steel",
-    "miles": 3107.2,
-    "rate": 20993.0
+    "miles": 3030.4,
+    "rate": 20664.0
   },
   {
     "url": "/rates/ny/new-york-city/to/nm/albuquerque/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-nm-albuquerque-plastic",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Albuquerque",
     "dest_state": "NM",
     "commodity_id": "plastic",
-    "miles": 2183.4,
-    "rate": 17094.0
+    "miles": 2147.3,
+    "rate": 18054.0
   },
   {
     "url": "/rates/nm/albuquerque/to/ny/new-york-city/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "nm-albuquerque-ny-new-york-city-paper",
     "origin_city": "Albuquerque",
     "origin_state": "NM",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "paper",
-    "miles": 2183.4,
-    "rate": 17981.0
+    "miles": 2147.3,
+    "rate": 18923.0
   },
   {
     "url": "/rates/ny/brooklyn/to/tx/houston/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-tx-houston-coal",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
     "dest_city": "Houston",
     "dest_state": "TX",
     "commodity_id": "coal",
-    "miles": 1724.8,
-    "rate": 11836.0
+    "miles": 1679.7,
+    "rate": 13035.0
   },
   {
     "url": "/rates/tx/houston/to/ny/brooklyn/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-houston-ny-brooklyn-grain",
     "origin_city": "Houston",
     "origin_state": "TX",
     "dest_city": "Brooklyn",
     "dest_state": "NY",
     "commodity_id": "grain",
-    "miles": 1724.8,
-    "rate": 13208.0
+    "miles": 1679.7,
+    "rate": 13844.0
   },
   {
     "url": "/rates/ny/new-york-city/to/az/mesa/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-az-mesa-steel",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Mesa",
     "dest_state": "AZ",
     "commodity_id": "steel",
-    "miles": 2640.2,
-    "rate": 17960.0
+    "miles": 2639.8,
+    "rate": 18462.0
   },
   {
     "url": "/rates/az/mesa/to/ny/new-york-city/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "az-mesa-ny-new-york-city-plastic",
     "origin_city": "Mesa",
     "origin_state": "AZ",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "plastic",
-    "miles": 2716.6,
-    "rate": 19655.0
+    "miles": 2639.8,
+    "rate": 19714.0
+  },
+  {
+    "url": "/rates/ny/new-york-city/to/ak/anchorage/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-new-york-city-ak-anchorage-paper",
+    "origin_city": "New York City",
+    "origin_state": "NY",
+    "dest_city": "Anchorage",
+    "dest_state": "AK",
+    "commodity_id": "paper",
+    "miles": 3444.1,
+    "rate": 23954.0
+  },
+  {
+    "url": "/rates/ak/anchorage/to/ny/new-york-city/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "ak-anchorage-ny-new-york-city-coal",
+    "origin_city": "Anchorage",
+    "origin_state": "AK",
+    "dest_city": "New York City",
+    "dest_state": "NY",
+    "commodity_id": "coal",
+    "miles": 3444.1,
+    "rate": 18078.0
   },
   {
     "url": "/rates/ca/los-angeles/to/fl/jacksonville/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-fl-jacksonville-grain",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "Jacksonville",
     "dest_state": "FL",
     "commodity_id": "grain",
-    "miles": 2553.8,
-    "rate": 13294.0
+    "miles": 2478.0,
+    "rate": 13676.0
   },
   {
     "url": "/rates/fl/jacksonville/to/ca/los-angeles/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "fl-jacksonville-ca-los-angeles-steel",
     "origin_city": "Jacksonville",
     "origin_state": "FL",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "steel",
-    "miles": 2553.8,
-    "rate": 15510.0
+    "miles": 2478.0,
+    "rate": 15801.0
   },
   {
     "url": "/rates/ny/queens/to/az/phoenix/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-queens-az-phoenix-plastic",
     "origin_city": "Queens",
     "origin_state": "NY",
     "dest_city": "Phoenix",
     "dest_state": "AZ",
     "commodity_id": "plastic",
-    "miles": 2665.8,
-    "rate": 18741.0
+    "miles": 2665.4,
+    "rate": 19165.0
   },
   {
     "url": "/rates/az/phoenix/to/ny/queens/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "az-phoenix-ny-queens-paper",
     "origin_city": "Phoenix",
     "origin_state": "AZ",
     "dest_city": "Queens",
     "dest_state": "NY",
     "commodity_id": "paper",
-    "miles": 2740.9,
-    "rate": 19643.0
+    "miles": 2665.4,
+    "rate": 20246.0
   },
   {
     "url": "/rates/ny/new-york-city/to/ca/bakersfield/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-ca-bakersfield-coal",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Bakersfield",
     "dest_state": "CA",
     "commodity_id": "coal",
-    "miles": 2982.3,
-    "rate": 14992.0
+    "miles": 2981.8,
+    "rate": 15629.0
   },
   {
     "url": "/rates/ca/bakersfield/to/ny/new-york-city/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-bakersfield-ny-new-york-city-grain",
     "origin_city": "Bakersfield",
     "origin_state": "CA",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "grain",
-    "miles": 2982.3,
-    "rate": 17631.0
+    "miles": 2981.8,
+    "rate": 18023.0
   },
   {
     "url": "/rates/ny/new-york-city/to/ok/oklahoma-city/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-ok-oklahoma-city-steel",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Oklahoma City",
     "dest_state": "OK",
     "commodity_id": "steel",
-    "miles": 1674.2,
-    "rate": 12629.0
+    "miles": 1599.8,
+    "rate": 13281.0
   },
   {
     "url": "/rates/ok/oklahoma-city/to/ny/new-york-city/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ok-oklahoma-city-ny-new-york-city-plastic",
     "origin_city": "Oklahoma City",
     "origin_state": "OK",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "plastic",
-    "miles": 1674.2,
-    "rate": 13917.0
+    "miles": 1599.8,
+    "rate": 14490.0
   },
   {
     "url": "/rates/ny/queens/to/ca/san-diego/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-queens-ca-san-diego-paper",
     "origin_city": "Queens",
     "origin_state": "NY",
     "dest_city": "San Diego",
     "dest_state": "CA",
     "commodity_id": "paper",
-    "miles": 3040.4,
-    "rate": 21141.0
+    "miles": 3040.0,
+    "rate": 21589.0
+  },
+  {
+    "url": "/rates/ca/san-diego/to/ny/queens/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-san-diego-ny-queens-coal",
+    "origin_city": "San Diego",
+    "origin_state": "CA",
+    "dest_city": "Queens",
+    "dest_state": "NY",
+    "commodity_id": "coal",
+    "miles": 3040.0,
+    "rate": 16586.0
   },
   {
     "url": "/rates/ny/queens/to/tx/houston/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-queens-tx-houston-grain",
     "origin_city": "Queens",
     "origin_state": "NY",
     "dest_city": "Houston",
     "dest_state": "TX",
     "commodity_id": "grain",
-    "miles": 1734.4,
-    "rate": 13305.0
+    "miles": 1689.3,
+    "rate": 13461.0
   },
   {
     "url": "/rates/tx/houston/to/ny/queens/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-houston-ny-queens-steel",
     "origin_city": "Houston",
     "origin_state": "TX",
     "dest_city": "Queens",
     "dest_state": "NY",
     "commodity_id": "steel",
-    "miles": 1734.4,
-    "rate": 14892.0
+    "miles": 1689.3,
+    "rate": 15268.0
   },
   {
     "url": "/rates/ny/new-york-city/to/ca/anaheim/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-ca-anaheim-plastic",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Anaheim",
     "dest_state": "CA",
     "commodity_id": "plastic",
-    "miles": 2973.8,
-    "rate": 20079.0
+    "miles": 2973.3,
+    "rate": 20361.0
   },
   {
     "url": "/rates/ca/anaheim/to/ny/new-york-city/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-anaheim-ny-new-york-city-paper",
     "origin_city": "Anaheim",
     "origin_state": "CA",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "paper",
-    "miles": 2973.8,
-    "rate": 21016.0
+    "miles": 2973.3,
+    "rate": 21298.0
   },
   {
     "url": "/rates/ny/new-york-city/to/fl/jacksonville/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-fl-jacksonville-coal",
     "origin_city": "New York City",
     "origin_state": "NY",
@@ -825,11 +1005,11 @@
     "dest_state": "FL",
     "commodity_id": "coal",
     "miles": 982.0,
-    "rate": 7748.0
+    "rate": 7527.0
   },
   {
     "url": "/rates/fl/jacksonville/to/ny/new-york-city/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "fl-jacksonville-ny-new-york-city-grain",
     "origin_city": "Jacksonville",
     "origin_state": "FL",
@@ -837,11 +1017,35 @@
     "dest_state": "NY",
     "commodity_id": "grain",
     "miles": 982.0,
-    "rate": 9585.0
+    "rate": 9364.0
+  },
+  {
+    "url": "/rates/ca/los-angeles/to/nc/charlotte/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-los-angeles-nc-charlotte-steel",
+    "origin_city": "Los Angeles",
+    "origin_state": "CA",
+    "dest_city": "Charlotte",
+    "dest_state": "NC",
+    "commodity_id": "steel",
+    "miles": 2526.4,
+    "rate": 15039.0
+  },
+  {
+    "url": "/rates/nc/charlotte/to/ca/los-angeles/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "nc-charlotte-ca-los-angeles-plastic",
+    "origin_city": "Charlotte",
+    "origin_state": "NC",
+    "dest_city": "Los Angeles",
+    "dest_state": "CA",
+    "commodity_id": "plastic",
+    "miles": 2526.4,
+    "rate": 16040.0
   },
   {
     "url": "/rates/ca/los-angeles/to/tx/san-antonio/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-tx-san-antonio-paper",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
@@ -849,11 +1053,11 @@
     "dest_state": "TX",
     "commodity_id": "paper",
     "miles": 1410.7,
-    "rate": 11379.0
+    "rate": 11393.0
   },
   {
     "url": "/rates/tx/san-antonio/to/ca/los-angeles/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-san-antonio-ca-los-angeles-coal",
     "origin_city": "San Antonio",
     "origin_state": "TX",
@@ -861,131 +1065,239 @@
     "dest_state": "CA",
     "commodity_id": "coal",
     "miles": 1410.7,
-    "rate": 6879.0
+    "rate": 6893.0
   },
   {
     "url": "/rates/ny/brooklyn/to/ca/san-jose/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-ca-san-jose-grain",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
     "dest_city": "San Jose",
     "dest_state": "CA",
     "commodity_id": "grain",
-    "miles": 3143.8,
-    "rate": 17046.0
+    "miles": 3131.6,
+    "rate": 17284.0
   },
   {
     "url": "/rates/ca/san-jose/to/ny/brooklyn/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-san-jose-ny-brooklyn-steel",
     "origin_city": "San Jose",
     "origin_state": "CA",
     "dest_city": "Brooklyn",
     "dest_state": "NY",
     "commodity_id": "steel",
-    "miles": 3143.8,
-    "rate": 19748.0
+    "miles": 3131.6,
+    "rate": 20151.0
   },
   {
     "url": "/rates/ca/los-angeles/to/oh/columbus/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-oh-columbus-plastic",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "Columbus",
     "dest_state": "OH",
     "commodity_id": "plastic",
-    "miles": 2371.5,
-    "rate": 17118.0
+    "miles": 2371.1,
+    "rate": 17388.0
   },
   {
     "url": "/rates/oh/columbus/to/ca/los-angeles/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "oh-columbus-ca-los-angeles-paper",
     "origin_city": "Columbus",
     "origin_state": "OH",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "paper",
-    "miles": 2371.5,
-    "rate": 17589.0
+    "miles": 2371.1,
+    "rate": 17859.0
+  },
+  {
+    "url": "/rates/ny/new-york-city/to/ca/stockton/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-new-york-city-ca-stockton-coal",
+    "origin_city": "New York City",
+    "origin_state": "NY",
+    "dest_city": "Stockton",
+    "dest_state": "CA",
+    "commodity_id": "coal",
+    "miles": 3051.3,
+    "rate": 14879.0
+  },
+  {
+    "url": "/rates/ca/stockton/to/ny/new-york-city/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-stockton-ny-new-york-city-grain",
+    "origin_city": "Stockton",
+    "origin_state": "CA",
+    "dest_city": "New York City",
+    "dest_state": "NY",
+    "commodity_id": "grain",
+    "miles": 3051.3,
+    "rate": 17374.0
   },
   {
     "url": "/rates/ny/new-york-city/to/ca/riverside/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-ca-riverside-steel",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Riverside",
     "dest_state": "CA",
     "commodity_id": "steel",
-    "miles": 2986.4,
-    "rate": 19054.0
+    "miles": 2935.0,
+    "rate": 18719.0
   },
   {
     "url": "/rates/ca/riverside/to/ny/new-york-city/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-riverside-ny-new-york-city-plastic",
     "origin_city": "Riverside",
     "origin_state": "CA",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "plastic",
-    "miles": 2935.5,
-    "rate": 19839.0
+    "miles": 2935.0,
+    "rate": 20121.0
+  },
+  {
+    "url": "/rates/ny/new-york-city/to/ca/santa-ana/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-new-york-city-ca-santa-ana-paper",
+    "origin_city": "New York City",
+    "origin_state": "NY",
+    "dest_city": "Santa Ana",
+    "dest_state": "CA",
+    "commodity_id": "paper",
+    "miles": 2972.6,
+    "rate": 20912.0
+  },
+  {
+    "url": "/rates/ca/santa-ana/to/ny/new-york-city/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-santa-ana-ny-new-york-city-coal",
+    "origin_city": "Santa Ana",
+    "origin_state": "CA",
+    "dest_city": "New York City",
+    "dest_state": "NY",
+    "commodity_id": "coal",
+    "miles": 2972.6,
+    "rate": 15044.0
   },
   {
     "url": "/rates/ny/brooklyn/to/tx/san-antonio/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-tx-san-antonio-grain",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
     "dest_city": "San Antonio",
     "dest_state": "TX",
     "commodity_id": "grain",
-    "miles": 1872.7,
-    "rate": 14200.0
+    "miles": 1855.8,
+    "rate": 14433.0
   },
   {
     "url": "/rates/tx/san-antonio/to/ny/brooklyn/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-san-antonio-ny-brooklyn-steel",
     "origin_city": "San Antonio",
     "origin_state": "TX",
     "dest_city": "Brooklyn",
     "dest_state": "NY",
     "commodity_id": "steel",
-    "miles": 1872.7,
-    "rate": 15862.0
+    "miles": 1855.8,
+    "rate": 16105.0
   },
   {
     "url": "/rates/ny/new-york-city/to/co/colorado-springs/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-co-colorado-springs-plastic",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Colorado Springs",
     "dest_state": "CO",
     "commodity_id": "plastic",
-    "miles": 1943.3,
-    "rate": 16336.0
+    "miles": 1942.9,
+    "rate": 16605.0
   },
   {
     "url": "/rates/co/colorado-springs/to/ny/new-york-city/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "co-colorado-springs-ny-new-york-city-paper",
     "origin_city": "Colorado Springs",
     "origin_state": "CO",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "paper",
-    "miles": 1943.3,
-    "rate": 17235.0
+    "miles": 1942.9,
+    "rate": 17699.0
+  },
+  {
+    "url": "/rates/il/chicago/to/ca/san-diego/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "il-chicago-ca-san-diego-coal",
+    "origin_city": "Chicago",
+    "origin_state": "IL",
+    "dest_city": "San Diego",
+    "dest_state": "CA",
+    "commodity_id": "coal",
+    "miles": 2159.6,
+    "rate": 10469.0
+  },
+  {
+    "url": "/rates/ca/san-diego/to/il/chicago/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-san-diego-il-chicago-grain",
+    "origin_city": "San Diego",
+    "origin_state": "CA",
+    "dest_city": "Chicago",
+    "dest_state": "IL",
+    "commodity_id": "grain",
+    "miles": 2159.6,
+    "rate": 12490.0
+  },
+  {
+    "url": "/rates/ca/los-angeles/to/ma/boston/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-los-angeles-ma-boston-steel",
+    "origin_city": "Los Angeles",
+    "origin_state": "CA",
+    "dest_city": "Boston",
+    "dest_state": "MA",
+    "commodity_id": "steel",
+    "miles": 3095.1,
+    "rate": 18836.0
+  },
+  {
+    "url": "/rates/ma/boston/to/ca/los-angeles/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "ma-boston-ca-los-angeles-plastic",
+    "origin_city": "Boston",
+    "origin_state": "MA",
+    "dest_city": "Los Angeles",
+    "dest_state": "CA",
+    "commodity_id": "plastic",
+    "miles": 3095.1,
+    "rate": 20284.0
+  },
+  {
+    "url": "/rates/il/chicago/to/az/phoenix/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "il-chicago-az-phoenix-paper",
+    "origin_city": "Chicago",
+    "origin_state": "IL",
+    "dest_city": "Phoenix",
+    "dest_state": "AZ",
+    "commodity_id": "paper",
+    "miles": 1785.0,
+    "rate": 13918.0
   },
   {
     "url": "/rates/az/phoenix/to/il/chicago/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "az-phoenix-il-chicago-coal",
     "origin_city": "Phoenix",
     "origin_state": "AZ",
@@ -993,107 +1305,131 @@
     "dest_state": "IL",
     "commodity_id": "coal",
     "miles": 1785.0,
-    "rate": 8974.0
+    "rate": 8992.0
+  },
+  {
+    "url": "/rates/ca/los-angeles/to/tx/dallas/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-los-angeles-tx-dallas-grain",
+    "origin_city": "Los Angeles",
+    "origin_state": "CA",
+    "dest_city": "Dallas",
+    "dest_state": "TX",
+    "commodity_id": "grain",
+    "miles": 1450.8,
+    "rate": 8726.0
+  },
+  {
+    "url": "/rates/tx/dallas/to/ca/los-angeles/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "tx-dallas-ca-los-angeles-steel",
+    "origin_city": "Dallas",
+    "origin_state": "TX",
+    "dest_city": "Los Angeles",
+    "dest_state": "CA",
+    "commodity_id": "steel",
+    "miles": 1450.8,
+    "rate": 10440.0
   },
   {
     "url": "/rates/ca/los-angeles/to/in/indianapolis/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-in-indianapolis-plastic",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "Indianapolis",
     "dest_state": "IN",
     "commodity_id": "plastic",
-    "miles": 2193.4,
-    "rate": 16287.0
+    "miles": 2182.7,
+    "rate": 17679.0
   },
   {
     "url": "/rates/in/indianapolis/to/ca/los-angeles/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "in-indianapolis-ca-los-angeles-paper",
     "origin_city": "Indianapolis",
     "origin_state": "IN",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "paper",
-    "miles": 2193.3,
-    "rate": 17145.0
+    "miles": 2182.7,
+    "rate": 18101.0
   },
   {
     "url": "/rates/ca/los-angeles/to/dc/washington/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-dc-washington-coal",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "Washington",
     "dest_state": "DC",
     "commodity_id": "coal",
-    "miles": 2850.3,
-    "rate": 15526.0
+    "miles": 2841.8,
+    "rate": 14496.0
   },
   {
     "url": "/rates/dc/washington/to/ca/los-angeles/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "dc-washington-ca-los-angeles-grain",
     "origin_city": "Washington",
     "origin_state": "DC",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "grain",
-    "miles": 2850.3,
-    "rate": 17914.0
+    "miles": 2841.8,
+    "rate": 16313.0
   },
   {
     "url": "/rates/ny/queens/to/ca/san-jose/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-queens-ca-san-jose-steel",
     "origin_city": "Queens",
     "origin_state": "NY",
     "dest_city": "San Jose",
     "dest_state": "CA",
     "commodity_id": "steel",
-    "miles": 3153.5,
-    "rate": 19227.0
+    "miles": 3141.3,
+    "rate": 19556.0
   },
   {
     "url": "/rates/ca/san-jose/to/ny/queens/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-san-jose-ny-queens-plastic",
     "origin_city": "San Jose",
     "origin_state": "CA",
     "dest_city": "Queens",
     "dest_state": "NY",
     "commodity_id": "plastic",
-    "miles": 3153.5,
-    "rate": 20822.0
+    "miles": 3141.3,
+    "rate": 21241.0
   },
   {
     "url": "/rates/ny/brooklyn/to/ca/san-francisco/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-ca-san-francisco-paper",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
     "dest_city": "San Francisco",
     "dest_state": "CA",
     "commodity_id": "paper",
-    "miles": 3169.0,
-    "rate": 21506.0
+    "miles": 3156.8,
+    "rate": 21853.0
   },
   {
     "url": "/rates/ca/san-francisco/to/ny/brooklyn/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-san-francisco-ny-brooklyn-coal",
     "origin_city": "San Francisco",
     "origin_state": "CA",
     "dest_city": "Brooklyn",
     "dest_state": "NY",
     "commodity_id": "coal",
-    "miles": 3169.0,
-    "rate": 15400.0
+    "miles": 3156.8,
+    "rate": 15829.0
   },
   {
     "url": "/rates/il/chicago/to/tx/houston/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "il-chicago-tx-houston-grain",
     "origin_city": "Chicago",
     "origin_state": "IL",
@@ -1101,11 +1437,11 @@
     "dest_state": "TX",
     "commodity_id": "grain",
     "miles": 1244.2,
-    "rate": 8313.0
+    "rate": 8325.0
   },
   {
     "url": "/rates/tx/houston/to/il/chicago/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-houston-il-chicago-steel",
     "origin_city": "Houston",
     "origin_state": "TX",
@@ -1113,155 +1449,155 @@
     "dest_state": "IL",
     "commodity_id": "steel",
     "miles": 1244.2,
-    "rate": 9880.0
+    "rate": 9892.0
   },
   {
     "url": "/rates/ny/new-york-city/to/ca/chula-vista/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-ca-chula-vista-plastic",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Chula Vista",
     "dest_state": "CA",
     "commodity_id": "plastic",
-    "miles": 3023.2,
-    "rate": 20810.0
+    "miles": 3022.8,
+    "rate": 21297.0
   },
   {
     "url": "/rates/ca/chula-vista/to/ny/new-york-city/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-chula-vista-ny-new-york-city-paper",
     "origin_city": "Chula Vista",
     "origin_state": "CA",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "paper",
-    "miles": 3099.6,
-    "rate": 22113.0
+    "miles": 3022.8,
+    "rate": 22184.0
   },
   {
     "url": "/rates/ca/los-angeles/to/ma/south-boston/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-ma-south-boston-coal",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "South Boston",
     "dest_state": "MA",
     "commodity_id": "coal",
-    "miles": 3104.7,
-    "rate": 13582.0
+    "miles": 3096.2,
+    "rate": 14719.0
   },
   {
     "url": "/rates/ma/south-boston/to/ca/los-angeles/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ma-south-boston-ca-los-angeles-grain",
     "origin_city": "South Boston",
     "origin_state": "MA",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "grain",
-    "miles": 3104.7,
-    "rate": 16076.0
+    "miles": 3096.2,
+    "rate": 16874.0
   },
   {
     "url": "/rates/ny/queens/to/tx/san-antonio/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-queens-tx-san-antonio-steel",
     "origin_city": "Queens",
     "origin_state": "NY",
     "dest_city": "San Antonio",
     "dest_state": "TX",
     "commodity_id": "steel",
-    "miles": 1882.4,
-    "rate": 15029.0
+    "miles": 1865.4,
+    "rate": 15254.0
   },
   {
     "url": "/rates/tx/san-antonio/to/ny/queens/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-san-antonio-ny-queens-plastic",
     "origin_city": "San Antonio",
     "origin_state": "TX",
     "dest_city": "Queens",
     "dest_state": "NY",
     "commodity_id": "plastic",
-    "miles": 1882.4,
-    "rate": 16584.0
+    "miles": 1865.4,
+    "rate": 16824.0
   },
   {
     "url": "/rates/ny/new-york-city/to/nv/henderson/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-nv-henderson-paper",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Henderson",
     "dest_state": "NV",
     "commodity_id": "paper",
-    "miles": 2830.3,
-    "rate": 19848.0
+    "miles": 2818.1,
+    "rate": 20201.0
   },
   {
     "url": "/rates/nv/henderson/to/ny/new-york-city/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "nv-henderson-ny-new-york-city-coal",
     "origin_city": "Henderson",
     "origin_state": "NV",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "coal",
-    "miles": 2830.3,
-    "rate": 14129.0
+    "miles": 2818.1,
+    "rate": 14533.0
   },
   {
     "url": "/rates/ny/new-york-city/to/nv/reno/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-nv-reno-grain",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Reno",
     "dest_state": "NV",
     "commodity_id": "grain",
-    "miles": 2869.8,
-    "rate": 16219.0
+    "miles": 2857.6,
+    "rate": 16466.0
   },
   {
     "url": "/rates/nv/reno/to/ny/new-york-city/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "nv-reno-ny-new-york-city-steel",
     "origin_city": "Reno",
     "origin_state": "NV",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "steel",
-    "miles": 2869.8,
-    "rate": 18803.0
+    "miles": 2857.6,
+    "rate": 19212.0
   },
   {
     "url": "/rates/ny/new-york-city/to/ca/irvine/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-ca-irvine-plastic",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Irvine",
     "dest_state": "CA",
     "commodity_id": "plastic",
-    "miles": 2979.2,
-    "rate": 20080.0
+    "miles": 2978.7,
+    "rate": 20362.0
   },
   {
     "url": "/rates/ca/irvine/to/ny/new-york-city/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-irvine-ny-new-york-city-paper",
     "origin_city": "Irvine",
     "origin_state": "CA",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "paper",
-    "miles": 2979.2,
-    "rate": 21018.0
+    "miles": 2978.7,
+    "rate": 21299.0
   },
   {
     "url": "/rates/ny/new-york-city/to/tn/new-south-memphis/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-tn-new-south-memphis-coal",
     "origin_city": "New York City",
     "origin_state": "NY",
@@ -1269,11 +1605,11 @@
     "dest_state": "TN",
     "commodity_id": "coal",
     "miles": 1159.0,
-    "rate": 9873.0
+    "rate": 9899.0
   },
   {
     "url": "/rates/tn/new-south-memphis/to/ny/new-york-city/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tn-new-south-memphis-ny-new-york-city-grain",
     "origin_city": "New South Memphis",
     "origin_state": "TN",
@@ -1281,35 +1617,35 @@
     "dest_state": "NY",
     "commodity_id": "grain",
     "miles": 1159.0,
-    "rate": 12442.0
+    "rate": 12218.0
   },
   {
     "url": "/rates/az/phoenix/to/pa/philadelphia/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "az-phoenix-pa-philadelphia-steel",
     "origin_city": "Phoenix",
     "origin_state": "AZ",
     "dest_city": "Philadelphia",
     "dest_state": "PA",
     "commodity_id": "steel",
-    "miles": 2643.0,
-    "rate": 18369.0
+    "miles": 2574.0,
+    "rate": 17247.0
   },
   {
     "url": "/rates/pa/philadelphia/to/az/phoenix/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "pa-philadelphia-az-phoenix-plastic",
     "origin_city": "Philadelphia",
     "origin_state": "PA",
     "dest_city": "Phoenix",
     "dest_state": "AZ",
     "commodity_id": "plastic",
-    "miles": 2574.5,
-    "rate": 17739.0
+    "miles": 2574.0,
+    "rate": 18143.0
   },
   {
     "url": "/rates/ny/new-york-city/to/tn/memphis/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-tn-memphis-paper",
     "origin_city": "New York City",
     "origin_state": "NY",
@@ -1317,11 +1653,11 @@
     "dest_state": "TN",
     "commodity_id": "paper",
     "miles": 1157.9,
-    "rate": 13626.0
+    "rate": 13652.0
   },
   {
     "url": "/rates/tn/memphis/to/ny/new-york-city/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tn-memphis-ny-new-york-city-coal",
     "origin_city": "Memphis",
     "origin_state": "TN",
@@ -1329,35 +1665,59 @@
     "dest_state": "NY",
     "commodity_id": "coal",
     "miles": 1157.9,
-    "rate": 9850.0
+    "rate": 9875.0
+  },
+  {
+    "url": "/rates/az/phoenix/to/ny/manhattan/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "az-phoenix-ny-manhattan-grain",
+    "origin_city": "Phoenix",
+    "origin_state": "AZ",
+    "dest_city": "Manhattan",
+    "dest_state": "NY",
+    "commodity_id": "grain",
+    "miles": 2667.6,
+    "rate": 18522.0
+  },
+  {
+    "url": "/rates/ny/manhattan/to/az/phoenix/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-manhattan-az-phoenix-steel",
+    "origin_city": "Manhattan",
+    "origin_state": "NY",
+    "dest_city": "Phoenix",
+    "dest_state": "AZ",
+    "commodity_id": "steel",
+    "miles": 2667.6,
+    "rate": 21289.0
   },
   {
     "url": "/rates/pa/philadelphia/to/ca/san-diego/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "pa-philadelphia-ca-san-diego-plastic",
     "origin_city": "Philadelphia",
     "origin_state": "PA",
     "dest_city": "San Diego",
     "dest_state": "CA",
     "commodity_id": "plastic",
-    "miles": 2949.1,
-    "rate": 19542.0
+    "miles": 2948.7,
+    "rate": 20017.0
   },
   {
     "url": "/rates/ca/san-diego/to/pa/philadelphia/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-san-diego-pa-philadelphia-paper",
     "origin_city": "San Diego",
     "origin_state": "CA",
     "dest_city": "Philadelphia",
     "dest_state": "PA",
     "commodity_id": "paper",
-    "miles": 3017.6,
-    "rate": 21737.0
+    "miles": 2948.7,
+    "rate": 20543.0
   },
   {
     "url": "/rates/ny/brooklyn/to/il/chicago/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-il-chicago-coal",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
@@ -1365,11 +1725,11 @@
     "dest_state": "IL",
     "commodity_id": "coal",
     "miles": 881.9,
-    "rate": 7204.0
+    "rate": 7221.0
   },
   {
     "url": "/rates/il/chicago/to/ny/brooklyn/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "il-chicago-ny-brooklyn-grain",
     "origin_city": "Chicago",
     "origin_state": "IL",
@@ -1377,11 +1737,35 @@
     "dest_state": "NY",
     "commodity_id": "grain",
     "miles": 881.9,
-    "rate": 8861.0
+    "rate": 8879.0
+  },
+  {
+    "url": "/rates/ca/los-angeles/to/md/baltimore/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-los-angeles-md-baltimore-steel",
+    "origin_city": "Los Angeles",
+    "origin_state": "CA",
+    "dest_city": "Baltimore",
+    "dest_state": "MD",
+    "commodity_id": "steel",
+    "miles": 2862.6,
+    "rate": 18192.0
+  },
+  {
+    "url": "/rates/md/baltimore/to/ca/los-angeles/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "md-baltimore-ca-los-angeles-plastic",
+    "origin_city": "Baltimore",
+    "origin_state": "MD",
+    "dest_city": "Los Angeles",
+    "dest_state": "CA",
+    "commodity_id": "plastic",
+    "miles": 2862.6,
+    "rate": 19231.0
   },
   {
     "url": "/rates/ny/brooklyn/to/wa/seattle/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-wa-seattle-paper",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
@@ -1389,11 +1773,11 @@
     "dest_state": "WA",
     "commodity_id": "paper",
     "miles": 3012.2,
-    "rate": 21014.0
+    "rate": 21053.0
   },
   {
     "url": "/rates/wa/seattle/to/ny/brooklyn/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "wa-seattle-ny-brooklyn-coal",
     "origin_city": "Seattle",
     "origin_state": "WA",
@@ -1401,35 +1785,59 @@
     "dest_state": "NY",
     "commodity_id": "coal",
     "miles": 3012.2,
-    "rate": 15283.0
+    "rate": 15322.0
   },
   {
     "url": "/rates/ny/new-york-city/to/co/aurora/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-co-aurora-grain",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Aurora",
     "dest_state": "CO",
     "commodity_id": "grain",
-    "miles": 1899.6,
-    "rate": 13189.0
+    "miles": 1887.3,
+    "rate": 13509.0
   },
   {
     "url": "/rates/co/aurora/to/ny/new-york-city/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "co-aurora-ny-new-york-city-steel",
     "origin_city": "Aurora",
     "origin_state": "CO",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "steel",
-    "miles": 1899.5,
-    "rate": 15394.0
+    "miles": 1887.3,
+    "rate": 15841.0
+  },
+  {
+    "url": "/rates/ny/manhattan/to/ca/san-diego/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-manhattan-ca-san-diego-plastic",
+    "origin_city": "Manhattan",
+    "origin_state": "NY",
+    "dest_city": "San Diego",
+    "dest_state": "CA",
+    "commodity_id": "plastic",
+    "miles": 3042.2,
+    "rate": 24075.0
+  },
+  {
+    "url": "/rates/ca/san-diego/to/ny/manhattan/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-san-diego-ny-manhattan-paper",
+    "origin_city": "San Diego",
+    "origin_state": "CA",
+    "dest_city": "Manhattan",
+    "dest_state": "NY",
+    "commodity_id": "paper",
+    "miles": 3042.2,
+    "rate": 23865.0
   },
   {
     "url": "/rates/ny/new-york-city/to/in/indianapolis/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-in-indianapolis-coal",
     "origin_city": "New York City",
     "origin_state": "NY",
@@ -1437,11 +1845,11 @@
     "dest_state": "IN",
     "commodity_id": "coal",
     "miles": 897.2,
-    "rate": 6016.0
+    "rate": 6043.0
   },
   {
     "url": "/rates/in/indianapolis/to/ny/new-york-city/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "in-indianapolis-ny-new-york-city-grain",
     "origin_city": "Indianapolis",
     "origin_state": "IN",
@@ -1449,83 +1857,131 @@
     "dest_state": "NY",
     "commodity_id": "grain",
     "miles": 897.2,
-    "rate": 7792.0
+    "rate": 7819.0
+  },
+  {
+    "url": "/rates/ny/brooklyn/to/tx/dallas/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-brooklyn-tx-dallas-steel",
+    "origin_city": "Brooklyn",
+    "origin_state": "NY",
+    "dest_city": "Dallas",
+    "dest_state": "TX",
+    "commodity_id": "steel",
+    "miles": 1630.6,
+    "rate": 16566.0
+  },
+  {
+    "url": "/rates/tx/dallas/to/ny/brooklyn/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "tx-dallas-ny-brooklyn-plastic",
+    "origin_city": "Dallas",
+    "origin_state": "TX",
+    "dest_city": "Brooklyn",
+    "dest_state": "NY",
+    "commodity_id": "plastic",
+    "miles": 1630.6,
+    "rate": 16924.0
   },
   {
     "url": "/rates/ny/queens/to/ca/san-francisco/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-queens-ca-san-francisco-paper",
     "origin_city": "Queens",
     "origin_state": "NY",
     "dest_city": "San Francisco",
     "dest_state": "CA",
     "commodity_id": "paper",
-    "miles": 3178.7,
-    "rate": 21298.0
+    "miles": 3166.4,
+    "rate": 21644.0
   },
   {
     "url": "/rates/ca/san-francisco/to/ny/queens/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-san-francisco-ny-queens-coal",
     "origin_city": "San Francisco",
     "origin_state": "CA",
     "dest_city": "Queens",
     "dest_state": "NY",
     "commodity_id": "coal",
-    "miles": 3178.6,
-    "rate": 15397.0
+    "miles": 3166.4,
+    "rate": 15826.0
   },
   {
     "url": "/rates/az/phoenix/to/ny/the-bronx/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "az-phoenix-ny-the-bronx-grain",
     "origin_city": "Phoenix",
     "origin_state": "AZ",
     "dest_city": "The Bronx",
     "dest_state": "NY",
     "commodity_id": "grain",
-    "miles": 2731.4,
-    "rate": 15409.0
+    "miles": 2678.3,
+    "rate": 19012.0
   },
   {
     "url": "/rates/ny/the-bronx/to/az/phoenix/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-the-bronx-az-phoenix-steel",
     "origin_city": "The Bronx",
     "origin_state": "NY",
     "dest_city": "Phoenix",
     "dest_state": "AZ",
     "commodity_id": "steel",
-    "miles": 2678.8,
-    "rate": 20084.0
+    "miles": 2678.3,
+    "rate": 20595.0
   },
   {
     "url": "/rates/ny/new-york-city/to/az/chandler/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-az-chandler-plastic",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Chandler",
     "dest_state": "AZ",
     "commodity_id": "plastic",
-    "miles": 2643.2,
-    "rate": 18928.0
+    "miles": 2642.8,
+    "rate": 19347.0
   },
   {
     "url": "/rates/az/chandler/to/ny/new-york-city/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "az-chandler-ny-new-york-city-paper",
     "origin_city": "Chandler",
     "origin_state": "AZ",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "paper",
-    "miles": 2719.6,
-    "rate": 20188.0
+    "miles": 2642.8,
+    "rate": 20211.0
+  },
+  {
+    "url": "/rates/tx/houston/to/ny/manhattan/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "tx-houston-ny-manhattan-coal",
+    "origin_city": "Houston",
+    "origin_state": "TX",
+    "dest_city": "Manhattan",
+    "dest_state": "NY",
+    "commodity_id": "coal",
+    "miles": 1691.5,
+    "rate": 12505.0
+  },
+  {
+    "url": "/rates/ny/manhattan/to/tx/houston/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-manhattan-tx-houston-grain",
+    "origin_city": "Manhattan",
+    "origin_state": "NY",
+    "dest_city": "Houston",
+    "dest_state": "TX",
+    "commodity_id": "grain",
+    "miles": 1691.5,
+    "rate": 14498.0
   },
   {
     "url": "/rates/ny/new-york-city/to/ne/omaha/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-ne-omaha-steel",
     "origin_city": "New York City",
     "origin_state": "NY",
@@ -1533,11 +1989,11 @@
     "dest_state": "NE",
     "commodity_id": "steel",
     "miles": 1365.4,
-    "rate": 12895.0
+    "rate": 12918.0
   },
   {
     "url": "/rates/ne/omaha/to/ny/new-york-city/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ne-omaha-ny-new-york-city-plastic",
     "origin_city": "Omaha",
     "origin_state": "NE",
@@ -1545,35 +2001,83 @@
     "dest_state": "NY",
     "commodity_id": "plastic",
     "miles": 1365.4,
-    "rate": 14007.0
+    "rate": 14029.0
   },
   {
     "url": "/rates/ca/los-angeles/to/mi/detroit/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-mi-detroit-paper",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "Detroit",
     "dest_state": "MI",
     "commodity_id": "paper",
-    "miles": 2460.2,
-    "rate": 17265.0
+    "miles": 2384.8,
+    "rate": 18557.0
   },
   {
     "url": "/rates/mi/detroit/to/ca/los-angeles/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "mi-detroit-ca-los-angeles-coal",
     "origin_city": "Detroit",
     "origin_state": "MI",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "coal",
-    "miles": 2460.2,
-    "rate": 11303.0
+    "miles": 2384.8,
+    "rate": 13509.0
+  },
+  {
+    "url": "/rates/il/chicago/to/ca/san-jose/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "il-chicago-ca-san-jose-grain",
+    "origin_city": "Chicago",
+    "origin_state": "IL",
+    "dest_city": "San Jose",
+    "dest_state": "CA",
+    "commodity_id": "grain",
+    "miles": 2251.4,
+    "rate": 11369.0
+  },
+  {
+    "url": "/rates/ca/san-jose/to/il/chicago/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-san-jose-il-chicago-steel",
+    "origin_city": "San Jose",
+    "origin_state": "CA",
+    "dest_city": "Chicago",
+    "dest_state": "IL",
+    "commodity_id": "steel",
+    "miles": 2251.4,
+    "rate": 13545.0
+  },
+  {
+    "url": "/rates/tx/houston/to/pa/philadelphia/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "tx-houston-pa-philadelphia-plastic",
+    "origin_city": "Houston",
+    "origin_state": "TX",
+    "dest_city": "Philadelphia",
+    "dest_state": "PA",
+    "commodity_id": "plastic",
+    "miles": 1588.6,
+    "rate": 14189.0
+  },
+  {
+    "url": "/rates/pa/philadelphia/to/tx/houston/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "pa-philadelphia-tx-houston-paper",
+    "origin_city": "Philadelphia",
+    "origin_state": "PA",
+    "dest_city": "Houston",
+    "dest_state": "TX",
+    "commodity_id": "paper",
+    "miles": 1588.6,
+    "rate": 15231.0
   },
   {
     "url": "/rates/ny/new-york-city/to/wa/tri-cities/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-wa-tri-cities-coal",
     "origin_city": "New York City",
     "origin_state": "NY",
@@ -1581,11 +2085,11 @@
     "dest_state": "WA",
     "commodity_id": "coal",
     "miles": 2840.1,
-    "rate": 14603.0
+    "rate": 14640.0
   },
   {
     "url": "/rates/wa/tri-cities/to/ny/new-york-city/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "wa-tri-cities-ny-new-york-city-grain",
     "origin_city": "Tri-Cities",
     "origin_state": "WA",
@@ -1593,11 +2097,35 @@
     "dest_state": "NY",
     "commodity_id": "grain",
     "miles": 2840.1,
-    "rate": 16971.0
+    "rate": 17008.0
+  },
+  {
+    "url": "/rates/ny/brooklyn/to/hi/honolulu/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-brooklyn-hi-honolulu-steel",
+    "origin_city": "Brooklyn",
+    "origin_state": "NY",
+    "dest_city": "Honolulu",
+    "dest_state": "HI",
+    "commodity_id": "steel",
+    "miles": 3240.7,
+    "rate": 21260.0
+  },
+  {
+    "url": "/rates/hi/honolulu/to/ny/brooklyn/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "hi-honolulu-ny-brooklyn-plastic",
+    "origin_city": "Honolulu",
+    "origin_state": "HI",
+    "dest_city": "Brooklyn",
+    "dest_state": "NY",
+    "commodity_id": "plastic",
+    "miles": 3240.7,
+    "rate": 22025.0
   },
   {
     "url": "/rates/ny/new-york-city/to/tx/arlington/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-tx-arlington-paper",
     "origin_city": "New York City",
     "origin_state": "NY",
@@ -1605,11 +2133,11 @@
     "dest_state": "TX",
     "commodity_id": "paper",
     "miles": 1647.5,
-    "rate": 17726.0
+    "rate": 17756.0
   },
   {
     "url": "/rates/tx/arlington/to/ny/new-york-city/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-arlington-ny-new-york-city-coal",
     "origin_city": "Arlington",
     "origin_state": "TX",
@@ -1617,35 +2145,23 @@
     "dest_state": "NY",
     "commodity_id": "coal",
     "miles": 1647.5,
-    "rate": 13436.0
+    "rate": 13467.0
   },
   {
     "url": "/rates/ca/san-diego/to/ny/the-bronx/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-san-diego-ny-the-bronx-grain",
     "origin_city": "San Diego",
     "origin_state": "CA",
     "dest_city": "The Bronx",
     "dest_state": "NY",
     "commodity_id": "grain",
-    "miles": 3106.1,
-    "rate": 17001.0
-  },
-  {
-    "url": "/rates/ny/the-bronx/to/ca/san-diego/steel/",
-    "lastmod": "2026-05-05",
-    "slug": "ny-the-bronx-ca-san-diego-steel",
-    "origin_city": "The Bronx",
-    "origin_state": "NY",
-    "dest_city": "San Diego",
-    "dest_state": "CA",
-    "commodity_id": "steel",
-    "miles": 3053.4,
-    "rate": 21827.0
+    "miles": 3053.0,
+    "rate": 20698.0
   },
   {
     "url": "/rates/ny/new-york-city/to/fl/miami/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-fl-miami-plastic",
     "origin_city": "New York City",
     "origin_state": "NY",
@@ -1653,11 +2169,11 @@
     "dest_state": "FL",
     "commodity_id": "plastic",
     "miles": 1326.5,
-    "rate": 11164.0
+    "rate": 11204.0
   },
   {
     "url": "/rates/fl/miami/to/ny/new-york-city/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "fl-miami-ny-new-york-city-paper",
     "origin_city": "Miami",
     "origin_state": "FL",
@@ -1665,11 +2181,11 @@
     "dest_state": "NY",
     "commodity_id": "paper",
     "miles": 1326.5,
-    "rate": 12024.0
+    "rate": 12064.0
   },
   {
     "url": "/rates/ca/los-angeles/to/tn/nashville/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-tn-nashville-coal",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
@@ -1677,11 +2193,11 @@
     "dest_state": "TN",
     "commodity_id": "coal",
     "miles": 2154.1,
-    "rate": 11275.0
+    "rate": 11302.0
   },
   {
     "url": "/rates/tn/nashville/to/ca/los-angeles/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tn-nashville-ca-los-angeles-grain",
     "origin_city": "Nashville",
     "origin_state": "TN",
@@ -1689,11 +2205,11 @@
     "dest_state": "CA",
     "commodity_id": "grain",
     "miles": 2154.1,
-    "rate": 13103.0
+    "rate": 13129.0
   },
   {
     "url": "/rates/ca/los-angeles/to/tx/fort-worth/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-tx-fort-worth-steel",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
@@ -1701,11 +2217,11 @@
     "dest_state": "TX",
     "commodity_id": "steel",
     "miles": 1421.3,
-    "rate": 10299.0
+    "rate": 10313.0
   },
   {
     "url": "/rates/tx/fort-worth/to/ca/los-angeles/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-fort-worth-ca-los-angeles-plastic",
     "origin_city": "Fort Worth",
     "origin_state": "TX",
@@ -1713,35 +2229,35 @@
     "dest_state": "CA",
     "commodity_id": "plastic",
     "miles": 1421.3,
-    "rate": 11033.0
+    "rate": 11048.0
   },
   {
     "url": "/rates/ny/new-york-city/to/az/gilbert/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-az-gilbert-paper",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Gilbert",
     "dest_state": "AZ",
     "commodity_id": "paper",
-    "miles": 2634.6,
-    "rate": 19409.0
+    "miles": 2634.2,
+    "rate": 19782.0
   },
   {
     "url": "/rates/az/gilbert/to/ny/new-york-city/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "az-gilbert-ny-new-york-city-coal",
     "origin_city": "Gilbert",
     "origin_state": "AZ",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "coal",
-    "miles": 2711.1,
-    "rate": 14200.0
+    "miles": 2634.2,
+    "rate": 14943.0
   },
   {
     "url": "/rates/ny/new-york-city/to/tn/nashville/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-tn-nashville-grain",
     "origin_city": "New York City",
     "origin_state": "NY",
@@ -1749,11 +2265,11 @@
     "dest_state": "TN",
     "commodity_id": "grain",
     "miles": 1159.7,
-    "rate": 8283.0
+    "rate": 8317.0
   },
   {
     "url": "/rates/tn/nashville/to/ny/new-york-city/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tn-nashville-ny-new-york-city-steel",
     "origin_city": "Nashville",
     "origin_state": "TN",
@@ -1761,11 +2277,11 @@
     "dest_state": "NY",
     "commodity_id": "steel",
     "miles": 1159.7,
-    "rate": 10271.0
+    "rate": 10306.0
   },
   {
     "url": "/rates/ny/new-york-city/to/mo/kansas-city/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-mo-kansas-city-plastic",
     "origin_city": "New York City",
     "origin_state": "NY",
@@ -1773,11 +2289,11 @@
     "dest_state": "MO",
     "commodity_id": "plastic",
     "miles": 1302.9,
-    "rate": 12890.0
+    "rate": 12913.0
   },
   {
     "url": "/rates/mo/kansas-city/to/ny/new-york-city/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "mo-kansas-city-ny-new-york-city-paper",
     "origin_city": "Kansas City",
     "origin_state": "MO",
@@ -1785,23 +2301,23 @@
     "dest_state": "NY",
     "commodity_id": "paper",
     "miles": 1302.9,
-    "rate": 13776.0
+    "rate": 13799.0
   },
   {
     "url": "/rates/tx/houston/to/ny/the-bronx/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-houston-ny-the-bronx-coal",
     "origin_city": "Houston",
     "origin_state": "TX",
     "dest_city": "The Bronx",
     "dest_state": "NY",
     "commodity_id": "coal",
-    "miles": 1750.5,
-    "rate": 13368.0
+    "miles": 1702.3,
+    "rate": 12998.0
   },
   {
     "url": "/rates/ny/the-bronx/to/tx/houston/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-the-bronx-tx-houston-grain",
     "origin_city": "The Bronx",
     "origin_state": "NY",
@@ -1809,11 +2325,11 @@
     "dest_state": "TX",
     "commodity_id": "grain",
     "miles": 1702.3,
-    "rate": 14963.0
+    "rate": 14995.0
   },
   {
     "url": "/rates/ca/los-angeles/to/tx/austin/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-tx-austin-steel",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
@@ -1821,11 +2337,11 @@
     "dest_state": "TX",
     "commodity_id": "steel",
     "miles": 1519.9,
-    "rate": 11115.0
+    "rate": 11130.0
   },
   {
     "url": "/rates/tx/austin/to/ca/los-angeles/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-austin-ca-los-angeles-plastic",
     "origin_city": "Austin",
     "origin_state": "TX",
@@ -1833,59 +2349,59 @@
     "dest_state": "CA",
     "commodity_id": "plastic",
     "miles": 1519.9,
-    "rate": 11868.0
+    "rate": 11884.0
   },
   {
     "url": "/rates/ny/new-york-city/to/az/glendale/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-az-glendale-paper",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Glendale",
     "dest_state": "AZ",
     "commodity_id": "paper",
-    "miles": 2665.3,
-    "rate": 19246.0
+    "miles": 2664.9,
+    "rate": 21055.0
   },
   {
     "url": "/rates/az/glendale/to/ny/new-york-city/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "az-glendale-ny-new-york-city-coal",
     "origin_city": "Glendale",
     "origin_state": "AZ",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "coal",
-    "miles": 2736.2,
-    "rate": 13943.0
+    "miles": 2664.9,
+    "rate": 16197.0
   },
   {
     "url": "/rates/ny/new-york-city/to/ok/tulsa/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-ok-tulsa-grain",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Tulsa",
     "dest_state": "OK",
     "commodity_id": "grain",
-    "miles": 1557.6,
-    "rate": 10418.0
+    "miles": 1483.2,
+    "rate": 11165.0
   },
   {
     "url": "/rates/ok/tulsa/to/ny/new-york-city/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ok-tulsa-ny-new-york-city-steel",
     "origin_city": "Tulsa",
     "origin_state": "OK",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "steel",
-    "miles": 1557.6,
-    "rate": 12654.0
+    "miles": 1483.2,
+    "rate": 13227.0
   },
   {
     "url": "/rates/il/chicago/to/ny/queens/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "il-chicago-ny-queens-plastic",
     "origin_city": "Chicago",
     "origin_state": "IL",
@@ -1893,11 +2409,11 @@
     "dest_state": "NY",
     "commodity_id": "plastic",
     "miles": 891.5,
-    "rate": 10635.0
+    "rate": 10653.0
   },
   {
     "url": "/rates/ny/queens/to/il/chicago/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-queens-il-chicago-paper",
     "origin_city": "Queens",
     "origin_state": "NY",
@@ -1905,83 +2421,83 @@
     "dest_state": "IL",
     "commodity_id": "paper",
     "miles": 891.5,
-    "rate": 10131.0
+    "rate": 10149.0
   },
   {
     "url": "/rates/ny/new-york-city/to/tx/corpus-christi/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-tx-corpus-christi-coal",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Corpus Christi",
     "dest_state": "TX",
     "commodity_id": "coal",
-    "miles": 1944.3,
-    "rate": 12468.0
+    "miles": 1899.2,
+    "rate": 13716.0
   },
   {
     "url": "/rates/tx/corpus-christi/to/ny/new-york-city/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-corpus-christi-ny-new-york-city-grain",
     "origin_city": "Corpus Christi",
     "origin_state": "TX",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "grain",
-    "miles": 1944.3,
-    "rate": 14031.0
+    "miles": 1899.2,
+    "rate": 14759.0
   },
   {
     "url": "/rates/ny/new-york-city/to/ks/wichita/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-ks-wichita-steel",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Wichita",
     "dest_state": "KS",
     "commodity_id": "steel",
-    "miles": 1504.2,
-    "rate": 14376.0
+    "miles": 1503.8,
+    "rate": 14799.0
   },
   {
     "url": "/rates/ks/wichita/to/ny/new-york-city/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ks-wichita-ny-new-york-city-plastic",
     "origin_city": "Wichita",
     "origin_state": "KS",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "plastic",
-    "miles": 1504.2,
-    "rate": 15542.0
+    "miles": 1503.8,
+    "rate": 15882.0
   },
   {
     "url": "/rates/ca/los-angeles/to/ny/staten-island/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-ny-staten-island-paper",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "Staten Island",
     "dest_state": "NY",
     "commodity_id": "paper",
-    "miles": 2972.8,
-    "rate": 20686.0
+    "miles": 2972.3,
+    "rate": 20967.0
   },
   {
     "url": "/rates/ny/staten-island/to/ca/los-angeles/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-staten-island-ca-los-angeles-coal",
     "origin_city": "Staten Island",
     "origin_state": "NY",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "coal",
-    "miles": 2972.8,
-    "rate": 14188.0
+    "miles": 2972.3,
+    "rate": 14824.0
   },
   {
     "url": "/rates/ny/brooklyn/to/or/portland/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-or-portland-grain",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
@@ -1989,11 +2505,11 @@
     "dest_state": "OR",
     "commodity_id": "grain",
     "miles": 3053.8,
-    "rate": 18390.0
+    "rate": 18180.0
   },
   {
     "url": "/rates/or/portland/to/ny/brooklyn/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "or-portland-ny-brooklyn-steel",
     "origin_city": "Portland",
     "origin_state": "OR",
@@ -2001,11 +2517,11 @@
     "dest_state": "NY",
     "commodity_id": "steel",
     "miles": 3053.8,
-    "rate": 20968.0
+    "rate": 20757.0
   },
   {
     "url": "/rates/ny/queens/to/wa/seattle/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-queens-wa-seattle-plastic",
     "origin_city": "Queens",
     "origin_state": "NY",
@@ -2013,11 +2529,11 @@
     "dest_state": "WA",
     "commodity_id": "plastic",
     "miles": 3021.8,
-    "rate": 20260.0
+    "rate": 20299.0
   },
   {
     "url": "/rates/wa/seattle/to/ny/queens/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "wa-seattle-ny-queens-paper",
     "origin_city": "Seattle",
     "origin_state": "WA",
@@ -2025,35 +2541,35 @@
     "dest_state": "NY",
     "commodity_id": "paper",
     "miles": 3021.8,
-    "rate": 21386.0
+    "rate": 21425.0
   },
   {
     "url": "/rates/ca/los-angeles/to/ky/louisville/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-ky-louisville-coal",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "Louisville",
     "dest_state": "KY",
     "commodity_id": "coal",
-    "miles": 2257.0,
-    "rate": 12080.0
+    "miles": 2215.7,
+    "rate": 16622.0
   },
   {
     "url": "/rates/ky/louisville/to/ca/los-angeles/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ky-louisville-ca-los-angeles-grain",
     "origin_city": "Louisville",
     "origin_state": "KY",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "grain",
-    "miles": 2257.0,
-    "rate": 14196.0
+    "miles": 2215.7,
+    "rate": 18187.0
   },
   {
     "url": "/rates/ca/los-angeles/to/fl/miami/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-fl-miami-steel",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
@@ -2061,11 +2577,11 @@
     "dest_state": "FL",
     "commodity_id": "steel",
     "miles": 2823.3,
-    "rate": 15951.0
+    "rate": 15997.0
   },
   {
     "url": "/rates/fl/miami/to/ca/los-angeles/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "fl-miami-ca-los-angeles-plastic",
     "origin_city": "Miami",
     "origin_state": "FL",
@@ -2073,11 +2589,11 @@
     "dest_state": "CA",
     "commodity_id": "plastic",
     "miles": 2823.3,
-    "rate": 16991.0
+    "rate": 17037.0
   },
   {
     "url": "/rates/il/chicago/to/tx/san-antonio/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "il-chicago-tx-san-antonio-paper",
     "origin_city": "Chicago",
     "origin_state": "IL",
@@ -2085,11 +2601,11 @@
     "dest_state": "TX",
     "commodity_id": "paper",
     "miles": 1192.4,
-    "rate": 10620.0
+    "rate": 10634.0
   },
   {
     "url": "/rates/tx/san-antonio/to/il/chicago/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-san-antonio-il-chicago-coal",
     "origin_city": "San Antonio",
     "origin_state": "TX",
@@ -2097,11 +2613,59 @@
     "dest_state": "IL",
     "commodity_id": "coal",
     "miles": 1192.4,
-    "rate": 6655.0
+    "rate": 6669.0
+  },
+  {
+    "url": "/rates/ny/new-york-city/to/nc/charlotte/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-new-york-city-nc-charlotte-grain",
+    "origin_city": "New York City",
+    "origin_state": "NY",
+    "dest_city": "Charlotte",
+    "dest_state": "NC",
+    "commodity_id": "grain",
+    "miles": 690.6,
+    "rate": 7437.0
+  },
+  {
+    "url": "/rates/nc/charlotte/to/ny/new-york-city/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "nc-charlotte-ny-new-york-city-steel",
+    "origin_city": "Charlotte",
+    "origin_state": "NC",
+    "dest_city": "New York City",
+    "dest_state": "NY",
+    "commodity_id": "steel",
+    "miles": 690.6,
+    "rate": 9107.0
+  },
+  {
+    "url": "/rates/ny/queens/to/tx/dallas/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-queens-tx-dallas-plastic",
+    "origin_city": "Queens",
+    "origin_state": "NY",
+    "dest_city": "Dallas",
+    "dest_state": "TX",
+    "commodity_id": "plastic",
+    "miles": 1640.2,
+    "rate": 16273.0
+  },
+  {
+    "url": "/rates/tx/dallas/to/ny/queens/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "tx-dallas-ny-queens-paper",
+    "origin_city": "Dallas",
+    "origin_state": "TX",
+    "dest_city": "Queens",
+    "dest_state": "NY",
+    "commodity_id": "paper",
+    "miles": 1640.2,
+    "rate": 17261.0
   },
   {
     "url": "/rates/tx/houston/to/ca/san-diego/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-houston-ca-san-diego-coal",
     "origin_city": "Houston",
     "origin_state": "TX",
@@ -2109,11 +2673,11 @@
     "dest_state": "CA",
     "commodity_id": "coal",
     "miles": 1616.6,
-    "rate": 7983.0
+    "rate": 7999.0
   },
   {
     "url": "/rates/ca/san-diego/to/tx/houston/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-san-diego-tx-houston-grain",
     "origin_city": "San Diego",
     "origin_state": "CA",
@@ -2121,59 +2685,179 @@
     "dest_state": "TX",
     "commodity_id": "grain",
     "miles": 1616.6,
-    "rate": 9745.0
+    "rate": 9761.0
   },
   {
     "url": "/rates/ca/los-angeles/to/va/virginia-beach/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-va-virginia-beach-steel",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "Virginia Beach",
     "dest_state": "VA",
     "commodity_id": "steel",
-    "miles": 2919.1,
-    "rate": 17528.0
+    "miles": 2880.3,
+    "rate": 17782.0
   },
   {
     "url": "/rates/va/virginia-beach/to/ca/los-angeles/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "va-virginia-beach-ca-los-angeles-plastic",
     "origin_city": "Virginia Beach",
     "origin_state": "VA",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "plastic",
-    "miles": 2919.1,
-    "rate": 18629.0
+    "miles": 2880.3,
+    "rate": 18837.0
   },
   {
     "url": "/rates/ca/los-angeles/to/nc/raleigh/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-nc-raleigh-paper",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "Raleigh",
     "dest_state": "NC",
     "commodity_id": "paper",
-    "miles": 2683.1,
-    "rate": 17536.0
+    "miles": 2680.4,
+    "rate": 18393.0
   },
   {
     "url": "/rates/nc/raleigh/to/ca/los-angeles/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "nc-raleigh-ca-los-angeles-coal",
     "origin_city": "Raleigh",
     "origin_state": "NC",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "coal",
-    "miles": 2683.1,
-    "rate": 11616.0
+    "miles": 2680.4,
+    "rate": 12522.0
+  },
+  {
+    "url": "/rates/il/chicago/to/ca/san-francisco/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "il-chicago-ca-san-francisco-grain",
+    "origin_city": "Chicago",
+    "origin_state": "IL",
+    "dest_city": "San Francisco",
+    "dest_state": "CA",
+    "commodity_id": "grain",
+    "miles": 2276.6,
+    "rate": 11831.0
+  },
+  {
+    "url": "/rates/ca/san-francisco/to/il/chicago/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-san-francisco-il-chicago-steel",
+    "origin_city": "San Francisco",
+    "origin_state": "CA",
+    "dest_city": "Chicago",
+    "dest_state": "IL",
+    "commodity_id": "steel",
+    "miles": 2276.6,
+    "rate": 13995.0
+  },
+  {
+    "url": "/rates/ny/queens/to/hi/honolulu/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-queens-hi-honolulu-plastic",
+    "origin_city": "Queens",
+    "origin_state": "NY",
+    "dest_city": "Honolulu",
+    "dest_state": "HI",
+    "commodity_id": "plastic",
+    "miles": 3250.3,
+    "rate": 22089.0
+  },
+  {
+    "url": "/rates/hi/honolulu/to/ny/queens/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "hi-honolulu-ny-queens-paper",
+    "origin_city": "Honolulu",
+    "origin_state": "HI",
+    "dest_city": "Queens",
+    "dest_state": "NY",
+    "commodity_id": "paper",
+    "miles": 3250.3,
+    "rate": 22595.0
+  },
+  {
+    "url": "/rates/ny/brooklyn/to/tx/austin/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-brooklyn-tx-austin-coal",
+    "origin_city": "Brooklyn",
+    "origin_state": "NY",
+    "dest_city": "Austin",
+    "dest_state": "TX",
+    "commodity_id": "coal",
+    "miles": 1779.2,
+    "rate": 12944.0
+  },
+  {
+    "url": "/rates/tx/austin/to/ny/brooklyn/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "tx-austin-ny-brooklyn-grain",
+    "origin_city": "Austin",
+    "origin_state": "TX",
+    "dest_city": "Brooklyn",
+    "dest_state": "NY",
+    "commodity_id": "grain",
+    "miles": 1779.2,
+    "rate": 14531.0
+  },
+  {
+    "url": "/rates/il/chicago/to/hi/honolulu/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "il-chicago-hi-honolulu-steel",
+    "origin_city": "Chicago",
+    "origin_state": "IL",
+    "dest_city": "Honolulu",
+    "dest_state": "HI",
+    "commodity_id": "steel",
+    "miles": 2360.5,
+    "rate": 14923.0
+  },
+  {
+    "url": "/rates/hi/honolulu/to/il/chicago/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "hi-honolulu-il-chicago-plastic",
+    "origin_city": "Honolulu",
+    "origin_state": "HI",
+    "dest_city": "Chicago",
+    "dest_state": "IL",
+    "commodity_id": "plastic",
+    "miles": 2360.5,
+    "rate": 15161.0
+  },
+  {
+    "url": "/rates/pa/philadelphia/to/ca/san-jose/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "pa-philadelphia-ca-san-jose-paper",
+    "origin_city": "Philadelphia",
+    "origin_state": "PA",
+    "dest_city": "San Jose",
+    "dest_state": "CA",
+    "commodity_id": "paper",
+    "miles": 3049.9,
+    "rate": 20140.0
+  },
+  {
+    "url": "/rates/ca/san-jose/to/pa/philadelphia/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-san-jose-pa-philadelphia-coal",
+    "origin_city": "San Jose",
+    "origin_state": "CA",
+    "dest_city": "Philadelphia",
+    "dest_state": "PA",
+    "commodity_id": "coal",
+    "miles": 3049.9,
+    "rate": 14092.0
   },
   {
     "url": "/rates/ca/los-angeles/to/tn/new-south-memphis/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-tn-new-south-memphis-grain",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
@@ -2181,11 +2865,11 @@
     "dest_state": "TN",
     "commodity_id": "grain",
     "miles": 1925.4,
-    "rate": 12062.0
+    "rate": 12081.0
   },
   {
     "url": "/rates/tn/new-south-memphis/to/ca/los-angeles/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tn-new-south-memphis-ca-los-angeles-steel",
     "origin_city": "New South Memphis",
     "origin_state": "TN",
@@ -2193,35 +2877,35 @@
     "dest_state": "CA",
     "commodity_id": "steel",
     "miles": 1925.4,
-    "rate": 14002.0
+    "rate": 14021.0
   },
   {
     "url": "/rates/ny/brooklyn/to/nv/las-vegas/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-nv-las-vegas-plastic",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
     "dest_city": "Las Vegas",
     "dest_state": "NV",
     "commodity_id": "plastic",
-    "miles": 2811.1,
-    "rate": 19227.0
+    "miles": 2798.9,
+    "rate": 19574.0
   },
   {
     "url": "/rates/nv/las-vegas/to/ny/brooklyn/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "nv-las-vegas-ny-brooklyn-paper",
     "origin_city": "Las Vegas",
     "origin_state": "NV",
     "dest_city": "Brooklyn",
     "dest_state": "NY",
     "commodity_id": "paper",
-    "miles": 2811.1,
-    "rate": 20152.0
+    "miles": 2798.9,
+    "rate": 20591.0
   },
   {
     "url": "/rates/tx/houston/to/az/phoenix/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-houston-az-phoenix-coal",
     "origin_city": "Houston",
     "origin_state": "TX",
@@ -2229,11 +2913,11 @@
     "dest_state": "AZ",
     "commodity_id": "coal",
     "miles": 1242.0,
-    "rate": 6378.0
+    "rate": 6391.0
   },
   {
     "url": "/rates/az/phoenix/to/tx/houston/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "az-phoenix-tx-houston-grain",
     "origin_city": "Phoenix",
     "origin_state": "AZ",
@@ -2241,11 +2925,11 @@
     "dest_state": "TX",
     "commodity_id": "grain",
     "miles": 1242.0,
-    "rate": 7956.0
+    "rate": 7968.0
   },
   {
     "url": "/rates/ca/los-angeles/to/tn/memphis/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-tn-memphis-steel",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
@@ -2253,11 +2937,11 @@
     "dest_state": "TN",
     "commodity_id": "steel",
     "miles": 1924.5,
-    "rate": 13999.0
+    "rate": 14018.0
   },
   {
     "url": "/rates/tn/memphis/to/ca/los-angeles/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tn-memphis-ca-los-angeles-plastic",
     "origin_city": "Memphis",
     "origin_state": "TN",
@@ -2265,11 +2949,11 @@
     "dest_state": "CA",
     "commodity_id": "plastic",
     "miles": 1924.5,
-    "rate": 14840.0
+    "rate": 14859.0
   },
   {
     "url": "/rates/ny/brooklyn/to/tx/fort-worth/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-tx-fort-worth-paper",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
@@ -2277,11 +2961,11 @@
     "dest_state": "TX",
     "commodity_id": "paper",
     "miles": 1660.0,
-    "rate": 17828.0
+    "rate": 17859.0
   },
   {
     "url": "/rates/tx/fort-worth/to/ny/brooklyn/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-fort-worth-ny-brooklyn-coal",
     "origin_city": "Fort Worth",
     "origin_state": "TX",
@@ -2289,35 +2973,59 @@
     "dest_state": "NY",
     "commodity_id": "coal",
     "miles": 1660.0,
-    "rate": 13395.0
+    "rate": 13425.0
   },
   {
     "url": "/rates/ny/new-york-city/to/tx/laredo/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-tx-laredo-grain",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Laredo",
     "dest_state": "TX",
     "commodity_id": "grain",
-    "miles": 2054.9,
-    "rate": 13843.0
+    "miles": 2009.8,
+    "rate": 14936.0
   },
   {
     "url": "/rates/tx/laredo/to/ny/new-york-city/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-laredo-ny-new-york-city-steel",
     "origin_city": "Laredo",
     "origin_state": "TX",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "steel",
-    "miles": 2054.9,
-    "rate": 16202.0
+    "miles": 2009.8,
+    "rate": 16723.0
+  },
+  {
+    "url": "/rates/ny/manhattan/to/ca/san-jose/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-manhattan-ca-san-jose-plastic",
+    "origin_city": "Manhattan",
+    "origin_state": "NY",
+    "dest_city": "San Jose",
+    "dest_state": "CA",
+    "commodity_id": "plastic",
+    "miles": 3143.5,
+    "rate": 23347.0
+  },
+  {
+    "url": "/rates/ca/san-jose/to/ny/manhattan/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-san-jose-ny-manhattan-paper",
+    "origin_city": "San Jose",
+    "origin_state": "CA",
+    "dest_city": "Manhattan",
+    "dest_state": "NY",
+    "commodity_id": "paper",
+    "miles": 3143.5,
+    "rate": 23529.0
   },
   {
     "url": "/rates/ca/los-angeles/to/ga/atlanta/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-ga-atlanta-coal",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
@@ -2325,11 +3033,11 @@
     "dest_state": "GA",
     "commodity_id": "coal",
     "miles": 2273.1,
-    "rate": 10035.0
+    "rate": 10061.0
   },
   {
     "url": "/rates/ga/atlanta/to/ca/los-angeles/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ga-atlanta-ca-los-angeles-grain",
     "origin_city": "Atlanta",
     "origin_state": "GA",
@@ -2337,35 +3045,35 @@
     "dest_state": "CA",
     "commodity_id": "grain",
     "miles": 2273.1,
-    "rate": 11947.0
+    "rate": 11973.0
   },
   {
     "url": "/rates/ca/los-angeles/to/wi/milwaukee/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-wi-milwaukee-steel",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "Milwaukee",
     "dest_state": "WI",
     "commodity_id": "steel",
-    "miles": 2294.4,
-    "rate": 14620.0
+    "miles": 2176.8,
+    "rate": 17554.0
   },
   {
     "url": "/rates/wi/milwaukee/to/ca/los-angeles/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "wi-milwaukee-ca-los-angeles-plastic",
     "origin_city": "Milwaukee",
     "origin_state": "WI",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "plastic",
-    "miles": 2294.4,
-    "rate": 15549.0
+    "miles": 2176.8,
+    "rate": 18407.0
   },
   {
     "url": "/rates/ny/new-york-city/to/la/new-orleans/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-la-new-orleans-paper",
     "origin_city": "New York City",
     "origin_state": "NY",
@@ -2373,11 +3081,11 @@
     "dest_state": "LA",
     "commodity_id": "paper",
     "miles": 1385.2,
-    "rate": 14456.0
+    "rate": 14484.0
   },
   {
     "url": "/rates/la/new-orleans/to/ny/new-york-city/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "la-new-orleans-ny-new-york-city-coal",
     "origin_city": "New Orleans",
     "origin_state": "LA",
@@ -2385,11 +3093,11 @@
     "dest_state": "NY",
     "commodity_id": "coal",
     "miles": 1385.2,
-    "rate": 10681.0
+    "rate": 10709.0
   },
   {
     "url": "/rates/tx/houston/to/ca/san-jose/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-houston-ca-san-jose-grain",
     "origin_city": "Houston",
     "origin_state": "TX",
@@ -2397,11 +3105,11 @@
     "dest_state": "CA",
     "commodity_id": "grain",
     "miles": 2014.9,
-    "rate": 10663.0
+    "rate": 10683.0
   },
   {
     "url": "/rates/ca/san-jose/to/tx/houston/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-san-jose-tx-houston-steel",
     "origin_city": "San Jose",
     "origin_state": "CA",
@@ -2409,11 +3117,11 @@
     "dest_state": "TX",
     "commodity_id": "steel",
     "miles": 2014.9,
-    "rate": 12724.0
+    "rate": 12744.0
   },
   {
     "url": "/rates/ny/queens/to/or/portland/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-queens-or-portland-plastic",
     "origin_city": "Queens",
     "origin_state": "NY",
@@ -2421,11 +3129,11 @@
     "dest_state": "OR",
     "commodity_id": "plastic",
     "miles": 3063.4,
-    "rate": 21399.0
+    "rate": 21189.0
   },
   {
     "url": "/rates/or/portland/to/ny/queens/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "or-portland-ny-queens-paper",
     "origin_city": "Portland",
     "origin_state": "OR",
@@ -2433,11 +3141,11 @@
     "dest_state": "NY",
     "commodity_id": "paper",
     "miles": 3063.4,
-    "rate": 22508.0
+    "rate": 22298.0
   },
   {
     "url": "/rates/ny/new-york-city/to/mn/minneapolis/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-mn-minneapolis-coal",
     "origin_city": "New York City",
     "origin_state": "NY",
@@ -2445,11 +3153,11 @@
     "dest_state": "MN",
     "commodity_id": "coal",
     "miles": 1290.2,
-    "rate": 10523.0
+    "rate": 10295.0
   },
   {
     "url": "/rates/mn/minneapolis/to/ny/new-york-city/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "mn-minneapolis-ny-new-york-city-grain",
     "origin_city": "Minneapolis",
     "origin_state": "MN",
@@ -2457,11 +3165,11 @@
     "dest_state": "NY",
     "commodity_id": "grain",
     "miles": 1290.2,
-    "rate": 12315.0
+    "rate": 12087.0
   },
   {
     "url": "/rates/ny/new-york-city/to/fl/tampa/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-fl-tampa-steel",
     "origin_city": "New York City",
     "origin_state": "NY",
@@ -2469,11 +3177,11 @@
     "dest_state": "FL",
     "commodity_id": "steel",
     "miles": 1172.4,
-    "rate": 9839.0
+    "rate": 9874.0
   },
   {
     "url": "/rates/fl/tampa/to/ny/new-york-city/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "fl-tampa-ny-new-york-city-plastic",
     "origin_city": "Tampa",
     "origin_state": "FL",
@@ -2481,35 +3189,35 @@
     "dest_state": "NY",
     "commodity_id": "plastic",
     "miles": 1172.4,
-    "rate": 10977.0
+    "rate": 11013.0
   },
   {
     "url": "/rates/ny/brooklyn/to/ca/fresno/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-ca-fresno-paper",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
     "dest_city": "Fresno",
     "dest_state": "CA",
     "commodity_id": "paper",
-    "miles": 3089.8,
-    "rate": 21148.0
+    "miles": 3089.3,
+    "rate": 21431.0
   },
   {
     "url": "/rates/ca/fresno/to/ny/brooklyn/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-fresno-ny-brooklyn-coal",
     "origin_city": "Fresno",
     "origin_state": "CA",
     "dest_city": "Brooklyn",
     "dest_state": "NY",
     "commodity_id": "coal",
-    "miles": 3089.8,
-    "rate": 15153.0
+    "miles": 3089.3,
+    "rate": 15804.0
   },
   {
     "url": "/rates/ny/new-york-city/to/wi/milwaukee/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-wi-milwaukee-grain",
     "origin_city": "New York City",
     "origin_state": "NY",
@@ -2517,11 +3225,11 @@
     "dest_state": "WI",
     "commodity_id": "grain",
     "miles": 966.3,
-    "rate": 10613.0
+    "rate": 10631.0
   },
   {
     "url": "/rates/wi/milwaukee/to/ny/new-york-city/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "wi-milwaukee-ny-new-york-city-steel",
     "origin_city": "Milwaukee",
     "origin_state": "WI",
@@ -2529,35 +3237,35 @@
     "dest_state": "NY",
     "commodity_id": "steel",
     "miles": 966.3,
-    "rate": 12276.0
+    "rate": 12294.0
   },
   {
     "url": "/rates/pa/philadelphia/to/tx/san-antonio/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "pa-philadelphia-tx-san-antonio-plastic",
     "origin_city": "Philadelphia",
     "origin_state": "PA",
     "dest_city": "San Antonio",
     "dest_state": "TX",
     "commodity_id": "plastic",
-    "miles": 1781.6,
-    "rate": 14792.0
+    "miles": 1764.7,
+    "rate": 15007.0
   },
   {
     "url": "/rates/tx/san-antonio/to/pa/philadelphia/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-san-antonio-pa-philadelphia-paper",
     "origin_city": "San Antonio",
     "origin_state": "TX",
     "dest_city": "Philadelphia",
     "dest_state": "PA",
     "commodity_id": "paper",
-    "miles": 1781.6,
-    "rate": 15206.0
+    "miles": 1764.7,
+    "rate": 15446.0
   },
   {
     "url": "/rates/il/chicago/to/wa/seattle/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "il-chicago-wa-seattle-coal",
     "origin_city": "Chicago",
     "origin_state": "IL",
@@ -2565,11 +3273,11 @@
     "dest_state": "WA",
     "commodity_id": "coal",
     "miles": 2131.8,
-    "rate": 10238.0
+    "rate": 10259.0
   },
   {
     "url": "/rates/wa/seattle/to/il/chicago/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "wa-seattle-il-chicago-grain",
     "origin_city": "Seattle",
     "origin_state": "WA",
@@ -2577,23 +3285,59 @@
     "dest_state": "IL",
     "commodity_id": "grain",
     "miles": 2131.8,
-    "rate": 12173.0
+    "rate": 12195.0
+  },
+  {
+    "url": "/rates/tx/san-antonio/to/ny/manhattan/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "tx-san-antonio-ny-manhattan-steel",
+    "origin_city": "San Antonio",
+    "origin_state": "TX",
+    "dest_city": "Manhattan",
+    "dest_state": "NY",
+    "commodity_id": "steel",
+    "miles": 1867.6,
+    "rate": 16088.0
+  },
+  {
+    "url": "/rates/ny/manhattan/to/tx/san-antonio/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-manhattan-tx-san-antonio-plastic",
+    "origin_city": "Manhattan",
+    "origin_state": "NY",
+    "dest_city": "San Antonio",
+    "dest_state": "TX",
+    "commodity_id": "plastic",
+    "miles": 1867.6,
+    "rate": 16857.0
   },
   {
     "url": "/rates/ny/brooklyn/to/ca/sacramento/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-ca-sacramento-paper",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
     "dest_city": "Sacramento",
     "dest_state": "CA",
     "commodity_id": "paper",
-    "miles": 3052.4,
-    "rate": 21095.0
+    "miles": 3040.2,
+    "rate": 21444.0
+  },
+  {
+    "url": "/rates/ca/sacramento/to/ny/brooklyn/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-sacramento-ny-brooklyn-coal",
+    "origin_city": "Sacramento",
+    "origin_state": "CA",
+    "dest_city": "Brooklyn",
+    "dest_state": "NY",
+    "commodity_id": "coal",
+    "miles": 3040.2,
+    "rate": 15551.0
   },
   {
     "url": "/rates/ny/new-york-city/to/ky/louisville/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-ky-louisville-grain",
     "origin_city": "New York City",
     "origin_state": "NY",
@@ -2601,11 +3345,11 @@
     "dest_state": "KY",
     "commodity_id": "grain",
     "miles": 851.9,
-    "rate": 9418.0
+    "rate": 9436.0
   },
   {
     "url": "/rates/ky/louisville/to/ny/new-york-city/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ky-louisville-ny-new-york-city-steel",
     "origin_city": "Louisville",
     "origin_state": "KY",
@@ -2613,107 +3357,167 @@
     "dest_state": "NY",
     "commodity_id": "steel",
     "miles": 851.9,
-    "rate": 11400.0
+    "rate": 11419.0
   },
   {
     "url": "/rates/ny/brooklyn/to/tx/el-paso/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-tx-el-paso-plastic",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
     "dest_city": "El Paso",
     "dest_state": "TX",
     "commodity_id": "plastic",
-    "miles": 2315.1,
-    "rate": 17849.0
+    "miles": 2238.3,
+    "rate": 17508.0
   },
   {
     "url": "/rates/tx/el-paso/to/ny/brooklyn/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-el-paso-ny-brooklyn-paper",
     "origin_city": "El Paso",
     "origin_state": "TX",
     "dest_city": "Brooklyn",
     "dest_state": "NY",
     "commodity_id": "paper",
-    "miles": 2315.1,
-    "rate": 18906.0
+    "miles": 2238.3,
+    "rate": 18424.0
   },
   {
     "url": "/rates/ny/the-bronx/to/ca/san-jose/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-the-bronx-ca-san-jose-coal",
     "origin_city": "The Bronx",
     "origin_state": "NY",
     "dest_city": "San Jose",
     "dest_state": "CA",
     "commodity_id": "coal",
-    "miles": 3202.4,
-    "rate": 14252.0
+    "miles": 3154.2,
+    "rate": 16791.0
   },
   {
     "url": "/rates/ca/san-jose/to/ny/the-bronx/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-san-jose-ny-the-bronx-grain",
     "origin_city": "San Jose",
     "origin_state": "CA",
     "dest_city": "The Bronx",
     "dest_state": "NY",
     "commodity_id": "grain",
-    "miles": 3202.4,
-    "rate": 16971.0
+    "miles": 3154.2,
+    "rate": 19800.0
   },
   {
     "url": "/rates/ny/new-york-city/to/tx/lubbock/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-tx-lubbock-steel",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Lubbock",
     "dest_state": "TX",
     "commodity_id": "steel",
-    "miles": 1961.8,
-    "rate": 15589.0
+    "miles": 1961.4,
+    "rate": 15859.0
   },
   {
     "url": "/rates/tx/lubbock/to/ny/new-york-city/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-lubbock-ny-new-york-city-plastic",
     "origin_city": "Lubbock",
     "origin_state": "TX",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "plastic",
-    "miles": 1961.8,
-    "rate": 16852.0
+    "miles": 1961.4,
+    "rate": 17121.0
+  },
+  {
+    "url": "/rates/ca/los-angeles/to/hi/honolulu/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-los-angeles-hi-honolulu-paper",
+    "origin_city": "Los Angeles",
+    "origin_state": "CA",
+    "dest_city": "Honolulu",
+    "dest_state": "HI",
+    "commodity_id": "paper",
+    "miles": 653.6,
+    "rate": 8152.0
+  },
+  {
+    "url": "/rates/hi/honolulu/to/ca/los-angeles/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "hi-honolulu-ca-los-angeles-coal",
+    "origin_city": "Honolulu",
+    "origin_state": "HI",
+    "dest_city": "Los Angeles",
+    "dest_state": "CA",
+    "commodity_id": "coal",
+    "miles": 653.6,
+    "rate": 5577.0
   },
   {
     "url": "/rates/ny/queens/to/tx/austin/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-queens-tx-austin-grain",
     "origin_city": "Queens",
     "origin_state": "NY",
     "dest_city": "Austin",
     "dest_state": "TX",
     "commodity_id": "grain",
-    "miles": 1805.8,
-    "rate": 13221.0
+    "miles": 1788.8,
+    "rate": 13455.0
   },
   {
     "url": "/rates/tx/austin/to/ny/queens/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-austin-ny-queens-steel",
     "origin_city": "Austin",
     "origin_state": "TX",
     "dest_city": "Queens",
     "dest_state": "NY",
     "commodity_id": "steel",
-    "miles": 1805.8,
-    "rate": 15897.0
+    "miles": 1788.8,
+    "rate": 16139.0
+  },
+  {
+    "url": "/rates/tx/houston/to/wa/seattle/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "tx-houston-wa-seattle-plastic",
+    "origin_city": "Houston",
+    "origin_state": "TX",
+    "dest_city": "Seattle",
+    "dest_state": "WA",
+    "commodity_id": "plastic",
+    "miles": 2493.8,
+    "rate": 15515.0
+  },
+  {
+    "url": "/rates/wa/seattle/to/tx/houston/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "wa-seattle-tx-houston-paper",
+    "origin_city": "Seattle",
+    "origin_state": "WA",
+    "dest_city": "Houston",
+    "dest_state": "TX",
+    "commodity_id": "paper",
+    "miles": 2493.8,
+    "rate": 16899.0
+  },
+  {
+    "url": "/rates/ca/los-angeles/to/fl/tampa/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-los-angeles-fl-tampa-coal",
+    "origin_city": "Los Angeles",
+    "origin_state": "CA",
+    "dest_city": "Tampa",
+    "dest_state": "FL",
+    "commodity_id": "coal",
+    "miles": 2658.7,
+    "rate": 11431.0
   },
   {
     "url": "/rates/fl/tampa/to/ca/los-angeles/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "fl-tampa-ca-los-angeles-grain",
     "origin_city": "Tampa",
     "origin_state": "FL",
@@ -2721,59 +3525,107 @@
     "dest_state": "CA",
     "commodity_id": "grain",
     "miles": 2658.7,
-    "rate": 13453.0
+    "rate": 13494.0
   },
   {
     "url": "/rates/ny/new-york-city/to/tx/plano/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-tx-plano-steel",
     "origin_city": "New York City",
     "origin_state": "NY",
     "dest_city": "Plano",
     "dest_state": "TX",
     "commodity_id": "steel",
-    "miles": 1698.3,
-    "rate": 14130.0
+    "miles": 1612.9,
+    "rate": 16732.0
   },
   {
     "url": "/rates/tx/plano/to/ny/new-york-city/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-plano-ny-new-york-city-plastic",
     "origin_city": "Plano",
     "origin_state": "TX",
     "dest_city": "New York City",
     "dest_state": "NY",
     "commodity_id": "plastic",
-    "miles": 1698.3,
-    "rate": 15353.0
+    "miles": 1612.9,
+    "rate": 17082.0
   },
   {
     "url": "/rates/tx/san-antonio/to/ny/the-bronx/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-san-antonio-ny-the-bronx-paper",
     "origin_city": "San Antonio",
     "origin_state": "TX",
     "dest_city": "The Bronx",
     "dest_state": "NY",
     "commodity_id": "paper",
-    "miles": 1895.3,
-    "rate": 17477.0
+    "miles": 1878.4,
+    "rate": 17718.0
   },
   {
     "url": "/rates/ny/the-bronx/to/tx/san-antonio/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-the-bronx-tx-san-antonio-coal",
     "origin_city": "The Bronx",
     "origin_state": "NY",
     "dest_city": "San Antonio",
     "dest_state": "TX",
     "commodity_id": "coal",
-    "miles": 1895.3,
-    "rate": 12955.0
+    "miles": 1878.4,
+    "rate": 13238.0
+  },
+  {
+    "url": "/rates/ny/new-york-city/to/ga/atlanta/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-new-york-city-ga-atlanta-grain",
+    "origin_city": "New York City",
+    "origin_state": "NY",
+    "dest_city": "Atlanta",
+    "dest_state": "GA",
+    "commodity_id": "grain",
+    "miles": 934.3,
+    "rate": 7541.0
+  },
+  {
+    "url": "/rates/ga/atlanta/to/ny/new-york-city/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "ga-atlanta-ny-new-york-city-steel",
+    "origin_city": "Atlanta",
+    "origin_state": "GA",
+    "dest_city": "New York City",
+    "dest_state": "NY",
+    "commodity_id": "steel",
+    "miles": 934.3,
+    "rate": 9378.0
+  },
+  {
+    "url": "/rates/ny/queens/to/nv/las-vegas/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-queens-nv-las-vegas-plastic",
+    "origin_city": "Queens",
+    "origin_state": "NY",
+    "dest_city": "Las Vegas",
+    "dest_state": "NV",
+    "commodity_id": "plastic",
+    "miles": 2808.6,
+    "rate": 19361.0
+  },
+  {
+    "url": "/rates/nv/las-vegas/to/ny/queens/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "nv-las-vegas-ny-queens-paper",
+    "origin_city": "Las Vegas",
+    "origin_state": "NV",
+    "dest_city": "Queens",
+    "dest_state": "NY",
+    "commodity_id": "paper",
+    "miles": 2808.6,
+    "rate": 20576.0
   },
   {
     "url": "/rates/ny/queens/to/tx/fort-worth/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-queens-tx-fort-worth-coal",
     "origin_city": "Queens",
     "origin_state": "NY",
@@ -2781,11 +3633,11 @@
     "dest_state": "TX",
     "commodity_id": "coal",
     "miles": 1669.6,
-    "rate": 12309.0
+    "rate": 12341.0
   },
   {
     "url": "/rates/tx/fort-worth/to/ny/queens/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-fort-worth-ny-queens-grain",
     "origin_city": "Fort Worth",
     "origin_state": "TX",
@@ -2793,95 +3645,155 @@
     "dest_state": "NY",
     "commodity_id": "grain",
     "miles": 1669.6,
-    "rate": 14825.0
+    "rate": 14856.0
   },
   {
     "url": "/rates/pa/philadelphia/to/ca/san-francisco/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "pa-philadelphia-ca-san-francisco-steel",
     "origin_city": "Philadelphia",
     "origin_state": "PA",
     "dest_city": "San Francisco",
     "dest_state": "CA",
     "commodity_id": "steel",
-    "miles": 3087.3,
-    "rate": 18625.0
+    "miles": 3075.1,
+    "rate": 18954.0
   },
   {
     "url": "/rates/ca/san-francisco/to/pa/philadelphia/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-san-francisco-pa-philadelphia-plastic",
     "origin_city": "San Francisco",
     "origin_state": "CA",
     "dest_city": "Philadelphia",
     "dest_state": "PA",
     "commodity_id": "plastic",
-    "miles": 3087.3,
-    "rate": 19678.0
+    "miles": 3075.1,
+    "rate": 20098.0
   },
   {
     "url": "/rates/ny/brooklyn/to/co/denver/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-co-denver-paper",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
     "dest_city": "Denver",
     "dest_state": "CO",
     "commodity_id": "paper",
-    "miles": 1895.9,
-    "rate": 16924.0
+    "miles": 1883.7,
+    "rate": 17300.0
   },
   {
     "url": "/rates/co/denver/to/ny/brooklyn/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "co-denver-ny-brooklyn-coal",
     "origin_city": "Denver",
     "origin_state": "CO",
     "dest_city": "Brooklyn",
     "dest_state": "NY",
     "commodity_id": "coal",
-    "miles": 1895.9,
-    "rate": 12795.0
+    "miles": 1883.7,
+    "rate": 13083.0
   },
   {
     "url": "/rates/ny/brooklyn/to/ca/long-beach/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-ca-long-beach-grain",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
     "dest_city": "Long Beach",
     "dest_state": "CA",
     "commodity_id": "grain",
-    "miles": 2999.0,
-    "rate": 17834.0
+    "miles": 2998.5,
+    "rate": 18229.0
+  },
+  {
+    "url": "/rates/ca/long-beach/to/ny/brooklyn/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-long-beach-ny-brooklyn-steel",
+    "origin_city": "Long Beach",
+    "origin_state": "CA",
+    "dest_city": "Brooklyn",
+    "dest_state": "NY",
+    "commodity_id": "steel",
+    "miles": 2998.5,
+    "rate": 20818.0
+  },
+  {
+    "url": "/rates/tx/houston/to/hi/honolulu/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "tx-houston-hi-honolulu-plastic",
+    "origin_city": "Houston",
+    "origin_state": "TX",
+    "dest_city": "Honolulu",
+    "dest_state": "HI",
+    "commodity_id": "plastic",
+    "miles": 2208.9,
+    "rate": 14747.0
+  },
+  {
+    "url": "/rates/hi/honolulu/to/tx/houston/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "hi-honolulu-tx-houston-paper",
+    "origin_city": "Honolulu",
+    "origin_state": "HI",
+    "dest_city": "Houston",
+    "dest_state": "TX",
+    "commodity_id": "paper",
+    "miles": 2208.9,
+    "rate": 15102.0
+  },
+  {
+    "url": "/rates/ny/manhattan/to/ca/san-francisco/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-manhattan-ca-san-francisco-coal",
+    "origin_city": "Manhattan",
+    "origin_state": "NY",
+    "dest_city": "San Francisco",
+    "dest_state": "CA",
+    "commodity_id": "coal",
+    "miles": 3168.6,
+    "rate": 17966.0
+  },
+  {
+    "url": "/rates/ca/san-francisco/to/ny/manhattan/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-san-francisco-ny-manhattan-grain",
+    "origin_city": "San Francisco",
+    "origin_state": "CA",
+    "dest_city": "Manhattan",
+    "dest_state": "NY",
+    "commodity_id": "grain",
+    "miles": 3168.6,
+    "rate": 19791.0
   },
   {
     "url": "/rates/ny/brooklyn/to/az/tucson/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-az-tucson-steel",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
     "dest_city": "Tucson",
     "dest_state": "AZ",
     "commodity_id": "steel",
-    "miles": 2534.8,
-    "rate": 17664.0
+    "miles": 2534.4,
+    "rate": 17942.0
   },
   {
     "url": "/rates/az/tucson/to/ny/brooklyn/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "az-tucson-ny-brooklyn-plastic",
     "origin_city": "Tucson",
     "origin_state": "AZ",
     "dest_city": "Brooklyn",
     "dest_state": "NY",
     "commodity_id": "plastic",
-    "miles": 2611.3,
-    "rate": 19754.0
+    "miles": 2534.4,
+    "rate": 19298.0
   },
   {
     "url": "/rates/tx/houston/to/ca/san-francisco/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-houston-ca-san-francisco-paper",
     "origin_city": "Houston",
     "origin_state": "TX",
@@ -2889,11 +3801,11 @@
     "dest_state": "CA",
     "commodity_id": "paper",
     "miles": 2040.0,
-    "rate": 14530.0
+    "rate": 14550.0
   },
   {
     "url": "/rates/ca/san-francisco/to/tx/houston/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-san-francisco-tx-houston-coal",
     "origin_city": "San Francisco",
     "origin_state": "CA",
@@ -2901,23 +3813,47 @@
     "dest_state": "TX",
     "commodity_id": "coal",
     "miles": 2040.0,
-    "rate": 9071.0
+    "rate": 9092.0
   },
   {
     "url": "/rates/ny/queens/to/ca/fresno/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-queens-ca-fresno-grain",
     "origin_city": "Queens",
     "origin_state": "NY",
     "dest_city": "Fresno",
     "dest_state": "CA",
     "commodity_id": "grain",
-    "miles": 3099.4,
-    "rate": 17115.0
+    "miles": 3099.0,
+    "rate": 17526.0
+  },
+  {
+    "url": "/rates/ca/fresno/to/ny/queens/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-fresno-ny-queens-steel",
+    "origin_city": "Fresno",
+    "origin_state": "CA",
+    "dest_city": "Queens",
+    "dest_state": "NY",
+    "commodity_id": "steel",
+    "miles": 3099.0,
+    "rate": 20209.0
+  },
+  {
+    "url": "/rates/ne/lincoln/to/ny/new-york-city/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "ne-lincoln-ny-new-york-city-paper",
+    "origin_city": "Lincoln",
+    "origin_state": "NE",
+    "dest_city": "New York City",
+    "dest_state": "NY",
+    "commodity_id": "paper",
+    "miles": 1411.0,
+    "rate": 14341.0
   },
   {
     "url": "/rates/ca/los-angeles/to/ok/oklahoma-city/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-ok-oklahoma-city-coal",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
@@ -2925,11 +3861,11 @@
     "dest_state": "OK",
     "commodity_id": "coal",
     "miles": 1548.4,
-    "rate": 7637.0
+    "rate": 7653.0
   },
   {
     "url": "/rates/ok/oklahoma-city/to/ca/los-angeles/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ok-oklahoma-city-ca-los-angeles-grain",
     "origin_city": "Oklahoma City",
     "origin_state": "OK",
@@ -2937,179 +3873,167 @@
     "dest_state": "CA",
     "commodity_id": "grain",
     "miles": 1548.4,
-    "rate": 9407.0
+    "rate": 9422.0
   },
   {
     "url": "/rates/ny/queens/to/ca/sacramento/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-queens-ca-sacramento-steel",
     "origin_city": "Queens",
     "origin_state": "NY",
     "dest_city": "Sacramento",
     "dest_state": "CA",
     "commodity_id": "steel",
-    "miles": 3062.1,
-    "rate": 19320.0
+    "miles": 3049.9,
+    "rate": 19651.0
   },
   {
     "url": "/rates/ca/sacramento/to/ny/queens/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-sacramento-ny-queens-plastic",
     "origin_city": "Sacramento",
     "origin_state": "CA",
     "dest_city": "Queens",
     "dest_state": "NY",
     "commodity_id": "plastic",
-    "miles": 3062.1,
-    "rate": 20895.0
+    "miles": 3049.9,
+    "rate": 21316.0
   },
   {
     "url": "/rates/il/chicago/to/or/portland/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "il-chicago-or-portland-paper",
     "origin_city": "Chicago",
     "origin_state": "IL",
     "dest_city": "Portland",
     "dest_state": "OR",
     "commodity_id": "paper",
-    "miles": 2213.6,
-    "rate": 16066.0
+    "miles": 2173.4,
+    "rate": 16310.0
   },
   {
     "url": "/rates/or/portland/to/il/chicago/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "or-portland-il-chicago-coal",
     "origin_city": "Portland",
     "origin_state": "OR",
     "dest_city": "Chicago",
     "dest_state": "IL",
     "commodity_id": "coal",
-    "miles": 2213.6,
-    "rate": 10330.0
+    "miles": 2173.4,
+    "rate": 11275.0
   },
   {
     "url": "/rates/ny/queens/to/tx/el-paso/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-queens-tx-el-paso-grain",
     "origin_city": "Queens",
     "origin_state": "NY",
     "dest_city": "El Paso",
     "dest_state": "TX",
     "commodity_id": "grain",
-    "miles": 2323.4,
-    "rate": 14106.0
+    "miles": 2247.9,
+    "rate": 14686.0
   },
   {
     "url": "/rates/tx/el-paso/to/ny/queens/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-el-paso-ny-queens-steel",
     "origin_city": "El Paso",
     "origin_state": "TX",
     "dest_city": "Queens",
     "dest_state": "NY",
     "commodity_id": "steel",
-    "miles": 2323.4,
-    "rate": 16434.0
+    "miles": 2247.9,
+    "rate": 17079.0
   },
   {
     "url": "/rates/az/phoenix/to/fl/jacksonville/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "az-phoenix-fl-jacksonville-plastic",
     "origin_city": "Phoenix",
     "origin_state": "AZ",
     "dest_city": "Jacksonville",
     "dest_state": "FL",
     "commodity_id": "plastic",
-    "miles": 2172.5,
-    "rate": 15050.0
+    "miles": 2096.7,
+    "rate": 15267.0
   },
   {
     "url": "/rates/fl/jacksonville/to/az/phoenix/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "fl-jacksonville-az-phoenix-paper",
     "origin_city": "Jacksonville",
     "origin_state": "FL",
     "dest_city": "Phoenix",
     "dest_state": "AZ",
     "commodity_id": "paper",
-    "miles": 2172.5,
-    "rate": 15522.0
+    "miles": 2096.7,
+    "rate": 15716.0
   },
   {
     "url": "/rates/ca/san-diego/to/fl/jacksonville/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-san-diego-fl-jacksonville-coal",
     "origin_city": "San Diego",
     "origin_state": "CA",
     "dest_city": "Jacksonville",
     "dest_state": "FL",
     "commodity_id": "coal",
-    "miles": 2547.1,
-    "rate": 11809.0
+    "miles": 2471.3,
+    "rate": 12338.0
   },
   {
     "url": "/rates/fl/jacksonville/to/ca/san-diego/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "fl-jacksonville-ca-san-diego-grain",
     "origin_city": "Jacksonville",
     "origin_state": "FL",
     "dest_city": "San Diego",
     "dest_state": "CA",
     "commodity_id": "grain",
-    "miles": 2547.1,
-    "rate": 13746.0
+    "miles": 2471.3,
+    "rate": 14121.0
   },
   {
     "url": "/rates/ny/the-bronx/to/ca/san-francisco/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-the-bronx-ca-san-francisco-steel",
     "origin_city": "The Bronx",
     "origin_state": "NY",
     "dest_city": "San Francisco",
     "dest_state": "CA",
     "commodity_id": "steel",
-    "miles": 3227.6,
-    "rate": 19683.0
+    "miles": 3179.4,
+    "rate": 22029.0
   },
   {
     "url": "/rates/ca/san-francisco/to/ny/the-bronx/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-san-francisco-ny-the-bronx-plastic",
     "origin_city": "San Francisco",
     "origin_state": "CA",
     "dest_city": "The Bronx",
     "dest_state": "NY",
     "commodity_id": "plastic",
-    "miles": 3227.6,
-    "rate": 21035.0
+    "miles": 3179.4,
+    "rate": 23887.0
   },
   {
     "url": "/rates/ny/brooklyn/to/ca/oakland/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-ca-oakland-paper",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
     "dest_city": "Oakland",
     "dest_state": "CA",
     "commodity_id": "paper",
-    "miles": 3110.4,
-    "rate": 20912.0
-  },
-  {
-    "url": "/rates/ca/oakland/to/ny/brooklyn/coal/",
-    "lastmod": "2026-05-05",
-    "slug": "ca-oakland-ny-brooklyn-coal",
-    "origin_city": "Oakland",
-    "origin_state": "CA",
-    "dest_city": "Brooklyn",
-    "dest_state": "NY",
-    "commodity_id": "coal",
-    "miles": 3110.4,
-    "rate": 14828.0
+    "miles": 3098.2,
+    "rate": 21260.0
   },
   {
     "url": "/rates/pa/philadelphia/to/wa/seattle/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "pa-philadelphia-wa-seattle-grain",
     "origin_city": "Philadelphia",
     "origin_state": "PA",
@@ -3117,11 +4041,11 @@
     "dest_state": "WA",
     "commodity_id": "grain",
     "miles": 2930.5,
-    "rate": 15934.0
+    "rate": 15971.0
   },
   {
     "url": "/rates/wa/seattle/to/pa/philadelphia/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "wa-seattle-pa-philadelphia-steel",
     "origin_city": "Seattle",
     "origin_state": "WA",
@@ -3129,35 +4053,35 @@
     "dest_state": "PA",
     "commodity_id": "steel",
     "miles": 2930.5,
-    "rate": 18205.0
+    "rate": 18242.0
   },
   {
     "url": "/rates/ca/los-angeles/to/nc/west-raleigh/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-nc-west-raleigh-plastic",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "West Raleigh",
     "dest_state": "NC",
     "commodity_id": "plastic",
-    "miles": 2767.1,
-    "rate": 18977.0
+    "miles": 2679.4,
+    "rate": 17846.0
   },
   {
     "url": "/rates/nc/west-raleigh/to/ca/los-angeles/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "nc-west-raleigh-ca-los-angeles-paper",
     "origin_city": "West Raleigh",
     "origin_state": "NC",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "paper",
-    "miles": 2767.1,
-    "rate": 19563.0
+    "miles": 2679.4,
+    "rate": 18395.0
   },
   {
     "url": "/rates/ca/los-angeles/to/wa/seattle/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-wa-seattle-coal",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
@@ -3165,11 +4089,11 @@
     "dest_state": "WA",
     "commodity_id": "coal",
     "miles": 1260.1,
-    "rate": 9311.0
+    "rate": 9073.0
   },
   {
     "url": "/rates/wa/seattle/to/ca/los-angeles/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "wa-seattle-ca-los-angeles-grain",
     "origin_city": "Seattle",
     "origin_state": "WA",
@@ -3177,35 +4101,83 @@
     "dest_state": "CA",
     "commodity_id": "grain",
     "miles": 1260.1,
-    "rate": 9922.0
+    "rate": 9935.0
   },
   {
     "url": "/rates/ca/los-angeles/to/oh/cleveland/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-oh-cleveland-steel",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "Cleveland",
     "dest_state": "OH",
     "commodity_id": "steel",
-    "miles": 2436.4,
-    "rate": 16376.0
+    "miles": 2436.0,
+    "rate": 16647.0
   },
   {
     "url": "/rates/oh/cleveland/to/ca/los-angeles/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "oh-cleveland-ca-los-angeles-plastic",
     "origin_city": "Cleveland",
     "origin_state": "OH",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "plastic",
-    "miles": 2436.4,
-    "rate": 17327.0
+    "miles": 2436.0,
+    "rate": 17598.0
+  },
+  {
+    "url": "/rates/il/chicago/to/tx/dallas/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "il-chicago-tx-dallas-paper",
+    "origin_city": "Chicago",
+    "origin_state": "IL",
+    "dest_city": "Dallas",
+    "dest_state": "TX",
+    "commodity_id": "paper",
+    "miles": 927.8,
+    "rate": 9947.0
+  },
+  {
+    "url": "/rates/tx/dallas/to/il/chicago/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "tx-dallas-il-chicago-coal",
+    "origin_city": "Dallas",
+    "origin_state": "TX",
+    "dest_city": "Chicago",
+    "dest_state": "IL",
+    "commodity_id": "coal",
+    "miles": 927.8,
+    "rate": 6327.0
+  },
+  {
+    "url": "/rates/il/chicago/to/ny/manhattan/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "il-chicago-ny-manhattan-grain",
+    "origin_city": "Chicago",
+    "origin_state": "IL",
+    "dest_city": "Manhattan",
+    "dest_state": "NY",
+    "commodity_id": "grain",
+    "miles": 893.7,
+    "rate": 10543.0
+  },
+  {
+    "url": "/rates/ny/manhattan/to/il/chicago/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-manhattan-il-chicago-steel",
+    "origin_city": "Manhattan",
+    "origin_state": "NY",
+    "dest_city": "Chicago",
+    "dest_state": "IL",
+    "commodity_id": "steel",
+    "miles": 893.7,
+    "rate": 12535.0
   },
   {
     "url": "/rates/ca/los-angeles/to/fl/orlando/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-fl-orlando-plastic",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
@@ -3213,11 +4185,11 @@
     "dest_state": "FL",
     "commodity_id": "plastic",
     "miles": 2619.4,
-    "rate": 16615.0
+    "rate": 16655.0
   },
   {
     "url": "/rates/fl/orlando/to/ca/los-angeles/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "fl-orlando-ca-los-angeles-paper",
     "origin_city": "Orlando",
     "origin_state": "FL",
@@ -3225,35 +4197,59 @@
     "dest_state": "CA",
     "commodity_id": "paper",
     "miles": 2619.4,
-    "rate": 17144.0
+    "rate": 17184.0
   },
   {
     "url": "/rates/ny/brooklyn/to/nm/albuquerque/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-nm-albuquerque-coal",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
     "dest_city": "Albuquerque",
     "dest_state": "NM",
     "commodity_id": "coal",
-    "miles": 2184.2,
-    "rate": 12558.0
+    "miles": 2148.1,
+    "rate": 14202.0
   },
   {
     "url": "/rates/nm/albuquerque/to/ny/brooklyn/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "nm-albuquerque-ny-brooklyn-grain",
     "origin_city": "Albuquerque",
     "origin_state": "NM",
     "dest_city": "Brooklyn",
     "dest_state": "NY",
     "commodity_id": "grain",
-    "miles": 2184.2,
-    "rate": 14612.0
+    "miles": 2148.1,
+    "rate": 15968.0
+  },
+  {
+    "url": "/rates/ny/manhattan/to/wa/seattle/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-manhattan-wa-seattle-steel",
+    "origin_city": "Manhattan",
+    "origin_state": "NY",
+    "dest_city": "Seattle",
+    "dest_state": "WA",
+    "commodity_id": "steel",
+    "miles": 3072.0,
+    "rate": 23607.0
+  },
+  {
+    "url": "/rates/wa/seattle/to/ny/manhattan/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "wa-seattle-ny-manhattan-plastic",
+    "origin_city": "Seattle",
+    "origin_state": "WA",
+    "dest_city": "Manhattan",
+    "dest_state": "NY",
+    "commodity_id": "plastic",
+    "miles": 3024.0,
+    "rate": 22557.0
   },
   {
     "url": "/rates/il/chicago/to/pa/philadelphia/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "il-chicago-pa-philadelphia-paper",
     "origin_city": "Chicago",
     "origin_state": "IL",
@@ -3261,11 +4257,11 @@
     "dest_state": "PA",
     "commodity_id": "paper",
     "miles": 800.2,
-    "rate": 9413.0
+    "rate": 9429.0
   },
   {
     "url": "/rates/pa/philadelphia/to/il/chicago/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "pa-philadelphia-il-chicago-coal",
     "origin_city": "Philadelphia",
     "origin_state": "PA",
@@ -3273,83 +4269,203 @@
     "dest_state": "IL",
     "commodity_id": "coal",
     "miles": 800.2,
-    "rate": 6038.0
+    "rate": 6054.0
+  },
+  {
+    "url": "/rates/tx/houston/to/or/portland/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "tx-houston-or-portland-grain",
+    "origin_city": "Houston",
+    "origin_state": "TX",
+    "dest_city": "Portland",
+    "dest_state": "OR",
+    "commodity_id": "grain",
+    "miles": 2382.1,
+    "rate": 12306.0
+  },
+  {
+    "url": "/rates/or/portland/to/tx/houston/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "or-portland-tx-houston-steel",
+    "origin_city": "Portland",
+    "origin_state": "OR",
+    "dest_city": "Houston",
+    "dest_state": "TX",
+    "commodity_id": "steel",
+    "miles": 2382.1,
+    "rate": 14530.0
+  },
+  {
+    "url": "/rates/ny/new-york-city/to/fl/orlando/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-new-york-city-fl-orlando-plastic",
+    "origin_city": "New York City",
+    "origin_state": "NY",
+    "dest_city": "Orlando",
+    "dest_state": "FL",
+    "commodity_id": "plastic",
+    "miles": 1122.6,
+    "rate": 10538.0
+  },
+  {
+    "url": "/rates/fl/orlando/to/ny/new-york-city/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "fl-orlando-ny-new-york-city-paper",
+    "origin_city": "Orlando",
+    "origin_state": "FL",
+    "dest_city": "New York City",
+    "dest_state": "NY",
+    "commodity_id": "paper",
+    "miles": 1122.6,
+    "rate": 11354.0
   },
   {
     "url": "/rates/ny/queens/to/co/denver/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-queens-co-denver-coal",
     "origin_city": "Queens",
     "origin_state": "NY",
     "dest_city": "Denver",
     "dest_state": "CO",
     "commodity_id": "coal",
-    "miles": 1905.5,
-    "rate": 12371.0
+    "miles": 1893.3,
+    "rate": 12607.0
   },
   {
     "url": "/rates/co/denver/to/ny/queens/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "co-denver-ny-queens-grain",
     "origin_city": "Denver",
     "origin_state": "CO",
     "dest_city": "Queens",
     "dest_state": "NY",
     "commodity_id": "grain",
-    "miles": 1905.5,
-    "rate": 14456.0
+    "miles": 1893.3,
+    "rate": 14860.0
   },
   {
     "url": "/rates/ny/brooklyn/to/az/mesa/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-az-mesa-steel",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
     "dest_city": "Mesa",
     "dest_state": "AZ",
     "commodity_id": "steel",
-    "miles": 2641.0,
-    "rate": 17948.0
+    "miles": 2640.6,
+    "rate": 18449.0
   },
   {
     "url": "/rates/az/mesa/to/ny/brooklyn/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "az-mesa-ny-brooklyn-plastic",
     "origin_city": "Mesa",
     "origin_state": "AZ",
     "dest_city": "Brooklyn",
     "dest_state": "NY",
     "commodity_id": "plastic",
-    "miles": 2717.4,
-    "rate": 20153.0
+    "miles": 2640.6,
+    "rate": 19713.0
+  },
+  {
+    "url": "/rates/pa/philadelphia/to/hi/honolulu/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "pa-philadelphia-hi-honolulu-paper",
+    "origin_city": "Philadelphia",
+    "origin_state": "PA",
+    "dest_city": "Honolulu",
+    "dest_state": "HI",
+    "commodity_id": "paper",
+    "miles": 3159.0,
+    "rate": 21573.0
+  },
+  {
+    "url": "/rates/hi/honolulu/to/pa/philadelphia/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "hi-honolulu-pa-philadelphia-coal",
+    "origin_city": "Honolulu",
+    "origin_state": "HI",
+    "dest_city": "Philadelphia",
+    "dest_state": "PA",
+    "commodity_id": "coal",
+    "miles": 3159.0,
+    "rate": 15017.0
+  },
+  {
+    "url": "/rates/ny/manhattan/to/tx/dallas/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-manhattan-tx-dallas-grain",
+    "origin_city": "Manhattan",
+    "origin_state": "NY",
+    "dest_city": "Dallas",
+    "dest_state": "TX",
+    "commodity_id": "grain",
+    "miles": 1642.4,
+    "rate": 14856.0
+  },
+  {
+    "url": "/rates/tx/dallas/to/ny/manhattan/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "tx-dallas-ny-manhattan-steel",
+    "origin_city": "Dallas",
+    "origin_state": "TX",
+    "dest_city": "Manhattan",
+    "dest_state": "NY",
+    "commodity_id": "steel",
+    "miles": 1642.4,
+    "rate": 16272.0
+  },
+  {
+    "url": "/rates/pa/philadelphia/to/tx/dallas/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "pa-philadelphia-tx-dallas-plastic",
+    "origin_city": "Philadelphia",
+    "origin_state": "PA",
+    "dest_city": "Dallas",
+    "dest_state": "TX",
+    "commodity_id": "plastic",
+    "miles": 1539.4,
+    "rate": 15175.0
+  },
+  {
+    "url": "/rates/tx/dallas/to/pa/philadelphia/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "tx-dallas-pa-philadelphia-paper",
+    "origin_city": "Dallas",
+    "origin_state": "TX",
+    "dest_city": "Philadelphia",
+    "dest_state": "PA",
+    "commodity_id": "paper",
+    "miles": 1539.4,
+    "rate": 15529.0
   },
   {
     "url": "/rates/ny/queens/to/ca/long-beach/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-queens-ca-long-beach-coal",
     "origin_city": "Queens",
     "origin_state": "NY",
     "dest_city": "Long Beach",
     "dest_state": "CA",
     "commodity_id": "coal",
-    "miles": 3008.6,
-    "rate": 15357.0
+    "miles": 3008.2,
+    "rate": 15998.0
   },
   {
     "url": "/rates/ca/long-beach/to/ny/queens/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-long-beach-ny-queens-grain",
     "origin_city": "Long Beach",
     "origin_state": "CA",
     "dest_city": "Queens",
     "dest_state": "NY",
     "commodity_id": "grain",
-    "miles": 3008.6,
-    "rate": 18107.0
+    "miles": 3008.2,
+    "rate": 18504.0
   },
   {
     "url": "/rates/ny/new-york-city/to/mn/saint-paul/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-mn-saint-paul-steel",
     "origin_city": "New York City",
     "origin_state": "NY",
@@ -3357,11 +4473,11 @@
     "dest_state": "MN",
     "commodity_id": "steel",
     "miles": 1282.2,
-    "rate": 11885.0
+    "rate": 11907.0
   },
   {
     "url": "/rates/mn/saint-paul/to/ny/new-york-city/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "mn-saint-paul-ny-new-york-city-plastic",
     "origin_city": "Saint Paul",
     "origin_state": "MN",
@@ -3369,35 +4485,107 @@
     "dest_state": "NY",
     "commodity_id": "plastic",
     "miles": 1282.2,
-    "rate": 13020.0
+    "rate": 13042.0
+  },
+  {
+    "url": "/rates/az/phoenix/to/nc/charlotte/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "az-phoenix-nc-charlotte-paper",
+    "origin_city": "Phoenix",
+    "origin_state": "AZ",
+    "dest_city": "Charlotte",
+    "dest_state": "NC",
+    "commodity_id": "paper",
+    "miles": 2145.2,
+    "rate": 15163.0
+  },
+  {
+    "url": "/rates/nc/charlotte/to/az/phoenix/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "nc-charlotte-az-phoenix-coal",
+    "origin_city": "Charlotte",
+    "origin_state": "NC",
+    "dest_city": "Phoenix",
+    "dest_state": "AZ",
+    "commodity_id": "coal",
+    "miles": 2145.2,
+    "rate": 9615.0
   },
   {
     "url": "/rates/ny/queens/to/az/tucson/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-queens-az-tucson-grain",
     "origin_city": "Queens",
     "origin_state": "NY",
     "dest_city": "Tucson",
     "dest_state": "AZ",
     "commodity_id": "grain",
-    "miles": 2544.5,
-    "rate": 15550.0
+    "miles": 2544.0,
+    "rate": 15857.0
   },
   {
     "url": "/rates/az/tucson/to/ny/queens/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "az-tucson-ny-queens-steel",
     "origin_city": "Tucson",
     "origin_state": "AZ",
     "dest_city": "Queens",
     "dest_state": "NY",
     "commodity_id": "steel",
-    "miles": 2619.5,
-    "rate": 17726.0
+    "miles": 2544.0,
+    "rate": 18410.0
+  },
+  {
+    "url": "/rates/ny/brooklyn/to/ak/anchorage/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-brooklyn-ak-anchorage-plastic",
+    "origin_city": "Brooklyn",
+    "origin_state": "NY",
+    "dest_city": "Anchorage",
+    "dest_state": "AK",
+    "commodity_id": "plastic",
+    "miles": 3444.9,
+    "rate": 23341.0
+  },
+  {
+    "url": "/rates/ak/anchorage/to/ny/brooklyn/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "ak-anchorage-ny-brooklyn-paper",
+    "origin_city": "Anchorage",
+    "origin_state": "AK",
+    "dest_city": "Brooklyn",
+    "dest_state": "NY",
+    "commodity_id": "paper",
+    "miles": 3444.9,
+    "rate": 24305.0
+  },
+  {
+    "url": "/rates/ca/san-diego/to/nc/charlotte/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-san-diego-nc-charlotte-coal",
+    "origin_city": "San Diego",
+    "origin_state": "CA",
+    "dest_city": "Charlotte",
+    "dest_state": "NC",
+    "commodity_id": "coal",
+    "miles": 2519.8,
+    "rate": 11142.0
+  },
+  {
+    "url": "/rates/nc/charlotte/to/ca/san-diego/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "nc-charlotte-ca-san-diego-grain",
+    "origin_city": "Charlotte",
+    "origin_state": "NC",
+    "dest_city": "San Diego",
+    "dest_state": "CA",
+    "commodity_id": "grain",
+    "miles": 2519.8,
+    "rate": 13178.0
   },
   {
     "url": "/rates/il/chicago/to/ny/the-bronx/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "il-chicago-ny-the-bronx-steel",
     "origin_city": "Chicago",
     "origin_state": "IL",
@@ -3405,11 +4593,11 @@
     "dest_state": "NY",
     "commodity_id": "steel",
     "miles": 904.4,
-    "rate": 12488.0
+    "rate": 12256.0
   },
   {
     "url": "/rates/ny/the-bronx/to/il/chicago/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-the-bronx-il-chicago-plastic",
     "origin_city": "The Bronx",
     "origin_state": "NY",
@@ -3417,47 +4605,131 @@
     "dest_state": "IL",
     "commodity_id": "plastic",
     "miles": 904.4,
-    "rate": 12335.0
+    "rate": 12355.0
   },
   {
     "url": "/rates/ca/los-angeles/to/nj/newark/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-nj-newark-paper",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "Newark",
     "dest_state": "NJ",
     "commodity_id": "paper",
-    "miles": 2968.2,
-    "rate": 21192.0
+    "miles": 2967.8,
+    "rate": 21473.0
+  },
+  {
+    "url": "/rates/nj/newark/to/ca/los-angeles/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "nj-newark-ca-los-angeles-coal",
+    "origin_city": "Newark",
+    "origin_state": "NJ",
+    "dest_city": "Los Angeles",
+    "dest_state": "CA",
+    "commodity_id": "coal",
+    "miles": 2967.8,
+    "rate": 15247.0
   },
   {
     "url": "/rates/ny/the-bronx/to/wa/seattle/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-the-bronx-wa-seattle-grain",
     "origin_city": "The Bronx",
     "origin_state": "NY",
     "dest_city": "Seattle",
     "dest_state": "WA",
     "commodity_id": "grain",
-    "miles": 3084.4,
-    "rate": 15787.0
+    "miles": 3034.8,
+    "rate": 19220.0
   },
   {
     "url": "/rates/wa/seattle/to/ny/the-bronx/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "wa-seattle-ny-the-bronx-steel",
     "origin_city": "Seattle",
     "origin_state": "WA",
     "dest_city": "The Bronx",
     "dest_state": "NY",
     "commodity_id": "steel",
-    "miles": 3084.4,
-    "rate": 18385.0
+    "miles": 3034.8,
+    "rate": 22011.0
+  },
+  {
+    "url": "/rates/il/chicago/to/nv/las-vegas/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "il-chicago-nv-las-vegas-plastic",
+    "origin_city": "Chicago",
+    "origin_state": "IL",
+    "dest_city": "Las Vegas",
+    "dest_state": "NV",
+    "commodity_id": "plastic",
+    "miles": 1918.7,
+    "rate": 13290.0
+  },
+  {
+    "url": "/rates/nv/las-vegas/to/il/chicago/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "nv-las-vegas-il-chicago-paper",
+    "origin_city": "Las Vegas",
+    "origin_state": "NV",
+    "dest_city": "Chicago",
+    "dest_state": "IL",
+    "commodity_id": "paper",
+    "miles": 1918.7,
+    "rate": 13760.0
+  },
+  {
+    "url": "/rates/ny/manhattan/to/hi/honolulu/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-manhattan-hi-honolulu-coal",
+    "origin_city": "Manhattan",
+    "origin_state": "NY",
+    "dest_city": "Honolulu",
+    "dest_state": "HI",
+    "commodity_id": "coal",
+    "miles": 3252.5,
+    "rate": 19208.0
+  },
+  {
+    "url": "/rates/hi/honolulu/to/ny/manhattan/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "hi-honolulu-ny-manhattan-grain",
+    "origin_city": "Honolulu",
+    "origin_state": "HI",
+    "dest_city": "Manhattan",
+    "dest_state": "NY",
+    "commodity_id": "grain",
+    "miles": 3252.5,
+    "rate": 20173.0
+  },
+  {
+    "url": "/rates/ca/los-angeles/to/ak/anchorage/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-los-angeles-ak-anchorage-steel",
+    "origin_city": "Los Angeles",
+    "origin_state": "CA",
+    "dest_city": "Anchorage",
+    "dest_state": "AK",
+    "commodity_id": "steel",
+    "miles": 2375.5,
+    "rate": 15859.0
+  },
+  {
+    "url": "/rates/ak/anchorage/to/ca/los-angeles/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "ak-anchorage-ca-los-angeles-plastic",
+    "origin_city": "Anchorage",
+    "origin_state": "AK",
+    "dest_city": "Los Angeles",
+    "dest_state": "CA",
+    "commodity_id": "plastic",
+    "miles": 2375.5,
+    "rate": 16350.0
   },
   {
     "url": "/rates/il/chicago/to/tx/austin/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "il-chicago-tx-austin-paper",
     "origin_city": "Chicago",
     "origin_state": "IL",
@@ -3465,11 +4737,11 @@
     "dest_state": "TX",
     "commodity_id": "paper",
     "miles": 1115.8,
-    "rate": 10624.0
+    "rate": 10638.0
   },
   {
     "url": "/rates/tx/austin/to/il/chicago/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-austin-il-chicago-coal",
     "origin_city": "Austin",
     "origin_state": "TX",
@@ -3477,71 +4749,239 @@
     "dest_state": "IL",
     "commodity_id": "coal",
     "miles": 1115.8,
-    "rate": 6815.0
+    "rate": 6828.0
+  },
+  {
+    "url": "/rates/ny/the-bronx/to/tx/dallas/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-the-bronx-tx-dallas-grain",
+    "origin_city": "The Bronx",
+    "origin_state": "NY",
+    "dest_city": "Dallas",
+    "dest_state": "TX",
+    "commodity_id": "grain",
+    "miles": 1653.1,
+    "rate": 15359.0
+  },
+  {
+    "url": "/rates/tx/dallas/to/ny/the-bronx/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "tx-dallas-ny-the-bronx-steel",
+    "origin_city": "Dallas",
+    "origin_state": "TX",
+    "dest_city": "The Bronx",
+    "dest_state": "NY",
+    "commodity_id": "steel",
+    "miles": 1653.1,
+    "rate": 16755.0
+  },
+  {
+    "url": "/rates/il/chicago/to/ca/fresno/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "il-chicago-ca-fresno-plastic",
+    "origin_city": "Chicago",
+    "origin_state": "IL",
+    "dest_city": "Fresno",
+    "dest_state": "CA",
+    "commodity_id": "plastic",
+    "miles": 2218.6,
+    "rate": 15106.0
+  },
+  {
+    "url": "/rates/ca/fresno/to/il/chicago/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-fresno-il-chicago-paper",
+    "origin_city": "Fresno",
+    "origin_state": "CA",
+    "dest_city": "Chicago",
+    "dest_state": "IL",
+    "commodity_id": "paper",
+    "miles": 2218.6,
+    "rate": 15569.0
+  },
+  {
+    "url": "/rates/ny/brooklyn/to/ca/bakersfield/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-brooklyn-ca-bakersfield-coal",
+    "origin_city": "Brooklyn",
+    "origin_state": "NY",
+    "dest_city": "Bakersfield",
+    "dest_state": "CA",
+    "commodity_id": "coal",
+    "miles": 2982.6,
+    "rate": 15622.0
+  },
+  {
+    "url": "/rates/ca/bakersfield/to/ny/brooklyn/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-bakersfield-ny-brooklyn-grain",
+    "origin_city": "Bakersfield",
+    "origin_state": "CA",
+    "dest_city": "Brooklyn",
+    "dest_state": "NY",
+    "commodity_id": "grain",
+    "miles": 2982.6,
+    "rate": 18023.0
+  },
+  {
+    "url": "/rates/az/phoenix/to/oh/columbus/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "az-phoenix-oh-columbus-steel",
+    "origin_city": "Phoenix",
+    "origin_state": "AZ",
+    "dest_city": "Columbus",
+    "dest_state": "OH",
+    "commodity_id": "steel",
+    "miles": 2045.2,
+    "rate": 14855.0
+  },
+  {
+    "url": "/rates/oh/columbus/to/az/phoenix/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "oh-columbus-az-phoenix-plastic",
+    "origin_city": "Columbus",
+    "origin_state": "OH",
+    "dest_city": "Phoenix",
+    "dest_state": "AZ",
+    "commodity_id": "plastic",
+    "miles": 2045.2,
+    "rate": 15635.0
   },
   {
     "url": "/rates/ca/san-diego/to/oh/columbus/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-san-diego-oh-columbus-paper",
     "origin_city": "San Diego",
     "origin_state": "CA",
     "dest_city": "Columbus",
     "dest_state": "OH",
     "commodity_id": "paper",
-    "miles": 2420.3,
-    "rate": 17721.0
+    "miles": 2419.9,
+    "rate": 17991.0
   },
   {
     "url": "/rates/oh/columbus/to/ca/san-diego/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "oh-columbus-ca-san-diego-coal",
     "origin_city": "Columbus",
     "origin_state": "OH",
     "dest_city": "San Diego",
     "dest_state": "CA",
     "commodity_id": "coal",
-    "miles": 2420.3,
-    "rate": 12323.0
+    "miles": 2419.9,
+    "rate": 13834.0
   },
   {
-    "url": "/rates/pa/pittsburgh/to/ca/los-angeles/grain/",
-    "lastmod": "2026-05-05",
-    "slug": "pa-pittsburgh-ca-los-angeles-grain",
-    "origin_city": "Pittsburgh",
-    "origin_state": "PA",
-    "dest_city": "Los Angeles",
+    "url": "/rates/il/chicago/to/ca/sacramento/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "il-chicago-ca-sacramento-grain",
+    "origin_city": "Chicago",
+    "origin_state": "IL",
+    "dest_city": "Sacramento",
     "dest_state": "CA",
     "commodity_id": "grain",
-    "miles": 2553.3,
-    "rate": 14487.0
+    "miles": 2160.0,
+    "rate": 11524.0
+  },
+  {
+    "url": "/rates/ca/sacramento/to/il/chicago/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-sacramento-il-chicago-steel",
+    "origin_city": "Sacramento",
+    "origin_state": "CA",
+    "dest_city": "Chicago",
+    "dest_state": "IL",
+    "commodity_id": "steel",
+    "miles": 2160.0,
+    "rate": 13637.0
+  },
+  {
+    "url": "/rates/ny/queens/to/ca/oakland/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-queens-ca-oakland-plastic",
+    "origin_city": "Queens",
+    "origin_state": "NY",
+    "dest_city": "Oakland",
+    "dest_state": "CA",
+    "commodity_id": "plastic",
+    "miles": 3107.8,
+    "rate": 20486.0
+  },
+  {
+    "url": "/rates/ca/oakland/to/ny/queens/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-oakland-ny-queens-paper",
+    "origin_city": "Oakland",
+    "origin_state": "CA",
+    "dest_city": "Queens",
+    "dest_state": "NY",
+    "commodity_id": "paper",
+    "miles": 3107.8,
+    "rate": 21707.0
+  },
+  {
+    "url": "/rates/ca/los-angeles/to/pa/pittsburgh/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-los-angeles-pa-pittsburgh-coal",
+    "origin_city": "Los Angeles",
+    "origin_state": "CA",
+    "dest_city": "Pittsburgh",
+    "dest_state": "PA",
+    "commodity_id": "coal",
+    "miles": 2552.9,
+    "rate": 12810.0
+  },
+  {
+    "url": "/rates/az/phoenix/to/ma/boston/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "az-phoenix-ma-boston-steel",
+    "origin_city": "Phoenix",
+    "origin_state": "AZ",
+    "dest_city": "Boston",
+    "dest_state": "MA",
+    "commodity_id": "steel",
+    "miles": 2769.3,
+    "rate": 17387.0
+  },
+  {
+    "url": "/rates/ma/boston/to/az/phoenix/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "ma-boston-az-phoenix-plastic",
+    "origin_city": "Boston",
+    "origin_state": "MA",
+    "dest_city": "Phoenix",
+    "dest_state": "AZ",
+    "commodity_id": "plastic",
+    "miles": 2769.3,
+    "rate": 18685.0
   },
   {
     "url": "/rates/ny/brooklyn/to/ok/oklahoma-city/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-ok-oklahoma-city-paper",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
     "dest_city": "Oklahoma City",
     "dest_state": "OK",
     "commodity_id": "paper",
-    "miles": 1675.0,
-    "rate": 14346.0
+    "miles": 1600.6,
+    "rate": 14386.0
   },
   {
     "url": "/rates/ok/oklahoma-city/to/ny/brooklyn/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ok-oklahoma-city-ny-brooklyn-coal",
     "origin_city": "Oklahoma City",
     "origin_state": "OK",
     "dest_city": "Brooklyn",
     "dest_state": "NY",
     "commodity_id": "coal",
-    "miles": 1675.0,
-    "rate": 10286.0
+    "miles": 1600.6,
+    "rate": 10299.0
   },
   {
     "url": "/rates/pa/philadelphia/to/or/portland/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "pa-philadelphia-or-portland-grain",
     "origin_city": "Philadelphia",
     "origin_state": "PA",
@@ -3549,11 +4989,11 @@
     "dest_state": "OR",
     "commodity_id": "grain",
     "miles": 2972.1,
-    "rate": 17157.0
+    "rate": 16945.0
   },
   {
     "url": "/rates/or/portland/to/pa/philadelphia/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "or-portland-pa-philadelphia-steel",
     "origin_city": "Portland",
     "origin_state": "OR",
@@ -3561,59 +5001,95 @@
     "dest_state": "PA",
     "commodity_id": "steel",
     "miles": 2972.1,
-    "rate": 19371.0
+    "rate": 19158.0
   },
   {
-    "url": "/rates/ca/los-angeles/to/mo/kansas-city/coal/",
-    "lastmod": "2026-05-05",
-    "slug": "ca-los-angeles-mo-kansas-city-coal",
+    "url": "/rates/ca/los-angeles/to/nj/jersey-city/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-los-angeles-nj-jersey-city-plastic",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
-    "dest_city": "Kansas City",
-    "dest_state": "MO",
-    "commodity_id": "coal",
-    "miles": 1753.2,
-    "rate": 8724.0
+    "dest_city": "Jersey City",
+    "dest_state": "NJ",
+    "commodity_id": "plastic",
+    "miles": 2972.8,
+    "rate": 20400.0
+  },
+  {
+    "url": "/rates/nj/jersey-city/to/ca/los-angeles/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "nj-jersey-city-ca-los-angeles-paper",
+    "origin_city": "Jersey City",
+    "origin_state": "NJ",
+    "dest_city": "Los Angeles",
+    "dest_state": "CA",
+    "commodity_id": "paper",
+    "miles": 2972.8,
+    "rate": 20751.0
   },
   {
     "url": "/rates/mo/kansas-city/to/ca/los-angeles/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "mo-kansas-city-ca-los-angeles-grain",
     "origin_city": "Kansas City",
     "origin_state": "MO",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "grain",
-    "miles": 1753.2,
-    "rate": 10625.0
+    "miles": 1677.9,
+    "rate": 11018.0
   },
   {
     "url": "/rates/ca/los-angeles/to/ne/omaha/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-ne-omaha-steel",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "Omaha",
     "dest_state": "NE",
     "commodity_id": "steel",
-    "miles": 1790.8,
-    "rate": 11878.0
+    "miles": 1778.3,
+    "rate": 12049.0
   },
   {
     "url": "/rates/ne/omaha/to/ca/los-angeles/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ne-omaha-ca-los-angeles-plastic",
     "origin_city": "Omaha",
     "origin_state": "NE",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "plastic",
-    "miles": 1790.8,
-    "rate": 12716.0
+    "miles": 1778.3,
+    "rate": 12884.0
+  },
+  {
+    "url": "/rates/tx/houston/to/ma/boston/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "tx-houston-ma-boston-paper",
+    "origin_city": "Houston",
+    "origin_state": "TX",
+    "dest_city": "Boston",
+    "dest_state": "MA",
+    "commodity_id": "paper",
+    "miles": 1941.2,
+    "rate": 16001.0
+  },
+  {
+    "url": "/rates/ma/boston/to/tx/houston/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "ma-boston-tx-houston-coal",
+    "origin_city": "Boston",
+    "origin_state": "MA",
+    "dest_city": "Houston",
+    "dest_state": "TX",
+    "commodity_id": "coal",
+    "miles": 1941.2,
+    "rate": 11350.0
   },
   {
     "url": "/rates/tx/san-antonio/to/ca/san-diego/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-san-antonio-ca-san-diego-grain",
     "origin_city": "San Antonio",
     "origin_state": "TX",
@@ -3621,11 +5097,11 @@
     "dest_state": "CA",
     "commodity_id": "grain",
     "miles": 1404.1,
-    "rate": 8974.0
+    "rate": 8988.0
   },
   {
     "url": "/rates/ca/san-diego/to/tx/san-antonio/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-san-diego-tx-san-antonio-steel",
     "origin_city": "San Diego",
     "origin_state": "CA",
@@ -3633,155 +5109,227 @@
     "dest_state": "TX",
     "commodity_id": "steel",
     "miles": 1404.1,
-    "rate": 10638.0
+    "rate": 10652.0
+  },
+  {
+    "url": "/rates/ny/the-bronx/to/hi/honolulu/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-the-bronx-hi-honolulu-plastic",
+    "origin_city": "The Bronx",
+    "origin_state": "NY",
+    "dest_city": "Honolulu",
+    "dest_state": "HI",
+    "commodity_id": "plastic",
+    "miles": 3263.3,
+    "rate": 24125.0
+  },
+  {
+    "url": "/rates/hi/honolulu/to/ny/the-bronx/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "hi-honolulu-ny-the-bronx-paper",
+    "origin_city": "Honolulu",
+    "origin_state": "HI",
+    "dest_city": "The Bronx",
+    "dest_state": "NY",
+    "commodity_id": "paper",
+    "miles": 3263.3,
+    "rate": 24776.0
   },
   {
     "url": "/rates/ca/los-angeles/to/mn/minneapolis/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-mn-minneapolis-coal",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "Minneapolis",
     "dest_state": "MN",
     "commodity_id": "coal",
-    "miles": 2136.0,
-    "rate": 10290.0
+    "miles": 2087.4,
+    "rate": 9932.0
   },
   {
     "url": "/rates/mn/minneapolis/to/ca/los-angeles/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "mn-minneapolis-ca-los-angeles-grain",
     "origin_city": "Minneapolis",
     "origin_state": "MN",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "grain",
-    "miles": 2136.0,
-    "rate": 12394.0
+    "miles": 2087.4,
+    "rate": 12009.0
   },
   {
     "url": "/rates/ny/queens/to/nm/albuquerque/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-queens-nm-albuquerque-steel",
     "origin_city": "Queens",
     "origin_state": "NY",
     "dest_city": "Albuquerque",
     "dest_state": "NM",
     "commodity_id": "steel",
-    "miles": 2193.9,
-    "rate": 16011.0
+    "miles": 2157.8,
+    "rate": 17066.0
   },
   {
     "url": "/rates/nm/albuquerque/to/ny/queens/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "nm-albuquerque-ny-queens-plastic",
     "origin_city": "Albuquerque",
     "origin_state": "NM",
     "dest_city": "Queens",
     "dest_state": "NY",
     "commodity_id": "plastic",
-    "miles": 2193.9,
-    "rate": 17489.0
+    "miles": 2157.8,
+    "rate": 18453.0
+  },
+  {
+    "url": "/rates/ca/san-diego/to/ma/boston/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-san-diego-ma-boston-paper",
+    "origin_city": "San Diego",
+    "origin_state": "CA",
+    "dest_city": "Boston",
+    "dest_state": "MA",
+    "commodity_id": "paper",
+    "miles": 3143.9,
+    "rate": 20737.0
+  },
+  {
+    "url": "/rates/ma/boston/to/ca/san-diego/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "ma-boston-ca-san-diego-coal",
+    "origin_city": "Boston",
+    "origin_state": "MA",
+    "dest_city": "San Diego",
+    "dest_state": "CA",
+    "commodity_id": "coal",
+    "miles": 3143.9,
+    "rate": 15533.0
+  },
+  {
+    "url": "/rates/ny/manhattan/to/or/portland/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-manhattan-or-portland-grain",
+    "origin_city": "Manhattan",
+    "origin_state": "NY",
+    "dest_city": "Portland",
+    "dest_state": "OR",
+    "commodity_id": "grain",
+    "miles": 3065.6,
+    "rate": 20886.0
+  },
+  {
+    "url": "/rates/or/portland/to/ny/manhattan/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "or-portland-ny-manhattan-steel",
+    "origin_city": "Portland",
+    "origin_state": "OR",
+    "dest_city": "Manhattan",
+    "dest_state": "NY",
+    "commodity_id": "steel",
+    "miles": 3065.6,
+    "rate": 22444.0
   },
   {
     "url": "/rates/ca/los-angeles/to/nc/greensboro/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-nc-greensboro-plastic",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "Greensboro",
     "dest_state": "NC",
     "commodity_id": "plastic",
-    "miles": 2687.5,
-    "rate": 17273.0
+    "miles": 2620.5,
+    "rate": 16386.0
   },
   {
     "url": "/rates/nc/greensboro/to/ca/los-angeles/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "nc-greensboro-ca-los-angeles-paper",
     "origin_city": "Greensboro",
     "origin_state": "NC",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "paper",
-    "miles": 2687.5,
-    "rate": 17852.0
+    "miles": 2620.5,
+    "rate": 16936.0
   },
   {
     "url": "/rates/fl/jacksonville/to/ca/san-jose/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "fl-jacksonville-ca-san-jose-coal",
     "origin_city": "Jacksonville",
     "origin_state": "FL",
     "dest_city": "San Jose",
     "dest_state": "CA",
     "commodity_id": "coal",
-    "miles": 2891.7,
-    "rate": 12960.0
+    "miles": 2868.8,
+    "rate": 13199.0
   },
   {
     "url": "/rates/ca/san-jose/to/fl/jacksonville/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-san-jose-fl-jacksonville-grain",
     "origin_city": "San Jose",
     "origin_state": "CA",
     "dest_city": "Jacksonville",
     "dest_state": "FL",
     "commodity_id": "grain",
-    "miles": 2891.7,
-    "rate": 14887.0
+    "miles": 2868.8,
+    "rate": 15006.0
   },
   {
     "url": "/rates/ny/brooklyn/to/ca/anaheim/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-ca-anaheim-steel",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
     "dest_city": "Anaheim",
     "dest_state": "CA",
     "commodity_id": "steel",
-    "miles": 2974.6,
-    "rate": 19020.0
+    "miles": 2974.1,
+    "rate": 19303.0
   },
   {
     "url": "/rates/ca/anaheim/to/ny/brooklyn/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-anaheim-ny-brooklyn-plastic",
     "origin_city": "Anaheim",
     "origin_state": "CA",
     "dest_city": "Brooklyn",
     "dest_state": "NY",
     "commodity_id": "plastic",
-    "miles": 2974.6,
-    "rate": 20438.0
+    "miles": 2974.1,
+    "rate": 20720.0
   },
   {
     "url": "/rates/ny/queens/to/az/mesa/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-queens-az-mesa-paper",
     "origin_city": "Queens",
     "origin_state": "NY",
     "dest_city": "Mesa",
     "dest_state": "AZ",
     "commodity_id": "paper",
-    "miles": 2650.6,
-    "rate": 19189.0
+    "miles": 2650.2,
+    "rate": 19565.0
   },
   {
     "url": "/rates/az/mesa/to/ny/queens/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "az-mesa-ny-queens-coal",
     "origin_city": "Mesa",
     "origin_state": "AZ",
     "dest_city": "Queens",
     "dest_state": "NY",
     "commodity_id": "coal",
-    "miles": 2725.7,
-    "rate": 13663.0
+    "miles": 2650.2,
+    "rate": 14955.0
   },
   {
     "url": "/rates/il/chicago/to/fl/jacksonville/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "il-chicago-fl-jacksonville-grain",
     "origin_city": "Chicago",
     "origin_state": "IL",
@@ -3789,11 +5337,11 @@
     "dest_state": "FL",
     "commodity_id": "grain",
     "miles": 1134.8,
-    "rate": 8196.0
+    "rate": 8218.0
   },
   {
     "url": "/rates/fl/jacksonville/to/il/chicago/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "fl-jacksonville-il-chicago-steel",
     "origin_city": "Jacksonville",
     "origin_state": "FL",
@@ -3801,35 +5349,35 @@
     "dest_state": "IL",
     "commodity_id": "steel",
     "miles": 1068.5,
-    "rate": 8883.0
+    "rate": 8912.0
   },
   {
     "url": "/rates/ca/los-angeles/to/ky/lexington/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-ky-lexington-plastic",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "Lexington",
     "dest_state": "KY",
     "commodity_id": "plastic",
-    "miles": 2352.4,
-    "rate": 17118.0
+    "miles": 2311.1,
+    "rate": 21987.0
   },
   {
     "url": "/rates/ky/lexington/to/ca/los-angeles/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ky-lexington-ca-los-angeles-paper",
     "origin_city": "Lexington",
     "origin_state": "KY",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "paper",
-    "miles": 2352.4,
-    "rate": 17958.0
+    "miles": 2311.1,
+    "rate": 22358.0
   },
   {
     "url": "/rates/ca/los-angeles/to/la/new-orleans/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-la-new-orleans-coal",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
@@ -3837,11 +5385,11 @@
     "dest_state": "LA",
     "commodity_id": "coal",
     "miles": 1945.7,
-    "rate": 9722.0
+    "rate": 9741.0
   },
   {
     "url": "/rates/la/new-orleans/to/ca/los-angeles/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "la-new-orleans-ca-los-angeles-grain",
     "origin_city": "New Orleans",
     "origin_state": "LA",
@@ -3849,11 +5397,11 @@
     "dest_state": "CA",
     "commodity_id": "grain",
     "miles": 1945.7,
-    "rate": 11556.0
+    "rate": 11576.0
   },
   {
     "url": "/rates/ca/los-angeles/to/co/denver/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-co-denver-steel",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
@@ -3861,11 +5409,11 @@
     "dest_state": "CO",
     "commodity_id": "steel",
     "miles": 1246.2,
-    "rate": 9551.0
+    "rate": 9564.0
   },
   {
     "url": "/rates/co/denver/to/ca/los-angeles/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "co-denver-ca-los-angeles-plastic",
     "origin_city": "Denver",
     "origin_state": "CO",
@@ -3873,11 +5421,11 @@
     "dest_state": "CA",
     "commodity_id": "plastic",
     "miles": 1246.2,
-    "rate": 10236.0
+    "rate": 10249.0
   },
   {
     "url": "/rates/ny/new-york-city/to/fl/st-petersburg/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-new-york-city-fl-st-petersburg-paper",
     "origin_city": "New York City",
     "origin_state": "NY",
@@ -3885,11 +5433,11 @@
     "dest_state": "FL",
     "commodity_id": "paper",
     "miles": 1221.5,
-    "rate": 10924.0
+    "rate": 10960.0
   },
   {
     "url": "/rates/fl/st-petersburg/to/ny/new-york-city/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "fl-st-petersburg-ny-new-york-city-coal",
     "origin_city": "St. Petersburg",
     "origin_state": "FL",
@@ -3897,11 +5445,11 @@
     "dest_state": "NY",
     "commodity_id": "coal",
     "miles": 1221.5,
-    "rate": 7512.0
+    "rate": 7549.0
   },
   {
     "url": "/rates/ny/brooklyn/to/fl/jacksonville/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ny-brooklyn-fl-jacksonville-grain",
     "origin_city": "Brooklyn",
     "origin_state": "NY",
@@ -3909,11 +5457,11 @@
     "dest_state": "FL",
     "commodity_id": "grain",
     "miles": 982.8,
-    "rate": 9091.0
+    "rate": 8870.0
   },
   {
     "url": "/rates/fl/jacksonville/to/ny/brooklyn/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "fl-jacksonville-ny-brooklyn-steel",
     "origin_city": "Jacksonville",
     "origin_state": "FL",
@@ -3921,35 +5469,59 @@
     "dest_state": "NY",
     "commodity_id": "steel",
     "miles": 982.8,
-    "rate": 10951.0
+    "rate": 10731.0
   },
   {
     "url": "/rates/ca/los-angeles/to/ky/lexington-fayette/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-ky-lexington-fayette-plastic",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "Lexington-Fayette",
     "dest_state": "KY",
     "commodity_id": "plastic",
-    "miles": 2349.9,
-    "rate": 17123.0
+    "miles": 2308.6,
+    "rate": 21990.0
   },
   {
     "url": "/rates/ky/lexington-fayette/to/ca/los-angeles/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ky-lexington-fayette-ca-los-angeles-paper",
     "origin_city": "Lexington-Fayette",
     "origin_state": "KY",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "paper",
-    "miles": 2349.9,
-    "rate": 17963.0
+    "miles": 2308.6,
+    "rate": 22363.0
+  },
+  {
+    "url": "/rates/ny/queens/to/ak/anchorage/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-queens-ak-anchorage-coal",
+    "origin_city": "Queens",
+    "origin_state": "NY",
+    "dest_city": "Anchorage",
+    "dest_state": "AK",
+    "commodity_id": "coal",
+    "miles": 3454.6,
+    "rate": 17764.0
+  },
+  {
+    "url": "/rates/ak/anchorage/to/ny/queens/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "ak-anchorage-ny-queens-grain",
+    "origin_city": "Anchorage",
+    "origin_state": "AK",
+    "dest_city": "Queens",
+    "dest_state": "NY",
+    "commodity_id": "grain",
+    "miles": 3454.6,
+    "rate": 20132.0
   },
   {
     "url": "/rates/il/chicago/to/tx/el-paso/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "il-chicago-tx-el-paso-steel",
     "origin_city": "Chicago",
     "origin_state": "IL",
@@ -3957,11 +5529,11 @@
     "dest_state": "TX",
     "commodity_id": "steel",
     "miles": 1367.5,
-    "rate": 10732.0
+    "rate": 10746.0
   },
   {
     "url": "/rates/tx/el-paso/to/il/chicago/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-el-paso-il-chicago-plastic",
     "origin_city": "El Paso",
     "origin_state": "TX",
@@ -3969,23 +5541,23 @@
     "dest_state": "IL",
     "commodity_id": "plastic",
     "miles": 1367.5,
-    "rate": 11448.0
+    "rate": 11462.0
   },
   {
     "url": "/rates/az/phoenix/to/dc/washington/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "az-phoenix-dc-washington-paper",
     "origin_city": "Phoenix",
     "origin_state": "AZ",
     "dest_city": "Washington",
     "dest_state": "DC",
     "commodity_id": "paper",
-    "miles": 2522.2,
-    "rate": 18974.0
+    "miles": 2469.1,
+    "rate": 20179.0
   },
   {
     "url": "/rates/dc/washington/to/az/phoenix/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "dc-washington-az-phoenix-coal",
     "origin_city": "Washington",
     "origin_state": "DC",
@@ -3993,59 +5565,59 @@
     "dest_state": "AZ",
     "commodity_id": "coal",
     "miles": 2469.1,
-    "rate": 14602.0
+    "rate": 14386.0
   },
   {
     "url": "/rates/ca/los-angeles/to/oh/cincinnati/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-los-angeles-oh-cincinnati-grain",
     "origin_city": "Los Angeles",
     "origin_state": "CA",
     "dest_city": "Cincinnati",
     "dest_state": "OH",
     "commodity_id": "grain",
-    "miles": 2295.4,
-    "rate": 14042.0
+    "miles": 2283.6,
+    "rate": 15837.0
   },
   {
     "url": "/rates/oh/cincinnati/to/ca/los-angeles/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "oh-cincinnati-ca-los-angeles-steel",
     "origin_city": "Cincinnati",
     "origin_state": "OH",
     "dest_city": "Los Angeles",
     "dest_state": "CA",
     "commodity_id": "steel",
-    "miles": 2295.4,
-    "rate": 16496.0
+    "miles": 2283.6,
+    "rate": 17688.0
   },
   {
     "url": "/rates/ca/san-diego/to/in/indianapolis/plastic/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "ca-san-diego-in-indianapolis-plastic",
     "origin_city": "San Diego",
     "origin_state": "CA",
     "dest_city": "Indianapolis",
     "dest_state": "IN",
     "commodity_id": "plastic",
-    "miles": 2242.2,
-    "rate": 17448.0
+    "miles": 2231.5,
+    "rate": 17815.0
   },
   {
     "url": "/rates/in/indianapolis/to/ca/san-diego/paper/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "in-indianapolis-ca-san-diego-paper",
     "origin_city": "Indianapolis",
     "origin_state": "IN",
     "dest_city": "San Diego",
     "dest_state": "CA",
     "commodity_id": "paper",
-    "miles": 2242.2,
-    "rate": 17945.0
+    "miles": 2231.5,
+    "rate": 18247.0
   },
   {
     "url": "/rates/il/chicago/to/tx/fort-worth/coal/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "il-chicago-tx-fort-worth-coal",
     "origin_city": "Chicago",
     "origin_state": "IL",
@@ -4053,11 +5625,11 @@
     "dest_state": "TX",
     "commodity_id": "coal",
     "miles": 939.1,
-    "rate": 6188.0
+    "rate": 6197.0
   },
   {
     "url": "/rates/tx/fort-worth/to/il/chicago/grain/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-fort-worth-il-chicago-grain",
     "origin_city": "Fort Worth",
     "origin_state": "TX",
@@ -4065,11 +5637,11 @@
     "dest_state": "IL",
     "commodity_id": "grain",
     "miles": 939.1,
-    "rate": 7566.0
+    "rate": 7575.0
   },
   {
     "url": "/rates/tx/san-antonio/to/ca/san-jose/steel/",
-    "lastmod": "2026-05-05",
+    "lastmod": "2026-07-01",
     "slug": "tx-san-antonio-ca-san-jose-steel",
     "origin_city": "San Antonio",
     "origin_state": "TX",
@@ -4077,234 +5649,270 @@
     "dest_state": "CA",
     "commodity_id": "steel",
     "miles": 1802.3,
-    "rate": 11927.0
+    "rate": 11945.0
   },
   {
-    "url": "/rates/tx/corpus-christi/to/tn/memphis/plastic/",
-    "lastmod": "2026-05-05",
-    "slug": "tx-corpus-christi-tn-memphis-plastic",
-    "origin_city": "Corpus Christi",
-    "origin_state": "TX",
-    "dest_city": "Memphis",
-    "dest_state": "TN",
+    "url": "/rates/ca/san-jose/to/tx/san-antonio/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-san-jose-tx-san-antonio-plastic",
+    "origin_city": "San Jose",
+    "origin_state": "CA",
+    "dest_city": "San Antonio",
+    "dest_state": "TX",
     "commodity_id": "plastic",
-    "miles": 777.0,
-    "rate": 8102.0
+    "miles": 1802.3,
+    "rate": 12786.0
   },
   {
-    "url": "/rates/tx/houston/to/il/chicago/grain/",
-    "lastmod": "2026-05-05",
-    "slug": "tx-houston-il-chicago-grain",
-    "origin_city": "Houston",
-    "origin_state": "TX",
+    "url": "/rates/il/chicago/to/ca/long-beach/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "il-chicago-ca-long-beach-paper",
+    "origin_city": "Chicago",
+    "origin_state": "IL",
+    "dest_city": "Long Beach",
+    "dest_state": "CA",
+    "commodity_id": "paper",
+    "miles": 2127.8,
+    "rate": 16262.0
+  },
+  {
+    "url": "/rates/ca/long-beach/to/il/chicago/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-long-beach-il-chicago-coal",
+    "origin_city": "Long Beach",
+    "origin_state": "CA",
     "dest_city": "Chicago",
     "dest_state": "IL",
-    "commodity_id": "grain",
-    "miles": 1244.0,
-    "rate": 8313.0
-  },
-  {
-    "url": "/rates/tx/houston/to/ca/los-angeles/plastic/",
-    "lastmod": "2026-05-05",
-    "slug": "tx-houston-ca-los-angeles-plastic",
-    "origin_city": "Houston",
-    "origin_state": "TX",
-    "dest_city": "Los Angeles",
-    "dest_state": "CA",
-    "commodity_id": "plastic",
-    "miles": 1623.0,
-    "rate": 11953.0
-  },
-  {
-    "url": "/rates/tx/houston/to/ga/atlanta/plastic/",
-    "lastmod": "2026-05-05",
-    "slug": "tx-houston-ga-atlanta-plastic",
-    "origin_city": "Houston",
-    "origin_state": "TX",
-    "dest_city": "Atlanta",
-    "dest_state": "GA",
-    "commodity_id": "plastic",
-    "miles": 851.0,
-    "rate": 12297.0
-  },
-  {
-    "url": "/rates/wy/cheyenne/to/tx/houston/coal/",
-    "lastmod": "2026-05-05",
-    "slug": "wy-cheyenne-tx-houston-coal",
-    "origin_city": "Cheyenne",
-    "origin_state": "WY",
-    "dest_city": "Houston",
-    "dest_state": "TX",
     "commodity_id": "coal",
-    "miles": 1146.0,
-    "rate": 6001.0
+    "miles": 2127.8,
+    "rate": 10863.0
   },
   {
-    "url": "/rates/wy/casper/to/tn/memphis/coal/",
-    "lastmod": "2026-05-05",
-    "slug": "wy-casper-tn-memphis-coal",
-    "origin_city": "Casper",
-    "origin_state": "WY",
-    "dest_city": "Memphis",
-    "dest_state": "TN",
-    "commodity_id": "coal",
-    "miles": 1190.0,
-    "rate": 6314.0
-  },
-  {
-    "url": "/rates/in/gary/to/tx/houston/steel/",
-    "lastmod": "2026-05-05",
-    "slug": "in-gary-tx-houston-steel",
-    "origin_city": "Gary",
-    "origin_state": "IN",
-    "dest_city": "Houston",
-    "dest_state": "TX",
-    "commodity_id": "steel",
-    "miles": 1053.0,
-    "rate": 9413.0
-  },
-  {
-    "url": "/rates/ks/wichita/to/or/portland/grain/",
-    "lastmod": "2026-05-05",
-    "slug": "ks-wichita-or-portland-grain",
-    "origin_city": "Wichita",
-    "origin_state": "KS",
+    "url": "/rates/ny/the-bronx/to/or/portland/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-the-bronx-or-portland-grain",
+    "origin_city": "The Bronx",
+    "origin_state": "NY",
     "dest_city": "Portland",
     "dest_state": "OR",
     "commodity_id": "grain",
-    "miles": 1876.0,
-    "rate": 10250.0
+    "miles": 3076.3,
+    "rate": 20198.0
   },
   {
-    "url": "/rates/mn/minneapolis/to/tx/houston/grain/",
-    "lastmod": "2026-05-05",
-    "slug": "mn-minneapolis-tx-houston-grain",
-    "origin_city": "Minneapolis",
-    "origin_state": "MN",
-    "dest_city": "Houston",
+    "url": "/rates/or/portland/to/ny/the-bronx/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "or-portland-ny-the-bronx-steel",
+    "origin_city": "Portland",
+    "origin_state": "OR",
+    "dest_city": "The Bronx",
+    "dest_state": "NY",
+    "commodity_id": "steel",
+    "miles": 3076.3,
+    "rate": 22931.0
+  },
+  {
+    "url": "/rates/pa/philadelphia/to/tx/austin/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "pa-philadelphia-tx-austin-plastic",
+    "origin_city": "Philadelphia",
+    "origin_state": "PA",
+    "dest_city": "Austin",
     "dest_state": "TX",
-    "commodity_id": "grain",
-    "miles": 1363.0,
-    "rate": 9761.0
+    "commodity_id": "plastic",
+    "miles": 1688.1,
+    "rate": 15046.0
   },
   {
-    "url": "/rates/mo/kansas-city/to/fl/tampa/grain/",
-    "lastmod": "2026-05-05",
-    "slug": "mo-kansas-city-fl-tampa-grain",
-    "origin_city": "Kansas City",
-    "origin_state": "MO",
-    "dest_city": "Tampa",
-    "dest_state": "FL",
-    "commodity_id": "grain",
-    "miles": 1360.0,
-    "rate": 9905.0
-  },
-  {
-    "url": "/rates/pa/pittsburgh/to/al/mobile/coal/",
-    "lastmod": "2026-05-05",
-    "slug": "pa-pittsburgh-al-mobile-coal",
-    "origin_city": "Pittsburgh",
-    "origin_state": "PA",
-    "dest_city": "Mobile",
-    "dest_state": "AL",
-    "commodity_id": "coal",
-    "miles": 1044.0,
-    "rate": 7018.0
-  },
-  {
-    "url": "/rates/pa/pittsburgh/to/ga/atlanta/steel/",
-    "lastmod": "2026-05-05",
-    "slug": "pa-pittsburgh-ga-atlanta-steel",
-    "origin_city": "Pittsburgh",
-    "origin_state": "PA",
-    "dest_city": "Atlanta",
-    "dest_state": "GA",
-    "commodity_id": "steel",
-    "miles": 770.0,
-    "rate": 8589.0
-  },
-  {
-    "url": "/rates/al/birmingham/to/mi/detroit/steel/",
-    "lastmod": "2026-05-05",
-    "slug": "al-birmingham-mi-detroit-steel",
-    "origin_city": "Birmingham",
-    "origin_state": "AL",
-    "dest_city": "Detroit",
-    "dest_state": "MI",
-    "commodity_id": "steel",
-    "miles": 735.0,
-    "rate": 8222.0
-  },
-  {
-    "url": "/rates/al/mobile/to/il/chicago/paper/",
-    "lastmod": "2026-05-05",
-    "slug": "al-mobile-il-chicago-paper",
-    "origin_city": "Mobile",
-    "origin_state": "AL",
-    "dest_city": "Chicago",
-    "dest_state": "IL",
+    "url": "/rates/tx/austin/to/pa/philadelphia/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "tx-austin-pa-philadelphia-paper",
+    "origin_city": "Austin",
+    "origin_state": "TX",
+    "dest_city": "Philadelphia",
+    "dest_state": "PA",
     "commodity_id": "paper",
-    "miles": 900.0,
-    "rate": 10943.0
+    "miles": 1688.1,
+    "rate": 15470.0
   },
   {
-    "url": "/rates/al/mobile/to/il/chicago/steel/",
-    "lastmod": "2026-05-05",
-    "slug": "al-mobile-il-chicago-steel",
-    "origin_city": "Mobile",
-    "origin_state": "AL",
-    "dest_city": "Chicago",
-    "dest_state": "IL",
-    "commodity_id": "steel",
-    "miles": 900.0,
-    "rate": 10104.0
-  },
-  {
-    "url": "/rates/tn/knoxville/to/fl/tampa/coal/",
-    "lastmod": "2026-05-05",
-    "slug": "tn-knoxville-fl-tampa-coal",
-    "origin_city": "Knoxville",
-    "origin_state": "TN",
-    "dest_city": "Tampa",
-    "dest_state": "FL",
+    "url": "/rates/ca/san-diego/to/tx/dallas/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-san-diego-tx-dallas-coal",
+    "origin_city": "San Diego",
+    "origin_state": "CA",
+    "dest_city": "Dallas",
+    "dest_state": "TX",
     "commodity_id": "coal",
-    "miles": 722.0,
-    "rate": 5146.0
+    "miles": 1444.2,
+    "rate": 7438.0
   },
   {
-    "url": "/rates/tn/memphis/to/ca/los-angeles/paper/",
-    "lastmod": "2026-05-05",
-    "slug": "tn-memphis-ca-los-angeles-paper",
-    "origin_city": "Memphis",
-    "origin_state": "TN",
-    "dest_city": "Los Angeles",
+    "url": "/rates/tx/dallas/to/ca/san-diego/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "tx-dallas-ca-san-diego-grain",
+    "origin_city": "Dallas",
+    "origin_state": "TX",
+    "dest_city": "San Diego",
     "dest_state": "CA",
-    "commodity_id": "paper",
-    "miles": 1924.0,
-    "rate": 15292.0
+    "commodity_id": "grain",
+    "miles": 1444.2,
+    "rate": 9134.0
   },
   {
-    "url": "/rates/la/baton-rouge/to/il/chicago/plastic/",
-    "lastmod": "2026-05-05",
-    "slug": "la-baton-rouge-il-chicago-plastic",
-    "origin_city": "Baton Rouge",
-    "origin_state": "LA",
+    "url": "/rates/il/chicago/to/ak/anchorage/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "il-chicago-ak-anchorage-steel",
+    "origin_city": "Chicago",
+    "origin_state": "IL",
+    "dest_city": "Anchorage",
+    "dest_state": "AK",
+    "commodity_id": "steel",
+    "miles": 2564.6,
+    "rate": 16910.0
+  },
+  {
+    "url": "/rates/ak/anchorage/to/il/chicago/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "ak-anchorage-il-chicago-plastic",
+    "origin_city": "Anchorage",
+    "origin_state": "AK",
     "dest_city": "Chicago",
     "dest_state": "IL",
     "commodity_id": "plastic",
-    "miles": 1003.0,
-    "rate": 9618.0
+    "miles": 2564.6,
+    "rate": 17877.0
   },
   {
-    "url": "/rates/ne/omaha/to/ca/stockton/grain/",
-    "lastmod": "2026-05-05",
-    "slug": "ne-omaha-ca-stockton-grain",
-    "origin_city": "Omaha",
-    "origin_state": "NE",
-    "dest_city": "Stockton",
+    "url": "/rates/ca/san-diego/to/dc/washington/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-san-diego-dc-washington-paper",
+    "origin_city": "San Diego",
+    "origin_state": "CA",
+    "dest_city": "Washington",
+    "dest_state": "DC",
+    "commodity_id": "paper",
+    "miles": 2843.7,
+    "rate": 22040.0
+  },
+  {
+    "url": "/rates/dc/washington/to/ca/san-diego/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "dc-washington-ca-san-diego-coal",
+    "origin_city": "Washington",
+    "origin_state": "DC",
+    "dest_city": "San Diego",
     "dest_state": "CA",
+    "commodity_id": "coal",
+    "miles": 2843.7,
+    "rate": 15920.0
+  },
+  {
+    "url": "/rates/ca/los-angeles/to/ky/meads/grain/",
+    "lastmod": "2026-07-01",
+    "slug": "ca-los-angeles-ky-meads-grain",
+    "origin_city": "Los Angeles",
+    "origin_state": "CA",
+    "dest_city": "Meads",
+    "dest_state": "KY",
     "commodity_id": "grain",
-    "miles": 1712.0,
-    "rate": 9656.0
+    "miles": 2432.2,
+    "rate": 16280.0
+  },
+  {
+    "url": "/rates/ky/meads/to/ca/los-angeles/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "ky-meads-ca-los-angeles-steel",
+    "origin_city": "Meads",
+    "origin_state": "KY",
+    "dest_city": "Los Angeles",
+    "dest_state": "CA",
+    "commodity_id": "steel",
+    "miles": 2432.2,
+    "rate": 18214.0
+  },
+  {
+    "url": "/rates/ny/manhattan/to/tx/austin/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "ny-manhattan-tx-austin-plastic",
+    "origin_city": "Manhattan",
+    "origin_state": "NY",
+    "dest_city": "Austin",
+    "dest_state": "TX",
+    "commodity_id": "plastic",
+    "miles": 1791.0,
+    "rate": 16882.0
+  },
+  {
+    "url": "/rates/tx/austin/to/ny/manhattan/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "tx-austin-ny-manhattan-paper",
+    "origin_city": "Austin",
+    "origin_state": "TX",
+    "dest_city": "Manhattan",
+    "dest_state": "NY",
+    "commodity_id": "paper",
+    "miles": 1791.0,
+    "rate": 17235.0
+  },
+  {
+    "url": "/rates/pa/philadelphia/to/nv/las-vegas/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "pa-philadelphia-nv-las-vegas-coal",
+    "origin_city": "Philadelphia",
+    "origin_state": "PA",
+    "dest_city": "Las Vegas",
+    "dest_state": "NV",
+    "commodity_id": "coal",
+    "miles": 2717.2,
+    "rate": 13119.0
+  },
+  {
+    "url": "/rates/tx/houston/to/ak/anchorage/steel/",
+    "lastmod": "2026-07-01",
+    "slug": "tx-houston-ak-anchorage-steel",
+    "origin_city": "Houston",
+    "origin_state": "TX",
+    "dest_city": "Anchorage",
+    "dest_state": "AK",
+    "commodity_id": "steel",
+    "miles": 3322.3,
+    "rate": 18965.0
+  },
+  {
+    "url": "/rates/ak/anchorage/to/tx/houston/plastic/",
+    "lastmod": "2026-07-01",
+    "slug": "ak-anchorage-tx-houston-plastic",
+    "origin_city": "Anchorage",
+    "origin_state": "AK",
+    "dest_city": "Houston",
+    "dest_state": "TX",
+    "commodity_id": "plastic",
+    "miles": 3322.3,
+    "rate": 19824.0
+  },
+  {
+    "url": "/rates/az/phoenix/to/in/indianapolis/paper/",
+    "lastmod": "2026-07-01",
+    "slug": "az-phoenix-in-indianapolis-paper",
+    "origin_city": "Phoenix",
+    "origin_state": "AZ",
+    "dest_city": "Indianapolis",
+    "dest_state": "IN",
+    "commodity_id": "paper",
+    "miles": 1856.8,
+    "rate": 16210.0
+  },
+  {
+    "url": "/rates/in/indianapolis/to/az/phoenix/coal/",
+    "lastmod": "2026-07-01",
+    "slug": "in-indianapolis-az-phoenix-coal",
+    "origin_city": "Indianapolis",
+    "origin_state": "IN",
+    "dest_city": "Phoenix",
+    "dest_state": "AZ",
+    "commodity_id": "coal",
+    "miles": 1856.8,
+    "rate": 12602.0
   }
 ]
