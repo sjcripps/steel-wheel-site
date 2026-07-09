@@ -3,8 +3,18 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/blog/demurrage-fees-how-to-avoid",
+      "destination": "/blog/rail-demurrage-fees-guide",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "rail.steelwheellogistics.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "rail.steelwheellogistics.com"
+        }
+      ],
       "destination": "https://steelwheellogistics.com/:path*",
       "permanent": true
     },
@@ -13,50 +23,113 @@
       "destination": "/$1",
       "permanent": true
     },
-    { "source": "/contact-us", "destination": "/contact", "permanent": true },
-    { "source": "/express", "destination": "/services", "permanent": true },
-    { "source": "/default", "destination": "/", "permanent": true },
-    { "source": "/home", "destination": "/", "permanent": true },
-    { "source": "/Home", "destination": "/", "permanent": true },
-    { "source": "/blog/rail-shipping-in-mississippi", "destination": "/blog", "permanent": true },
-    { "source": "/blog/gulf-coast-rail-logistics", "destination": "/blog", "permanent": true },
-    { "source": "/vbid-:rest*", "destination": "/", "permanent": true },
-    { "source": "/cdn-cgi/:path*", "destination": "/", "permanent": true }
+    {
+      "source": "/contact-us",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/express",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/default",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/Home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/rail-shipping-in-mississippi",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/gulf-coast-rail-logistics",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/vbid-:rest*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/cdn-cgi/:path*",
+      "destination": "/",
+      "permanent": true
+    }
   ],
   "rewrites": [
     {
       "source": "/sitemap.xml",
       "destination": "/api/sitemap"
     },
-    { "source": "/api/commodity-flow-lead", "destination": "/api/tool-lead?tool=commodity-flow" },
-    { "source": "/api/fleet-calculator-lead", "destination": "/api/tool-lead?tool=fleet-calculator" },
-    { "source": "/api/storage-locator-lead", "destination": "/api/tool-lead?tool=storage-locator" },
-    { "source": "/api/sublease-lead", "destination": "/api/tool-lead?tool=sublease" }
+    {
+      "source": "/api/commodity-flow-lead",
+      "destination": "/api/tool-lead?tool=commodity-flow"
+    },
+    {
+      "source": "/api/fleet-calculator-lead",
+      "destination": "/api/tool-lead?tool=fleet-calculator"
+    },
+    {
+      "source": "/api/storage-locator-lead",
+      "destination": "/api/tool-lead?tool=storage-locator"
+    },
+    {
+      "source": "/api/sublease-lead",
+      "destination": "/api/tool-lead?tool=sublease"
+    }
   ],
   "headers": [
     {
       "source": "/media/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" },
-        { "key": "Accept-Ranges", "value": "bytes" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        },
+        {
+          "key": "Accept-Ranges",
+          "value": "bytes"
+        }
       ]
     },
     {
       "source": "/images/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
       ]
     },
     {
       "source": "/(.*).css",
       "headers": [
-        { "key": "Cache-Control", "value": "no-cache" }
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }
       ]
     },
     {
       "source": "/rates/(.*)",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, follow" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
       ]
     }
   ]
