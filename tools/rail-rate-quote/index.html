@@ -1222,12 +1222,18 @@
 
     function validateStateCode(cityString) {
       if (!cityString || typeof cityString !== 'string') return false;
-      const parts = cityString.trim().split(/,\s*/);
+      const parts = cityString.trim().split(/,\s*/).filter(Boolean);
       if (parts.length < 2) return false;
-      const stateCode = parts[parts.length - 1].toUpperCase().trim();
-      // Reject numeric codes like "08" and non-alphabetic codes
-      if (!/^[A-Z]{2,3}$/.test(stateCode)) return false;
-      return VALID_STATE_CODES.has(stateCode);
+      // Walk comma-parts from the end (never the city at index 0). The state is the first valid
+      // 2-3 letter token found — this tolerates a trailing country name, e.g. "Saskatoon, SK Canada",
+      // "Chicago, IL, USA", or "London, ON, Canada".
+      for (let i = parts.length - 1; i >= 1; i--) {
+        for (const tok of parts[i].split(/\s+/)) {
+          const code = tok.toUpperCase().replace(/[^A-Z]/g, '');
+          if (/^[A-Z]{2,3}$/.test(code) && VALID_STATE_CODES.has(code)) return true;
+        }
+      }
+      return false;
     }
 
     // ── Shared SWL email-unlock (cross-tool, 90-day TTL) ──
