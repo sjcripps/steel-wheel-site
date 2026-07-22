@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { S3Client, GetObjectCommand, PutObjectCommand } from '@aws-sdk/client-s3';
-import { sendLeadEmail } from './_lead-email';
+import { isSyntheticLead, sendLeadEmail } from './_lead-email';
 
 // Sublease Board lead capture. Mirrors demurrage-lead.ts pattern.
 //
@@ -187,7 +187,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   // Synthetic regression traffic
-  if (email.endsWith('@anthropic.com')) {
+  if (isSyntheticLead(email, String(req.headers['user-agent'] || ''))) {
     return res.status(200).json({ ok: true, synthetic: true });
   }
 

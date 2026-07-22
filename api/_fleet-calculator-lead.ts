@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { isSyntheticLead } from './_lead-email';
 
 const DISPOSABLE_DOMAINS = new Set([
   'mailinator.com', '10minutemail.com', 'guerrillamail.com', 'temp-mail.org',
@@ -70,7 +71,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       calculator_inputs: body.calculator_inputs || {},
       client_ip: clientIp,
       user_agent: userAgent,
-      is_synthetic: email.endsWith('@anthropic.com')
+      is_synthetic: isSyntheticLead(email, userAgent)
     };
 
     if (leadRecord.is_synthetic) {

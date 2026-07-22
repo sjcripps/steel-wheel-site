@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { S3Client, GetObjectCommand, PutObjectCommand } from '@aws-sdk/client-s3';
-import { sendLeadEmail, sendCustomerEmail, syncWorkmateCrm } from './_lead-email';
+import { isSyntheticLead, sendLeadEmail, sendCustomerEmail, syncWorkmateCrm } from './_lead-email';
 
 // Rail-vs-Truck Mode-Shift Calculator lead capture (5th SWL tool).
 //
@@ -228,7 +228,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
   // @anthropic.com short-circuit BEFORE MX check — synthetic smokes avoid
   // both the DNS round-trip and any sink writes.
-  if (email.endsWith('@anthropic.com')) {
+  if (isSyntheticLead(email, String(req.headers['user-agent'] || ''))) {
     return res.status(200).json({ ok: true, synthetic: true });
   }
   // MX check — falls open on DNS errors so a transient 1.1.1.1 hiccup

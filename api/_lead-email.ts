@@ -15,6 +15,42 @@
 
 const RESEND_ENDPOINT = 'https://api.resend.com/emails';
 
+// Synthetic-traffic local-part prefixes. Our own smoke tests and monitors
+// probe the LIVE prod endpoints, so they have to be filtered at the writer
+// — by the time a probe reaches S3/Telegram/CRM it has already fired a
+// fake-lead DM and created a junk CRM contact. (2026-07-22: a
+// `qa-crm-<ts>@steelwheellogistics.com` curl probe did exactly that on the
+// transload directory; the old guard only covered @anthropic.com.)
+const SYNTHETIC_PREFIXES = ['qa-', 'smoke-', 'test-', 'monitor-', 'probe-', 'healthcheck-'];
+// Matched against the plus-tag only (the part after `+`), never the whole
+// local part — so a real `testa@…` or `qatar.shipping@…` is untouched while
+// Jacob's own aliases (`+tldsmoke1`, `+transload-email-test`, `+swl-pdfcrm-test`)
+// are caught.
+const SYNTHETIC_TAG_WORDS = ['test', 'smoke', 'qa', 'probe', 'monitor', 'healthcheck'];
+
+/**
+ * True when this submission is our own test traffic rather than a real lead.
+ * Deliberately conservative on the domain check: `jacob@steelwheellogistics.com`
+ * is a real address, so we only treat OWN-DOMAIN mail as synthetic when the
+ * local part carries a probe prefix — never the bare domain.
+ */
+export function isSyntheticLead(email: string, userAgent = ''): boolean {
+  const addr = email.trim().toLowerCase();
+  if (addr.endsWith('@anthropic.com')) return true;
+
+  const local = addr.split('@')[0] || '';
+  if (SYNTHETIC_PREFIXES.some((p) => local.startsWith(p))) return true;
+  const plusTag = local.includes('+') ? local.slice(local.indexOf('+') + 1) : '';
+  if (plusTag && SYNTHETIC_TAG_WORDS.some((w) => plusTag.includes(w))) return true;
+
+  // No human submits a lead form with curl/wget. Anything scripted hitting
+  // these endpoints is ours (or a scanner) — neither is a lead.
+  if (/^(curl|wget|python-requests|go-http-client|node-fetch|axios)\//i.test(userAgent.trim())) {
+    return true;
+  }
+  return false;
+}
+
 export interface LeadEmailRow {
   label: string;
   value: string;

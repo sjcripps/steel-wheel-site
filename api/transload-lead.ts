@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { S3Client, GetObjectCommand, PutObjectCommand } from '@aws-sdk/client-s3';
-import { sendLeadEmail, syncWorkmateCrm } from './_lead-email';
+import { isSyntheticLead, sendLeadEmail, syncWorkmateCrm } from './_lead-email';
 
 // Transload-directory lead capture. Pure email-gate (no compute payload):
 // user submits email to unlock the directory, we capture the lead. Mirrors
@@ -145,7 +145,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(400).json({ ok: false, error: 'Please use your work email.', code: 'email_disposable' });
   }
 
-  if (email.endsWith('@anthropic.com')) {
+  if (isSyntheticLead(email, String(req.headers['user-agent'] || ''))) {
     return res.status(200).json({ ok: true, synthetic: true });
   }
 

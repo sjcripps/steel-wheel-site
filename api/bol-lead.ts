@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { S3Client, GetObjectCommand, PutObjectCommand } from '@aws-sdk/client-s3';
-import { sendLeadEmail, sendCustomerEmail, nowCstShort as _nowCstShortShared } from './_lead-email';
+import { isSyntheticLead, sendLeadEmail, sendCustomerEmail, nowCstShort as _nowCstShortShared } from './_lead-email';
 
 // Rail Bill of Lading Builder — lead capture. Pure-client tool; this
 // endpoint exists only to register that a shipper used it. Mirrors
@@ -175,7 +175,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   // Synthetic regression traffic — short-circuit so smokes don't pollute prod.
-  if (email.endsWith('@anthropic.com')) {
+  if (isSyntheticLead(email, String(req.headers['user-agent'] || ''))) {
     return res.status(200).json({ ok: true, synthetic: true });
   }
 

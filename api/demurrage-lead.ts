@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { S3Client, GetObjectCommand, PutObjectCommand } from '@aws-sdk/client-s3';
-import { sendLeadEmail, sendCustomerEmail, syncWorkmateCrm, nowCstShort as _nowCstShortShared } from './_lead-email';
+import { isSyntheticLead, sendLeadEmail, sendCustomerEmail, syncWorkmateCrm, nowCstShort as _nowCstShortShared } from './_lead-email';
 
 // Demurrage-tool lead capture. Mirrors the rail-rate-quote pattern but
 // runs the whole stack (validation + S3 + Telegram) inside this Vercel
@@ -197,7 +197,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Synthetic regression traffic — short-circuit both sinks so smoke
   // tests don't pollute the lead store or DM Jacob. Mirrors the
   // lead_capture.py:152 short-circuit.
-  if (email.endsWith('@anthropic.com')) {
+  if (isSyntheticLead(email, String(req.headers['user-agent'] || ''))) {
     return res.status(200).json({ ok: true, synthetic: true });
   }
 
