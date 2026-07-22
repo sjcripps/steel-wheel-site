@@ -975,6 +975,10 @@
           <a href="/contact.html?subject=Discuss+this+lane" class="cta-btn">Discuss This Lane With Us</a>
           <a href="tel:+16018212199" class="cta-btn cta-btn-secondary">Call (601) 821-2199</a>
           <button type="button" class="cta-btn cta-btn-secondary" id="downloadPdfBtn" style="cursor:pointer">Download Quote PDF</button>
+          <!-- Highest-intent moment for the dashboard: they have just priced a
+               real lane and already given us an email. Prefilled so saving it
+               is one click, not a re-entry. -->
+          <a href="/tools/rail-dashboard" class="cta-btn cta-btn-secondary" id="trackLaneBtn">Track This Lane</a>
         </div>
 
       </div>
@@ -2052,6 +2056,21 @@
           box.style.display = 'none';
         }
       } catch (e) { console.warn('shipment size note skipped:', e); }
+
+      // Carry the priced lane into the dashboard so "Track This Lane" is one
+      // click rather than re-entering everything.
+      try {
+        const btn = document.getElementById('trackLaneBtn');
+        if (btn) {
+          const q = new URLSearchParams({
+            origin: d.origin && d.origin.city ? d.origin.city : (currentQuote.origin || ''),
+            destination: d.destination && d.destination.city ? d.destination.city : (currentQuote.destination || ''),
+            commodity: (d.commodity && d.commodity.id) || '',
+            num_cars: String((d.shipment_size && d.shipment_size.num_cars) || 1),
+          });
+          btn.href = '/tools/rail-dashboard?' + q.toString();
+        }
+      } catch (e) { console.warn('track-lane link skipped:', e); }
 
       try { document.getElementById('disclaimer').textContent = d.disclaimer || ''; } catch (e) {}
 

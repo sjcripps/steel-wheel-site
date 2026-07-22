@@ -285,6 +285,22 @@
       });
     }
 
+    function applyPrefill(){
+      let p=null;
+      try { p = JSON.parse(sessionStorage.getItem('sd_prefill') || 'null'); } catch(e){}
+      if(!p || !p.origin || !p.destination) return;
+      document.getElementById('lnOrigin').value = p.origin;
+      document.getElementById('lnDest').value = p.destination;
+      const c=document.getElementById('lnComm');
+      if(p.commodity && [...c.options].some(o=>o.value===p.commodity)) c.value=p.commodity;
+      const cars=document.getElementById('lnCars');
+      const n=Number(p.num_cars||1);
+      const bucket = n>=90 ? '110' : n>=25 ? '35' : n>1 ? '10' : '1';
+      cars.value = bucket;
+      try { sessionStorage.removeItem('sd_prefill'); } catch(e){}
+      msg('laneMsg','Lane carried over from your rate estimate — review and add it.','ok');
+    }
+
     async function boot(){
       // Magic link lands here with ?t=<token>
       const params=new URLSearchParams(location.search);
@@ -293,6 +309,17 @@
         await api('magic-verify',{token:t});
         history.replaceState({},'', '/tools/rail-dashboard');
       }
+      // Lane prefill from the rate tool's "Track This Lane" button. Applied
+      // whether or not they are signed in, so it survives the sign-up detour.
+      const pre = {
+        origin: params.get('origin'), destination: params.get('destination'),
+        commodity: params.get('commodity'), num_cars: params.get('num_cars'),
+      };
+      if (pre.origin && pre.destination) {
+        try { sessionStorage.setItem('sd_prefill', JSON.stringify(pre)); } catch(e){}
+        history.replaceState({},'', '/tools/rail-dashboard');
+      }
+
       const {data} = await api('me');
       document.getElementById('sdBoot').style.display='none';
       if(data.authenticated){
@@ -300,6 +327,7 @@
         document.getElementById('sdApp').style.display='block';
         document.getElementById('sdWho').textContent=data.email||'';
         document.getElementById('sdCompanyLabel').textContent=data.company?('· '+data.company):'';
+        applyPrefill();
         loadLanes();
       } else {
         document.getElementById('sdApp').style.display='none';
