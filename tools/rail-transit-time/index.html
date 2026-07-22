@@ -177,6 +177,11 @@
         line-haul, fuel, and switching — or
         <a href="/contact">talk through your lane with us</a>.
       </div>
+      <div class="tt-note">
+        <strong>Watch this lane.</strong> Save it to a free dashboard and we'll recheck the
+        rate, the transit, and how your railroads are running every Tuesday — and flag it when
+        something moves. <a href="/tools/rail-dashboard" id="ttTrackBtn">Track this lane &rarr;</a>
+      </div>
     </div>
 
     <div class="tt-note">
@@ -286,6 +291,17 @@
         (d.caveats || []).map(c => '<li>' + esc(c) + '</li>').join('') +
         `<li>Service data as of ${esc(d.data_as_of)}, drawn from ${esc(d.history_weeks)} weeks of STB filings.</li>` +
         '</ul>';
+
+      // Carry the lane into the dashboard so saving it is one click.
+      try {
+        const t = document.getElementById('ttTrackBtn');
+        if (t) {
+          t.href = '/tools/rail-dashboard?' + new URLSearchParams({
+            origin: d.origin || '', destination: d.destination || '',
+            commodity: d.commodity || '', num_cars: String(d.num_cars || 1),
+          }).toString();
+        }
+      } catch (e) { console.warn('track link skipped:', e); }
 
       resEl.style.display = 'block';
       resEl.scrollIntoView({ behavior: 'smooth', block: 'start' });

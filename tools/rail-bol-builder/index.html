@@ -605,6 +605,7 @@
         <button type="button" id="loadTemplateBtn">Load</button>
         <button type="button" id="deleteTemplateBtn">Delete</button>
         <div class="templates-spacer"></div>
+        <span id="tplAccountNote" style="font-size:.8rem;color:var(--text-light);font-weight:400"></span>
         <button type="button" id="saveTemplateBtn">Save current as template</button>
       </div>
 
@@ -1784,59 +1785,146 @@
     }
 
     // ───── Templates ─────
+    // Two backends. localStorage is the fallback for signed-out users and is
+    // the original behaviour; a BoL template is real work to rebuild, and
+    // browser storage loses it on a cache clear and never follows the user to
+    // another machine or a colleague. When signed in to the shipper dashboard
+    // we persist to the account instead (sw_bol_templates) and the select
+    // shows both sources.
     const TPL_PREFIX = 'swl_bol_template_';
+    const DASH_API = '/api/shipper-dashboard';
+    let serverTemplates = [];   // [{id, name, payload}]
+    let signedIn = false;
 
-    function listTemplates() {
+    async function dashApi(action, payload) {
+      try {
+        const r = await fetch(DASH_API, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          credentials: 'same-origin',
+          body: JSON.stringify(Object.assign({ action }, payload || {})),
+        });
+        return { status: r.status, data: await r.json().catch(() => ({})) };
+      } catch (e) {
+        return { status: 0, data: {} };
+      }
+    }
+
+    function listLocalTemplates() {
       const out = [];
       for (let i = 0; i < localStorage.length; i++) {
         const k = localStorage.key(i);
-        if (k && k.startsWith(TPL_PREFIX)) {
-          out.push(k.slice(TPL_PREFIX.length));
-        }
+        if (k && k.startsWith(TPL_PREFIX)) out.push(k.slice(TPL_PREFIX.length));
       }
       return out.sort();
     }
 
     function refreshTemplateUI() {
-      const templates = listTemplates();
       const sel = $('templateSelect');
-      sel.innerHTML = '<option value="">— pick a template —</option>' +
-        templates.map(n => `<option value="${escHtml(n)}">${escHtml(n)}</option>`).join('');
+      const local = listLocalTemplates();
+      let html = '<option value="">— pick a template —</option>';
+      if (serverTemplates.length) {
+        html += '<optgroup label="Your account">' +
+          serverTemplates.map(t =>
+            `<option value="s:${escHtml(t.id)}">${escHtml(t.name)}</option>`).join('') +
+          '</optgroup>';
+      }
+      if (local.length) {
+        html += `<optgroup label="${signedIn ? 'This browser only' : 'Saved in this browser'}">` +
+          local.map(n => `<option value="l:${escHtml(n)}">${escHtml(n)}</option>`).join('') +
+          '</optgroup>';
+      }
+      sel.innerHTML = html;
       $('templatesBar').style.display = 'flex';
+
+      const note = $('tplAccountNote');
+      if (note) {
+        note.innerHTML = signedIn
+          ? 'Templates save to your account and follow you to any device.'
+          : 'Saved in this browser only — clearing your cache loses them. ' +
+            '<a href="/tools/rail-dashboard">Create a free account</a> to keep them.';
+      }
     }
 
-    function saveTemplate() {
+    async function refreshServerTemplates() {
+      const me = await dashApi('me');
+      signedIn = Boolean(me.data && me.data.authenticated);
+      if (signedIn) {
+        const r = await dashApi('templates');
+        serverTemplates = (r.data && r.data.templates) || [];
+      } else {
+        serverTemplates = [];
+      }
+      refreshTemplateUI();
+    }
+
+    async function saveTemplate() {
       const name = prompt('Save current BoL state as template — name:');
       if (!name) return;
       const safe = name.trim().slice(0, 40);
       if (!safe) return;
+      const state = captureState();
+
+      if (signedIn) {
+        const r = await dashApi('save-template', { name: safe, payload: state });
+        if (r.status === 200 && r.data.ok) {
+          await refreshServerTemplates();
+          alert('Template saved to your account: ' + safe);
+          return;
+        }
+        // Fall through to local so the user does not lose the work.
+        alert((r.data && r.data.error) ||
+          'Could not save to your account — keeping a copy in this browser instead.');
+      }
       try {
-        localStorage.setItem(TPL_PREFIX + safe, JSON.stringify(captureState()));
+        localStorage.setItem(TPL_PREFIX + safe, JSON.stringify(state));
         refreshTemplateUI();
-        alert('Template saved: ' + safe);
+        alert(signedIn ? 'Saved in this browser: ' + safe : 'Template saved: ' + safe);
       } catch (e) {
         alert('Could not save template (storage full?).');
       }
     }
-    function loadTemplate() {
-      const name = val('templateSelect');
-      if (!name) return;
-      const raw = localStorage.getItem(TPL_PREFIX + name);
-      if (!raw) return;
+
+    function selectedTemplate() {
+      const v = val('templateSelect');
+      if (!v) return null;
+      const i = v.indexOf(':');
+      return { kind: v.slice(0, i), key: v.slice(i + 1) };
+    }
+
+    async function loadTemplate() {
+      const sel = selectedTemplate();
+      if (!sel) return;
       try {
-        const s = JSON.parse(raw);
-        loadState(s);
-        alert('Template loaded: ' + name);
+        if (sel.kind === 's') {
+          const t = serverTemplates.find(x => String(x.id) === sel.key);
+          if (!t) return;
+          loadState(t.payload);
+          alert('Template loaded: ' + t.name);
+        } else {
+          const raw = localStorage.getItem(TPL_PREFIX + sel.key);
+          if (!raw) return;
+          loadState(JSON.parse(raw));
+          alert('Template loaded: ' + sel.key);
+        }
       } catch (e) {
         alert('Could not load template.');
       }
     }
-    function deleteTemplate() {
-      const name = val('templateSelect');
-      if (!name) return;
-      if (!confirm('Delete template "' + name + '"?')) return;
-      localStorage.removeItem(TPL_PREFIX + name);
-      refreshTemplateUI();
+
+    async function deleteTemplate() {
+      const sel = selectedTemplate();
+      if (!sel) return;
+      const label = sel.kind === 's'
+        ? (serverTemplates.find(x => String(x.id) === sel.key) || {}).name || 'this template'
+        : sel.key;
+      if (!confirm('Delete template "' + label + '"?')) return;
+      if (sel.kind === 's') {
+        await dashApi('delete-template', { id: sel.key });
+        await refreshServerTemplates();
+      } else {
+        localStorage.removeItem(TPL_PREFIX + sel.key);
+        refreshTemplateUI();
+      }
     }
 
     // ───── Preview ─────
@@ -2523,7 +2611,15 @@
     renderProgress();
     showStep(1);
     refreshTemplateUI();
-    if (!listTemplates().length) $('templatesBar').style.display = 'none';
+    // Hide the bar only when there is genuinely nothing to show. The server
+    // check is async, so re-evaluate once it lands rather than flashing an
+    // empty bar and then filling it.
+    if (!listLocalTemplates().length) $('templatesBar').style.display = 'none';
+    refreshServerTemplates().then(() => {
+      if (!listLocalTemplates().length && !serverTemplates.length) {
+        $('templatesBar').style.display = 'none';
+      }
+    }).catch(() => {});
 
     // ───── Smoke-test hooks ─────
     window.__bolCaptureState = captureState;

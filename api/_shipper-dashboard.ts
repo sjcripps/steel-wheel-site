@@ -354,7 +354,12 @@ async function saveTemplate(req: VercelRequest, res: VercelResponse, body: any) 
   }
   const json = JSON.stringify(body.payload);
   if (json.length > 100_000) return bad(res, 413, 'That template is too large.');
-  await sb('sw_bol_templates', {
+  // on_conflict MUST name the unique constraint columns. Without it PostgREST
+  // resolves against the primary key, finds no conflict on a fresh uuid, and
+  // the write is silently discarded — the row keeps its old payload while the
+  // API still reports success. That is silent data loss: a shipper edits a
+  // template, is told it saved, and the edit is gone.
+  await sb('sw_bol_templates?on_conflict=shipper_id,name', {
     method: 'POST',
     body: {
       shipper_id: s.shipperId, name, payload: body.payload,
