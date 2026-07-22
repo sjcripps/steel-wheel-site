@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your saved rail lanes in one place — current indicative rate, transit estimate, and whether your railroads are running at their seasonal norm. Free for Steel Wheel shippers.">
+  <title>Shipper Dashboard | Steel Wheel Logistics</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <link rel="canonical" href="https://steelwheellogistics.com/tools/rail-dashboard">
+  <style>
+    .sd-wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px 70px; }
+    .sd-card { border: 1px solid var(--border-grey); border-radius: 9px; padding: 22px 24px; margin: 18px 0; }
+    .sd-auth { max-width: 460px; margin: 34px auto; }
+    .sd-auth label { display: block; font-size: .76rem; text-transform: uppercase; letter-spacing: .04em; color: var(--navy); font-weight: 700; margin: 14px 0 5px; }
+    .sd-auth input { width: 100%; padding: 10px; border: 1px solid var(--border-grey); border-radius: 5px; font-size: .95rem; }
+    .sd-tabs { display: flex; gap: 8px; margin-bottom: 6px; }
+    .sd-tabs button { flex: 1; padding: 9px; border: 1px solid var(--border-grey); background: var(--light-grey); border-radius: 6px; cursor: pointer; font-weight: 600; font-size: .9rem; }
+    .sd-tabs button.on { background: var(--steel-blue); color: #fff; border-color: var(--steel-blue); }
+    .sd-msg { font-size: .9rem; margin-top: 12px; line-height: 1.5; }
+    .sd-msg.err { color: #b3261e; }
+    .sd-msg.ok { color: #2e7d4f; }
+    .sd-lane-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; flex-wrap: wrap; }
+    .sd-lane-head h3 { margin: 0 0 3px; font-size: 1.08rem; }
+    .sd-lane-sub { color: var(--text-light); font-size: .85rem; }
+    .sd-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(132px, 1fr)); gap: 11px; margin-top: 15px; }
+    .sd-metric { background: var(--light-grey); border-radius: 6px; padding: 12px 14px; }
+    .sd-metric .k { font-size: .7rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-light); }
+    .sd-metric .v { font-size: 1.15rem; font-weight: 700; color: var(--navy); }
+    .sd-metric .d { font-size: .76rem; margin-top: 2px; }
+    .up { color: #b3261e; } .down { color: #2e7d4f; } .flat { color: var(--text-light); }
+    .sd-flag { display: inline-block; font-size: .7rem; padding: 2px 8px; border-radius: 3px; margin-left: 8px; vertical-align: middle; }
+    .sd-flag.degraded { background: #fdf0e3; color: #a05a12; }
+    .sd-flag.normal { background: var(--light-grey); color: var(--text-light); }
+    .sd-flag.better { background: #eaf6ee; color: #2e7d4f; }
+    .sd-flag.unknown { background: var(--light-grey); color: var(--text-light); }
+    .sd-add { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; align-items: end; }
+    .sd-add label { display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; color: var(--navy); font-weight: 700; margin-bottom: 4px; }
+    .sd-add input, .sd-add select { width: 100%; padding: 9px; border: 1px solid var(--border-grey); border-radius: 5px; font-size: .92rem; }
+    .sd-link { background: none; border: none; color: var(--steel-blue); cursor: pointer; text-decoration: underline; font-size: .85rem; padding: 0; }
+    .sd-topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 22px 0 4px; flex-wrap: wrap; }
+    .sd-empty { color: var(--text-light); font-size: .95rem; }
+    .sd-note { background: var(--light-grey); border-left: 3px solid var(--steel-blue); padding: 14px 17px; border-radius: 6px; font-size: .88rem; line-height: 1.55; margin: 20px 0; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon"><img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40"></div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a><a href="/services">Services</a><a href="/blog">Blog</a>
+        <a href="/courses">Courses</a><a href="/tools" class="active">Tools</a><a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="tool-hero">
+    <h1>Shipper Dashboard</h1>
+    <p>Save your lanes once. We watch the rate, the transit, and how your railroads are
+       actually running — and flag it when something moves.</p>
+  </div>
+
+  <div class="sd-wrap">
+    <!-- signed out -->
+    <div id="sdAuth" class="sd-card sd-auth" style="display:none">
+      <div class="sd-tabs">
+        <button id="tabSignIn" class="on" type="button">Sign in</button>
+        <button id="tabSignUp" type="button">Create account</button>
+      </div>
+      <form id="authForm">
+        <div id="nameFields" style="display:none">
+          <label for="sdName">Your name</label>
+          <input type="text" id="sdName" autocomplete="name" maxlength="200">
+          <label for="sdCompany">Company</label>
+          <input type="text" id="sdCompany" autocomplete="organization" maxlength="200">
+        </div>
+        <label for="sdEmail">Work email</label>
+        <input type="email" id="sdEmail" autocomplete="email" required>
+        <label for="sdPassword">Password</label>
+        <input type="password" id="sdPassword" autocomplete="current-password" required minlength="10">
+        <p class="sd-msg" id="pwHint" style="display:none;color:var(--text-light)">
+          At least 10 characters. Length beats symbols — a short phrase works well.</p>
+        <div style="margin-top:18px">
+          <button type="submit" class="submit-btn" id="authBtn">Sign in</button>
+        </div>
+        <p class="sd-msg" id="authMsg"></p>
+      </form>
+      <p style="margin-top:14px">
+        <button class="sd-link" id="magicBtn" type="button">Email me a sign-in link instead</button>
+      </p>
+    </div>
+
+    <!-- signed in -->
+    <div id="sdApp" style="display:none">
+      <div class="sd-topbar">
+        <div><strong id="sdWho"></strong> <span class="sd-lane-sub" id="sdCompanyLabel"></span></div>
+        <button class="sd-link" id="logoutBtn" type="button">Sign out</button>
+      </div>
+
+      <div class="sd-card">
+        <h3 style="margin-top:0">Add a lane</h3>
+        <form id="laneForm" class="sd-add">
+          <div><label for="lnOrigin">Origin</label><input id="lnOrigin" placeholder="St. Louis, MO" required></div>
+          <div><label for="lnDest">Destination</label><input id="lnDest" placeholder="Saskatoon, SK" required></div>
+          <div><label for="lnComm">Commodity</label>
+            <select id="lnComm">
+              <option value="grain">Grain</option><option value="ddgs">DDGs / Soybean Meal</option>
+              <option value="fertilizer">Fertilizer</option><option value="plastic">Plastic Pellets</option>
+              <option value="cement">Cement</option><option value="sand-frac">Frac Sand</option>
+              <option value="aggregates">Aggregates</option><option value="coal">Coal</option>
+              <option value="steel">Steel</option><option value="scrap-metal">Scrap Metal</option>
+              <option value="lumber">Lumber</option><option value="paper">Paper / Pulp</option>
+              <option value="crude-oil">Crude Oil</option><option value="ethanol">Ethanol</option>
+              <option value="chemicals">Liquid Chemicals</option><option value="lpg">Propane / LPG</option>
+              <option value="asphalt">Asphalt</option><option value="food">Food Products</option>
+              <option value="machinery">Machinery</option>
+            </select>
+          </div>
+          <div><label for="lnCars">Cars</label>
+            <select id="lnCars">
+              <option value="1">1 car</option><option value="10">2–24</option>
+              <option value="35">25–89</option><option value="110">90+ shuttle</option>
+            </select>
+          </div>
+          <div><button type="submit" class="submit-btn" id="laneBtn">Add lane</button></div>
+        </form>
+        <p class="sd-msg" id="laneMsg"></p>
+      </div>
+
+      <div id="sdLanes"></div>
+
+      <div class="sd-note">
+        Figures refresh every Tuesday. Rates are indicative estimates and transit is a planning
+        model built from public STB filings — neither is a service commitment, and we do not
+        guarantee rates or transit times. Seeing something you want to act on?
+        <a href="/contact">Talk through the lane with us</a>.
+      </div>
+    </div>
+
+    <div id="sdBoot" class="sd-empty" style="padding:40px 0">Loading…</div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a><a href="/terms-of-service">Terms of Service</a><a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const API = '/api/shipper-dashboard';
+    let mode = 'login';
+
+    function esc(s){const d=document.createElement('div');d.textContent=String(s==null?'':s);return d.innerHTML;}
+    async function api(action, payload){
+      const r = await fetch(API, {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        credentials:'same-origin',
+        body: JSON.stringify(Object.assign({action}, payload||{})),
+      });
+      let d={}; try{ d = await r.json(); }catch(e){}
+      return {status:r.status, data:d};
+    }
+    function msg(el, text, cls){ const e=document.getElementById(el); e.textContent=text||''; e.className='sd-msg'+(cls?' '+cls:''); }
+
+    // tabs
+    document.getElementById('tabSignIn').onclick = () => setMode('login');
+    document.getElementById('tabSignUp').onclick = () => setMode('signup');
+    function setMode(m){
+      mode = m;
+      document.getElementById('tabSignIn').classList.toggle('on', m==='login');
+      document.getElementById('tabSignUp').classList.toggle('on', m==='signup');
+      document.getElementById('nameFields').style.display = m==='signup' ? 'block' : 'none';
+      document.getElementById('pwHint').style.display = m==='signup' ? 'block' : 'none';
+      document.getElementById('authBtn').textContent = m==='signup' ? 'Create account' : 'Sign in';
+      document.getElementById('sdPassword').setAttribute('autocomplete', m==='signup'?'new-password':'current-password');
+      msg('authMsg','');
+    }
+
+    document.getElementById('authForm').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const btn=document.getElementById('authBtn'); btn.disabled=true;
+      const {status,data} = await api(mode, {
+        email: document.getElementById('sdEmail').value.trim(),
+        password: document.getElementById('sdPassword').value,
+        name: document.getElementById('sdName').value.trim(),
+        company: document.getElementById('sdCompany').value.trim(),
+      });
+      btn.disabled=false;
+      if(status===200 && data.ok){ await boot(); }
+      else msg('authMsg', data.error || 'Something went wrong.', 'err');
+    });
+
+    document.getElementById('magicBtn').addEventListener('click', async ()=>{
+      const email=document.getElementById('sdEmail').value.trim();
+      if(!email){ msg('authMsg','Enter your email first.','err'); return; }
+      const {data} = await api('magic-request',{email});
+      msg('authMsg', data.message || 'Check your email.', 'ok');
+    });
+
+    document.getElementById('logoutBtn').addEventListener('click', async ()=>{
+      await api('logout'); location.href='/tools/rail-dashboard';
+    });
+
+    document.getElementById('laneForm').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const btn=document.getElementById('laneBtn'); btn.disabled=true;
+      const {status,data} = await api('add-lane',{
+        origin:document.getElementById('lnOrigin').value.trim(),
+        destination:document.getElementById('lnDest').value.trim(),
+        commodity:document.getElementById('lnComm').value,
+        num_cars:Number(document.getElementById('lnCars').value),
+      });
+      btn.disabled=false;
+      if(status===200 && data.ok){
+        msg('laneMsg','Lane saved. First figures arrive with Tuesday’s refresh.','ok');
+        document.getElementById('lnOrigin').value='';
+        document.getElementById('lnDest').value='';
+        loadLanes();
+      } else msg('laneMsg', data.error||'Could not save that lane.', 'err');
+    });
+
+    function delta(now, before, invert){
+      if(now==null||before==null||Number(before)===0) return '<span class="d flat">—</span>';
+      const p=((Number(now)-Number(before))/Number(before))*100;
+      if(Math.abs(p)<1) return '<span class="d flat">no change</span>';
+      const worse = invert ? p<0 : p>0;
+      return `<span class="d ${worse?'up':'down'}">${p>0?'+':''}${p.toFixed(1)}% vs last week</span>`;
+    }
+
+    async function loadLanes(){
+      const {status,data} = await api('lanes');
+      if(status!==200){ return; }
+      const wrap=document.getElementById('sdLanes');
+      if(!data.lanes || !data.lanes.length){
+        wrap.innerHTML='<div class="sd-card sd-empty">No lanes saved yet. Add one above and we’ll start watching it.</div>';
+        return;
+      }
+      wrap.innerHTML = data.lanes.map(l=>{
+        const s=l.latest, p=l.previous;
+        const cond=(s&&s.service_condition)||'unknown';
+        const cls = cond==='degraded'?'degraded':cond==='better than normal'?'better':cond==='normal'?'normal':'unknown';
+        const metrics = s ? `
+          <div class="sd-metrics">
+            <div class="sd-metric"><div class="k">Indicative rate</div>
+              <div class="v">$${Number(s.tariff_total||0).toLocaleString(undefined,{maximumFractionDigits:0})}</div>
+              ${delta(s.tariff_total, p&&p.tariff_total, false)}</div>
+            <div class="sd-metric"><div class="k">Transit</div>
+              <div class="v">${esc(s.transit_days_low)}–${esc(s.transit_days_high)} d</div>
+              ${delta(s.transit_days_central, p&&p.transit_days_central, false)}</div>
+            <div class="sd-metric"><div class="k">Miles</div><div class="v">${esc(s.miles)}</div></div>
+            <div class="sd-metric"><div class="k">Service vs norm</div>
+              <div class="v">${s.service_pct_vs_seasonal==null?'—':(Number(s.service_pct_vs_seasonal)>0?'+':'')+s.service_pct_vs_seasonal+'%'}</div></div>
+          </div>` : '<p class="sd-empty" style="margin-top:14px">Awaiting the first refresh (Tuesdays).</p>';
+        return `<div class="sd-card">
+          <div class="sd-lane-head">
+            <div>
+              <h3>${esc(l.label)}<span class="sd-flag ${cls}">${esc(cond)}</span></h3>
+              <div class="sd-lane-sub">${esc(l.commodity)} · ${esc(l.num_cars)} car${l.num_cars>1?'s':''}${s&&s.railroads?' · '+esc(s.railroads.join(', ')):''}</div>
+            </div>
+            <button class="sd-link" data-del="${esc(l.id)}">Remove</button>
+          </div>
+          ${metrics}
+        </div>`;
+      }).join('');
+      wrap.querySelectorAll('[data-del]').forEach(b=>{
+        b.addEventListener('click', async ()=>{
+          if(!confirm('Remove this lane from your dashboard?')) return;
+          await api('delete-lane',{id:b.getAttribute('data-del')});
+          loadLanes();
+        });
+      });
+    }
+
+    async function boot(){
+      // Magic link lands here with ?t=<token>
+      const params=new URLSearchParams(location.search);
+      const t=params.get('t');
+      if(t){
+        await api('magic-verify',{token:t});
+        history.replaceState({},'', '/tools/rail-dashboard');
+      }
+      const {data} = await api('me');
+      document.getElementById('sdBoot').style.display='none';
+      if(data.authenticated){
+        document.getElementById('sdAuth').style.display='none';
+        document.getElementById('sdApp').style.display='block';
+        document.getElementById('sdWho').textContent=data.email||'';
+        document.getElementById('sdCompanyLabel').textContent=data.company?('· '+data.company):'';
+        loadLanes();
+      } else {
+        document.getElementById('sdApp').style.display='none';
+        document.getElementById('sdAuth').style.display='block';
+      }
+    }
+    boot();
+  </script>
+</body>
+</html>

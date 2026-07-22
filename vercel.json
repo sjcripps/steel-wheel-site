@@ -93,6 +93,10 @@
     {
       "source": "/api/rail-transit-time",
       "destination": "/api/tool-lead?tool=transit-time"
+    },
+    {
+      "source": "/api/shipper-dashboard",
+      "destination": "/api/tool-lead?tool=shipper-dashboard"
     }
   ],
   "headers": [
