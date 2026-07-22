@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Current mileage-based rail fuel surcharge factors for BNSF, Union Pacific, CSX, Norfolk Southern, CN and CPKC. Updated Jul 1, 2026, with the formula and source behind each number.">
+  <title>Rail Fuel Surcharge Rates by Carrier | Steel Wheel Logistics</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <link rel="canonical" href="https://steelwheellogistics.com/tools/rail-fuel-surcharge">
+  <meta property="og:title" content="Rail Fuel Surcharge Rates by Carrier | Steel Wheel Logistics">
+  <meta property="og:description" content="Current mileage-based rail fuel surcharge factors for BNSF, Union Pacific, CSX, Norfolk Southern, CN and CPKC. Updated Jul 1, 2026, with the formula and source behind each number.">
+  <meta property="og:url" content="https://steelwheellogistics.com/tools/rail-fuel-surcharge">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "North American Rail Fuel Surcharge Factors",
+    "description": "Current mileage-based rail fuel surcharge factors for BNSF, Union Pacific, CSX, Norfolk Southern, CN and CPKC. Updated Jul 1, 2026, with the formula and source behind each number.",
+    "url": "https://steelwheellogistics.com/tools/rail-fuel-surcharge",
+    "isAccessibleForFree": true,
+    "creator": {
+      "@type": "Organization",
+      "name": "Steel Wheel Logistics",
+      "url": "https://steelwheellogistics.com/"
+    },
+    "temporalCoverage": "2026-07-01T06:00:01Z",
+    "variableMeasured": "Mileage-based fuel surcharge factor (cents per mile)"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://steelwheellogistics.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://steelwheellogistics.com/tools"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Rail Fuel Surcharge Rates",
+        "item": "https://steelwheellogistics.com/tools/rail-fuel-surcharge"
+      }
+    ]
+  }
+  </script>
+  <style>
+    .fsc-wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px 60px; }
+    .fsc-table { width: 100%; border-collapse: collapse; margin: 24px 0 8px; font-size: 0.95rem; }
+    .fsc-table th, .fsc-table td { padding: 11px 12px; border-bottom: 1px solid var(--border-grey); text-align: left; }
+    .fsc-table th { background: var(--light-grey); font-size: 0.78rem; text-transform: uppercase; letter-spacing: .04em; }
+    .fsc-num { font-weight: 700; font-size: 1.05rem; white-space: nowrap; }
+    .fsc-prov { font-size: 0.82rem; color: var(--text-light); }
+    .fsc-stale { background: #fdf0e3; color: #a05a12; font-size: .68rem; padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+    .fsc-scroll { overflow-x: auto; }
+    .fsc-card { border: 1px solid var(--border-grey); border-radius: 8px; padding: 20px 22px; margin: 18px 0; }
+    .fsc-card h3 { margin: 0 0 4px; }
+    .fsc-headline { margin: 0 0 12px; font-size: 1.05rem; }
+    .fsc-variants { list-style: none; padding: 0; margin: 0 0 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .fsc-variants li { background: var(--light-grey); border-radius: 5px; padding: 6px 11px; font-size: .85rem; }
+    .fsc-variants strong { margin-left: 7px; }
+    .fsc-meta { margin: 0; font-size: .9rem; line-height: 1.55; }
+    .fsc-meta dt { font-weight: 700; color: var(--navy); margin-top: 9px; font-size: .78rem; text-transform: uppercase; letter-spacing: .03em; }
+    .fsc-meta dd { margin: 2px 0 0; }
+    .fsc-note { background: var(--light-grey); border-left: 3px solid var(--steel-blue); padding: 15px 18px; border-radius: 6px; font-size: .9rem; line-height: 1.55; margin: 22px 0; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog">Blog</a>
+        <a href="/courses">Courses</a>
+        <a href="/tools" class="active">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="tool-hero">
+    <div class="badge">Updated Jul 1, 2026</div>
+    <h1>Rail Fuel Surcharge Rates by Carrier</h1>
+    <p>Current mileage-based fuel surcharge factors for the six Class I railroads, with the
+       formula and the carrier source behind every number. Refreshed monthly.</p>
+  </div>
+
+  <div class="fsc-wrap">
+    <p>On-highway diesel (HDF) reference used this cycle: <strong>$5.0238/gal</strong>.
+       Mileage-based programs multiply these factors by the miles your car runs, so a
+       51&cent;/mile factor on a
+       1,500-mile move is roughly
+       $765 per car.</p>
+
+    <div class="fsc-scroll">
+      <table class="fsc-table">
+        <thead>
+          <tr><th>Railroad</th><th>Factor</th><th>Effective</th><th>Next revision</th><th>Basis</th></tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="#bnsf">BNSF Railway</a></td>
+          <td class="fsc-num">51¢</td>
+          <td>Aug 1, 2026</td>
+          <td>Sep 1, 2026</td>
+          <td class="fsc-prov">Formula-derived</td>
+        </tr>
+        <tr>
+          <td><a href="#up">Union Pacific</a></td>
+          <td class="fsc-num">59¢</td>
+          <td>Aug 1, 2026</td>
+          <td>Sep 1, 2026</td>
+          <td class="fsc-prov">Formula-derived</td>
+        </tr>
+        <tr>
+          <td><a href="#csxt">CSX Transportation</a></td>
+          <td class="fsc-num">32¢</td>
+          <td>Aug 1, 2026</td>
+          <td>Sep 1, 2026</td>
+          <td class="fsc-prov">Formula-derived</td>
+        </tr>
+        <tr>
+          <td><a href="#ns">Norfolk Southern</a></td>
+          <td class="fsc-num">64¢</td>
+          <td>Aug 1, 2026</td>
+          <td>Sep 1, 2026</td>
+          <td class="fsc-prov">Formula-derived</td>
+        </tr>
+        <tr>
+          <td><a href="#cn">Canadian National</a></td>
+          <td class="fsc-num">65¢</td>
+          <td>Aug 1, 2026</td>
+          <td>Sep 1, 2026</td>
+          <td class="fsc-prov">Formula-derived</td>
+        </tr>
+        <tr>
+          <td><a href="#cpkc">Canadian Pacific Kansas City</a></td>
+          <td class="fsc-num">69¢</td>
+          <td>Jul 1, 2026</td>
+          <td>Jul 1 - Jul 15, 2026</td>
+          <td class="fsc-prov">Published table</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="fsc-note">
+      <strong>How to read this.</strong> Most Class I fuel surcharges are mileage-based:
+      a cents-per-mile factor that resets monthly against the average on-highway diesel
+      price two months prior. Programs differ by strike price, rounding, and whether your
+      traffic moves under public tariff or contract, which is why several carriers below
+      show more than one factor. Where a row is marked formula-derived, we calculate it
+      from the carrier's published formula rather than reading a posted table — check the
+      carrier source before you invoice against it. These figures are for planning; we do
+      not guarantee rates.
+    </div>
+
+
+      <section class="fsc-card" id="bnsf">
+        <h3>BNSF Railway Fuel Surcharge</h3>
+        <p class="fsc-headline"><strong>51¢ per mile</strong>
+           &middot; effective Aug 1, 2026</p>
+          <ul class="fsc-variants">
+            <li><span>$1.25 strike</span><strong>76¢ per mile</strong></li>
+            <li><span>$2.50 strike</span><strong>51¢ per mile</strong></li>
+            <li><span>$3.25 strike</span><strong>36¢ per mile</strong></li>
+          </ul>
+          <dl class="fsc-meta">
+            <dt>How it is set</dt><dd>BNSF Rules Book 6100-B Item 3376 Section B (mileage, $2.50 strike): 1c/mi per each 5c/gal HDF over $2.50, ceiling rounding</dd>
+            <dt>Diesel basis (HDF)</dt><dd>$5.0238/gal
+                (month 2026-06)</dd>
+            <dt>Baseline / strike</dt><dd>$2.50/gal</dd>
+            <dt>Next revision</dt><dd>2026-09-01</dd>
+            <dt>Basis</dt><dd>Formula-derived — Calculated from the carrier&#x27;s published formula and this month&#x27;s average on-highway diesel price. Not a quoted tariff table — confirm against the carrier source before invoicing.</dd>
+            <dt>Carrier source</dt><dd><a href="https://www.bnsf.com/ship-with-bnsf/tools/fuel-surcharge.html" rel="nofollow noopener" target="_blank">BNSF published terms</a></dd>
+          </dl>
+      </section>
+
+      <section class="fsc-card" id="up">
+        <h3>Union Pacific Fuel Surcharge</h3>
+        <p class="fsc-headline"><strong>59¢ per mile</strong>
+           &middot; effective Aug 1, 2026</p>
+          <dl class="fsc-meta">
+            <dt>How it is set</dt><dd>UP-6004 Carload Mileage-Based Standard HDF Fuel Surcharge: 5c/mi at HDF $2.30, +1c/mi per each 5c/gal increment above, floor rounding</dd>
+            <dt>Diesel basis (HDF)</dt><dd>$5.0238/gal
+                (month 2026-06)</dd>
+            <dt>Baseline / strike</dt><dd>$2.30/gal</dd>
+            <dt>Next revision</dt><dd>2026-09-01</dd>
+            <dt>Basis</dt><dd>Formula-derived — Calculated from the carrier&#x27;s published formula and this month&#x27;s average on-highway diesel price. Not a quoted tariff table — confirm against the carrier source before invoicing.</dd>
+            <dt>Carrier source</dt><dd><a href="https://www.up.com/shipping/surcharge/mileage" rel="nofollow noopener" target="_blank">UP published terms</a></dd>
+          </dl>
+      </section>
+
+      <section class="fsc-card" id="csxt">
+        <h3>CSX Transportation Fuel Surcharge</h3>
+        <p class="fsc-headline"><strong>32¢ per mile</strong>
+           &middot; effective Aug 1, 2026</p>
+          <ul class="fsc-variants">
+            <li><span>CSXT 8662 (public)</span><strong>32¢ per mile</strong></li>
+            <li><span>CSXT 8661 (contract)</span><strong>75¢ per mile</strong></li>
+          </ul>
+          <dl class="fsc-meta">
+            <dt>How it is set</dt><dd>CSXT 8662 (public): 1c/mi per each 4c/gal HDF over $3.749, ceiling rounding. CSXT 8661 (contract): 1c/mi per 4c/gal HDF over $2.00, floor.</dd>
+            <dt>Diesel basis (HDF)</dt><dd>$5.0238/gal
+                (month 2026-06)</dd>
+            <dt>Baseline / strike</dt><dd>$3.75/gal</dd>
+            <dt>Next revision</dt><dd>2026-09-01</dd>
+            <dt>Basis</dt><dd>Formula-derived — Calculated from the carrier&#x27;s published formula and this month&#x27;s average on-highway diesel price. Not a quoted tariff table — confirm against the carrier source before invoicing.</dd>
+            <dt>Carrier source</dt><dd><a href="https://www.csx.com/index.cfm/customers/resources/price-lists-and-fuel-surcharge/fuel-surcharge/" rel="nofollow noopener" target="_blank">CSXT published terms</a></dd>
+          </dl>
+      </section>
+
+      <section class="fsc-card" id="ns">
+        <h3>Norfolk Southern Fuel Surcharge</h3>
+        <p class="fsc-headline"><strong>64¢ per mile</strong>
+           &middot; effective Aug 1, 2026</p>
+          <dl class="fsc-meta">
+            <dt>How it is set</dt><dd>NS $2.50 Mileage-Based Fuel Surcharge Program: 1c/mi per each 4c/gal HDF over $2.50, ceiling rounding (or portion thereof)</dd>
+            <dt>Diesel basis (HDF)</dt><dd>$5.0238/gal
+                (month 2026-06)</dd>
+            <dt>Baseline / strike</dt><dd>$2.50/gal</dd>
+            <dt>Next revision</dt><dd>2026-09-01</dd>
+            <dt>Basis</dt><dd>Formula-derived — Calculated from the carrier&#x27;s published formula and this month&#x27;s average on-highway diesel price. Not a quoted tariff table — confirm against the carrier source before invoicing.</dd>
+            <dt>Carrier source</dt><dd><a href="https://www.norfolksouthern.com/en/ship-by-rail/shipping-tools/terms-conditions/fuel-surcharges" rel="nofollow noopener" target="_blank">NS published terms</a></dd>
+          </dl>
+      </section>
+
+      <section class="fsc-card" id="cn">
+        <h3>Canadian National Fuel Surcharge</h3>
+        <p class="fsc-headline"><strong>65¢ per mile</strong>
+           &middot; effective Aug 1, 2026</p>
+          <ul class="fsc-variants">
+            <li><span>Carload</span><strong>65¢ per mile</strong></li>
+            <li><span>Bulk</span><strong>62¢ per mile</strong></li>
+          </ul>
+          <dl class="fsc-meta">
+            <dt>How it is set</dt><dd>CN 7403 U.S. Carload Mileage Fuel Surcharge: $0.0060/mi (carload, all-other) or $0.00575/mi (bulk) per $0.025/gal HDF over $2.30, floor rounding</dd>
+            <dt>Diesel basis (HDF)</dt><dd>$5.0238/gal
+                (month 2026-06)</dd>
+            <dt>Baseline / strike</dt><dd>$2.30/gal</dd>
+            <dt>Next revision</dt><dd>2026-09-01</dd>
+            <dt>Basis</dt><dd>Formula-derived — Calculated from the carrier&#x27;s published formula and this month&#x27;s average on-highway diesel price. Not a quoted tariff table — confirm against the carrier source before invoicing.</dd>
+            <dt>Carrier source</dt><dd><a href="https://www.cn.ca/en/customer-centre/prices-tariffs-transit-times/fuel-surcharge/" rel="nofollow noopener" target="_blank">CN published terms</a></dd>
+          </dl>
+      </section>
+
+      <section class="fsc-card" id="cpkc">
+        <h3>Canadian Pacific Kansas City Fuel Surcharge</h3>
+        <p class="fsc-headline"><strong>69¢ per mile</strong>
+           &middot; effective Jul 1, 2026</p>
+          <ul class="fsc-variants">
+            <li><span>Carload</span><strong>69¢ per mile</strong></li>
+            <li><span>Bulk</span><strong>64¢ per mile</strong></li>
+          </ul>
+          <dl class="fsc-meta">
+            <dt>How it is set</dt><dd>CPKC Tariff 9700 (PDF-published bi-weekly table). Active period Jul 1 - Jul 15, 2026 carload USD = $0.6900/mi at OHD $5.280/gal.</dd>
+            <dt>Diesel basis (HDF)</dt><dd>$5.2800/gal
+                (month 2026-07)</dd>
+            <dt>Baseline / strike</dt><dd>—</dd>
+            <dt>Next revision</dt><dd>Jul 1 - Jul 15, 2026</dd>
+            <dt>Basis</dt><dd>Published table — Parsed directly from the carrier&#x27;s published fuel surcharge table.</dd>
+            <dt>Carrier source</dt><dd><a href="https://www.cpkcr.com/en/customer-resources/tools/price-public/fuel-surcharge-program" rel="nofollow noopener" target="_blank">CPKC published terms</a></dd>
+          </dl>
+      </section>
+
+    <div class="fsc-note">
+      <strong>Working a specific lane?</strong> Fuel is one line on the invoice. Our
+      <a href="/tools/rail-rate-quote">rail rate estimator</a> puts line-haul, fuel, and
+      switching together for your origin and destination, or
+      <a href="/contact">talk through your lane with us</a>.
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

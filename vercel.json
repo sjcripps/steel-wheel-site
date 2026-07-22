@@ -89,6 +89,10 @@
     {
       "source": "/api/sublease-lead",
       "destination": "/api/tool-lead?tool=sublease"
+    },
+    {
+      "source": "/api/rail-transit-time",
+      "destination": "/api/tool-lead?tool=transit-time"
     }
   ],
   "headers": [

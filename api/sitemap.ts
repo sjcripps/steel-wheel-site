@@ -41,6 +41,10 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
       { loc: "/tools/commodity-flow-map", priority: "0.8", changefreq: "monthly" },
       { loc: "/tools/storage-locator", priority: "0.8", changefreq: "monthly" },
       { loc: "/tools/sublease-board", priority: "0.8", changefreq: "weekly" },
+      // Regenerated from data/fsc/current.json on the 1st of each month, so
+      // changefreq is monthly and genuinely accurate.
+      { loc: "/tools/rail-fuel-surcharge", priority: "0.9", changefreq: "monthly" },
+      { loc: "/tools/rail-transit-time", priority: "0.9", changefreq: "weekly" },
       { loc: "/privacy-policy", priority: "0.3", changefreq: "yearly" },
       { loc: "/terms-of-service", priority: "0.3", changefreq: "yearly" },
     ];

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Estimate rail freight transit time between any two U.S. points, built from 9 years of STB Class I service filings — train speed by service type, terminal dwell, and how your railroads are running versus their seasonal norm.">
+  <title>Rail Transit Time Calculator | Steel Wheel Logistics</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <link rel="canonical" href="https://steelwheellogistics.com/tools/rail-transit-time">
+  <meta property="og:title" content="Rail Transit Time Calculator | Steel Wheel Logistics">
+  <meta property="og:description" content="Estimate rail freight transit time from real STB Class I service data — speed by train type, terminal dwell, and current service conditions.">
+  <meta property="og:url" content="https://steelwheellogistics.com/tools/rail-transit-time">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Rail Transit Time Calculator",
+    "url": "https://steelwheellogistics.com/tools/rail-transit-time",
+    "description": "Estimate rail freight transit time between two U.S. points using STB EP 724 Class I service filings.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any (web browser)",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "provider": { "@type": "Organization", "name": "Steel Wheel Logistics", "url": "https://steelwheellogistics.com/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://steelwheellogistics.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://steelwheellogistics.com/tools" },
+      { "@type": "ListItem", "position": 3, "name": "Rail Transit Time Calculator", "item": "https://steelwheellogistics.com/tools/rail-transit-time" }
+    ]
+  }
+  </script>
+  <style>
+    .tt-wrap { max-width: 1000px; margin: 0 auto; padding: 0 20px 60px; }
+    .tt-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin: 26px 0 8px; }
+    .tt-form label { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; color: var(--navy); font-weight: 700; margin-bottom: 5px; }
+    .tt-form input, .tt-form select { width: 100%; padding: 10px; border: 1px solid var(--border-grey); border-radius: 5px; font-size: .95rem; }
+    .tt-submit { margin: 6px 0 0; }
+    .tt-result { display: none; margin-top: 26px; }
+    .tt-headline { border: 1px solid var(--border-grey); border-left: 4px solid var(--steel-blue); border-radius: 8px; padding: 22px 24px; }
+    .tt-days { font-size: 2.3rem; font-weight: 800; line-height: 1.1; color: var(--navy); }
+    .tt-days small { font-size: 1rem; font-weight: 500; color: var(--text-light); }
+    .tt-sub { margin: 6px 0 0; color: var(--text-light); font-size: .92rem; }
+    .tt-cond { margin-top: 16px; padding: 14px 18px; border-radius: 6px; font-size: .92rem; line-height: 1.55; }
+    .tt-cond.normal { background: var(--light-grey); border-left: 3px solid var(--steel-blue); }
+    .tt-cond.degraded { background: #fdf0e3; border-left: 3px solid #c47f17; }
+    .tt-cond.better { background: #eaf6ee; border-left: 3px solid #2e8b57; }
+    .tt-cond.unknown { background: var(--light-grey); border-left: 3px solid var(--border-grey); }
+    .tt-split { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 18px; }
+    .tt-stat { background: var(--light-grey); border-radius: 6px; padding: 13px 15px; }
+    .tt-stat .k { font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-light); }
+    .tt-stat .v { font-size: 1.2rem; font-weight: 700; color: var(--navy); }
+    .tt-table { width: 100%; border-collapse: collapse; margin-top: 22px; font-size: .92rem; }
+    .tt-table th, .tt-table td { padding: 10px 11px; border-bottom: 1px solid var(--border-grey); text-align: left; }
+    .tt-table th { background: var(--light-grey); font-size: .74rem; text-transform: uppercase; letter-spacing: .04em; }
+    .tt-scroll { overflow-x: auto; }
+    .tt-note { background: var(--light-grey); border-left: 3px solid var(--steel-blue); padding: 15px 18px; border-radius: 6px; font-size: .89rem; line-height: 1.55; margin: 22px 0; }
+    .tt-note ul { margin: 8px 0 0; padding-left: 20px; }
+    .tt-err { color: #b3261e; font-size: .92rem; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog">Blog</a>
+        <a href="/courses">Courses</a>
+        <a href="/tools" class="active">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="tool-hero">
+    <div class="badge">Built on 9 years of STB filings</div>
+    <h1>Rail Transit Time Calculator</h1>
+    <p>Estimate how long a carload move takes, using the Class I service data the railroads
+       file weekly with the Surface Transportation Board — and see whether your carriers are
+       running at their normal pace right now.</p>
+  </div>
+
+  <div class="tt-wrap">
+    <form id="ttForm" autocomplete="off">
+      <div class="tt-form">
+        <div>
+          <label for="origin">Origin</label>
+          <input type="text" id="origin" placeholder="e.g. St. Louis, MO" required>
+        </div>
+        <div>
+          <label for="destination">Destination</label>
+          <input type="text" id="destination" placeholder="e.g. Saskatoon, SK" required>
+        </div>
+        <div>
+          <label for="commodity">Commodity</label>
+          <select id="commodity">
+            <option value="grain">Grain (corn, wheat, soybeans)</option>
+            <option value="ddgs">DDGs / Soybean Meal</option>
+            <option value="fertilizer">Fertilizer (dry)</option>
+            <option value="plastic">Plastic Pellets</option>
+            <option value="cement">Cement</option>
+            <option value="sand-frac">Frac Sand</option>
+            <option value="aggregates">Aggregates</option>
+            <option value="coal">Coal</option>
+            <option value="steel">Steel</option>
+            <option value="scrap-metal">Scrap Metal</option>
+            <option value="lumber">Lumber</option>
+            <option value="paper">Paper / Pulp</option>
+            <option value="crude-oil">Crude Oil</option>
+            <option value="ethanol">Ethanol</option>
+            <option value="chemicals">Liquid Chemicals</option>
+            <option value="lpg">Propane / LPG</option>
+            <option value="asphalt">Asphalt</option>
+            <option value="food">Food Products</option>
+            <option value="machinery">Machinery</option>
+          </select>
+        </div>
+        <div>
+          <label for="num_cars">Cars in Shipment</label>
+          <select id="num_cars">
+            <option value="1">1 car</option>
+            <option value="10">2–24 cars</option>
+            <option value="35">25–89 cars</option>
+            <option value="110">90+ cars (shuttle / unit train)</option>
+          </select>
+        </div>
+      </div>
+      <div class="tt-submit">
+        <button type="submit" class="submit-btn" id="ttBtn">Estimate Transit Time</button>
+        <span class="tt-err" id="ttErr"></span>
+      </div>
+    </form>
+
+    <div class="tt-result" id="ttResult">
+      <div class="tt-headline">
+        <div class="tt-days" id="ttDays"></div>
+        <p class="tt-sub" id="ttSub"></p>
+        <div class="tt-split" id="ttSplit"></div>
+      </div>
+      <div class="tt-cond" id="ttCond"></div>
+      <div class="tt-scroll">
+        <table class="tt-table" id="ttLegs">
+          <thead>
+            <tr><th>Railroad</th><th>Miles</th><th>Speed</th><th>Basis</th><th>vs seasonal norm</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="tt-note" id="ttCaveats"></div>
+      <div class="tt-note">
+        <strong>Need the cost too?</strong> Our
+        <a href="/tools/rail-rate-quote">rail rate estimator</a> prices the same lane —
+        line-haul, fuel, and switching — or
+        <a href="/contact">talk through your lane with us</a>.
+      </div>
+    </div>
+
+    <div class="tt-note">
+      <strong>How this works.</strong> Class I railroads file average train speed by service
+      type and average terminal dwell with the STB every week under EP 724. We route your lane
+      across the North American rail network, apply each carrier's current speed for the way
+      your traffic actually moves, and add dwell for origin, destination, and each interchange.
+      Unit and shuttle trains bypass classification, so they carry fewer dwell events than a
+      single manifest car. The seasonal comparison uses the same week in prior years, because
+      rail service is strongly seasonal — comparing against a trailing average would report
+      winter as a service failure.
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('ttForm');
+    const btn = document.getElementById('ttBtn');
+    const errEl = document.getElementById('ttErr');
+    const resEl = document.getElementById('ttResult');
+
+    function esc(s) {
+      const d = document.createElement('div');
+      d.textContent = String(s == null ? '' : s);
+      return d.innerHTML;
+    }
+
+    form.addEventListener('submit', async (ev) => {
+      ev.preventDefault();
+      errEl.textContent = '';
+      btn.disabled = true;
+      btn.textContent = 'Estimating…';
+      try {
+        const r = await fetch('/api/rail-transit-time', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            origin: document.getElementById('origin').value.trim(),
+            destination: document.getElementById('destination').value.trim(),
+            commodity: document.getElementById('commodity').value,
+            num_cars: Number(document.getElementById('num_cars').value),
+          }),
+        });
+        const d = await r.json();
+        if (!r.ok || d.error) {
+          errEl.textContent = d.error || 'Something went wrong. Please try again.';
+          resEl.style.display = 'none';
+          return;
+        }
+        render(d);
+      } catch (e) {
+        errEl.textContent = 'Could not reach the transit engine. Please try again, or call (601) 821-2199.';
+        resEl.style.display = 'none';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Estimate Transit Time';
+      }
+    });
+
+    function render(d) {
+      document.getElementById('ttDays').innerHTML =
+        esc(d.days_low) + '–' + esc(d.days_high) + ' <small>days</small>';
+      document.getElementById('ttSub').textContent =
+        `${d.origin} to ${d.destination} · ${d.miles} rail miles · ${d.service_type} service · ` +
+        `central estimate ${d.days_central} days`;
+
+      document.getElementById('ttSplit').innerHTML = [
+        ['Road time', d.road_days + ' d'],
+        ['Dwell time', d.dwell_days + ' d'],
+        ['Dwell events', d.dwell_events],
+        ['Avg terminal dwell', d.avg_dwell_hours + ' h'],
+      ].map(([k, v]) =>
+        `<div class="tt-stat"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div></div>`
+      ).join('');
+
+      const sc = d.service_condition || {};
+      const cls = sc.label === 'degraded' ? 'degraded'
+                : sc.label === 'better than normal' ? 'better'
+                : sc.label === 'unknown' ? 'unknown' : 'normal';
+      const condEl = document.getElementById('ttCond');
+      condEl.className = 'tt-cond ' + cls;
+      condEl.innerHTML = '<strong>Service conditions: ' + esc(sc.label || 'unknown') +
+        '</strong><br>' + esc(sc.note || '');
+
+      const tb = document.querySelector('#ttLegs tbody');
+      tb.innerHTML = (d.legs || []).map(l => {
+        const pct = l.speed_vs_seasonal_pct;
+        const pctTxt = (pct === null || pct === undefined) ? '—'
+          : (pct > 0 ? '+' : '') + pct + '%';
+        return `<tr><td>${esc(l.railroad)}</td><td>${esc(l.miles)}</td>` +
+               `<td>${esc(l.speed_mph)} mph</td><td>${esc(l.train_type_used)}</td>` +
+               `<td>${esc(pctTxt)}</td></tr>`;
+      }).join('');
+
+      document.getElementById('ttCaveats').innerHTML =
+        '<strong>What this estimate does and does not know</strong><ul>' +
+        (d.caveats || []).map(c => '<li>' + esc(c) + '</li>').join('') +
+        `<li>Service data as of ${esc(d.data_as_of)}, drawn from ${esc(d.history_weeks)} weeks of STB filings.</li>` +
+        '</ul>';
+
+      resEl.style.display = 'block';
+      resEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  </script>
+</body>
+</html>

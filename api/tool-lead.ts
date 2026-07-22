@@ -3,6 +3,7 @@ import commodityFlow from './_commodity-flow-lead';
 import fleetCalculator from './_fleet-calculator-lead';
 import storageLocator from './_storage-locator-lead';
 import sublease from './_sublease-lead';
+import transitTime from './_rail-transit-time';
 
 // Multiplexer for the four newest tool lead-capture endpoints. Each used to be
 // its own Serverless Function, but the Hobby plan caps a deployment at 12
@@ -21,6 +22,9 @@ const ROUTES: Record<string, Handler> = {
   'fleet-calculator': fleetCalculator,
   'storage-locator': storageLocator,
   'sublease': sublease,
+  // Not a lead route — a public, ungated transit lookup. It rides this
+  // dispatcher purely to stay under the 12-function Hobby cap.
+  'transit-time': transitTime,
 };
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
