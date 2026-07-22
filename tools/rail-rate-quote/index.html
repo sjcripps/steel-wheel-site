@@ -535,6 +535,24 @@
       line-height: 1.55;
       margin-bottom: 20px;
     }
+    /* Shipment-size context. Amber rail when we ASSUMED single car (the
+       shipper left it blank and the number they're looking at is the
+       highest tier); neutral steel rail when they told us. */
+    .shipment-size-note {
+      background: var(--light-grey);
+      border-left: 3px solid var(--steel-blue);
+      padding: 16px 20px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: var(--text-body);
+      margin-bottom: 16px;
+    }
+    .shipment-size-note.assumed {
+      border-left-color: #c47f17;
+      background: #fdf6ea;
+    }
+    .shipment-size-note strong { display: block; margin-bottom: 4px; }
     .routing-notes {
       font-size: 0.85rem;
       color: var(--text-light);
@@ -726,6 +744,55 @@
        block the LCP; the Download PDF button checks window.jspdf before firing. -->
   <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Rail Freight Rates \u2014 Instant Estimate by Lane",
+    "url": "https://steelwheellogistics.com/tools/rail-rate-quote",
+    "description": "Estimate rail freight cost on any U.S. lane in seconds. Enter origin, destination and commodity for an indicative rate \u2014 free, no signup.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any (web browser)",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Steel Wheel Logistics",
+      "url": "https://steelwheellogistics.com/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://steelwheellogistics.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://steelwheellogistics.com/tools"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Rail Freight Rates \u2014 Instant Estimate by Lane",
+        "item": "https://steelwheellogistics.com/tools/rail-rate-quote"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -804,6 +871,17 @@
           <div class="form-group">
             <label for="weight_tons">Weight per Car <span class="hint">(tons, default 100)</span></label>
             <input type="number" id="weight_tons" min="1" max="130" step="1" value="100" required>
+          </div>
+
+          <div class="form-group">
+            <label for="num_cars">Cars in Shipment <span class="hint">(optional — changes the rate tier)</span></label>
+            <select id="num_cars">
+              <option value="">Not sure yet</option>
+              <option value="1">1 car</option>
+              <option value="10">2–24 cars</option>
+              <option value="35">25–89 cars</option>
+              <option value="110">90+ cars (shuttle / unit train)</option>
+            </select>
           </div>
 
         </div>
@@ -888,6 +966,8 @@
           <strong>Routing notes:</strong>
           <ul id="routingNotesList"></ul>
         </div>
+
+        <div class="shipment-size-note" id="shipmentSizeNote" style="display:none"></div>
 
         <div class="disclaimer" id="disclaimer"></div>
 
@@ -1326,7 +1406,7 @@
     });
 
     function buildPayload(extra) {
-      return Object.assign({
+      const payload = {
         origin: document.getElementById('origin').value.trim(),
         destination: document.getElementById('destination').value.trim(),
         commodity: document.getElementById('commodity').value,
@@ -1335,7 +1415,13 @@
         year: 2024,
         name: cachedName(),
         phone: cachedPhone(),
-      }, extra || {});
+      };
+      // Optional. Omitted entirely when the shipper hasn't told us — the
+      // engine then prices single-car, which is the conservative (highest)
+      // tier, and flags the response so we can explain that.
+      const cars = (document.getElementById('num_cars') || {}).value;
+      if (cars) payload.num_cars = Number(cars);
+      return Object.assign(payload, extra || {});
     }
 
     async function runQuote(email) {
@@ -1943,6 +2029,29 @@
           notesBlock.style.display = 'none';
         }
       } catch (e) { console.warn('routing notes skipped:', e); }
+
+      try {
+        const box = document.getElementById('shipmentSizeNote');
+        const ss = d.shipment_size;
+        if (ss && ss.note) {
+          const heading = ss.assumed
+            ? 'Priced as a single car — you didn’t set a car count'
+            : (ss.tier === 'shuttle' ? 'Priced as a shuttle / unit train'
+               : ss.tier === 'block' ? `Priced as a ${ss.num_cars}-car block`
+               : 'Priced as a single car');
+          box.className = 'shipment-size-note' + (ss.assumed ? ' assumed' : '');
+          box.innerHTML = '';
+          const h = document.createElement('strong');
+          h.textContent = heading;
+          const p = document.createElement('span');
+          p.textContent = ss.note;
+          box.appendChild(h);
+          box.appendChild(p);
+          box.style.display = 'block';
+        } else {
+          box.style.display = 'none';
+        }
+      } catch (e) { console.warn('shipment size note skipped:', e); }
 
       try { document.getElementById('disclaimer').textContent = d.disclaimer || ''; } catch (e) {}
 

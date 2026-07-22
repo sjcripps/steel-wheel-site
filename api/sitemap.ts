@@ -30,6 +30,17 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
       { loc: "/tools/demurrage-calculator", priority: "0.8", changefreq: "monthly" },
       { loc: "/tools/railcar-selector", priority: "0.8", changefreq: "monthly" },
       { loc: "/tools/rail-bol-builder", priority: "0.8", changefreq: "monthly" },
+      // Added 2026-07-22. These six shipped but were never added here, so
+      // they had no crawl path from the sitemap — 9 of 11 tools had zero GSC
+      // impressions over 90 days. Tool pages convert impressions to clicks at
+      // ~2x the position benchmark (vs ~0.16x for informational blog posts),
+      // so visibility here is the binding constraint, not page quality.
+      { loc: "/tools/rail-vs-truck", priority: "0.8", changefreq: "monthly" },
+      { loc: "/tools/rail-fleet-calculator", priority: "0.8", changefreq: "monthly" },
+      { loc: "/tools/rail-served-businesses", priority: "0.8", changefreq: "monthly" },
+      { loc: "/tools/commodity-flow-map", priority: "0.8", changefreq: "monthly" },
+      { loc: "/tools/storage-locator", priority: "0.8", changefreq: "monthly" },
+      { loc: "/tools/sublease-board", priority: "0.8", changefreq: "weekly" },
       { loc: "/privacy-policy", priority: "0.3", changefreq: "yearly" },
       { loc: "/terms-of-service", priority: "0.3", changefreq: "yearly" },
     ];
