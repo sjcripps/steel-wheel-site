@@ -28,15 +28,42 @@ const SYNTHETIC_PREFIXES = ['qa-', 'smoke-', 'test-', 'monitor-', 'probe-', 'hea
 // are caught.
 const SYNTHETIC_TAG_WORDS = ['test', 'smoke', 'qa', 'probe', 'monitor', 'healthcheck'];
 
+// Our own automation box. A submission whose origin IP is this host is by
+// definition ours — no customer's browser ever egresses from our EC2 server.
+// This is the only rule that survives an attacker-shaped probe: on 2026-07-22
+// two `diagnostic.check*@prairiegrain-example.com` probes spoofed a Chrome
+// user-agent AND used a local part outside SYNTHETIC_PREFIXES, so both the
+// email rule and the UA rule missed them. The origin IP did not.
+const OWN_EGRESS_IPS = new Set(
+  (process.env.SWL_OWN_EGRESS_IPS || '54.211.122.167')
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean)
+);
+
+/** Pull the true client IP from proxy headers, matching what we log on the record. */
+export function clientIpFrom(req: { headers: Record<string, unknown> }): string {
+  return String(
+    req.headers['cf-connecting-ip'] ||
+    req.headers['x-real-ip'] ||
+    (req.headers['x-forwarded-for'] || '').toString().split(',')[0].trim() ||
+    ''
+  );
+}
+
 /**
  * True when this submission is our own test traffic rather than a real lead.
  * Deliberately conservative on the domain check: `jacob@steelwheellogistics.com`
  * is a real address, so we only treat OWN-DOMAIN mail as synthetic when the
  * local part carries a probe prefix — never the bare domain.
  */
-export function isSyntheticLead(email: string, userAgent = ''): boolean {
+export function isSyntheticLead(email: string, userAgent = '', ip = ''): boolean {
   const addr = email.trim().toLowerCase();
   if (addr.endsWith('@anthropic.com')) return true;
+
+  // Checked first: independent of anything the caller controls, so it holds
+  // even when the email and user-agent are dressed up to look human.
+  if (ip && OWN_EGRESS_IPS.has(ip.trim())) return true;
 
   const local = addr.split('@')[0] || '';
   if (SYNTHETIC_PREFIXES.some((p) => local.startsWith(p))) return true;

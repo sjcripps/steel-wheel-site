@@ -71,7 +71,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       calculator_inputs: body.calculator_inputs || {},
       client_ip: clientIp,
       user_agent: userAgent,
-      is_synthetic: isSyntheticLead(email, userAgent)
+      is_synthetic: isSyntheticLead(email, userAgent, clientIp)
     };
 
     if (leadRecord.is_synthetic) {
