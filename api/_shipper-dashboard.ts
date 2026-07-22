@@ -35,7 +35,19 @@ async function sendMail(to: string, subject: string, html: string): Promise<bool
       method: 'POST',
       headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        from: 'Steel Wheel Logistics <info@steelwheellogistics.com>',
+        // steelwheellogistics.com is NOT verified in Resend — only
+        // ezbizservices.com is — so sending from the SWL domain is rejected and
+        // the magic link never arrives. lead_capture.py hit this first and
+        // documents the same workaround.
+        //
+        // This is a STOPGAP. A sign-in link arriving from a domain the
+        // recipient has never heard of reads as phishing, and it is exactly the
+        // pattern users are trained to distrust. Verify
+        // steelwheellogistics.com in Resend, then set DASHBOARD_MAIL_FROM to a
+        // real SWL address and delete this fallback.
+        from: process.env.DASHBOARD_MAIL_FROM
+          || 'Steel Wheel Logistics <notifications@ezbizservices.com>',
+        reply_to: 'info@steelwheellogistics.com',
         to: [to], subject, html,
       }),
     });
@@ -297,6 +309,23 @@ async function lanes(req: VercelRequest, res: VercelResponse) {
   return ok(res, { lanes: out });
 }
 
+// The rate engine validates car type against commodity and refuses the quote
+// outright ("Steel doesn't ship in a covered hopper — it moves on a gondola").
+// Defaulting every lane to covered-hopper silently produced NO rate for 13 of
+// the 21 commodities — the lane still saved, transit still computed, and the
+// rate column just sat empty. Mirrors COMMODITIES[].default_car in
+// rail_rate_server.py; keep the two in step.
+const DEFAULT_CAR_BY_COMMODITY: Record<string, string> = {
+  grain: 'covered-hopper', ddgs: 'covered-hopper', fertilizer: 'covered-hopper',
+  plastic: 'covered-hopper', cement: 'covered-hopper', 'sand-frac': 'covered-hopper',
+  aggregates: 'open-hopper', coal: 'open-hopper', 'iron-ore': 'open-hopper',
+  steel: 'gondola', 'scrap-metal': 'gondola',
+  lumber: 'boxcar', paper: 'boxcar',
+  'crude-oil': 'tank-car', ethanol: 'tank-car', chemicals: 'tank-car',
+  lpg: 'tank-car', asphalt: 'tank-car',
+  automotive: 'auto-rack', food: 'refrigerator', machinery: 'flat-car',
+};
+
 async function addLane(req: VercelRequest, res: VercelResponse, body: any) {
   const s = await resolveSession(req.headers.cookie);
   if (!s) return bad(res, 401, 'Please sign in.', 'unauthenticated');
@@ -305,6 +334,7 @@ async function addLane(req: VercelRequest, res: VercelResponse, body: any) {
   if (!origin || !destination) return bad(res, 400, 'Origin and destination are required.');
   let numCars = Number(body.num_cars ?? 1);
   if (!Number.isInteger(numCars) || numCars < 1 || numCars > 200) numCars = 1;
+  const commodity = String(body.commodity ?? 'grain').trim().slice(0, 60);
   const rows = await sb('sw_lanes', {
     method: 'POST',
     body: {
@@ -312,8 +342,12 @@ async function addLane(req: VercelRequest, res: VercelResponse, body: any) {
       label: String(body.label ?? '').trim().slice(0, 160) || `${origin} → ${destination}`,
       origin: origin.slice(0, 160),
       destination: destination.slice(0, 160),
-      commodity: String(body.commodity ?? 'grain').trim().slice(0, 60),
-      car_type: String(body.car_type ?? 'covered-hopper').trim().slice(0, 60),
+      commodity: commodity,
+      // Explicit car_type wins; otherwise derive it from the commodity so the
+      // rate call is actually valid.
+      car_type: (String(body.car_type ?? '').trim()
+                 || DEFAULT_CAR_BY_COMMODITY[commodity]
+                 || 'covered-hopper').slice(0, 60),
       num_cars: numCars,
       weight_tons: Math.min(Math.max(Number(body.weight_tons ?? 100) || 100, 1), 200),
     },
