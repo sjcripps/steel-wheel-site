@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free STCC code finder — search plain-English commodity terms and get candidate Standard Transportation Commodity Codes with full hierarchy context, guided walkthroughs for waste and hazmat, and railroad-sourced 7-digit examples.">
+  <title>STCC Code Finder | Steel Wheel Logistics</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <link rel="canonical" href="https://steelwheellogistics.com/tools/stcc-finder">
+  <meta property="og:title" content="STCC Code Finder | Steel Wheel Logistics">
+  <meta property="og:description" content="Search plain-English commodity terms — get candidate STCC codes with hierarchy context, guided walkthroughs for confusing categories, and railroad-sourced examples.">
+  <meta property="og:url" content="https://steelwheellogistics.com/tools/stcc-finder">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+  <style>
+    /* STCC Finder — Page-specific styles */
+    .tool-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 48px 20px;
+      text-align: center;
+    }
+    .tool-hero h1 {
+      color: var(--white);
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .tool-hero p {
+      color: var(--steel-grey);
+      font-size: 1.05rem;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .tool-hero .badge {
+      display: inline-block;
+      background: rgba(74, 144, 217, 0.15);
+      color: var(--steel-blue);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tool-layout {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 120px;
+    }
+
+    /* Search */
+    .search-card {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 28px 32px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .search-card label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+    .search-card label .hint { font-weight: 400; color: var(--text-light); }
+    #stccSearch {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px 16px;
+      font-size: 1.1rem;
+      border: 2px solid var(--border-grey);
+      border-radius: 10px;
+      color: var(--text-dark);
+      background: var(--white);
+      transition: border-color 0.2s;
+    }
+    #stccSearch:focus {
+      outline: none;
+      border-color: var(--steel-blue);
+      box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.1);
+    }
+    .search-examples {
+      margin-top: 10px;
+      font-size: 0.82rem;
+      color: var(--text-light);
+    }
+    .search-examples a {
+      color: var(--steel-blue);
+      text-decoration: none;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    .search-examples a:hover { text-decoration: underline; }
+
+    /* Guided walkthrough chips */
+    .branch-chips { margin-top: 18px; }
+    .branch-chips .bc-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
+    .branch-chip {
+      display: inline-block;
+      background: rgba(74, 144, 217, 0.08);
+      border: 1px solid rgba(74, 144, 217, 0.25);
+      color: var(--steel-blue);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 20px;
+      margin: 0 8px 8px 0;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .branch-chip:hover { background: rgba(74, 144, 217, 0.16); }
+
+    /* Results */
+    .results-section { margin-top: 32px; display: none; }
+    .results-section.visible { display: block; }
+    .results-group { margin-top: 26px; }
+    .results-group h2 {
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+      color: var(--navy);
+    }
+    .results-group .rg-sub {
+      font-size: 0.83rem;
+      color: var(--text-light);
+      margin-bottom: 12px;
+    }
+    .no-results {
+      background: var(--light-grey);
+      border: 1px solid var(--border-grey);
+      border-radius: 10px;
+      padding: 20px;
+      font-size: 0.92rem;
+      color: var(--text-body);
+      margin-top: 20px;
+    }
+
+    .result-item {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .result-item:hover { border-color: var(--steel-blue); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .result-code {
+      font-family: 'Courier New', monospace;
+      font-weight: 700;
+      font-size: 1.02rem;
+      color: var(--steel-blue);
+      margin-right: 10px;
+      white-space: nowrap;
+    }
+    .result-desc { font-size: 0.92rem; color: var(--text-dark); }
+    .result-crumbs {
+      margin-top: 6px;
+      font-size: 0.78rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+    .result-crumbs .crumb-code { font-family: 'Courier New', monospace; font-weight: 600; }
+    .result-crumbs .crumb-sep { margin: 0 4px; color: var(--border-grey); }
+    .result-detail {
+      display: none;
+      margin-top: 10px;
+      padding: 12px 14px;
+      background: rgba(74, 144, 217, 0.06);
+      border: 1px solid rgba(74, 144, 217, 0.2);
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: var(--text-body);
+      line-height: 1.55;
+    }
+    .result-item.open .result-detail { display: block; }
+    .level-pill, .source-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 9px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      vertical-align: middle;
+      margin-left: 8px;
+      white-space: nowrap;
+    }
+    .level-pill { background: var(--light-grey); color: var(--text-light); }
+    .source-badge { background: #e6f4ea; color: #1a7f37; text-transform: none; }
+    .alias-note {
+      margin-top: 6px;
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-style: italic;
+    }
+
+    /* Guided branch walkthrough */
+    .branch-card {
+      background: var(--white);
+      border: 1px solid rgba(74, 144, 217, 0.35);
+      border-radius: 12px;
+      padding: 22px 24px;
+      margin-bottom: 12px;
+    }
+    .branch-card h3 { font-size: 1.05rem; color: var(--navy); margin-bottom: 4px; }
+    .branch-card .bc-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--steel-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .branch-card .bc-desc { font-size: 0.88rem; color: var(--text-body); margin: 6px 0 12px; line-height: 1.5; }
+    .branch-q { font-size: 0.95rem; font-weight: 600; color: var(--text-dark); margin: 14px 0 10px; }
+    .branch-opts button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      background: var(--light-grey);
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      padding: 11px 14px;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .branch-opts button:hover { border-color: var(--steel-blue); background: rgba(74, 144, 217, 0.06); }
+    .branch-result {
+      margin-top: 14px;
+      padding: 16px 18px;
+      background: rgba(74, 144, 217, 0.06);
+      border: 1px solid rgba(74, 144, 217, 0.25);
+      border-radius: 10px;
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+    .branch-result h4 { font-size: 0.95rem; color: var(--navy); margin-bottom: 8px; }
+    .branch-result .br-codes { margin: 10px 0; }
+    .branch-result .br-code-row {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      font-size: 0.87rem;
+    }
+    .branch-result .br-src {
+      font-size: 0.76rem;
+      color: var(--text-light);
+      margin-top: 8px;
+      font-style: italic;
+    }
+    .branch-restart {
+      background: none;
+      border: none;
+      color: var(--steel-blue);
+      font-size: 0.82rem;
+      cursor: pointer;
+      padding: 0;
+      margin-top: 10px;
+      text-decoration: underline;
+    }
+
+    /* Disclaimer */
+    .stcc-disclaimer {
+      margin-top: 24px;
+      padding: 14px 18px;
+      background: #fff8e1;
+      border: 1px solid #ffe082;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      color: var(--text-body);
+      line-height: 1.55;
+    }
+
+    /* Sticky CTA */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--navy);
+      padding: 12px 20px;
+      display: none;
+      z-index: 100;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.15);
+    }
+    .sticky-cta.visible { display: block; }
+    .sticky-cta-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .sticky-cta-inner span { color: var(--white); font-size: 0.9rem; }
+    .sticky-cta-inner a {
+      background: var(--steel-blue);
+      color: var(--white);
+      padding: 9px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .sticky-cta-inner a:hover { background: var(--steel-blue-dark); }
+
+    /* CTA cards */
+    .cta-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 28px;
+    }
+    @media (max-width: 640px) { .cta-cards { grid-template-columns: 1fr; } }
+    .cta-card { border-radius: 12px; padding: 28px; }
+    .cta-card h3 { font-size: 1.1rem; margin-bottom: 12px; }
+    .cta-card p { font-size: 0.9rem; margin-bottom: 16px; line-height: 1.5; }
+    .cta-primary { background: rgba(74, 144, 217, 0.06); border: 1px solid rgba(74, 144, 217, 0.25); }
+    .cta-consult { background: var(--light-grey); border: 1px solid var(--border-grey); }
+    .cta-btn {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--white);
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .cta-btn:hover { background: var(--navy-light); }
+    .cta-btn.blue { background: var(--steel-blue); }
+    .cta-btn.blue:hover { background: var(--steel-blue-dark); }
+
+    /* Explainer */
+    .explainer { margin-top: 48px; }
+    .explainer h2 { font-size: 1.3rem; margin-bottom: 16px; }
+    .explainer h3 { font-size: 1.05rem; margin: 20px 0 8px; color: var(--navy); }
+    .explainer p {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    .explainer .digit-demo {
+      font-family: 'Courier New', monospace;
+      font-weight: 700;
+      background: var(--light-grey);
+      border-radius: 6px;
+      padding: 2px 8px;
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RSWDYHVY7Z');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "STCC Code Finder",
+    "url": "https://steelwheellogistics.com/tools/stcc-finder",
+    "description": "Free STCC code finder — search plain-English commodity terms and get candidate Standard Transportation Commodity Codes with hierarchy context, guided walkthroughs for waste and hazmat categories, and railroad-sourced 7-digit examples.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any (web browser)",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Steel Wheel Logistics",
+      "url": "https://steelwheellogistics.com/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://steelwheellogistics.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://steelwheellogistics.com/tools"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "STCC Code Finder",
+        "item": "https://steelwheellogistics.com/tools/stcc-finder"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog">Blog</a>
+        <a href="/courses">Courses</a>
+        <a href="/tools" class="active">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="tool-hero">
+    <span class="badge">Free Tool</span>
+    <h1>STCC Code Finder</h1>
+    <p>Type what you're shipping in plain English — get candidate Standard Transportation Commodity Codes with the full 2-to-5 digit hierarchy behind them, guided walkthroughs for the confusing categories, and railroad-published 7-digit examples with sources.</p>
+  </section>
+
+  <!-- Main content -->
+  <div class="tool-layout">
+
+    <!-- Search -->
+    <div class="search-card">
+      <label for="stccSearch">What are you shipping? <span class="hint">(commodity name or STCC digits)</span></label>
+      <input type="text" id="stccSearch" placeholder="e.g. corn, scrap steel, used antifreeze, plastic pellets..." autocomplete="off" aria-label="Search commodities">
+      <div class="search-examples">
+        Try:
+        <a data-q="corn">corn</a>
+        <a data-q="scrap steel">scrap steel</a>
+        <a data-q="used antifreeze">used antifreeze</a>
+        <a data-q="plastic pellets">plastic pellets</a>
+        <a data-q="lumber">lumber</a>
+        <a data-q="contaminated soil">contaminated soil</a>
+      </div>
+
+      <div class="branch-chips">
+        <div class="bc-label">Or start a guided walkthrough</div>
+        <span class="branch-chip" data-branch="antifreeze">Used antifreeze &amp; spent glycol</span>
+        <span class="branch-chip" data-branch="waste">Waste or scrap — is it hazardous?</span>
+        <span class="branch-chip" data-branch="soil">Contaminated soil &amp; municipal waste</span>
+        <span class="branch-chip" data-branch="metals">Metal — scrap vs. prime</span>
+        <span class="branch-chip" data-branch="foodgrade">Oils &amp; syrups — food-grade vs. industrial</span>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div class="results-section" id="resultsSection">
+      <div id="branchGroup" class="results-group" style="display:none;">
+        <h2>Guided walkthroughs for this category</h2>
+        <div class="rg-sub">A few questions narrow this down faster than scrolling a code list.</div>
+        <div id="branchBody"></div>
+      </div>
+
+      <div id="curatedGroup" class="results-group" style="display:none;">
+        <h2>Railroad-published 7-digit codes</h2>
+        <div class="rg-sub">Curated examples from public railroad STCC lists and tariffs — each shows its source. Your serving railroad confirms the code that goes on the waybill.</div>
+        <div id="curatedBody"></div>
+      </div>
+
+      <div id="hierGroup" class="results-group" style="display:none;">
+        <h2>Commodity families (2&ndash;5 digit hierarchy)</h2>
+        <div class="rg-sub">From the Surface Transportation Board's public Waybill Reference Guide. A 5-digit match is the commodity family — the railroad assigns the final 7-digit code inside it.</div>
+        <div id="hierBody"></div>
+      </div>
+
+      <div id="noResults" class="no-results" style="display:none;">
+        No matches for that term. Try a simpler word (e.g. "steel" instead of a grade name), or just
+        <a href="/contact?subject=STCC%20help" id="noResultsCta">tell us what you're shipping</a> — commodity classification is part of what we do.
+      </div>
+
+      <div class="stcc-disclaimer" id="disclaimerBox">
+        <strong>Please read:</strong> STCC is maintained by Railinc/AAR. This tool suggests candidate classifications for planning only — it is not an authoritative code assignment. Your serving railroad confirms the 7-digit code used on the waybill. Hazardous materials (48/49-series) codes must match your 49 CFR shipping description.
+      </div>
+
+      <!-- CTAs -->
+      <div class="cta-cards">
+        <div class="cta-card cta-primary">
+          <h3>Not sure which applies?</h3>
+          <p>Classification is part of what we do. Tell us the commodity, its condition, and where it's going — we'll work the code with your serving railroad and fold it into the rest of the move.</p>
+          <a href="/contact?subject=STCC%20help" class="cta-btn blue" id="contactCtaBtn">Talk to us about classification &rarr;</a>
+        </div>
+        <div class="cta-card cta-consult">
+          <h3>Ready to price the move?</h3>
+          <p>Once you know the commodity family, run the lane through our rail rate estimator for an indicative carload estimate in seconds.</p>
+          <a href="/tools/rail-rate-quote" class="cta-btn" id="rateCtaBtn">Get an indicative rate &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Explainer -->
+    <div class="explainer">
+      <h2>How STCC codes work</h2>
+      <p>The Standard Transportation Commodity Code is a 7-digit number that tells the railroad exactly what's in the car. It's hierarchical: the first <span class="digit-demo">2</span> digits are the broad industry group (01 = farm products, 33 = primary metals, 48 = hazardous waste), digits <span class="digit-demo">3&ndash;5</span> narrow to the commodity family, and digits <span class="digit-demo">6&ndash;7</span> pin down the exact article. Example: 01 farm products &rarr; 0113 grain &rarr; 01132 corn &rarr; a 7-digit corn code on the waybill.</p>
+      <h3>Who maintains it</h3>
+      <p>STCC is maintained by Railinc on behalf of the Association of American Railroads. The full 7-digit directory is a licensed publication — which is why this tool shows the public 2&ndash;5 digit hierarchy plus curated 7-digit examples that railroads have published themselves, rather than a complete dump. The code that actually governs your shipment is the one your serving railroad confirms in its tariff or price authority.</p>
+      <h3>Why hazmat is different</h3>
+      <p>Codes in the 48-series (hazardous waste) and 49-series (hazardous materials) aren't picked by commodity name — they're keyed to your 49 CFR shipping description. The proper shipping name, hazard class, and packing group on your hazmat paperwork determine the code, and the two must match. If your material is regulated, start from the 49 CFR description, not from a keyword search. That's also why the STB's public list translates 48/49-series traffic back to product codes: one product can carry a different code the moment it becomes a waste.</p>
+      <h3>Why the code matters commercially</h3>
+      <p>Rates, rules, and even whether a railroad will handle the shipment all hang off the STCC. The same physical material can rate very differently — prime steel coil vs. steel scrap, virgin glycol vs. spent antifreeze — so classifying correctly is money, not paperwork. For the full story, read our explainers: <a href="/blog/stcc-codes-explained">STCC codes explained</a> and <a href="/blog/stcc-vs-nmfc-vs-hts-codes">STCC vs. NMFC vs. HTS codes</a>.</p>
+    </div>
+
+  </div>
+
+  <!-- Sticky CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <div class="sticky-cta-inner">
+      <span>Not sure which applies? Classification is part of what we do.</span>
+      <a href="/contact?subject=STCC%20help" id="stickyCtaBtn">Talk to us &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script id="stccData" type="application/json">
+{"sources":["CSX Agricultural Products STCC list","CSX Metals STCC list","CSX Transportation Equipment STCC list","NS Tariff 6306-A (Hazardous & Non-Hazardous Waste)","UP Construction Products STCC list","UP Consumer & Appliances STCC list","UP Hazardous Waste STCC list","UP Lumber & Panel STCC list","UP Metals & Ores STCC list","UP Minerals STCC list","UP Paper STCC list"],"H":["01|FARM PRODUCTS","011|FIELD CROPS","0112|COTTON, RAW","01129|RAW COTTON, NEC","0113|GRAIN","01131|BARLEY","01132|CORN EXC. POPCORN SEE 01152","01133|OATS","01134|RICE, ROUGH","01135|RYE","01136|SORGHUM GRAINS","01137|WHEAT EXC. BUCKWHEAT SEE 01139","01139|GRAIN, NEC","0114|OIL KERNELS, NUTS OR SEEDS EXC. EDIBLE TREE NUTS SEE 0129 OR 2071","01141|COTTONSEEDS","01142|FLAXSEEDS","01143|PEANUTS","01144|SOYBEANS (SOYA BEANS)","01149|OIL KERNELS, NUTS OR SEEDS, NEC EXC. EDIBLE TREE NUTS SEE 01298 OR 20712","0115|FIELD SEEDS EXC. OIL SEEDS SEE 0114","01151|LAWN GRASS SEEDS","01152|POPCORN","01159|FIELD SEEDS, NEC EXC. SEEDS SEE 01141-01149","0119|MISCELLANEOUS FIELD","01191|FODDER, HAY OR ROUGHAGE EXC. CHOPPED, GROUND OR PULVERIZED SEE 01991-01992","01192|HOPS","01193|LEAF TOBACCO","01194|POTATOES, SWEET","01195|POTATOES, OTHER THAN SWEET","01196|STRAW EXC. CHOPPED, GROUND OR PULVERIZED SEE 01991","01197|SUGAR BEETS","01198|SUGAR CANE","01199|FIELD CROPS, NEC","012|FRESH FRUITS OR TREE","0121|CITRUS FRUITS","01211|GRAPEFRUIT","01212|LEMONS","01214|ORANGES","01215|TANGERINES","01219|CITRUS FRUITS, NEC","0122|DECIDUOUS FRUITS","01221|APPLES","01222|APRICOTS","01223|CHERRIES","01224|GRAPES","01225|NECTARINES","01226|PEACHES","01227|PEARS","01228|PLUMS OR PRUNES EXC. MARMALADE PLUMS SEE 01239","01229|DECIDUOUS FRUITS, NEC","0123|TROPICAL FRUITS EXC. CITRUS SEE 0121","01231|AVOCADOS","01232|BANANAS","01233|PINEAPPLES","01239|TROPICAL FRUITS, NEC CITRUS SEE 01211-01219","0129|MISCELLANEOUS FRESH FRUITS OR TREE NUTS","01291|BUSH OR CANE BERRIES","01292|CRANBERRIES","01293|STRAWBERRIES","01294|COCOA BEANS","01295|COFFEE, GREEN","01298|NUTS, EDIBLE, IN THE SHELL EXC. PEANUTS SEE 01143","01299|FRESH FRUITS OR TREE NUTS, NEC","013|FRESH VEGETABLES","0131|BULBS, ROOTS OR TUBERS, WITH OR WITHOUT TOPS POTATOES SEE 0119","01311|BEETS EXC. SUGAR BEETS SEE 01197","01312|CARROTS","01313|ONIONS, GREEN","01315|RADISHES","01317|TURNIPS","01318|ONIONS, DRY","01319|BULBS, ROOTS OR TUBERS, WITH OR WITHOUT TOPS, EXC. POTATOES, SWEET SEE 01194 OR OTHER THAN SEE 01195","0133|LEAFY FRESH VEGETABLES","01331|BROCCOLI","01332|BRUSSELS SPROUTS","01333|CABBAGE","01334|CELERY","01335|LETTUCE","01336|CHARD, KALE OR SPINACH","01337|CAULIFLOWER","01339|LEAFY FRESH VEGETABLES, NEC","0134|FIELD DRY RIPE VEGETABLE FOOD SEEDS EXC. ARTIFICIALLY DRIED SEE 2034","01341|BEANS, DRY RIPE","01342|PEAS, DRY","01343|COWPEAS, LENTILS OR LUPINES","01349|FIELD DRY RIPE VEGETABLE FOOD SEEDS, NEC EXC. ARTIFICIALLY DRIED SEE 20342-20343","0139|MISCELLANEOUS FRESH TABLES","01391|BEANS, STRING, LIMA OR WAX, OR PEAS, GREEN OR FRESH","01392|WATERMELONS","01393|SWEET CORN","01394|TOMATOES","01395|CUCUMBERS","01396|PEPPERS","01397|PUMPKINS OR SQUASH","01398|CANTALOUPES, MELONS OR MUSKMELONS EXC. WATERMELONS SEE 01392","01399|FRESH VEGETABLES, NEC","014|LIVESTOCK OR LIVESTOCK PRODUCTS","0141|LIVESTOCK EXC. HORSES OR MULES SEE 0192","01411|CATTLE VIZ. BULLS, COWS, HEIFERS, OXEN OR STEERS","01412|CALVES","01413|SWINE VIZ. BARROWS, BOARS, HOGS, PIGS","01414|SHEEP VIZ. EWES, LAMBS, RAMS OR WETHERS","01415|GOATS OR KIDS","01419|LIVESTOCK, NEC EXC. HORSES OR MULES","0142|DAIRY FARM PRODUCTS EXC. PASTEURIZED SEE 2026","01421|DAIRY FARM PRODUCTS EXC. PASTEURIZED SEE 20251-20264","0143|ANIMAL FIBRES","01431|WOOL EXC. SCOURED SEE 22971","01432|MOHAIR (ANGORA GOAT EXC. SCOURED SEE 22971 FIBRES, NEC","015|POULTRY OR POULTRY PRODUCTS","0151|LIVE POULTRY","01511|LIVE CHICKENS EXC. BABY SEE 01513","01512|LIVE TURKEYS EXC. BABY SEE 01513","01513|LIVE BABY POULTRY","01519|LIVE POULTRY, NEC","0152|POULTRY EGGS","01521|EGGS, MARKET","01522|HATCHING EGGS, CHICKEN","01523|HATCHING EGGS, TURKEY","01529|POULTRY EGGS, NEC","019|MISCELLANEOUS FARM PRODUCTS","0191|HORTICULTURAL","01912|NURSERY STOCK VIZ. BULBS, PLANTS OR TUBERS, SHRUBS, OR TREES, FRUIT OR SHADE, OR VINES, ETC.","01915|HERBS (SEEDS, LEAVES, ROOTS, ETC.)","01916|MUSHROOMS, FRESH","01917|VEGETABLE OR BERRY","01918|FLOWER OR VEGETABLE","01919|HORTICULTURAL SPECIALTIES, NEC","01921|HORSES OR MULES, LIVE VIZ. COLTS, GELDINGS, MARES, PONIES OR STALLIONS, OR FOR MULES, ASSES, BURROS, DONKEYS, JACKS OR JENNIES","01923|HIDES, PELTS OR SKINS, NOT TANNED EXC. CATTLE, GOAT, HORSE, MULE, SHEEP OR SWINE SEE 20141, MARINE ANIMAL SEE 09132","01928|ANIMAL OR POULTRY MANURE","01929|ANIMAL SPECIALTIES, NEC","0199|FARM PRODUCTS, NEC","01991|CHOPPED, GROUND OR PULVERIZED HAY, STRAW OR RELATED AGRICULTURAL PRODUCTS EXC. ALFALFA 01992","01992|CHOPPED, GROUND OR PULVERIZED ALFALFA","01999|FARM PRODUCTS, NEC","08|FOREST PRODUCTS","084|BARKS OR GUMS, CRUDE","0842|BARKS OR GUMS, CRUDE","08422|BARKS OR GUMS, CRUDE LATEX OR ALLIED GUMS (CRUDE RUBBER) SEE 08423","08423|LATEX GUMS (CRUDE RUBBER) OR ALLIED GUMS","086|MISCELLANEOUS FOREST PRODUCTS","0861|MISCELLANEOUS FOREST PRODUCTS","08611|CHRISTMAS TREES EXC. ARTIFICIAL SEE 39621","08612|DECORATIVE EVERGREENS, HOLLY OR MISTLETOE EXC. ARTIFICIAL SEE 39621","08613|FERNS EXC. ARTIFICIAL 39621","08619|FOREST PRODUCTS, NEC, OR TREE SEEDS, INEDIBLE OIL SEEDS SEE 01141-01149","09|FRESH FISH OR OTHER MARINE PRODUCTS","091|FRESH FISH OR OTHER MARINE PRODUCTS EXC. PROCESSED SEE 203","0912|FRESH FISH OR WHALE PRODUCTS, OR FRESH UNPACKAGED (UNPROCESSED) FISH EXC. FRESH OR FRESH FROZEN PROCESSED FISH 2036","09121|FINFISH","09122|SHELLFISH","09123|WHALE PRODUCTS","0913|OTHER MARINE PRODUCTS","09131|SHELLS, OYSTER, CRAB, CLAM, ETC.","09132|MARINE ANIMAL SKINS, UNTANNED EXC. WHALE SEE 09123","09139|MISCELLANEOUS MARINE PRODUCTS, NEC","098|FISH HATCHERIES, FARMS PRESERVES","0989|FISH HATCHERIES, FARMS PRESERVES","09891|TROPICAL FISH HATCHERIES OR FARMS","10|METALLIC ORES","101|IRON ORES","1011|IRON ORES","10111|IRON DIRECT-SHIPPING ORES, CRUDE","10112|IRON BENEFICIATING-GRADE ORES, CRUDE, OR IRON TO PROCESSING OR BENEFICIATING PLANTS","10113|IRON CONCENTRATES OR AGGLOMERATES","102|COPPER ORES","1021|COPPER ORES","10211|CRUDE COPPER ORES","10212|COPPER CONCENTRATES OR PRECIPITATES","103|LEAD OR ZINC ORES","1031|LEAD ORES","10311|CRUDE LEAD ORES","10312|LEAD CONCENTRATES","1032|ZINC ORES","10321|CRUDE ZINC ORES","10322|ZINC CONCENTRATES","1033|LEAD AND ZINC ORES COMBINED","10331|CRUDE LEAD AND ZINC ORES COMBINED","10332|LEAD AND ZINC CONCENTRATES COMBINED","104|GOLD OR SILVER ORES","1041|GOLD ORE","10411|CRUDE GOLD ORE OR TAILINGS","10412|GOLD CONCENTRATES OR PRECIPITATES OR GOLD BULLION","1042|SILVER ORE","10421|CRUDE SILVER ORE OR INGS","10422|SILVER CONCENTRATES OR SILVER MILL BULLION","105|BAUXITE OR OTHER ORES","1051|BAUXITE ORES OR OTHER ALUMINUM ORES","10511|CRUDE BAUXITE ORES","10513|CALCINED OR ACTIVATED BAUXITE ORES","10514|ALUMINUM ORES EXC. BAUXITE SEE 10511 AND 10513","106|MANGANESE ORES","1061|MANGANESE ORES","10611|MANGANESE ORES, CRUDE","10612|MANGANESE BENEFICIATING-GRADE ORE, CRUDE","10613|MANGANESE CONCENTRATES AGGLOMERATES","107|TUNGSTEN ORES","1071|TUNGSTEN ORES","10711|CRUDE TUNGSTEN ORES","10712|TUNGSTEN CONCENTRATES","108|CHROMIUM ORES","1081|CHROMIUM ORES","10811|CRUDE CHROMIUM ORES","10812|CHROMIUM CONCENTRATES","109|MISCELLANEOUS METAL ORES","1092|MISCELLANEOUS METAL ORES","10923|RADIO-ACTIVE ORES UM, RADIUM, ETC)","10929|MISCELLANEOUS METAL NEC","11|COAL","111|ANTHRACITE","1111|ANTHRACITE","11111|RAW ANTHRACITE","11112|PREPARED ANTHRACITE GROUND OR PULVERIZED OTHER THAN FOR FUEL OR STEAM PURPOSES SEE 29919","112|BITUMINOUS COAL OR LIGNITE","1121|BITUMINOUS COAL","11211|RAW BITUMINOUS COAL","11212|PREPARED BITUMINOUS COAL EXC. GROUND OR OTHER THAN FOR FUEL OR STEAM PURPOSES SEE 29919","11219|BITUMINOUS COAL WASTE","1122|LIGNITE","11221|LIGNITE, PREPARED OR RAW EXC. GROUND OR OTHER THAN FOR FUEL OR STEAM PURPOSES SEE 29919","13|CRUDE PETROLEUM, NATURAL GAS OR GASOLINE","131|CRUDE PETROLEUM OR NATU RAL GAS","1311|CRUDE PETROLEUM","13111|CRUDE PETROLEUM","1312|NATURAL GAS","13121|NATURAL GAS","132|NATURAL GASOLINE EXC. LIQUEFIED PETROLEUM SEE 291","1321|NATURAL GASOLINE EXC. LIQUEFIED PETROLEUM SEE 2912","13211|NATURAL GASOLINE EXC. LIQUEFIED PETROLEUM SEE 29121","14|NONMETALLIC MINERALS EXC. FUELS","141|DIMENSION STONE, QUARRY","1411|DIMENSION STONE, QUARRY EXC. DRESSED, POLISHED, SHAPED OR OTHERWISE FINISHED SEE 3281","14111|DIMENSION STONE, QUARRY EXC. DRESSED, POLISHED, SHAPED OR OTHERWISE FINISHED SEE 32811- 32819","142|CRUSHED OR BROKEN STONE OR RIPRAP","1421|BROKEN OR CRUSHED STONE, OR RIPRAP EXC. GROUND OR OTHERWISE TREATED SEE 3295","14211|AGRICULTURAL LIMESTONE, BROKEN OR CRUSHED EXC. GROUND OR OTHERWISE TED, SEE 32959","14212|FLUXING LIMESTONE OR STONE, BROKEN OR CRUSHED","14219|BROKEN OR CRUSHED STONE OR RIPRAP, NEC EXC. GROUND OR OTHERWISE TED, SEE 32951- 32959","144|GRAVEL OR SAND","1441|GRAVEL OR SAND EXC. ABRASIVE SEE 1491","14411|SAND (AGGREGATE OR BALLAST) EXC. ABRASIVE SEE 14916","14412|GRAVEL (AGGREGATE OR BALLAST)","14413|INDUSTRIAL SAND, CRUDE, GROUND OR PULVERIZED ABRASIVE SEE 14916 OR TREATED, OTHER THAN GROUND OR PULVERIZED SEE 32952","145|CLAY, CERAMIC OR REFRACTORY MINERALS","1451|CERAMIC, CLAY OR REFRACTORY MINERALS, CRUDE EXC. GROUND OR OTHERWISE TREATED SEE 3295","14511|BENTONITE, CRUDE EXC. GROUND OR OTHERWISE TREATED SEE 32952","14512|FIRE CLAY, CRUDE EXC. GROUND OR OTHERWISE TREATED SEE 32952","14513|FULLERS EARTH, CRUDE GROUND OR OTHERWISE TREATED SEE 32952","14514|BALL OR KAOLIN CLAY, CRUDE EXC. GROUND OR OTHERWISE TREATED SEE 32952","14515|FELDSPAR, CRUDE EXC. GROUND OR OTHERWISE TREATED SEE 32955","14516|BRUCITE OR MAGNESITE, CRUDE EXC. GROUND OR OTHERWISE TREATED SEE 32953 OR 32959","14519|CERAMIC OR CLAY NEC, CRUDE EXC. GROUND OTHERWISE TREATED SEE 32951-32959","147|CHEMICAL OR FERTILIZER MINERALS","1471|CHEMICAL OR FERTILIZER MINERALS, CRUDE EXC. GROUND OR OTHERWISE TREATED SEE 2871 OR 3275","14711|BARITE (BARYTES), CRUDE (HEAVY SPAR OR TIFF) GROUND OR OTHERWISE TREATED SEE 32959","14712|FLUORSPAR (FLUORITE OR FLORSPAR), CRUDE EXC. GROUND OR OTHERWISE TREATED SEE 32959","14713|BORATE, POTASH OR SODA, CRUDE EXC. GROUND OR OTHERWISE TREATED SEE 32959 OR 28121-28129","14714|APATITE OR PHOSPHATE ROCK, CLAY OR SAND, EXC. GROUND OR OTHERWISE TREATED SEE 28194 OR 28712-28719","14715|ROCK SALT, CRUDE, CRUSHED, LUMP OR EXC. SODIUM CHLORIDE (COMMON SALT), SEE 28991","14716|SULPHUR, CRUDE, LIQUID, MOLTEN OR SOLID EXC. GROUND OR OTHERWISE TREATED SEE 32959","14719|CHEMICAL OR FERTILIZER MINERALS, NEC EXC. OR OTHERWISE TREATED SEE 28711- 28719 OR 32951-32959","149|MISCELLANEOUS MINERALS EXC. FUELS SEE 111-112 OR 299","1491|MISCELLANEOUS MINERALS, NEC, CRUDE EXC. GROUND OR OTHERWISE TREATED AT OTHER THAN MINE SITE SEE 3295, OR FUELS SEE 1111-1122 OR 2991","14911|ANHYDRITE OR GYPSUM, CRUDE EXC. GROUND OR OTHERWISE TREATED AT OTHER THAN MINE SITE SEE 32956","14912|MICA, CRUDE EXC. GROUND OR OTHERWISE TREATED SEE 32957","14913|NATIVE ASPHALT OR BITUMENS","14914|PUMICE OR PUMICITE, EXC. GROUND OR OTHERWISE TREATED SEE 32959","14915|PYROPHYLLITE, SOAPSTONE OR TALC, CRUDE EXC. GROUND OR OTHERWISE TREATED SEE 32954","14916|NATURAL ABRASIVES, FLOUR OR SIZED GRAINS, OR POWDERS EXC. INDUSTRIAL DIAMOND ABRASIVES SEE 32912, OR SAND SEE 14411-14413","14917|PEAT, NATURAL EXC. OR OTHERWISE TREATED SEE 32959","14918|DIATOMACEOUS OR AL EARTH, CRUDE EXC. GROUND OR OTHERWISE TREATED AT OTHER THAN MINE SITE SEE 32952 OR 32959, OR FULLERS EARTH SEE 14513","14919|NONMETALLIC MINERALS, NEC, LOAM, SOIL OR TOPSOIL, NEC EXC. GROUND OR OTHERWISE TREATED AT OTHER THAN MINE SITE SEE 32951-32959, OR FUELS SEE 11111-11221 OR 29911, 29913 OR 29914","1492|WATER EXC. CARBONATED OR MINERAL SEE 2086","14921|RAW WATER, FOR CONSTRUCTION OR IRRIGATION PURPOSES","14922|WATER, DRINKING EXC. CARBONATED OR MINERAL SEE 20861","19|ORDNANCE OR ACCESSORIES","191|GUNS, HOWITZERS, RELATED EQUIPMENT OR PARTS, BORE OVER 30 MM (1. 18 INCH) EXC. SMALL ARMS OR PARTS 30 MM (1. 18 INCH) OR UNDER SEE 195","1911|GUNS, HOWITZERS, RELATED EQUIPMENT OR PARTS, BORE OVER 30 MM (1. 18 INCH) EXC. SMALL ARMS OR PARTS 30 MM (1. 18 INCH) OR UNDER SEE 1951","19111|GUNS, HOWITZERS, RELATED EQUIPMENT OR PARTS, BORE OVER 30 MM (1. 18 INCH) EXC. SMALL ARMS OR PARTS 30 MM (1. 18 INCH) OR UNDER SEE 19511-19512","192|AMMUNITION, OVER 30 MM (1. 18 INCH) EXC. FOR SMALL ARMS SEE 196","1925|GUIDED MISSILES OR SPACE VEHICLES, COMPLETELY ASSEMBLED","19251|GUIDED MISSILES OR SPACE VEHICLES, COMPLETELY ASSEMBLED","1929|AMMUNITION OR RELATED PARTS, NEC EXC. SMALL ARMS SEE 1961 OR PYROTECHNICS SEE 2899","19291|ARTILLERY AMMUNITION OR RELATED PARTS","19293|MILITARY BOMBS, MINES OR RELATED PARTS","19299|AMMUNITION OR RELATED PARTS, NEC, OR CHEMICAL WARFARE PROJECTILES, DEPTH CHARGES, GRENADES, ROCKETS, OTHER THAN GUIDED MISSILES OR TORPEDOES EXC. SMALL ARMS SEE 19611 OR MILITARY PYROTECHNICS SEE 28993","193|FULL TRACKED COMBAT VEHICLES OR PARTS","1931|FULL TRACKED COMBAT VEHICLES OR PARTS EXC. WHEELED TACTICAL COMBAT VEHICLES SEE 3711","19311|MILITARY TANKS OR PARTS EXC. TANK ENGINES SEE 35199","19312|MILITARY SELF-PROPELLED COMBAT WEAPONS OR PARTS","19313|FULL TRACKED COMBAT CLE OR PARTS EXC. TACTICAL COMBAT VEHICLES SEE 37114","194|MILITARY SIGHTING OR CONTROL EQUIPMENT EXC. OPTICAL LENSES OR PRISMS SEE 383","1941|MILITARY SIGHTING OR CONTROL EQUIPMENT EXC. OPTICAL LENSES OR PRISMS SEE 3831","19411|MILITARY SIGHTING OR CONTROL EQUIPMENT EXC. OPTICAL LENSES OR PRISMS SEE 38311","195|SMALL ARMS, 30 MM (1. 18 INCH) OR UNDER, OR PARTS","1951|SMALL ARMS, 30 MM (1. 18 INCH) OR UNDER, OR PARTS","19511|MACHINE GUNS, 30 MM (1. 18 INCH) OR UNDER, OR PARTS","19512|SMALL ARMS, NEC, 30 MM (1. 18 INCH) OR UNDER, PARTS, NEC","196|SMALL ARMS AMMUNITION, 30 MM OR UNDER (1. 18 INCH OR UNDER)","1961|SMALL ARMS AMMUNITION, 30MM OR UNDER (1. 18 OR UNDER) EXC. BLASTING OR DETONATING CAPS OR SAFETY FUSES SEE 2892 OR FIREWORKS SEE 2899","19611|SMALL ARMS AMMUNITION, 30MM OR UNDER (1. 18 OR UNDER) EXC. BLASTING OR DETONATING CAPS OR SAFETY FUSES SEE 28921 FIREWORKS SEE 28993","199|MISCELLANEOUS ORDNANCE, ACCESSORIES OR PARTS","1991|MISCELLANEOUS ORDNANCE, ACCESSORIES OR PARTS","19911|MISCELLANEOUS ORDNANCE, ACCESSORIES OR PARTS","20|FOOD OR KINDRED PRODUCTS","201|MEAT, POULTRY OR SMALL GAME, FRESH, CHILLED OR FROZEN","2011|MEAT, FRESH OR CHILLED EXC. SALTED SEE 20132","20111|CARCASSES (WHOLE OR PARTS), FABRICATED OR PRIMAL CUTS, OR BONELESS MEAT, FRESH OR CHILLED","20119|MEAT, FRESH OR CHILLED, NEC EXC. SAUSAGE, FRESH SEE 20133","2012|MEAT FRESH-FROZEN","20121|CARCASSES (WHOLE OR PARTS), FABRICATED OR PRIMAL CUTS, OR BONELESS MEAT, FRESH FROZEN","20129|MEAT, FRESH FROZEN, NEC","2013|MEAT PRODUCTS","20131|LARD","20132|MEATS OR SAUSAGE, CURED, DRIED, PRESERVED, SALTED OR SMOKED","20133|SAUSAGE, FRESH","20134|CANNED MEAT","20139|MEAT PRODUCTS, NEC","2014|ANIMAL BY-PRODUCTS, INEDIBLE EXC. FATTY ACIDS 2899 OR FATTY ALCOHOLS SEE 2818","20141|HIDES, PELTS OR SKINS, NOT TANNED, CATTLE, HORSE, MULE, SHEEP OR SWINE","20143|GREASE OR INEDIBLE OR OTHER INEDIBLE ANIMAL OIL MILL PRODUCTS OR FOOTS","20144|ANIMAL REFUSE, TANKAGE, MEAT MEAL, OR DRIED OR RELATED ANIMAL BY-PRODUCTS","20149|ANIMAL BY-PRODUCTS, INEDIBLE, NEC","2015|DRESSED POULTRY OR BY- PRODUCTS OR SMALL OR BY- PRODUCTS, FRESH OR CHILLED","20151|DRESSED POULTRY OR SMALL GAME, FRESH OR CHILLED","20158|POULTRY OR SMALL GAME BY-PRODUCTS, FRESH OR CHILLED","2016|DRESSED POULTRY OR ED PRODUCTS OR SMALL OR RELATED PRODUCTS, FRESH FROZEN","20161|DRESSED POULTRY OR SMALL GAME, FRESH FROZEN","20168|POULTRY BY-PRODUCTS OR SMALL GAME BY-PRODUCTS, FRESH FROZEN","2017|PROCESSED POULTRY OR SMALL GAME, OR EGGS","20171|CANNED POULTRY OR SMALL GAME","20172|EGGS, CANNED, DRIED, FROZEN, LIQUID, ED, DESICCATED OR OTHER WISE PROCESSED","202|DAIRY PRODUCTS","2021|CREAMERY BUTTER","20211|CREAMERY BUTTER","2023|CONDENSED, EVAPORATED DRY MILK","20231|DRY MILK PRODUCTS","20233|EVAPORATED OR CONDENSED MILK PRODUCTS","20234|ICE CREAM MIX OR ICE MIX","2024|ICE CREAM OR RELATED FROZEN DESSERTS","20241|ICE CREAM OR RELATED FROZEN DESSERTS","2025|CHEESE OR SPECIAL DAIRY PRODUCTS","20251|CHEESE EXC. COTTAGE CHEESE SEE 20252","20258|CASEIN PRODUCTS","20259|SPECIAL DAIRY PRODUCTS BY-PRODUCTS, NEC","2026|PROCESSED WHOLE MILK, SKIM MILK, CREAM OR FLUID PRODUCTS","20261|BULK FLUID MILK, SKIM MILK OR CREAM","20262|PACKAGED (GLASS OR FLUID MILK, SKIM MILK OR CREAM","20264|BUTTERMILK, CHOCOLATE MILK OR OTHER FLAVORED MILK DRINKS","203|CANNED OR PRESERVED FRUITS, VEGETABLES OR SEAFOOD","2031|CANNED OR CURED SEA","20311|CANNED FISH OR OTHER FOOD, SEAFOOD CHOWDERS, SOUP OR STEWS OR LIVERS OR ROE EXC. DRIED, PICKLED, SALTED OR SEE 20314","20314|SMOKED, SALTED, PICKLED OR DRIED FISH","2032|CANNED SPECIALTIES","20321|CANNED BABY FOODS","20322|CANNED SOUPS EXC. CANNED SEAFOOD SOUPS SEE 20311, FROZEN SOUPS SEE 20381, OR FROZEN SEAFOOD SOUPS SEE 20361","20323|CANNED BEAN SPECIALTIES, PORK AND BEANS OR BAKED BEANS","20329|CANNED SPECIALTIES, NEC","2033|CANNED FRUITS, JAMS, JELLIES, PRESERVES OR VEGETABLES EXC. SEAFOOD SOUPS SEE 2031 OR 2036, OR BABY FOODS OR SOUPS OTHER THAN SEAFOOD SEE 2032","20331|CANNED FRUITS","20332|CANNED VEGETABLES","20333|CANNED HOMINY OR MUSH ROOMS","20334|JUICE, FRUIT OR VEGE TABLE, OTHER THAN FROZEN EXC. CIDER SEE 20996","20336|CATSUP OR OTHER TOMATO SAUCES","20338|JAMS, JELLIES OR PRESERVES","20339|CANNED FRUITS OR VEGETABLES, NEC, OR NEC","2034|DEHYDRATED OR DRIED FRUITS OR VEGETABLES OR SOUP MIX EXC. FIELD DRY RIPE VEGETABLE FOOD SEE 0134","20341|DEHYDRATED OR DRIED FRUITS","20342|PROCESSED DRY VEGETABLES, LEGUMES OR SOUP MIXES EXCLUDING FIELD DRIED VEGETABLES AND LEGUMES.","20343|DEHYDRATED OR DRIED POTATOES OR PRODUCTS EXC. POTATO CHIPS SEE 20992","2035|PICKLED FRUITS OR BLES, SALAD DRESSINGS, SEASONINGS, OR VEGETABLE SAUCES EXC. CATSUP OR TOMATO SAUCES SEE 2033 SPICES SEE 2099","20352|PICKLES OR OTHER PICKLED PRODUCTS","20354|SALAD DRESSINGS, MAYONNAISE OR SALAD DRESSING TYPE SANDWICH SPREADS","20359|SAUCES OR SEASONINGS, EXC. CATSUP OR TOMATO SAUCES SEE 20336 OR ES SEE 20997","2036|FRESH OR FROZEN (PACKAGED) FISH OR OTHER SEAFOOD","20361|FROZEN PROCESSED (PACKAGED) FISH OR OTHER SEAFOOD","20362|FRESH PROCESSED (PACKAGED) FISH OR OTHER SEAFOOD","2037|FROZEN FRUITS, OR FRUIT JUICES","20371|FROZEN FRUITS","20372|FROZEN JUICES OR ADES","20373|FROZEN VEGETABLES","20379|FROZEN FRUITS OR VEGETABLES IN MIXED LOADS OR MIXED WITH FROZEN FRUIT JUICES","2038|FROZEN SPECIALTIES","20381|FROZEN PREPARED FOODS OR SOUPS EXC. SEA FOODS SEE 20361","2039|MIXED LOADS OF CANNED OR PRESERVED FRUITS, OR VEGETABLES, WITHOUT SEPARATE WEIGHTS","20391|MIXED LOADS OF CANNED OR PRESERVED FRUITS, OR VEGETABLES, OF COMMODITIES IN THE GROUP EXCLUSIVELY, WITHOUT SEPARATE WEIGHTS","204|GRAIN MILL PRODUCTS","2041|FLOUR OR OTHER GRAIN PRODUCTS EXC. RICE SEE 2044 OR PREPARED FLOUR MIXES SEE 2045","20411|WHEAT FLOUR EXC. BLENDED OR PREPARED SEE 20451-20452","20412|WHEAT BRAN, MIDDLINGS OR SHORTS","20413|CORN MEAL OR FLOUR EXC. ANIMAL OR POULTRY FEED SEE 20421-20423","20414|RYE FLOUR OR MEAL","20415|BUCKWHEAT FLOUR OR MEAL","20416|OAT MEAL OR FLOUR","20418|GRAIN MILL BY-PRODUCTS EXC. WHEAT BRAN, MIDDLINGS, RED DOG OR SEE 20412","20419|FLOUR OR OTHER GRAIN PRODUCTS, NEC","2042|PREPARED FEED, ANIMAL, FISH OR POULTRY, OTHER THAN DOG, CAT OR OTHER PET FOOD, NEC EXC. CHOPPED, GROUND OR HAY, STRAW OR RELATED PRODUCTS SEE 0199","20421|PREPARED FEED, ANIMAL, FISH OR POULTRY, OTHER THAN DOG, CAT OR OTHER PET FOOD, NEC EXC. CANNED SEE 20423, OR CHOPPED, GROUND OR PULVERIZED HAY, STRAW OR RELATED PRODUCTS SEE 01991-01992","20423|CANNED FEED, ANIMAL, OR POULTRY, OTHER THAN DOG, CAT OR OTHER PET FOOD, NEC","2043|CEREAL PREPARATIONS","20431|COOKED CEREALS, FLAKED, GRANULATED, POPPED, PUFFED, ROLLED, ROASTED OR SHREDDED","20432|CEREALS, UNCOOKED","2044|MILLED RICE, FLOUR OR MEAL","20441|RICE, CLEANED","20442|RICE FLOUR, BRAN OR MEAL","20443|BREWERS RICE","20449|MILLED RICE OR BY-PRODUCTS, NEC","2045|BLENDED OR PREPARED EXC. MILLING FLOUR FROM GRAIN SEE 2041 ED, SELF-RISING)","20452|PREPARED FLOUR MIXES PANCAKE, CAKE, BISCUIT, PIE CRUST MIXES, ETC.","2046|WET CORN MILLING OR SORGHUM GRAIN (MILO) PRODUCTS, VIZ. OIL, STARCH, SUGAR, SYRUP OR SIMILAR PRODUCTS OR BY-PRODUCTS EXC. TABLE SYRUPS OR STARCH BASE DESSERT POWDERS SEE 2099","20461|CORN SYRUP","20462|CORN STARCH","20463|CORN SUGAR","20464|DEXTRINE, CORN, TAPIOCA OR OTHER","20465|CORN OIL","20466|STARCH (POTATO, WHEAT, RICE, ETC.) EXC. CORN 20462","20467|WET PROCESS CORN OR LAR MILL BYPRODUCTS","20469|WET PROCESS CORN MILLING OR SIMILAR MILL NEC","2047|DOG, CAT OR OTHER PET FOOD, NEC","20471|DOG, CAT OR OTHER PET FOOD, NEC EXC. CANNED 20472","20472|CANNED DOG, CAT OR OTHER PET FOOD, NEC","205|BAKERY PRODUCTS","2051|BREAD OR OTHER BAKERY PRODUCTS EXC. BISCUITS, CRACKERS, PRETZELS OR OTHER DRY BAKERY SEE 2052","20511|BREAD OR OTHER BAKERY PRODUCTS EXC. BISCUITS, CRACKERS, PRETZELS OR OTHER DRY BAKERY SEE 20521-20529","2052|BISCUITS, CRACKERS OR PRETZELS","20521|BISCUITS, CRACKERS OR PRETZELS","20529|DRY BAKERY PRODUCTS, NEC","206|SUGAR, BEET OR CANE","2061|SUGAR MILL PRODUCTS OR BY-PRODUCTS","20611|RAW CANE OR BEET SUGAR","20616|SUGAR MOLASSES EXC. BLACKSTRAP SEE 20617","20617|BLACKSTRAP MOLASSES","20618|BAGASSE","20619|SUGAR MILL PRODUCTS OR BY-PRODUCTS, NEC","2062|SUGAR, REFINED, CANE BEET","20621|SUGAR, GRANULATED OR POWDERED, SUGAR CUBES OR TABLETS","20622|SUGAR, LIQUID OR SYRUP","20625|SUGAR REFINING BY-PRODUCTS","20626|MOLASSES BEET PULP","20629|SUGAR, REFINED, CANE OR BEET, NEC","207|CONFECTIONERY OR RELATED PRODUCTS","2071|CANDY OR OTHER CONFECTIONERY PRODUCTS","20711|CANDY OR CANDY BARS, OR PACKAGED","20712|NUTS, COATED, COOKED, ROASTED OR SALTED","20713|CHOCOLATE OR COCOA PRODUCTS OR BYPRODUCTS","20714|CHEWING GUM","20719|CONFECTIONERY OR RELATED PRODUCTS, NEC","208|BEVERAGES OR FLAVORING EXTRACTS","2082|MALT LIQUORS","20821|BEER, ALE, PORTER, STOUT OR OTHER FERMENTED MALT LIQUORS, IN BARRELS, BOTTLES, CANS OR KEGS","20823|MALT EXTRACTS OR BREWERS SPENT GRAINS","2083|MALT","20831|MALT","20832|MALT FLOUR OR SPROUTS","20839|MALT PRODUCTS OR BY-PRODUCTS, NEC","2084|WINES, BRANDY OR BRANDY SPIRITS","20841|WINE, BRANDY OR BRANDY SPIRITS OR FRUIT SPIRITS","2085|DISTILLED, RECTIFIED OR BLENDED LIQUORS EXC. BRANDY OR BRANDY SPIRITS SEE 2084","20851|DISTILLED, RECTIFIED OR BLENDED LIQUORS EXC. BRANDY, BRANDY SPIRITS FRUIT SPIRITS SEE 20841","20859|BY-PRODUCTS OF LIQUOR DISTILLING OR MINERAL WATERS, BOTTLED, CANNED OR IN BULK EXC. DRINKING PLAIN OR SPRING WATERS SEE 1492","20861|SOFT DRINKS OR MINERAL WATERS, BOTTLED, CANNED OR IN BULK EXC. DRINKING PLAIN OR SPRING WATERS SEE 14921","2087|MISCELLANEOUS FLAVORING EXTRACTS, SYRUPS OR COMPOUNDS EXC. CHOCOLATE SYRUPS SEE 2071","20871|MISCELLANEOUS FLAVORING EXTRACTS, SYRUPS OR COMPOUNDS EXC. CHOCOLATE SYRUPS SEE 20713","209|MISCELLANEOUS FOOD RATIONS OR KINDRED PRODUCTS","2091|COTTONSEED OIL OR BY-PRODUCTS EXC. EDIBLE OILS SEE 2096 OR FATTY ACIDS SEE 2899","20911|COTTONSEED OIL, CRUDE OR REFINED EXC. EDIBLE COOKING OILS SEE 20961","20914|COTTONSEED CAKE OR MEAL OR BY-PRODUCTS EXC. COTTON LINTERS OR REGINS SEE 20915 OR FATTY ACID SEE 28994","20915|COTTON LINTERS OR REGINS","2092|SOYBEAN OIL OR BY-PRODUCTS EXC. EDIBLE COOKING OILS SEE 2096 OR FATTY ACIDS SEE 2899","20921|SOYBEAN OIL, CRUDE OR REFINED EXC. EDIBLE ING OILS SEE 20961","20923|SOYBEAN CAKE, FLOUR, GRITS, MEAL OR OTHER BY-PRODUCTS EXC. FATTY ACIDS SEE 28994","2093|NUT OR VEGETABLE OILS OR BY-PRODUCTS EXC. CORN SEE 2046, COTTONSEED SEE 2091, SOYBEAN SEE 2092, EDIBLE COOKING OILS SEE 2096, OILS FOR MEDICINAL USE SEE 2831 OR FATTY ACIDS SEE 2899","20931|LINSEED OIL, CRUDE OR REFINED EXC. EDIBLE ING OILS SEE 20961","20933|NUT OR VEGETABLE OILS EXC. CORN SEE 20465, COTTONSEED SEE 20911, SOYBEAN SEE 20921, LIN- SEED SEE 20931, EDIBLE COOKING OILS SEE 20961, OILS FOR MEDICINAL PURPOSES SEE 28311 OR 28312,OR FATTY ACIDS SEE 28994","20939|NUT OR VEGETABLE OIL CAKE OR MEAL OR OTHER BY-PRODUCTS, NEC EXC. CORN SEE 20469, COTTONSEED SEE 20914, SOYBEAN SEE 20923 OR FATTY ACIDS SEE 28994","2094|MARINE FATS OR OILS EXC. OILS FOR MEDICINAL PURPOSES SEE 2831, FATTY ACIDS SEE 2899 OR FATTY ALCOHOLS SEE 2818","20941|MARINE OIL MILL PRODUCTS","20942|MARINE OIL MILL BY-PRODUCTS VIZ. MEAL, SCRAP OR TANKAGE","2095|ROASTED COFFEE OR COFFEE","20951|ROASTED COFFEE OR COFFEE","2096|MARGARINE, SHORTENING OR TABLE OILS OR OTHER EDIBLE FATS OR OILS, NEC EXC. CORN OIL SEE 2046","20961|SHORTENING OR COOKING OR SALAD OILS EXC. CORN OIL SEE 20465","20962|MARGARINE","2097|ICE, NATURAL OR MANUFACTURED","20971|ICE, NATURAL OR MANUFACTURED","2098|MACARONI, SPAGHETTI, VERMICELLI OR NOODLES OR PRODUCTS THEREOF, DRY EXC. CANNED SEE 2032","20981|MACARONI, SPAGHETTI, VERMICELLI OR NOODLES OR PRODUCTS THEREOF, DRY EXC. CANNED SEE 20329","2099|MISCELLANEOUS FOOD RATIONS, NEC","20991|DESSERTS (READY TO MIX)","20992|CHIPS (POTATO, CORN, ETC.)","20993|SWEETENING SYRUPS OR MOLASSES","20994|BAKING POWDER OR YEAST","20995|MIXED LOADS OF FOOD OR KINDRED PRODUCTS, SEPARATE WEIGHTS, CONSISTING OF COMMODITIES NOT FOUND EXCLUSIVELY IN THE 203 GROUP","20996|CIDER OR VINEGAR","20997|SPICES","20998|TEA OR INSTANT TEA","20999|FOOD PREPARATIONS OR BY-PRODUCTS, NEC","21|TOBACCO PRODUCTS EXC. INSECTICIDES SEE 28","211|CIGARETTES","2111|CIGARETTES","21111|CIGARETTES EXC. SEE 28311","212|CIGARS","2121|CIGARS","21211|CIGARS","213|CHEWING OR SMOKING TOBACCO, OR SNUFF","2131|CHEWING OR SMOKING TOBACCO OR SNUFF","21311|CHEWING TOBACCO","21312|SMOKING TOBACCO","21313|SNUFF","214|STEMMED OR REDRIED TOBACCO","2141|STEMMED OR REDRIED TOBACCO","21411|TOBACCO, STEMMED OR REDRIED","21419|TOBACCO BY-PRODUCTS, LEAF","22|TEXTILE MILL PRODUCTS","221|COTTON BROAD-WOVEN FABRICS","2211|COTTON BROAD-WOVEN FABRICS, INCLUDING FINISHED EXC. CARPETS, MATS OR RUGS SEE 2271-2272 OR TIRE CORD OR FABRICS SEE 2296","22111|COTTON DUCK OR ALLIED FABRICS","22112|COTTON SHEETINGS, UN-FINISHED (GRAY GOODS) OR OTHER ALLIED PRODUCTS","22113|COTTON OR CHIEFLY COTTON BLANKETS","22119|COTTON BROAD-WOVEN FABRICS, NEC, FINISHED, OR COTTON BROAD-WOVEN SPECIALTIES EXC. CARPETS, MATS OR RUGS SEE 22711 22721, OR TIRE CORD OR FABRICS SEE 22961","222|MAN-MADE FIBRE OR SILK BROAD-WOVEN FABRICS","2221|MAN-MADE OR GLASS FIBRE BROAD-WOVEN FABRICS, UDING FINISHED EXC. CARPETS, MATS OR RUGS SEE 2271 OR 2272, OR TIRE CORD OR FABRICS SEE 2296","22211|MAN-MADE OR GLASS FIBRE BROAD-WOVEN FABRICS EXC. CARPETS, MATS OR RUGS 22711 OR 22721, OR TIRE CORD OR FABRICS SEE 22961","22213|MAN-MADE FIBRE BLANKETS, INCLUDING CHIEFLY MAN-MADE FIBRE","2222|SILK-WOVEN FABRICS, INCLUDING FINISHED EXC. CARPETS, MATS OR RUGS 2271 OR 2272, OR TIRE CORD OR FABRICS SEE 22961","22221|SILK-WOVEN FABRICS, INCLUDING FINISHED EXC. CARPETS, MATS OR RUGS 22711 OR 22721, OR TIRE CORD OR FABRICS SEE 22961","223|WOOL BROAD-WOVEN FABRICS","2231|WOOL BROAD-WOVEN INCLUDING DYED OR FINISHED EXC. CARPETS, MATS OR RUGS SEE 2271 OR 2272","22311|WOOL BROAD-WOVEN INCLUDING DYED OR FINISHED EXC. CARPETS, MATS OR RUGS SEE 22711 OR 22721, OR BLANKETS SEE 22313","22313|WOOL OR CHIEFLY WOOL BLANKETS","224|NARROW FABRICS, COTTON, SILK OR WOOL, OR GLASS OTHER MAN- MADE FIBRES","2241|NARROW FABRICS, COTTON, SILK OR WOOL, OR GLASS OTHER MAN- MADE FIBRES","22411|NARROW FABRICS, COTTON, SILK OR WOOL, OR GLASS OTHER MAN- MADE FIBRES","225|KNIT FABRICS","2251|KNIT FABRICS","22511|KNIT FABRICS","227|FLOOR COVERINGS EXC. SEE 249, HARD SURFACE FLOOR COVERINGS SEE 399 OR RUBBER SEE 306","2271|WOVEN CARPETS, MATS OR RUGS, TEXTILE YARN","22711|WOVEN CARPETS, MATS OR RUGS, TEXTILE YARD","2272|TUFTED CARPETS, RUGS OR MATS, TEXTILE FIBRE","22721|TUFTED CARPETS, RUGS OR MATS, TEXTILE FIBRE","2279|CARPETS, MATS OR RUGS, NEC, ALL MATERIALS EXC. CORK SEE 2494, HARD SURFACE FLOOR COVERINGS SEE 3992 OR RUBBER SEE 3061","22799|CARPETS, MATS OR RUGS, NEC, ALL MATERIALS EXC. CORK SEE 24941, HARD SURFACE FLOOR COVERINGS SEE 39921 OR RUBBER","228|THREAD OR YARN","2281|YARN","22811|COTTON YARN","22813|WOOL THREAD OR YARN","22819|YARN, NEC EXC. HEMP, JUTE, LINEN OR RAMIE","2284|THREAD EXC. HEMP, JUTE, LINEN OR RAMIE SEE 2299R WOOL SEE 2281","22841|THREAD EXC. HEMP, JUTE, LINEN OR RAMIE SEE 22999 OR WOOL SEE 22813","229|MISCELLANEOUS TEXTILE GOODS","2291|FELT GOODS EXC. FELT HATS SEE 2351 OR 2352, OR WOVEN WOOL FELTS OR WOOL HAIRCLOTH SEE 2231","22911|FELT GOODS EXC. FELT HATS SEE 23511 OR 23521, OR WOVEN WOOL FELTS OR WOOL HAIRCLOTH SEE 22311","2292|LACE GOODS, INCLUDING DYED OR FINISHED EXC. EMBROIDERIES SEE 2395","22921|LACE GOODS, INCLUDING DYED OR FINISHED EXC. EMBROIDERIES SEE 23951","2293|PADDINGS, UPHOLSTERY FILLINGS, BATTING OR WADDING EXC. EXPANDED PLASTICS SEE 3071, FOAM OR SPONGE RUBBER SEE 3061 WOOD EXCELSIOR PADS OR WRAPPERS SEE 2429","22931|PADDINGS, UPHOLSTERY FILLINGS, BATTING OR WADDING EXC. EXPANDED PLASTICS SEE 30716, FOAM OR SPONGE RUBBER SEE 30613 OR WOOD EXCELSIOR PADS WRAPPERS SEE 24294","2294|TEXTILE WASTE, PROCESSED OR RECOVERED FIBRES OR FLOCK EXC. PACKING OR WIPING CLOTHS RAGS SEE 2299","22941|TEXTILE WASTE, PROCESSED OR RECOVERED FIBRES OR FLOCK EXC. PACKING OR CLOTHS OR RAGS SEE 22994","2295|ARTIFICIAL LEATHER, OILCLOTH OR OTHER COATED OR IMPREGNATED FABRICS, INCLUDING FINISHED, SUCH AS LAMINATED, METALIZED, VARNISHED, WATERPROOFED, WAXED, ETC. EXC. RUBBERIZED SEE 3061","22951|ARTIFICIAL LEATHER, OILCLOTH OR OTHER COATED OR IMPREGNATED FABRICS, INCLUDING FINISHED, SUCH AS LAMINATED, METALIZED, VARNISHED, WATERPROOFED, WAXED, ETC. EXC. RUBBERIZED SEE 30619","2296|CORD OR FABRICS, TIRE, FUEL CELL, INDUSTRIAL BELTING OR FOR SIMILAR USES","22961|CORD OR FABRICS, TIRE, FUEL CELL, INDUSTRIAL BELTING OR FOR SIMILAR USES","2297|WOOL OR MOHAIR, SCOURED, COMBED OR CARBONIZED, OR WOOL OR MOHAIR GREASE, NOILS, NUBS, TOPS OR SLUGS","22971|WOOL OR MOHAIR, CARBONIZED OR SCOURED","22972|TOPS, ALL FIBRES, PROCESSED, COMBED OR CONVERTED","22973|TEXTILE FIBRES, LAPS, NOILS, NUBS, ROVING, SLIVEROR SLUBS, PREPARED FOR SPINNING, COMBED OR CONVERTED","22974|WOOL OR MOHAIR GREASE","2298|CORDAGE OR TWINE","22981|CORDAGE OR TWINE","2299|TEXTILE GOODS, NEC","22991|BONDED FIBRE FABRICS FELTS, WOVEN SEE 22311 UNWOVEN SEE 22911","22992|JUTE GOODS EXC. BAGS SEE 23931","22994|PACKING OR WIPING CLOTHS OR RAGS (PROCESSED TEXTILE WASTES)","22995|VEGETABLE FIBRES EXC. COTTON SEE 20915 OR 22999","22999|TEXTILE GOODS, NEC","23|APPAREL OR OTHER TEXTILE PRODUCTS OR KNIT APPAREL","231|MENS, YOUTHS OR BOYS CLOTHING OR UNIFORMS LEATHER OR SHEEP LINED, OR RAINCOATS SEE 238","2311|MENS, YOUTHS OR BOYS CLOTHING OR UNIFORMS LEATHER OR SHEEP LINED SEE 2386 OR RAINCOATS 2385","23111|MENS, YOUTHS OR BOYS CLOTHING OR UNIFORMS LEATHER OR SHEEP LINED","233|SEE 23861 OR RAINCOATS SEE 23851 WOMENS, MISSES, OR INFANTS CLOTHING EXC. FUR SEE 237, RAINCOATS SEE 238 OR SURGICAL SEE 384","2331|WOMENS, MISSES, OR INFANTS CLOTHING EXC. FUR SEE 2371, RAINCOATS SEE 2385 OR SURGICAL SEE 3842","23311|WOMENS, MISSES, OR INFANTS CLOTHING EXC. FUR SEE 23711, RAINCOATS SEE 23851 OR SURGICAL 38421","235|CAPS, HATS OR MILLINERY OR HAT BODIES EXC. FUR SEE 237","2351|MILLINERY EXC. BRAIDS OR TRIMMINGS SEE 2396 OR SEE 2371","23511|MILLINERY EXC. BRAIDS OR TRIMMINGS SEE 23961 OR FUR SEE 23711","2352|CAPS OR HATS OR HAT BODIES EXC. FUR SEE 2371 OR MILLINERY SEE 2351","23521|CAPS OR HATS OR HAT BODIES EXC. FUR SEE 23711 MILLINERY SEE 23511","237|FUR GOODS EXC. SHEEP","2371|LINED CLOTHING SEE 238FUR GOODS EXC. SHEEP LINED CLOTHING SEE 2386","23711|FUR GOODS EXC. SHEEP LINED CLOTHING SEE 23861","238|MISCELLANEOUS APPAREL OR ACCESSORIES","2381|GLOVES, MITTENS OR LININGS, DRESS OR WORK EXC. ASBESTOS SEE 3292, ALL LEATHER SEE 3151, SEE 3071, RUBBER SEE OR FUR SEE 2371","23811|DRESS GLOVES, MITTENS OR LININGS EXC. ALL LEATHER SEE 31511, PLASTIC SEE30719 OR FUR SEE 23711","23812|WORK GLOVES OR MITTENS EXC. ASBESTOS SEE 32929, ALL LEATHER SEE 31511,PLASTIC SEE 30719 OR RUBBER SEE 30619","2384|ROBES OR DRESSING GOWNS EXC. CHILDRENS OR INFANTS SEE 2331","23841|ROBES OR DRESSING GOWNS EXC. CHILDRENS OR SEE 23311","2385|RAINCOATS OR OTHER WATERPROOF OUTER GARMENTS EXC. OILED FABRIC SEE 2311 OR VULCANIZED SEE 3061","23851|RAINCOATS OR OTHER PROOF OUTER GARMENTS OILED FABRIC SEE 23111 VULCANIZED RUBBER SEE 30619","2386|LEATHER OR SHEEP LINED CLOTHING EXC. LEATHER GLOVES OR MITTENS SEE 3151, FUR GARMENTS SEE 2371","23861|LEATHER OR SHEEP LINED CLOTHING EXC. LEATHER GLOVES OR MITTENS SEE 31511, FUR GARMENTS SEE 23711","2387|APPAREL BELTS","23871|APPAREL BELTS","2389|APPAREL, NEC","23891|APPAREL, NEC","239|MISCELLANEOUS FABRICATED TEXTILE PRODUCTS","2391|CURTAINS OR DRAPERIES EXC. LACE CURTAINS","23911|WINDOW CURTAINS EXC. SEE 22921","23912|DRAPERIES OR TAPESTRIES","2392|TEXTILE HOUSEFURNISHINGS EXC. CURTAINS, DRAPERIES OR TAPESTRIES SEE 2391, EMBROIDERED SEE 2395 OR LACE SEE 2292","23921|BEDSPREADS OR BED SETS EXC. EMBROIDERED SEE 23951 OR LACE SEE 22921","23922|SHEETS OR PILLOWCASES EXC. EMBROIDERED SEE 23951","23923|TOWELS OR WASHCLOTHS EMBROIDERED SEE 23951","23924|TABLECLOTHS OR NAPKINS OR RELATED ARTICLES EXC. EMBROIDERED SEE 23951 OR LACE SEE 22921","23925|PILLOWS","23926|MOPS OR DUSTERS","23927|SLIP COVERS EXC. EMBROIDERED SEE 239511","23928|COMFORTERS OR QUILTS EMBROIDERED SEE 23951","23929|TEXTILE NEC EXC. EMBROIDERED SEE 23951 OR LACE SEE 22921","2393|TEXTILE BAGS EXC. OR LAUNDRY SEE 2392 OR PLASTIC SEE 2643","23931|TEXTILE BAGS EXC. OR LAUNDRY SEE 23929 OR PLASTIC SEE 26431","2394|CANVAS PRODUCTS EXC. SEE 2393","23941|TENTS","23942|AWNINGS OR SHADES","23943|TARPAULINS","23944|SAILS","23949|CANVAS PRODUCTS, NEC BAGS SEE 23931","2395|TEXTILE PRODUCTS, PLEATED, QUILTED, DECORATIVE OR NOVELTY STITCHED, OR RUFFLED OR TUCKED","23951|TEXTILE PRODUCTS, OR QUILTED, INCLUDING EMBROIDERED, DECORATIVE OR NOVELTY STITCHED, OR RUFFLED OR TUCKED","2396|APPAREL FINDINGS, TEXTILE, OR RELATED PRODUCTS, OR AUTOMOTIVE MINGS","23961|APPAREL FINDINGS, TEXTILE, OR RELATED PRODUCTS, OR AUTOMOTIVE MINGS","2399|FABRICATED TEXTILE PRODUCTS, NEC","23991|AUTOMOBILE SEAT COVERS","23993|SLEEPING BAGS","23994|PARACHUTES","23999|FABRICATED TEXTILE PRODUCTS, NEC","24|LUMBER OR WOOD PRODUCTS EXC. FURNITURE SEE 25","241|PRIMARY FOREST OR WOOD RAW MATERIALS VIZ. BOLTS, LOGS, PILING, POSTS, PULPWOOD, WOOD CHIPS, ETC EXC. FROM SAWMILLS SEE 242, FROM PLYWOOD OR VENEER MILLS SEE 243, FROM PULP MILLS SEE 261 OR FROM CHARCOAL OR WOOD DISTILLATION PLANTS SEE 286","2411|PRIMARY FOREST OR WOOD RAW MATERIALS VIZ. LOGS, PILING, POSTS, PULPWOOD, WOOD CHIPS, ETC.","24111|SAWLOGS","24112|HEWN RAILROAD OR MINE TIES","24113|SHORT LOGS OR WOOD BOLTS","24114|PULPWOOD LOGS","24115|PULPWOOD OR OTHER WOOD CHIPS","24116|WOOD POSTS, POLES OR PILING","24117|FUELWOOD, HOGFUEL OR CORDWOOD","24118|WOOD MINE PROPS OR MINE TIMBERS","24119|PRIMARY FOREST OR WOOD RAW MATERIALS, NEC EXC. FROM SAWMILLS SEE 24211-24299, FROM PLYWOOD OR VENEER MILLS SEE 24321, FROM PULP MILLS SEE 26111 OR FROM CHARCOAL OR WOOD DISTILLATION PLANTS SEE 28612","242|SAWMILL OR PLANING MILL PRODUCTS EXC. BOX SHOOKS OR BOXES SEE 244, MILL WORK, PLYWOOD OR VENEER SEE 243 OR TEXTILE MACHINERY WOOD SHAPES OR TURNINGS SEE 355","2421|LUMBER OR DIMENSION EXC. BOX SHOOKS OR BOXES SEE 2441, MILLWORK SEE 2431, PLYWOOD OR VENEER SEE 2432 OR TEXTILE MACHINERY WOOD SHAPES OR TURNINGS SEE 3552","24211|LUMBER, ROUGH OR SOFTWOOD CUT STOCK OR FLOORING","24212|SAWED TIES (RAILROAD, MINE, ETC. )","24214|HARDWOOD DIMENSION STOCK OR FURNITURE PARTS OR VEHICLE STOCK","24215|HARDWOOD FLOORING","24219|LUMBER OR DIMENSION STOCK, NEC","2429|MISCELLANEOUS SAWMILL OR PLANING MILL PRODUCTS, VIZ. SHINGLES, COOPERAGE STOCK, ETC.","24291|SHINGLES","24292|COOPERAGE STOCK","24293|SHAVINGS OR SAWDUST","24294|EXCELSIOR, BALED","24299|SAWMILL OR PLANING MILL PRODUCTS, NEC EXC. BOX SPRINGS OR BOXES SEE 24416, MILLWORK SEE 24311-24319, PLYWOOD OR VENEER SEE 24321 OR TEXTILE MACHINERY WOOD SHAPES OR TURNINGS SEE 35522","243|MILLWORK OR WOOD PRODUCTS OR PLYWOOD OR VENEER","2431|MILLWORK OR CABINETWORK, TO BE BUILT IN EXC. COVERED SEE 3442 OR PREFABRICATED STRUCTURAL WOOD PRODUCTS SEE 2433, 2439","24311|WINDOW UNITS, WOOD","24312|WINDOW SASH OR COMBINATION SCREEN AND STORM SASH, WOOD EXC. WINDOW SCREENS, WOOD FRAMED","24313|WINDOW OR DOOR FRAMES OR JAMS, WOOD","24314|DOORS OR SHUTTERS OR UNITS, WOOD","24316|WOOD MOULDINGS","24319|MILLWORK, NEC, OR CABINETWORK, TO BE BUILT IN EXC. METAL COVERED SEE 34421- 34425 OR PREFABRICATED STRUCTURAL WOOD PRODUCTS SEE 24332-24391","2432|PLYWOOD OR VENEER OR BUILT-UP WOOD EXC. PLYWOOD OR VENEER SEE 2441 OR WOOD BOARD OR HARDBOARD SEE 2499","24321|PLYWOOD OR VENEER OR BUILT-UP WOOD EXC. PLYWOOD OR VENEER CONTAINERS SEE 24411-24414, HARD BOARD SEE 24993 OR WOOD PARTICLE BOARD SEE 24996","2433|PREFABRICATED WOODEN BUILDINGS OR PANELS OR SECTIONS","24332|PREFABRICATED BUILDINGS, WOOD","24333|READY-CUT WOOD BUILDINGS OR PANELS OR SECTIONS PREFABRICATED BUILDINGS","2434|KITCHEN CABINETS, WOOD","24341|KITCHEN CABINETS, WOOD","2439|STRUCTURAL WOOD NEC","24391|PREFABRICATED STRUCTURAL MEMBERS OR WOOD","244|WOODEN CONTAINERS","2441|WOODEN CONTAINERS OR BOX SHOOKS","24411|BOXES, CASES, CRATES OR CARRIERS EXC. ANIMAL OR POULTRY","24412|CARRIERS, COOPS OR CRATES, ANIMAL","24413|FRUIT OR VEGETABLE BAS KETS OR HAMPERS OR TILL BOXES OR BASKETS","24414|BASKETS OR HAMPERS EXC. AMBULANCE OR UNDERTAKER SEE 39941, BAIT OR FISH SEE 39491, FRUIT OR TABLE SEE 24413 OR TOY SEE 39411","24415|COOPERAGE","24416|BOX SHOOKS","24419|WOODEN CONTAINERS, NEC, OR CONTAINER NEC","249|MISCELLANEOUS WOOD PRODUCTS EXC. CONTAINERS SEE 244","2491|TREATED WOOD PRODUCTS, CREOSOTED, OR TREATED WITH OTHER PRESERVATIVES","24911|WOOD PILING, POSTS, OR TIMBERS, ETC., CREOSOTED, OR TREATED WITH OTHER PRESERVATIVES","24912|TIES, MINE, RAILROAD, ETC., CREOSOTED, OR TREATED WITH OTHER PRESERVATIVES","24913|LUMBER, CREOSOTED OR TREATED WITH OTHER PRESERVATIVES","24914|PLYWOOD, VENEER OR BUILT-UP WOOD, CREOSOTED OR TREATED WITH OTHER PRESERVATIVES","24919|TREATED WOOD PRODUCTS, NEC, CREOSOTED, OR ED WITH OTHER PRESERVATIVES","2492|RATTAN, BAMBOO OR WARE EXC. FURNITURE SEE 25, BASKETS OR HAMPERS SEE 2441","24921|RATTAN, BAMBOO OR WARE EXC. FURNITURE SEE 25, BASKETS OR HAMPERS SEE 24413 OR 24414","2493|LASTS OR RELATED PRODUCTS, ALL MATERIALS","24931|LASTS OR RELATED PRODUCTS, ALL MATERIALS","2494|CORK PRODUCTS","24941|CORK PRODUCTS","2495|HAND TOOL HANDLES","24951|HAND TOOL HANDLES","2496|SCAFFOLDING EQUIPMENT OR LADDERS","24961|SCAFFOLDING EQUIPMENT","24962|LADDERS OR LADDER PARTS","2497|WOODEN WARE, NOVELTIES FLATWARE","24971|WOODEN WARE","24972|WOODEN NOVELTIES OR WARE","2498|WOOD PRODUCTS, NEC EXC. CONTAINERS SEE 2441","24981|POLES, RODS OR STAKES, FINISHED","24982|BILLBOARDS OR SIGN OR RELATED ARTICLES","24983|SEATS, BATHTUB OR LAUNDRY TUB COVERS, RADIATOR COVERS OR GUARDS, SINK DRAIN OR RELATED ARTICLES","24985|BOTTLE STOPPERS, ICE CREAM STICKS, PAINT PAD DLES OR PENCIL SLATS","24987|QUILTING FRAMES OR CURTAIN STRETCHERS","24988|BOARDS OR TABLES, IRONING","2499|WOOD PRODUCTS, NEC EXC. CONTAINERS SEE 2441","24992|SKIDS, PALLETS OR PLATFORMS EXC. METAL SEE 35373","24993|HARDBOARD","24994|MASTS, SPARS OR OARS, WOODEN, OR RELATED BOAT ACCESSORIES","24995|PIPE, CONDUIT, OR FITTINGS, WOODEN","24996|WOOD PARTICLE BOARD","24997|FENCING OR GATES, WOOD","24998|WOOD REELS OR SPOOLS TEXTILE MACHINERY SPOOLS SEE 35522","24999|WOOD PRODUCTS, NEC EXC. CONTAINERS SEE 24411-24414 OR 24419","25|FURNITURE OR FIXTURES","251|HOUSEHOLD OR OFFICE FURNITURE EXC. CONCRETE SEE 327, STONE SEE 328 OR TERRA COTTA SEE 326","2511|BENCHES, CHAIRS, ROCKERS OR STOOLS, HOUSEHOLD OR OFFICE EXC. CONCRETE SEE 3271, STONE SEE 3281 OR TERRA COTTA SEE 3269","25111|BENCHES, CHAIRS, ROCKERS OR STOOLS, HOUSEHOLD OR OFFICE EXC. CONCRETE SEE 32719, STONE SEE 32819 TERRA COTTA SEE 32699","2512|TABLES OR DESKS, HOUSEHOLD OR OFFICE EXC. CONCRETE SEE 3271, STONE 3281 OR TERRA COTTA SEE 3269","25121|TABLES OR DESKS, HOUSEHOLD OR OFFICE EXC. CONCRETE SEE 32719, STONE SEE 32819 OR TERRA COTTA SEE 32699","2513|DAVENPORTS, SOFAS, ES, LOVE SEATS OR SETTEES, HOUSEHOLD OR OFFICE","25131|DAVENPORTS, SOFAS, ES, LOVE SEATS OR SETTEES, HOUSEHOLD","2514|BUFFETS, SERVERS OR CORNER CLOSETS, HOLD","25141|BUFFETS, SERVERS, CHINA OR CORNER CLOSETS, HOLD","2515|BEDSPRINGS OR FOR ALL PURPOSES","25151|BED OR BOX SPRINGS, OR MATTRESSES, OR ASSEMBLED SPRINGS OR SPRING CUSHIONS EXC. AUTO SEATS OR BACKS SEE 25312 OR PADDING OR UPHOLSTERY FILLINGS SEE 22931","25153|CHAIR OR SOFA BEDS, OR STUDIO COUCHES, OR CONVERTIBLE SOFAS","2516|BEDS, DRESSERS, CHESTS DRAWERS OR VANITIES, HOUSEHOLD OR OFFICE EXC. HOSPITAL BEDS SEE 2599","25161|BEDS, DRESSERS, CHESTS DRAWERS OR VANITIES, HOUSEHOLD OR OFFICE EXC. HOSPITAL BEDS SEE 25991","2517|CABINETS OR CASES, HOLD OR OFFICE EXC. CABINETS SEE 2514, PLAY CASES SEE 2541 OR 2542 OR WOOD KITCHEN CABINETS SEE 2434","25171|RADIO, PHONOGRAPH OR TELEVISION CABINETS","25173|FILING CABINETS OR CASES","25174|KITCHEN CABINETS EXC. WOOD SEE 24341","25179|CABINETS, NEC, OR CASES, NEC, HOUSEHOLD OR OFFICE EXC. CHINA CABINETS SEE 25141, DISPLAY CASES SEE 25411 OR 25421, OR EN CABINETS SEE 24341 OR 25174","2518|INFANTS OR CHILDRENS FURNITURE","25181|INFANTS OR CHILDRENS FURNITURE","2519|HOUSEHOLD OR OFFICE FURNITURE, NEC EXC. SEE 3271, STONE SEE 3281 OR TERRA COTTA SEE 3269","25199|HOUSEHOLD OR OFFICE FURNITURE, NEC EXC. SEE 32719, STONE SEE 32819 OR TERRA COTTA SEE 32699","253|PUBLIC BUILDING OR ED FURNITURE EXC. CONCRETE SEE 327, STONE SEE 328 OR TERRA COTTA SEE 326","2531|PUBLIC BUILDING OR ED FURNITURE EXC. CONCRETE SEE 3271, STONE 3281 OR TERRACOTTA SEE 3269","25311|SCHOOL FURNITURE","25312|SEATS FOR PUBLIC CONVEYANCES VIZ. AIRCRAFT, AUTOMOBILE, RAILROAD TRUCK OR SCHOOL BUS","25314|SEATS, AUDITORIUM, BLEACHER, CIRCUS, STADIUM OR THEATRE","25319|PUBLIC BUILDING FURNITURE, NEC EXC. CONCRETE SEE 32719, STONE SEE 32819 OR TERRA COTTA SEE 32699","254|LOCKERS, PARTITIONS OR SHELVING OR OFFICE OR RE FIXTURES","2541|WOOD LOCKERS, PARTITIONS OR SHELVING OR OFFICE OR STORE FIXTURES EXC. REFRIGERATED CABINETS, CASES OR LOCKERS SEE 3585","25411|WOOD LOCKERS, PARTITIONS OR SHELVING OR OFFICE OR STORE FIXTURES EXC. REFRIGERATED CABINETS, CASES OR LOCKERS SEE 35853","2542|METAL LOCKERS, OR SHELVING OR OFFICE OR STORE FIXTURES EXC. REFRIGERATED CABINETS, CASES OR LOCKERS SEE 3585, OR SAFES OR VAULTS SEE 3492","25421|METAL LOCKERS, OR SHELVING OR OFFICE OR STORE FIXTURES EXC. REFRIGERATED CABINETS, CASES OR LOCKERS SEE 35853, OR SAFES OR SEE 34921","259|MISCELLANEOUS FURNITURE OR FIXTURES EXC. SEE 327, STONE SEE 328 TERRA COTTA SEE 326","2591|VENETIAN BLINDS, SHADES, AWNINGS, CURTAIN RODS OR ACCESSORIES EXC. CANVAS AWNINGS OR SHADES SEE 2394","25911|VENETIAN BLINDS, SHADES, AWNINGS, CURTAIN RODS OR ACCESSORIES EXC. CANVAS AWNINGS OR SHADES SEE 23942","2599|FURNITURE OR FIXTURES, N.E.C. EXC. CONCRETE SEE 3271, STONE SEE 3281 OR TERRA COTTA SEE 3269","25991|HOSPITAL BEDS","25999|FURNITURE OR FIXTURES, NEC, OR RESTAURANT FURNITURE EXC. TABLE ARMCHAIRS SEE 25311, DEN- TAL, HOSPITAL, OPERATING ROOM OR OPTICIANS SEE 38412, HOSPITAL BEDS SEE 25991, CONCRETE SEE 32719, STONE SEE 32819 OR TERRA COTTA SEE 32699","26|PULP, PAPER OR ALLIED PRODUCTS","261|PULP OR PULP MILL PRODUCTS","2611|PULP OR PULP MILL PRODUCTS","26111|PULP","26112|PULP MILL BY-PRODUCTS","262|PAPER EXC. BUILDING SEE 266","2621|PAPER EXC. BUILDING SEE 2661","26211|NEWSPRINT","26212|GROUND WOOD PAPER, UN-COATED","26213|PRINTING PAPER, COATED UNCOATED, COATED GROUND-WOOD PAPER, GROUNDWOOD PAPER CONTAINING LESS THAN 60 PERCENT GROUND-WOOD, COATED OR WRITING PAPER","26214|WRAPPING PAPER, OR COARSE PAPER","26217|SPECIAL INDUSTRIAL PAPER OR PAPER CAR LINERS","26218|SANITARY TISSUE STOCK","26219|PAPER, NEC EXC. BUILDING PAPER SEE 26611-26619","263|FIBREBOARD, PAPERBOARD PULPBOARD EXC. BUILDING","2631|INSULATING BOARD SEE 266FIBREBOARD, PAPERBOARD PULPBOARD EXC. BUILDING INSULATING BOARD","26311|FIBREBOARD, PAPERBOARD PULPBOARD EXC. BUILDING INSULATING BOARD SEE 26611-26619","264|CONVERTED PAPER OR BOARD PRODUCTS EXC. CONTAINERS OR BOXES SEE 265","2642|ENVELOPES EXC. SEE 2649","26421|ENVELOPES EXC. SEE 26491","2643|PAPER BAGS","26431|PAPER BAGS","2644|WALLPAPER","26441|WALLPAPER","2645|DIE-CUT PAPER OR PAPERBOARD PRODUCTS OR CARDBOARD","26451|OFFICE SUPPLIES","26452|COATED","26453|PAPERBOARD CLOSURES, FOR BOTTLES, CANS OR JARS VIZ. CAPS, COVERS, TOPS, ETC.","26459|DIE-CUT PAPER PRODUCTS, NEC, OR PAPERBOARD PRODUCTS OR CARDBOARD, NEC","2646|PRESSED OR MOLDED PULP GOODS","26461|BITUMINOUS FIBRE PIPE, SEWER OR DRAINAGE OR CONDUIT OR FITTINGS","26462|EGG CARTONS, CASES OR RELATED ARTICLES","26469|PRESSED OR MOLDED PULP GOODS, N. E. C.","2647|SANITARY PAPER PRODUCTS","26471|SANITARY TISSUES OR HEALTH PRODUCTS","26472|SANITARY OR COTTON SANITARY NAPKINS OR TAMPONS","2649|MISCELLANEOUS CONVERTED PAPER OR PAPERBOARD PRODUCTS","26491|STATIONERY OR STATIONERY ENVELOPES, TABLETS OR RELATED ARTICLES","26492|WRAPPING PRODUCTS (GIFT WRAP, ETC)","26495|BUSINESS MACHINE","26497|PACKING CUSHIONS, LINERS OR RELATED ARTICLES","26499|CONVERTED PAPER NEC, OR PAPERBOARD PRODUCTS, NEC","265|CONTAINERS OR BOXES, PAPERBOARD, FIBREBOARD PULPBOARD","2651|CONTAINERS OR BOXES, PAPERBOARD, FIBREBOARD PULPBOARD EXC. BUTTER","26511|CONTAINERS OR BOXES, PAPERBOARD, FIBREBOARD PULPBOARD EXC. BUTTER, FROZEN FOOD, ICE CREAM MARGARINE BOXES OR CONTAINERS SEE 26542-26549","26514|BASKETS, HAMPERS OR TILL BOXES, PAPERBOARD OR FIBREBOARD","26515|PALLETS, SKIDS OR PLATFORMS, PAPERBOARD","2654|SANITARY FOOD CONTAINERS","26542|BOTTLES OR CARTONS OR OTHER LIQUID-TIGHT FOOD CONTAINERS","26543|PAPER, FIBREBOARD, BOARD OR PULPBOARD CANS, COVERS, CUPS, PAILS, STRAWS OR TUBS","26545|PAPER PLATES, DISHES, FORKS, SPOONS OR RELATED ARTICLES","26549|SANITARY FOOD NEC","2655|FIBRE CANS, DRUMS OR TUBES OR SIMILAR EXC. SANITARY FOOD CONTAINERS SEE 2654","26551|FIBRE CANS, DRUMS OR TUBES OR SIMILAR EXC. SANITARY FOOD CONTAINERS SEE 26542-26549","266|BUILDING PAPER OR BUILDING BOARD","2661|BUILDING PAPER OR BUILDING BOARD","26611|INSULATING BOARD","26612|CONSTRUCTION PAPER","26613|WALLBOARD EXC. HARDBOARD SEE 24993","26614|INSULATING MATERIAL EXC. INSULATING BOARD","26615|26611 CONSTRUCTION PANELS, PARTITIONS, SIDING OR FORMS 2661927 BUILDING PAPER OR BUILDING BOARD, NEC PRINTED MATTER","271|NEWSPAPERS","2711|NEWSPAPERS","27111|NEWSPAPERS","272|PERIODICALS","2721|PERIODICALS","27211|PERIODICALS","273|BOOKS","2731|BOOKS","27311|BOOKS","274|MISCELLANEOUS PRINTED MATTER","2741|MISCELLANEOUS PRINTED MATTER","27411|CATALOGUES, DIRECTORIES, BUSINESS SERVICE PUBLICATIONS OR ADVERTISING MATERIALS","27415|CARDS OR TICKETS EXC. GREETING CARDS SEE 27711","27417|LABELS, SEALS, TAGS OR WRAPPERS EXC. GOVERNMENT STAMP SEE 27419 OR ING SEE 27711","27419|PRINTED MATTER, NEC, OR BLUEPRINTS, BUILDING PLANS OR COMMERCIAL DESIGNS","276|MANIFOLD BUSINESS FORMS","2761|MANIFOLD BUSINESS FORMS","27611|MANIFOLD BUSINESS FORMS","277|GREETING CARDS, SEALS, LABELS OR TAGS","2771|GREETING CARDS, SEALS, LABELS OR TAGS","27711|GREETING CARDS, SEALS, LABELS OR TAGS","278|BLANK BOOKS, LOOSE LEAF BINDERS OR DEVICES","2781|BLANK BOOKS, LOOSE LEAF BINDERS OR DEVICES","27811|BLANK BOOKS, PADS OR TABLETS","27812|LOOSE LEAF BINDERS OR DEVICES","279|SERVICE INDUSTRIES FOR PRINTING TRADES","2791|SERVICE INDUSTRIES FOR PRINTING TRADES","27911|SERVICE INDUSTRIES FOR PRINTING TRADES, INCLUDING ELECTROTYPE, ENGRAVERS, LITHOGRAPHIC OR STEREOTYPE PLATES, SHELLS, BLOCKS OR BARS","28|CHEMICALS OR ALLIED PRODUCTS","281|INDUSTRIAL INORGANIC OR ORGANIC CHEMICALS EXC. PESTICIDES SEE 287, DRUGS, MEDICINAL CHEMICALS OR MEDICINES SEE 283, NAVAL STORES OR WOOD DISTILLATION PRODUCTS SEE 286 OR COSMETICS, GLYCERIN OR SOAP SEE 284","2812|POTASSIUM OR SODIUM COMPOUNDS OR OTHER BASIC INORGANIC COMPOUNDS OR CHLORINE","28121|INORGANIC BLEACHING COMPOUNDS EXC. CHLORINE SEE 28128","28122|SODIUM ALKALIES","28123|SODIUM COMPOUNDS EXC. SODIUM ALKALIES","28124|POTASSIUM ALKALIES","28125|POTASSIUM COMPOUNDS EXC. POTASSIUM ALKALIES SEE 28124","28126|BARIUM, CALCIUM, MAGNESIUM OR STRONTIUM COMPOUNDS EXC. BLEACHES SEE 28121 OR 28422","28128|CHLORINE","28129|ALKALIES, NEC","2813|INDUSTRIAL GASES, COMPRESSED, LIQUEFIED OR SOLID EXC. CHEMICAL WARFARE GASES SEE 2818, AMMONIA OR FLUORINE SEE 2819 OR CHLORINE SEE 2812","28132|ACETYLENE","28133|CARBON DIOXIDE","28134|ELEMENTAL GASES","28139|INDUSTRIAL GASES, NEC, COMPRESSED, SOLID OR LIQUEFIED EXC. CHEMICAL WARFARE GASES SEE 28188, AMMONIA OR AMMONIA COM- POUNDS SEE 28191 OR 28198, CHLORINE SEE 28128OR FLUORINE SEE 28199","2814|CRUDE PRODUCTS FROM COAL TAR, NATURAL GAS OR PETROLEUM EXC. ASPHALT, PITCHES OR TAR SEE 2911","28141|CRUDE PRODUCTS FROM COAL TAR, NATURAL GAS OR PETROLEUM EXC. ASPHALT, PITCHES OR TAR SEE 29116","2815|CYCLIC INTERMEDIATES OR DYES OR ORGANIC PIGMENTS (LAKES OR TONERS)","28151|CYCLIC INTERMEDIATES BENZENE, TOLUENE, NAPHTHALENE, ANTHRACENE, PYRIDINE, CARBAZOLE OR OTHER CYCLIC CHEMICAL PRODUCTS","28152|CYCLIC INTERMEDIATES BENZENE, TOLUENE, NAPHTHALENE, ANTHRACENE, PYRIDINE, CARBAZOLE OR OTHER CYCLIC CHEMICAL PRODUCTS (SEE ALSO 28151)","28156|ORGANIC DYES","28158|ORGANIC PIGMENTS (LAKES OR TONERS)","2816|INORGANIC PIGMENTS EXC. BLACKS SEE 2899 OR IC COLOR PIGMENTS SEE 2815","28161|TITANIUM PIGMENTS","28162|LEAD PIGMENTS","28163|ZINC PIGMENTS","28169|INORGANIC PIGMENTS, NEC EXC. BLACKS SEE 28996 OR ORGANIC COLOR PIGMENTS SEE 28158","2818|INDUSTRIAL ORGANIC CHEMICALS, NEC EXC. GRAIN ALCOHOL FOR BEVERAGE PURPOSES SEE 2085, ESSENTIAL OILS OR FATTY ACIDS SEE 2899, ORGANIC DYES SEE 2815, PAINTS OR ALLIED PRODUCTS SEE 2851, PLASTIC MATERIALS, SYN-THETIC FIBRES, RESINS, RUBBER, OR NONVULCANIZABLE ELASTOMERS SEE 2821,OR SPECIALTY CLEANING, POLISHING OR SANITATION PREPARATIONS SEE 2842","28180|MISCELLANEOUS ACYCLIC ORGANIC CHEMICAL (SEE ALSO 28181 AND 28182) EXC. ORGANIC DYES SEE 28156","28181|MISCELLANEOUS ACYCLIC ORGANIC CHEMICAL EXC. ORGANIC DYES SEE 28156","28182|MISCELLANEOUS ACYCLIC ORGANIC CHEMICAL EXC. ORGANIC DYES SEE 28156","28183|MISCELLANEOUS CYCLIC CHEMICAL PRODUCTS","28184|ALCOHOLS","28185|GLYCOLS OR GLYCERINES","28186|ORGANIC ACIDS OR SALTS EXC. ACID DYES SEE 28151-28158, OR FATTY ACIDS SEE 28994","28187|MISCELLANEOUS ACYCLIC INORGANIC PRODUCTS (SEE ALSO 28180, 28181, EXC. ORGANIC DYES SEE 28156","28188|CHEMICAL WARFARE GASES","28189|INDUSTRIAL ORGANIC CHEMICALS, NEC EXC. GRAIN ALCOHOL FOR BEVERAGE PURPOSES SEE 20851-20859,PAINTS OR ALLIED PRODUCTS SEE 28511-28519, PLASTIC MATERIALS, SYNTHETIC FIBRES, RESINS, RUBBER, OR NONVULCANIZABLE ELASTOMERS SEE 28211-28213, OR SPECIALTY CLEANING, POLISHING OR SANITATION PREPARATIONS SEE 28422-28423","2819|INDUSTRIAL INORGANIC CHEMICALS, NEC EXC. MINING, MILLING OR OTHERWISE PREPARING NATURAL BORON, SODIUM OR POTASSIUM COM-POUNDS SEE 1471, OR HOUSEHOLD BLEACHES SEE 2842","28190|INDUSTRIAL INORGANIC CHEMICALS, NEC (SEE ALSO 28199) EXC. MINING, MILL-ING OR OTHERWISE PREPARING NATURAL BORON, SODIUM OR POTASSIUM COMPOUNDS SEE 14713, OR HOUSEHOLD BLEACHES SEE 28422","28191|AMMONIA OR AMMONIUM COMPOUNDS EXC. ANHYDROUS AMMONIA SEE 28198","28192|NITRIC ACID","28193|SULPHURIC ACID","28194|INDUSTRIAL INORGANIC ACIDS EXC. NITRIC SEE 28192, OR SULPHURIC SEE 28193","28195|COBALT, COPPER, IRON, NICKEL OR ZINC COMPOUNDS","28196|ALUMINUM COMPOUNDS","28197|RADIO-ACTIVE OR NUCLEAR CHEMICALS","28198|ANHYDROUS AMMONIA","28199|INDUSTRIAL INORGANIC CHEMICALS, NEC EXC. MIN- ING, MILLING OR OTHERWISE PREPARING NATURAL BORON, SODIUM OR POTASSIUM COMPOUNDS SEE 14713, OR HOUSEHOLD BLEACHES SEE 28422","282|PLASTIC MATERIALS OR SYNTHETIC FIBRES, RESINS OR RUBBER EXC. GLASS SEE 322, PLASTIC OR RUBBER PRODUCTS SEE 30 OR KNITTING, SPINNING, THROWING OR WEAVING FIBRES SEE 22","2821|PLASTIC MATERIALS OR SYNTHETIC FIBRES, RESINS, RUBBERS OR NONVULCANIZABLE ELASTOMERS EXC. FABRICATED OR RUBBER PRODUCTS SEE 3061 OR 3071OR GLASS FIBRES SEE 3229.","28211|PLASTIC MATERIALS OR SYNTHETIC RESINS OR NONVULCANIZABLE ELASTOMERS EXC. FABRICATED PLASTIC PRODUCTS SEE 30711-30719","28212|SYNTHETIC RUBBERS (VULCANIZABLE ELASTOMERS) EXC. FABRICATED RUBBER PRODUCTS SEE 30611-30619","28213|SYNTHETIC FIBERS EXC. GLASS SEE 32293","283|DRUGS (BIOLOGICAL OR BOTANICAL PRODUCTS) (MEDICINAL CHEMICALS OR PHARMACEUTICAL PREPARATIONS)","2831|DRUGS (BIOLOGICAL OR BOTANICAL PRODUCTS) (MEDICINAL CHEMICALS OR PHARMACEUTICAL PREPARATIONS)","28311|DRUGS FOR HUMAN USE","28312|DRUGS FOR VETERINARY USE","284|SOAP OR OTHER CLEANING PREPARATIONS, COSMETICS, PERFUMES OR OTHER TOILET","2841|SOAP OR OTHER DETERGENTS EXC. SPECIALTY CLEANERS SEE 2842, SHAMPOOS OR SHAVING PRODUCTS SEE 2844 OR SYNTHETIC GLYCERIN SEE 2818","28411|SYNTHETIC ORGANIC DETERGENTS EXC. SYNTHETIC GLYCERIN SEE 28185","28419|SOAP OR OTHER DETERGENTS EXC. SHAMPOOS OR SHAVING PRODUCTS, SEE 28441, SPECIALTY CLEANERS SEE 28422-28423 OR SYNTHETIC ORGANIC DETERGENTS SEE 28411","2842|SPECIALTY CLEANING, POLISHING OR SANITATION PREPARATIONS, OR HOUSEHOLD BLEACHES EXC. SOAP OR DETERGENTS SEE 2841 PESTICIDAL PREPARATIONS SEE 2879","28422|SPECIALTY CLEANING, POLISHING OR SANITATION PREPARATIONS, OR HOUSEHOLD BLEACHES EXC. CIDAL PREPARATIONS SEE 28799","28423|WAXES OR POLISHING RATIONS OR RELATED PRODUCTS","2843|SURFACE ACTIVE OR ING AGENTS, SULFONATED OILS OR ASSISTANTS","28431|SURFACE ACTIVE OR ING AGENTS, SULFONATED OILS OR ASSISTANTS","2844|COSMETICS, PERFUMES OR OTHER TOILET EXC. ESSENTIAL OILS SEE 2899, OR SYNTHETIC FLAVORING OR PERFUME MATERIALS SEE 2818","28441|COSMETICS, PERFUMES OR OTHER TOILET EXC. ESSENTIAL OILS SEE 28999, OR SYNTHETIC FLAVORING OR PERFUME MATERIALS SEE 28189","285|PAINTS, ENAMELS, LACQUERS, SHELLACS OR VARNISHES, OR ALLIED PROD- UCTS EXC. BONE, CARBON OR LAMP BLACKS, CALKING COMPOUNDS OR PRINTERS INK SEE 289, INORGANIC OR ORGANIC COLOR PIGMENTS SEE 281 OR PLASTIC MATERIALS SEE 282","2851|PAINTS, ENAMELS, LACQUERS, SHELLACS OR VARNISHES, OR ALLIED PROD- UCTS EXC. BONE, CARBON OR LAMP BLACKS SEE 2899, CAULKING COMPOUNDS SEE 2891, INORGANIC OR ORGAN-IC COLOR PIGMENTS SEE 2815 OR 2816, PLASTIC MATERIALS SEE 2821 OR PRIN-TERS INK SEE 2893","28511|PAINTS, ENAMELS, LACQUERS, SHELLACS OR VARNISHES","28512|PAINT OILS, SOLVENTS OR THINNERS, PAINT DRYING INGREDIENTS OR RELATED PRODUCTS","28513|PUTTY","28519|PAINTS, ENAMELS, LACQUERS, SHELLACS OR VARN- ISHES OR ALLIED PRODUCTS, NEC, INCLUDING MIXED SHIPMENTS EXC. BONE, CARBON OR LAMP BLACKS SEE28996, CALKING COMPOUNDS SEE 28911, INORGANIC COLOR PIGMENTS SEE 28161-28167, ORGANIC COLOR PIGMENTS SEE 28151-28158, PLASTIC MATERIALS SEE 28211-28213OR PRINTERS INK SEE 28931","286|GUM OR WOOD CHEMICALS","2861|GUM OR WOOD CHEMICALS EXC. SYNTHETIC DYES SEE 2815 OR SYNTHETIC CHEMICALS OR TANNING MATERIALS SEE 2818","28612|GUM OR WOOD CHEMICALS EXC. SYNTHETIC DYES SEE 28151- 28158 OR SYNTHETIC ORGANIC CHEMICALS OR TANNING MATERIALS SEE 28181-28189","287|AGRICULTURAL CHEMICALS","2871|FERTILIZERS EXC. MILLED, MINED OR OTHERWISE PREPARED NATURAL BORON, SODIUM OR POTASSIUM COM","28712|SUPERPHOSPHATE SOLUTION OR NITROGEN FERTILIZER SOLUTION","28714|MISCELLANEOUS FERTILIZER COMPOUNDS","28719|FERTILIZERS, NEC EXC. MILLED, MINED OR OTHERWISE PREPARED NATURAL BORON, SODIUM OR POTASSIUM COMPOUNDS SEE 14713","2879|MISCELLANEOUS AGRICULTURAL CHEMICALS","28799|AGRICULTURAL CHEMICALS, NEC, FUNGICIDES, HERBICIDES OR PLANT HORMONES, HOUSEHOLD OR INDUSTRIAL PESTICIDAL PREPARATIONS, OR AGRICULTURAL DISINFECTANTS, INSECTICIDES OR PESTICIDES EXC. PEST CONTROL CHEMICALS NOT FORMULATED SEE 281 OR AGRICULTURAL LIME PRODUCTS SEE 14211 OR 32959","289|MISCELLANEOUS CHEMICAL PRODUCTS","2891|ADHESIVES","28911|ADHESIVES, CEMENTS, GLUES, SIZES, CALKING COMPOUNDS OR SEALANTS EXC. ASBESTOS CEMENT SEE 32921-32929","2892|EXPLOSIVES EXC. AMMUNITION SEE 1929 OR 1961 FIREWORKS OR PYROTECHNICS SEE 2899","28921|EXPLOSIVES EXC. AMMUNITION SEE 19291-19299, 19611, FIREWORKS OR PYROTECHNICS SEE 28993","2893|PRINTING INK","28931|PRINTING INK","2899|CHEMICALS OR CHEMICAL PREPARATIONS, NEC","28991|SALT, COMMON","28993|FIREWORKS","28994|FATTY ACIDS","28995|WATER TREATING COMPOUNDS","28996|BLACKS","28997|MISCELLANEOUS CHEMICAL COMPOUNDS (ALSO SEE 28998) EXC. SEALANTS SEE 28911","28998|MISCELLANEOUS CHEMICAL COMPOUNDS (ALSO SEE 28997) EXC. SEALANTS SEE 28911","28999|CHEMICAL PRODUCTS, NEC EXC. SEALANTS SEE 28911","29|PETROLEUM OR COAL PRODUCTS","291|PRODUCTS OF PETROLEUM REFINING","2911|PETROLEUM REFINING PRODUCTS EXC. LIQUEFIED PETROLEUM GASES SEE 2912 PETROLEUM COKE SEE 2991","29111|GASOLINE OR JET OR HIGH VOLATILE PETROLEUM FUELS EXC. NATURAL GAS OR LINE SEE 13121 OR 13211","29112|KEROSENE EXC. JET FUELS SEE 29111","29113|DISTILLATE FUEL OIL","29114|PETROLEUM LUBRICATING OR SIMILAR OILS, COMPOUNDS OR DERIVATIVES","29115|PETROLEUM LUBRICATING GREASES","29116|ASPHALT PITCHES OR TARS, FROM PETROLEUM, COAL COKE OVEN OR NATURAL GAS OILS OR OTHER LOW VOLATILE PETROLEUM FUELS","29119|PETROLEUM REFINING PRODUCTS, NEC EXC. LIQUEFIED PETROLEUM GASES SEE OR PETROLEUM COKE SEE 29913","2912|LIQUEFIED GASES, COAL OR PETROLEUM","29121|LIQUEFIED GASES, COAL OR PETROLEUM","295|PAVING OR ROOFING MATERIALS","2951|ASPHALT PAVING BLOCKS OR MIXTURES, INCLUDING CREOSOTED WOOD, TAR OR COMPOSITION OF ASPHALT OR TAR WITH OTHER MATERIALS","29511|ASPHALT PAVING BLOCKS OR MIXTURES, INCLUDING CREOSOTED WOOD, TAR OR COMPOSITION OF ASPHALT OR TAR WITH OTHER MATERIALS","2952|ASPHALT COATINGS OR FELTS OR ROOFING CEMENTS EXC. PAINT SEE 2851 OR LINOLEUM OR TILE CEMENT SEE 2891","29521|ASPHALT OR TAR SATURATED FELTS, BOARDS OR ROOFING","29522|ASPHALT OR TAR CEMENTS COATINGS OR ROOFING CEMENTS OR PITCHES EXC. LINOLEUM OR TILE CEMENT SEE 28911","29523|ASPHALT SHEATHINGS, SHINGLES OR SIDINGS","29529|ASPHALT COATINGS OR FELTS, NEC EXC. PAINT 28511-28519 OR LINOLEUM OR TILE CEMENT SEE 28911","299|MISCELLANEOUS COAL OR PETROLEUM PRODUCTS","2991|MISCELLANEOUS COAL OR PETROLEUM PRODUCTS EXC. PETROLEUM REFINERY SEE 2911","29911|COAL OR COKE BRIQUETTES (FUEL BRICKS), INCLUDING ANTHRACITE CULM, BITUMINOUS SLACK, CHARCOAL","29912|PEAT OR SAWDUST LUBRICANTS OR SIMILAR COMPOUNDS EXC. PETROLEUM REFINERY SEE 29114 OR 29115","29913|PETROLEUM COKE EXC. BRIQUETTES SEE 29911","29914|COKE PRODUCED FROM COAL","29915|DISTILLATE OR RESIDUAL FUEL OIL FROM COAL REFINING","29919|COAL OR PETROLEUM PRODUCTS, NEC EXC. DYES, DYE (CYCLIC) INTERMEDIATES SEE 28151-28158 OR PETROLEUM REFINERY SEE 29111-29119","30|RUBBER OR MISCELLANEOUS PLASTICS PRODUCTS","301|RUBBER TIRES OR INNER TUBES","3011|RUBBER TIRES OR INNER TUBES","30111|RUBBER PNEUMATIC TIRES PARTS","30114|RUBBER INNER TUBES","30115|TREAD RUBBER OR RUBBER TIRE SUNDRIES OR REPAIR MATERIALS","30119|RUBBER TIRES OR RELATED","302|PRODUCTS, NEC RUBBER OR PLASTIC FOOTWEAR","3021|RUBBER OR PLASTIC FOOTWEAR, INCLUDING FABRIC WITH RUBBER OR PLASTIC SOLES","30211|FOOTWEAR, RUBBER OR RUBBER SOLED FABRIC, CANVAS WITH RUBBER SOLES, LEATHER WITH VULCANIZED RUBBER SOLES OR PLASTIC WITH RUBBER","30212|PLASTIC FOOTWEAR, ING FABRIC WITH PLASTIC SOLES","303|RECLAIMED RUBBER","3031|RECLAIMED RUBBER","30311|RECLAIMED RUBBER","304|RUBBER OR PLASTIC HOSE BELTING","3041|RUBBER OR PLASTIC HOSE BELTING","30411|RUBBER OR PLASTIC BELTS OR BELTING","30412|RUBBER OR PLASTIC HOSE","306|MISCELLANEOUS FABRICATED RUBBER PRODUCTS","3061|MISCELLANEOUS FABRICATED RUBBER PRODUCTS","30613|SPONGE OR FOAM RUBBER GOODS","30614|RUBBER FLOOR OR WALL","30618|FABRICATED RUBBER PRODUCTS, NEC EXC. ELASTIC WEBBING SEE 22411, ELASTIC WEBBING PRODUCTS OR RUBBERIZED FABRIC GARMENTS SEE 23, SYNTHETIC RUBBERS SEE 28212, RUBBER CEMENT SEE 28911, RUBBER PACKING SEE 32932, RUBBER BELTING SEE 30411 OR RUBBER HOSE SEE 30412","30619|FABRICATED RUBBER PRODUCTS, NEC EXC. ELASTIC WEBBING SEE 22411, ELASTIC WEBBING PRODUCTS OR RUBBERIZED FABRIC GARMENTS SEE 23, SYNTHETIC RUBBERS SEE 28212, RUBBER CEMENT SEE 28911, RUBBER PACKING SEE 32932, RUBBER BELTING SEE 30411 OR RUB-BER HOSE SEE 30412","307|MISCELLANEOUS PLASTIC PRODUCTS","3071|MISCELLANEOUS PLASTIC PRODUCTS EXC. ARTIFICIAL","30711|LEATHER SEE 2295 OR TIC MATERIALS SEE 2821 PLASTIC DINNERWARE OR HOUSEWARES","30712|PLASTIC PIPE, TUBING OR FITTINGS","30713|INDUSTRIAL (MOLDED) TIC PRODUCTS","30714|UNSUPPORTED VINYL OR POLYETHYLENE FILM OR SHEETING","30715|UNSUPPORTED PLASTIC OR WALL COVERINGS","30716|EXPANDED OR FOAMED PLASTICS","30717|PLASTIC LAMINATED RODS, SHEETS OR TUBES","30718|PLASTIC PACKAGING OR SHIPPING CONTAINERS, VIZ. BASKETS, BOTTLES, BOXES, CANS, CUPS, DRUMS, JARS, TUBS, TUBES OR TUMBLERS OR CAPS, CLOSURES, IN- SERTS, OR LINERS FOR CONTAINERS","30719|MISCELLANEOUS FABRICATED PLASTIC PRODUCTS, NEC EXC. ARTIFICIAL LEATHER SEE 22951, PLASTIC MATE-RIALS SEE 28211, PLASTIC-FOOTWEAR SEE 30212, PLASTIC BELTING SEE 30411 OR PLASTIC HOSE SEE 30412","3072|MISCELLANEOUS PLASTIC PRODUCTS EXC. ARTIFICIAL LEATHER SEE 2295 OR TIC MATERIALS SEE 2821","30729|MISCELLANEOUS FABRICATED PLASTIC PRODUCTS, NEC EXC. ARTIFICIAL LEATHER SEE 22951, PLASTIC MATE-RIALS SEE 28211, PLASTIC FOOTWEAR SEE 30212, PLASTIC BELTING SEE 30411 OR PLASTIC HOSE SEE 30412","31|DESCRIPTION LEATHER OR LEATHER PRODUCTS","311|LEATHER","3111|LEATHER, FINISHED OR TANNED","31111|LEATHER, FINISHED OR TANNED","312|INDUSTRIAL LEATHER BELTING","3121|INDUSTRIAL LEATHER BELTING","31211|INDUSTRIAL LEATHER BELTING","313|BOOT OR SHOE CUT STOCK FINDINGS, ALL MATERIALS","3131|BOOT OR SHOE CUT STOCK FINDINGS, ALL MATERIALS","31311|BOOT OR SHOE CUT STOCK FINDINGS, ALL MATERIALS","314|FOOTWEAR, LEATHER OR OTHER MATERIALS EXC. RUBBER OR PLASTIC","3141|FOOTWEAR, LEATHER OR OTHER MATERIALS EXC. RUBBER OR PLASTIC SEE 3021 OR HOUSE SLIPPERS SEE 3142","31411|FOOTWEAR, LEATHER OR OTHER MATERIALS EXC. RUBBER SEE 30211, SEE 30212 OR HOUSE SLIPPERS SEE 31421","3142|HOUSE SLIPPERS, LEATHER OR OTHER MATERIALS","31421|HOUSE SLIPPERS, LEATHER OR OTHER MATERIALS","315|LEATHER GLOVES OR MITTENS","3151|LEATHER DRESS OR WORK GLOVES OR MITTENS EXC. ATHLETIC OR SPORTING SEE 3949 OR CLOTH AND COMBINED SEE 2381","31511|LEATHER DRESS OR WORK GLOVES OR MITTENS EXC. ATHLETIC OR SPORTING SEE 3949 OR CLOTH AND COMBINED SEE 23811-23812","316|LUGGAGE OR HANDBAGS, LEATHER OR OTHER MATERIALS, OR OTHER PERSONAL LEATHER GOODS EXC. PRECIOUS METAL SEE 391","3161|LUGGAGE OR HANDBAGS, LEATHER OR OTHER MATERIALS, OR OTHER PERSONAL LEATHER GOODS EXC. PRECIOUS METAL SEE 3911","31611|LUGGAGE OR HANDBAGS, LEATHER OR OTHER MATERIALS, OR OTHER PERSONAL LEATHER GOODS EXC. HAT BOXES, PAPER OR PAPERBOARD SEE 26511 OR PRECIOUS METAL SEE 39111","319|LEATHER GOODS, NEC","3199|LEATHER GOODS, NEC","31999|LEATHER GOODS, NEC","32|CLAY, CONCRETE, GLASS OR STONE PRODUCTS","321|FLAT GLASS","3211|FLAT GLASS","32111|SHEET (WINDOW) GLASS","32112|PLATE GLASS","32113|LAMINATED OR SAFETY","32119|FLAT GLASS, NEC","322|GLASS OR GLASSWARE, PRESSED OR BLOWN","3221|GLASS CONTAINERS","32211|GLASS CONTAINERS, OR GLASS CAPS OR COVERS GLASS BOTTLES SEE 32212","32212|GLASS BOTTLES","32219|GLASS CONTAINERS, NEC","3229|GLASS OR GLASSWARE, BLOWN OR PRESSED, NEC EXC. ELECTRIC LIGHT BULBS SEE 3641, FLAT GLASS SEE 3211, GLASS CONTAINERS SEE 3221, GLASS WOOL INSULATION PRODUCTS (MIN-ERAL WOOL) SEE 3296 OR OPTICAL LENSES SEE 3831","32291|ART, KITCHEN, NOVELTY OR TABLE GLASSWARE","32292|LIGHTING GLASSWARE EXC. COMPLETE ELECTRIC LIGHT BULBS SEE 36411","32293|GLASS FIBRE","32294|GLASS MIRRORS","32295|GLASS BLOCKS, BRICK, SKYLIGHTS OR RELATED PRODUCTS","32296|ELECTRONIC GLASSWARE COMPLETE ELECTRONIC SEE 36711","32299|GLASS OR GLASSWARE, BLOWN OR PRESSED, NEC EXC. FLAT GLASS SEE 32111-32119, GLASS CONTAINERS SEE 32211-32119, GLASS WOOL INSULATION PRODUCTS (MINERAL WOOL) SEE 32961 OR OPTICAL LENSES SEE 38311","324|HYDRAULIC CEMENT","3241|HYDRAULIC CEMENT","32411|HYDRAULIC CEMENT, NATURAL, PORTLAND OR MASONRY","32412|READY-MIX CEMENT OR CONCRETE, DRY","325|STRUCTURAL CLAY PRODUCTS","3251|CLAY BRICK OR STRUCTURAL CLAY TILE EXC. CERAMIC FLOOR OR WALL TILE SEE 3253, CLAY OR NONCLAY REFRACTORIES SEE 3255, GLASS SEE 3229 OR SAND LIME SEE 3299","32511|BRICK OR BLOCKS, CLAY OR SHALE EXC. CLAY OR NONCLAY REFRACTORIES SEE 32551-32552, GLASS SEE 32295 OR SAND LIME SEE 32999","32512|GLAZED BRICK OR BLOCKS, CLAY, SHALE OR CERAMIC, OR FACING MOLDING OR TILE OR STRUCTURAL HOLLOW TILE, GLAZED OR NOT GLAZED EXC. CERAMIC FLOOR OR WALL TILE SEE 32531 OR CLAY OR NONCLAY REFRACTORIES SEE 32551-32552","3253|CERAMIC FLOOR OR WALL TILE EXC. DRAIN TILE SEE3259 OR STRUCTURAL CLAY TILE SEE 3251","32531|CERAMIC, ENAMEL, FAIENCE, PROMENADE OR QUARRY FLOOR OR WALL TILE EXC. DRAIN TILE SEE 32592 OR STRUCTURAL CLAY TILE SEE 32512","3255|REFRACTORIES, CLAY OR NONCLAY","32551|CLAY REFRACTORIES","32552|NONCLAY REFRACTORIES DEAD BURNED MAGNESIA OR MAGNESITE SEE 32953","3259|MISCELLANEOUS STRUCTURAL CLAY PRODUCTS","32591|CLAY CONDUIT, CULVERTS, PIPE OR FITTINGS","32592|CLAY DRAIN TILE","32593|CLAY ARCHITECTURAL TERRA COTTA","32594|CLAY ROOFING TILE","32595|CLAY TILE BEAMS, CHANNELS, DOUBLE TREES, GIRDERS OR JOISTS, REINFORCED","32599|STRUCTURAL CLAY PRODUCTS, NEC","326|POTTERY OR RELATED PRODUCTS","3261|VITREOUS CHINA PLUMBING FIXTURES OR VITREOUS CHINA OR EARTHENWARE BATHROOM ACCESSORIES OR FITTINGS","32611|VITREOUS CHINA PLUMBING FIXTURES OR VITREOUS CHINA OR EARTHENWARE BATHROOM ACCESSORIES OR FITTINGS","3262|VITREOUS CHINA KITCHEN TABLE ARTICLES OR FINE EARTHENWARE OR WHITEWARE)","32621|VITREOUS CHINA KITCHEN TABLE ARTICLES OR FINE EARTHENWARE OR WHITEWARE)","3264|PORCELAIN ELECTRICAL SUPPLIES, STEATITE OR OTHER CERAMIC ELECTRICAL SUPPLIES","32641|PORCELAIN ELECTRICAL SUPPLIES, STEATITE OR OTHER CERAMIC ELECTRICAL SUPPLIES","3269|MISCELLANEOUS POTTERY PRODUCTS","32699|POTTERY PRODUCTS, NEC","327|CONCRETE, GYPSUM, OR PLASTER PRODUCTS","3271|CONCRETE PRODUCTS EXC. READY- MIX CONCRETE SEE 3273","32711|CONCRETE BRICK OR BLOCKS","32713|CONCRETE PILING, POLES POSTS","32714|CONCRETE CONDUIT, CULVERTS, DRAINS, PIPE OR TILE","32715|CONCRETE STRUCTURAL SHAPES, REINFORCED","32719|CONCRETE PRODUCTS, NEC","3273|READY-MIX CONCRETE, WET","32731|READY-MIX CONCRETE, WET","3274|LIME OR LIME PLASTER","32741|LIME OR LIME PLASTER","3275|GYPSUM PRODUCTS","32751|GYPSUM LATH","32752|GYPSUM PLASTER","32753|GYPSUM BUILDING EXC. LATH SEE 32751, PLASTER SEE 32752 OR WALLBOARD SEE 32754","32754|GYPSUM WALLBOARD","32759|GYPSUM PRODUCTS EXC. GYPSUM BUILDING SEE 32751-32753","328|CUT STONE OR STONE PROD UCTS","3281|CUT STONE OR STONE PROD UCTS","32811|CUT GRANITE OR GRANITE PRODUCTS","32812|CUT LIMESTONE OR LIMESTONE PRODUCTS","32813|CUT MARBLE OR MARBLE PRODUCTS","32814|CUT SLATE, SOAPSTONE, TALC OR RELATED PRODUCTS","32819|CLAY STONE OR STONE UCTS, NEC","329|ABRASIVES, ASBESTOS UCTS OR MISCELLANEOUS NONMETALLIC MINERAL PRODUCTS","3291|ABRASIVE PRODUCTS","32911|NONMETALLIC ARTIFICIAL ABRASIVES, FLOUR TIC ABRASIVES), POWDERS OR SIZED GRAINS","32912|NONMETALLIC BONDED ABRASIVE PRODUCTS, NONMETALLIC COATED ABRASIVES, OR DIAMOND ABRASIVES","32914|METAL ABRASIVES OR METAL SCOURING PADS, SOAP IMPREGNATED","32919|ABRASIVE PRODUCTS, NEC","3292|ASBESTOS PRODUCTS OR ASPHALT FLOOR TILE EXC. ASBESTOS PAPER SEE 2661, OR GASKETS OR PACKING 3293","32921|ASBESTOS FRICTION MATERIAL","32922|ASBESTOS CEMENT PRODUCTS","32923|ASPHALT OR VINYL FLOOR TILE EXC. ASPHALTED FELT BASE OR OTHER HARD SURFACE FLOOR COVERINGS SEE 39921 OR CORK TILE SEE 24941","32924|ASBESTOS INSULATION","32929|ASBESTOS PRODUCTS, NEC EXC. ASBESTOS PAPER SEE 26612, OR GASKETS OR PACKING SEE 32931- 32932","3293|GASKETS OR PACKING","32931|GASKETS, ALL TYPES","32932|PACKING, ALL TYPES","3295|NONMETALLIC EARTHS OR MINERALS, GROUND OR TREATED IN ANY OTHER MANNER EXC. COAL SEE 1111-1122 OR 2991, CRUSHED STONE SEE 1421, DIATOMACEOUS OR INFUSORIAL EARTH SEE 1491 OR INDUSTRIAL SAND SEE 1441","32951|VERMICULITE, EXFOLIATED, LOOSE","32952|LIGHT WEIGHT AGGREGATES, CLAYS OR SLAGS, GROUND OR TREATED IN ANY OTHER MANNER EXC. GROUND OR OTHERWISE TREATED AT MINESITE SEE 14911-14919, OR DIATOMACEOUS OR INFUSORIAL EARTH SEE 14918","32953|MAGNESITE OR MAGNESIA, CALCINED, DEAD BURNED OR GROUND","32954|PYROPHILLITE, STEATITE (SOAPSTONE) OR TALC, GROUND OR OTHERWISE TREATED","32955|FELDSPAR, GROUND OR OTHERWISE TREATED","32956|GROUND UNCALCINED GYPSITE OR ANHYDRITE","32957|MICA, GROUND OR TREATED","32958|NATURAL GRAPHITE (BLACK LEAD), BLENDED, GROUND, PULVERIZED OR REFINED","32959|NONMETALLIC MINERALS OR EARTHS, GROUND OR IN ANY OTHER MANNER EXC. COAL SEE 11111-11222, CRUSHED STONE SEE 14211-14219 OR SAND SEE 14413","3296|MINERAL WOOL EXC. ASBESTOS INSULATION SEE 3292 OR TEXTILE GLASS FIBRES SEE 3229","32961|MINERAL WOOL EXC. ASBESTOS INSULATION SEE 32924 OR TEXTILE GLASS FIBRES SEE 32293","3299|MISCELLANEOUS MINERAL PRODUCTS","32996|NONMETALLIC MINERAL INSULATING MATERIALS EXC. ASBESTOS SEE 32924, GYPSUM SEE 32753, MINERAL WOOL SEE 32961 OR PAPER SEE 26614","32999|NONMETALLIC MINERAL PRODUCTS, NEC, PAPER MACHE ART GOODS, STATUARY GOODS, URNS OR VASES","33|PRIMARY METAL PRODUCTS, INCLUDING GALVANIZED COATING OR OTHER ALLIED PROCESSING SEE 34994","331|STEEL WORKS, ROLLING MILL, OR OTHER REDUCTION PLANT PRODUCTS, GALVANIZED PRODUCTS EXC. COATING OR OTHER ALLIED PROCESSING SEE 34994","3311|BLAST OR METALLIZING FURNACE OR COKE OVEN PRODUCTS EXC. COKE, OR COKE BREEZE OR SCREENINGS","33111|PIG IRON","33112|FURNACE SLAG EXC. GROUND OR OTHERWISE TREATED SEE 32952","33115|METALLIZING PLANT PRODUCTS","33119|BLAST FURNACE, OPEN HEARTH, ROLLING MILL OR COKE OVEN PRODUCTS, NEC EXC. ASPHALT, PITCHES OR TARS SEE 29116, CRUDE TAR PRODUCTS, OR CHEMICALS SEE 28, METALLIC ORES SEE 10 OR OILS SEE 29114 OR 29912","3312|PRIMARY IRON OR STEEL PRODUCTS, INCLUDING GALVANIZED PRODUCTS EXC. COATING OR ALLIED PROCESSING SEE 34994 OR OVEN PRODUCTS SEE 3311","33121|STEEL INGOT OR SEMI-FINISHED SHAPES","33122|IRON OR STEEL PLATES","33123|IRON OR STEEL SHEET OR STRIP","33124|IRON OR STEEL BARS, BAR SHAPES OR RODS","33125|STRUCTURAL SHAPES OR PILING, STEEL MILL PRODUCTS","33126|IRON OR STEEL PIPE, OR FITTINGS","33127|TIN MILL PRODUCTS","33128|RAILWAY TRACK MATERIAL VIZ. RAILS, JOINT BARS, TIE PLATES OR RELATED PRODUCTS","33129|PRIMARY IRON OR STEEL PRODUCTS, NEC.","3313|ELECTROMETALLURGICAL PRODUCTS EXC. COPPER","33131|FERROMANGANESE","33132|FERROCHROME","33133|FERROSILICON","33134|ADDITIVE ALLOYS EXC. COPPER","33135|ELECTROMETALLURGICAL PRODUCTS, NEC EXC. ALUMINUM, MAGNESIUM OR COPPER","33139|FERROALLOYS, NEC","3315|STEEL WIRE, NAILS OR SPIKES, INCLUDING GALVANIZED EXC. COATING OR OTHER ALLIED PROCESSING SEE 34994","33151|NON-INSULATED FERROUS ROPE, CABLE OR STRAND","33152|STEEL NAILS, STAPLES, TACKS, BRADS OR SPIKES EXC. RAILWAY SPIKES SEE 33128","33155|STEEL WIRE EXC. NEOUS FABRICATED WIRE PRODUCTS SEE 34812-34819","332|IRON OR STEEL CASTINGS, INCLUDING GALVANIZED COATING OR OTHER ALLIED PROCESSING SEE 34994","3321|IRON OR STEEL CASTINGS, INCLUDING GALVANIZED COATING OR OTHER ALLIED PROCESSING SEE 34994","33211|IRON OR STEEL CAST PIPE OR FITTINGS","33219|IRON OR STEEL CASTINGS, NEC","333|NONFERROUS METAL PRIMARY SMELTER PRODUCT VIZ. SLAB, INGOT, PIG, ETC., OR RESIDUES","3331|PRIMARY COPPER SMELTER PRODUCTS","33311|PRIMARY COPPER OR COPPER BASE ALLOY PIG, SLAB OR INGOTS, ETC.","33312|COPPER MATTE, SPEISS, FLUE DUST OR RESIDUES, ETC.","3332|PRIMARY LEAD SMELTER PRODUCTS","33321|LEAD PIG, SLAB, INGOTS BULLION EXC. SOLDER, BITT OR TYPE METAL SEE 33567","33322|LEAD MATTE, SPEISS, FLUE DUST, DROSS, SLAG, SKIMMINGS, ETC.","3333|PRIMARY ZINC SMELTER PRODUCTS","33331|ZINC SMELTER PRODUCTS, VIZ. SPELTER, PIG SLAB INGOTS","33332|ZINC DROSS, RESIDUES, ASHES, ETC.","3334|PRIMARY ALUMINUM SMELTER PRODUCTS","33341|PRIMARY ALUMINUM BLOOMS, PIG, SLAB OR INGOTS","33342|ALUMINUM RESIDUES, ETC.","3339|MISCELLANEOUS PRIMARY NONFERROUS METAL PRODUCTS, VIZ. ANODES, DES, BILLETS, BLOOMS, IG, SLAB OR INGOTS","33391|MAGNESIUM PIG, SLAB OR INGOTS","33392|MANGANESE PIG, SLAB OR INGOTS","33393|MOLYBDENUM PIG, SLAB OR INGOTS","33394|NICKEL PIG, SLAB OR INGOTS","33395|TIN OR TIN BASE ALLOY PIG, SLAB OR INGOTS EXC. SOLDER, BABBITT OR TYPE METAL SEE 33567","33396|TITANIUM PIG, SLAB OR INGOTS","33398|MISCELLANEOUS NONFERROUS METAL RESIDUES, SOLDER, BABBITT OR TYPE METAL RESIDUES","33399|PRIMARY NONFERROUS METAL INGOTS, PIG OR SLAB, NEC","335|NONFERROUS METAL BASIC SHAPES EXC. COATING OR OTHER ALLIED PROCESSING SEE 34994","3351|BRASS, BRONZE OR COPPER BASIC OR OTHER COPPER BASE ALLOY SHAPES EXC. COATING OR OTHER ALLIED PROCESSING SEE 34994","33511|COPPER, BRASS OR BRONZE OR OTHER COPPER BASE ALLOY RODS OR BARS","33512|COPPER, BRASS, BRONZE OR OTHER COPPER BASE ALLOY PLATE, SHEET OR STRIP","33513|COPPER, BRASS, BRONZE OR OTHER COPPER BASE ALLOY PIPE OR TUBE","33519|COPPER, BRASS, BRONZE OR OTHER COPPER BASE ALLOY SHAPES, NEC","3352|ALUMINUM OR ALUMINUM ALLOY BASIC SHAPES EXC. COATING OR OTHER ALLIED PROCESSING SEE 34994 OR ALUMINUM FOIL OR FOIL STOCK SEE 34992","33521|ALUMINUM OR ALUMINUM ALLOY PLATE OR SHEET","33523|ALUMINUM OR ALUMINUM ALLOY RODS OR BARS","33524|ALUMINUM OR ALUMINUM ALLOY PIPE OR TUBE","33529|ALUMINUM OR ALUMINUM ALLOY BASIC SHAPES, NEC EXC. ALUMINUM FOIL OR FOIL STOCK SEE 34992","3356|MISCELLANEOUS NONFERROUS METAL BASIC SHAPES, VIZ. BARS, PIPE, PLATES, SHEET, STRIP OR TUBING EXC. COATING OR OTHER ALLIED PROCESSING SEE 34994","33561|MAGNESIUM OR MAGNESIUM BASE ALLOY BASIC SHAPES","33562|LEAD OR LEAD BASE ALLOY BASIC SHAPES EXC. SOLDER, BABBITT OR TYPE METAL SEE 33567","33563|NICKEL OR NICKEL BASE ALLOY BASIC SHAPES","33564|ZINC OR ZINC BASE ALLOY BASIC SHAPES","33565|TITANIUM BASIC SHAPES","33566|WELDING RODS, BARS OR WIRE","33567|SOLDER, BABBITT OR TYPE METAL SHAPES","33569|NONFERROUS METAL BASIC SHAPES, NEC EXC. INCLUDED IN PRIMARY INDUSTRIES SEE 33398","3357|NONFERROUS METAL OR INSULATED WIRE EXC. COATING OR OTHER ALLIED PROCESS- ING SEE 34994","33571|ALUMINUM OR ALUMINUM ALLOY WIRE, CABLE OR STRAND, BARE","33572|COPPER OR COPPER BASE ALLOY WIRE, STRAND OR CABLE, BARE","33573|NONFERROUS METAL OR NONFERROUS METAL BASE ALLOY WIRE, BARE EXC. ALUMINUM SEE 33571 OR COPPER SEE 33572","33574|WIRE OR CABLE, ENAMELED OR COVERED, ALL TYPES","336|NONFERROUS METAL OR NONFERROUS METAL BASE ALLOY CASTINGS EXC. COATING OR OTHER ALLIED PROCESSING SEE 34994","3361|ALUMINUM OR ALUMINUM BASE ALLOY CASTINGS EXC. COATING OR OTHER ALLIED PROCESSING SEE 34994","33612|ALUMINUM OR ALUMINUM BASE ALLOY CASTINGS EXC. COOK-ING UTENSILS SEE 36311","3362|BRASS, BRONZE, COPPER OR OTHER COPPER BASE ALLOY CASTINGS EXC. COATING OR OTHER ALLIED PROCESSING SEE 34994","33621|BRASS, BRONZE, COPPER OR OTHER COPPER BASE ALLOY CASTINGS","3369|MISCELLANEOUS NONFERROUS METAL CASTINGS EXC. COATING OR OTHER ALLIED PROCESSING SEE 34994","33691|MAGNESIUM OR MAGNESIUM BASE ALLOY CASTINGS","33692|ZINC OR ZINC BASE ALLOY CASTINGS","33693|LEAD, LEAD BASE ALLOY, BABBITT OR WHITE METAL CASTINGS","33699|NONFERROUS METAL CASTINGS, NEC.","339|MISCELLANEOUS PRIMARY METAL PRODUCTS EXC. COAT-ING OR OTHER ALLIED PROCESSING SEE 34994","3391|IRON OR STEEL FORGINGS EXC. COATING OR OTHER ALLIED PROCESSING SEE 34994","33911|IRON OR STEEL FORGINGS","3392|NONFERROUS METAL EXC. COATING OR OTHER ALLIED PROCESSING SEE 34994","33921|NONFERROUS METAL","3399|PRIMARY METAL PRODUCTS, NEC EXC. COATING OR ALLIED PROCESSING SEE 34994","33991|METAL POWDER, FLAKES OR PASTE","33992|NONFERROUS METAL NAILS, BRADS, SPIKES OR STAPLES","33999|PRIMARY METAL PRODUCTS, NEC","34|FABRICATED METAL EXC. ORDNANCE SEE 19,MACHINERY SEE 35 OR 36,OR TRANSPORTATION EQUIPMENT SEE 37","341|METAL CANS","3411|METAL CANS","34111|METAL CANS, INCLUDING MIXED WITH CAN BOTTOMS TOPS","342|CUTLERY, HAND TOOLS OR GENERAL HARDWARE","3421|CUTLERY, OTHER THAN ELECTRICAL","34211|KITCHEN OR TABLE CUTLERY OR RELATED CUTTING APPLIANCES, OTHER THAN ELECTRICAL","34213|SCISSORS OR SHEARS, OTHER THAN ELECTRICAL","34215|RAZOR BLADES OR RAZORS, OTHER THAN ELECTRICAL","34219|CUTLERY, NEC, OTHER THAN ELECTRICAL","3423|EDGE OR HAND TOOLS EXC. HAND SAWS OR SAW BLADES SEE 3425 OR MACHINE SEE 3541 OR 3542","34231|MECHANICS HAND SERVICE TOOLS OR LIGHT FORGED HAMMERS","34232|EDGE TOOLS","34233|FILES, RASPS OR FILE ACCESSORIES","34234|SHOVELS, SPADES, OR SCRAPERS","34235|HEAVY FORGED TOOLS VIZ. SLEDGES, PICKS, PICK MATTOCKS, MAULS, OR BARS","34236|AGRICULTURAL HAND TOOLS OR PARTS VIZ. FORKS, HOES, HUSKERS, RAKES, ROLLERS, WEEDERS, ETC. EXC. EDGED TOOLS SEE 34232, WHEELED TRANSPORTATION EQUIPMENT SEE 3799","34239|HAND TOOLS, NEC EXC. SAWS OR SAW BLADES SEE 34251 OR MACHINE TOOLS SEE 35412 OR 35421","3425|HAND SAWS OR SAW BLADES","34251|HAND SAWS OR BLADES OR SAW ACCESSORIES","3428|BUILDERS OR CABINET WARE OR FIREPLACE EQUIPMENT","34281|DOOR OR WINDOW HARDWARE","34282|FIREPLACE EQUIPMENT, DAMPERS, IRONS OR FIRE SCREENS, HARDWARE","34283|HINGES, HASPS OR BUTTS EXCEPT CABINET SEE 34264","34284|CABINET HARDWARE, HINGES OR LOCKS","34285|HOOKS, CLAMPS, CLIPS, FASTENERS OR SHELF HARDWARE OR HANGERS EXC. OR WINDOW SEE 34281","34289|BUILDERS HARDWARE, NEC","3429|MISCELLANEOUS HARDWARE EXC. BUILDERS SEE 3428","34291|TRANSPORTATION EQUIPMENT HARDWARE","34292|FURNITURE HARDWARE OR HARDWARE FOR OFFICE OR HOUSEHOLD FURNITURE","34293|VACUUM OR INSULATED BOTTLES, JUGS OR CHESTS","34294|HOSE FITTINGS, NOZZLES, COUPLINGS OR REELS","34298|HARDWARE, NEC","34299|HARDWARE, NEC","343|PLUMBING FIXTURES OR HEATING APPARATUS EXC. ELECTRIC SEE 36","3431|METAL SANITARY WARE, INCLUDING ENAMELED EXC. VITREOUS SANITARY WARE SEE 3261","34311|CAST IRON SANITARY WARE, INCLUDING ENAMELED","34312|METAL SANITARY WARE, OTHER THAN CAST IRON, INCLUDING ENAMELED","3432|PLUMBING FIXTURE OR TRIM (BRASS GOODS)","34321|PLUMBING FIXTURE OR TRIM VIZ. BATH, SHOW ER, SINK OR LAVATORY FITTINGS, LAVATORY LEGS, STRAINERS, ETC. (BRASS GOODS)","3433|HEATING EQUIPMENT, OTHER THAN ELECTRICAL","34331|OIL BURNERS, RESIDENTIAL OR INDUSTRIAL","34332|WARM AIR FURNACES EXC. FLOOR OR WALL SEE 34339","34333|CAST IRON HEATING BOILERS, RADIATORS OR TORS","34334|DOMESTIC HEATING STOVES, OTHER THAN ELECTRICAL","34335|STEEL HEATING BOILERS","34336|PARTS FOR NONELECTRIC HEATING EQUIPMENT","34339|HEATING EQUIPMENT, NEC, OTHER THAN ELECTRICAL","344|FABRICATED STRUCTURAL METAL PRODUCTS","3441|FABRICATED STRUCTURAL METAL PRODUCTS","34411|FABRICATED STRUCTURAL IRON OR STEEL PRODUCTS","34412|FABRICATED STRUCTURAL METAL PRODUCTS EXC. IRON OR STEEL SEE 34411","3442|METAL OR METAL COVERED DOORS, SASH, FRAMES, MOLDING OR TRIM","34421|METAL DOORS OR DOOR FRAMES EXC. SCREEN AND STORM DOORS SEE 34425","34422|METAL WINDOW FRAMES OR SASH EXC. STORM SASH OR SCREEN AND STORM SASH 34425","34423|METAL MOLDING OR TRIM OR STORE FRONTS EXC. MOTOR VEHICLE BODY TRIM SEE 34613","34425|METAL DOOR OR WINDOW SCREENS, SCREEN OR STORM DOORS, STORM WINDOWS, COMBINATION SCREEN AND STORM DOORS OR WINDOWS, OR METAL WEATHER STRIP","3443|FABRICATED PLATE (BOILER SHOP PRODUCTS)","34431|HEAT EXCHANGERS OR STEAM CONDENSERS","34432|FABRICATED STEEL PLATE FOR PIPE, PENSTOCKS, TUNNEL LININGS, ETC.","34433|STEEL POWER BOILERS, PARTS OR ATTACHMENTS","34434|GAS CYLINDERS (PRESSURE TANKS)","34435|METAL TANKS EXC. PRESSURE SEE 34434","34439|FABRICATED PLATE PRODUCTS, NEC","3444|SHEET METAL PRODUCTS CONTAINERS, SUCH AS BOXES, KEGS, PAILS, ETS, CRATES, ETC. SEE 34615","34441|SHEET METAL ROOFING, CEILING OR SIDING","34442|SHEET METAL CULVERTS, FLUMES, IRRIGATION PIPE OR SIMILAR ARTICLES","34443|SHEET METAL CORNICES, SKYLIGHTS OR ROOF VENTILATORS","34444|SHEET METAL STOVE, FURNACE OR CHIMNEY PIPE, ELBOWS, DUCTS","34445|SHEET METAL ROOF EQUIPMENT","34446|SHEET METAL OR METAL COVERED BINS, VATS OR TUBS","34447|SHEET METAL AWNINGS OR CANOPIES","34449|SHEET METAL PRODUCTS","3446|ARCHITECTURAL OR TAL METAL WORK","34461|ORNAMENTAL METAL WORK, LAMP POSTS, LATTICEWORK, GRILLWORK, ETC.","34462|SCAFFOLDING, LADDERS OR RELATED ARTICLES","34464|STAIRS, STAIRCASES, BALCONIES, FIRE ESCAPES, RAILINGS, PORTABLE GANGWAYS, PLATFORMS, STAIRWAYS, ETC.","34469|ARCHITECTURAL METAL NEC","3449|MISCELLANEOUS METAL WORK","34492|PREFABRICATED OR METAL BUILDINGS OR PARTS","34499|METAL CONSTRUCTION MATERIALS, N. E. C.","345|BOLTS, NUTS, SCREWS, RIVETS, WASHERS OR OTHER INDUSTRIAL FASTENERS","3452|BOLTS, NUTS, SCREWS, RIVETS, WASHERS OR OTHER INDUSTRIAL FASTENERS","34521|BOLTS, NUTS, SCREWS, RIVETS OR WASHERS EXC. TOGGLE OR EXPANSION SEE 34529","34529|INDUSTRIAL FASTENERS, VIZ. DOWELS, COTTER EXPANSION OR TOGGLE BOLTS, ETC.","346|METAL STAMPINGS","3461|METAL STAMPINGS","34611|VITREOUS ENAMELED METAL PRODUCTS VIZ. COOKING KITCHEN UTENSILS, REFRIGERATOR PARTS, WASHING MACHINE PARTS, ETC.","34612|STAMPED OR SPUN COOKING OR KITCHEN HOLD UTENSILS","34613|AUTOMOBILE STAMPINGS","34614|METAL CLOSURES VIZ. CAPS, COVERS, BOTTOMS TOPS","34615|METAL BOXES, BASKETS, BUCKETS, PAILS OR CRATES EXC. SHIPPING SEE 34912-34919 OR 34997","34616|DISPENSERS, HOLDERS OR CONTAINERS, NAPKIN, TISSUE OR TOWEL, ETC.","34619|METAL STAMPINGS, NEC","348|MISCELLANEOUS FABRICATED WIRE PRODUCTS EXC. STEEL WIRE SEE 3315","3481|MISCELLANEOUS FABRICATED WIRE PRODUCTS","34812|WIRE SPRINGS","34813|WIRE FENCING OR FENCE POSTS OR GATES OR FITTINGS","34814|WIRE CLOTH OR OTHER WIRE PRODUCTS","34815|WIRE CHAIN","34816|BARBED OR TWISTED WIRE","34817|WELDED WIRE FABRIC OR MESH","34819|FABRICATED WIRE NEC","349|MISCELLANEOUS FABRICATED METAL PRODUCTS","3491|METAL SHIPPING VIZ. BARRELS, CANS, DRUMS, KEGS, PAILS, ETC.","34912|STEEL SHIPPING VIZ. BARRELS, CANS, DRUMS, KEGS, PAILS, ETC.","34913|METAL SHIPPING REELS","34919|METAL SHIPPING CONTAINERS, NEC. VIZ. BARRELS, CANS, DRUMS, KEGS, ETC.","3492|METALS SAFES OR VAULTS","34921|METAL SAFES OR VAULTS","3493|STEEL SPRINGS EXC. WIRE SPRINGS SEE 3481","34931|STEEL SPRINGS EXC. WIRE SPRINGS SEE 34812","3494|VALVES OR PIPE FITTINGS OR FABRICATED PIPE OR PIPE FITTINGS EXC. PLUMBERS BRASS GOODS OR FITTINGS SEE 3432","34941|METAL VALVES FOR PIPING, PLUMBING OR HEATING SYSTEMS","34942|METAL FITTINGS FOR SYSTEMS OR METAL UNIONS","34943|METAL PIPE COILS","34944|FABRICATED PIPE OR PIPE FITTINGS","3499|FABRICATED METAL PRODUCTS, NEC","34991|METAL COLLAPSIBLE TUBES, INCLUDING TOOTHPASTE, COSMETICS, ETC.","34992|METAL FOIL OR LEAF, OR PRODUCTS THEREFROM EXC. FOIL SANITARY FOOD CONTAINERS SEE 34996","34993|METAL FURNITURE PARTS","34994|COATING, ANODIZING, COLORING, ELECTROPLATING, ENGRAVING, PLATING OR POLISHING, ETC., OF METALS OR METAL PRODUCTS EXC. GALVANIZING SEE 33","34996|FOIL SANITARY FOOD CONTAINERS","34997|METAL SHIPPING CONTAINERS, BOXES OR RACKS EXC. BARRELS, CANS, DRUMS, KEGS, PAILS OR REELS SEE 34912-34919","34998|FABRICATED METAL PRODUCTS, NEC","34999|FABRICATED METAL PRODUCTS, NEC","35|MACHINERY EXC. SEE 36","351|ENGINES OR TURBINES","3511|STEAM ENGINES, TURBINES, TURBINE GENERATOR SETS, OR PARTS","35112|STEAM ENGINES, TURBINES, TURBINE GENERATOR SETS, OR PARTS","3519|MISCELLANEOUS INTERNAL COMBUSTION ENGINES","35195|OUTBOARD MOTORS OR PARTS","35199|INTERNAL COMBUSTION ENGINES, NEC EXC. MISSILE OR SPACE VEHICLE SEE 37221-37222, MOTOR VEHICLE SEE 37144","352|FARM MACHINERY OR EQUIPMENT","3522|FARM MACHINERY OR EQUIPMENT","35222|WHEEL TRACTORS, PARTS OR ATTACHMENTS EXC. GARDEN OR LAWN EQUIPMENT SEE 35241 OR CONTRACTORS OFF-HIGHWAY TRACTORS SEE 35311","35223|PLANTING, SEEDING OR FERTILIZING MACHINERY OR PARTS","35224|PLOWS, LISTERS, HARROWS, ROLLERS, PULVERIZERS, STALK CUTTERS OR PARTS","35225|HARVESTING OR HAY ERY OR PARTS","35227|MACHINES FOR PREPARING CROPS FOR MARKET OR FOR USE","35228|BARN, BARNYARD OR POULTRY EQUIPMENT","35229|FARM MACHINERY OR EQUIPMENT, NEC","3524|GARDEN TRACTORS, LAWN OR GARDEN EQUIPMENT OR SNOW BLOWERS","35241|GARDEN TRACTORS, LAWN OR GARDEN EQUIPMENT OR SNOW BLOWERS","353|CONSTRUCTION, MINING OR MATERIALS HANDLING MACHINERY OR EQUIPMENT","3531|CONSTRUCTION MACHINERY EQUIPMENT","35311|CONTRACTORS OFF-HIGHWAY WHEEL TRACTORS OR TRACTORS","35312|RAILWAY MAINTENANCE MACHINERY, EQUIPMENT OR PARTS, VIZ. LOCOMOTIVE CRANES, RAIL LAYERS, BALLAST SPREADERS, ETC.","35313|TRACKLAYING ATTACHMENTS OR PARTS OR CONTRACTORS OFF-HIGHWAY WHEEL OR TRACKED TRACTOR ATTACHMENTS OR PARTS","35314|POWER CRANES, DRAGLINES, SHOVELS, TRACTOR SHOVEL LOADERS OR PARTS","35316|MIXERS, PAVER OR RELATED EQUIPMENT","35318|SCRAPERS, GRADERS, ROLLERS OR OFF-HIGHWAY TRUCKS, TRAILERS OR WAGONS","35319|CONSTRUCTION MACHINERY EQUIPMENT, NEC","3532|MINING MACHINERY, EQUIPMENT OR PARTS EXC. OIL FIELD MACHINERY OR MENT SEE 3533","35321|UNDERGROUND MINING MACHINERY, EQUIPMENT OR PARTS","35322|CRUSHING, PULVERIZING OR SCREENING PLANTS","35329|MINING MACHINERY, EQUIPMENT OR PARTS, NEC EXC. OIL FIELD MACHINERY, EQUIPMENT OR PARTS SEE 35331-35339","3533|OIL FIELD MACHINERY OR EQUIPMENT","35331|GAS OR OIL FIELD OR PRODUCTION MACHINERY, EQUIPMENT OR PARTS","35339|GAS OR OIL FIELD MACHINERY OR TOOLS, NEC","3534|ELEVATORS OR MOVING STAIRWAYS OR PARTS","35341|ELEVATORS, MOVING STAIRWAYS, EQUIPMENT OR PARTS","3535|CONVEYORS, CONVEYING EQUIPMENT OR PARTS","35351|CONVEYORS, CONVEYING EQUIPMENT OR PARTS EXC. FARM ELEVATORS SEE 35229 OR HOISTS SEE 35361","3536|HOISTS, INDUSTRIAL OR MONORAIL SYSTEMS","35361|HOISTS","35362|OVERHEAD TRAVELING OR MONORAIL SYSTEMS","3537|INDUSTRIAL TRUCKS, TRACTORS, TRAILERS OR STACKERS","35371|INDUSTRIAL TRUCKS, TRACTORS, TRAILERS STACKERS, OR PARTS","35373|INDUSTRIAL PALLETS, FORMS OR SKIDS, METAL EXC. WOOD AND IRON COMBINED SEE 24992","354|METALWORKING MACHINERY EQUIPMENT","3541|MACHINE TOOLS, METAL CUTTING TYPES","35412|MACHINE TOOLS, METAL CUTTING TYPES, OR PARTS","3542|MACHINE TOOLS, METAL FORMING TYPES","35421|MACHINE TOOLS, METAL FORMING TYPES, OR PARTS","3544|SPECIAL DIES, TOOLS, DIE SETS, JIGS OR FIXTURES","35441|SPECIAL DIES, TOOLS, DIE SETS, JIGS OR DIE OR FIXTURES, OR INDUSTRIAL MOLDS OR PATTERNS","3545|MACHINE TOOL ACCESSORIES OR MEASURING DEVICES","35451|MACHINE TOOL ACCESSORIES OR MEASURING DEVICES","3548|METALWORKING MACHINERY EXC. MACHINE TOOLS SEE 3541 OR 3542","35481|ROLLING MILL MACHINERY EQUIPMENT","35484|AUTOMOTIVE MAINTENANCE EQUIPMENT OR AUTOMOBILE LIFTS OR RUNWAYS","35489|METALWORKING MACHINERY, NEC EXC. MACHINE TOOLS SEE 35412 OR 35421","355|SPECIAL INDUSTRY MACHINERY EXC. METAL WORKING MACHINERY SEE 3548","3551|FOOD PRODUCTS MACHINERY","35511|DAIRY OR MILK PRODUCT PLANT MACHINERY OR MENT","35512|BAKERY MACHINERY OR EQUIPMENT","35513|MEAT OR POULTRY PACKING PLANT MACHINERY","35514|FRUIT OR VEGETABLE CANNING OR PACKING","35515|BOTTLING MACHINERY EXC. DAIRY SEE 35511","35516|FLOUR MILL OR GRAIN MILL MACHINERY","35519|FOOD PRODUCTS MACHINERY, NEC","3552|TEXTILE MACHINERY, ATTACHMENTS OR PARTS","35522|TEXTILE MACHINERY, ATTACHMENTS OR PARTS","3553|WOODWORKING MACHINERY","35531|WOODWORKING MACHINERY","3554|PAPER INDUSTRIES MACHINERY","35541|PAPER INDUSTRIES MACHINERY, PARTS","3555|PRINTING TRADES OR EQUIPMENT","35552|PRINTING TRADES OR EQUIPMENT EXC. PRINTERS MATRICES OR PLATES SEE 27911","3559|MISCELLANEOUS SPECIAL INDUSTRY MACHINERY","35591|CHEMICAL MACHINERY OR EQUIPMENT VIZ. CHEMICAL MANUFACTURING INDUSTRIES ONLY","35592|FOUNDRY MACHINERY OR EQUIPMENT EXC. METAL FURNACES SEE 35671 OR INDUSTRIAL MOLDS OR PATTERNS SEE 35441","35594|PLASTIC OR RUBBER MACHINERY OR EQUIPMENT EXC. INDUSTRIAL MOLDS OR PATTERNS SEE 35441","35595|PETROLEUM REFINERY MACHINERY OR EQUIPMENT","35596|COTTON GINNING MACHINERY OR EQUIPMENT","35597|CLAY WORKING MACHINERY VIZ. BRICK, TILE OR CERAMICS","35599|SPECIAL INDUSTRY MACHINERY, NEC","356|GENERAL INDUSTRIAL MACHINERY OR EQUIPMENT","3561|INDUSTRIAL PUMPS OR ING EQUIPMENT OR AIR OR GAS COMPRESSORS","35611|INDUSTRIAL PUMPS, EQUIPMENT OR PARTS","35614|AIR OR GAS COMPRESSORS PARTS EXC. REFRIGERATION COMPRESSORS OR PARTS SEE 35854","35619|INDUSTRIAL PUMPS, EQUIPMENT OR AIR OR GAS COMPRESSORS OR PARTS","3562|BALL OR ROLLER BEARINGS","35621|BALL OR ROLLER BEARINGS, COMPLETE OR MOUNTED, OR PARTS","3564|EXHAUST BLOWERS OR VENTILATING FANS OR FILTERS","35641|INDUSTRIAL FANS OR BLOWERS","35642|DUST COLLECTION OR AIR PURIFICATION EQUIPMENT AIR WASHERS OR FILTERS","3566|MECHANICAL POWER TRANSMISSION EQUIPMENT EXC. BALL OR ROLLER BEARINGS SEE 3562","35661|PLAIN BEARINGS","35669|MECHANICAL EQUIPMENT, VIZ. FOR POWER TRANSMISSION ONLY","3567|INDUSTRIAL PROCESS FURNACES OR OVENS","35671|INDUSTRIAL PROCESS FURNACES OR OVENS","3569|MISCELLANEOUS GENERAL INDUSTRIAL MACHINERY OR EQUIPMENT","35691|MISCELLANEOUS GENERAL MACHINERY OR EQUIPMENT, NEC, OR PACKAGING OR WRAPPING MACHINES EXC. FOOD SEE 35511-35119, FILTERS, STRAINERS, HYDRAULIC JACKS, CENTRIFUGALS OR SEPARATORS, EXC. CREAM SEE 35229 AND 35511, OR GAS GENERATING EQUIPMENT OR OTHER GENER-AL MACHINERY OR EQUIPMENT, NEC","357|OFFICE, COMPUTING OR ACCOUNTING MACHINES","3572|TYPEWRITERS OR PARTS","35721|TYPEWRITERS OR PARTS","3573|ELECTRONIC DATA PROCESSING MACHINES OR ASSOCIATED EQUIPMENT EXC. WRITERS OR PARTS","35731|ELECTRONIC DATA PROCESSING MACHINES OR ASSOCIATED EQUIPMENT EXC. TYPEWRITERS OR PARTS SEE 3572","3574|ACCOUNTING OR MACHINES OR CASH REGISTERS","35741|ACCOUNTING OR MACHINES OR CASH REGIS TERS","3576|SCALES OR BALANCES EXC. LABORATORY SEE 3811","35761|SCALES OR BALANCES EXC. LABORATORY SEE 38113","3579|MISCELLANEOUS OFFICE MACHINES","35791|ADDRESSING, DICTATING OR DUPLICATING MACHINES","35799|OFFICE MACHINES, NEC","358|SERVICE INDUSTRY","3581|AUTOMATIC MERCHANDISING MACHINES (COIN OPERATED ONLY)","35811|AUTOMATIC MERCHANDISING MACHINES (COIN OPERATED ONLY)","3582|COMMERCIAL LAUNDRY, DRY CLEANING OR PRESSING MACHINES","35821|COMMERCIAL LAUNDRY MENT OR PRESSES","35822|COMMERCIAL DRY-CLEANING EQUIPMENT OR CLOTHES PRESSES","3585|REFRIGERATORS OR REFRIGERATION MACHINERY OR COMPLETE AIR UNITS EXC. HOUSEHOLD REFRIGERATORS SEE 3632","35851|HEAT TRANSFER EQUIPMENT","35853|COMMERCIAL REFRIGERATION EQUIPMENT","35854|COMPRESSORS OR UNITS, ALL REFRIGERANTS","35855|CONDENSING UNITS, ALL REFRIGERANTS","35856|ICE MAKING MACHINERY OR EQUIPMENT","35857|AIR CONDITIONING, OR DEHUMIDIFYING EQUIPMENT","35859|REFRIGERATORS OR REFRIGERATION MACHINERY, NEC","3589|MISCELLANEOUS SERVICE INDUSTRY MACHINES OR INDUSTRIAL VACUUM CLEANERS","35891|COMMERCIAL COOKING OR FOOD WARMING EQUIPMENT","35892|COMMERCIAL OR INDUSTRIAL VACUUM CLEANERS, PARTS ATTACHMENTS","35899|SERVICE INDUSTRY MACHINES, NEC, WATER SOFTENERS, PURIFIERS, FLOOR WAXING, POLISHING OR SCRUBBING MACHINES, CARPET SWEEPERS, MACHINES, ETC.","359|MISCELLANEOUS MACHINERY OR PARTS EXC. ELECTRICAL SEE 36","3592|CARBURETORS, PISTONS, RINGS OR VALVES","35921|CARBURETORS, PISTONS OR PISTON RINGS","35922|INTAKE OR EXHAUST INTERNAL COMBUSTION ENGINE","3599|MISCELLANEOUS MACHINERY OR PARTS EXC. ELECTRICAL SEE 36 OR CARBURETORS, PISTONS, RINGS OR VALVES SEE 3592","35993|FLEXIBLE METAL HOSE OR TUBING EXC. FLEXIBLE CONDUIT SEE 36442","35994|AMUSEMENT OR CARNIVAL MACHINES OR EQUIPMENT EXC. COIN OPERATED SEE 39992","35999|MACHINERY OR PARTS, NEC EXC. ELECTRICAL SEE 36 CARBURETORS, PISTONS, RINGS OR VALVES SEE 13592","36|ELECTRICAL MACHINERY, EQUIPMENT OR SUPPLIES","361|ELECTRICAL TRANSMISSION OR DISTRIBUTION","3611|ELECTRICAL MEASURING INSTRUMENTS OR TEST EQUIPMENT","36111|ELECTRICAL METERS, WATT-HOUR, AMPERE-HOUR, DEMAND OR OTHER ING METERS OR PARTS","36112|TEST EQUIPMENT FOR TESTING ELECTRICAL OR RADIO COMMUNICATION CIRCUITS, OR MOTORS","36113|INDICATING, MEASURING OR RECORDING INSTRUMENTS (ELECTRICAL QUALITIES OR CHARACTERISTICS)","3612|POWER, DISTRIBUTION OR SPECIALTY TRANSFORMERS EXC. RADIO OR VOICE FREQUENCY CHOKES, COILS OR TRANSFORMERS SEE 3679 OR RESISTOR WELDING TRANSFORMERS SEE 3623","36121|TRANSFORMERS OR PARTS OR FLUORESCENT BALLASTS","36123|POWER REGULATORS, BOOSTERS OR REACTORS","36129|POWER, DISTRIBUTION OR SPECIALTY TRANSFORMERS, NEC EXC. RADIO OR VOICE FREQUENCY CHOKES, COILS OR TRANSFORMERS SEE OR RESISTOR WELDING TRANSFORMERS SEE 36231","3613|SWITCHGEAR OR APPARATUS EXC. CURRENT CARRYING WIRING DEVICES SEE 3643 OR INDUSTRIAL CONTROLS SEE 3622","36131|SWITCHGEAR OR SWITCHBOARD APPARATUS OR POWER SWITCHGEAR ASSEMBLIES OR OTHER SWITCHING OR INTERRUPTING DEVICES","36132|CIRCUIT BREAKERS, FUSES OR FUSE EQUIPMENT","362|ELECTRICAL INDUSTRIAL APPARATUS","3621|MOTORS OR GENERATORS","36211|MOTORS","36212|GENERATORS EXC. FOR LAND TRANSPORTATION SEE 36213","36213|LAND TRANSPORTATION MOTORS, GENERATORS OR CONTROL EQUIPMENT OR PARTS","36214|PRIME MOVER GENERATOR SETS EXC. STEAM OR HYDRAULIC TURBINE SEE 35112","36215|MOTOR GENERATOR SETS, ELECTRIC","36216|PARTS OR SUPPLIES FOR MOTORS, GENERATORS OR MOTOR GENERATOR SETS LAND TRANSPORTATION SEE 36213","36219|MOTORS OR GENERATORS","3622|INDUSTRIAL CONTROLS OR PARTS","36221|INDUSTRIAL CONTROLS OR PARTS","3623|WELDING APPARATUS","36231|ARC OR RESISTANCE MACHINES, COMPONENTS OR ACCESSORIES EXC. ELECTRODES SEE 36232","36232|ARC WELDING ELECTRODES EXC. CARBON ELECTRODES SEE 36241","3624|CARBON OR GRAPHITE PRODUCTS FOR ELECTRICAL APPLICATION, OR CARBON ELECTRODES","36241|CARBON OR GRAPHITE PRODUCTS FOR ELECTRICAL APPLICATION, OR CARBON ELECTRODES","3629|MISCELLANEOUS ELECTRICAL INDUSTRIAL APPARATUS","36291|CAPACITORS FOR USE EXC. FOR ELECTRONIC APPLICATION SEE 36791","36292|RECTIFYING APPARATUS OR PARTS","36299|ELECTRICAL INDUSTRIAL APPARATUS, NEC","363|HOUSEHOLD APPLIANCES","3631|HOUSEHOLD COOKING EQUIPMENT, ALL TYPES EXC. SMALL COOKING APPLIANCES SEE 3634","36311|HOUSEHOLD RANGES, OVENS OR SURFACE COOKING MENT, OR PARTS, ALL","3632|HOUSEHOLD REFRIGERATORS OR HOME OR FARM ALL TYPES","36321|HOUSEHOLD REFRIGERATORS OR HOME OR FARM ALL TYPES","3633|HOUSEHOLD LAUNDRY EQUIPMENT","36331|HOUSEHOLD WASHING MACHINES OR DRYERS OR WASHER-DRYER OR PARTS","36332|OTHER HOUSEHOLD LAUNDRY EQUIPMENT, IRONING MACHINES, WRINGERS, OR PARTS","3634|ELECTRIC HOUSEWARES OR FANS","36341|ELECTRIC FANS EXC. ATTIC FANS, OR COMMERCIAL OR INDUSTRIAL EXHAUST OR VENTILATING FANS OR ERS SEE 35641","36343|SMALL ELECTRIC COOKING HEATING APPLIANCES EXC. WATER HEATERS SEE 36392","36346|SMALL HOUSEHOLD ELECTRIC APPLIANCES, ATTACHMENTS OR PARTS EXC. COOKING OR HEATING APPLIANCES SEE 36343 OR FANS SEE 36341","36347|PERSONAL ELECTRIC APPLIANCES, ATTACHMENTS OR PARTS, VIZ. DRY SHAVERS, MANICURE SETS, PORTABLE HAIRDRYERS, RAZORS, BRUSHES, ETC.","36349|ELECTRIC HOUSEWARES, ELECTRIC CAN OPENERS, KNIFE SHARPENERS, VAPORIZERS, ETC.","3635|HOUSEHOLD VACUUM","36351|HOUSEHOLD VACUUM CLEAN- ERS, PARTS OR ATTACHMENTS","3636|SEWING MACHINES OR PARTS EXC. CASES OR CABINETS SEPARATELY SEE 2517","36361|SEWING MACHINES OR PARTS EXC. CASES OR CABINETS SEPARATELY SEE 25179","3639|MISCELLANEOUS HOUSEHOLD APPLIANCES","36392|WATER HEATERS, ALL TYPES","36393|HOUSEHOLD DISHWASHING MACHINES","36399|HOUSEHOLD APPLIANCES, NEC, FLOOR WAXING OR POLISHING MACHINES, FOOD DISPOSERS OR OTHER HOUSEHOLD SERVICE MACHINES","364|ELECTRIC LIGHTING OR EQUIPMENT","3641|ELECTRIC LAMPS (BULBS ONLY)","36411|ELECTRIC LAMPS (BULBS ONLY) OR SEALED BEAM LAMPS","3642|LIGHTING FIXTURES","36421|ELECTRIC FIXTURES, RESIDENTIAL, COMMERCIAL, INSTITUTIONAL OR INDUSTRIAL TYPE","36424|VEHICULAR LIGHTING MENT, ELECTRICAL","36425|OUTDOOR, AREA OR FLOOD LIGHTING EQUIPMENT, ALL TYPES","36429|LIGHTING FIXTURES OR PARTS, NEC, FLASHLIGHTS, LANTERNS, MINERS LIGHTS, EMERGENCY WARNING MERCURY OR SODIUM VAPOR LIGHTING OR RELATED EQUIPMENT","3643|CURRENT CARRYING WIRE DEVICES OR LIGHTNING","36432|CONVENIENCE OR POWER OUTLETS OR SOCKETS","36433|SWITCHES EXC. KNIFE, TIME, SOLENOID OR AUTOMOTIVE SEE 36131","36434|LIGHTNING RODS","36435|OVERHEAD TROLLEY LINE MATERIAL EXC. POLES, OR CABLE, POLE LINE WARE, EXPANSION SHELLS PLUGS FOR ROOF BOLTING MINES SEE 36441","36439|CURRENT CARRYING WIRE DEVICES, NEC","3644|NONCURRENT CARRYING WIRING DEVICES","36441|POLE LINE OR HARDWARE","36442|ELECTRIC OR FLEXIBLE CONDUITS OR CONDUIT FITTINGS","36449|NONCURRENT CARRYING WIRING DEVICES, NEC","365|RADIO OR TELEVISION RECEIVING SETS EXC. COMMUNICATION TYPES SEE 366","3651|RADIO OR TELEVISION RECEIVING SETS EXC. COMMUNICATION TYPES SEE 3662","36511|HOUSEHOLD OR AUTOMOTIVE RADIOS OR COMBINATIONS","36512|HOUSEHOLD TELEVISION RECEIVERS OR TELEVISION COMBINATIONS","3652|PHONOGRAPH RECORDS","36521|PHONOGRAPH RECORDS, RECORD BLANKS OR RECORDED TAPES","366|COMMUNICATION EQUIPMENT","3661|TELEPHONE OR TELEGRAPH EQUIPMENT","36611|TELEPHONE SWITCHING OR SWITCHBOARD EQUIPMENT","36612|TELEPHONE OR TELEGRAPH EQUIPMENT EXC. SWITCHING OR SWITCHBOARD EQUIPMENT SEE 36611","3662|RADIO OR TELEVISION TRANSMITTING EQUIPMENT OR APPARATUS, OR SIGNALING OR DETECTION EQUIPMENT OR APPARATUS","36621|RADIO, TELEVISION TRANSMITTING, SIGNALING OR DETECTION EQUIPMENT OR APPARATUS","367|ELECTRONIC COMPONENTS OR ACCESSORIES","3671|ELECTRONIC TUBES EXC. X-RAY TUBES SEE 3693","36711|ELECTRONIC TUBES EXC. X-RAY TUBES SEE 36931","3674|SOLID STATE DEVICES","36741|SOLID STATE DEVICES, DIODES, TORS OR CELLS","3679|MISCELLANEOUS ELECTRONIC","36791|MISCELLANEOUS ELECTRONIC COMPONENTS","369|MISCELLANEOUS ELECTRICAL MACHINERY, EQUIPMENT OR SUPPLIES","3691|STORAGE BATTERIES OR PLATES","36911|STORAGE BATTERIES OR PLATES","3692|PRIMARY BATTERIES (DRY WET)","36921|PRIMARY BATTERIES (DRY WET)","3693|RADIOGRAPHIC X-RAY, FLUOROSCOPIC X-RAY, THERAPEUTIC X-RAY OR OTHER X-RAY APPARATUS, OR X-RAY TUBES","36931|RADIOGRAPHIC X-RAY, FLUOROSCOPIC X-RAY, THERAPEUTIC X-RAY OR OTHER X-RAY APPARATUS, OR X-RAY TUBES","3694|ELECTRICAL EQUIPMENT FOR INTERNAL COMBUSTION ENGINES","36941|ELECTRICAL EQUIPMENT FOR INTERNAL COMBUSTION ENGINES","3699|ELECTRICAL MACHINERY, EQUIPMENT OR SUPPLIES, NEC","36999|ELECTRICAL MACHINERY, EQUIPMENT OR SUPPLIES, NEC, OR LAMP BULB COMPONENTS, EXC. GLASS BLANKS SEE 32292","37|TRANSPORTATION EQUIPMENT","371|MOTOR VEHICLES OR EQUIPMENT","3711|MOTOR VEHICLES","37111|MOTOR PASSENGER OR AIR CARS, ASSEMBLED","37112|MOTOR TRUCKS OR TRUCK TRACTORS, ASSEMBLED","37113|MOTOR COACHES, TROLLEY BUSSES OR FIRE VEHICLES, ASSEMBLED EXC. CHEMICAL FIRE ING EQUIPMENT OR PARTS SEE 39991","37114|MOTOR COMBAT VEHICLES EXC. TRACKED SEE 9313","37115|MOTOR PASSENGER CARS OR CAR CHASSIS, KNOCKED","37116|MOTOR BUSSES, TRUCKS, MOTOR COACHES, FIRE DEPARTMENT VEHICLES OR TRUCK TRACTORS, OR CHAS SIS, KNOCKED DOWN","37119|MOTOR VEHICLES, NEC, OR GOLF CARTS","3712|PASSENGER MOTOR CAR BODIES","37121|PASSENGER MOTOR CAR BODIES","3713|MOTOR BUS OR TRUCK","37131|MOTOR TRUCK BODIES","37132|MOTOR BUS BODIES","3714|MOTOR VEHICLE PARTS OR ACCESSORIES","37142|MOTOR VEHICLE","37143|MOTOR VEHICLE FRAMES","37144|MOTOR CAR INTERNAL COMBUSTION ENGINES OR PARTS EXC. AIRCRAFT OR MISSILE ENGINES OR PARTS SEE 37221-37222 OR OTHER THAN MOTOR VEHICLE INTERNAL COMBUSTION ENGINES OR PARTS SEE 35195-35199","37145|MOTOR VEHICLE BRAKES OR PARTS","37146|MOTOR VEHICLE STEERING GEARS OR PARTS","37147|MOTOR VEHICLE BODY PARTS","37148|MOTOR VEHICLE WHEELS OR PARTS","37149|MOTOR VEHICLE OR PARTS, NEC, INCLUDING MIXED LOADS","3715|TRUCK TRAILERS","37151|TRUCK TRAILERS","372|AIRCRAFT OR PARTS","3721|AIRCRAFT EXC. GUIDED MISSILES, ASSEMBLED, SEE 1925","37211|COMPLETE MILITARY AIRCRAFT","37213|COMPLETE COMMERCIAL, PERSONAL OR UTILITY TYPE TRANSPORT AIRCRAFT (PASSENGER OR CARGO)","3722|AIRCRAFT, MISSILE OR SPACE VEHICLE ENGINES OR PARTS","37221|AIRCRAFT ENGINES","37222|MISSILE OR SPACE VEHICLE ENGINES OR PARTS","3723|AIRCRAFT PROPELLERS OR PROPELLER PARTS","37231|AIRCRAFT PROPELLERS OR PARTS","3729|MISCELLANEOUS AIRCRAFT PARTS OR EQUIPMENT, NEC","37299|AIRCRAFT PARTS, NEC, OR AUXILIARY EQUIPMENT, NEC","373|SHIPS OR BOATS","3732|SHIPS OR BOATS","37321|INBOARD MOTOR BOATS","37322|OUTBOARD MOTOR BOATS","37323|NONPROPELLED SHIPS ES OR DREDGES)","37324|CAR FLOATS, PONTOON OR PORTABLE BRIDGES","37329|SHIPS, BOATS OR PARTS, NEC","374|RAILROAD EQUIPMENT","3741|LOCOMOTIVES OR PARTS","37411|LOCOMOTIVES OR TENDERS","37413|PARTS FOR LOCOMOTIVES, ALL TYPES","3742|RAILROAD OR STREET CARS EXC. RAILWAY MAINTENANCE MACHINERY, EQUIPMENT OR PARTS SEE 3531","37421|PASSENGER TRAIN CARS","37422|FREIGHT TRAIN CARS","37423|STREET CARS OR SELF-PROPELLED RAILROAD CARS","37424|MAINTENANCE OR REPAIR CARS VIZ. WEED BURNERS, INSPECTION, ETC.","37426|RAILROAD CAR WHEELS","37428|PARTS OR ACCESSORIES FOR RAILROAD OR STREET CARS EXC. WHEELS SEE 37426","37429|PARTS OR ACCESSORIES FOR RAILROAD OR STREET CARS EXC. WHEELS SEE 37426","375|MOTORCYCLES, BICYCLES OR PARTS","3751|MOTORCYCLES, BICYCLES OR PARTS EXC. VELOCIPEDES, TRICYCLES OR PARTS SEE 3943","37511|MOTORBIKES, MOTORCYCLES, MOTORSCOOTERS OR BODIES, CHASSIS OR SIDE CARS","37512|BICYCLES","37513|PARTS OR ACCESSORIES, BICYCLE, MOTORBIKE, MOTORCYCLE OR MOTORSCOOTER","376|GUIDED MISSILE OR SPACE VEHICLE PARTS, NEC, OR AUXILIARY EQUIPMENT","3769|GUIDED MISSILE OR SPACE VEHICLE PARTS, NEC, OR AUXILIARY EQUIPMENT","37691|GUIDED MISSILE OR SPACE VEHICLE PARTS, NEC, OR AUXILIARY EQUIPMENT","379|MISCELLANEOUS TION EQUIPMENT","3791|TRAILER COACHES","37911|TRAILER COACHES, HOUSING TYPE","37912|TRAVEL TRAILERS OR CAMPERS","3799|TRANSPORTATION NEC","37992|HORSE-DRAWN OR SIMILAR VEHICLES EXC. SLEIGHS OR SLEDS SEE 37995","37993|HAND CARTS, WAGONS, WHEELBARROWS, OR PARTS","37994|HORSE-DRAWN OR SIMILAR VEHICLE PARTS EXC. OR SLED PARTS SEE 37995","37995|SLEIGHS, SLEDS OR PARTS, HORSE-DRAWN","37999|TRANSPORTATION PARTS OR ACCESSORIES, EXC. INDUSTRIAL TRUCKS, TRACTORS, TRAILERS OR STACKERS OR PARTS SEE 35371 OR 35372","38|INSTRUMENTS, GOODS, OPTICAL GOODS, WATCHES OR CLOCKS","381|ENGINEERING, LABORATORY OR SCIENTIFIC","3811|ENGINEERING, LABORATORY OR SCIENTIFIC","38111|AIRCRAFT FLIGHT, OR NAVIGATIONAL INSTRUMENTS, OR AUTOMATIC PILOTS","38112|SURVEYING OR DRAFTING INSTRUMENTS","38113|LABORATORY OR SCIENTIFIC INSTRUMENTS, OR RY FURNITURE","38119|ENGINEERING, LABORATORY OR SCIENTIFIC INSTRUMENTS, NEC","382|MEASURING, CONTROLLING INDICATING INSTRUMENTS","3821|MECHANICAL MEASURING OR CONTROLLING INSTRUMENTS EXC. AUTOMATIC TEMPERATURE CONTROLS SEE 3822","38212|GAS, WATER OR OTHER LIQUID METERS OR RECORDING DEVICES","38213|WEATHER MEASURING INSTRUMENTS OR GAUGES","38219|MECHANICAL MEASURING OR CONTROLLING INSTRUMENTS, NEC","3822|AUTOMATIC TEMPERATURE CONTROLS","38221|AUTOMATIC TEMPERATURE CONTROLS","383|OPTICAL INSTRUMENTS OR LENSES","3831|OPTICAL INSTRUMENTS OR LENSES","38311|OPTICAL INSTRUMENTS, LENSES, RANGE OR HEIGHT FINDERS EXC. SIGHT OR FIRE CONTROL EQUIPMENT SEE 19411","384|SURGICAL, MEDICAL OR DENTAL INSTRUMENTS OR SUPPLIES","3841|SURGICAL OR MEDICAL INSTRUMENTS OR APPARATUS","38411|SURGICAL OR MEDICAL INSTRUMENTS OR APPARATUS","38412|HOSPITAL, DENTAL, OPTICIANS OR OPERATING ROOM FURNITURE EXC. HOSPITAL BEDS SEE 25991","3842|ORTHOPEDIC, PROSTHETIC SURGICAL SUPPLIES OR APPLIANCES","38421|ORTHOPEDIC, PROSTHETIC SURGICAL SUPPLIES OR APPLIANCES","3843|DENTAL EQUIPMENT OR SUPPLIES","38431|DENTAL INSTRUMENTS, SUPPLIES OR EQUIPMENT","385|OPHTHALMIC OR OPTICIANS GOODS","3851|OPHTHALMIC OR OPTICIANS GOODS","38511|SPECTACLES, EYEGLASSES, SUNGLASSES OR RELATED OPHTHALMIC OR OPTICIANS GOODS EXC. OPTICAL INSTRUMENTS OR LENSES SEE 38311","386|PHOTOGRAPHIC EQUIPMENT SUPPLIES","3861|PHOTOGRAPHIC EQUIPMENT SUPPLIES","38612|PHOTOGRAPHIC DEVELOPING, PHOTOCOPY, MICROFILMING, BLUEPRINTING, VAN DYKE WHITE PRINTING EQUIPMENT","38613|STILL OR MOTION PICTURE EQUIPMENT, FILM OR PARTS","38615|PHOTOGRAPHIC SENSITIZED FILM, PLATES, PHOTOGRAPH-IC PAPER OR CLOTH","38618|PREPARED PHOTOGRAPHIC CHEMICALS","38619|PHOTOGRAPHIC EQUIPMENT SUPPLIES, NEC","387|WATCHES, CLOCKS, CLOCK-WORK OPERATED DEVICES, PARTS","3871|WATCHES, CLOCKS, CLOCK-WORK OPERATED DEVICES, PARTS","38711|WATCHES, CLOCKS, CLOCK-WORK OPERATED DEVICES, PARTS","39|MISCELLANEOUS PRODUCTS","391|MANUFACTURING JEWELRY, SILVERWARE OR PLATED WARE","3914|SILVERWARE OR PLATED","39141|SILVERWARE, PLATED WARE, STAINLESS STEEL WARE OR FLATWARE","393|MUSICAL INSTRUMENTS OR PARTS","3931|MUSICAL INSTRUMENTS OR PARTS","39311|PIANOS","39312|ORGANS","39313|PIANO OR ORGAN PARTS","39319|MUSICAL INSTRUMENTS, ACCESSORIES OR PARTS INSTRUMENT BENCHES SEE 25112 OR INSTRUMENT SEE 31611","394|TOYS, AMUSEMENT, OR ATHLETIC GOODS","3941|GAMES OR TOYS EXC. DOLLS OR STUFFED TOY ANIMALS SEE 3942, CHILDRENS VEHICLES SEE 3943","39411|GAMES OR TOYS EXC. DOLLS OR STUFFED TOY ANIMALS SEE 39421, CHILDRENS VEHICLES SEE 39431-39439","3942|DOLLS OR STUFFED TOY ANIMALS","39421|DOLLS OR STUFFED TOY ANIMALS","3943|CHILDRENS VEHICLES OR PARTS, NEC EXC. BICYCLES OR MOTORCYCLES, OR PARTS SEE 3751","39431|BABY OR DOLL CARRIAGES, STROLLERS OR WALKERS","39439|CHILDRENS VEHICLES OR PARTS, NEC EXC. BICYCLES OR MOTORCYCLES, OR PARTS SEE 37511-37513","3949|SPORTING OR ATHLETIC GOODS","39491|FISHING TACKLE, EQUIPMENT OR PARTS","39492|BILLIARD OR POOL TABLES, PLAYING SUPPLIES, BALLS, CUE OR PARTS","39493|BOWLING ALLEYS, BALLS, SUPPLIES, OR PARTS","39494|GOLF CLUBS, BALLS, EQUIPMENT, SUPPLIES OR PARTS","39496|TENNIS, BADMINTON, BASEBALL, CRICKET, SOFTBALL, FOOTBALL, BASKETBALL, SOCCER OR HOCKEY EQUIPMENT, SUPPLIES, PARTS, BALLS","39497|PLAYGROUND OR GYMNASIUM EQUIPMENT OR PARTS","39499|SPORTING OR ATHLETIC GOODS OR PARTS, NEC","395|PENS, PENCILS, OR OTHER OFFICE MATERIALS, OR ARTISTS MATERIALS","3951|PENS OR PARTS","39511|PENS OR PARTS","3952|PENCILS, CRAYONS, OR ARTISTS MATERIALS","39521|PENCILS OR CRAYONS","39522|ARTISTS MATERIALS","3953|MARKING DEVICES","39531|MARKING DEVICES","3955|CARBON PAPER OR INKED RIBBONS","39551|CARBON OR STENCIL PAPER OR INK RIBBONS","396|COSTUME JEWELRY, NOVELTIES OR NOTIONS","3961|COSTUME JEWELRY OR TIES EXC. PRECIOUS METAL SEE 3911","39611|COSTUME JEWELRY OR TIES EXC. PRECIOUS METAL SEE 39111","3962|FEATHERS, PLUMES OR ARTIFICIAL OR DECORATIVE FLOWERS OR FRUITS EXC. GLASS SEE 3229","39621|FEATHERS, PLUMES OR ARTIFICIAL, DECORATIVE OR PRESERVED FLOWERS OR FRUITS EXC. GLASS SEE 32299, DECORATIVE EVER- GREENS, HOLLY OR MISTLE- TOE, OR FERNS, OR LIVE CHRISTMAS TREES SEE 08611-08613","3963|BUTTONS","39631|BUTTONS OR PARTS EXC. PRECIOUS OR METALS OR PRECIOUS OR SEMI-PRECIOUS STONES","3964|NEEDLES, PINS, HOOKS, EYES OR SIMILAR NOTIONS","39641|ZIPPERS OR SLIDE FASTENERS","39642|NEEDLES, PINS, FASTENERS OR SIMILAR NOTIONS EXC. SLIDE FASTENERS SEE 39641","399|MISCELLANEOUS MANUFACTURED PRODUCTS","3991|BROOMS OR BRUSHES FOR CARPET SWEEPERS, VACUUM CLEANERS OR OTHER ROTARY MACHINES, OR PAINT ROLLERS","39911|BROOMS OR BRUSHES FOR CARPET SWEEPERS, VACUUM CLEANERS OR OTHER ROTARY MACHINES, OR PAINT ROLLERS","3992|COVERINGS, FACING OR FLOORING","39921|COVERINGS, FACING OR FLOORING","3993|SIGNS OR ADVERTISING DISPLAYS","39931|LUMINOUS TUBING OR BULB SIGNS","39932|NONELECTRIC ADVERTISING SIGNS, DISPLAYS OR TIES EXC. ROAD OR SIGNS SEE 39934 OR PAPER OR PAPERBOARD DISPLAYS OR NOVELTIES SEE 26499","39934|NONELECTRIC ROAD OR FIC SIGNS","3994|MORTICIANS GOODS","39941|MORTICIANS GOODS","3996|MATCHES","39961|MATCHES","3997|FURS, DRESSED OR DYED","39971|FURS, DRESSED OR DYED","3999|MANUFACTURED PRODUCTS, NEC","39991|CHEMICAL FIRE ING EQUIPMENT OR PARTS","39992|COIN OPERATED AMUSEMENT OR SERVICE MACHINES","39993|BEAUTY OR BARBER SHOP FURNITURE OR EQUIPMENT","39994|HAIR WORK, VIZ. BRAIDS, NETS, SWITCHES, TOUPEES, WIGS, ETC.","39995|TOBACCO PIPES, CIGARETTE HOLDERS, ACCESSORIES OR PARTS","39996|CHRISTMAS TREE OR DECORATIONS EXC. CHRISTMAS TREE BULBS OR SETS SEE 36999","39998|MISCELLANEOUS MANUFACTURED PRODUCTS, NEC","39999|MISCELLANEOUS MANUFACTURED PRODUCTS, NEC","40|WASTE OR SCRAP MATERIALS NOT IDENTIFIED BY PRODUCING INDUSTRY","401|ASHES","4011|ASHES","40112|ASHES","402|WASTE OR SCRAP EXC. SEE 401","4021|METAL SCRAP, WASTES OR TAILINGS","40211|IRON OR STEEL SCRAP, WASTES OR TAILINGS","40212|BRASS, BRONZE, COPPER OR ALLOY SCRAP, TAILINGS OR WASTES","40213|LEAD, ZINC OR ALLOY SCRAP, TAILINGS","40214|ALUMINUM OR ALLOY SCRAP, TAILINGS OR WASTES","40219|NONFERROUS METAL OR SCRAP, TAILINGS OR WASTES, NEC","4022|TEXTILE WASTE, SCRAP OR SWEEPINGS","40221|TEXTILE WASTE, SCRAP OR SWEEPINGS","4023|WOOD SCRAP OR WASTE","40231|WOOD SCRAP OR WASTE","4024|PAPER WASTE OR SCRAP","40241|PAPER WASTE OR SCRAP","4025|CHEMICAL OR PETROLEUM WASTE, INCLUDING SPENT","40251|CHEMICAL OR PETROLEUM WASTE, INCLUDING SPENT","4026|RUBBER OR PLASTIC SCRAP OR WASTE","40261|RUBBER OR PLASTIC SCRAP OR WASTE","4027|STONE, CLAY OR GLASS WASTE OR SCRAP","40271|STONE, CLAY OR GLASS WASTE OR SCRAP","4028|LEATHER WASTE OR SCRAP","40281|LEATHER WASTE OR SCRAP","4029|MISCELLANEOUS WASTE OR SCRAP","40291|WASTE OR SCRAP, NEC","41|MISCELLANEOUS FREIGHT SHIPMENTS","411|MISCELLANEOUS FREIGHT SHIPMENTS","4111|MISCELLANEOUS FREIGHT SHIPMENTS","41111|OUTFITS OR KITS","41112|USED PLANT OR OFFICE EQUIPMENT, RECORDS OR SUPPLIES","41113|RAILWAY CARS, OTHER THAN NEW","41114|ARTICLES, USED EXC. FOR REPAIR OR RECONDITIONING SEE 41115, RETURNED EMPTY SEE 4211142112 OR REMELTING SEE 4021 OR 4029","41115|ARTICLES, USED, RETURNED FOR REPAIR OR RECONDITIONING","41116|HOUSEHOLD GOODS OR EMIGRANT MOVABLES","41117|MILITARY IMPEDIMENTA","41118|USED VEHICLES","41119|MISCELLANEOUS FREIGHT SHIPMENTS, NEC","412|SPECIAL COMMODITIES NOT TAKEN IN REGULAR FREIGHT SERVICE","4121|SPECIAL COMMODITIES NOT TAKEN IN REGULAR FREIGHT SERVICE","41211|SPECIAL COMMODITIES NOT TAKEN IN REGULAR FREIGHT SERVICE","42|CONTAINERS, CARRIERS OR DEVICES, SHIPPING, RETURNED EMPTY","421|NONREVENUE MOVEMENT OF CONTAINERS, CARRIERS OR DEVICES, SHIPPING, RETURNING IN REVERSE OF ROUTE USED IN LOADED MOVEMENT, AND SO CERTIFIED","4211|NONREVENUE MOVEMENT OF CONTAINERS, CARRIERS OR DEVICES, SHIPPING, RETURNING IN REVERSE OF ROUTE USED IN LOADED MOVEMENT, AND SO CERTIFIED","42111|NONREVENUE MOVEMENT OF CONTAINERS, BAGS, BARRELS, BOTTLES, BOXES, CRATES, CORES, DRUMS, KEGS, REELS, TUBES, OR CARRIERS, NEC, EMPTY, RETURNING IN REVERSE OF ROUTE USED IN LOADED MOVEMENT, AND SO CERTIFIED","42112|NONREVENUE MOVEMENT OF SHIPPING DEVICES, CONSISTING OF BLOCKING, BOLSTERS, CRADLES, PALLETS, RACKS, SKIDS, ETC, EMPTY RETURNING IN REVERSE OF ROUTE USED IN LOADED MOVEMENT, AND SO CERTIFIED","42113|NONREVENUE REJECTED SHIPMENTS","422|TRAILERS, RETURNED EMPTY","4221|TRAILERS, RETURNED EMPTY","42211|TRAILERS, SEMI-TRAILERS, OR CONTAINERS, RETURNED EMPTY","423|REVENUE MOVEMENT OF CONTAINERS, CARRIERS OR DEVICES, SHIPPING, RETURNING IN REVERSE OF ROUTE USED IN LOADED MOVEMENT, AND SO CERTIFIED","4231|REVENUE MOVEMENT OF CONTAINERS, CARRIERS OR DEVICES, SHIPPING, RETURNING IN REVERSE OF ROUTE USED IN LOADED MOVEMENT, AND SO CERTIFIED","42311|REVENUE MOVEMENT OF CONTAINERS, BAGS, BARRELS, BOTTLES, BOXES, CRATES, CORES, DRUMS, KEGS, REELS, TUBES, OR CARRIERS, NEC, EMPTY, RETURN- ING IN REVERSE OF ROUTE USED IN LOADED MOVEMENT, AND SO CERTIFIED","42312|REVENUE MOVEMENT OF PIPING DEVICES, CONSISTING OF BLOCKING, BOLSTERS, CRADLES, PALLETS, RACKS, SKIDS, ETC. , EMPTY","43|MAIL, EXPRESS OR OTHER CONTRACT TRAFFIC","431|MAIL AND EXPRESS TRAFFIC","4311|MAIL AND EXPRESS TRAFFIC","43111|MAIL","43115|EXPRESS","432|OTHER CONTRACT TRAFFIC","4321|OTHER CONTRACT TRAFFIC","43211|TRAILER TRAIN CONTRACT TRAFFIC","44|FREIGHT FORWARDER","441|FREIGHT FORWARDER","4411|FREIGHT FORWARDER","44111|FREIGHT FORWARDER","45|SHIPPER ASSOCIATION OR SIMILAR TRAFFIC","451|SHIPPER ASSOCIATION OR SIMILAR TRAFFIC","4511|SHIPPER ASSOCIATION OR SIMILAR TRAFFIC","45111|SHIPPER ASSOCIATION OR SIMILAR TRAFFIC","46|MISCELLANEOUS MIXED SHIPMENTS","461|MISCELLANEOUS MIXED SHIPMENTS EXC. FORWARDER SEE 441, OR SHIPPER ASSOCIATION SEE 451","4611|FREIGHT ALL KINDS, FAK","46111|ALL FREIGHT RATE SHIPMENTS, NEC, OR TRAIL- ER-ON-FLAT-CAR (TOFC) SHIPMENTS EXC. WHERE IDENTIFIED BY COMMODITIES, THEN CODE BY COMMODITY","462|MIXED SHIPMENTS, 2 OR MORE MAJOR GROUPS VIZ. COMMODITIES REPRESENTING TWO OR MORE MAJOR STCC GROUPS, WHERE IT IS IMPOSSIBLE TO DETERMINE THE PREDOMINANT GROUP, FOR EXAMPLE, FURNITURE, MAJOR 25 AND BICYCLES, MAJOR 37, MIXED","4621|MIXED SHIPMENTS, 2 OR MORE MAJOR GROUPS VIZ. COMMODITIES REPRESENTING TWO OR MORE MAJOR STCC GROUPS, WHERE IT IS IM- POSSIBLE TO DETERMINE THE PREDOMINANT GROUP, FOR EXAMPLE, FURNITURE, MAJOR 25 AND BICYCLES, MAJOR 37, MIXED","46211|MIXED SHIPMENTS, 2 OR MORE MAJOR GROUPS VIZ. COMMODITIES REPRESENTING TWO OR MORE MAJOR STCC GROUPS, WHERE IT IS IM- POSSIBLE TO DETERMINE THE PREDOMINANT GROUP, FOR EXAMPLE, FURNITURE, MAJOR25 AND BICYCLES, MAJOR 37, MIXED","47|SMALL PACKAGED FREIGHT SHIPMENTS","471|SMALL PACKAGED FREIGHT SHIPMENTS","4711|SMALL PACKAGED FREIGHT SHIPMENTS","47111|SMALL PACKAGED FREIGHT SHIPMENTS VIZ. LESS THAN CARLOAD, TRUCKLOAD, ETC.","48|WASTE HAZARDOUS OR WASTE HAZARDOUS SUBSTANCES","4804|WASTE NONFLAMMABLE COMPRESSED GASES","48041|WASTE NONFLAMMABLE COMPRESSED GASES","48045|WASTE NONFLAMMABLE COMPRESSED GASES","4805|WASTE FLAMMABLE COMPRESSED GASES","48057|WASTE FLAMMABLE COMPRESSED GASES","48058|WASTE FLAMMABLE COMPRESSED GASES","4806|WASTE FLAMMABLE LIQUIDS","48066|WASTE FLAMMABLE LIQUIDS THERMALLY UNSTABLE AND CORROSIVE","4807|WASTE FLAMMABLE LIQUIDS","48072|WASTE FLAMMABLE LIQUIDS POLYMERIZABLE","48074|WASTE FLAMMABLE LIQUIDS POISONOUS","48078|WASTE FLAMMABLE LIQUIDS CORROSIVE, BASIC","4808|WASTE FLAMMABLE LIQUIDS","48081|WASTE FLAMMABLE LIQUIDS","48082|WASTE FLAMMABLE LIQUIDS","4809|WASTE FLAMMABLE LIQUIDS","48091|WASTE FLAMMABLE LIQUIDS","48092|WASTE FLAMMABLE LIQUIDS","48093|WASTE FLAMMABLE LIQUIDS","4810|WASTE FLAMMABLE LIQUIDS, MISCELLANEOUS","48101|WASTE FLAMMABLE LIQUIDS, MISCELLANEOUS","48102|WASTE FLAMMABLE LIQUIDS, MISCELLANEOUS","48103|WASTE FLAMMABLE LIQUIDS, MISCELLANEOUS","48105|WASTE FLAMMABLE LIQUIDS, MISCELLANEOUS","4813|WASTE COMBUSTIBLE","48131|WASTE COMBUSTIBLE","4815|WASTE COMBUSTIBLE","48151|WASTE COMBUSTIBLE","48152|WASTE COMBUSTIBLE","48153|WASTE COMBUSTIBLE","48155|WASTE COMBUSTIBLE","4816|WASTE FLAMMABLE SOLIDS","48161|WASTE FLAMMABLE SOLIDS SPONTANEOUSLY OR DANGEROUS WHEN WET","48162|WASTE FLAMMABLE SOLIDS SPONTANEOUSLY OR DANGEROUS WHEN WET","48163|WASTE FLAMMABLE SOLIDS SPONTANEOUSLY OR DANGEROUS WHEN WET","48164|WASTE FLAMMABLE SOLIDS SPONTANEOUSLY OR DANGEROUS WHEN WET","48166|WASTE FLAMMABLE SOLIDS SPONTANEOUSLY OR DANGEROUS WHEN WET","48167|WASTE FLAMMABLE SOLIDS SPONTANEOUSLY OR DANGEROUS WHEN WET","4817|WASTE FLAMMABLE SOLIDS","48171|WASTE FLAMMABLE SOLIDS SPONTANEOUSLY OR DANGEROUS WHEN WET","48173|WASTE FLAMMABLE SOLIDS SPONTANEOUSLY OR DANGEROUS WHEN WET","4818|WASTE OXIDIZING","48181|WASTE OXIDIZING","48183|WASTE OXIDIZING","48185|WASTE OXIDIZING","48187|WASTE OXIDIZING","4821|WASTE POISONOUS","48212|WASTE POISONOUS","48214|WASTE POISONOUS","48215|WASTE POISONOUS","4823|WASTE POISONOUS","48231|WASTE POISONOUS","48232|WASTE POISONOUS","48233|WASTE POISONOUS","48234|WASTE POISONOUS","48235|WASTE POISONOUS","4825|WASTE INFECTIOUS SUBSTANCES","48259|WASTE INFECTIOUS SUBSTANCES","4826|WASTE RADIOACTIVE MATERIALS","48262|WASTE RADIOACTIVE MATERIALS","48263|WASTE RADIOACTIVE MATERIALS","4827|WASTE RADIOACTIVE MATERIALS","48272|WASTE RADIOACTIVE MATERIALS","48274|WASTE RADIOACTIVE MATERIALS","48277|WASTE RADIOACTIVE MATERIALS, EMPTY CONTAINERS","4828|WASTE RADIOACTIVE MATERIALS","48281|WASTE RADIOACTIVE MATERIALS","48282|WASTE RADIOACTIVE MATERIALS","4829|WASTE RADIOACTIVE MATERIALS","48292|WASTE RADIOACTIVE MATERIALS","4830|WASTE CORROSIVE","48300|WASTE CORROSIVE MATERIALS, ACIDIC, POISONOUS","48302|WASTE CORROSIVE MATERIALS, ACIDIC","4831|WASTE CORROSIVE","48313|WASTE CORROSIVE","48314|WASTE CORROSIVE","48317|WASTE CORROSIVE","4832|WASTE CORROSIVE","48323|WASTE CORROSIVE","4833|WASTE CORROSIVE","48330|WASTE CORROSIVE","48333|WASTE CORROSIVE","4834|WASTE CORROSIVE","48342|WASTE CORROSIVE","4835|WASTE CORROSIVE","48350|WASTE CORROSIVE","48352|WASTE CORROSIVE","48355|WASTE CORROSIVE","48356|WASTE CORROSIVE","4836|WASTE CORROSIVE","48360|WASTE CORROSIVE","48363|WASTE CORROSIVE","48365|WASTE CORROSIVE","4840|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48403|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","4841|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48411|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48412|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","4844|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48441|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48443|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","4845|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48455|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48457|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","4850|WASTE MIXED FREIGHT","48501|WASTE MIXED FREIGHT","4860|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48601|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48606|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","4861|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48611|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48613|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48616|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","4862|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48621|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48623|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48625|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48626|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","4863|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48631|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48633|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48637|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48638|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","4866|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48661|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48663|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48666|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48667|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","48669|WASTE MISCELLANEOUS HAZARDOUS MATERIALS","4871|WASTE STREAM FLAMMABLE","48712|WASTE STREAM FLAMMABLE LIQUIDS","48717|WASTE STREAM COMBUSTIBLE LIQUIDS","4875|WASTE STREAM OTHER REGULATED","48755|WASTE STREAM OTHER REGULATED MATERIALS","48756|WASTE STREAM OTHER REGULATED MATERIALS"],"C":["0113110|Barley|0","0113115|Barley For Malting|0","0113130|Barley, Feed, Nec|0","0113310|Oats|0","0113330|Oats, Feed, Nec|0","0113510|Rye|0","0113530|Rye, Feed, Nec|0","0113615|Darso Grain|0","0113620|Durra|0","0113635|Hegari (Higera) Grain|0","0113710|Wheat|0","0113730|Wheat, Feed, Nec|0","0113740|Wheat Moved Under U.S.|0","0113910|Buckwheat|0","0113915|Spelt|0","0113920|Emmer|0","0114110|Cottonseeds|0","0114210|Flaxseeds (Linseeds)|0","0114250|Flaxseed (Solin)|0","0114315|Peanuts, Raw, Shelled|0","0114410|Soybeans, Dried|0","0114415|Soyabeans, Fresh|0","0114930|Sesame Seeds|0","0114935|Safflower (Carthamus)|0","0114940|Seeds, Sunflower|0","0115110|Lawn Grass Seeds, Nec|0","0115210|Popcorn, Ear Or Shelled|0","0115940|Lespedeza Seeds|0","0115973|Seed Grain, Nec|0","0115990|Field Seeds, Nec|0","0119110|Hay, Including Alfalfa|0","0119210|Hops|0","0119710|Sugar Beets|0","0119920|Corn Cobs|0","0119930|Corn Husks (Shucks)|0","0119945|Corn Stalks, Nec|0","1011190|Iron ore, NEC|8","1011215|Iron ore, hydrated, not ground|8","1011240|Iron ore, crude|8","1011310|Iron concentrates and direct reduced iron|8","1011320|Iron Agglomerates|8","1011325|Beneficiated iron ore & hot briquetted iron|8","1021110|Copper ore, crude|8","1021210|Copper concentrates|8","1021215|Copper precipitates|8","1031110|Lead ore, crude|8","1031210|Lead concentrates|8","1032110|Zinc ore, crude|8","1032210|Concentrates, zinc|8","1033110|Lead and zinc ores combined|8","1033210|Lead and zinc concentrates|8","1041110|Gold ore and tailings|8","1041210|Gold ore concentrates|8","1042210|Silver concentrates|8","1051110|Bauxite ore|8","1051310|Alumina, calcined|8","1051311|Alumina, hydrated|8","1051325|Bauxite, caussticized|8","1051410|Aluminum silicate (kyanite)|8","1061110|Manganese ore, other than ground|8","1061210|Manganese, beneficiating, grade ore, crude|8","1061310|Manganese ore, ground|8","1061315|Manganese ore, concentrates|8","1071110|Tungsten ore, crude|8","1071210|Tungsten concentrates|8","1081110|Chrome ore or ore concentrates, crude|8","1081115|Chrome ore or ore concentrates, crude|8","1092920|Antimony sulfide, concentrated ore, lump|8","1092925|Antimony sulfide, concentrated ore, pulverized or powdered|8","1092945|Limonite ore or concentrates|8","1092958|Humate residue|8","1092959|Staurolite residue|8","1092975|Molybdenum ore or ore concentrates crude|8","1092976|Molybdenum concentrates|8","1421910|Rubble stone|4","1421920|Crushed granite or marble|4","1421930|Ballast rock or stone|4","1421965|Crushed or broken limestone|4","1441190|Sand paving or building|4","1441210|Pebbles|4","1441225|Sand, mixed with clay, with crushed stone|4","1441230|Gravel and sand mixed|4","1471940|Iron Pyrites|8","1471947|Aluminum oxide, abrasive, flour or grain|8","1491110|Gypsum rock|4","1491315|Bituminous asphalt rock|4","1491410|Volcanic ash|4","1491490|Pumice stone, crude|4","1491525|Talc|9","1491645|Aluminum oxide, (alumina) abrasive|8","1491647|Aluminum oxide, flour or grain|8","1491825|Diatomaceous Earth|9","1491930|Graphite ore|9","1491937|Nepheline Syenite|9","1491970|Perlite|9","1491988|Zealite|9","2013110|Lard, Benzoinated|0","2013115|Lard, Leaf, Not Rendered|0","2013120|Lard Oil, Edible|0","2013920|Stearine, Animal, Nec|0","2013953|Tallow Oil, Edible|0","2013955|Tallow, Animal, Nec|0","2014310|Animal Grease Or Bone|0","2014315|Garbage Grease, Inedible|0","2014320|Animal Grease, Inedible|0","2014410|Blood, Dried, Not Human|0","2014411|Blood Flour, Blood Meal|0","2014920|Hog Hair, Wet, Including|0","2015820|Poultry Fats|0","2041110|Wheat Flour|0","2041115|Semolina And Flour|0","2041125|Semolina|0","2041213|Wheat Bran And 2 1/2|0","2041220|Wheat Bran, Other Than|0","2041288|Wheat Grain Mill Feed|0","2041312|Corn Meal, Edible, Nec|0","2041315|Corn Meal|0","2041320|Corn Flour|0","2041410|Rye Flour|0","2041610|Oat Flour|0","2041615|Oat Meal|0","2041810|Corn Cob Bran, Flakes|0","2041814|Bean, Pea Or Seed Refuse|0","2041818|Meal, Corn Husk Or Shuck|0","2041916|Sorghum Grain Or Wheat|0","2041918|Barley, Pearled|0","2041920|Bakers Or Brewers Grits|0","2042109|Livestock Feed|0","2042110|Bird Food Or Seed, Other|0","2042113|Feed Supplement, Animal|0","2044915|Rice Bran And Ground Rice|0","2044920|Hulls, Rice, Ground, Feed|0","2045120|Flour, Grain, Self|0","2045290|Flour, Edible, Nec|0","2046210|Corn Starch|0","2046615|Starch, Liquid, Other|0","2046625|Starch Substitutes|0","2046710|Corn Gluten Residuum, Dry|0","2046715|Corn Germ Or Corn Oil|0","2046720|Corn Steep Water|0","2046920|Corn Oil Foots|0","2046925|Corn Steep Water, Liquid|0","2046940|Hominy Meal|0","2061115|Raw Sugar, Beet Juice|0","2061625|Beet Sugar Final Molasses|0","2061675|Molasses, Wood Sugar|0","2061680|Molasses, Dried (Powdered|0","2061710|Blackstrap Molasses|0","2061920|Beet Slops (Beet Sugar|0","2061955|Sugar Cake Mud (Filter|0","2062110|Sugar, Beet Or Cane, Dry|0","2062215|Sugar, Liquid|0","2062515|Invert Sugar|0","2062525|Molasses Refuse|0","2062535|Refiners Residual Syrup|0","2082330|Spent Grains, Dried|0","2083110|Malt|0","2083220|Barley Or Rye Sprouts|0","2083251|Malt Sprouts, Pelletized|0","2083945|Brewers Condensed|0","2085935|Distillers Slops, Liquid|0","2085940|Distillers Mash, Spent|0","2085945|Spent Grain Mash, Feed|0","2091441|Cake,Meal Or Screenings|0","2091451|Cottonseed, Whole Pressed|0","2091455|Cottonseed Oil Foots|0","2092110|Soybean (Soya Bean) Oil|0","2092317|Soybean Hulls, Pelletized|0","2092325|Soybean (Soy) Grits|0","2092326|Soybean (Soy) Flour|0","2093110|Linseed (Flaxseed) Oil|0","2093310|Vegetable Oil, Fat Free|0","2093313|Degummed,Dewatered Algae|0","2093334|Algae Straight|0","2093916|Sunflower Seed Oil Cake|0","2093917|Peanut Oil Cake Or Meal|0","2093920|Peanut Hulls, Not Crushed|0","2094130|Oil, Fish Or Sea Animal|0","2094220|Fish Oil Residuum|0","2094225|Fish Oil Residuum (Fish|0","2411923|Bark|7","2411970|Cores, Logs|7","2499906|Siding, Exterior|7","2812389|Spent salt flux|8","2816934|Iron oxide|8","2816952|Iron ore ground dry|8","2816991|Iron oxide NEC|8","2819634|Aluminum fluoride|8","2819680|Alumina slurry|8","2952310|Asphalt composition siding|4","2952315|Asphalt composition shingles|4","3071906|Plastic Lumber|7","3241110|Cement clinker|4","3241115|Cement, hydraulic, Portland|4","3241130|Cement, hydraulic, masonry or mortar|4","3251115|Building brick|4","3253125|Tile, flooring or paving|4","3259934|Anchor bonnets, not reinforced|8","3274110|Lime|9","3274111|Lime, hydrated|9","3275245|Calcined plaster|4","3291113|Aluminum oxide (alumina)|8","3291150|Fines, aluminum oxide (alumina)|8","3295215|Cinders|4","3295291|Slag, crushed, granulated|4","3295420|Talcose rock|9","3295610|Gypsum, ground powdered or pulverized|4","3295910|Aplite rock, crushed or ground|9","3295915|Middlings, nepheline syenite|9","3295922|Iron ore for sink float media|8","3295956|Limestone slurry|9","3295958|Wallistonite|9","3295960|Limestone|9","3295968|Nepheline syenite, ground|9","3295973|Silica, nec, silex, nec or dry collodial silica|9","3295974|Silica, nec, silex, nec or dry collodial silica|9","3295975|Pellets, shot or spheres, oil or gas well fracture proppant|9","3295977|Silica slurry|9","3295980|Roofing granules|4","3351110|Brass, bronze, or copper bars, with steel|8","3351115|Bars, brass, bronze, or copper|8","3351130|Rods, copper, unfinished|8","3356951|Metal, nec, or metal alloy|8","3356975|Turnings, aluminum & magnesium|8","3391110|Aluminum or aluminum alloy flakes|8","3391113|Metal powder, paste, or flakes|8","3391116|Aluminum, or aluminum alloys, granulated|8","3391119|Aluminum, or aluminum alloys powder, nec|8","3391120|Aluminum powder, atomized granular|8","3399140|Iron bornings|8","3499442|Pipe or tubing, steel, coated or lined|8","3499447|Coating of metal products|8","3715116|FREIGHT TRUCKS, TRAILERS, (on flat cars)|2","3715130|Containers, Demountable|2","3715131|Commodity Container|2","3729991|Aircraft Parts, Nec|2","3732210|Outboard Motor Boats|2","3732310|Barges Or Barge Sections|2","3732974|Boat Steering Assemblies|2","3741110|Locomotives, Locomotive|2","3741311|Locomotive Axles, Without|2","3741313|Locomotive Body Or Truck|2","3741340|Locomotive Frames|2","3741355|Locomotive Truck Frames|2","3741356|Locomotive Trucks|2","3741359|Underframes, Locomotive|2","3741360|Wheels, Locomotive, Iron|2","3741361|Locomotive Wheels, Iron|2","3741383|Locomotive Shafts, Iron|2","3742110|Armored Cars, Railway|2","3742131|Railway Baggage, Express|2","3742136|Coach Cars, Nec, Railway|2","3742205|Cars, Railway Freight|2","3742212|Non-Revenue Movement|2","3742214|Revenue Movements, Cars|2","3742217|Revenue Movement, Cars|2","3742225|Cars,Railway,Moved On Own Wheels,Box|2","3742233|Cars, Railway Caboose|2","3742298|Empty Assigned Auto Parts|2","3742437|Railway Right-Of-Way|2","3742439|Right-Of-Way Mowing Cars|2","3742445|Cars, Weed Burner Or Fire|2","3742449|Snow Plows, Railway|2","3742481|Railway Work Equipment|2","3742676|Railway Car Wheels, Iron|2","3742812|Railway Car Axles, Nec|2","3742814|Railway Car Bolster Plate|2","3742818|Bodies For Railway Cars|2","3742819|Railway Car Bodies, Nec|2","3742820|Railway Car Journal|2","3742829|Railway Car Brakes|2","3742837|Railway Car Body Or Truck|2","3742839|Railway Car Couplers|2","3742861|Railway Passenger Car|2","3742867|Railway Car Sides|2","3742872|Railway Car Truck Frames|2","3742873|Trucks Without Motors|2","3742876|Railway Car Underframes|2","3742885|Railway Car Brake Jaws|2","3742890|Railway Car Parts, Nec|2","3742910|Railway Car Doors, Nec|2","3742925|Railway Car Truck|2","3742930|Railway Car Brake Beams|2","3742944|Railway Car Crossmember|2","3742975|Railway Car Springs|2","3742980|Railway Car Parts, Iron|2","3999812|Litter, animal or poultry|5","4011208|Fly ash|4","4021170|Iron ore tailings|8","4029101|Soil, Chemical Waste Contaminated, Dry|3","4029105|Solids Or Debris, Ot Soil Low Level Radioactive Contaminated, Dry|3","4029106|Soil, Low-Level Radioactive Contaminated, Dry|3","4029114|Municipal Garbage Waste, Solid, Ground|3","4029115|Slag residue for reclamation purposes|8","4029118|Crushed auto bodies|8","4029173|Municipal Or Commercial Non-Haz Solid Waste|3","4029176|Automobile shredder residue|8","4231225|Revenue Movement of Wooden Pallets / Skids Returned Empty|7","4845196|Polychlorinated Biphenyls Or Pcb Class 9 Un2315 Pg Ii Or Iii|3","4929127|Radioactive Material Limited Quantity Class 7 Un 2910; Un 2912|3","4929133|Radioactive Material|3","4960197|Environmentally Hazardous Substance, Solid, N O S|3"],"A":["Blacks, carbon|28996|5","Carbon, activated, absorbent, clarifying|28996|5","Carpets, carpeting, mats, matting or rugs, rubber|30614|5","Pneumatic tires, rubber|30111|5","Rubber|28212|5","Rubber, guayule or natural crude|08423|5","Appliances (various)|363|5","Appliances|36343|5","Bins, crates, racks|41114|5","Candles|39999|5","Circus outfits|41211|5","Cranes or derricks|35314|5","Crude feldspar|14515|5","Cullet|32299|5","Glass|32119|5","Glass, crushed, ground or powdered|32299|5","Lawn mowers|35241|5","Machinery or machines, NEC new|35999|5","Pipe or tubing, plastic|30712|5","Plastic pipe|30719|5","Shovels|35314|5","Wire goods or wire work, NEC|34819|5","Magnesium chloride, calcium chloride|28126|5","Rock salt|14715|5","Sodium chloride|28991|5","Dimensional Lumber|24219|7","Finished Wooden Poles / Rods / Stakes|24981|7","Gypsum Wallboard|32754|7","Hardboard|24993|7","Hardwood Flooring|24215|7","Logs|24111|7","Lumber, rough or dressed or softwood cut|24211|7","OSB, Oriented Strandboard|24991|7","Particleboard / MDF|24996|7","Plywood / Veneer|24321|7","Prefabricated Wood Products|24391|7","Sawed Ties|24212|7","Sawmill or Planing Mill Products|24299|7","Treated Lumber|24913|7","Treated Railroad Ties|24912|7","Treated Wood Poles|24911|7","Untreated Poles|24116|7","Untreated Railroad Ties|24112|7","Untreated Wood Props or Timbers|24118|7","Wood Scrap / Waste|40231|7","Wooden Crane mats|24992|7","Wooden Fencing / Gates|24997|7","Wooden Shingles|24291|7","Additive alloys|33134|8","Aluminum or alloy scrap, tailings waste|40214|8","Aluminum ingots, slab|33341|8","Aluminum or aluminum alloy base wire, cable, or strand, bare|33571|8","Aluminum or aluminum base alloy, basic shapes|33529|8","Aluminum or aluminum base alloy, pipe or tube|33524|8","Aluminum or aluminum base alloy, plate or sheet|33521|8","Aluminum or aluminum base alloy, rod or bars|33523|8","Aluminum residues|33342|8","Brass, bronze, or copper alloy scrap, tailings/waste|40212|8","Copper matte|33312|8","Copper or copper alloy base wire, cable, or strand, bare|33572|8","Copper, brass, bronze, or other copper base alloy pipe, or tube|33513|8","Copper, brass, bronze, or other copper base alloy plate, sheet, or strip|33512|8","Copper, brass, bronze, or other copper base alloy shapes, nec|33519|8","Electrometallurgical products, nec|33135|8","Fabricated metal products|34998|8","Fabricated metal products, nec|34999|8","Fabricated structural steel products|34411|8","Ferroalloys, nec|33139|8","Ferrochrome|33132|8","Ferromanganese|33131|8","Ferrosilicon|33133|8","Iron or steel bars|33124|8","Iron or steel cast pipe or fittings|33211|8","Iron or steel forgings|33911|8","Iron or steel scrap|40211|8","Lead matte|33322|8","Lead or lead base alloy basic shapes|33562|8","Lead pig, slab|33321|8","Lead, zinc, or alloy scrap, tailings/waste|40213|8","Magnesium or magnesium base alloy, basic shapes|33561|8","Magnesium pig, slab, or ingots|33391|8","Metal foil or leaf|34992|8","Metal valves for plumping, piping, or heating|34941|8","Metalizing plant products|33115|8","Misc nonferrous metal residues|33398|8","Nickel or nickel base alloy basic shapes|33563|8","Nickel pig, slab, or ingots|33394|8","Nonferrous metal or alloy scrap, tailings/waste|40219|8","Nonferrous metal or nonferrous metal alloy base alloy castings|336|8","Nonferrous metal or nonferrous metal alloy base wire, cable, or strand, bare|33573|8","Non-insulated ferrous wire rope, cable or strand|33151|8","Pig iron|33111|8","Plate steel|33122|8","Primary copper or copper base alloy, pig, slabs, or ingots|33311|8","Primary Iron or steel products|33129|8","Primary iron or steel products|33219|8","Primary metal products|33999|8","Primary nonferrous metal ingots, pig, or slab|33399|8","Railway track material|33128|8","Sheet steel|33123|8","Steel nails, staples, tacks, brads, or spikes|33152|8","Steel pipe or tubing|33126|8","Steel slabs, billets, skelp, breakdowns|33121|8","Steel wire|33155|8","Structural shapes or pilings|33125|8","Tin or tin base alloy|33395|8","Tin plate|33127|8","Titanium basic shapes|33565|8","Wire or cable insulated, enameled or covered, all types|33574|8","Zinc dross|33332|8","Zinc or zinc base alloy basic shapes|33564|8","Zinc smelter products, pig, slab, ingots|33331|8","Municipal garbage waste|40291|6","Soil, chemical waste contaminated|40291|6","Plant refuse, refuse waste material|40291|6","Radioactive materials, articles or isotopes|28197|6","Soil, low-level radioactive contaminated|40291|6","Waste aluminum smelting by-products|48163|6","Automobile shredder|40291|6","Solid waste, non-hazardous|40291|6","Waste flammable liquids|48105|6","Waste battery, wet, filled with acid|48365|6","Waste environmentally hazardous substance|48755|6","Waste water|40291|6","Containers or boxes, paperboard|265|10","Containers or boxes, paperboard|26612|10","Containers or boxes, paperboard|26615|10","Ground wood|26212|10","Miscellaneous paper products|264|10","Newsprint|26211|10","Paper bags|26431|10","Paper, NEC|26219|10","Printing paper|26213|10","Pulp mill by-products (Lignin Liquor, etc)|26112|10","Pulpboard|26311|10","Pulpwood logs|24114|10","Recovered fiber|40241|10","Sanitary tissue stock|26218|10","Special industrial paper|26217|10","Wood chips|24115|10","Wood pulp|26111|10","Wrapping paper, wrappers or coarse paper|26214|10","Feldspar, ground|32955|9","Industrial Sand|14413|9","FARM PRODUCTS|01|0","GRAIN|0113|0","CORN|01132|0","FIELD SEEDS|0115|0","LIVESTOCK|0141|0","COTTONSEEDS|01141|0","FLAXSEEDS|01142|0","PEANUTS|01143|0","OIL KERNELS,NUTS OR SEEDS,NEC|01149|0","FIELD SEEDS,NEC|01159|0","FODDER,HAY OR ROUGHAGE|01191|0","STRAW|01196|0","FIELD CROPS,NEC|01199|0","CHOPPED,GROUND OR PULVERIZED ALFALFA|01992|0","ANIMAL REFUSE,TANKAGE,MEAT MEAL,OR DRIED|20144|0","ANIMAL BY-PRODUCTS,INEDIBLE,NEC|20149|0","WHEAT BRAN, MIDDLINGS OR SHORTS|20412|0","GRAIN MILL BY-PRODUCTS|20418|0","FLOUR OR OTHER GRAIN MILL PRODUCTS,NEC|20419|0","PREPARED FEED,ANIMAL,FISH OR POULTRY|20421|0","MILLED RICE OR BY-PRODUCTS,NEC|20449|0","SUGAR MOLASSES|20616|0","BLACKSTRAP MOLASSES|20617|0","BAGASSE|20618|0","SUGAR MILL PRODUCTS OR BY-PRODUCTS,NEC|20619|0","SUGAR REFINING BY-PRODUCTS|20625|0","MOLASSES BEET PULP|20626|0","MALT EXTRACTS OR BREWERS SPENT GRAINS|20823|0","BY-PRODUCTS OF LIQUOR DISTILLING|20859|0","COTTONSEED CAKE OR MEAL OR BY-PRODUCTS|20914|0","SOYBEAN CAKE,FLOUR,GRITS,MEAL OR OTHER|20923|0","NUT OR VEGETABLE OIL SEED CAKE OR MEAL|20939|0","MARINE OIL MILL BY-PRODUCTS|20942|0","BARLEY|01131|0","OATS|01133|0","SORGHUM GRAINS|01136|0","WHEAT|01137|0","GRAIN,NEC|01139|0","SUGAR BEETS|01197|0","SUGAR CANE|01198|0","CORN SYRUP|20461|0","CORN STARCH|20462|0","CORN SUGAR|20463|0","DEXTRINE,CORN,TAPIOCA OR OTHER|20464|0","STARCH (POTATO,WHEAT,RICE,ETC.)|20466|0","WET PROCESS CORN OR SIMILAR MILL BY-|20467|0","WET PROCESS CORN MILLING OR SIMILAR|20469|0","RAW CANE OR BEET SUGAR|20611|0","SUGAR,GRANULATED OR POWDERED,SUGAR CUBES|20621|0","SUGAR, LIQUID OR SYRUP|20622|0","SUGAR,REFINED,CANE OR BEET,NEC|20629|0","SOYBEANS (SOYA BEANS)|01144|0","LARD|20131|0","MEAT PRODUCTS,NEC|20139|0","GREASE OR INEDIBLE TALLOW OR OTHER INED-|20143|0","POULTRY OR SMALL GAME BY-PRODUCTS,FRESH|20158|0","CORN OIL|20465|0","COTTONSEED OIL,CRUDE OR REFINED|20911|0","SOYBEAN OIL,CRUDE OR REFINED|20921|0","LINSEED OIL,CRUDE OR REFINED|20931|0","NUT OR VEGETABLE OILS|20933|0","MARINE OIL MILL PRODUCTS|20941|0","WHEAT FLOUR|20411|0","CORN MEAL OR FLOUR|20413|0","RYE FLOUR OR MEAL|20414|0","BUCKWHEAT FLOUR OR MEAL|20415|0","OAT MEAL OR FLOUR|20416|0","MALT|2083|0","Alloy or Aluminum Scrap|40214|1","Alloy or Non-Ferrous Metal Scrap|40219|1","Alloy Smelter Products, Zinc or Zinc Base|33331|1","Alloy, Brass, Bronze or Copper Scrap|40212|1","Alloy, Lead orZinc Scrap|40213|1","Alloys, Additive, Excluding Copper|33134|1","Alloys, Ferro, NEC|33139|1","Aluminum Base Alloy Castings|3361|1","Aluminum Oxide|14916|1","Aluminum Pipe or Tube|33524|1","Aluminum Plate or Sheet|33521|1","Aluminum Residue, etc.|33342|1","Aluminum Rod or Bars|33523|1","Aluminum Wire, Cable or Strand|33571|1","Aluminum, Basic Shapes, NEC|33529|1","Aluminum, Primary, Pig, Slab or Ingots|33341|1","Ashes (Zinc), Residues, Dross|33332|1","Beams, Channels, Pilings, T's and z's, Structurals|33125|1","Brass, Bronze or Copper Castings|33621|1","Briquettes, Iron, DRI, Crude Metallic Iron|33115|1","Bullion (Lead), Pig, Slab or Ingots|33321|1","Cast Pipe or Fittings, Iron or Steel|33211|1","Castings, Iron or Steel, Ingot Molds, Stools|33219|1","Coiled or Cut Steel Sheet, Plain, Galvanized or Painted|33123|1","Copper Wire, Strand or Cable|33572|1","Copper, Brass or Bronze Pipe|33513|1","Copper, Brass or Bronze Plate|33512|1","Copper, Brass or Bronze Rods|33511|1","Copper, Brass or Bronze Shapes|33519|1","Copper, Matte, Speiss ro Flue|33312|1","Electrometallurgical Products, NEC, Exc A|33135|1","Fabricated Products (not iron or steel) Posts, etc.|34412|1","Fabricated Steel Products, NEC|34411|1","Ferro Silicon|33133|1","Iron or Steel Bars, Bar Shapes or Rods|33124|1","Iron or Steel Pipe, Tubes or Fittings|33126|1","Lead Matte, Speiss and Flue|33322|1","Lead or Lead Base Alloy Castings|33693|1","Lead or Lead Base Alloy, Basic|33562|1","Magnesium Basic Shapes|33561|1","Magnesium Castings|33691|1","Magnesium Pig, Slab, Ingots, etc.|33391|1","Manganese Pig, Slab, Ingots, etc.|33392|1","Metal Basic Shapes, Non-Ferrous|33569|1","Metal Castings, Non-Ferrous NEC|33699|1","Metal Forgings, Non-Ferrous|33921|1","Metal Nails, Brads, Non-Ferrous, etc.|33992|1","Metal or Cable Insulated, All Types|33574|1","Metal Powder, Flakes or Paste|33991|1","Metal Wire, Non-Ferrous, Bare|33573|1","Mill Scale, Sinter|33119|1","Molybdenum Pig, Slab, Ingots, etc.|33393|1","Nickel or Nickel Base Alloy|33563|1","Nickel Pig, Slab, Ingots, etc.|33394|1","Non-Ferrous Metal Residue, Misc.|33398|1","Non-Ferrous Metal Slab, Primary|33399|1","Other Primary Products, NEC|33129|1","Primary Copper, Pig, Slab, Ingots|33311|1","Primary Metal Products, NEC (Grinding Balls)|33999|1","Railway Track Material, Railway Splice Bars|33128|1","Solder, Babbitt or Type Metal Shapes|33567|1","Steel Ingot or Semi-Finished (Billets, Slabs)|33121|1","Steel Nails, Spikes, Etc.|33152|1","Steel Plate|33122|1","Steel Wire, Rope and Strand|33151|1","Tin Pig, Slab, Ingots, etc.|33395|1","Tin Plate, Canstock, Cut or in Coils|33127|1","Titanium Pig, Slab, Ingots, etc.|33396|1","Welding Rods, Bars or Wire|33566|1","Zinc or Zinc Base Alloy Castings|33692|1","Zinc or Zinc Base Alloy, Basic|33564|1"]}
+  </script>
+
+  <script>
+    // ============================================================
+    // STCC Finder — 100% client-side.
+    // Data sources (embedded above):
+    //   H: 2-5 digit STCC hierarchy headers, parsed from the public
+    //      STB Carload Waybill Sample Reference Guide (stb.gov).
+    //   C: curated 7-digit codes from public railroad STCC lists
+    //      (UP commonly-used STCC pages, CSX commodity STCC lists,
+    //      NS Tariff 6306-A) — each entry carries its source index.
+    //   A: plain-English alias terms from the same railroad lists,
+    //      mapped to 2-5 digit families (improves search recall).
+    // No serverless functions, no external calls.
+    // ============================================================
+
+    var RAW = JSON.parse(document.getElementById('stccData').textContent);
+    var SOURCES = RAW.sources;
+    var HIER = RAW.H.map(function (s) {
+      var i = s.indexOf('|');
+      return { code: s.slice(0, i), desc: s.slice(i + 1) };
+    });
+    var HMAP = {};
+    HIER.forEach(function (h) { HMAP[h.code] = h.desc; });
+    var CURATED = RAW.C.map(function (s) {
+      var p = s.split('|');
+      return { code7: p[0], desc: p[1], src: SOURCES[+p[2]] };
+    });
+    var ALIASES = RAW.A.map(function (s) {
+      var p = s.split('|');
+      return { term: p[0], code: p[1], src: SOURCES[+p[2]] };
+    });
+
+    // Plain-English bridge vocabulary -> tariff vocabulary.
+    // (Search-side synonyms only; not published codes.)
+    var SYN = {
+      'antifreeze': ['glycol'], 'coolant': ['glycol'],
+      'pellets': ['resins'], 'pellet': ['resins'],
+      'resin': ['plastic'], 'poly': ['plastic'],
+      'trash': ['waste'], 'garbage': ['waste'], 'rubbish': ['waste'],
+      'msw': ['waste', 'municipal'],
+      'dirt': ['soil', 'earth'], 'soil': ['earth', 'soil'],
+      'rebar': ['steel', 'bars'], 'beams': ['steel', 'structural'],
+      'gravel': ['gravel', 'sand'], 'rocks': ['stone'],
+      'fuel': ['petroleum', 'gasoline'], 'diesel': ['petroleum'],
+      'timber': ['lumber', 'logs'], 'boards': ['lumber'],
+      'maize': ['corn'], 'soybeans': ['soybeans'], 'beans': ['soybeans'],
+      'fertilizer': ['fertilizers'], 'potash': ['potassium'],
+      'paperboard': ['paperboard'], 'cardboard': ['paperboard', 'containers'],
+      'autos': ['automobiles', 'motor'], 'cars': ['automobiles', 'motor'],
+      'ethanol': ['alcohols', 'alcohol'],
+      'hazmat': ['hazardous'], 'chemicals': ['chemical']
+    };
+
+    // ---------- Guided branches (hand-built decision trees) ----------
+    // Characterization notes for the antifreeze branch follow state
+    // agency guidance (Washington Dept. of Ecology; Vermont DEC):
+    // glycol itself is not a RCRA-listed waste — contamination picked
+    // up in service is what makes a given lot hazardous.
+    var BRANCHES = {
+      antifreeze: {
+        title: 'Used antifreeze & spent glycol',
+        tag: 'Waste & chemicals',
+        desc: 'Same molecule, three very different codes — product, non-hazardous waste, or hazardous waste. What it is depends on condition and testing, not the name.',
+        keywords: ['antifreeze', 'glycol', 'coolant', 'glycerine', 'glycerin', 'ethylene', 'propylene'],
+        start: 'q1',
+        nodes: {
+          q1: {
+            q: 'What exactly is the material?',
+            opts: [
+              { label: 'Virgin or reclaimed glycol sold as product (meets a spec)', next: 'r_product' },
+              { label: 'Used antifreeze / spent coolant headed to reclamation or disposal', next: 'q2' },
+              { label: 'Glycol-water process fluid, not sure of status', next: 'r_unsure' }
+            ]
+          },
+          q2: {
+            q: 'Has the material been characterized (tested) under RCRA?',
+            opts: [
+              { label: 'Yes — non-hazardous (passes TCLP, no solvent mixing)', next: 'r_nonhaz' },
+              { label: 'Yes — hazardous (fails TCLP for metals, or mixed with a listed solvent)', next: 'r_haz' },
+              { label: 'Not tested yet', next: 'r_unsure' }
+            ]
+          },
+          r_product: {
+            result: true,
+            heading: 'Classify it as the chemical, not a waste',
+            body: 'Glycol that meets a product spec — virgin or reclaimed/re-distilled — classifies under the chemical commodity family, not the waste series. Reclaimed antifreeze sold as product is a product.',
+            codes: [{ code: '28185', label: 'GLYCOLS OR GLYCERINES (5-digit family; railroad assigns the 7-digit)' }],
+            src: 'Hierarchy: STB Waybill Reference Guide.'
+          },
+          r_nonhaz: {
+            result: true,
+            heading: 'Non-hazardous used antifreeze &rarr; non-hazardous waste series',
+            body: 'Ethylene and propylene glycol are not RCRA-listed wastes — what makes a given lot hazardous is contamination picked up in service (lead, benzene, fuel, or mixed solvents). Used antifreeze that has been tested and characterized as non-hazardous ships under the 40-series waste family, typically a 40-291-xx code your railroad assigns.',
+            codes: [
+              { code: '40291', label: 'WASTE OR SCRAP, NEC (5-digit family)' },
+              { code: '4029173', label: 'Municipal Or Commercial Non-Haz Solid Waste — example of a published 40-291-xx code' }
+            ],
+            src: 'Characterization pattern: Washington Dept. of Ecology & Vermont DEC used-antifreeze guidance. Example code: NS Tariff 6306-A.'
+          },
+          r_haz: {
+            result: true,
+            heading: 'RCRA-hazardous &rarr; 48-series waste hazmat',
+            body: 'If the spent antifreeze fails TCLP or has been mixed with a listed solvent, it ships as hazardous waste in the 48-series — and the STCC must match your 49 CFR shipping description (proper shipping name, hazard class, packing group). Start from the hazmat paperwork, then confirm the code with your serving railroad.',
+            codes: [{ code: '48', label: 'WASTE HAZARDOUS OR WASTE HAZARDOUS SUBSTANCES (series; exact code follows your 49 CFR description)' }],
+            src: 'Characterization pattern: Washington Dept. of Ecology & Vermont DEC used-antifreeze guidance.'
+          },
+          r_unsure: {
+            result: true,
+            heading: 'Characterize first — the test result picks the code',
+            body: 'Until the material is characterized, the classification (and the rate, and whether it can move at all) is a guess. Get a TCLP/characterization profile from your environmental vendor, then the code falls out. We can walk the whole chain with you — testing, classification, railroad approval, and the move itself.',
+            codes: [],
+            src: ''
+          }
+        }
+      },
+
+      waste: {
+        title: 'Waste or scrap — is it hazardous?',
+        tag: 'Waste & scrap',
+        desc: 'Waste splits three ways: scrap with recovery value (40-2xx by material), non-hazardous disposal waste (40-291-xx), and RCRA-hazardous waste (48-series).',
+        keywords: ['waste', 'scrap', 'trash', 'garbage', 'refuse', 'disposal', 'debris', 'rcra', 'hazardous'],
+        start: 'q1',
+        nodes: {
+          q1: {
+            q: 'Is the material a RCRA hazardous waste (or DOT-regulated hazardous material)?',
+            opts: [
+              { label: 'No — tested / characterized as non-hazardous', next: 'q2' },
+              { label: 'Yes — it is a regulated hazardous waste', next: 'r_haz' },
+              { label: 'Not sure', next: 'r_unsure' }
+            ]
+          },
+          q2: {
+            q: 'Is it being sold for recovery (scrap with value), or shipped for disposal?',
+            opts: [
+              { label: 'Scrap with value — being sold to a mill, reclaimer, or processor', next: 'r_scrap' },
+              { label: 'Disposal-bound — going to a landfill or disposal facility', next: 'r_disposal' }
+            ]
+          },
+          r_scrap: {
+            result: true,
+            heading: 'Scrap for recovery &rarr; 40-2xx family by material',
+            body: 'Scrap classifies by what the material is, in the 40-2 series:',
+            codes: [
+              { code: '40211', label: 'IRON OR STEEL SCRAP, WASTES OR TAILINGS' },
+              { code: '40212', label: 'BRASS, BRONZE, COPPER OR ALLOY SCRAP' },
+              { code: '40214', label: 'ALUMINUM OR ALLOY SCRAP, TAILINGS OR WASTES' },
+              { code: '40231', label: 'WOOD SCRAP OR WASTE' },
+              { code: '40261', label: 'RUBBER OR PLASTIC SCRAP OR WASTE' }
+            ],
+            src: 'Hierarchy: STB Waybill Reference Guide.'
+          },
+          r_disposal: {
+            result: true,
+            heading: 'Non-hazardous disposal waste &rarr; 40-291-xx',
+            body: 'Non-hazardous waste headed for disposal falls under WASTE OR SCRAP, NEC. Railroads publish specific 7-digit codes in this family — examples:',
+            codes: [
+              { code: '40291', label: 'WASTE OR SCRAP, NEC (5-digit family)' },
+              { code: '4029173', label: 'Municipal Or Commercial Non-Haz Solid Waste' },
+              { code: '4029114', label: 'Municipal Garbage Waste, Solid, Ground' }
+            ],
+            src: 'Example codes: NS Tariff 6306-A (Hazardous & Non-Hazardous Waste).'
+          },
+          r_haz: {
+            result: true,
+            heading: 'Hazardous waste &rarr; 48-series, keyed to 49 CFR',
+            body: 'Hazardous waste ships in the 48-series, and the code is chosen to match your 49 CFR shipping description — proper shipping name, hazard class, and packing group. Most railroads also require advance approval for hazardous waste moves. Start from the waste profile and hazmat paperwork, then confirm with your serving railroad.',
+            codes: [
+              { code: '48', label: 'WASTE HAZARDOUS OR WASTE HAZARDOUS SUBSTANCES (series)' },
+              { code: '4845196', label: 'Polychlorinated Biphenyls Or Pcb Class 9 Un2315 Pg Ii Or Iii — example published code' }
+            ],
+            src: 'Example code: NS Tariff 6306-A.'
+          },
+          r_unsure: {
+            result: true,
+            heading: 'Characterize the waste first',
+            body: 'The RCRA determination decides the series, the paperwork, the equipment, and the rate. Get a waste characterization from your environmental vendor before booking. We can help coordinate the classification and the railroad approvals.',
+            codes: [],
+            src: ''
+          }
+        }
+      },
+
+      soil: {
+        title: 'Contaminated soil, debris & municipal waste',
+        tag: 'Waste & remediation',
+        desc: 'Remediation and municipal waste moves live in a handful of published codes — but hazardous vs. non-hazardous changes everything.',
+        keywords: ['soil', 'dirt', 'contaminated', 'remediation', 'municipal', 'msw', 'demolition', 'cleanup', 'radioactive', 'landfill'],
+        start: 'q1',
+        nodes: {
+          q1: {
+            q: 'What are you moving?',
+            opts: [
+              { label: 'Chemically contaminated soil — characterized non-hazardous', next: 'r_soil' },
+              { label: 'Low-level radioactive contaminated soil or debris', next: 'r_rad' },
+              { label: 'Municipal or commercial solid waste', next: 'r_msw' },
+              { label: 'Soil or debris that is RCRA-hazardous (or untested)', next: 'r_haz' }
+            ]
+          },
+          r_soil: {
+            result: true,
+            heading: 'Non-hazardous contaminated soil',
+            body: 'Characterized non-hazardous contaminated soil moves under the 40-291 waste family. NS publishes this code in its waste tariff:',
+            codes: [
+              { code: '4029101', label: 'Soil, Chemical Waste Contaminated, Dry' }
+            ],
+            src: 'NS Tariff 6306-A (Hazardous & Non-Hazardous Waste).'
+          },
+          r_rad: {
+            result: true,
+            heading: 'Low-level radioactive contaminated material',
+            body: 'Low-level radioactive soil and debris have their own published codes — and these moves always need railroad pre-approval and a radiological profile:',
+            codes: [
+              { code: '4029106', label: 'Soil, Low-Level Radioactive Contaminated, Dry' },
+              { code: '4029105', label: 'Solids Or Debris, Ot Soil Low Level Radioactive Contaminated, Dry' }
+            ],
+            src: 'NS Tariff 6306-A (Hazardous & Non-Hazardous Waste).'
+          },
+          r_msw: {
+            result: true,
+            heading: 'Municipal / commercial solid waste',
+            body: 'Municipal solid waste moves under published 40-291-xx codes; railroads typically require it containerized or processed and pre-approved:',
+            codes: [
+              { code: '4029173', label: 'Municipal Or Commercial Non-Haz Solid Waste' },
+              { code: '4029114', label: 'Municipal Garbage Waste, Solid, Ground' }
+            ],
+            src: 'NS Tariff 6306-A (Hazardous & Non-Hazardous Waste).'
+          },
+          r_haz: {
+            result: true,
+            heading: 'Hazardous (or uncharacterized) — stop at the profile first',
+            body: 'If the soil or debris fails characterization, it ships as 48-series hazardous waste matched to your 49 CFR description. If it has not been tested, that determination comes first — it decides the code, the equipment, and the approvals. We can walk the chain with you.',
+            codes: [{ code: '48', label: 'WASTE HAZARDOUS OR WASTE HAZARDOUS SUBSTANCES (series)' }],
+            src: ''
+          }
+        }
+      },
+
+      metals: {
+        title: 'Metal — scrap vs. prime product',
+        tag: 'Metals',
+        desc: 'The same metal carries a completely different code (and rate) depending on whether it\'s scrap for remelting or a prime mill product.',
+        keywords: ['steel', 'metal', 'aluminum', 'copper', 'brass', 'iron', 'scrap', 'coil', 'rebar', 'zinc', 'lead'],
+        start: 'q1',
+        nodes: {
+          q1: {
+            q: 'Is it scrap for remelting/recovery, or a prime / finished metal product?',
+            opts: [
+              { label: 'Scrap — going to a mill or smelter for remelting', next: 'q_scrap' },
+              { label: 'Prime or semi-finished product — coil, plate, bar, billet, shapes', next: 'q_prime' }
+            ]
+          },
+          q_scrap: {
+            q: 'Which metal?',
+            opts: [
+              { label: 'Iron or steel', next: 'r_fescrap' },
+              { label: 'Aluminum', next: 'r_alscrap' },
+              { label: 'Copper, brass, bronze', next: 'r_cuscrap' },
+              { label: 'Other / mixed nonferrous', next: 'r_otherscrap' }
+            ]
+          },
+          q_prime: {
+            q: 'Ferrous or nonferrous?',
+            opts: [
+              { label: 'Iron or steel mill products', next: 'r_feprime' },
+              { label: 'Aluminum shapes (plate, sheet, extrusions)', next: 'r_alprime' }
+            ]
+          },
+          r_fescrap: {
+            result: true, heading: 'Iron & steel scrap',
+            body: 'Ferrous scrap classifies under 40211 regardless of grade (shred, HMS, busheling — grade matters commercially, not for the family):',
+            codes: [{ code: '40211', label: 'IRON OR STEEL SCRAP, WASTES OR TAILINGS' }],
+            src: 'Hierarchy: STB Waybill Reference Guide. UP also publishes 7-digit codes in this family in its Metals & Ores STCC list.'
+          },
+          r_alscrap: {
+            result: true, heading: 'Aluminum scrap',
+            body: '',
+            codes: [{ code: '40214', label: 'ALUMINUM OR ALLOY SCRAP, TAILINGS OR WASTES' }],
+            src: 'Hierarchy: STB Waybill Reference Guide.'
+          },
+          r_cuscrap: {
+            result: true, heading: 'Copper-group scrap',
+            body: '',
+            codes: [{ code: '40212', label: 'BRASS, BRONZE, COPPER OR ALLOY SCRAP' }],
+            src: 'Hierarchy: STB Waybill Reference Guide.'
+          },
+          r_otherscrap: {
+            result: true, heading: 'Other metal scrap',
+            body: 'Lead and zinc have their own family; anything else nonferrous falls to the NEC code:',
+            codes: [
+              { code: '40213', label: 'LEAD, ZINC OR ALLOY SCRAP, TAILINGS' },
+              { code: '40219', label: 'NONFERROUS METAL OR SCRAP, TAILINGS OR WASTES, NEC' }
+            ],
+            src: 'Hierarchy: STB Waybill Reference Guide.'
+          },
+          r_feprime: {
+            result: true, heading: 'Prime iron & steel mill products',
+            body: 'Prime product classifies under the 33-series (primary metal products), not the scrap series — a distinction worth real money on the rate:',
+            codes: [{ code: '3312', label: 'PRIMARY IRON OR STEEL PRODUCTS (coils, plate, bar, structural — 7-digit assigned by product)' }],
+            src: 'Hierarchy: STB Waybill Reference Guide. UP publishes 7-digit codes in this family in its Metals & Ores STCC list.'
+          },
+          r_alprime: {
+            result: true, heading: 'Prime aluminum shapes',
+            body: '',
+            codes: [
+              { code: '3352', label: 'ALUMINUM OR ALUMINUM ALLOY BASIC SHAPES' },
+              { code: '33521', label: 'ALUMINUM OR ALUMINUM ALLOY PLATE OR SHEET' }
+            ],
+            src: 'Hierarchy: STB Waybill Reference Guide.'
+          }
+        }
+      },
+
+      foodgrade: {
+        title: 'Oils & syrups — food-grade vs. industrial',
+        tag: 'Food & ag products',
+        desc: 'Edible and inedible versions of the same oil sit in different families — and food-grade equipment requirements follow the code.',
+        keywords: ['oil', 'syrup', 'tallow', 'grease', 'fats', 'vegetable', 'edible', 'cooking', 'corn syrup'],
+        start: 'q1',
+        nodes: {
+          q1: {
+            q: 'What\'s the product?',
+            opts: [
+              { label: 'Vegetable or nut oil (soybean, cottonseed, canola...)', next: 'q_oil' },
+              { label: 'Corn syrup or corn sweeteners', next: 'r_syrup' },
+              { label: 'Animal fats, inedible grease, or tallow', next: 'r_inedible' }
+            ]
+          },
+          q_oil: {
+            q: 'Edible / food-grade, or crude / industrial?',
+            opts: [
+              { label: 'Edible — cooking or salad oil, food-grade', next: 'r_edible' },
+              { label: 'Crude or industrial — for refining or industrial use', next: 'r_crude' }
+            ]
+          },
+          r_edible: {
+            result: true, heading: 'Edible cooking & salad oils',
+            body: 'Food-grade finished oils classify under the edible fats family (and move in food-grade equipment):',
+            codes: [
+              { code: '2096', label: 'MARGARINE, SHORTENING OR TABLE OILS OR OTHER EDIBLE FATS OR OILS, NEC' },
+              { code: '20961', label: 'SHORTENING OR COOKING OR SALAD OILS EXC. CORN OIL SEE 20465' }
+            ],
+            src: 'Hierarchy: STB Waybill Reference Guide.'
+          },
+          r_crude: {
+            result: true, heading: 'Crude / industrial vegetable oils',
+            body: 'Crude oils for refining classify by their source crop:',
+            codes: [
+              { code: '20921', label: 'SOYBEAN OIL, CRUDE OR REFINED' },
+              { code: '20911', label: 'COTTONSEED OIL, CRUDE OR REFINED' },
+              { code: '20933', label: 'NUT OR VEGETABLE OILS (other crops)' }
+            ],
+            src: 'Hierarchy: STB Waybill Reference Guide.'
+          },
+          r_syrup: {
+            result: true, heading: 'Corn syrup & sweeteners',
+            body: 'Corn syrup lives in the wet-corn-milling family:',
+            codes: [
+              { code: '20461', label: 'CORN SYRUP' },
+              { code: '20462', label: 'CORN STARCH' }
+            ],
+            src: 'Hierarchy: STB Waybill Reference Guide. CSX publishes 7-digit codes in this family in its Agricultural Products STCC list.'
+          },
+          r_inedible: {
+            result: true, heading: 'Inedible fats, grease & tallow',
+            body: 'Inedible animal products classify under the packinghouse by-products family — not the edible-fats family:',
+            codes: [
+              { code: '20143', label: 'GREASE OR INEDIBLE OR OTHER INEDIBLE ANIMAL OIL MILL PRODUCTS' }
+            ],
+            src: 'Hierarchy: STB Waybill Reference Guide.'
+          }
+        }
+      }
+    };
+
+    // ---------- Utilities ----------
+    function fmtCode(c) {
+      if (c.length === 7) return c.slice(0, 2) + '-' + c.slice(2, 5) + '-' + c.slice(5);
+      return c;
+    }
+    function escapeHtml(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+    function levelLabel(code) {
+      var l = code.length;
+      if (l === 2) return '2-digit group';
+      if (l === 3) return '3-digit group';
+      if (l === 4) return '4-digit family';
+      return '5-digit family';
+    }
+    function crumbs(code) {
+      var parts = [];
+      for (var n = 2; n < code.length; n++) {
+        var p = code.slice(0, n);
+        if (HMAP[p]) parts.push({ code: p, desc: HMAP[p] });
+      }
+      return parts;
+    }
+
+    // ---------- Search ----------
+    function tokenize(q) {
+      return q.toLowerCase().split(/[^a-z0-9]+/).filter(function (t) { return t.length >= 2; });
+    }
+    function expand(tok) {
+      var out = [tok];
+      if (SYN[tok]) out = out.concat(SYN[tok]);
+      return out;
+    }
+    // token matches text if any expansion is a word-prefix of any word in text
+    function tokenHits(tok, words) {
+      var exps = expand(tok);
+      for (var i = 0; i < exps.length; i++) {
+        for (var j = 0; j < words.length; j++) {
+          if (words[j] === exps[i]) return 2;          // exact word
+          if (words[j].indexOf(exps[i]) === 0) return 1; // prefix
+        }
+      }
+      return 0;
+    }
+    function scoreText(tokens, text) {
+      var words = text.toLowerCase().split(/[^a-z0-9]+/);
+      var score = 0;
+      for (var i = 0; i < tokens.length; i++) {
+        var h = tokenHits(tokens[i], words);
+        if (!h) return 0; // all tokens must match
+        score += h;
+        if (words[0] === tokens[i]) score += 2; // leading-word exact match
+      }
+      return score;
+    }
+
+    function search(q) {
+      var digits = q.replace(/[^0-9]/g, '');
+      var isCodeQuery = digits.length >= 2 && digits.length === q.replace(/[\s-]/g, '').length;
+      var tokens = tokenize(q);
+      var res = { branches: [], curated: [], hier: [] };
+      if (!isCodeQuery && tokens.length === 0) return res;
+
+      // branches
+      Object.keys(BRANCHES).forEach(function (key) {
+        var b = BRANCHES[key];
+        if (isCodeQuery) return;
+        for (var i = 0; i < tokens.length; i++) {
+          var hit = false;
+          for (var k = 0; k < b.keywords.length; k++) {
+            var exps = expand(tokens[i]);
+            for (var e = 0; e < exps.length; e++) {
+              if (b.keywords[k].indexOf(exps[e]) === 0 || exps[e].indexOf(b.keywords[k]) === 0) { hit = true; break; }
+            }
+            if (hit) break;
+          }
+          if (hit) { res.branches.push(key); break; }
+        }
+      });
+
+      // curated 7-digit
+      var cur = [];
+      CURATED.forEach(function (c) {
+        var s = 0;
+        if (isCodeQuery) {
+          if (c.code7.indexOf(digits) === 0) s = 3;
+        } else {
+          s = scoreText(tokens, c.desc);
+        }
+        if (s) cur.push({ s: s, c: c });
+      });
+      cur.sort(function (a, b) { return b.s - a.s || (a.c.desc.length - b.c.desc.length); });
+      res.curated = cur.slice(0, 12).map(function (x) { return x.c; });
+
+      // aliases -> boost map (code -> alias info)
+      var aliasHits = {};
+      if (!isCodeQuery) {
+        ALIASES.forEach(function (a) {
+          var s = scoreText(tokens, a.term);
+          if (s && (!aliasHits[a.code] || aliasHits[a.code].s < s)) {
+            aliasHits[a.code] = { s: s, a: a };
+          }
+        });
+      }
+
+      // hierarchy
+      var hier = [];
+      HIER.forEach(function (h) {
+        var s = 0;
+        if (isCodeQuery) {
+          if (h.code.indexOf(digits) === 0) s = 3;
+        } else {
+          s = scoreText(tokens, h.desc);
+          if (aliasHits[h.code]) s += aliasHits[h.code].s + 2;
+        }
+        if (s) {
+          // prefer specific families and short descriptions
+          s += h.code.length * 0.5;
+          s -= Math.min(h.desc.length / 200, 1);
+          hier.push({ s: s, h: h, alias: aliasHits[h.code] ? aliasHits[h.code].a : null });
+        }
+      });
+      // aliases pointing at codes whose own desc didn't match
+      Object.keys(aliasHits).forEach(function (code) {
+        if (HMAP[code] && !hier.some(function (x) { return x.h.code === code; })) {
+          hier.push({ s: aliasHits[code].s + 2 + code.length * 0.5, h: { code: code, desc: HMAP[code] }, alias: aliasHits[code].a });
+        }
+      });
+      hier.sort(function (a, b) { return b.s - a.s; });
+      res.hier = hier.slice(0, 15);
+      return res;
+    }
+
+    // ---------- Rendering ----------
+    var searchInput = document.getElementById('stccSearch');
+    var resultsSection = document.getElementById('resultsSection');
+    var lastQuery = '';
+
+    function contactHref(q) {
+      return '/contact?subject=' + encodeURIComponent('STCC help - ' + (q || 'commodity classification'));
+    }
+    function updateCtas(q) {
+      var href = contactHref(q);
+      document.getElementById('contactCtaBtn').href = href;
+      document.getElementById('stickyCtaBtn').href = href;
+      document.getElementById('noResultsCta').href = href;
+    }
+
+    function renderHierItem(x) {
+      var h = x.h;
+      var path = crumbs(h.code);
+      var crumbHtml = path.map(function (p) {
+        return '<span class="crumb-code">' + p.code + '</span> ' + escapeHtml(p.desc);
+      }).join('<span class="crumb-sep">&rsaquo;</span>');
+      var famNote = h.code.length === 5
+        ? 'This is the 5-digit commodity family — your serving railroad assigns the final 7-digit code inside this family.'
+        : 'This is a ' + levelLabel(h.code) + ' — drill toward a 5-digit family, then the railroad assigns the final 7-digit code.';
+      return '<div class="result-item" data-code="' + h.code + '" data-kind="hier">' +
+        '<span class="result-code">' + h.code + '</span>' +
+        '<span class="result-desc">' + escapeHtml(h.desc) + '</span>' +
+        '<span class="level-pill">' + levelLabel(h.code) + '</span>' +
+        (crumbHtml ? '<div class="result-crumbs">' + crumbHtml + '</div>' : '') +
+        (x.alias ? '<div class="alias-note">Also listed as &ldquo;' + escapeHtml(x.alias.term) + '&rdquo; (' + escapeHtml(x.alias.src) + ')</div>' : '') +
+        '<div class="result-detail">' + famNote + ' Not sure this is the right family? <a href="' + contactHref(lastQuery) + '">Talk to us</a> — classification is part of what we do.</div>' +
+        '</div>';
+    }
+
+    function renderCuratedItem(c) {
+      var path = crumbs(c.code7.slice(0, 5) + 'xx'); // ancestors of the 5-digit family
+      var fam = c.code7.slice(0, 5);
+      var famDesc = HMAP[fam] ? '<div class="result-crumbs"><span class="crumb-code">' + fam + '</span> ' + escapeHtml(HMAP[fam]) + '</div>' : '';
+      return '<div class="result-item" data-code="' + c.code7 + '" data-kind="curated">' +
+        '<span class="result-code">' + fmtCode(c.code7) + '</span>' +
+        '<span class="result-desc">' + escapeHtml(c.desc) + '</span>' +
+        '<span class="source-badge">' + escapeHtml(c.src) + '</span>' +
+        famDesc +
+        '<div class="result-detail">Published by the railroad named on the badge — treat it as a strong candidate, and have your serving railroad confirm it applies to your shipment and route.</div>' +
+        '</div>';
+    }
+
+    function renderResults(q) {
+      var res = search(q);
+      var bg = document.getElementById('branchGroup');
+      var cg = document.getElementById('curatedGroup');
+      var hg = document.getElementById('hierGroup');
+      var nr = document.getElementById('noResults');
+
+      // branches
+      if (res.branches.length) {
+        document.getElementById('branchBody').innerHTML = res.branches.map(function (key) {
+          return branchCardHtml(key);
+        }).join('');
+        bg.style.display = '';
+      } else { bg.style.display = 'none'; }
+
+      // curated
+      if (res.curated.length) {
+        document.getElementById('curatedBody').innerHTML = res.curated.map(renderCuratedItem).join('');
+        cg.style.display = '';
+      } else { cg.style.display = 'none'; }
+
+      // hierarchy
+      if (res.hier.length) {
+        document.getElementById('hierBody').innerHTML = res.hier.map(renderHierItem).join('');
+        hg.style.display = '';
+      } else { hg.style.display = 'none'; }
+
+      nr.style.display = (res.branches.length || res.curated.length || res.hier.length) ? 'none' : '';
+      resultsSection.classList.add('visible');
+      document.getElementById('stickyCta').classList.add('visible');
+    }
+
+    // ---------- Branch UI ----------
+    function branchCardHtml(key) {
+      var b = BRANCHES[key];
+      return '<div class="branch-card" data-branch="' + key + '">' +
+        '<span class="bc-tag">' + escapeHtml(b.tag) + '</span>' +
+        '<h3>' + b.title + '</h3>' +
+        '<div class="bc-desc">' + escapeHtml(b.desc) + '</div>' +
+        '<div class="branch-body">' + branchNodeHtml(key, b.start) + '</div>' +
+        '</div>';
+    }
+    function branchNodeHtml(key, nodeId) {
+      var node = BRANCHES[key].nodes[nodeId];
+      if (node.result) {
+        var codesHtml = node.codes.map(function (c) {
+          return '<div class="br-code-row"><span class="result-code">' + fmtCode(c.code) + '</span> ' + escapeHtml(c.label) + '</div>';
+        }).join('');
+        return '<div class="branch-result">' +
+          '<h4>' + node.heading + '</h4>' +
+          '<p>' + node.body + '</p>' +
+          (codesHtml ? '<div class="br-codes">' + codesHtml + '</div>' : '') +
+          (node.src ? '<div class="br-src">Source: ' + escapeHtml(node.src) + '</div>' : '') +
+          '<p style="margin-top:10px;"><a class="cta-btn blue" style="font-size:0.85rem;padding:8px 18px;" href="' + contactHref(lastQuery || BRANCHES[key].title) + '">Confirm this with us &rarr;</a></p>' +
+          '<button class="branch-restart" data-restart="' + key + '">&larr; Start this walkthrough over</button>' +
+          '</div>';
+      }
+      var opts = node.opts.map(function (o, i) {
+        return '<button data-branch-key="' + key + '" data-next="' + o.next + '" data-node="' + nodeId + '" data-opt="' + i + '">' + escapeHtml(o.label) + '</button>';
+      }).join('');
+      return '<div class="branch-q">' + escapeHtml(node.q) + '</div><div class="branch-opts">' + opts + '</div>';
+    }
+
+    document.addEventListener('click', function (e) {
+      // branch option buttons
+      var btn = e.target.closest('[data-branch-key]');
+      if (btn) {
+        var key = btn.getAttribute('data-branch-key');
+        var card = btn.closest('.branch-card');
+        card.querySelector('.branch-body').innerHTML = branchNodeHtml(key, btn.getAttribute('data-next'));
+        if (typeof gtag === 'function') {
+          gtag('event', 'stcc_finder_branch', {
+            event_category: 'tools',
+            event_label: key + ':' + btn.getAttribute('data-node') + ':' + btn.getAttribute('data-opt')
+          });
+        }
+        return;
+      }
+      // branch restart
+      var rst = e.target.closest('[data-restart]');
+      if (rst) {
+        var k2 = rst.getAttribute('data-restart');
+        var card2 = rst.closest('.branch-card');
+        card2.querySelector('.branch-body').innerHTML = branchNodeHtml(k2, BRANCHES[k2].start);
+        return;
+      }
+      // branch chips (top of page)
+      var chip = e.target.closest('.branch-chip');
+      if (chip) {
+        var bk = chip.getAttribute('data-branch');
+        document.getElementById('branchBody').innerHTML = branchCardHtml(bk);
+        document.getElementById('branchGroup').style.display = '';
+        resultsSection.classList.add('visible');
+        document.getElementById('stickyCta').classList.add('visible');
+        document.getElementById('branchGroup').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (typeof gtag === 'function') {
+          gtag('event', 'stcc_finder_branch', { event_category: 'tools', event_label: bk + ':opened' });
+        }
+        return;
+      }
+      // example query links
+      var ex = e.target.closest('.search-examples a');
+      if (ex) {
+        searchInput.value = ex.getAttribute('data-q');
+        searchInput.dispatchEvent(new Event('input'));
+        return;
+      }
+      // result item click (expand + track)
+      var item = e.target.closest('.result-item');
+      if (item && !e.target.closest('a')) {
+        item.classList.toggle('open');
+        if (item.classList.contains('open') && typeof gtag === 'function') {
+          gtag('event', 'stcc_finder_result_click', {
+            event_category: 'tools',
+            event_label: item.getAttribute('data-kind') + ':' + item.getAttribute('data-code')
+          });
+        }
+      }
+      // contact CTA tracking
+      var cta = e.target.closest('#contactCtaBtn, #stickyCtaBtn, #noResultsCta');
+      if (cta && typeof gtag === 'function') {
+        gtag('event', 'stcc_finder_contact_cta', { event_category: 'tools', event_label: lastQuery || '(none)' });
+      }
+    });
+
+    // ---------- Input wiring ----------
+    var debounceTimer = null;
+    var gaTimer = null;
+    searchInput.addEventListener('input', function () {
+      var q = searchInput.value.trim();
+      lastQuery = q;
+      updateCtas(q);
+      clearTimeout(debounceTimer);
+      if (q.length < 2) {
+        resultsSection.classList.remove('visible');
+        return;
+      }
+      debounceTimer = setTimeout(function () { renderResults(q); }, 120);
+      // analytics: fire once typing settles
+      clearTimeout(gaTimer);
+      gaTimer = setTimeout(function () {
+        if (typeof gtag === 'function' && q.length >= 2) {
+          gtag('event', 'stcc_finder_search', { event_category: 'tools', event_label: q });
+        }
+      }, 900);
+    });
+  </script>
+
+</body>
+</html>

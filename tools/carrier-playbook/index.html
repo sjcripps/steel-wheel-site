@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Carrier Playbook — Internal | Steel Wheel Ops</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <style>
+    /* Carrier Playbook — internal ops tool. No GA, no sitemap, noindex. */
+    .tool-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .tool-hero h1 { color: var(--white); font-size: 1.9rem; margin-bottom: 8px; }
+    .tool-hero p { color: var(--steel-grey); font-size: 1rem; max-width: 720px; margin: 0 auto; }
+    .tool-hero .badge {
+      display: inline-block;
+      background: rgba(217, 144, 74, 0.2);
+      color: #f0b268;
+      font-size: 0.8rem; font-weight: 700;
+      padding: 4px 12px; border-radius: 20px; margin-bottom: 12px;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .tool-layout { max-width: 980px; margin: 0 auto; padding: 32px 20px 120px; }
+
+    /* Gate */
+    .gate-card {
+      background: var(--white); border: 1px solid var(--border-grey); border-radius: 12px;
+      padding: 36px; text-align: center; max-width: 520px; margin: 40px auto;
+    }
+    .gate-card h2 { color: var(--navy); font-size: 1.2rem; margin-bottom: 10px; }
+    .gate-card p { font-size: 0.92rem; color: var(--text-body); margin-bottom: 18px; }
+    .gate-card a.gate-btn {
+      display: inline-block; background: var(--navy); color: var(--white);
+      padding: 12px 22px; border-radius: 8px; font-weight: 600; text-decoration: none;
+    }
+
+    /* Cards & form */
+    .panel {
+      background: var(--white); border: 1px solid var(--border-grey); border-radius: 12px;
+      padding: 24px 26px; margin-bottom: 22px; box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .panel h2 { font-size: 1.1rem; color: var(--navy); margin-bottom: 12px; }
+    .lane-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
+    .lane-grid label { display: block; font-size: 0.78rem; font-weight: 700; color: var(--text-dark); margin-bottom: 5px; }
+    .lane-grid input, .lane-grid select {
+      width: 100%; box-sizing: border-box; padding: 10px 12px; font-size: 0.95rem;
+      border: 2px solid var(--border-grey); border-radius: 8px; background: var(--white); color: var(--text-dark);
+    }
+    .lane-grid input:focus { outline: none; border-color: var(--steel-blue); }
+    .lane-actions { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    .btn {
+      background: var(--navy); color: var(--white); border: none; border-radius: 8px;
+      padding: 11px 18px; font-size: 0.92rem; font-weight: 600; cursor: pointer;
+    }
+    .btn:hover { background: var(--navy-light); }
+    .btn.secondary { background: var(--light-grey); color: var(--text-dark); border: 1px solid var(--border-grey); }
+    .btn.small { padding: 6px 12px; font-size: 0.8rem; }
+    .status-line { font-size: 0.85rem; color: var(--text-light); }
+    .status-line.err { color: #b3261e; }
+    .spinner {
+      display: inline-block; width: 15px; height: 15px; border: 2px solid var(--border-grey);
+      border-top-color: var(--steel-blue); border-radius: 50%; vertical-align: -3px;
+      animation: cpspin 0.8s linear infinite; margin-right: 6px;
+    }
+    @keyframes cpspin { to { transform: rotate(360deg); } }
+    details.token-box { margin-top: 14px; font-size: 0.82rem; color: var(--text-light); }
+    details.token-box input { padding: 7px 10px; border: 1px solid var(--border-grey); border-radius: 6px; width: 280px; max-width: 100%; }
+
+    /* Route result */
+    .route-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-top: 10px; }
+    .route-table th, .route-table td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--border-grey); }
+    .route-table th { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.4px; color: var(--text-light); }
+    .picker-list { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 10px; }
+    .picker-list label { font-size: 0.88rem; color: var(--text-dark); cursor: pointer; font-weight: 500; }
+
+    /* Railroad cards */
+    .road-card {
+      background: var(--white); border: 1px solid var(--border-grey); border-radius: 12px;
+      padding: 22px 24px; margin-bottom: 18px;
+    }
+    .road-card.on-route { border: 2px solid var(--steel-blue); box-shadow: 0 3px 14px rgba(74,144,217,0.15); }
+    .road-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 6px; }
+    .road-head h3 { font-size: 1.12rem; color: var(--navy); margin: 0; }
+    .pill {
+      display: inline-block; font-size: 0.68rem; font-weight: 700; padding: 3px 10px;
+      border-radius: 12px; text-transform: uppercase; letter-spacing: 0.3px; white-space: nowrap;
+    }
+    .pill.route { background: rgba(74,144,217,0.14); color: var(--steel-blue); }
+    .pill.fresh { background: #e6f4ea; color: #1a7f37; text-transform: none; }
+    .pill.lowconf { background: #fdecea; color: #b3261e; text-transform: none; }
+    .road-section { margin-top: 14px; }
+    .road-section h4 {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;
+      color: var(--text-light); margin-bottom: 6px;
+    }
+    .road-section p, .road-section li { font-size: 0.87rem; color: var(--text-body); line-height: 1.55; }
+    .contact-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 6px; font-size: 0.88rem; }
+    .contact-row code { background: var(--light-grey); padding: 2px 8px; border-radius: 6px; font-size: 0.84rem; }
+    .copy-btn {
+      background: var(--light-grey); border: 1px solid var(--border-grey); border-radius: 6px;
+      font-size: 0.72rem; padding: 3px 9px; cursor: pointer; color: var(--text-dark);
+    }
+    .copy-btn:hover { border-color: var(--steel-blue); }
+    .desk-table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+    .desk-table td { padding: 5px 8px; border-bottom: 1px solid var(--light-grey); color: var(--text-body); }
+    .setup-list { list-style: none; padding: 0; margin: 0; }
+    .setup-list li { display: flex; gap: 9px; align-items: flex-start; padding: 5px 0; }
+    .setup-list input[type=checkbox] { margin-top: 3px; flex-shrink: 0; }
+    .src-line { font-size: 0.75rem; color: var(--text-light); margin-top: 4px; word-break: break-all; }
+    .src-line a { color: var(--steel-blue); }
+    .notes-area textarea {
+      width: 100%; box-sizing: border-box; min-height: 64px; padding: 10px 12px;
+      border: 1px solid var(--border-grey); border-radius: 8px; font-size: 0.87rem;
+      font-family: inherit; color: var(--text-dark); resize: vertical;
+    }
+    .notes-hint { font-size: 0.72rem; color: var(--text-light); margin-top: 3px; }
+
+    /* My Profile + full intake details */
+    details.profile-box summary, details.intake-box summary {
+      cursor: pointer; font-weight: 700; font-size: 0.92rem; color: var(--navy);
+    }
+    details.intake-box { margin-top: 16px; }
+    .intake-box fieldset {
+      border: 1px solid var(--border-grey); border-radius: 8px;
+      margin: 12px 0 0; padding: 10px 14px 14px;
+    }
+    .intake-box legend {
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px;
+      color: var(--text-light); font-weight: 700; padding: 0 6px;
+    }
+
+    /* Email draft */
+    .draft-box {
+      margin-top: 12px; background: rgba(74,144,217,0.05);
+      border: 1px solid rgba(74,144,217,0.25); border-radius: 10px; padding: 14px 16px;
+    }
+    .draft-box .draft-meta { font-size: 0.82rem; color: var(--text-body); margin-bottom: 8px; }
+    .draft-box textarea {
+      width: 100%; box-sizing: border-box; min-height: 260px; padding: 12px;
+      border: 1px solid var(--border-grey); border-radius: 8px;
+      font-family: 'Courier New', monospace; font-size: 0.82rem; color: var(--text-dark);
+    }
+    .draft-actions { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .desk-select { padding: 7px 10px; border: 1px solid var(--border-grey); border-radius: 6px; font-size: 0.84rem; max-width: 100%; }
+    .form-only-note {
+      font-size: 0.8rem; color: #8a5a00; background: #fff7e6; border: 1px solid #f0d9a8;
+      border-radius: 8px; padding: 8px 12px; margin-bottom: 8px;
+    }
+    .fallback-card { border: 1px dashed var(--steel-blue); background: rgba(74,144,217,0.04); }
+    .hidden { display: none !important; }
+
+    /* Credit & Payer Setup (per-card collapsible) */
+    details.credit-box summary { cursor: pointer; font-weight: 700; font-size: 0.9rem; color: var(--navy); }
+    .credit-badges { margin: 10px 0 2px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill.credit-lever { background: #e6f4ea; color: #1a7f37; text-transform: none; }
+    .pill.credit-gate { background: #fdecea; color: #b3261e; text-transform: none; }
+    .pill.credit-info { background: rgba(74,144,217,0.14); color: var(--steel-blue); text-transform: none; }
+    .credit-box h5 {
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px;
+      color: var(--text-light); margin: 12px 0 4px;
+    }
+    .credit-box p, .credit-box li { font-size: 0.85rem; color: var(--text-body); line-height: 1.55; margin-bottom: 4px; }
+    .credit-box ul { margin: 4px 0 0 18px; padding: 0; }
+    .credit-box a { color: var(--steel-blue); word-break: break-all; }
+
+    /* Become Payer of Freight checklist */
+    .check-group h3 {
+      font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px;
+      color: var(--text-light); margin: 14px 0 4px;
+    }
+    .payer-intro { font-size: 0.88rem; color: var(--text-body); margin-bottom: 4px; }
+    .payer-note { font-size: 0.8rem; color: var(--text-light); margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Internal &mdash; Steel Wheel Ops</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="/tools/rail-dashboard">Shipper Dashboard</a>
+        <a href="/tools/stcc-finder">STCC Finder</a>
+        <a href="/tools/rail-rate-quote">Rate Estimator</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="tool-hero">
+    <span class="badge">Internal &mdash; Steel Wheel Ops</span>
+    <h1>Carrier Playbook</h1>
+    <p>Enter a lane, see which railroads serve it, pull each road's verified commercial contact and setup checklist, and draft the price-request email in one click.</p>
+  </section>
+
+  <div class="tool-layout">
+
+    <!-- Soft gate: shown until the shipper-dashboard session check passes -->
+    <div class="gate-card" id="gatePanel">
+      <h2>Internal tool &mdash; sign-in required</h2>
+      <p id="gateMsg">Checking your session&hellip;</p>
+      <a class="gate-btn hidden" id="gateLink" href="/tools/rail-dashboard">Sign in via the Shipper Dashboard &rarr;</a>
+    </div>
+
+    <!-- App content (hidden until authenticated) -->
+    <div id="appContent" class="hidden">
+
+      <!-- My Profile (pre-fills every draft) -->
+      <div class="panel">
+        <details class="profile-box" id="profileBox">
+          <summary>My Profile &mdash; pre-fills every draft</summary>
+          <div class="lane-grid" style="margin-top:14px;">
+            <div><label for="profFirstName">First name</label><input id="profFirstName" data-prof="firstName" autocomplete="off"></div>
+            <div><label for="profLastName">Last name</label><input id="profLastName" data-prof="lastName" autocomplete="off"></div>
+            <div><label for="profTitle">Title</label><input id="profTitle" data-prof="title" autocomplete="off"></div>
+            <div><label for="profEmail">Email</label><input id="profEmail" data-prof="email" autocomplete="off"></div>
+            <div><label for="profOfficePhone">Office phone</label><input id="profOfficePhone" data-prof="officePhone" autocomplete="off"></div>
+            <div><label for="profMobilePhone">Mobile phone</label><input id="profMobilePhone" data-prof="mobilePhone" autocomplete="off"></div>
+            <div><label for="profMailStreet">Mailing street</label><input id="profMailStreet" data-prof="mailStreet" autocomplete="off"></div>
+            <div><label for="profMailCity">Mailing city</label><input id="profMailCity" data-prof="mailCity" autocomplete="off"></div>
+            <div><label for="profMailState">Mailing state/province</label><input id="profMailState" data-prof="mailState" autocomplete="off"></div>
+            <div><label for="profMailZip">Mailing zip/postal code</label><input id="profMailZip" data-prof="mailZip" autocomplete="off"></div>
+          </div>
+          <div class="notes-hint">Saved in this browser (localStorage) &mdash; used to pre-fill the CN intake and every email draft.</div>
+        </details>
+      </div>
+
+      <!-- Become Payer of Freight — readiness checklist (persistent, swl_playbook_payer_<n>) -->
+      <div class="panel" id="payerPanel">
+        <h2>Become Payer of Freight &mdash; readiness checklist</h2>
+        <p class="payer-intro">Until these are done, run deals as shipper-pays + LOA &mdash; the shipper carries credit, you run the move. Per-road specifics live in each card&rsquo;s &ldquo;Credit &amp; Payer Setup&rdquo; section below.</p>
+        <div class="check-group">
+          <h3>Ready-today prep</h3>
+          <ul class="setup-list">
+            <li><input type="checkbox" data-payer="0"><span>Entity docs packet &mdash; articles of incorporation / MS registration document, W-9, EIN (CPKC requires the actual incorporation document; legal name goes on bills of lading as the Bill To Party)</span></li>
+            <li><input type="checkbox" data-payer="1"><span>DUNS number &mdash; asked by 4 of 6 roads (BNSF, CSX, NS, CPKC); free at dnb.com</span></li>
+            <li><input type="checkbox" data-payer="2"><span>Officer / contact info sheet &mdash; principal officer name + title (NS requires an officer signature before review starts), AP contact, and the person responsible for paying freight bills (NS/CPKC ask separately)</span></li>
+            <li><input type="checkbox" data-payer="3"><span>3 trade references w/ contacts &mdash; transportation-related preferred (NS wants unaffiliated transportation companies; needed by CSX, NS, CPKC)</span></li>
+            <li><input type="checkbox" data-payer="4"><span>Commodity / volume / credit-amount estimates per road &mdash; weekly credit (CSX), monthly credit + cars AND trailers per month (NS), annual shipment value USD (CPKC), credit amount requested (BNSF)</span></li>
+            <li><input type="checkbox" data-payer="5"><span>Establish a sales-rep contact per road &mdash; every application asks who your rep is; the sales funnel comes FIRST (BNSF makes rep contact a formal prerequisite)</span></li>
+            <li><input type="checkbox" data-payer="6"><span>LOA / authorization-letter template ready for client signatures (UP Letter of Authority; BNSF client authorization letter &mdash; signed by the client or sent from the client&rsquo;s email domain)</span></li>
+          </ul>
+        </div>
+        <div class="check-group">
+          <h3>Needs business bank account</h3>
+          <ul class="setup-list">
+            <li><input type="checkbox" data-payer="7"><span>Open SWL business checking</span></li>
+            <li><input type="checkbox" data-payer="8"><span>Bank reference sheet &mdash; bank name, address, contact/officer name, phone, email, account # (CSX, NS, CPKC, KCSM all require it)</span></li>
+            <li><input type="checkbox" data-payer="9"><span>CSX ACH-Debit setup &mdash; the instant-accept lever (needs routing/ABA + account number on the form)</span></li>
+            <li><input type="checkbox" data-payer="10"><span>NS / KCSM account-number fields &mdash; NS wants checking-vs-savings + types of loans; KCSM wants the bank-account list</span></li>
+          </ul>
+        </div>
+        <p class="payer-note">No road asks for a personal guarantee &mdash; credit is entity-based; weak financials route to the prepay/security path instead. Checkboxes autosave in this browser (localStorage).</p>
+      </div>
+
+      <!-- Lane form -->
+      <div class="panel">
+        <h2>Shipment inquiry</h2>
+        <div class="lane-grid">
+          <div><label for="laneOrigin">Origin (City, ST)</label><input id="laneOrigin" placeholder="Hattiesburg, MS" autocomplete="off"></div>
+          <div><label for="laneDest">Destination (City, ST)</label><input id="laneDest" placeholder="Kansas City, MO" autocomplete="off"></div>
+          <div><label for="laneCommodity">Commodity</label><input id="laneCommodity" placeholder="e.g. grain, steel coil, plastic pellets"></div>
+          <div><label for="laneCarType">Car type</label><input id="laneCarType" placeholder="e.g. covered hopper, gondola"></div>
+          <div><label for="laneCars">Cars per shipment</label><input id="laneCars" type="number" min="1" max="200" value="5"></div>
+          <div><label for="laneTimeframe">Timeframe</label><input id="laneTimeframe" placeholder="e.g. start Q4 2026, ongoing"></div>
+          <div><label for="laneVolume">Annual volume</label><input id="laneVolume" placeholder="e.g. ~300 cars/yr"></div>
+        </div>
+
+        <!-- Full intake details — the fields Class I new-business forms actually ask.
+             All optional; autosaved to localStorage as a working draft. Collapsed so
+             the quick lane lookup stays fast. -->
+        <details class="intake-box" id="intakeBox">
+          <summary>Full intake details (what Class I forms actually ask) &mdash; optional, autosaves</summary>
+          <fieldset>
+            <legend>Shipment basics</legend>
+            <div class="lane-grid">
+              <div><label for="shipPayer">Payer of freight</label>
+                <select id="shipPayer" data-ship="payer">
+                  <option>Steel Wheel Logistics (third-party payer)</option>
+                  <option>Shipper</option>
+                  <option>Consignee</option>
+                </select></div>
+              <div><label for="shipPerYear">Shipments per year</label><input id="shipPerYear" data-ship="shipmentsPerYear" placeholder="e.g. 30"></div>
+              <div><label for="shipWeight">Weight per shipment (tons)</label><input id="shipWeight" data-ship="weightPerShipment" placeholder="e.g. 100"></div>
+              <div><label for="shipFirstDate">Expected first shipping date</label><input id="shipFirstDate" data-ship="firstShipDate" placeholder="e.g. 2026-10-01 or Q4 2026"></div>
+              <div><label for="shipMovingToday">How is this business moving today?</label>
+                <select id="shipMovingToday" data-ship="movingToday">
+                  <option value=""></option>
+                  <option>Truck</option>
+                  <option>Rail w/ another carrier</option>
+                  <option>New business</option>
+                  <option>Other</option>
+                </select></div>
+              <div><label for="shipRule11">Rule 11 or through rates</label>
+                <select id="shipRule11" data-ship="rule11">
+                  <option>Through rate preferred</option>
+                  <option>Rule 11</option>
+                  <option>Unsure &mdash; advise</option>
+                </select></div>
+              <div><label for="shipTargetRate">Target rate (optional)</label><input id="shipTargetRate" data-ship="targetRate" placeholder="e.g. $3,200/car all-in"></div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Origin</legend>
+            <div class="lane-grid">
+              <div><label for="shipShipperFacility">Shipper facility name</label><input id="shipShipperFacility" data-ship="shipperFacility" autocomplete="off"></div>
+              <div><label for="shipOriginRail">Shipper facility rail served?</label>
+                <select id="shipOriginRail" data-ship="originRailServed">
+                  <option value=""></option><option>Yes</option><option>No</option><option>Unsure</option>
+                </select></div>
+              <div><label for="shipOriginTransload">Transloading needed at origin?</label>
+                <select id="shipOriginTransload" data-ship="originTransload">
+                  <option value=""></option><option>Yes</option><option>No</option><option>Unsure</option>
+                </select></div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Destination</legend>
+            <div class="lane-grid">
+              <div><label for="shipReceiverFacility">Receiver facility name</label><input id="shipReceiverFacility" data-ship="receiverFacility" autocomplete="off"></div>
+              <div><label for="shipDestRail">Receiver facility rail served?</label>
+                <select id="shipDestRail" data-ship="destRailServed">
+                  <option value=""></option><option>Yes</option><option>No</option><option>Unsure</option>
+                </select></div>
+              <div><label for="shipDestTransload">Transloading needed at destination?</label>
+                <select id="shipDestTransload" data-ship="destTransload">
+                  <option value=""></option><option>Yes</option><option>No</option><option>Unsure</option>
+                </select></div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Equipment</legend>
+            <div class="lane-grid">
+              <div><label for="shipEquipOwnership">Equipment ownership</label>
+                <select id="shipEquipOwnership" data-ship="equipOwnership">
+                  <option value=""></option>
+                  <option>Railway-supplied</option>
+                  <option>Private</option>
+                  <option>Either</option>
+                </select></div>
+            </div>
+            <p class="notes-hint">Equipment type comes from the &quot;Car type&quot; field above.</p>
+          </fieldset>
+          <div class="notes-hint">Autosaves as a working draft in this browser (localStorage). Blank fields stay blank in drafts &mdash; nothing is invented.</div>
+        </details>
+
+        <div class="lane-actions">
+          <button class="btn" id="resolveBtn">Resolve route</button>
+          <span class="status-line" id="resolveStatus"></span>
+        </div>
+        <details class="token-box" id="tokenBox">
+          <summary>Rate-engine token (needed for route resolution)</summary>
+          <p style="margin:8px 0;">The lane resolver calls the internal rate engine, which requires <code>RAIL_RATE_INTERNAL_TOKEN</code> (it's in the rate server's env / the S3 keys file). Paste it once &mdash; it stays in this browser only. Without it, use the manual railroad picker below.</p>
+          <input id="internalToken" type="password" placeholder="internal token" autocomplete="off">
+          <button class="btn secondary small" id="saveTokenBtn">Save</button>
+          <span class="status-line" id="tokenStatus"></span>
+        </details>
+      </div>
+
+      <!-- Route result -->
+      <div class="panel hidden" id="routePanel">
+        <h2>Route</h2>
+        <div id="routeSummary" class="status-line" style="margin-bottom:4px;"></div>
+        <table class="route-table" id="routeTable">
+          <thead><tr><th>Leg</th><th>Railroad</th><th>Miles</th><th>Playbook</th></tr></thead>
+          <tbody id="routeBody"></tbody>
+        </table>
+      </div>
+
+      <!-- Manual picker (always available; the fallback when the API is down) -->
+      <div class="panel">
+        <h2>Manual railroad picker</h2>
+        <p class="status-line">Works even when the rate engine is unreachable. Check the roads on the lane to highlight their cards.</p>
+        <div class="picker-list" id="pickerList"></div>
+      </div>
+
+      <!-- Unknown-road fallback -->
+      <div class="panel fallback-card hidden" id="fallbackPanel">
+        <h2>Roads not in the playbook</h2>
+        <div id="fallbackBody"></div>
+        <p style="font-size:0.85rem; margin-top:8px;">Look them up in the <a href="https://engage.aslrra.org/railroad-id" target="_blank" rel="noopener">ASLRRA Railroad Member Directory</a> (search by state of operation or commodity hauled, links out to each road's own site). Supplier directory: <a href="https://engage.aslrra.org/supplier" target="_blank" rel="noopener">engage.aslrra.org/supplier</a>.</p>
+      </div>
+
+      <!-- Railroad cards render here -->
+      <div id="roadCards"></div>
+
+    </div><!-- /appContent -->
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. Internal ops tool &mdash; contact data is public-source, verified per-card.</div>
+      <div class="footer-links">
+        <a href="/tools/rail-dashboard">Shipper Dashboard</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Embedded carrier playbook data (verbatim from businesses/steel-wheel/data/carrier-playbook.json, researched 2026-07-22) -->
+
+  <script>
+  'use strict';
+  // ══════════════════════════════════════════════════════════════════════════
+  // Carrier Playbook — internal ops tool.
+  //  - Soft session gate via the shipper-dashboard `me` action (same-origin
+  //    cookie; /api/shipper-dashboard rewrites to /api/tool-lead?tool=shipper-dashboard).
+  //  - Lane resolver: POST rate-api /lane-geometry (requires internal token,
+  //    pasted once, kept in localStorage — never embedded in this file).
+  //  - 100% client-side. No serverless functions added.
+  // ══════════════════════════════════════════════════════════════════════════
+
+  var RATE_API = 'https://rate-api.steelwheellogistics.com';
+  var SESSION_ENDPOINT = '/api/shipper-dashboard';
+  var TOKEN_KEY = 'swl_playbook_token';
+  var PROFILE_KEY = 'swl_playbook_profile';
+  var SHIPMENT_KEY = 'swl_playbook_shipment';
+  var PAYER_KEY_PREFIX = 'swl_playbook_payer_';
+  var ASLRRA_URL = 'https://engage.aslrra.org/railroad-id';
+
+  // __TESTABLE_START__
+  // Pure data + functions below this marker are exercised by the Node verify
+  // harness (extracted between the __TESTABLE_ markers and eval'd). Keep this
+  // block free of DOM references.
+
+  // Map playbook railroad names -> stable short keys used for DOM ids,
+  // localStorage notes (swl_playbook_notes_<key>) and the alias map.
+  var ROAD_KEYS = {
+    'Union Pacific (UP)': 'up',
+    'BNSF Railway': 'bnsf',
+    'CSX Transportation': 'csx',
+    'Norfolk Southern (NS)': 'ns',
+    'CN (Canadian National)': 'cn',
+    'CPKC (Canadian Pacific Kansas City)': 'cpkc',
+    'TRRA (Terminal Railroad Association of St. Louis)': 'trra',
+    'WSOR (Wisconsin & Southern Railroad — Watco)': 'wsor',
+    'BRC (Belt Railway Company of Chicago)': 'brc',
+    'IHB (Indiana Harbor Belt Railroad)': 'ihb'
+  };
+
+  // Reporting marks / operator codes returned by the rate engine's
+  // /lane-geometry legs (NARN RROWNER1 → URCS alpha) -> playbook key.
+  // KCS/KCSM/CP/CPRS all live under CPKC post-merger. Anything not in this
+  // map (FXE, CGR, ALS, PTRA, URR, random short lines) goes to the ASLRRA
+  // fallback card.
+  var ALIAS_MAP = {
+    'UP': 'up',
+    'UPRR': 'up',
+    'BNSF': 'bnsf',
+    'CSXT': 'csx',
+    'CSX': 'csx',
+    'NS': 'ns',
+    'NSC': 'ns',
+    'CN': 'cn',
+    'CNR': 'cn',
+    'CP': 'cpkc',
+    'CPRS': 'cpkc',
+    'CPKC': 'cpkc',
+    'KCS': 'cpkc',
+    'KCSM': 'cpkc',
+    'TRRA': 'trra',
+    'WSOR': 'wsor',
+    'BRC': 'brc',
+    'IHB': 'ihb'
+  };
+
+  // Draft-email routing per road. The playbook JSON stores multi-desk emails
+  // as pipe-separated prose strings; this normalizes them into pickable desks.
+  // Desk labels that include a railroad's own product name (e.g. CSX's
+  // go_intermodal / "Intermodal BCO" desk) quote THEIR naming, verbatim.
+  var DRAFT_CONFIG = {
+    up: {
+      mode: 'form',
+      formUrl: 'https://unionpacific.my.site.com/UP/s/?webToLead=True&leadSource=UPWebsite',
+      formLabel: "UP 'Contact a Shipping Expert' form (Salesforce web-to-lead)"
+    },
+    bnsf: {
+      mode: 'form',
+      formUrl: 'https://customer2.bnsf.com/s/get-a-freight-rate',
+      formLabel: "BNSF 'Get a Freight Rate' tool (new company: customer-onboarding form)"
+    },
+    csx: {
+      mode: 'email',
+      formUrl: 'https://movewithcsx.com/',
+      desks: [
+        { label: 'Carload / merchandise', addr: 'merchandise@csx.com' },
+        { label: 'Intermodal BCO desk (their product name)', addr: 'go_intermodal@csx.com' },
+        { label: 'RailPlus door-to-door / IMC / private asset', addr: 'RailPlus_Sales@csx.com' }
+      ]
+    },
+    ns: {
+      mode: 'email',
+      formUrl: 'https://www.norfolksouthern.com/en/ship-by-rail/industry',
+      desks: [
+        { label: 'Chemicals desk', addr: 'ns.chemicals@nscorp.com' },
+        { label: 'Automotive desk', addr: 'automotivemarketing@nscorp.com' },
+        { label: 'Ag & Forest (Beau St. Dennis)', addr: 'beau.stdennis@nscorp.com' },
+        { label: 'Metals & Construction (Connie McClung)', addr: 'connie.mcclung2@nscorp.com' }
+      ]
+    },
+    cn: {
+      mode: 'form',
+      cnIntake: true, // renders CN's REAL intake form (captured 2026-07-22), pre-filled — not the generic paste-block
+      formUrl: 'https://www.cn.ca/en/contact-us/',
+      formLabel: "CN contact page — call sales first: 1-888-668-4626 (email is form-mediated). CN's first question: 'Carload or Intermodal?' (their phrasing)"
+    },
+    cpkc: {
+      mode: 'email',
+      formUrl: 'https://www.cpkcr.com/en/customer-resources/become-a-customer/Request-Information-Form1',
+      desks: [
+        { label: 'Grain pricing', addr: 'grain_pricing@cpkcr.com' },
+        { label: 'Wheat pricing', addr: 'wheat_pricing@cpkcr.com' },
+        { label: 'Oilseeds pricing', addr: 'oilseeds_pricing@cpkcr.com' },
+        { label: 'Ag products pricing', addr: 'ag_productspricing@cpkcr.com' },
+        { label: 'US chemicals (Marcus Tyrance)', addr: 'marcus.tyrance@cpkcr.com' },
+        { label: 'Fertilizer / potash (Aaman Mann)', addr: 'aaman.mann@cpkcr.com' },
+        { label: 'Coal / pet coke (Matthias Bennett)', addr: 'matthias.bennett@cpkcr.com' },
+        { label: 'Automotive CA/US (Jamie Senin)', addr: 'jamie.senin@cpkcr.com' },
+        { label: 'US domestic desk (their "IM Pricing USA")', addr: 'IM_PricingUSA@cpkcr.com' }
+      ]
+    },
+    trra: {
+      mode: 'email',
+      desks: [{ label: 'TRRA clerks (customer service)', addr: 'TRRAclerks@TerminalRailroad.com' }]
+    },
+    wsor: {
+      mode: 'email',
+      desks: [
+        { label: 'Metals/Minerals/Petroleum/Chemicals/Machinery/Forest (Jamaar Benton)', addr: 'jamaar.benton@watco.com' },
+        { label: 'Grain/Fertilizer/Canned Foods (Brad Peot)', addr: 'bpeot@watco.com' }
+      ]
+    },
+    brc: {
+      mode: 'email',
+      desks: [{ label: 'Customer service', addr: 'customerservice@beltrailway.com' }]
+    },
+    ihb: {
+      mode: 'email',
+      desks: [{ label: 'Rate requests (IHB marketing)', addr: 'ihb.marketing@ihbrr.com' }]
+    }
+  };
+
+  // Profile defaults — seed values for the "My Profile" panel and the fallback
+  // when a draft is built before the panel has ever been saved.
+  var PROFILE_DEFAULTS = {
+    firstName: 'Jacob',
+    lastName: 'Cripps',
+    title: 'Owner',
+    email: 'info@steelwheellogistics.com',
+    officePhone: '601-821-2199',
+    mobilePhone: '',
+    mailStreet: '',
+    mailCity: '',
+    mailState: '',
+    mailZip: ''
+  };
+
+  // "80" -> "80 tons"; anything already carrying units passes through untouched.
+  function fmtTons(v) {
+    var s = String(v == null ? '' : v).trim();
+    if (!s) return '';
+    return /^[\d.,\s]+$/.test(s) ? s + ' tons' : s;
+  }
+
+  // Signature lines for email drafts, built from the profile (defaults if unset).
+  function signatureLines(profile) {
+    var p = profile || PROFILE_DEFAULTS;
+    var lines = [];
+    var name = ((p.firstName || '') + ' ' + (p.lastName || '')).trim();
+    if (name) lines.push(name);
+    lines.push(p.title ? p.title + ', Steel Wheel Logistics' : 'Steel Wheel Logistics');
+    lines.push('https://steelwheellogistics.com');
+    if (p.email) lines.push(p.email);
+    var phone = p.officePhone || '';
+    if (p.mobilePhone) phone += (phone ? ' | ' : '') + 'mobile ' + p.mobilePhone;
+    if (phone) lines.push(phone);
+    return lines;
+  }
+
+  // "Lane details" block for email drafts — the intake fields Class I forms ask.
+  // Only fields the user actually filled make it in (blank ≠ invented).
+  function laneDetailLines(lane) {
+    var l = lane || {};
+    var lines = [];
+    if (l.payer) lines.push('- Payer of freight: ' + l.payer);
+    if (l.shipmentsPerYear) lines.push('- Shipments per year: ' + l.shipmentsPerYear);
+    if (l.weightPerShipment) lines.push('- Weight per shipment: ' + fmtTons(l.weightPerShipment));
+    if (l.firstShipDate) lines.push('- Expected first shipping date: ' + l.firstShipDate);
+    if (l.movingToday) lines.push('- How this business moves today: ' + l.movingToday);
+    if (l.rule11) lines.push('- Rule 11 or through rates: ' + l.rule11);
+    if (l.targetRate) lines.push('- Target rate: ' + l.targetRate);
+    if (l.equipOwnership) lines.push('- Equipment ownership: ' + l.equipOwnership);
+    if (l.shipperFacility || l.originRailServed || l.originTransload) {
+      lines.push('- Shipper facility: ' + (l.shipperFacility || '[name TBC]') +
+        (l.originRailServed ? ' (rail served: ' + l.originRailServed + ')' : '') +
+        (l.originTransload ? ' — transloading at origin: ' + l.originTransload : ''));
+    }
+    if (l.receiverFacility || l.destRailServed || l.destTransload) {
+      lines.push('- Receiver facility: ' + (l.receiverFacility || '[name TBC]') +
+        (l.destRailServed ? ' (rail served: ' + l.destRailServed + ')' : '') +
+        (l.destTransload ? ' — transloading at destination: ' + l.destTransload : ''));
+    }
+    return lines;
+  }
+
+  // Build the price-request email. Pure function: (roadName, draftCfg, deskAddr,
+  // lane, profile) -> { to, subject, body, formOnly, formUrl }.
+  // lane: { origin, destination, commodity, carType, numCars, timeframe,
+  //         annualVolume, originServing, destServing, routeSummary } plus the
+  // optional intake fields consumed by laneDetailLines(). profile is optional
+  // (falls back to PROFILE_DEFAULTS).
+  function buildEmailDraft(roadName, cfg, deskAddr, lane, profile) {
+    var origin = lane.origin || '[origin]';
+    var destination = lane.destination || '[destination]';
+    var commodity = lane.commodity || '[commodity]';
+    var carType = lane.carType || '[car type]';
+    var numCars = lane.numCars || '[N]';
+    var timeframe = lane.timeframe || '[timeframe]';
+    var annualVolume = lane.annualVolume || '[annual volume]';
+
+    var subject = 'Rate request — ' + origin + ' to ' + destination + ' — ' +
+      commodity + ', ' + numCars + ' cars, ' + annualVolume;
+
+    var originLine = '- Origin: ' + origin +
+      (lane.originServing ? ' (our route resolver shows ' + lane.originServing + ' serving the origin end)' : '');
+    var destLine = '- Destination: ' + destination +
+      (lane.destServing ? ' (our route resolver shows ' + lane.destServing + ' serving the destination end)' : '');
+
+    var bodyLines = [
+      'Hello,',
+      '',
+      'Steel Wheel Logistics is a rail logistics services provider acting on behalf of a shipper on the lane below. We would like to request an indicative rate and service information for this move.',
+      '',
+      'Lane',
+      originLine,
+      destLine,
+      (lane.routeSummary ? '- Route context: ' + lane.routeSummary : null),
+      '',
+      'Shipment',
+      '- Commodity: ' + commodity + ' (STCC to be confirmed — working reference: https://steelwheellogistics.com/tools/stcc-finder)',
+      '- Car type / count: ' + carType + ', ' + numCars + ' cars per shipment',
+      '- Timeframe: ' + timeframe,
+      '- Estimated annual volume: ' + annualVolume
+    ];
+
+    var details = laneDetailLines(lane);
+    if (details.length) bodyLines = bodyLines.concat(['', 'Lane details'], details);
+
+    bodyLines = bodyLines.concat([
+      '',
+      'What we are asking for',
+      '- An indicative rate for this lane (single-car and multi-car, if the volumes support it)',
+      '- Service parameters: expected transit, serving/switching arrangements, and equipment availability',
+      '- What you need from us to get set up as a new customer / payer of freight on this lane',
+      '',
+      'Happy to provide any additional detail on the shipper, facility, or volumes.',
+      '',
+      'Best regards,',
+      ''
+    ], signatureLines(profile));
+
+    var body = bodyLines.filter(function (l) { return l !== null; }).join('\n');
+
+    return {
+      to: (cfg.mode === 'email') ? (deskAddr || (cfg.desks && cfg.desks[0] && cfg.desks[0].addr) || '') : '',
+      subject: subject,
+      body: body,
+      formOnly: cfg.mode === 'form',
+      formUrl: cfg.formUrl || ''
+    };
+  }
+
+  // CN's REAL new-business intake (captured 2026-07-22) — labels VERBATIM and in
+  // CN's order. Values come from the profile + shipment form; unknowns stay
+  // blank (never invented). originRailway/originStation (and dest*) are
+  // auto-filled from the resolved route legs when the lane resolver has data.
+  function buildCNIntakeDraft(profile, lane) {
+    var p = profile || PROFILE_DEFAULTS;
+    var l = lane || {};
+    function line(label, value) {
+      var v = String(value == null ? '' : value).trim();
+      return v ? label + ' ' + v : label;
+    }
+    var originRailStation = [l.originRailway, l.originStation]
+      .filter(function (x) { return x; }).join(' — ');
+    var destRailStation = [l.destRailway, l.destStation]
+      .filter(function (x) { return x; }).join(' — ');
+    return [
+      line('First Name:', p.firstName),
+      line('Last Name:', p.lastName),
+      line('Title in organization:', p.title),
+      line('Email:', p.email),
+      line('Office Phone Number:', p.officePhone),
+      line('Mobile Phone Number:', p.mobilePhone),
+      line('Mailing Street:', p.mailStreet),
+      line('Mailing City:', p.mailCity),
+      line('Mailing State/Province:', p.mailState),
+      line('Mailing Zip/Postal Code:', p.mailZip),
+      '',
+      'General information:',
+      line('Payer of freight/Transportation:', l.payer),
+      line('Commodity description & STCC code #:', l.commodity),
+      line('Number of shipments per year:', l.shipmentsPerYear),
+      line('Weight per shipment:', fmtTons(l.weightPerShipment)),
+      line('Expected shipping date:', l.firstShipDate),
+      line('How is this business moving today ?', l.movingToday),
+      line('Rule 11 or through rates:', l.rule11),
+      line('Target rate:', l.targetRate),
+      '',
+      'Origin details:',
+      line('Where are the railcars shipped from? (Origin):', l.origin),
+      line("Shipper's facility Name:", l.shipperFacility),
+      line('Is the shipper facility served by Rail?', l.originRailServed),
+      line('If so, what is the origin Railway and station name:', originRailStation),
+      line('If not, will you need Transloading at Origin (Truck to rail transfer)?', l.originTransload),
+      '',
+      'Destination details:',
+      line('Where are these railcars destined to (Destination):', l.destination),
+      line("Receiver's facility Name:", l.receiverFacility),
+      line('Is the consignee facility served by Rail?', l.destRailServed),
+      line('If so, Destination Railway and station name:', destRailStation),
+      line('If not, will you need Transloading at Destination? (Rail to truck transfer):', l.destTransload),
+      '',
+      'Equipment:',
+      line('Carload Equipment type: (i.e. Gondolas, boxcar, hopper, private tank car, etc.)', l.carType),
+      line('Ownership: (Railway or Private equipment)', l.equipOwnership)
+    ].join('\n');
+  }
+
+  // Resolve a /lane-geometry response into playbook keys + unknown roads.
+  // Returns { matched: [{key, mark, miles}], unknown: [{mark, miles}], legs }
+  function mapLegsToPlaybook(legs) {
+    var matched = [], unknown = [], seen = {};
+    (legs || []).forEach(function (leg) {
+      var mark = String(leg.railroad || '').trim().toUpperCase();
+      if (!mark) return;
+      var key = ALIAS_MAP[mark] || null;
+      var bucket = key ? matched : unknown;
+      var id = key || mark;
+      if (seen[id]) { seen[id].miles += (leg.miles || 0); return; }
+      var entry = { key: key, mark: mark, miles: leg.miles || 0 };
+      seen[id] = entry;
+      bucket.push(entry);
+    });
+    return { matched: matched, unknown: unknown, legs: legs || [] };
+  }
+  // __TESTABLE_END__
+
+  // ── DOM helpers ────────────────────────────────────────────────────────────
+  function $(id) { return document.getElementById(id); }
+  function el(tag, cls, html) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (html !== undefined) e.innerHTML = html;
+    return e;
+  }
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  function copyText(text, btn) {
+    var done = function () {
+      if (!btn) return;
+      var old = btn.textContent;
+      btn.textContent = 'Copied ✓';
+      setTimeout(function () { btn.textContent = old; }, 1400);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
+    } else { fallbackCopy(text); done(); }
+  }
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  // Empty at page load ON PURPOSE. The playbook used to be a JSON blob in this
+  // page's source, which meant the "sign-in required" panel hid the DOM but
+  // handed the whole dataset to anyone who fetched the URL. It now arrives from
+  // the session-checked `playbook` action and only after the server says yes.
+  var PLAYBOOK = null;
+  var ROADS = [];
+
+  function hydrate(data) {
+    PLAYBOOK = data;
+    ROADS = PLAYBOOK.railroads.map(function (r) {
+      return { key: ROAD_KEYS[r.name] || r.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'), data: r };
+    });
+  }
+
+  // ── Session gate ───────────────────────────────────────────────────────────
+  // The gate is the SERVER's, not this page's. The `playbook` action checks the
+  // same-origin swl session cookie and returns 401 with no body when there is no
+  // valid session, so an unauthenticated visitor never receives the data — the
+  // hidden panel is now just the UI reflecting that, not the control itself.
+  function fetchPlaybook() {
+    return fetch(SESSION_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'same-origin',
+      body: JSON.stringify({ action: 'playbook' })
+    }).then(function (r) {
+      if (!r.ok) return null;
+      return r.json();
+    }).then(function (j) {
+      return (j && j.playbook) ? j.playbook : null;
+    }).catch(function () { return null; });
+  }
+
+  function initGate() {
+    fetchPlaybook().then(function (data) {
+      if (data) {
+        hydrate(data);
+        $('gatePanel').classList.add('hidden');
+        $('appContent').classList.remove('hidden');
+        initApp();
+      } else {
+        $('gateMsg').textContent = 'This is an internal Steel Wheel ops tool. Sign in with your Shipper Dashboard account, then reload this page.';
+        $('gateLink').classList.remove('hidden');
+      }
+    });
+  }
+
+  // ── App ────────────────────────────────────────────────────────────────────
+  var currentLaneMeta = {
+    originServing: '', destServing: '', routeSummary: '',
+    originRailway: '', originStation: '', destRailway: '', destStation: ''
+  };
+
+  // Profile values from the "My Profile" panel; PROFILE_DEFAULTS fill any gap.
+  function profileFromForm() {
+    var p = {};
+    Array.prototype.slice.call(document.querySelectorAll('[data-prof]')).forEach(function (inp) {
+      p[inp.getAttribute('data-prof')] = inp.value.trim();
+    });
+    Object.keys(PROFILE_DEFAULTS).forEach(function (k) {
+      if (p[k] === undefined) p[k] = PROFILE_DEFAULTS[k];
+    });
+    return p;
+  }
+
+  // Working-draft intake values from the "Full intake details" fieldsets.
+  function shipmentFromForm() {
+    var s = {};
+    Array.prototype.slice.call(document.querySelectorAll('[data-ship]')).forEach(function (inp) {
+      s[inp.getAttribute('data-ship')] = inp.value.trim();
+    });
+    return s;
+  }
+
+  function laneFromForm() {
+    var lane = {
+      origin: $('laneOrigin').value.trim(),
+      destination: $('laneDest').value.trim(),
+      commodity: $('laneCommodity').value.trim(),
+      carType: $('laneCarType').value.trim(),
+      numCars: $('laneCars').value.trim(),
+      timeframe: $('laneTimeframe').value.trim(),
+      annualVolume: $('laneVolume').value.trim(),
+      originServing: currentLaneMeta.originServing,
+      destServing: currentLaneMeta.destServing,
+      routeSummary: currentLaneMeta.routeSummary,
+      originRailway: currentLaneMeta.originRailway,
+      originStation: currentLaneMeta.originStation,
+      destRailway: currentLaneMeta.destRailway,
+      destStation: currentLaneMeta.destStation
+    };
+    var ship = shipmentFromForm();
+    Object.keys(ship).forEach(function (k) { lane[k] = ship[k]; });
+    return lane;
+  }
+
+  function initApp() {
+    // Token box
+    var tokenInput = $('internalToken');
+    tokenInput.value = localStorage.getItem(TOKEN_KEY) || '';
+    if (tokenInput.value) $('tokenStatus').textContent = 'Token saved in this browser.';
+    $('saveTokenBtn').addEventListener('click', function () {
+      var v = tokenInput.value.trim();
+      if (v) { localStorage.setItem(TOKEN_KEY, v); $('tokenStatus').textContent = 'Saved.'; }
+      else { localStorage.removeItem(TOKEN_KEY); $('tokenStatus').textContent = 'Cleared.'; }
+    });
+
+    // My Profile — localStorage-persisted, pre-fills every draft.
+    var savedProf = {};
+    try { savedProf = JSON.parse(localStorage.getItem(PROFILE_KEY) || '{}'); } catch (e) {}
+    var saveProfile = function () { localStorage.setItem(PROFILE_KEY, JSON.stringify(profileFromForm())); };
+    Array.prototype.slice.call(document.querySelectorAll('[data-prof]')).forEach(function (inp) {
+      var f = inp.getAttribute('data-prof');
+      inp.value = (savedProf[f] !== undefined) ? savedProf[f] : (PROFILE_DEFAULTS[f] || '');
+      inp.addEventListener('input', saveProfile);
+    });
+
+    // Become Payer of Freight checklist — persistent (swl_playbook_payer_<n>),
+    // keys distinct from the per-road setup checkboxes (swl_playbook_setup_*).
+    Array.prototype.slice.call(document.querySelectorAll('input[data-payer]')).forEach(function (c) {
+      var n = c.getAttribute('data-payer');
+      c.checked = localStorage.getItem(PAYER_KEY_PREFIX + n) === '1';
+      c.addEventListener('change', function () {
+        localStorage.setItem(PAYER_KEY_PREFIX + n, c.checked ? '1' : '0');
+      });
+    });
+
+    // Full intake details — localStorage-persisted working draft.
+    var savedShip = {};
+    try { savedShip = JSON.parse(localStorage.getItem(SHIPMENT_KEY) || '{}'); } catch (e) {}
+    var saveShipment = function () { localStorage.setItem(SHIPMENT_KEY, JSON.stringify(shipmentFromForm())); };
+    Array.prototype.slice.call(document.querySelectorAll('[data-ship]')).forEach(function (inp) {
+      var f = inp.getAttribute('data-ship');
+      if (savedShip[f] !== undefined) inp.value = savedShip[f];
+      inp.addEventListener('input', saveShipment);
+      inp.addEventListener('change', saveShipment);
+    });
+
+    // Manual picker
+    var picker = $('pickerList');
+    ROADS.forEach(function (r) {
+      var lab = el('label');
+      lab.innerHTML = '<input type="checkbox" data-road="' + r.key + '"> ' + esc(r.data.name);
+      picker.appendChild(lab);
+    });
+    picker.addEventListener('change', function () {
+      var keys = Array.prototype.slice.call(picker.querySelectorAll('input:checked'))
+        .map(function (c) { return c.getAttribute('data-road'); });
+      highlightRoads(keys);
+    });
+
+    $('resolveBtn').addEventListener('click', resolveRoute);
+
+    renderRoadCards();
+  }
+
+  function highlightRoads(keys) {
+    ROADS.forEach(function (r) {
+      var card = $('card-' + r.key);
+      if (!card) return;
+      var on = keys.indexOf(r.key) !== -1;
+      card.classList.toggle('on-route', on);
+      var pill = card.querySelector('.pill.route');
+      if (pill) pill.classList.toggle('hidden', !on);
+    });
+    // Move on-route cards to the top, preserving route order.
+    var wrap = $('roadCards');
+    keys.slice().reverse().forEach(function (k) {
+      var card = $('card-' + k);
+      if (card) wrap.insertBefore(card, wrap.firstChild);
+    });
+  }
+
+  function resolveRoute() {
+    var origin = $('laneOrigin').value.trim();
+    var dest = $('laneDest').value.trim();
+    var status = $('resolveStatus');
+    if (!origin || !dest) {
+      status.className = 'status-line err';
+      status.textContent = 'Enter both origin and destination (City, ST).';
+      return;
+    }
+    var token = (localStorage.getItem(TOKEN_KEY) || '').trim();
+    if (!token) {
+      status.className = 'status-line err';
+      status.textContent = 'No rate-engine token saved — open "Rate-engine token" below and paste it, or use the manual picker.';
+      $('tokenBox').open = true;
+      return;
+    }
+
+    status.className = 'status-line';
+    status.innerHTML = '<span class="spinner"></span>Resolving route (the rate engine can take a few seconds on cold lanes)…';
+
+    var ctrl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+    var timer = ctrl ? setTimeout(function () { ctrl.abort(); }, 20000) : null;
+
+    fetch(RATE_API + '/lane-geometry', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ origin: origin, destination: dest, internal_token: token }),
+      signal: ctrl ? ctrl.signal : undefined
+    }).then(function (r) {
+      if (r.status === 403) throw new Error('token');
+      if (!r.ok) return r.json().then(function (j) { throw new Error(j.error || ('HTTP ' + r.status)); });
+      return r.json();
+    }).then(function (j) {
+      if (timer) clearTimeout(timer);
+      renderRoute(j, origin, dest);
+      status.className = 'status-line';
+      status.textContent = 'Route resolved.';
+    }).catch(function (e) {
+      if (timer) clearTimeout(timer);
+      status.className = 'status-line err';
+      if (e.name === 'AbortError') {
+        status.textContent = 'Rate engine timed out after 20s — use the manual railroad picker below; the playbook cards all still work.';
+      } else if (e.message === 'token') {
+        status.textContent = 'Rate engine rejected the token (403). Re-paste RAIL_RATE_INTERNAL_TOKEN below, or use the manual picker.';
+        $('tokenBox').open = true;
+      } else {
+        status.textContent = 'Route lookup failed (' + e.message + ') — use the manual railroad picker below; the playbook cards all still work.';
+      }
+    });
+  }
+
+  function renderRoute(geo, origin, dest) {
+    var mapped = mapLegsToPlaybook(geo.legs);
+    var body = $('routeBody');
+    body.innerHTML = '';
+    var totalMiles = 0;
+    (geo.legs || []).forEach(function (leg, i) {
+      totalMiles += leg.miles || 0;
+      var mark = String(leg.railroad || '?').toUpperCase();
+      var key = ALIAS_MAP[mark];
+      var road = key ? ROADS.filter(function (r) { return r.key === key; })[0] : null;
+      var tr = el('tr');
+      tr.innerHTML = '<td>' + (i + 1) + '</td><td>' + esc(mark) + '</td><td>' +
+        (leg.miles != null ? Number(leg.miles).toFixed(0) : '—') + '</td><td>' +
+        (road ? '<a href="#card-' + key + '">' + esc(road.data.name) + '</a>'
+              : '<a href="' + ASLRRA_URL + '" target="_blank" rel="noopener">not in playbook — ASLRRA lookup</a>') +
+        '</td>';
+      body.appendChild(tr);
+    });
+
+    var o = geo.origin || {}, d = geo.destination || {};
+    $('routeSummary').textContent =
+      (o.name ? o.name + ', ' + (o.state || '') : origin) + ' → ' +
+      (d.name ? d.name + ', ' + (d.state || '') : dest) +
+      ' · ' + (geo.legs || []).length + ' leg(s), ~' + totalMiles.toFixed(0) + ' rail miles';
+    $('routePanel').classList.remove('hidden');
+
+    // Lane meta for email drafts
+    var legs = geo.legs || [];
+    currentLaneMeta.originServing = legs.length ? String(legs[0].railroad || '') : '';
+    currentLaneMeta.destServing = legs.length ? String(legs[legs.length - 1].railroad || '') : '';
+    currentLaneMeta.routeSummary = legs.map(function (l) {
+      return (l.railroad || '?') + ' ~' + (l.miles != null ? Number(l.miles).toFixed(0) : '?') + ' mi';
+    }).join(' → ');
+    // Railway + station names for the CN intake ("origin Railway and station name")
+    currentLaneMeta.originRailway = legs.length ? String(legs[0].railroad || '').toUpperCase() : '';
+    currentLaneMeta.destRailway = legs.length ? String(legs[legs.length - 1].railroad || '').toUpperCase() : '';
+    currentLaneMeta.originStation = o.name ? (o.name + (o.state ? ', ' + o.state : '')) : '';
+    currentLaneMeta.destStation = d.name ? (d.name + (d.state ? ', ' + d.state : '')) : '';
+
+    // Highlight matched cards; sync the manual picker checkboxes.
+    var keys = mapped.matched.map(function (m) { return m.key; });
+    Array.prototype.slice.call($('pickerList').querySelectorAll('input')).forEach(function (c) {
+      c.checked = keys.indexOf(c.getAttribute('data-road')) !== -1;
+    });
+    highlightRoads(keys);
+
+    // Unknown roads -> ASLRRA fallback card
+    var fb = $('fallbackPanel');
+    if (mapped.unknown.length) {
+      $('fallbackBody').innerHTML = mapped.unknown.map(function (u) {
+        return '<p><strong>' + esc(u.mark) + '</strong> (~' + u.miles.toFixed(0) +
+          ' mi on this route) is not in the playbook yet. Search the ASLRRA directory for reporting mark "' +
+          esc(u.mark) + '" or by the states this leg crosses; their site will list the commercial contact.</p>';
+      }).join('');
+      fb.classList.remove('hidden');
+    } else {
+      fb.classList.add('hidden');
+    }
+  }
+
+  // ── Railroad cards ─────────────────────────────────────────────────────────
+  function contactRow(label, value, isLink) {
+    if (!value) return '';
+    var v = esc(value);
+    var shown = isLink
+      ? '<a href="' + v + '" target="_blank" rel="noopener">' + v + '</a>'
+      : '<code>' + v + '</code>';
+    return '<div class="contact-row"><strong>' + label + ':</strong> ' + shown +
+      ' <button class="copy-btn" data-copy="' + v + '">Copy</button></div>';
+  }
+
+  // Escape, then turn bare https:// URLs into clickable links (prose fields
+  // in the credit_setup data carry URLs inline, SUMMARY-style).
+  function linkify(s) {
+    return esc(s).replace(/(https?:\/\/[^\s<]*[^\s<.,;)])/g,
+      '<a href="$1" target="_blank" rel="noopener">$1</a>');
+  }
+
+  // Per-card "Credit & Payer Setup" collapsible. Class I roads render from the
+  // embedded credit_setup data (sourced from the credit-apps SUMMARY, researched
+  // 2026-07-22); short lines (no credit_setup) get the one-line direct note.
+  function creditSectionHTML(d) {
+    var cs = d.credit_setup;
+    var out = '<div class="road-section"><details class="credit-box"><summary>Credit &amp; Payer Setup</summary>';
+    if (!cs) {
+      out += '<p style="margin-top:8px;">Short line &mdash; credit arranged directly, ask their commercial contact (no public credit program).</p>';
+      return out + '</details></div>';
+    }
+    var badges = cs.badges || [];
+    if (badges.length) {
+      out += '<div class="credit-badges">' + badges.map(function (b) {
+        return '<span class="pill credit-' + esc(b.tone || 'info') + '">' + esc(b.text) + '</span>';
+      }).join('') + '</div>';
+    }
+    var app = cs.application || {};
+    out += '<h5>Credit application</h5>';
+    if (app.access) out += '<p>' + linkify(app.access) + '</p>';
+    var fp = app.fields_preview || [];
+    if (fp.length) {
+      out += '<ul>' + fp.map(function (f) { return '<li>' + linkify(f) + '</li>'; }).join('') + '</ul>';
+    }
+    if (app.processing) out += '<p><strong>Processing:</strong> ' + linkify(app.processing) + '</p>';
+    if (app.terms) out += '<p><strong>Terms:</strong> ' + linkify(app.terms) + '</p>';
+    if (app.contact) out += contactRow('Credit contact', app.contact, false);
+    if (cs.third_party) {
+      out += '<h5>Third-party / agency instrument</h5><p>' + linkify(cs.third_party) + '</p>';
+    }
+    if (cs.prepay) {
+      out += '<h5>Prepay path (the no-credit route)</h5><p>' + linkify(cs.prepay) + '</p>';
+    }
+    return out + '</details></div>';
+  }
+
+  function renderRoadCards() {
+    var wrap = $('roadCards');
+    ROADS.forEach(function (r) {
+      var d = r.data, key = r.key;
+      var qc = d.quote_channel || {};
+      var setup = d.setup || {};
+      var lowConf = /industry_knowledge|confidence:\s*low|confidence: low/i.test(
+        JSON.stringify(d)); // surfaces the IHB ownership caveat etc.
+
+      var card = el('div', 'road-card');
+      card.id = 'card-' + key;
+
+      var freshness = esc(d.freshness || '');
+      var html = '';
+      html += '<div class="road-head"><h3>' + esc(d.name) + '</h3>' +
+        '<span class="pill route hidden">On this route</span>' +
+        '<span class="pill fresh" title="' + freshness + '">verified 2026-07-22</span>' +
+        (lowConf ? '<span class="pill lowconf" title="Contains an item labeled industry_knowledge / low confidence — verify before relying on it.">contains low-confidence item</span>' : '') +
+        '</div>';
+
+      // Quote channel
+      html += '<div class="road-section"><h4>Quote channel — ' + esc(qc.type || '') + '</h4>';
+      html += contactRow('Link', qc.url, true);
+      html += contactRow('Email', qc.email, false);
+      html += contactRow('Phone', qc.phone, false);
+      if (qc.notes) html += '<p>' + esc(qc.notes) + '</p>';
+      html += '</div>';
+
+      // Vertical desks
+      var desks = d.vertical_desks || [];
+      if (desks.length) {
+        html += '<div class="road-section"><h4>Vertical desks</h4><table class="desk-table">';
+        desks.forEach(function (v) { html += '<tr><td>' + esc(v) + '</td></tr>'; });
+        html += '</table></div>';
+      }
+
+      // Setup checklist
+      var steps = setup.steps || [];
+      if (steps.length) {
+        html += '<div class="road-section"><h4>Setup checklist</h4><ul class="setup-list">';
+        steps.forEach(function (s, i) {
+          var ck = localStorage.getItem('swl_playbook_setup_' + key + '_' + i) === '1';
+          html += '<li><input type="checkbox" data-setup="' + key + '_' + i + '"' + (ck ? ' checked' : '') +
+            '><span>' + esc(s) + '</span></li>';
+        });
+        html += '</ul>';
+        if (setup.portal_url) html += contactRow('Portal', setup.portal_url, true);
+        if (setup.credit_notes) html += '<p><strong>Credit:</strong> ' + esc(setup.credit_notes) + '</p>';
+        html += '</div>';
+      }
+
+      // Third-party / Rule 11
+      if (d.third_party_notes) {
+        html += '<div class="road-section"><h4>Third-party / Rule 11 notes</h4><p>' +
+          esc(d.third_party_notes) + '</p></div>';
+      }
+
+      // Credit & Payer Setup (collapsible; every card gets one)
+      html += creditSectionHTML(d);
+
+      // Sources
+      var srcs = d.sources || [];
+      if (srcs.length) {
+        html += '<div class="road-section"><h4>Sources (' + freshness + ')</h4>' +
+          srcs.map(function (s) {
+            return '<div class="src-line"><a href="' + esc(s) + '" target="_blank" rel="noopener">' + esc(s) + '</a></div>';
+          }).join('') + '</div>';
+      }
+
+      // Notes
+      html += '<div class="road-section notes-area"><h4>Jacob\'s notes</h4>' +
+        '<textarea data-notes="' + key + '" placeholder="Rep names, quirks, past quotes, follow-ups…"></textarea>' +
+        '<div class="notes-hint">Autosaves — notes stay in this browser only (localStorage).</div></div>';
+
+      // Draft email
+      var cfg = DRAFT_CONFIG[key] || { mode: 'email', desks: [] };
+      html += '<div class="road-section"><h4>Price request</h4>';
+      if (cfg.cnIntake) {
+        html += '<p class="form-only-note">This mirrors CN\'s actual intake (captured 7/22) &mdash; answer everything; incomplete requests stall.</p>';
+      }
+      if (cfg.mode === 'email' && cfg.desks && cfg.desks.length > 1) {
+        html += '<select class="desk-select" data-desk="' + key + '">' +
+          cfg.desks.map(function (dk) {
+            return '<option value="' + esc(dk.addr) + '">' + esc(dk.label) + ' — ' + esc(dk.addr) + '</option>';
+          }).join('') + '</select> ';
+      }
+      html += '<button class="btn small" data-draft="' + key + '">Draft price request</button>';
+      html += '<div class="draft-box hidden" id="draft-' + key + '"></div>';
+      html += '</div>';
+
+      card.innerHTML = html;
+      wrap.appendChild(card);
+
+      // Notes wiring
+      var ta = card.querySelector('textarea[data-notes]');
+      ta.value = localStorage.getItem('swl_playbook_notes_' + key) || '';
+      ta.addEventListener('input', function () {
+        localStorage.setItem('swl_playbook_notes_' + key, ta.value);
+      });
+    });
+
+    // Delegated events: copy buttons, setup checkboxes, draft buttons.
+    wrap.addEventListener('click', function (ev) {
+      var t = ev.target;
+      if (t.matches('.copy-btn[data-copy]')) copyText(t.getAttribute('data-copy'), t);
+      if (t.matches('button[data-draft]')) showDraft(t.getAttribute('data-draft'));
+    });
+    wrap.addEventListener('change', function (ev) {
+      var t = ev.target;
+      if (t.matches('input[data-setup]')) {
+        localStorage.setItem('swl_playbook_setup_' + t.getAttribute('data-setup'), t.checked ? '1' : '0');
+      }
+    });
+  }
+
+  function showDraft(key) {
+    var road = ROADS.filter(function (r) { return r.key === key; })[0];
+    if (!road) return;
+    var cfg = DRAFT_CONFIG[key] || { mode: 'email', desks: [] };
+
+    // CN gets its REAL intake form, pre-filled — not the generic paste-block.
+    if (cfg.cnIntake) {
+      var cnText = buildCNIntakeDraft(profileFromForm(), laneFromForm());
+      var cnBox = $('draft-' + key);
+      var cnHtml = '';
+      cnHtml += '<div class="form-only-note">This mirrors CN\'s actual intake (captured 7/22) &mdash; answer everything; incomplete requests stall. Call sales first: 1-888-668-4626 (email is form-mediated).</div>';
+      cnHtml += '<div class="draft-meta"><strong>CN contact page:</strong> <a href="' + esc(cfg.formUrl) +
+        '" target="_blank" rel="noopener">' + esc(cfg.formUrl) + '</a></div>';
+      cnHtml += '<textarea readonly>' + esc(cnText) + '</textarea>';
+      cnHtml += '<div class="draft-actions">' +
+        '<button class="copy-btn" data-copy-draft="' + key + '">Copy filled CN intake (plain text)</button>' +
+        '<a class="btn small" href="' + esc(cfg.formUrl) + '" target="_blank" rel="noopener">Open CN contact page &rarr;</a>' +
+        '</div>';
+      cnBox.innerHTML = cnHtml;
+      cnBox.classList.remove('hidden');
+      var cnCopy = cnBox.querySelector('[data-copy-draft]');
+      if (cnCopy) cnCopy.addEventListener('click', function () { copyText(cnText, cnCopy); });
+      return;
+    }
+
+    var sel = document.querySelector('select[data-desk="' + key + '"]');
+    var deskAddr = sel ? sel.value : null;
+    var draft = buildEmailDraft(road.data.name, cfg, deskAddr, laneFromForm(), profileFromForm());
+
+    var box = $('draft-' + key);
+    var full = 'Subject: ' + draft.subject + '\n\n' + draft.body;
+    var html = '';
+    if (draft.formOnly) {
+      html += '<div class="form-only-note">This road takes new-business inquiries by <strong>web form only</strong> — no public sales email. Paste the text below into their form: ' +
+        esc(cfg.formLabel || '') + '</div>';
+      html += '<div class="draft-meta"><strong>Form:</strong> <a href="' + esc(draft.formUrl) +
+        '" target="_blank" rel="noopener">' + esc(draft.formUrl) + '</a></div>';
+    } else {
+      html += '<div class="draft-meta"><strong>To:</strong> <code>' + esc(draft.to) + '</code><br>' +
+        '<strong>Subject:</strong> ' + esc(draft.subject) + '</div>';
+    }
+    html += '<textarea readonly>' + esc(draft.formOnly ? draft.body : full) + '</textarea>';
+    html += '<div class="draft-actions">';
+    if (draft.formOnly) {
+      html += '<button class="copy-btn" data-copy-draft="' + key + '">Copy text (paste into their form)</button>';
+      html += '<a class="btn small" href="' + esc(draft.formUrl) + '" target="_blank" rel="noopener">Open their form &rarr;</a>';
+    } else {
+      var mailto = 'mailto:' + encodeURIComponent(draft.to) +
+        '?subject=' + encodeURIComponent(draft.subject) +
+        '&body=' + encodeURIComponent(draft.body);
+      html += '<a class="btn small" href="' + mailto + '">Open in email client</a>';
+      html += '<button class="copy-btn" data-copy-draft="' + key + '">Copy email (plain text)</button>';
+      if (cfg.formUrl) {
+        html += '<a class="btn small secondary" href="' + esc(cfg.formUrl) + '" target="_blank" rel="noopener">Their intake form &rarr;</a>';
+      }
+    }
+    html += '</div>';
+    box.innerHTML = html;
+    box.classList.remove('hidden');
+
+    var copyBtn = box.querySelector('[data-copy-draft]');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function () {
+        copyText(draft.formOnly ? draft.body : full, copyBtn);
+      });
+    }
+  }
+
+  initGate();
+  </script>
+</body>
+</html>

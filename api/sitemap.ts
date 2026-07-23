@@ -29,6 +29,8 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
       { loc: "/tools/transload-directory", priority: "0.8", changefreq: "monthly" },
       { loc: "/tools/demurrage-calculator", priority: "0.8", changefreq: "monthly" },
       { loc: "/tools/railcar-selector", priority: "0.8", changefreq: "monthly" },
+      { loc: "/tools/railcar-capacity", priority: "0.8", changefreq: "monthly" },
+      { loc: "/tools/stcc-finder", priority: "0.8", changefreq: "monthly" },
       { loc: "/tools/rail-bol-builder", priority: "0.8", changefreq: "monthly" },
       // Added 2026-07-22. These six shipped but were never added here, so
       // they had no crawl path from the sitemap — 9 of 11 tools had zero GSC
@@ -45,6 +47,9 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
       // changefreq is monthly and genuinely accurate.
       { loc: "/tools/rail-fuel-surcharge", priority: "0.9", changefreq: "monthly" },
       { loc: "/tools/rail-transit-time", priority: "0.9", changefreq: "weekly" },
+      // Added 2026-07-23. Static content/SEO page — figures refreshed from
+      // published sources (GATX LPI, Commtrex, Grain Journal, AAR) as they update.
+      { loc: "/tools/railcar-lease-rates", priority: "0.8", changefreq: "monthly" },
       { loc: "/privacy-policy", priority: "0.3", changefreq: "yearly" },
       { loc: "/terms-of-service", priority: "0.3", changefreq: "yearly" },
     ];

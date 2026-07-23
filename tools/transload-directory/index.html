@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Searchable directory of 800+ transload facilities across North America — filter by state, commodity, and on-site capabilities. Steel Wheel Logistics.">
+  <meta name="description" content="Searchable directory of 2,400+ transload facilities across North America — filter by state, commodity, capabilities, and railcar storage. Steel Wheel Logistics.">
   <title>Transload Directory | Steel Wheel Logistics</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
   <link rel="stylesheet" href="/style.css?v=5">
   <link rel="canonical" href="https://steelwheellogistics.com/tools/transload-directory">
   <meta property="og:title" content="Transload Directory | Steel Wheel Logistics">
-  <meta property="og:description" content="Searchable directory of 800+ North American transload facilities — filter by state, commodity, and capabilities.">
+  <meta property="og:description" content="Searchable directory of 2,400+ North American transload facilities — filter by state, commodity, capabilities, and railcar storage.">
   <meta property="og:url" content="https://steelwheellogistics.com/tools/transload-directory">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Steel Wheel Logistics">
@@ -468,6 +468,77 @@
     }
     .directory-content { display: none; }
     .directory-content.unlocked { display: block; }
+
+    /* ── v2: tier badges + legend + get-listed CTA ── */
+    .tier-pill {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 1px 8px;
+      border-radius: 10px;
+      margin-left: 6px;
+      vertical-align: middle;
+      white-space: nowrap;
+      letter-spacing: 0.3px;
+    }
+    .tier-pill.tier-verified {
+      background: rgba(40, 167, 69, 0.14);
+      color: #1e7e34;
+      border: 1px solid rgba(40, 167, 69, 0.35);
+    }
+    .tier-pill.tier-listed {
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--text-grey);
+      border: 1px solid var(--border-grey);
+    }
+    .loc-note {
+      display: block;
+      color: var(--text-grey);
+      font-size: 0.76rem;
+      font-weight: 400;
+      margin-top: 2px;
+    }
+    .tier-legend {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 10px 16px;
+      margin-bottom: 16px;
+      font-size: 0.82rem;
+      color: var(--text-dark);
+      line-height: 1.5;
+    }
+    .tier-legend .tier-pill { margin-left: 0; margin-right: 4px; }
+    .get-listed-banner {
+      background: rgba(40, 167, 69, 0.07);
+      border: 1px solid rgba(40, 167, 69, 0.25);
+      border-radius: 12px;
+      padding: 12px 18px;
+      margin-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+    }
+    .get-listed-banner a.help-btn {
+      display: inline-block;
+      padding: 8px 14px;
+      background: #1e7e34;
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+    .get-listed-banner a.help-btn:hover { opacity: 0.9; }
+    .results-table td.col-actions a.act-tel {
+      background: rgba(30, 126, 52, 0.1);
+      color: #1e7e34;
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -475,7 +546,7 @@
     "@type": "WebApplication",
     "name": "Transload Directory",
     "url": "https://steelwheellogistics.com/tools/transload-directory",
-    "description": "Searchable directory of 800+ transload facilities across North America \u2014 filter by state, commodity, and on-site capabilities. Steel Wheel Logistics.",
+    "description": "Searchable directory of 2,400+ transload facilities across North America \u2014 filter by state, commodity, capabilities, and railcar storage. Steel Wheel Logistics.",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Any (web browser)",
     "browserRequirements": "Requires JavaScript",
@@ -546,9 +617,9 @@
   </header>
 
   <section class="tool-hero">
-    <span class="badge">Free Tool · 800+ Facilities</span>
+    <span class="badge">Free Tool · 2,400+ Facilities</span>
     <h1>Transload Directory</h1>
-    <p>Find a transload facility anywhere in North America. Filter by state, commodity, and on-site capabilities — get the operator name, contact, and website in one place.</p>
+    <p>Find a transload facility anywhere in North America — 2,400+ locations, the most complete free transload directory on the continent. Filter by state, commodity, on-site capabilities, and railcar storage — get the operator name, contact, and website in one place.</p>
   </section>
 
   <div class="directory-content" id="directoryContent">
@@ -563,9 +634,30 @@
           <input type="text" id="searchBox" placeholder="Operator name or city...">
 
           <div class="filter-group">
+            <h3>Listing Tier</h3>
+            <div class="filter-checkboxes">
+              <label class="filter-checkbox-row">
+                <input type="checkbox" id="tierVerified" checked><span>✓ Verified</span>
+              </label>
+              <label class="filter-checkbox-row">
+                <input type="checkbox" id="tierListed" checked><span>Listed</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-group">
             <h3>State / Province</h3>
             <select id="stateFilter">
               <option value="">All states</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <h3>Railcar Storage</h3>
+            <select id="storageFilter">
+              <option value="">Any</option>
+              <option value="yes">Yes</option>
+              <option value="unknown">Unknown</option>
             </select>
           </div>
 
@@ -587,6 +679,12 @@
         <div class="results-stats">
           <div>Showing <span class="count" id="resultsCount">0</span> of <span id="totalCount">0</span> facilities</div>
           <div id="filtersSummary" style="color:var(--text-grey);font-size:0.85rem;"></div>
+        </div>
+
+        <div class="tier-legend">
+          <span class="tier-pill tier-verified">✓ Verified</span> Confirmed operating — corroborated against current business listings and railroad network directories.
+          &nbsp;·&nbsp;
+          <span class="tier-pill tier-listed">Listed</span> Compiled from the railroads' own public network directories; not yet contact-verified by us. Commodity and equipment details show "—" until confirmed — always check with the operator.
         </div>
 
         <div class="help-banner">
@@ -623,8 +721,13 @@
           </div>
         </div>
 
+        <div class="get-listed-banner">
+          <div><strong>Are we missing your facility?</strong> Get listed — or get your existing listing verified — free.</div>
+          <a href="/contact?subject=Transload%20directory%20listing" class="help-btn">Get Listed / Verified</a>
+        </div>
+
         <div class="disclaimer">
-          Listings sourced from Steel Wheel Logistics' internal transload database. Capabilities and commodity acceptance change frequently — confirm directly with the operator before committing freight. Steel Wheel Logistics is a rail logistics provider; we don't operate the listed facilities.
+          Verified listings come from Steel Wheel Logistics' transload database, cross-checked against current business listings; Listed entries are compiled from the railroads' public network directories and are not yet contact-verified. Capabilities and commodity acceptance change frequently — confirm directly with the operator before committing freight. Steel Wheel Logistics is a rail logistics provider; we don't operate the listed facilities.
         </div>
 
         <div class="cta-row">
@@ -639,7 +742,7 @@
   <div class="email-gate-overlay visible" id="emailGateOverlay" role="dialog" aria-modal="true" aria-labelledby="emailGateTitle">
     <div class="email-gate-modal">
       <h3 id="emailGateTitle">Free access — one quick step</h3>
-      <p class="lead">800+ transload facilities across North America, searchable in seconds. We'll only use your email if you ask us to help with a specific lane.</p>
+      <p class="lead">2,400+ transload facilities across North America, searchable in seconds. We'll only use your email if you ask us to help with a specific lane.</p>
       <form id="emailGateForm" novalidate>
         <label for="leadEmail">Work email</label>
         <input type="email" id="leadEmail" name="email" required autocomplete="email" placeholder="you@company.com">
@@ -813,7 +916,7 @@
     // ─────────────────────── Data load ───────────────────────
 
     async function loadData() {
-      const res = await fetch('/tools/transload-directory/data/transload.json');
+      const res = await fetch('/tools/transload-directory/data/transload-v2.json');
       const data = await res.json();
       allFacilities = data.facilities || [];
       commodityOptions = data.commodity_options || [];
@@ -858,9 +961,15 @@
       });
       document.getElementById('searchBox').addEventListener('input', debounce(applyFilters, 120));
       document.getElementById('stateFilter').addEventListener('change', applyFilters);
+      document.getElementById('storageFilter').addEventListener('change', applyFilters);
+      document.getElementById('tierVerified').addEventListener('change', applyFilters);
+      document.getElementById('tierListed').addEventListener('change', applyFilters);
       document.getElementById('resetFilters').addEventListener('click', () => {
         document.getElementById('searchBox').value = '';
         document.getElementById('stateFilter').value = '';
+        document.getElementById('storageFilter').value = '';
+        document.getElementById('tierVerified').checked = true;
+        document.getElementById('tierListed').checked = true;
         document.querySelectorAll('#commodityFilters input, #capabilityFilters input')
           .forEach(el => { el.checked = false; });
         applyFilters();
@@ -894,19 +1003,27 @@
         .map(el => el.dataset.capability);
     }
 
+    function isVerified(f) { return f.tier === 'verified'; }
+
     function applyFilters() {
       const q = document.getElementById('searchBox').value.trim().toLowerCase();
       const state = document.getElementById('stateFilter').value;
+      const storage = document.getElementById('storageFilter').value;
+      const showVerified = document.getElementById('tierVerified').checked;
+      const showListed = document.getElementById('tierListed').checked;
       const cms = activeCommodities();
       const caps = activeCapabilities();
       // Fire cross-tool funnel signal once per session if user is engaging
-      // (typed search, picked state, toggled commodity/capability).
-      if (q || state || cms.length || caps.length) silentFireTransloadLead();
+      // (typed search, picked state, toggled commodity/capability/tier/storage).
+      if (q || state || storage || cms.length || caps.length || !showVerified || !showListed) silentFireTransloadLead();
 
       filtered = allFacilities.filter(f => {
+        if (isVerified(f) && !showVerified) return false;
+        if (!isVerified(f) && !showListed) return false;
         if (state && f.state !== state) return false;
+        if (storage && (f.storage || 'unknown') !== storage) return false;
         if (q) {
-          const hay = (f.name + ' ' + f.city).toLowerCase();
+          const hay = (f.name + ' ' + f.city + ' ' + (f.note || '')).toLowerCase();
           if (!hay.includes(q)) return false;
         }
         if (cms.length && !cms.some(c => f.commodities.includes(c))) return false;
@@ -917,13 +1034,16 @@
       currentPage = 1;
       renderResults();
       renderMapMarkers();
-      renderFiltersSummary(state, cms, caps, q);
+      renderFiltersSummary(state, cms, caps, q, storage, showVerified, showListed);
     }
 
-    function renderFiltersSummary(state, cms, caps, q) {
+    function renderFiltersSummary(state, cms, caps, q, storage, showVerified, showListed) {
       const parts = [];
       if (q) parts.push(`"${q}"`);
+      if (showVerified && !showListed) parts.push('verified only');
+      if (showListed && !showVerified) parts.push('listed only');
       if (state) parts.push(state);
+      if (storage) parts.push(`railcar storage: ${storage}`);
       if (cms.length) parts.push(`${cms.length} commodit${cms.length === 1 ? 'y' : 'ies'}`);
       if (caps.length) parts.push(`${caps.length} capabilit${caps.length === 1 ? 'y' : 'ies'}`);
       document.getElementById('filtersSummary').textContent = parts.length ? `Filters: ${parts.join(' · ')}` : '';
@@ -981,26 +1101,37 @@
         tr.dataset.idx = realIdx;
         if (realIdx === selectedIndex) tr.classList.add('row-selected');
 
+        // Unknown (not-yet-verified) capabilities render as "—", same as
+        // "none recorded" — never as a claim the facility can't handle it.
+        const unknownDash = '<span style="color:var(--text-grey);font-size:0.8rem;" title="Not yet verified — confirm with the operator">—</span>';
         const cms = f.commodities.length
           ? f.commodities.map(c => `<span class="pill">${escape(c)}</span>`).join('')
-          : '<span style="color:var(--text-grey);font-size:0.8rem;">—</span>';
+          : unknownDash;
         const caps = f.capabilities.length
           ? f.capabilities.map(c => `<span class="pill pill-cap">${escape(c)}</span>`).join('')
-          : '<span style="color:var(--text-grey);font-size:0.8rem;">—</span>';
+          : unknownDash;
+
+        const tierBadge = isVerified(f)
+          ? '<span class="tier-pill tier-verified" title="Confirmed operating — corroborated against current listings">✓ Verified</span>'
+          : '<span class="tier-pill tier-listed" title="From railroad network directories — not yet contact-verified">Listed</span>';
+        const note = f.note ? `<span class="loc-note">${escape(f.note)}</span>` : '';
 
         const webBtn = f.website
           ? `<a href="${escape(f.website)}" target="_blank" rel="noopener" class="act-web">Website</a>`
+          : '';
+        const telBtn = f.phone
+          ? `<a href="tel:${escape(String(f.phone).replace(/[^+\d]/g, ''))}" class="act-tel">${escape(f.phone)}</a>`
           : '';
         const emailBtn = f.email
           ? `<a href="mailto:${escape(f.email)}" class="act-email">Email</a>`
           : '';
 
         tr.innerHTML = `
-          <td class="col-loc"><strong>${escape(f.name)}</strong></td>
+          <td class="col-loc"><strong>${escape(f.name)}</strong>${tierBadge}${note}</td>
           <td class="col-loc">${escape(f.city)}<span class="city-state">${escape(f.state)}</span></td>
           <td><div class="badge-list">${cms}</div></td>
           <td><div class="badge-list">${caps}</div></td>
-          <td class="col-actions">${webBtn}${emailBtn}</td>
+          <td class="col-actions">${webBtn}${telBtn}${emailBtn}</td>
         `;
         tr.addEventListener('click', () => selectFacility(realIdx));
         tbody.appendChild(tr);
@@ -1043,13 +1174,17 @@
         if (typeof f.lat !== 'number' || typeof f.lng !== 'number') return;
         const realIdx = allFacilities.indexOf(f);
         const marker = L.marker([f.lat, f.lng]);
+        const links = [
+          f.website ? `<a href="${escapeAttr(f.website)}" target="_blank" rel="noopener">Website</a>` : '',
+          f.phone ? `<a href="tel:${escapeAttr(String(f.phone).replace(/[^+\d]/g, ''))}">${escapeAttr(f.phone)}</a>` : '',
+          f.email ? `<a href="mailto:${escapeAttr(f.email)}">Email</a>` : '',
+        ].filter(Boolean).join(' · ');
         const popup = `
-          <strong>${escapeAttr(f.name)}</strong><br>
+          <strong>${escapeAttr(f.name)}</strong> ${isVerified(f) ? '✓' : ''}<br>
+          ${f.note ? escapeAttr(f.note) + '<br>' : ''}
           ${escapeAttr(f.city)}, ${escapeAttr(f.state)}<br>
           ${f.commodities.length ? '<em>' + escapeAttr(f.commodities.join(', ')) + '</em><br>' : ''}
-          ${f.website ? `<a href="${escapeAttr(f.website)}" target="_blank" rel="noopener">Website</a>` : ''}
-          ${f.website && f.email ? ' · ' : ''}
-          ${f.email ? `<a href="mailto:${escapeAttr(f.email)}">Email</a>` : ''}
+          ${links}
         `;
         marker.bindPopup(popup);
         marker.on('click', () => selectFacility(realIdx));

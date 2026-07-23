@@ -1,5 +1,35 @@
 [
   {
+    "slug": "rail-pulse-2026-07-21",
+    "title": "Rail Pulse — Week Ending July 11, 2026",
+    "description": "Steel Wheel Logistics' weekly rail freight intelligence brief for the week ending July 11, 2026. Verified AAR carload and total traffic volume, per-carrier service metrics, EIA diesel + fuel surcharges, USDA grain transport indicators, and a live indicative lane quote.",
+    "date": "2026-07-21",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail pulse newsletter",
+      "weekly rail traffic",
+      "AAR carloads",
+      "Class I rail performance",
+      "rail fuel surcharge",
+      "grain transportation report"
+    ]
+  },
+  {
+    "slug": "rail-pulse-2026-07-14",
+    "title": "Rail Pulse — Week Ending July 4, 2026",
+    "description": "Steel Wheel Logistics' weekly rail freight intelligence brief for the week ending July 4, 2026. Verified AAR carload and total traffic volume, per-carrier service metrics, EIA diesel + fuel surcharges, USDA grain transport indicators, and a live indicative lane quote.",
+    "date": "2026-07-14",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail pulse newsletter",
+      "weekly rail traffic",
+      "AAR carloads",
+      "Class I rail performance",
+      "rail fuel surcharge",
+      "grain transportation report"
+    ]
+  },
+  {
     "slug": "reciprocal-switching-vs-direct-rail-service",
     "title": "Reciprocal Switching vs Direct Rail Service: When Each Makes Sense",
     "description": "Reciprocal switching vs direct rail service: when single-line service wins, when a second carrier is worth the switch charge, and how to decide your lane.",
@@ -162,7 +192,7 @@
   {
     "slug": "hazmat-rail-bill-of-lading-49-cfr-172",
     "title": "Hazmat Rail Bill of Lading: 49 CFR 172 Compliance Guide (2026)",
-    "description": "Hazmat rail bill of lading guide: \u00a7172.204 shipper certification (verbatim text), \u00a7172.604 emergency response phone, \u00a7172.704 employee training. 2025 PHMSA penalty max $238,809.",
+    "description": "Hazmat rail bill of lading guide: §172.204 shipper certification (verbatim text), §172.604 emergency response phone, §172.704 employee training. 2025 PHMSA penalty max $238,809.",
     "date": "2026-05-16",
     "author": "Steel Wheel Logistics",
     "tags": [
@@ -238,7 +268,7 @@
   {
     "slug": "cross-border-rail-bill-of-lading-mexico",
     "title": "Cross-Border Rail Bill of Lading to Mexico: Carta Porte 3.1, Pedimento, and AES (2026)",
-    "description": "Cross-border rail BoL US\u2192MX: Carta Porte 3.1 (TipoTransp=04 NOT 02), Agente Aduanal vs Article 40 self-clearance, Pedimento at SAT VUCEM, AES ITN for US exports >$2,500. 6 commercial interchanges.",
+    "description": "Cross-border rail BoL US→MX: Carta Porte 3.1 (TipoTransp=04 NOT 02), Agente Aduanal vs Article 40 self-clearance, Pedimento at SAT VUCEM, AES ITN for US exports >$2,500. 6 commercial interchanges.",
     "date": "2026-05-16",
     "author": "Steel Wheel Logistics",
     "tags": [
@@ -254,7 +284,7 @@
   {
     "slug": "cross-border-rail-bill-of-lading-canada",
     "title": "Cross-Border Rail Bill of Lading to Canada: CARM, ACI eManifest, and USMCA (2026)",
-    "description": "Cross-border rail BoL US\u2192CA: CARM Client Portal registration mandatory since Oct 2024, ACI eManifest filed by carrier 2hr before arrival, RPP bond, USMCA certification. Canadian customs broker is OPTIONAL post-CARM.",
+    "description": "Cross-border rail BoL US→CA: CARM Client Portal registration mandatory since Oct 2024, ACI eManifest filed by carrier 2hr before arrival, RPP bond, USMCA certification. Canadian customs broker is OPTIONAL post-CARM.",
     "date": "2026-05-16",
     "author": "Steel Wheel Logistics",
     "tags": [
@@ -284,7 +314,7 @@
   },
   {
     "slug": "customs-broker-for-rail-when-you-need-one",
-    "title": "Customs Broker for Rail: When You Actually Need One (and When You Don't) \u2014 2026",
+    "title": "Customs Broker for Rail: When You Actually Need One (and When You Don't) — 2026",
     "description": "Customs broker for rail: US broker is OPTIONAL (self-file ACE/AES with continuous bond), Canada broker OPTIONAL post-CARM 2024, Mexico Agente Aduanal dominant-but-not-strictly-mandatory under Article 40.",
     "date": "2026-05-16",
     "author": "Steel Wheel Logistics",
@@ -299,8 +329,8 @@
   },
   {
     "slug": "hazmat-emergency-response-phone-chemtrec-3e-infotrac",
-    "title": "Rail Hazmat Emergency Response Phone: CHEMTREC, 3E, INFOTRAC and the \u00a7172.604 Rules (2026)",
-    "description": "Hazmat rail BoL emergency response phone: \u00a7172.604 live-answer rule, CHEMTREC vs 3E vs INFOTRAC vs ChemTel comparison, self-provided requirements. Listing a number without a contract = federal violation up to $99,756/day.",
+    "title": "Rail Hazmat Emergency Response Phone: CHEMTREC, 3E, INFOTRAC and the §172.604 Rules (2026)",
+    "description": "Hazmat rail BoL emergency response phone: §172.604 live-answer rule, CHEMTREC vs 3E vs INFOTRAC vs ChemTel comparison, self-provided requirements. Listing a number without a contract = federal violation up to $99,756/day.",
     "date": "2026-05-16",
     "author": "Steel Wheel Logistics",
     "tags": [
@@ -349,8 +379,8 @@
   },
   {
     "slug": "dot-hazmat-employee-certification-rail",
-    "title": "DOT Hazmat Employee Training for Rail Shippers: 49 CFR \u00a7172.704 (2026)",
-    "description": "49 CFR \u00a7172.704 hazmat employee training for rail shippers: 5 training categories, 90-day initial / 3-year recurrent, who counts as a hazmat employee. PHMSA training-violation min $617. Recordkeeping required for employment + 90 days.",
+    "title": "DOT Hazmat Employee Training for Rail Shippers: 49 CFR §172.704 (2026)",
+    "description": "49 CFR §172.704 hazmat employee training for rail shippers: 5 training categories, 90-day initial / 3-year recurrent, who counts as a hazmat employee. PHMSA training-violation min $617. Recordkeeping required for employment + 90 days.",
     "date": "2026-05-16",
     "author": "Steel Wheel Logistics",
     "tags": [
@@ -749,7 +779,7 @@
   {
     "slug": "unit-trains-vs-manifest-service",
     "title": "Unit Trains vs Manifest Service: Which Is Right for Your Freight?",
-    "description": "Unit trains vs manifest service \u2014 how each rail shipping method works, what they cost, and which one fits your freight volume. A practical guide for shippers.",
+    "description": "Unit trains vs manifest service — how each rail shipping method works, what they cost, and which one fits your freight volume. A practical guide for shippers.",
     "date": "2026-03-28",
     "author": "Steel Wheel Logistics",
     "tags": [
@@ -764,7 +794,7 @@
   {
     "slug": "rail-car-types-explained",
     "title": "Rail Car Types Explained: Hoppers, Tank Cars, Gondolas, and More",
-    "description": "Rail car types explained \u2014 hoppers, tank cars, gondolas, flatcars, boxcars, and more. Which railcar fits your commodity and how to pick the right equipment.",
+    "description": "Rail car types explained — hoppers, tank cars, gondolas, flatcars, boxcars, and more. Which railcar fits your commodity and how to pick the right equipment.",
     "date": "2026-03-24",
     "author": "Steel Wheel Logistics",
     "tags": [
@@ -884,7 +914,7 @@
   {
     "slug": "shipping-grain-by-rail",
     "title": "Shipping Grain by Rail: The Complete Guide",
-    "description": "Learn how to ship grain by rail \u2014 equipment, costs, seasonal trends, and unit train logistics. A practical guide for grain shippers and elevator operators.",
+    "description": "Learn how to ship grain by rail — equipment, costs, seasonal trends, and unit train logistics. A practical guide for grain shippers and elevator operators.",
     "date": "2026-03-10",
     "author": "Steel Wheel Logistics",
     "tags": [

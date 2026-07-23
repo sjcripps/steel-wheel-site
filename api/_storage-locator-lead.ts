@@ -79,7 +79,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       source: 'storage-locator',
       client_ip: clientIp,
       user_agent: userAgent,
-      is_synthetic: isSyntheticLead(email, userAgent)
+      is_synthetic: isSyntheticLead(email, userAgent, clientIp)
     };
 
     // Synthetic leads pass through without writing to sinks

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Railcar lease rates tracked for 2026 — current published ranges for covered hoppers, tank cars, and grain cars, why renewal rates are spiking, and how shippers can negotiate. Sourced, dated planning ranges — not quotes.">
+  <title>Railcar Lease Rates — 2026 Market Tracker | Steel Wheel Logistics</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <link rel="canonical" href="https://steelwheellogistics.com/tools/railcar-lease-rates">
+  <meta property="og:title" content="Railcar Lease Rates — 2026 Market Tracker | Steel Wheel Logistics">
+  <meta property="og:description" content="What shippers are paying to lease railcars in 2026: published ranges by car type, the lease price index trend, why renewals are spiking, and what you can actually negotiate.">
+  <meta property="og:url" content="https://steelwheellogistics.com/tools/railcar-lease-rates">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+  <style>
+    /* Railcar Lease Rate Tracker — Page-specific styles */
+    .tool-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 48px 20px;
+      text-align: center;
+    }
+    .tool-hero h1 {
+      color: var(--white);
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .tool-hero p {
+      color: var(--steel-grey);
+      font-size: 1.05rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .tool-hero .badge {
+      display: inline-block;
+      background: rgba(74, 144, 217, 0.15);
+      color: var(--steel-blue);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tool-layout {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    .section-heading {
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .section-sub {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-bottom: 22px;
+    }
+
+    /* Stat cards */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 860px) { .stat-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .stat-grid { grid-template-columns: 1fr; } }
+    .stat-card {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+    }
+    .stat-card .stat-value {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--steel-blue);
+      line-height: 1.15;
+    }
+    .stat-card .stat-label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-top: 6px;
+      line-height: 1.35;
+    }
+    .stat-card .stat-detail {
+      font-size: 0.85rem;
+      color: var(--text-body);
+      margin-top: 8px;
+      line-height: 1.5;
+      flex: 1;
+    }
+    .stat-card .stat-source {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid var(--light-grey);
+      line-height: 1.4;
+    }
+    .stat-card .stat-source strong { color: var(--text-dark); font-weight: 600; }
+
+    .range-note {
+      margin-top: 14px;
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    /* Explainer */
+    .explainer { margin-top: 52px; }
+    .explainer h2 {
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .explainer h3 {
+      font-size: 1.1rem;
+      margin: 24px 0 8px;
+      color: var(--navy);
+    }
+    .explainer p, .explainer li {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      line-height: 1.65;
+      margin-bottom: 10px;
+    }
+    .explainer ul { padding-left: 22px; margin-bottom: 10px; }
+    .explainer li { margin-bottom: 6px; }
+
+    /* CTA blocks */
+    .cta-band {
+      margin-top: 52px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      border-radius: 14px;
+      padding: 36px 32px;
+    }
+    .cta-band h2 {
+      color: var(--white);
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+    .cta-band > p {
+      color: var(--steel-grey);
+      font-size: 0.98rem;
+      line-height: 1.6;
+      max-width: 760px;
+      margin-bottom: 22px;
+    }
+    .cta-band-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    @media (max-width: 720px) { .cta-band-grid { grid-template-columns: 1fr; } }
+    .cta-band-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .cta-band-card h3 { color: var(--white); font-size: 1.05rem; margin-bottom: 10px; }
+    .cta-band-card p {
+      color: var(--steel-grey);
+      font-size: 0.9rem;
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--steel-blue);
+      color: var(--white);
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .cta-btn:hover { background: var(--steel-blue-dark); }
+    .cta-btn.outline {
+      background: transparent;
+      border: 1px solid var(--steel-blue);
+      color: var(--steel-blue);
+    }
+    .cta-btn.outline:hover { background: rgba(74,144,217,0.12); }
+
+    /* Storage section */
+    .storage-card {
+      margin-top: 52px;
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 14px;
+      padding: 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .storage-card h2 { font-size: 1.5rem; color: var(--navy); margin-bottom: 10px; }
+    .storage-card p {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      line-height: 1.65;
+      margin-bottom: 12px;
+    }
+
+    /* FAQ */
+    .faq { margin-top: 52px; }
+    .faq h2 { font-size: 1.5rem; color: var(--navy); margin-bottom: 18px; }
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 22px 24px;
+      margin-bottom: 14px;
+    }
+    .faq-item h3 { font-size: 1.05rem; color: var(--navy); margin-bottom: 8px; }
+    .faq-item p {
+      font-size: 0.93rem;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    .faq-item p:last-child { margin-bottom: 0; }
+
+    /* Sources */
+    .sources { margin-top: 52px; }
+    .sources h2 { font-size: 1.3rem; color: var(--navy); margin-bottom: 12px; }
+    .sources ul { padding-left: 22px; }
+    .sources li {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin-bottom: 6px;
+    }
+    .sources a { color: var(--steel-blue); }
+    .sources .methodology {
+      margin-top: 14px;
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.55;
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RSWDYHVY7Z');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Railcar Lease Rates — 2026 Market Tracker",
+    "url": "https://steelwheellogistics.com/tools/railcar-lease-rates",
+    "description": "Railcar lease rates tracked for 2026 — current published ranges for covered hoppers, tank cars, and grain cars, why renewal rates are spiking, and how shippers can negotiate. Sourced, dated planning ranges — not quotes.",
+    "isAccessibleForFree": true,
+    "dateModified": "2026-07-23",
+    "provider": {
+      "@type": "Organization",
+      "name": "Steel Wheel Logistics",
+      "url": "https://steelwheellogistics.com/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does it cost to lease a railcar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Published planning ranges as of 2025–2026: covered hoppers roughly $400–800 per car per month (Commtrex), with grain-service covered hoppers reported at $530–635 per month and C-114 grain cars in the low-$600s on 5–7 year terms (Grain Journal, 2025). General-service tank cars run roughly $500–1,200 per car per month (Commtrex). Actual rates depend on car type and age, lease type (full-service vs net), term length, mileage allowance, commodity, and market timing. These are published ranges and indices, not offers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between a full-service and a net railcar lease?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In a full-service lease, the lessor covers maintenance, regulatory compliance work, and usually ad valorem taxes — you pay a higher monthly rate for a predictable cost. In a net lease, you take on maintenance and compliance responsibility yourself for a lower monthly rate. Full-service tends to win for small fleets without a maintenance operation; net leases can pencil out for larger fleets with dedicated fleet management."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I sublease my railcars?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Generally yes, but almost every lease requires the lessor's prior written consent, and terms vary on maintenance responsibility, mileage, and permitted commodities. If you have surplus cars — or need cars someone else has idle — talk to us and we can help structure it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I fight a big railcar lease renewal increase?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start early — 9 to 12 months before expiry — and come armed with market context: published lease-rate ranges, the lease price index trend, and comparable equipment availability. Negotiate the whole package, not just the rate: term length, mileage allowances, maintenance scope, and return conditions all move total cost. Getting quotes from competing lessors and marketplaces creates real leverage even in a tight market. Steel Wheel Logistics provides lease-renewal negotiation support for shippers."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://steelwheellogistics.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://steelwheellogistics.com/tools"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Railcar Lease Rate Tracker",
+        "item": "https://steelwheellogistics.com/tools/railcar-lease-rates"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog">Blog</a>
+        <a href="/courses">Courses</a>
+        <a href="/tools" class="active">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="tool-hero">
+    <span class="badge">Market Tracker</span>
+    <h1>Railcar Lease Rates &mdash; 2026 Market Tracker</h1>
+    <p>What shippers are actually paying to lease railcars, why renewal rates are spiking, and how to negotiate when your lease comes due &mdash; maintained by Steel Wheel Logistics from published industry sources. Every figure below is a dated, sourced range or index: planning context, not a rate offer.</p>
+  </section>
+
+  <!-- Main content -->
+  <div class="tool-layout">
+
+    <!-- Current market snapshot -->
+    <section>
+      <h2 class="section-heading">Current market snapshot</h2>
+      <p class="section-sub">Published indices and lease-rate ranges for the North American railcar leasing market. All figures are ranges, not quotes.</p>
+
+      <div class="stat-grid">
+
+        <div class="stat-card">
+          <div class="stat-value">+26.7%</div>
+          <div class="stat-label">Lease Price Index &mdash; renewal rate change</div>
+          <div class="stat-detail">GATX's Lease Price Index, the industry's most-watched railcar lease price index, showed renewal rates repricing 26.7% above expiring rates in a recent quarter. Renewals are landing well above the leases they replace.</div>
+          <div class="stat-source"><strong>Source:</strong> GATX earnings / FreightWaves &middot; as of Q2 2026 reporting &middot; ranges, not quotes</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-value">~65 months</div>
+          <div class="stat-label">Average renewal lease term</div>
+          <div class="stat-detail">GATX reported average renewal terms of roughly 65 months &mdash; lessors are locking shippers into 5-year-plus commitments at today's elevated rates while the market favors them.</div>
+          <div class="stat-source"><strong>Source:</strong> GATX earnings / FreightWaves &middot; as of Q2 2026 reporting &middot; ranges, not quotes</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-value">~99%</div>
+          <div class="stat-label">Lessor fleet utilization</div>
+          <div class="stat-detail">GATX has reported fleet utilization around 99% &mdash; effectively every leasable car is out working. When utilization sits this high, lessors have little incentive to discount.</div>
+          <div class="stat-source"><strong>Source:</strong> GATX earnings &middot; as of Q2 2026 reporting &middot; ranges, not quotes</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-value">$530&ndash;635/mo</div>
+          <div class="stat-label">Covered hoppers &mdash; grain service</div>
+          <div class="stat-detail">Reported full-service lease ranges for grain-service covered hoppers, with C-114 grain cars in the low-$600s per month on 5&ndash;7 year terms.</div>
+          <div class="stat-source"><strong>Source:</strong> Grain Journal &middot; as of 2025 &middot; ranges, not quotes</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-value">$400&ndash;800/mo</div>
+          <div class="stat-label">Covered hoppers &mdash; published market range</div>
+          <div class="stat-detail">Commtrex's published market range for covered hopper leases across service types, ages, and terms. Tank cars run higher: <strong>$500&ndash;1,200/mo</strong> depending on spec and service.</div>
+          <div class="stat-source"><strong>Source:</strong> Commtrex (commtrex.com) &middot; as of 2025&ndash;2026 published ranges &middot; ranges, not quotes</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-value">~19.6%</div>
+          <div class="stat-label">North American cars in storage</div>
+          <div class="stat-detail">Roughly 19.6% of the ~1.64 million-car North American fleet is in storage &mdash; but stored cars skew toward older, off-spec, or wrong-type equipment, so headline storage numbers overstate what's actually available to lease.</div>
+          <div class="stat-source"><strong>Source:</strong> AAR &middot; as of 2026 reporting &middot; ranges, not quotes</div>
+        </div>
+
+      </div>
+
+      <p class="range-note">Every figure on this page is a published range or index from the named source, as of the date shown. Lease rates vary by car type, age, spec, term, mileage allowance, and lease structure &mdash; treat these as planning ranges, never as a current rate for your equipment. We do not guarantee rates.</p>
+    </section>
+
+    <!-- Explainers -->
+    <section class="explainer">
+      <h2>Understanding railcar lease rates</h2>
+
+      <h3>Full-service vs. net lease &mdash; what each covers</h3>
+      <p>A <strong>full-service lease</strong> bundles the car, maintenance, regulatory compliance work, and usually ad valorem taxes into one monthly rate. You pay more per month, but your cost is predictable and you don't need a fleet-maintenance operation. A <strong>net lease</strong> gives you the car and little else &mdash; maintenance, compliance, and taxes are on you, in exchange for a lower monthly rate.</p>
+      <p>Full-service usually wins for shippers with small fleets and no shop network &mdash; which is most shippers. Net leases can pencil out for large fleets with dedicated fleet-management staff who can control maintenance costs better than the lessor's blended rate. When comparing published ranges &mdash; including the rail car rental rates you'll see on marketplaces &mdash; always confirm which structure a number reflects: a cheap-looking net rate can cost more than a full-service rate once maintenance lands on your desk.</p>
+
+      <h3>Typical terms: 1&ndash;7 years</h3>
+      <p>Railcar leases typically run one to seven years. Short terms (1&ndash;2 years) carry premium rates but preserve flexibility; longer terms (5&ndash;7 years) get better monthly pricing but lock in today's market. Note the tension in the current data: lessors are extending average renewal terms to ~65 months at exactly the moment rates are at cyclical highs. That serves the lessor's interest, not necessarily yours.</p>
+
+      <h3>Why renewal markups are running 25&ndash;33% right now</h3>
+      <p>Three forces are stacking up against shippers with leases expiring in 2025&ndash;2026:</p>
+      <ul>
+        <li><strong>Utilization near 99%.</strong> With effectively every serviceable car on lease, there is no slack fleet to shop against.</li>
+        <li><strong>Supply is inelastic.</strong> New railcar builds respond slowly to demand &mdash; high steel costs, limited builder capacity, and multi-year order books mean tight supply can't correct quickly.</li>
+        <li><strong>Lessor consolidation.</strong> GATX and Brookfield's acquisition of Wells Fargo Rail closed in January 2026 &mdash; a $4.2&nbsp;billion transaction covering roughly 101,000 cars &mdash; concentrating one of the largest lessor fleets in North America under fewer owners with more pricing discipline.</li>
+      </ul>
+      <p>The result: leases signed in the soft market of 2019&ndash;2021 are renewing 25&ndash;33% higher, and the GATX Lease Price Index confirms it quarter after quarter.</p>
+
+      <h3>What a shipper can actually negotiate</h3>
+      <p>Even in a lessor's market, the rate is only one line on the lease. Levers that move real money:</p>
+      <ul>
+        <li><strong>Term length.</strong> Don't reflexively accept a long term at peak rates. Model a shorter renewal against the odds the market softens &mdash; sometimes paying a short-term premium beats locking in a cyclical high for six years.</li>
+        <li><strong>Mileage allowances.</strong> Excess-mileage charges are a quiet cost center. Match the allowance to your actual lane cycles before signing.</li>
+        <li><strong>Maintenance scope.</strong> On full-service leases, pin down exactly what's covered &mdash; running repairs, program work, regulatory requalification &mdash; and who pays for damage classifications.</li>
+        <li><strong>Return conditions.</strong> End-of-lease cleaning, interior condition, and shop-delivery requirements can add five figures per car if left vague. Negotiate them at signing, not at return.</li>
+      </ul>
+    </section>
+
+    <!-- Facing a renewal? CTA -->
+    <section class="cta-band">
+      <h2>Facing a renewal?</h2>
+      <p>Lessors know the market. Now you do too. We provide lease-renewal negotiation support for shippers &mdash; market context, term benchmarking, and an advocate at the table.</p>
+      <div class="cta-band-grid">
+        <div class="cta-band-card">
+          <h3>Lease renewal support</h3>
+          <p>Bring us your expiring lease before you respond to the renewal offer. We benchmark the proposed rate and terms against the market and help you negotiate the whole package &mdash; rate, term, mileage, maintenance, and return conditions.</p>
+          <a href="/contact?subject=Lease%20renewal%20support" class="cta-btn">Get renewal support &rarr;</a>
+        </div>
+        <div class="cta-band-card">
+          <h3>Need railcars?</h3>
+          <p>We source lease availability across marketplaces and lessor networks &mdash; your lease, our legwork. Tell us the car type, count, and timeline, and we'll bring back real options.</p>
+          <a href="/contact?subject=Railcar%20sourcing" class="cta-btn">Start railcar sourcing &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Railcar storage -->
+    <section class="storage-card">
+      <h2>Railcar storage &mdash; cars or track space</h2>
+      <p>Have idle railcars &mdash; or track space to store them? Our transload and short-line network has storage capacity, and we match cars to tracks.</p>
+      <p>For planning context, typical market storage costs run <strong>$4&ndash;16 per car per day</strong>, plus switch fees of roughly <strong>$100&ndash;300 per car</strong> in and out (source: RSI Logistics; published ranges, not quotes). Location, track class, commodity restrictions, and dwell commitments all move the number.</p>
+      <p>You can also browse our <a href="/tools/storage-locator">Rail Storage Locator</a> for 900+ facilities, or list surplus cars on the <a href="/tools/sublease-board">Railcar Sublease Board</a>.</p>
+      <p style="margin-top:16px;"><a href="/contact?subject=Railcar%20storage" class="cta-btn">Ask about storage &rarr;</a></p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <h2>Frequently asked questions</h2>
+
+      <div class="faq-item">
+        <h3>How much does it cost to lease a railcar?</h3>
+        <p>Published planning ranges as of 2025&ndash;2026: covered hoppers roughly <strong>$400&ndash;800 per car per month</strong> (Commtrex), with grain-service covered hoppers reported at <strong>$530&ndash;635/mo</strong> and C-114 grain cars in the low-$600s on 5&ndash;7 year terms (Grain Journal, 2025). General-service tank cars run roughly <strong>$500&ndash;1,200 per car per month</strong> (Commtrex).</p>
+        <p>The spread is driven by car type and age, lease structure (full-service vs. net), term length, mileage allowance, commodity, and market timing. These are published ranges and indices, not offers &mdash; the rate for your specific equipment will differ.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is the difference between a full-service and a net railcar lease?</h3>
+        <p>In a full-service lease, the lessor covers maintenance, regulatory compliance work, and usually ad valorem taxes &mdash; you pay a higher monthly rate for a predictable cost. In a net lease, you take on maintenance and compliance responsibility yourself for a lower monthly rate. Full-service tends to win for small fleets without a maintenance operation; net leases can pencil out for larger fleets with dedicated fleet management.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can I sublease my railcars?</h3>
+        <p>Generally yes, but almost every lease requires the lessor's prior written consent, and terms vary on maintenance responsibility, mileage, and permitted commodities. If you have surplus cars &mdash; or need cars someone else has idle &mdash; <a href="/contact?subject=Railcar%20sourcing">talk to us</a> and we can help structure it, or list them on our <a href="/tools/sublease-board">Railcar Sublease Board</a>.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I fight a big railcar lease renewal increase?</h3>
+        <p>Start early &mdash; 9 to 12 months before expiry &mdash; and come armed with market context: published lease-rate ranges, the lease price index trend, and comparable equipment availability. Negotiate the whole package, not just the rate: term length, mileage allowances, maintenance scope, and return conditions all move total cost. Getting quotes from competing lessors and marketplaces creates real leverage even in a tight market. Steel Wheel Logistics provides <a href="/contact?subject=Lease%20renewal%20support">lease-renewal negotiation support</a> for shippers.</p>
+      </div>
+    </section>
+
+    <!-- Sources & methodology -->
+    <section class="sources">
+      <h2>Sources &amp; methodology</h2>
+      <ul>
+        <li><a href="https://www.gatx.com/investors" target="_blank" rel="noopener">GATX Corporation Investor Relations</a> &mdash; Lease Price Index, renewal rate change, renewal term, and fleet utilization from quarterly earnings.</li>
+        <li><a href="https://www.railwayage.com/" target="_blank" rel="noopener">Railway Age</a> &mdash; railcar leasing market and lessor consolidation coverage.</li>
+        <li><a href="https://www.freightwaves.com/" target="_blank" rel="noopener">FreightWaves</a> &mdash; reporting on GATX earnings and lease-rate trends.</li>
+        <li><a href="https://www.grainnet.com/" target="_blank" rel="noopener">Grain Journal</a> &mdash; 2025 reported lease ranges for grain-service covered hoppers and C-114 cars.</li>
+        <li><a href="https://www.commtrex.com/" target="_blank" rel="noopener">Commtrex</a> &mdash; published market lease-rate ranges by car type.</li>
+        <li><a href="https://www.aar.org/" target="_blank" rel="noopener">Association of American Railroads (AAR)</a> &mdash; North American fleet size and cars-in-storage statistics.</li>
+        <li><a href="https://www.rsilogistics.com/" target="_blank" rel="noopener">RSI Logistics</a> &mdash; typical railcar storage cost and switch-fee ranges.</li>
+        <li><a href="https://www.railinc.com/" target="_blank" rel="noopener">Railinc</a> &mdash; North American railcar fleet data and equipment statistics.</li>
+      </ul>
+      <p class="methodology">Updated July 2026. Figures are published ranges and indices from the sources above, not offers. Steel Wheel Logistics is a rail logistics services provider; nothing on this page is a rate offer or a guarantee of lease availability or pricing. For an indicative discussion of your specific equipment and lanes, <a href="/contact">contact us</a>.</p>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // CTA click tracking (mirrors other tools' event_category: 'tools')
+    document.querySelectorAll('a[href^="/contact?subject="]').forEach(function (a) {
+      a.addEventListener('click', function () {
+        if (typeof gtag === 'function') {
+          gtag('event', 'lease_rates_contact_cta', {
+            event_category: 'tools',
+            event_label: decodeURIComponent((a.getAttribute('href').split('subject=')[1] || ''))
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

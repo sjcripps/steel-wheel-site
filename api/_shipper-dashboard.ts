@@ -27,7 +27,28 @@ function bad(res: VercelResponse, status: number, error: string, code?: string) 
   return res.status(status).json({ error, code });
 }
 
+// Mail goes out via AWS SES: steelwheellogistics.com is a VERIFIED SES identity
+// with production access (checked 7/22), so sign-in links come from the shipper's
+// actual domain — no cross-domain phishing smell. The AWS_* creds already live in
+// this project's env (they power the S3 lead notify). Resend remains the FALLBACK
+// only (ezbizservices.com sender — the old stopgap) so a transient SES failure
+// doesn't strand a shipper at the login screen.
 async function sendMail(to: string, subject: string, html: string): Promise<boolean> {
+  const from = process.env.DASHBOARD_MAIL_FROM
+    || 'Steel Wheel Logistics <dashboard@steelwheellogistics.com>';
+  try {
+    const { SESv2Client, SendEmailCommand } = await import('@aws-sdk/client-sesv2');
+    const ses = new SESv2Client({ region: process.env.AWS_SES_REGION || 'us-east-1' });
+    await ses.send(new SendEmailCommand({
+      FromEmailAddress: from,
+      ReplyToAddresses: ['info@steelwheellogistics.com'],
+      Destination: { ToAddresses: [to] },
+      Content: { Simple: { Subject: { Data: subject }, Body: { Html: { Data: html } } } },
+    }));
+    return true;
+  } catch (e) {
+    console.error('SES send failed, falling back to Resend:', (e as Error)?.message);
+  }
   const key = process.env.RESEND_API_KEY;
   if (!key) return false;
   try {
@@ -35,18 +56,7 @@ async function sendMail(to: string, subject: string, html: string): Promise<bool
       method: 'POST',
       headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        // steelwheellogistics.com is NOT verified in Resend — only
-        // ezbizservices.com is — so sending from the SWL domain is rejected and
-        // the magic link never arrives. lead_capture.py hit this first and
-        // documents the same workaround.
-        //
-        // This is a STOPGAP. A sign-in link arriving from a domain the
-        // recipient has never heard of reads as phishing, and it is exactly the
-        // pattern users are trained to distrust. Verify
-        // steelwheellogistics.com in Resend, then set DASHBOARD_MAIL_FROM to a
-        // real SWL address and delete this fallback.
-        from: process.env.DASHBOARD_MAIL_FROM
-          || 'Steel Wheel Logistics <notifications@ezbizservices.com>',
+        from: 'Steel Wheel Logistics <notifications@ezbizservices.com>',
         reply_to: 'info@steelwheellogistics.com',
         to: [to], subject, html,
       }),
@@ -82,6 +92,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       case 'templates':     return await templates(req, res);
       case 'save-template': return await saveTemplate(req, res, body);
       case 'delete-template': return await deleteTemplate(req, res, body);
+      case 'playbook':      return await playbook(req, res);
       default:              return bad(res, 400, 'Unknown action', 'unknown_action');
     }
   } catch (e: any) {
@@ -186,6 +197,19 @@ async function login(req: VercelRequest, res: VercelResponse, body: any) {
   });
   const cookie = await issueSession(res, u.id, req);
   return ok(res, { ok: true, email }, cookie);
+}
+
+// The carrier playbook is an INTERNAL ops tool. It previously shipped its
+// whole dataset inside tools/carrier-playbook/index.html and "gated" it by
+// toggling a CSS class, so `curl` on the URL returned every quote channel,
+// credit-setup note and desk contact without a session. The data now lives in
+// _playbook-data.ts and only leaves the server once resolveSession() passes —
+// an unauthenticated request gets a 401 and no bytes.
+async function playbook(req: VercelRequest, res: VercelResponse) {
+  const s = await resolveSession(req.headers.cookie);
+  if (!s) return bad(res, 401, 'Sign in to view the carrier playbook.', 'auth_required');
+  const { PLAYBOOK } = await import('./_playbook-data');
+  return ok(res, { playbook: PLAYBOOK });
 }
 
 async function logout(req: VercelRequest, res: VercelResponse) {

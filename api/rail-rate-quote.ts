@@ -37,6 +37,22 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   // capped here defensively, also enforced server-side in Flask.
   const leadName = String(body.name ?? '').trim().slice(0, 200);
   const leadPhone = String(body.phone ?? '').trim().slice(0, 60);
+  // Optional shipment size (added 2026-07-22). Omitted when the shipper
+  // didn't pick one — Flask then prices single-car, the conservative tier.
+  // Range is enforced authoritatively server-side; this is just an edge
+  // short-circuit on obvious garbage.
+  const rawCars = body.num_cars;
+  let numCars: number | undefined;
+  if (rawCars !== undefined && rawCars !== null && String(rawCars).trim() !== '') {
+    const n = Number(rawCars);
+    if (!Number.isFinite(n) || !Number.isInteger(n) || n < 1 || n > 200) {
+      return res.status(400).json({
+        error: 'Car count must be a whole number between 1 and 200.',
+        code: 'num_cars_range',
+      });
+    }
+    numCars = n;
+  }
 
   // Edge format check — Python service still does authoritative MX +
   // disposable-domain validation. We just want to short-circuit obvious
@@ -97,6 +113,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         email,
         name: leadName,
         phone: leadPhone,
+        ...(numCars !== undefined ? { num_cars: numCars } : {}),
         // Forward client metadata so the Python service can record it on the
         // lead. (CF-Connecting-IP is set by Cloudflare; X-Forwarded-For is the
         // Vercel-default chain.)
