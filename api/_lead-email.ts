@@ -134,11 +134,37 @@ export async function sendLeadEmail(opts: {
     `\n\nCustomer email: ${opts.customerEmail}\n` +
     `Tool: ${opts.toolName}\n`;
 
-  return await postResend({
+  const sent = await postResend({
     apiKey,
     payload: { from, to: [to], subject: opts.subject, html, text },
     label: 'lead-email',
   });
+
+  // Draft a suggested reply and Telegram it for review. Wired here rather than
+  // in each handler because all nine lead endpoints funnel through this
+  // function, and it already has the details a draft needs. Fully opt-in: with
+  // ANTHROPIC_API_KEY unset, generateLeadReplyDraft returns null and this is a
+  // no-op. Nothing is ever sent to the customer — Jacob approves and sends.
+  //
+  // Deliberately non-fatal: the lead is already recorded by the time we get
+  // here, so a drafting or notification failure must never surface as a failed
+  // lead submission.
+  try {
+    const { generateLeadReplyDraft } = await import('./_lead-reply-draft');
+    const draft = await generateLeadReplyDraft({
+      customerEmail: opts.customerEmail,
+      leadSource: opts.toolName,
+      leadDetails: opts.rows.map(r => `${r.label}: ${r.value}`).join('\n'),
+    });
+    if (draft) {
+      const { notifyDraftReady } = await import('./_draft-notify');
+      await notifyDraftReady({ draft, toolName: opts.toolName });
+    }
+  } catch (e) {
+    console.error('lead-reply-draft pipeline error:', (e as Error)?.message || e);
+  }
+
+  return sent;
 }
 
 /** 5th sink: send the customer their own copy of the quote/lead summary. */

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.113.0",
     "@aws-sdk/client-s3": "^3.654.0",
     "@aws-sdk/client-sesv2": "^3.1093.0"
   },
