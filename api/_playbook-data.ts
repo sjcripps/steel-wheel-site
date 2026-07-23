@@ -565,3 +565,87 @@ export const PLAYBOOK = {
     "NS named sales directors verified for chemicals/ag/metals/intermodal pages only; other verticals use the same page pattern (embedded form + desk email) — harvest per-page as needed."
   ]
 } as const;
+
+// Draft-email routing per road — MOVED OFF THE CLIENT 2026-07-23.
+//
+// This block used to sit inline in tools/carrier-playbook/index.html. The
+// b60b3b3 commit moved the main PLAYBOOK server-side but missed this, so an
+// unauthenticated `curl` of the tool URL still returned 22 addresses --
+// including named carrier staff and the commodity desk each one owns
+// (NS Ag & Forest, CPKC fertilizer/potash, WSOR metals, ...). That mapping is
+// researched competitive material and a harvesting target for those inboxes,
+// so it ships only after the server has authorised the request.
+//
+// Desk labels that quote a railroad's own product name (e.g. CSX's
+// go_intermodal / "Intermodal BCO" desk) keep THEIR naming, verbatim.
+export const DRAFT_CONFIG =   {
+    up: {
+      mode: 'form',
+      formUrl: 'https://unionpacific.my.site.com/UP/s/?webToLead=True&leadSource=UPWebsite',
+      formLabel: "UP 'Contact a Shipping Expert' form (Salesforce web-to-lead)"
+    },
+    bnsf: {
+      mode: 'form',
+      formUrl: 'https://customer2.bnsf.com/s/get-a-freight-rate',
+      formLabel: "BNSF 'Get a Freight Rate' tool (new company: customer-onboarding form)"
+    },
+    csx: {
+      mode: 'email',
+      formUrl: 'https://movewithcsx.com/',
+      desks: [
+        { label: 'Carload / merchandise', addr: 'merchandise@csx.com' },
+        { label: 'Intermodal BCO desk (their product name)', addr: 'go_intermodal@csx.com' },
+        { label: 'RailPlus door-to-door / IMC / private asset', addr: 'RailPlus_Sales@csx.com' }
+      ]
+    },
+    ns: {
+      mode: 'email',
+      formUrl: 'https://www.norfolksouthern.com/en/ship-by-rail/industry',
+      desks: [
+        { label: 'Chemicals desk', addr: 'ns.chemicals@nscorp.com' },
+        { label: 'Automotive desk', addr: 'automotivemarketing@nscorp.com' },
+        { label: 'Ag & Forest (Beau St. Dennis)', addr: 'beau.stdennis@nscorp.com' },
+        { label: 'Metals & Construction (Connie McClung)', addr: 'connie.mcclung2@nscorp.com' }
+      ]
+    },
+    cn: {
+      mode: 'form',
+      cnIntake: true, // renders CN's REAL intake form (captured 2026-07-22), pre-filled — not the generic paste-block
+      formUrl: 'https://www.cn.ca/en/contact-us/',
+      formLabel: "CN contact page — call sales first: 1-888-668-4626 (email is form-mediated). CN's first question: 'Carload or Intermodal?' (their phrasing)"
+    },
+    cpkc: {
+      mode: 'email',
+      formUrl: 'https://www.cpkcr.com/en/customer-resources/become-a-customer/Request-Information-Form1',
+      desks: [
+        { label: 'Grain pricing', addr: 'grain_pricing@cpkcr.com' },
+        { label: 'Wheat pricing', addr: 'wheat_pricing@cpkcr.com' },
+        { label: 'Oilseeds pricing', addr: 'oilseeds_pricing@cpkcr.com' },
+        { label: 'Ag products pricing', addr: 'ag_productspricing@cpkcr.com' },
+        { label: 'US chemicals (Marcus Tyrance)', addr: 'marcus.tyrance@cpkcr.com' },
+        { label: 'Fertilizer / potash (Aaman Mann)', addr: 'aaman.mann@cpkcr.com' },
+        { label: 'Coal / pet coke (Matthias Bennett)', addr: 'matthias.bennett@cpkcr.com' },
+        { label: 'Automotive CA/US (Jamie Senin)', addr: 'jamie.senin@cpkcr.com' },
+        { label: 'US domestic desk (their "IM Pricing USA")', addr: 'IM_PricingUSA@cpkcr.com' }
+      ]
+    },
+    trra: {
+      mode: 'email',
+      desks: [{ label: 'TRRA clerks (customer service)', addr: 'TRRAclerks@TerminalRailroad.com' }]
+    },
+    wsor: {
+      mode: 'email',
+      desks: [
+        { label: 'Metals/Minerals/Petroleum/Chemicals/Machinery/Forest (Jamaar Benton)', addr: 'jamaar.benton@watco.com' },
+        { label: 'Grain/Fertilizer/Canned Foods (Brad Peot)', addr: 'bpeot@watco.com' }
+      ]
+    },
+    brc: {
+      mode: 'email',
+      desks: [{ label: 'Customer service', addr: 'customerservice@beltrailway.com' }]
+    },
+    ihb: {
+      mode: 'email',
+      desks: [{ label: 'Rate requests (IHB marketing)', addr: 'ihb.marketing@ihbrr.com' }]
+    }
+  } as const;

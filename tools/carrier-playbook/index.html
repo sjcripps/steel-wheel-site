@@ -481,77 +481,11 @@
   // as pipe-separated prose strings; this normalizes them into pickable desks.
   // Desk labels that include a railroad's own product name (e.g. CSX's
   // go_intermodal / "Intermodal BCO" desk) quote THEIR naming, verbatim.
-  var DRAFT_CONFIG = {
-    up: {
-      mode: 'form',
-      formUrl: 'https://unionpacific.my.site.com/UP/s/?webToLead=True&leadSource=UPWebsite',
-      formLabel: "UP 'Contact a Shipping Expert' form (Salesforce web-to-lead)"
-    },
-    bnsf: {
-      mode: 'form',
-      formUrl: 'https://customer2.bnsf.com/s/get-a-freight-rate',
-      formLabel: "BNSF 'Get a Freight Rate' tool (new company: customer-onboarding form)"
-    },
-    csx: {
-      mode: 'email',
-      formUrl: 'https://movewithcsx.com/',
-      desks: [
-        { label: 'Carload / merchandise', addr: 'merchandise@csx.com' },
-        { label: 'Intermodal BCO desk (their product name)', addr: 'go_intermodal@csx.com' },
-        { label: 'RailPlus door-to-door / IMC / private asset', addr: 'RailPlus_Sales@csx.com' }
-      ]
-    },
-    ns: {
-      mode: 'email',
-      formUrl: 'https://www.norfolksouthern.com/en/ship-by-rail/industry',
-      desks: [
-        { label: 'Chemicals desk', addr: 'ns.chemicals@nscorp.com' },
-        { label: 'Automotive desk', addr: 'automotivemarketing@nscorp.com' },
-        { label: 'Ag & Forest (Beau St. Dennis)', addr: 'beau.stdennis@nscorp.com' },
-        { label: 'Metals & Construction (Connie McClung)', addr: 'connie.mcclung2@nscorp.com' }
-      ]
-    },
-    cn: {
-      mode: 'form',
-      cnIntake: true, // renders CN's REAL intake form (captured 2026-07-22), pre-filled — not the generic paste-block
-      formUrl: 'https://www.cn.ca/en/contact-us/',
-      formLabel: "CN contact page — call sales first: 1-888-668-4626 (email is form-mediated). CN's first question: 'Carload or Intermodal?' (their phrasing)"
-    },
-    cpkc: {
-      mode: 'email',
-      formUrl: 'https://www.cpkcr.com/en/customer-resources/become-a-customer/Request-Information-Form1',
-      desks: [
-        { label: 'Grain pricing', addr: 'grain_pricing@cpkcr.com' },
-        { label: 'Wheat pricing', addr: 'wheat_pricing@cpkcr.com' },
-        { label: 'Oilseeds pricing', addr: 'oilseeds_pricing@cpkcr.com' },
-        { label: 'Ag products pricing', addr: 'ag_productspricing@cpkcr.com' },
-        { label: 'US chemicals (Marcus Tyrance)', addr: 'marcus.tyrance@cpkcr.com' },
-        { label: 'Fertilizer / potash (Aaman Mann)', addr: 'aaman.mann@cpkcr.com' },
-        { label: 'Coal / pet coke (Matthias Bennett)', addr: 'matthias.bennett@cpkcr.com' },
-        { label: 'Automotive CA/US (Jamie Senin)', addr: 'jamie.senin@cpkcr.com' },
-        { label: 'US domestic desk (their "IM Pricing USA")', addr: 'IM_PricingUSA@cpkcr.com' }
-      ]
-    },
-    trra: {
-      mode: 'email',
-      desks: [{ label: 'TRRA clerks (customer service)', addr: 'TRRAclerks@TerminalRailroad.com' }]
-    },
-    wsor: {
-      mode: 'email',
-      desks: [
-        { label: 'Metals/Minerals/Petroleum/Chemicals/Machinery/Forest (Jamaar Benton)', addr: 'jamaar.benton@watco.com' },
-        { label: 'Grain/Fertilizer/Canned Foods (Brad Peot)', addr: 'bpeot@watco.com' }
-      ]
-    },
-    brc: {
-      mode: 'email',
-      desks: [{ label: 'Customer service', addr: 'customerservice@beltrailway.com' }]
-    },
-    ihb: {
-      mode: 'email',
-      desks: [{ label: 'Rate requests (IHB marketing)', addr: 'ihb.marketing@ihbrr.com' }]
-    }
-  };
+  // Draft-email routing per road. The desk addresses live server-side in
+  // api/_playbook-data.ts and arrive with the authorised `playbook` payload —
+  // see hydrate(). Shipping them inline handed every carrier desk contact to
+  // anyone who fetched this URL. Empty until the server says yes.
+  var DRAFT_CONFIG = {};
 
   // Profile defaults — seed values for the "My Profile" panel and the fallback
   // when a draft is built before the panel has ever been saved.
@@ -797,8 +731,10 @@
   var PLAYBOOK = null;
   var ROADS = [];
 
-  function hydrate(data) {
+  function hydrate(data, draftConfig) {
     PLAYBOOK = data;
+    // Desk addresses travel with the authorised payload, never in page source.
+    DRAFT_CONFIG = draftConfig || {};
     ROADS = PLAYBOOK.railroads.map(function (r) {
       return { key: ROAD_KEYS[r.name] || r.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'), data: r };
     });
@@ -819,14 +755,14 @@
       if (!r.ok) return null;
       return r.json();
     }).then(function (j) {
-      return (j && j.playbook) ? j.playbook : null;
+      return (j && j.playbook) ? j : null;
     }).catch(function () { return null; });
   }
 
   function initGate() {
-    fetchPlaybook().then(function (data) {
-      if (data) {
-        hydrate(data);
+    fetchPlaybook().then(function (payload) {
+      if (payload) {
+        hydrate(payload.playbook, payload.draftConfig);
         $('gatePanel').classList.add('hidden');
         $('appContent').classList.remove('hidden');
         initApp();

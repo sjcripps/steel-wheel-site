@@ -208,8 +208,17 @@ async function login(req: VercelRequest, res: VercelResponse, body: any) {
 async function playbook(req: VercelRequest, res: VercelResponse) {
   const s = await resolveSession(req.headers.cookie);
   if (!s) return bad(res, 401, 'Sign in to view the carrier playbook.', 'auth_required');
-  const { PLAYBOOK } = await import('./_playbook-data');
-  return ok(res, { playbook: PLAYBOOK });
+
+  // A valid session is NOT enough. Shipper signup is open self-serve, so gating
+  // on resolveSession() alone meant any customer -- or any competitor willing to
+  // register an email -- could read our carrier desk contacts and quote
+  // channels. This is an internal ops tool: require the internal flag.
+  if (!s.isInternal) {
+    return bad(res, 403, 'The carrier playbook is limited to Steel Wheel staff.', 'not_internal');
+  }
+
+  const { PLAYBOOK, DRAFT_CONFIG } = await import('./_playbook-data');
+  return ok(res, { playbook: PLAYBOOK, draftConfig: DRAFT_CONFIG });
 }
 
 async function logout(req: VercelRequest, res: VercelResponse) {

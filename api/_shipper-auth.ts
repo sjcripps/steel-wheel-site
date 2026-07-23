@@ -158,7 +158,11 @@ export function validEmail(v: string): boolean {
 }
 
 // ── Session resolution ──────────────────────────────────────────────────────
-export type Session = { shipperId: string; sessionId: string; email: string };
+// isInternal marks Steel Wheel staff. Shipper signup is open self-serve, so
+// "has a session" says nothing about trust — internal-only surfaces (the
+// carrier playbook) must check this flag, not merely that resolveSession()
+// returned non-null.
+export type Session = { shipperId: string; sessionId: string; email: string; isInternal: boolean };
 
 export async function resolveSession(cookieHeader: string | undefined): Promise<Session | null> {
   const raw = readCookie(cookieHeader, SESSION_COOKIE);
@@ -169,12 +173,14 @@ export async function resolveSession(cookieHeader: string | undefined): Promise<
   const s = Array.isArray(rows) && rows[0];
   if (!s) return null;
   if (new Date(s.expires_at).getTime() <= Date.now()) return null;
-  const who = await sb(`sw_shippers?id=eq.${s.shipper_id}&select=email`);
+  const who = await sb(`sw_shippers?id=eq.${s.shipper_id}&select=email,is_internal`);
   const email = (Array.isArray(who) && who[0]?.email) || '';
+  // Default false: a missing column or absent row must never read as staff.
+  const isInternal = (Array.isArray(who) && who[0]?.is_internal === true) || false;
   // Fire-and-forget touch; a failure here must not break the request.
   sb(`sw_sessions?id=eq.${s.id}`, {
     method: 'PATCH', body: { last_seen_at: new Date().toISOString() },
     prefer: 'return=minimal',
   }).catch(() => {});
-  return { shipperId: s.shipper_id, sessionId: s.id, email };
+  return { shipperId: s.shipper_id, sessionId: s.id, email, isInternal };
 }
