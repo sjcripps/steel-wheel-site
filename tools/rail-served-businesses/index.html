@@ -226,7 +226,7 @@
       border-radius: 12px;
       border: 1px solid var(--border-grey);
       margin-bottom: 16px;
-      background: #f4f6fa;
+      background: var(--light-grey);
     }
 
     .results-table-wrap {
@@ -262,8 +262,8 @@
       border-top: 1px solid var(--border-grey);
       transition: background 0.1s;
     }
-    .results-table tbody tr:hover { background: #f7faff; }
-    .results-table tbody tr.row-selected { background: #fff3e0; }
+    .results-table tbody tr:hover { background: var(--light-grey); }
+    .results-table tbody tr.row-selected { background: var(--warning-surface); }
     .results-table td {
       padding: 10px 12px;
       vertical-align: top;
@@ -288,11 +288,11 @@
     }
     .results-table .pill.pill-classi {
       background: rgba(40, 167, 69, 0.12);
-      color: #1e7e34;
+      color: var(--success);
     }
     .results-table .pill.pill-conf-high {
       background: rgba(255, 165, 0, 0.18);
-      color: #b35a00;
+      color: var(--warning);
     }
     .results-table td.col-actions a {
       display: inline-block;
@@ -458,7 +458,7 @@
     }
     .email-gate-modal .gate-submit:disabled { opacity: 0.6; cursor: not-allowed; }
     .email-gate-modal .gate-error {
-      color: #d32f2f;
+      color: var(--danger);
       font-size: 0.85rem;
       margin: 8px 0 0;
       min-height: 1.2em;

@@ -161,7 +161,7 @@
     .city-suggest li {
       padding: 8px 14px;
       font-size: 0.95rem;
-      color: var(--gray-800, #1f2937);
+      color: var(--text-dark);
       cursor: pointer;
       display: flex;
       justify-content: space-between;
@@ -170,8 +170,8 @@
     }
     .city-suggest li:hover,
     .city-suggest li.active {
-      background: #eef3f9;
-      color: var(--steel-blue-dark, #1f3b66);
+      background: var(--light-grey);
+      color: var(--steel-blue-dark);
     }
     .city-suggest li .city-pop {
       font-size: 0.78rem;
@@ -182,7 +182,7 @@
       display: inline-block;
       font-size: 0.72rem;
       font-weight: 600;
-      color: #b65900;
+      color: var(--warning);
       background: rgba(255, 159, 28, 0.15);
       padding: 2px 8px;
       border-radius: 12px;
@@ -225,7 +225,7 @@
       display: inline-block;
       width: 48px;
       height: 48px;
-      border: 4px solid #e6ebf2;
+      border: 4px solid var(--border-grey);
       border-top-color: var(--steel-blue);
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
@@ -322,7 +322,7 @@
     }
     .lane-type-badge.interline {
       background: rgba(248, 180, 0, 0.12);
-      color: #b8860b;
+      color: var(--warning);
     }
 
     .estimate-block {
@@ -453,7 +453,7 @@
       cursor: pointer;
       text-align: left;
     }
-    .alternates-toggle:hover { background: #e8edf3; }
+    .alternates-toggle:hover { background: var(--light-grey); }
     .alternates-toggle .toggle-arrow {
       transition: transform 0.2s;
       font-size: 0.8rem;
@@ -517,7 +517,7 @@
       margin-top: 2px;
     }
     .alternate-card .alt-delta.up { color: var(--error-red); }
-    .alternate-card .alt-delta.down { color: #1f8a4c; }
+    .alternate-card .alt-delta.down { color: var(--success); }
     .alternates-help {
       font-size: 0.82rem;
       color: var(--text-light);
@@ -549,8 +549,8 @@
       margin-bottom: 16px;
     }
     .shipment-size-note.assumed {
-      border-left-color: #c47f17;
-      background: #fdf6ea;
+      border-left-color: var(--warning);
+      background: var(--warning-surface);
     }
     .shipment-size-note strong { display: block; margin-bottom: 4px; }
     .routing-notes {

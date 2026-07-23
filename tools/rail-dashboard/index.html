@@ -21,7 +21,7 @@
     .sd-tabs button.on { background: var(--steel-blue); color: #fff; border-color: var(--steel-blue); }
     .sd-msg { font-size: .9rem; margin-top: 12px; line-height: 1.5; }
     .sd-msg.err { color: #b3261e; }
-    .sd-msg.ok { color: #2e7d4f; }
+    .sd-msg.ok { color: var(--success); }
     .sd-lane-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; flex-wrap: wrap; }
     .sd-lane-head h3 { margin: 0 0 3px; font-size: 1.08rem; }
     .sd-lane-sub { color: var(--text-light); font-size: .85rem; }
@@ -30,11 +30,11 @@
     .sd-metric .k { font-size: .7rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-light); }
     .sd-metric .v { font-size: 1.15rem; font-weight: 700; color: var(--navy); }
     .sd-metric .d { font-size: .76rem; margin-top: 2px; }
-    .up { color: #b3261e; } .down { color: #2e7d4f; } .flat { color: var(--text-light); }
+    .up { color: #b3261e; } .down { color: var(--success); } .flat { color: var(--text-light); }
     .sd-flag { display: inline-block; font-size: .7rem; padding: 2px 8px; border-radius: 3px; margin-left: 8px; vertical-align: middle; }
-    .sd-flag.degraded { background: #fdf0e3; color: #a05a12; }
+    .sd-flag.degraded { background: var(--warning-surface); color: var(--warning); }
     .sd-flag.normal { background: var(--light-grey); color: var(--text-light); }
-    .sd-flag.better { background: #eaf6ee; color: #2e7d4f; }
+    .sd-flag.better { background: var(--success-surface); color: var(--success); }
     .sd-flag.unknown { background: var(--light-grey); color: var(--text-light); }
     .sd-add { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; align-items: end; }
     .sd-add label { display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; color: var(--navy); font-weight: 700; margin-bottom: 4px; }

@@ -259,16 +259,16 @@
     .info-panel strong { color: var(--text-dark); }
     .info-panel.warn {
       background: rgba(217, 119, 6, 0.08);
-      border-left-color: #d97706;
+      border-left-color: var(--warning);
     }
     .info-panel.danger {
       background: rgba(220, 38, 38, 0.06);
-      border-left-color: #dc2626;
+      border-left-color: var(--danger);
     }
-    .info-panel.danger strong { color: #b91c1c; }
+    .info-panel.danger strong { color: var(--danger); }
 
     .verbatim-block {
-      background: #fafafa;
+      background: var(--light-grey);
       border: 1px dashed var(--border-grey);
       padding: 12px 14px;
       border-radius: 6px;
@@ -380,7 +380,7 @@
       font-weight: 600;
     }
     .preview-section .hazmat-er {
-      color: #b91c1c;
+      color: var(--danger);
       font-weight: 700;
       font-size: 0.95rem;
     }

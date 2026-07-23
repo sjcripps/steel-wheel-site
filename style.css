@@ -23,6 +23,38 @@
   --text-light: #718096;
   --success-green: #38a169;
   --error-red: #e53e3e;
+
+  /* Semantic status ramp — added 2026-07-23.
+     Until now the palette had exactly two status colors and no warning at all,
+     so every tool that needed "caution" or a tinted status row invented its own
+     literal. The audit found 4 different greens (#1a7f37 #1e7e34 #1f8a4c
+     #2e8b57), 5 ambers (#b8860b #8a5a00 #c47f17 #b65900 #f0b268) and 3 reds
+     (#b3261e #d32f2f #c62828) across 9 tools. Hardcoded color where a token
+     belongs is the exact tell the design standard calls out.
+
+     Values are the in-codebase colors adjusted to clear WCAG AA (4.5:1) against
+     BOTH their own tint and white -- measured, not eyeballed. Note the most
+     COMMON amber (#b8860b, 3 tools) was rejected: it scores 3.06:1 on its own
+     tint, so the popular value was the inaccessible one. Success was nudged
+     #1a7f37 -> #166f2e for the same reason (4.47 -> 5.52).
+       success #166f2e  5.52 on tint / 6.27 on white
+       warning #8a5a00  5.58 / 5.93
+       danger  #b3261e  5.72 / 6.54
+     Pair every status color with its -surface tint and -border; never hand-mix
+     a new one. --warning-on-dark is the light amber for the navy hero badge,
+     where the dark ambers above would be unreadable.
+     Standard: docs/sop-software-build-methodology.md +
+     ~/projects/workmate/docs/DESIGN_POLISH_PLAN.md */
+  --success: #166f2e;
+  --success-surface: #e6f4ea;
+  --success-border: #bfe3ca;
+  --warning: #8a5a00;
+  --warning-surface: #fff8e1;
+  --warning-border: #f0d9a8;
+  --danger: #b3261e;
+  --danger-surface: #fdecea;
+  --danger-border: #f5c6c2;
+  --warning-on-dark: #f0b268;
 }
 
 html {

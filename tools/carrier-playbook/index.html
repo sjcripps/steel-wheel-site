@@ -19,7 +19,7 @@
     .tool-hero .badge {
       display: inline-block;
       background: rgba(217, 144, 74, 0.2);
-      color: #f0b268;
+      color: var(--warning-on-dark);
       font-size: 0.8rem; font-weight: 700;
       padding: 4px 12px; border-radius: 20px; margin-bottom: 12px;
       text-transform: uppercase; letter-spacing: 0.5px;
@@ -60,7 +60,7 @@
     .btn.secondary { background: var(--light-grey); color: var(--text-dark); border: 1px solid var(--border-grey); }
     .btn.small { padding: 6px 12px; font-size: 0.8rem; }
     .status-line { font-size: 0.85rem; color: var(--text-light); }
-    .status-line.err { color: #b3261e; }
+    .status-line.err { color: var(--danger); }
     .spinner {
       display: inline-block; width: 15px; height: 15px; border: 2px solid var(--border-grey);
       border-top-color: var(--steel-blue); border-radius: 50%; vertical-align: -3px;
@@ -90,8 +90,8 @@
       border-radius: 12px; text-transform: uppercase; letter-spacing: 0.3px; white-space: nowrap;
     }
     .pill.route { background: rgba(74,144,217,0.14); color: var(--steel-blue); }
-    .pill.fresh { background: #e6f4ea; color: #1a7f37; text-transform: none; }
-    .pill.lowconf { background: #fdecea; color: #b3261e; text-transform: none; }
+    .pill.fresh { background: var(--success-surface); color: var(--success); text-transform: none; }
+    .pill.lowconf { background: var(--danger-surface); color: var(--danger); text-transform: none; }
     .road-section { margin-top: 14px; }
     .road-section h4 {
       font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;
@@ -147,7 +147,7 @@
     .draft-actions { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
     .desk-select { padding: 7px 10px; border: 1px solid var(--border-grey); border-radius: 6px; font-size: 0.84rem; max-width: 100%; }
     .form-only-note {
-      font-size: 0.8rem; color: #8a5a00; background: #fff7e6; border: 1px solid #f0d9a8;
+      font-size: 0.8rem; color: var(--warning); background: var(--warning-surface); border: 1px solid var(--warning-border);
       border-radius: 8px; padding: 8px 12px; margin-bottom: 8px;
     }
     .fallback-card { border: 1px dashed var(--steel-blue); background: rgba(74,144,217,0.04); }
@@ -156,8 +156,8 @@
     /* Credit & Payer Setup (per-card collapsible) */
     details.credit-box summary { cursor: pointer; font-weight: 700; font-size: 0.9rem; color: var(--navy); }
     .credit-badges { margin: 10px 0 2px; display: flex; flex-wrap: wrap; gap: 6px; }
-    .pill.credit-lever { background: #e6f4ea; color: #1a7f37; text-transform: none; }
-    .pill.credit-gate { background: #fdecea; color: #b3261e; text-transform: none; }
+    .pill.credit-lever { background: var(--success-surface); color: var(--success); text-transform: none; }
+    .pill.credit-gate { background: var(--danger-surface); color: var(--danger); text-transform: none; }
     .pill.credit-info { background: rgba(74,144,217,0.14); color: var(--steel-blue); text-transform: none; }
     .credit-box h5 {
       font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px;

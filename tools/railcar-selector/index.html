@@ -219,9 +219,9 @@
       text-transform: uppercase;
       letter-spacing: 0.3px;
     }
-    .fit-strong { background: #e6f4ea; color: #1a7f37; }
-    .fit-good { background: #fff8e1; color: #b8860b; }
-    .fit-poor { background: #fce8e6; color: #c62828; }
+    .fit-strong { background: var(--success-surface); color: var(--success); }
+    .fit-good { background: var(--warning-surface); color: var(--warning); }
+    .fit-poor { background: var(--danger-surface); color: var(--danger); }
     .match-score {
       font-size: 0.8rem;
       color: var(--text-light);
@@ -262,10 +262,10 @@
     }
     .info-box li { margin-bottom: 4px; }
     .flags-box {
-      background: #fff8e1;
-      border: 1px solid #ffe082;
+      background: var(--warning-surface);
+      border: 1px solid var(--warning-border);
     }
-    .flags-box h3 { color: #b8860b; }
+    .flags-box h3 { color: var(--warning); }
     .questions-box {
       background: var(--light-grey);
       border: 1px solid var(--border-grey);
