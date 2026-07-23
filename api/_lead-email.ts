@@ -34,8 +34,16 @@ const SYNTHETIC_TAG_WORDS = ['test', 'smoke', 'qa', 'probe', 'monitor', 'healthc
 // two `diagnostic.check*@prairiegrain-example.com` probes spoofed a Chrome
 // user-agent AND used a local part outside SYNTHETIC_PREFIXES, so both the
 // email rule and the UA rule missed them. The origin IP did not.
+//
+// 2026-07-23: this is now an ELASTIC IP (allocated after the box was stopped
+// and started overnight, which silently moved it 54.211.122.167 -> 3.83.205.91
+// and left this rule matching nothing). Because it is elastic it survives
+// stop/start, so it will not drift again on its own. Only ever list addresses
+// we CURRENTLY hold — a released IP goes back into the AWS pool and can be
+// reassigned to a stranger, and keeping it here would flag their traffic as
+// ours and silently bin a real lead.
 const OWN_EGRESS_IPS = new Set(
-  (process.env.SWL_OWN_EGRESS_IPS || '54.211.122.167')
+  (process.env.SWL_OWN_EGRESS_IPS || '100.28.61.227')
     .split(',')
     .map((s) => s.trim())
     .filter(Boolean)
