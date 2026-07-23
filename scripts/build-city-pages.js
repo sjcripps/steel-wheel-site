@@ -56,11 +56,6 @@ function findRelatedPosts(city) {
       score += 3;
     }
 
-    // Intermodal relevant
-    if (commoditiesLower.some(c => c.includes("intermodal")) && (titleLower.includes("intermodal") || descLower.includes("intermodal"))) {
-      score += 2;
-    }
-
     // Cost/rate posts always relevant
     if (tagsLower.some(t => t.includes("cost") || t.includes("rate") || t.includes("pricing"))) {
       score += 1;
@@ -116,17 +111,17 @@ function generateCityPage(city) {
   const relatedPosts = findRelatedPosts(city);
   const nearbyCities = findNearbyCities(city);
   const fullLocation = `${city.city}, ${city.stateAbbr}`;
-  const metaDesc = `Rail freight shipping services in ${city.city}, ${city.state}. ${city.railroads.slice(0, 3).join(", ")} railroad access, intermodal terminals, and bulk commodity logistics. Steel Wheel Logistics.`;
+  const metaDesc = `Rail freight shipping services in ${city.city}, ${city.state}. ${city.railroads.slice(0, 3).join(", ")} railroad access, transload terminals, and bulk commodity logistics. Steel Wheel Logistics.`;
   const canonicalUrl = `https://steelwheellogistics.com/rail-freight/${city.slug}`;
 
   const railroadSections = city.railroads.map(rr => {
     const descriptions = {
-      "BNSF": "BNSF Railway operates one of the largest rail networks in North America, covering the western two-thirds of the United States. BNSF is a major carrier for intermodal, coal, grain, and industrial products.",
-      "Union Pacific": "Union Pacific Railroad operates the largest rail network in the U.S., spanning 23 states across the western two-thirds of the country. UP handles diverse freight including intermodal, industrial, coal, and agricultural products.",
-      "Norfolk Southern": "Norfolk Southern Railway operates a major rail network in the eastern United States, serving 22 states. NS is a leading carrier for intermodal, coal, automotive, and merchandise freight.",
-      "CSX": "CSX Transportation operates a rail network across 23 eastern states, connecting major ports, production centers, and population hubs. CSX handles intermodal, coal, chemicals, automotive, and agricultural freight.",
-      "Canadian National": "Canadian National Railway operates a transcontinental network spanning Canada and the central U.S. from the Gulf Coast to the Great Lakes. CN handles intermodal, petroleum, forest products, and grain.",
-      "Canadian Pacific Kansas City": "Canadian Pacific Kansas City (CPKC) is the only single-line railroad connecting Canada, the United States, and Mexico. CPKC handles grain, potash, automotive, and intermodal freight across its tri-national network."
+      "BNSF": "BNSF Railway operates one of the largest rail networks in North America, covering the western two-thirds of the United States. BNSF is a major carrier for coal, grain, and industrial products.",
+      "Union Pacific": "Union Pacific Railroad operates the largest rail network in the U.S., spanning 23 states across the western two-thirds of the country. UP handles diverse freight including industrial, coal, and agricultural products.",
+      "Norfolk Southern": "Norfolk Southern Railway operates a major rail network in the eastern United States, serving 22 states. NS is a leading carrier for coal, automotive, and merchandise freight.",
+      "CSX": "CSX Transportation operates a rail network across 23 eastern states, connecting major ports, production centers, and population hubs. CSX handles coal, chemicals, automotive, and agricultural freight.",
+      "Canadian National": "Canadian National Railway operates a transcontinental network spanning Canada and the central U.S. from the Gulf Coast to the Great Lakes. CN handles petroleum, forest products, and grain.",
+      "Canadian Pacific Kansas City": "Canadian Pacific Kansas City (CPKC) is the only single-line railroad connecting Canada, the United States, and Mexico. CPKC handles grain, potash, and automotive freight across its tri-national network."
     };
     return `          <div class="railroad-item">
             <h3>${rr}</h3>
@@ -140,14 +135,14 @@ function generateCityPage(city) {
   const portSection = city.portAccess ? `
       <!-- Port Connections -->
       <section class="city-section">
-        <h2>Intermodal &amp; Port Connections</h2>
+        <h2>Multimodal &amp; Port Connections</h2>
         <p>${city.portAccess}</p>
-        <p>Port access gives ${city.city} shippers the advantage of rail-to-vessel transloading for international trade. Whether you are exporting bulk commodities or importing containerized freight, the combination of rail and port infrastructure creates efficient multimodal supply chain options.</p>
+        <p>Port access gives ${city.city} shippers the advantage of rail-to-vessel transloading for international trade. Whether you are exporting or importing bulk commodities, the combination of rail and port infrastructure creates efficient multimodal supply chain options.</p>
         <p>Learn more about how transloading works in our guide: <a href="/blog/what-is-transloading">What Is Transloading?</a></p>
       </section>` : `
-      <!-- Intermodal Connections -->
+      <!-- Multimodal Connections -->
       <section class="city-section">
-        <h2>Intermodal Connections</h2>
+        <h2>Multimodal Connections</h2>
         <p>${city.city}'s rail infrastructure connects to the broader national network, providing access to ports, distribution centers, and production facilities across the country. ${city.railroads.length > 1 ? "Multiple Class I railroad connections give shippers routing flexibility and competitive rate options." : "The Class I railroad connection provides direct access to the national rail network."}</p>
       </section>`;
 
@@ -165,7 +160,7 @@ function generateCityPage(city) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="${htmlEscape(metaDesc)}">
-  <meta name="keywords" content="rail freight ${htmlEscape(city.city)}, ${htmlEscape(city.city)} rail shipping, ${htmlEscape(city.city)} railroad, ${htmlEscape(city.city)} intermodal, bulk freight ${htmlEscape(city.city)} ${htmlEscape(city.stateAbbr)}">
+  <meta name="keywords" content="rail freight ${htmlEscape(city.city)}, ${htmlEscape(city.city)} rail shipping, ${htmlEscape(city.city)} railroad, ${htmlEscape(city.city)} transload, bulk freight ${htmlEscape(city.city)} ${htmlEscape(city.stateAbbr)}">
   <link rel="canonical" href="${canonicalUrl}">
   <meta property="og:title" content="Rail Freight Shipping in ${htmlEscape(fullLocation)} | Steel Wheel Logistics">
   <meta property="og:description" content="${htmlEscape(metaDesc)}">
@@ -272,7 +267,7 @@ ${railroadSections}
         <ul class="city-list">
 ${terminalsList}
         </ul>
-        <p>These facilities handle car classification, intermodal transfers, and bulk commodity loading and unloading operations. Learn how classification yards sort and route freight in our article: <a href="/blog/how-railroad-classification-yards-work">How Railroad Classification Yards Work</a>.</p>
+        <p>These facilities handle car classification, transload, and bulk commodity loading and unloading operations. Learn how classification yards sort and route freight in our article: <a href="/blog/how-railroad-classification-yards-work">How Railroad Classification Yards Work</a>.</p>
       </section>
 
       <!-- Commodities -->
@@ -365,18 +360,18 @@ ${cityCards}
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Rail freight shipping services across 50 major U.S. cities. Find railroad access, intermodal terminals, and bulk commodity logistics in your area. Steel Wheel Logistics.">
-  <meta name="keywords" content="rail freight by city, rail shipping locations, railroad terminals, intermodal facilities, bulk freight shipping, rail logistics">
+  <meta name="description" content="Rail freight shipping services across 50 major U.S. cities. Find railroad access, transload terminals, and bulk commodity logistics in your area. Steel Wheel Logistics.">
+  <meta name="keywords" content="rail freight by city, rail shipping locations, railroad terminals, transload facilities, bulk freight shipping, rail logistics">
   <link rel="canonical" href="https://steelwheellogistics.com/rail-freight">
   <meta property="og:title" content="Rail Freight Shipping by City | Steel Wheel Logistics">
-  <meta property="og:description" content="Rail freight shipping services across 50 major U.S. cities. Find railroad access, intermodal terminals, and bulk commodity logistics in your area.">
+  <meta property="og:description" content="Rail freight shipping services across 50 major U.S. cities. Find railroad access, transload terminals, and bulk commodity logistics in your area.">
   <meta property="og:url" content="https://steelwheellogistics.com/rail-freight">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Steel Wheel Logistics">
   <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Rail Freight Shipping by City | Steel Wheel Logistics">
-  <meta name="twitter:description" content="Rail freight shipping services across 50 major U.S. cities. Find railroad access, intermodal terminals, and bulk commodity logistics in your area.">
+  <meta name="twitter:description" content="Rail freight shipping services across 50 major U.S. cities. Find railroad access, transload terminals, and bulk commodity logistics in your area.">
   <meta name="twitter:image" content="https://steelwheellogistics.com/images/logo-192.png">
   <title>Rail Freight Shipping by City | Steel Wheel Logistics</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
