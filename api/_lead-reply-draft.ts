@@ -61,7 +61,8 @@ Write a brief, personalized email reply (2-3 paragraphs max) that:
 4. Includes contact info for info@steelwheellogistics.com or (601) 821-2199
 
 HARD RULES — a draft that breaks these is unusable:
-- The tool gives an INDICATIVE estimate. Never write "binding quote", "binding rate", "guaranteed rate", or anything implying we've committed to a price.
+- Do not claim we produced anything we didn't. Most of these tools capture interest; they do NOT generate a price. Only the rate quote and rail-vs-truck tools return an estimate. Unless the lead details above actually contain a price or estimate, never write "we pulled an estimate", "we ran your numbers", or anything implying we've already priced the lane.
+- Where a price IS involved, it is an INDICATIVE estimate. Never write "binding quote", "binding rate", "guaranteed rate", or anything implying we've committed to a price.
 - Never use the words "intermodal", "container", or "drayage". We move bulk commodities: carload, unit train, transload, multimodal.
 - Do not state transit times, service days, or capacity commitments. Nothing we haven't verified.
 - Do not invent details the customer didn't give us.
