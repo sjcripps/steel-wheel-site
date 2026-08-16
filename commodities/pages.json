@@ -1,0 +1,385 @@
+{
+  "generated": true,
+  "pages": [
+    {
+      "loc": "https://steelwheellogistics.com/commodities",
+      "priority": "0.8"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/corn",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/wheat",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/soybeans",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/ddgs",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/soybean-meal",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/fertilizer",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/potash",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/cement",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/frac-sand",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/aggregates",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/coal",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/iron-ore",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/steel",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/scrap-metal",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/lumber",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/paper",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/plastic-pellets",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/crude-oil",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/ethanol",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/chemicals",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/lpg-propane",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/vehicles",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/barite",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/soda-ash",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/silica",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/wood-pellets",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/petroleum-coke",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/commodities/salt",
+      "priority": "0.7"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/appalachian-coal-country-met-thermal",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/baton-rouge-gulf-petrochemical-grain",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/bnsf-alliance-texas-dallas-hub",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/centerpoint-joliet-chicago-bypass-hub",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/chicago-north-america-s-only-universal-interchange",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/cpkc-jackson-richland-ms",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/greer-sc-bmw-auto-parts-hub",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/gulf-coast-chemical-corridor",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/jacksonville-jaxport-forest-products-hub",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/laredo-tx-us-mexico-rail-gateway-via-cpkc",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/los-angeles-long-beach-cargo-terminal",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/louisville-ohio-river-rail-barge-transfer",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/memphis-multi-modal-crossroads",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/midwest-corn-belt-grain-steel-autos",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/northern-plains-grain-bakken-crude",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/port-of-baltimore-autos-farm-equipment",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/port-of-houston-national-leader",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/port-of-mobile-1-us-forest-products",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/port-of-new-orleans",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/port-of-ny-nj-cargo-terminal",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/port-of-virginia-offshore-wind-surge",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/powder-river-basin-coal",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/saskatchewan-potash-mines",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/savannah-garden-city-terminal-se-multimodal-gateway",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/seattle-tacoma-cargo-terminal-pacific-northwest",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/southeast-pine-belt-forest-products",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/st-louis-primary-river-transfer-point",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/vancouver-bc-canadian-grain-potash-export",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/vancouver-bc-us-canada-rail-gateway",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/kansas-city-rail-hub-universal-interchange-2",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/north-platte-up-bailey-yard-world-s-largest",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/omaha-up-hq-bakken-grain-yard",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/council-bluffs-up-yard",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/pueblo-evraz-rocky-mountain-steel",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/denver-up-bnsf-front-range-hub",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/wichita-grain-aerospace",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/topeka-bnsf-hub",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/belen-albuquerque-bnsf-transcon",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/sioux-falls-northern-plains-grain",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/salt-lake-city-up-multimodal",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/duluth-superior-great-lakes-port-iron-ore-grain",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/mesabi-range-us-iron-ore-origin",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/twin-cities-minneapolis-st-paul-grain-hub",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/detroit-dearborn-auto-manufacturing-hub",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/toledo-lake-erie-coal-iron-ore-port",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/cleveland-cleveland-cliffs-steel-hub",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/gary-hammond-us-steel-cleveland-cliffs",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/indianapolis-csx-ns-crossroads",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/cincinnati-csx-queensgate-hub",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/milwaukee-grain-beverage-hub",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/pine-bluff-up-yard",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/spokane-pnw-grain-corridor",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/birmingham-southern-steel-belt",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/pittsburgh-steel-coal-origin",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/roseville-up-yard-for-sf-bay-area",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/phoenix-tucson-mexico-la-corridor",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/jacksonville-csx-headquarters-rail-hub",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/selkirk-csx-new-york-hub",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/tulsa-bnsf-up-crude-grain",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/st-paul-bnsf-northtown-annex",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/fort-worth-bnsf-hq",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/east-st-louis-bnsf-ns-csx",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/nashville-csx-radnor-yard",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/atlanta-ns-inman-csx-hulsey",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/el-paso-santa-teresa-up-bnsf-mexico-gateway",
+      "priority": "0.5"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/rail-hubs/toronto-cn-macmillan-cpkc-toronto-yard",
+      "priority": "0.5"
+    }
+  ]
+}

@@ -1092,6 +1092,40 @@
       document.getElementById('noResultsCta').href = href;
     }
 
+    // STCC -> estimator commodity id (source of truth: the slug/stcc/est table
+    // in scripts/build-commodity-pages.js). Used to hand a code lookup into
+    // the rate estimator pre-filled. Prefix-matched both directions so a
+    // 3-digit group row ("011") still maps when every mapped family under it
+    // agrees; ambiguous prefixes (e.g. "28" spans plastic/fertilizer/
+    // chemicals) get NO link rather than a wrong one.
+    var STCC_TO_EST = {
+      '01132': 'grain', '01137': 'grain', '01144': 'grain',
+      '20421': 'ddgs', '20923': 'ddgs',
+      '28712': 'fertilizer', '14713': 'fertilizer',
+      '32411': 'cement', '14413': 'sand-frac', '14212': 'aggregates',
+      '11212': 'coal', '29914': 'coal', '10112': 'iron-ore',
+      '33122': 'steel', '40211': 'scrap-metal', '24211': 'lumber',
+      '26211': 'paper', '28211': 'plastic', '13111': 'crude-oil',
+      '28184': 'ethanol', '28199': 'chemicals', '29121': 'lpg',
+      '37112': 'automotive', '14711': 'barite',
+    };
+    function estFor(code) {
+      var digits = String(code || '').replace(/\D/g, '');
+      if (!digits) return null;
+      var hits = {};
+      for (var k in STCC_TO_EST) {
+        if (k.indexOf(digits) === 0 || digits.indexOf(k) === 0) hits[STCC_TO_EST[k]] = true;
+      }
+      var ids = Object.keys(hits);
+      return ids.length === 1 ? ids[0] : null;
+    }
+    function estLinkHtml(code) {
+      var est = estFor(code);
+      if (!est) return '';
+      return ' <a class="est-handoff" href="/tools/rail-rate-quote?commodity=' + est +
+        '">Price this commodity by rail &rarr;</a>';
+    }
+
     function renderHierItem(x) {
       var h = x.h;
       var path = crumbs(h.code);
@@ -1107,7 +1141,7 @@
         '<span class="level-pill">' + levelLabel(h.code) + '</span>' +
         (crumbHtml ? '<div class="result-crumbs">' + crumbHtml + '</div>' : '') +
         (x.alias ? '<div class="alias-note">Also listed as &ldquo;' + escapeHtml(x.alias.term) + '&rdquo; (' + escapeHtml(x.alias.src) + ')</div>' : '') +
-        '<div class="result-detail">' + famNote + ' Not sure this is the right family? <a href="' + contactHref(lastQuery) + '">Talk to us</a> — classification is part of what we do.</div>' +
+        '<div class="result-detail">' + famNote + ' Not sure this is the right family? <a href="' + contactHref(lastQuery) + '">Talk to us</a> — classification is part of what we do.' + estLinkHtml(h.code) + '</div>' +
         '</div>';
     }
 
@@ -1120,7 +1154,7 @@
         '<span class="result-desc">' + escapeHtml(c.desc) + '</span>' +
         '<span class="source-badge">' + escapeHtml(c.src) + '</span>' +
         famDesc +
-        '<div class="result-detail">Published by the railroad named on the badge — treat it as a strong candidate, and have your serving railroad confirm it applies to your shipment and route.</div>' +
+        '<div class="result-detail">Published by the railroad named on the badge — treat it as a strong candidate, and have your serving railroad confirm it applies to your shipment and route.' + estLinkHtml(c.code7) + '</div>' +
         '</div>';
     }
 

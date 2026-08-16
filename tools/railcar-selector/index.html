@@ -739,6 +739,51 @@
         `;
       }
 
+      // Locally-built handoff cards (the API only supplies the consult CTA):
+      // carry the picked car + commodity into the capacity sizer and the rate
+      // estimator so the chain composes instead of dead-ending. Three id
+      // vocabularies are in play — selector ids map to each tool's own ids;
+      // anything unmapped degrades to the plain tool link.
+      const SEL_TO_EST = {
+        aggregate: 'aggregates', sand: 'sand-frac', cement: 'cement',
+        grain: 'grain', fertilizer: 'fertilizer', plastics: 'plastic',
+        scrap_metal: 'scrap-metal', steel_products: 'steel', lumber: 'lumber',
+        paper_packaged: 'paper', liquids_chemicals: 'chemicals',
+        heavy_equipment: 'machinery',
+      };
+      const SEL_TO_CAP = {
+        aggregate: 'aggregate', sand: 'frac-sand', cement: 'cement',
+        grain: 'corn', fertilizer: 'dap', plastics: 'plastic-pellets',
+        scrap_metal: 'steel-scrap', steel_products: 'steel-coil',
+        lumber: 'lumber', paper_packaged: 'paper-rolls',
+      };
+      const EST_CARS = ['covered-hopper', 'open-hopper', 'gondola', 'boxcar',
+                        'tank-car', 'auto-rack', 'flat-car', 'refrigerator'];
+      try {
+        const selId = document.getElementById('commodity').value;
+        const topCar = (data.top_matches && data.top_matches[0] &&
+                        data.top_matches[0].car_type_id || '').replace(/_/g, '-');
+        const estQ = new URLSearchParams();
+        if (SEL_TO_EST[selId]) estQ.set('commodity', SEL_TO_EST[selId]);
+        if (EST_CARS.includes(topCar)) estQ.set('car_type', topCar);
+        const capHref = '/tools/railcar-capacity' +
+          (SEL_TO_CAP[selId] ? '?commodity=' + SEL_TO_CAP[selId] : '');
+        const estHref = '/tools/rail-rate-quote' +
+          (estQ.toString() ? '?' + estQ.toString() : '');
+        ctaHtml += `
+          <div class="cta-card">
+            <h3>How many cars will you need?</h3>
+            <p>Size the fleet for your tonnage in the railcar capacity calculator — pre-filled with this commodity.</p>
+            <a href="${capHref}" class="cta-btn">Calculate cars needed &rarr;</a>
+          </div>
+          <div class="cta-card">
+            <h3>What would this move cost?</h3>
+            <p>Get an indicative rate for your lane with the commodity and car type carried over.</p>
+            <a href="${estHref}" class="cta-btn">Price this move &rarr;</a>
+          </div>
+        `;
+      } catch (e) { console.warn('handoff cards skipped:', e); }
+
       ctaEl.innerHTML = ctaHtml;
 
       // Scroll to results

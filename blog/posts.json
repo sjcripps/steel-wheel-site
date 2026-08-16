@@ -1,7 +1,62 @@
 [
   {
+    "slug": "railroad-classification-system",
+    "title": "Railroad Classifications: Class I, II, and III by Size and Revenue",
+    "description": "Railroad classifications explained: the STB revenue thresholds behind Class I, II, and III railroads, how the tiers rank by size, and why there is no Class A.",
+    "date": "2026-08-15",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "railroad classification system",
+      "fundamentals",
+      "class 1 railroads by size",
+      "class 3 railroads",
+      "class a railroads",
+      "class 1 railway",
+      "STB revenue threshold",
+      "FRA track classes"
+    ],
+    "category": "Fundamentals",
+    "read_minutes": 10
+  },
+  {
+    "slug": "class-i-railroads-explained",
+    "title": "Class I Railroads Explained: How Many There Are and Who They Serve",
+    "description": "Class I railroads explained: how many there are in 2026, the STB revenue threshold that defines them, each carrier's network, and what it means for shippers.",
+    "date": "2026-08-13",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "class i railroads",
+      "fundamentals",
+      "class 1 railroad",
+      "class one railroads",
+      "how many class 1 railroads are there",
+      "STB revenue threshold",
+      "BNSF UP CSX NS CN CPKC"
+    ],
+    "category": "Fundamentals",
+    "read_minutes": 11
+  },
+  {
+    "slug": "what-is-a-short-line-railroad",
+    "title": "What Is a Short Line Railroad? Class III Carriers Explained (2026)",
+    "description": "What is a short line railroad? Class III carriers defined: how they connect shippers to the Class I network, how they price, and how to work with one.",
+    "date": "2026-08-11",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "define short line",
+      "fundamentals",
+      "short line railroad",
+      "class 3 railroads",
+      "class III railroad",
+      "regional railroad",
+      "american short line and regional railroad association"
+    ],
+    "category": "Fundamentals",
+    "read_minutes": 10
+  },
+  {
     "slug": "rail-pulse-2026-07-21",
-    "title": "Rail Pulse — Week Ending July 11, 2026",
+    "title": "Rail Pulse \u2014 Week Ending July 11, 2026",
     "description": "Steel Wheel Logistics' weekly rail freight intelligence brief for the week ending July 11, 2026. Verified AAR carload and total traffic volume, per-carrier service metrics, EIA diesel + fuel surcharges, USDA grain transport indicators, and a live indicative lane quote.",
     "date": "2026-07-21",
     "author": "Steel Wheel Logistics",
@@ -16,7 +71,7 @@
   },
   {
     "slug": "rail-pulse-2026-07-14",
-    "title": "Rail Pulse — Week Ending July 4, 2026",
+    "title": "Rail Pulse \u2014 Week Ending July 4, 2026",
     "description": "Steel Wheel Logistics' weekly rail freight intelligence brief for the week ending July 4, 2026. Verified AAR carload and total traffic volume, per-carrier service metrics, EIA diesel + fuel surcharges, USDA grain transport indicators, and a live indicative lane quote.",
     "date": "2026-07-14",
     "author": "Steel Wheel Logistics",
@@ -79,7 +134,7 @@
   },
   {
     "slug": "how-much-does-it-cost-to-ship-by-rail",
-    "title": "How Much Does It Cost to Ship by Rail? 2026 Rail Freight Rates Guide",
+    "title": "How Much Does It Cost to Ship by Rail? 2026 Rates Guide",
     "date": "2026-06-01",
     "author": "Steel Wheel Logistics",
     "description": "How much does it cost to ship by rail in 2026? Rail line-haul runs about 2-4 cents per ton-mile, with carload moves often $2,000-$5,000+ depending on lane, commodity, and volume. What goes into a rail rate, cost by commodity, and how to estimate your own lane.",
@@ -192,7 +247,7 @@
   {
     "slug": "hazmat-rail-bill-of-lading-49-cfr-172",
     "title": "Hazmat Rail Bill of Lading: 49 CFR 172 Compliance Guide (2026)",
-    "description": "Hazmat rail bill of lading guide: §172.204 shipper certification (verbatim text), §172.604 emergency response phone, §172.704 employee training. 2025 PHMSA penalty max $238,809.",
+    "description": "Hazmat rail bill of lading guide: \u00a7172.204 shipper certification (verbatim text), \u00a7172.604 emergency response phone, \u00a7172.704 employee training. 2025 PHMSA penalty max $238,809.",
     "date": "2026-05-16",
     "author": "Steel Wheel Logistics",
     "tags": [
@@ -268,7 +323,7 @@
   {
     "slug": "cross-border-rail-bill-of-lading-mexico",
     "title": "Cross-Border Rail Bill of Lading to Mexico: Carta Porte 3.1, Pedimento, and AES (2026)",
-    "description": "Cross-border rail BoL US→MX: Carta Porte 3.1 (TipoTransp=04 NOT 02), Agente Aduanal vs Article 40 self-clearance, Pedimento at SAT VUCEM, AES ITN for US exports >$2,500. 6 commercial interchanges.",
+    "description": "Cross-border rail BoL US\u2192MX: Carta Porte 3.1 (TipoTransp=04 NOT 02), Agente Aduanal vs Article 40 self-clearance, Pedimento at SAT VUCEM, AES ITN for US exports >$2,500. 6 commercial interchanges.",
     "date": "2026-05-16",
     "author": "Steel Wheel Logistics",
     "tags": [
@@ -284,7 +339,7 @@
   {
     "slug": "cross-border-rail-bill-of-lading-canada",
     "title": "Cross-Border Rail Bill of Lading to Canada: CARM, ACI eManifest, and USMCA (2026)",
-    "description": "Cross-border rail BoL US→CA: CARM Client Portal registration mandatory since Oct 2024, ACI eManifest filed by carrier 2hr before arrival, RPP bond, USMCA certification. Canadian customs broker is OPTIONAL post-CARM.",
+    "description": "Cross-border rail BoL US\u2192CA: CARM Client Portal registration mandatory since Oct 2024, ACI eManifest filed by carrier 2hr before arrival, RPP bond, USMCA certification. Canadian customs broker is OPTIONAL post-CARM.",
     "date": "2026-05-16",
     "author": "Steel Wheel Logistics",
     "tags": [
@@ -314,7 +369,7 @@
   },
   {
     "slug": "customs-broker-for-rail-when-you-need-one",
-    "title": "Customs Broker for Rail: When You Actually Need One (and When You Don't) — 2026",
+    "title": "Customs Broker for Rail: When You Actually Need One (and When You Don't) \u2014 2026",
     "description": "Customs broker for rail: US broker is OPTIONAL (self-file ACE/AES with continuous bond), Canada broker OPTIONAL post-CARM 2024, Mexico Agente Aduanal dominant-but-not-strictly-mandatory under Article 40.",
     "date": "2026-05-16",
     "author": "Steel Wheel Logistics",
@@ -329,8 +384,8 @@
   },
   {
     "slug": "hazmat-emergency-response-phone-chemtrec-3e-infotrac",
-    "title": "Rail Hazmat Emergency Response Phone: CHEMTREC, 3E, INFOTRAC and the §172.604 Rules (2026)",
-    "description": "Hazmat rail BoL emergency response phone: §172.604 live-answer rule, CHEMTREC vs 3E vs INFOTRAC vs ChemTel comparison, self-provided requirements. Listing a number without a contract = federal violation up to $99,756/day.",
+    "title": "Rail Hazmat Emergency Response Phone: CHEMTREC, 3E, INFOTRAC and the \u00a7172.604 Rules (2026)",
+    "description": "Hazmat rail BoL emergency response phone: \u00a7172.604 live-answer rule, CHEMTREC vs 3E vs INFOTRAC vs ChemTel comparison, self-provided requirements. Listing a number without a contract = federal violation up to $99,756/day.",
     "date": "2026-05-16",
     "author": "Steel Wheel Logistics",
     "tags": [
@@ -379,8 +434,8 @@
   },
   {
     "slug": "dot-hazmat-employee-certification-rail",
-    "title": "DOT Hazmat Employee Training for Rail Shippers: 49 CFR §172.704 (2026)",
-    "description": "49 CFR §172.704 hazmat employee training for rail shippers: 5 training categories, 90-day initial / 3-year recurrent, who counts as a hazmat employee. PHMSA training-violation min $617. Recordkeeping required for employment + 90 days.",
+    "title": "DOT Hazmat Employee Training for Rail Shippers: 49 CFR \u00a7172.704 (2026)",
+    "description": "49 CFR \u00a7172.704 hazmat employee training for rail shippers: 5 training categories, 90-day initial / 3-year recurrent, who counts as a hazmat employee. PHMSA training-violation min $617. Recordkeeping required for employment + 90 days.",
     "date": "2026-05-16",
     "author": "Steel Wheel Logistics",
     "tags": [
@@ -630,7 +685,7 @@
   },
   {
     "slug": "private-rail-spur-cost",
-    "title": "Private Rail Spur: Costs, Requirements, and Is It Worth It?",
+    "title": "What Is a Rail Spur? Private Spur Costs & Permits (2026)",
     "description": "Private rail spur cost guide: track, turnouts, crossings, permits, and connection fees. See real budget ranges and find out if a spur pays off for your facility.",
     "date": "2026-04-23",
     "author": "Steel Wheel Logistics",
@@ -704,7 +759,7 @@
   },
   {
     "slug": "stcc-codes-explained",
-    "title": "STCC Codes Explained: A Shipper's Quick Reference",
+    "title": "STCC Codes Explained: Find Your STCC Code (With Examples)",
     "description": "STCC codes explained for rail shippers. Learn what Standard Transportation Commodity Codes are, how they work, and why getting them right affects your rates.",
     "date": "2026-04-11",
     "author": "Steel Wheel Logistics",
@@ -748,7 +803,7 @@
   },
   {
     "slug": "short-line-vs-class-i-railroads",
-    "title": "Short Line vs Class I Railroads: What Shippers Need to Know",
+    "title": "Class I Railroads: 2026 List & How Short Lines Compare",
     "description": "Short line vs Class I railroads explained for shippers: how they differ in service, pricing, and operations, and why both matter for your freight.",
     "date": "2026-04-04",
     "author": "Steel Wheel Logistics",
@@ -778,8 +833,8 @@
   },
   {
     "slug": "unit-trains-vs-manifest-service",
-    "title": "Unit Trains vs Manifest Service: Which Is Right for Your Freight?",
-    "description": "Unit trains vs manifest service — how each rail shipping method works, what they cost, and which one fits your freight volume. A practical guide for shippers.",
+    "title": "Manifest vs Unit Trains: Costs, Differences & When to Use",
+    "description": "Unit trains vs manifest service \u2014 how each rail shipping method works, what they cost, and which one fits your freight volume. A practical guide for shippers.",
     "date": "2026-03-28",
     "author": "Steel Wheel Logistics",
     "tags": [
@@ -794,7 +849,7 @@
   {
     "slug": "rail-car-types-explained",
     "title": "Rail Car Types Explained: Hoppers, Tank Cars, Gondolas, and More",
-    "description": "Rail car types explained — hoppers, tank cars, gondolas, flatcars, boxcars, and more. Which railcar fits your commodity and how to pick the right equipment.",
+    "description": "Rail car types explained \u2014 hoppers, tank cars, gondolas, flatcars, boxcars, and more. Which railcar fits your commodity and how to pick the right equipment.",
     "date": "2026-03-24",
     "author": "Steel Wheel Logistics",
     "tags": [
@@ -810,7 +865,7 @@
   },
   {
     "slug": "first-time-shipping-by-rail",
-    "title": "How to Ship by Rail for the First Time: A Step-by-Step Checklist",
+    "title": "How to Ship by Rail for the First Time: 7-Step Checklist",
     "description": "Learn how to ship by rail for the first time. A step-by-step checklist covering equipment, documentation, pricing, and logistics for new rail shippers.",
     "date": "2026-03-21",
     "author": "Steel Wheel Logistics",
@@ -914,7 +969,7 @@
   {
     "slug": "shipping-grain-by-rail",
     "title": "Shipping Grain by Rail: The Complete Guide",
-    "description": "Learn how to ship grain by rail — equipment, costs, seasonal trends, and unit train logistics. A practical guide for grain shippers and elevator operators.",
+    "description": "Learn how to ship grain by rail \u2014 equipment, costs, seasonal trends, and unit train logistics. A practical guide for grain shippers and elevator operators.",
     "date": "2026-03-10",
     "author": "Steel Wheel Logistics",
     "tags": [
@@ -940,7 +995,7 @@
   },
   {
     "slug": "rail-vs-truck-freight-cost-comparison",
-    "title": "Rail vs Truck Freight Cost: When Rail Saves You Money",
+    "title": "Rail vs Truck Costs 2026: 2-4\u00a2 vs 15-25\u00a2 per Ton-Mile",
     "description": "Compare rail vs truck freight costs per ton-mile. Learn when rail saves money, where trucking wins, and how to find the break-even point for your shipments.",
     "date": "2026-02-26",
     "author": "Steel Wheel Logistics",
@@ -953,7 +1008,7 @@
   },
   {
     "slug": "how-rail-freight-shipping-works",
-    "title": "How Rail Freight Shipping Works: A Complete Guide for Shippers",
+    "title": "How Rail Freight Shipping Works: Step-by-Step for Shippers",
     "description": "Learn how rail freight shipping works from booking to delivery. A practical guide for shippers covering the process, key players, service types, and what to expect.",
     "date": "2026-02-26",
     "author": "Steel Wheel Logistics",

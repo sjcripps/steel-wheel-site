@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23",
+  "generated_at": "2026-08-15",
   "pages": [
     {
       "loc": "/transload",
@@ -30,6 +30,10 @@
       "priority": "0.6"
     },
     {
+      "loc": "/transload/baja-california",
+      "priority": "0.6"
+    },
+    {
       "loc": "/transload/california",
       "priority": "0.6"
     },
@@ -46,11 +50,27 @@
       "priority": "0.6"
     },
     {
+      "loc": "/transload/mexico-city",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/transload/estado-de-mexico",
+      "priority": "0.6"
+    },
+    {
       "loc": "/transload/florida",
       "priority": "0.6"
     },
     {
       "loc": "/transload/georgia",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/transload/guanajuato",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/transload/hidalgo",
       "priority": "0.6"
     },
     {
@@ -67,6 +87,10 @@
     },
     {
       "loc": "/transload/indiana",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/transload/jalisco",
       "priority": "0.6"
     },
     {
@@ -95,6 +119,10 @@
     },
     {
       "loc": "/transload/maine",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/transload/michoacan",
       "priority": "0.6"
     },
     {
@@ -186,6 +214,10 @@
       "priority": "0.6"
     },
     {
+      "loc": "/transload/queretaro",
+      "priority": "0.6"
+    },
+    {
       "loc": "/transload/rhode-island",
       "priority": "0.6"
     },
@@ -202,6 +234,18 @@
       "priority": "0.6"
     },
     {
+      "loc": "/transload/san-luis-potosi",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/transload/sonora",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/transload/tamaulipas",
+      "priority": "0.6"
+    },
+    {
       "loc": "/transload/tennessee",
       "priority": "0.6"
     },
@@ -215,6 +259,10 @@
     },
     {
       "loc": "/transload/virginia",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/transload/veracruz",
       "priority": "0.6"
     },
     {
@@ -266,11 +314,19 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/enterprise-al",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/montgomery-al",
       "priority": "0.5"
     },
     {
       "loc": "/transload/fort-smith-ar",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/malvern-ar",
       "priority": "0.5"
     },
     {
@@ -306,11 +362,11 @@
       "priority": "0.5"
     },
     {
-      "loc": "/transload/long-beach-ca",
+      "loc": "/transload/san-diego-ca",
       "priority": "0.5"
     },
     {
-      "loc": "/transload/san-diego-ca",
+      "loc": "/transload/long-beach-ca",
       "priority": "0.5"
     },
     {
@@ -402,11 +458,11 @@
       "priority": "0.5"
     },
     {
-      "loc": "/transload/dalton-ga",
+      "loc": "/transload/garden-city-ga",
       "priority": "0.5"
     },
     {
-      "loc": "/transload/garden-city-ga",
+      "loc": "/transload/dalton-ga",
       "priority": "0.5"
     },
     {
@@ -419,6 +475,10 @@
     },
     {
       "loc": "/transload/bainbridge-ga",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/brunswick-ga",
       "priority": "0.5"
     },
     {
@@ -522,15 +582,15 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/baton-rouge-la",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/geismar-la",
       "priority": "0.5"
     },
     {
       "loc": "/transload/lafayette-la",
-      "priority": "0.5"
-    },
-    {
-      "loc": "/transload/baton-rouge-la",
       "priority": "0.5"
     },
     {
@@ -558,11 +618,15 @@
       "priority": "0.5"
     },
     {
-      "loc": "/transload/detroit-mi",
+      "loc": "/transload/grand-rapids-mi",
       "priority": "0.5"
     },
     {
-      "loc": "/transload/grand-rapids-mi",
+      "loc": "/transload/bay-city-mi",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/detroit-mi",
       "priority": "0.5"
     },
     {
@@ -610,6 +674,14 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/columbus-ms",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/meridian-ms",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/shelby-mt",
       "priority": "0.5"
     },
@@ -623,6 +695,10 @@
     },
     {
       "loc": "/transload/winston-salem-nc",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/fayetteville-nc",
       "priority": "0.5"
     },
     {
@@ -706,15 +782,19 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/youngstown-oh",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/lima-oh",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/massillon-oh",
       "priority": "0.5"
     },
     {
       "loc": "/transload/akron-oh",
-      "priority": "0.5"
-    },
-    {
-      "loc": "/transload/lima-oh",
       "priority": "0.5"
     },
     {
@@ -735,6 +815,10 @@
     },
     {
       "loc": "/transload/ardmore-ok",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/catoosa-ok",
       "priority": "0.5"
     },
     {
@@ -806,6 +890,10 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/pottstown-pa",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/williamsport-pa",
       "priority": "0.5"
     },
@@ -831,6 +919,10 @@
     },
     {
       "loc": "/transload/saskatoon-sk",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/san-luis-potosi-sl",
       "priority": "0.5"
     },
     {
@@ -862,6 +954,10 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/garland-tx",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/lubbock-tx",
       "priority": "0.5"
     },
@@ -886,10 +982,6 @@
       "priority": "0.5"
     },
     {
-      "loc": "/transload/garland-tx",
-      "priority": "0.5"
-    },
-    {
       "loc": "/transload/la-porte-tx",
       "priority": "0.5"
     },
@@ -899,6 +991,10 @@
     },
     {
       "loc": "/transload/salt-lake-city-ut",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/ogden-ut",
       "priority": "0.5"
     },
     {

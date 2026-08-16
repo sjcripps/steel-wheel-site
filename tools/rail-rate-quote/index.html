@@ -701,6 +701,34 @@
     /* Route-map visualization — rendered below the breakdown table after
        a successful /quote. Uses Leaflet polylines coloured per carrier.
        Hidden by default; JS sets display:block once the map has bounds. */
+    .map-legend {
+      background: rgba(255,255,255,0.92);
+      padding: 6px 9px;
+      border-radius: 4px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    .map-legend .legend-row { display: block; white-space: nowrap; }
+    .map-legend i {
+      display: inline-block;
+      width: 14px; height: 4px;
+      margin-right: 6px;
+      vertical-align: middle;
+      border-radius: 2px;
+    }
+    .map-endpoint-label {
+      font-weight: 600;
+      font-size: 12px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(0,0,0,0.15);
+    }
+    .map-interchange-label {
+      font-size: 11px;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(0,0,0,0.12);
+      color: #444;
+    }
     #route-map {
       height: 400px;
       width: 100%;
@@ -979,6 +1007,10 @@
                real lane and already given us an email. Prefilled so saving it
                is one click, not a re-entry. -->
           <a href="/tools/rail-dashboard" class="cta-btn cta-btn-secondary" id="trackLaneBtn">Track This Lane</a>
+          <!-- Handoff into the directory pre-filtered to the lane: the JS picks
+               whichever end sits farther off-rail (that end needs the transload)
+               and carries the commodity through. -->
+          <a href="/tools/transload-directory" class="cta-btn cta-btn-secondary" id="transloadBtn">Find Transload Facilities</a>
         </div>
 
       </div>
@@ -1235,6 +1267,26 @@
         }
       }
       commSel.addEventListener('change', applyCarRestrictions);
+
+      // Deep-link prefill: /tools/rail-rate-quote?commodity=coal lands with the
+      // commodity picked and the right car auto-selected. The /commodities/*
+      // reference pages hand off through this — the tools compose instead of
+      // each starting from a blank form. Silently ignores unknown ids.
+      const deepLink = new URLSearchParams(location.search);
+      const preselect = deepLink.get('commodity');
+      if (preselect && commSel.querySelector(`option[value="${CSS.escape(preselect)}"]`)) {
+        commSel.value = preselect;
+        applyCarRestrictions();
+      }
+      // ?car_type= (railcar-selector/capacity handoff) — applied AFTER
+      // applyCarRestrictions since that overwrites carSel.value with the
+      // commodity default; only honored if the car is allowed for the
+      // selected commodity (or no commodity picked). Unknown values ignored.
+      const preCar = deepLink.get('car_type');
+      if (preCar) {
+        const opt = carSel.querySelector(`option[value="${CSS.escape(preCar)}"]`);
+        if (opt && !opt.disabled) carSel.value = preCar;
+      }
     }
 
     loadDropdowns();
@@ -1302,6 +1354,18 @@
       'AGU','BCN','BCS','CAM','CHP','CHH','COA','COL','CMX','DUR','GUA','GRO',
       'HID','JAL','MEX','MIC','MOR','NAY','NLE','OAX','PUE','QUE','ROO','SLP',
       'SIN','SON','TAB','TAM','TLA','VER','YUC','ZAC',
+      // Mexico (2-letter GeoNames admin1 codes the cities gazetteer stores, so a
+      // customer typing "Veracruz, VE" / "Mexico City, DF" / "Zacatecas, ZA" passes;
+      // the actual city+state match happens server-side in lookup_city, which aliases
+      // both forms. Collisions with US/Canada codes (CO, MO, CH, ...) are harmless —
+      // validation only checks the code is a real place code, not which country.
+      // MUST STAY IN SYNC with _VALID_STATE_CODES in rail_rate_server.py. This block
+      // was present server-side but MISSING here, so the browser rejected
+      // "Zacatecas, ZA" before the request was ever sent — a real customer lane
+      // (Flagship Resources barite, 8/11) died at a validator the backend would
+      // have accepted. Frontend validation must never be STRICTER than the server.
+      'AG','BS','CM','CS','CH','CL','DF','CX','DG','GT','GR','HG','JA','MX','MI',
+      'MO','NA','OA','PU','QA','QR','SL','SI','SO','TB','TM','TL','VE','YU','ZA',
     ]);
 
     function validateStateCode(cityString) {
@@ -1534,13 +1598,13 @@
 
       // Validate state codes (US/CA/MX format)
       if (!validateStateCode(payload.origin)) {
-        errEl.textContent = 'Invalid origin state code. Use 2-letter US/CA codes (e.g., TX, ON) or 3-letter Mexico codes (e.g., QUE).';
+        errEl.textContent = 'Invalid origin state code. Use the 2-letter US/Canada code (e.g., TX, ON) or a Mexico state code (e.g., ZAC or ZA for Zacatecas, NLE or NL for Nuevo Le\u00f3n).';
         btn.disabled = false;
         btn.innerHTML = 'Calculate Estimate';
         return;
       }
       if (!validateStateCode(payload.destination)) {
-        errEl.textContent = 'Invalid destination state code. Use 2-letter US/CA codes (e.g., TX, ON) or 3-letter Mexico codes (e.g., QUE).';
+        errEl.textContent = 'Invalid destination state code. Use the 2-letter US/Canada code (e.g., TX, ON) or a Mexico state code (e.g., ZAC or ZA for Zacatecas, NLE or NL for Nuevo Le\u00f3n).';
         btn.disabled = false;
         btn.innerHTML = 'Calculate Estimate';
         return;
@@ -1583,11 +1647,34 @@
         return;
       }
 
+      // Server-side validation WHILE THE GATE IS STILL OPEN. The backend
+      // checks more than format (MX records, disposable domains) — without
+      // this pre-check a typo'd domain sails past FORMAT_RE, the gate
+      // closes, and the /quote call dies with a 400 the user has to
+      // diagnose cold (exactly the one submit failure in the first real
+      // cross-border lead's session, 7/30). Fail open: if the validator
+      // endpoint itself is unreachable, proceed — /quote still enforces
+      // the same rules.
+      submit.disabled = true;
+      submit.textContent = 'Validating...';
+      try {
+        const vres = await fetch(`${TOOLS_BASE}/api/rail-rate-validate-email`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        });
+        const v = await vres.json().catch(() => ({ ok: true }));
+        if (v && v.ok === false) {
+          errEl.textContent = v.error || 'Please enter a valid email address.';
+          submit.disabled = false;
+          submit.textContent = 'Get My Estimate';
+          return;
+        }
+      } catch (_) { /* validator unreachable — proceed, server re-checks */ }
+
       cacheEmail(email);
       cacheContact(name, phone);
       swlMarkLeadFired(TOOL_SLUG);
-      submit.disabled = true;
-      submit.textContent = 'Validating...';
       hideGate();
       submit.disabled = false;
       submit.textContent = 'Get My Estimate';
@@ -1694,18 +1781,29 @@
       const firstLeg = drawable[0];
       if (firstLeg && firstLeg.geometry.coordinates.length) {
         const o = firstLeg.geometry.coordinates[0];
-        const oName = firstLeg.from_node_name || originLabel || 'Origin';
+        // Prefer the CANONICAL city label over the raw NARN node name. NARN node
+        // names are track-feature labels, not places: the Zacatecas origin comes
+        // back as "Tren a vapor" (Spanish for "steam train"). Showing that to a
+        // shipper looks broken. Node name is kept in the popup for internal use.
+        const oName = originLabel || firstLeg.from_node_name || 'Origin';
         L.marker([o[1], o[0]]).addTo(_swlMap)
-          .bindPopup('<strong>Origin</strong><br>' + oName);
+          .bindPopup('<strong>Origin</strong><br>' + oName)
+          .bindTooltip(oName, { permanent: true, direction: 'right',
+                                className: 'map-endpoint-label' });
       }
 
       // Destination marker — anchor at the last vertex of the last drawable leg.
       const lastLeg = drawable[drawable.length - 1];
       if (lastLeg && lastLeg.geometry.coordinates.length) {
         const d = lastLeg.geometry.coordinates[lastLeg.geometry.coordinates.length - 1];
-        const dName = lastLeg.to_node_name || destLabel || 'Destination';
+        const dName = destLabel || lastLeg.to_node_name || 'Destination';
         L.marker([d[1], d[0]]).addTo(_swlMap)
-          .bindPopup('<strong>Destination</strong><br>' + dName);
+          .bindPopup('<strong>Destination</strong><br>' + dName)
+          .bindTooltip(dName, { permanent: true, direction: 'right',
+                                // 'left' extended the label back along the route and
+                                // collided with the interchange label on the Zacatecas
+                                // lane. Both endpoints now label AWAY from the line.
+                                className: 'map-endpoint-label' });
       }
 
       // Interchange markers between consecutive drawable legs.
@@ -1722,19 +1820,68 @@
             '<strong>Interchange</strong><br>' + interName
             + '<br>' + (curLeg.railroad || '—')
             + ' &rarr; ' + (nextLeg.railroad || '—')
+          )
+          .bindTooltip(
+            // Carriers ONLY on the visible label. The NARN node name here is
+            // frequently a stale or wrong railroad — this FXE/UP handoff reports
+            // "Southern Pacific Railroad", merged into UP in 1996. Putting that on
+            // a 2026 quote reads as a data error to anyone in rail. The raw node
+            // name stays in the click-through popup where the context is clear.
+            'Interchange: ' + (curLeg.railroad || '—') + ' \u2192 '
+            + (nextLeg.railroad || '—'),
+            { permanent: true, direction: 'bottom', className: 'map-interchange-label' }  // 'left'/'top' collided with the destination label on the
+            // FXE->UP handoff (El Paso sits close to Monahans at lane zoom)
           );
       }
 
-      if (allCoords.length) {
-        _swlMap.fitBounds(L.latLngBounds(allCoords), { padding: [40, 40] });
-      } else {
-        _swlMap.setView([39.5, -98.5], 4);
-      }
-      // Leaflet measures container size at init; if the parent was hidden
-      // when we constructed the map, the tile layer ends up with a 0×0
-      // canvas. Force a size invalidation after the next frame so panning
-      // and bounds-fitting render at full extent.
-      setTimeout(() => { if (_swlMap) _swlMap.invalidateSize(); }, 50);
+      // Scale bar — gives the eye a distance reference on a 1,000-mile lane.
+      L.control.scale({ imperial: true, metric: false, position: 'bottomleft' })
+        .addTo(_swlMap);
+
+      // Carrier legend. Without it the coloured polylines are unreadable —
+      // you can see there are two carriers but not which is which without
+      // hovering each one.
+      const legMiles = {};
+      drawable.forEach(leg => {
+        const rr = leg.railroad || '—';
+        legMiles[rr] = (legMiles[rr] || 0) + (Number(leg.miles) || 0);
+      });
+      const legend = L.control({ position: 'topright' });
+      legend.onAdd = function () {
+        const div = L.DomUtil.create('div', 'map-legend');
+        div.innerHTML = Object.keys(legMiles).map(rr => {
+          const c = CARRIER_COLORS[rr.toUpperCase()] || SHORTLINE_COLOR;
+          return '<span class="legend-row"><i style="background:' + c + '"></i>'
+            + rr + ' &middot; ' + legMiles[rr].toFixed(0) + ' mi</span>';
+        }).join('');
+        return div;
+      };
+      legend.addTo(_swlMap);
+
+      const bounds = allCoords.length ? L.latLngBounds(allCoords) : null;
+      const fit = () => {
+        if (!_swlMap) return;
+        if (bounds) _swlMap.fitBounds(bounds, { padding: [40, 40] });
+        else _swlMap.setView([39.5, -98.5], 4);
+      };
+      fit();
+
+      // Leaflet measures container size at init. renderRouteMap() is called
+      // from selectRouting() BEFORE `resultsSection` gets its `.visible` class,
+      // so at construction time the parent is still `display:none` and the
+      // container is 0×0. invalidateSize() alone was NOT enough: it corrects
+      // the canvas but leaves the zoom that fitBounds computed against 0×0,
+      // which Leaflet clamps to max zoom. Result was a map buried at max zoom
+      // over an empty patch of desert with the whole route off-screen — what
+      // Jacob saw on the Zacatecas lane, 2026-08-12. MUST re-fit AFTER
+      // invalidateSize, not just invalidate.
+      const settle = () => {
+        if (!_swlMap) return;
+        _swlMap.invalidateSize();
+        fit();
+      };
+      setTimeout(settle, 50);
+      setTimeout(settle, 400);   // belt-and-braces: smooth-scroll + webfont reflow
     }
 
     function renderBreakdown(routingView) {
@@ -2071,6 +2218,23 @@
           btn.href = '/tools/rail-dashboard?' + q.toString();
         }
       } catch (e) { console.warn('track-lane link skipped:', e); }
+
+      // Hand off into the transload directory pre-filtered to this lane. The
+      // end sitting farther off-rail is the end that needs a transload, so
+      // filter to that state; the directory translates the estimator
+      // commodity id itself (unknown ids degrade to state-only).
+      try {
+        const tbtn = document.getElementById('transloadBtn');
+        if (tbtn) {
+          const oOff = (d.origin && d.origin.off_rail_miles) || 0;
+          const dOff = (d.destination && d.destination.off_rail_miles) || 0;
+          const end = dOff > oOff ? d.destination : d.origin;
+          const q = new URLSearchParams();
+          if (end && end.state) q.set('state', end.state);
+          if (d.commodity && d.commodity.id) q.set('commodity', d.commodity.id);
+          tbtn.href = '/tools/transload-directory' + (q.toString() ? '?' + q.toString() : '');
+        }
+      } catch (e) { console.warn('transload link skipped:', e); }
 
       try { document.getElementById('disclaimer').textContent = d.disclaimer || ''; } catch (e) {}
 

@@ -942,6 +942,15 @@
       closeComboList();
     }
 
+    // Deep-link prefill: /tools/railcar-capacity?commodity=plastic-pellets
+    // (railcar-selector hands off through this). Unknown ids ignored.
+    (function () {
+      var pre = new URLSearchParams(location.search).get('commodity');
+      if (pre && COMMODITIES.some(function (c) { return c.id === pre; })) {
+        selectCommodity(pre);
+      }
+    })();
+
     searchInput.addEventListener('focus', function () { renderComboList(''); });
     searchInput.addEventListener('input', function () {
       selectedCommodity = null;
@@ -1109,6 +1118,28 @@
       document.getElementById('resultsCommodity').textContent =
         fmt(totalTons) + ' tons of ' + entry.name;
       var r = renderResults(entry, totalTons, use263);
+
+      // Hand the sized commodity into the rate estimator pre-filled. Only ids
+      // with a clean estimator equivalent get the param; the rest keep the
+      // plain link. (Estimator ids differ from this page's ids — mapped here.)
+      var CAP_TO_EST = {
+        'corn': 'grain', 'wheat': 'grain', 'soybeans': 'grain', 'barley': 'grain',
+        'sorghum': 'grain', 'rice': 'grain', 'ddgs': 'ddgs', 'soybean-meal': 'ddgs',
+        'dap': 'fertilizer', 'potash': 'fertilizer', 'cement': 'cement',
+        'frac-sand': 'sand-frac', 'sand': 'sand-frac', 'aggregate': 'aggregates',
+        'roofing-granules': 'aggregates', 'coal': 'coal', 'petcoke': 'coal',
+        'lumber': 'lumber', 'steel-coil': 'steel', 'rebar': 'steel',
+        'steel-scrap': 'scrap-metal', 'paper-rolls': 'paper',
+        'plastic-pellets': 'plastic', 'ethanol': 'ethanol',
+        'crude-oil': 'crude-oil', 'lpg': 'lpg', 'asphalt': 'asphalt',
+        'caustic-soda': 'chemicals', 'sulfuric-acid': 'chemicals', 'ammonia': 'chemicals',
+      };
+      try {
+        var est = entry && entry.id ? CAP_TO_EST[entry.id] : null;
+        document.getElementById('rateCtaBtn').href =
+          '/tools/rail-rate-quote' + (est ? '?commodity=' + est : '');
+      } catch (e) {}
+
       section.classList.add('visible');
       section.scrollIntoView({ behavior: 'smooth', block: 'start' });
 

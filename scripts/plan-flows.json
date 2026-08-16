@@ -1,0 +1,1788 @@
+{
+ "_meta": {
+  "generated": "2026-08-16",
+  "generator": "bots/assistant/businesses/steel-wheel/scripts/build-plan-flows.py",
+  "note": "One row = one citable stat. source_type tags waybill/faf/transearch/plan provenance \u2014 NEVER aggregate or compare rows across source types (FAF and Waybill measure different things). Pages are the extract's page numbers (PDF pages per each plan's citation convention).",
+  "states": {
+   "ms": "Mississippi State Rail Plan 2022",
+   "al": "Alabama State Rail Plan 2024",
+   "tn": "Tennessee State Rail Plan 2019",
+   "la": "Louisiana State Rail Plan 2024",
+   "fl": "Florida State Rail Plan 2023",
+   "ga": "Georgia State Rail Plan 2021",
+   "ar": "Arkansas State Rail Plan 2025"
+  }
+ },
+ "flows": [
+  {
+   "state": "MS",
+   "state_name": "Mississippi",
+   "commodity_as_printed": "Chemicals or Allied Products",
+   "commodity_display": "chemicals or allied products",
+   "commodity_slug": [
+    "chemicals"
+   ],
+   "tons": 5400000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to/from/within MS combined, excluding through traffic (Figure 38)",
+   "dir_phrase": "moved by rail to, from and within the state (excluding through traffic)",
+   "page": 112,
+   "source": "Mississippi State Rail Plan 2022, p. 112",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "MS",
+   "state_name": "Mississippi",
+   "commodity_as_printed": "Primary Metal Products",
+   "commodity_display": "primary metal products",
+   "commodity_slug": [
+    "steel"
+   ],
+   "tons": 2800000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to/from/within MS combined, excluding through traffic (Figure 38)",
+   "dir_phrase": "moved by rail to, from and within the state (excluding through traffic)",
+   "page": 112,
+   "source": "Mississippi State Rail Plan 2022, p. 112",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "MS",
+   "state_name": "Mississippi",
+   "commodity_as_printed": "Nonmetallic Minerals",
+   "commodity_display": "nonmetallic minerals",
+   "commodity_slug": [
+    "aggregates"
+   ],
+   "tons": 2500000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to/from/within MS combined, excluding through traffic (Figure 38)",
+   "dir_phrase": "moved by rail to, from and within the state (excluding through traffic)",
+   "page": 112,
+   "source": "Mississippi State Rail Plan 2022, p. 112",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "MS",
+   "state_name": "Mississippi",
+   "commodity_as_printed": "Pulp, Paper or Allied Products",
+   "commodity_display": "pulp, paper or allied products",
+   "commodity_slug": [
+    "paper"
+   ],
+   "tons": 2200000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to/from/within MS combined, excluding through traffic (Figure 38)",
+   "dir_phrase": "moved by rail to, from and within the state (excluding through traffic)",
+   "page": 112,
+   "source": "Mississippi State Rail Plan 2022, p. 112",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "MS",
+   "state_name": "Mississippi",
+   "commodity_as_printed": "Coal",
+   "commodity_display": "coal",
+   "commodity_slug": [
+    "coal"
+   ],
+   "tons": 2100000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to/from/within MS combined, excluding through traffic (Figure 38)",
+   "dir_phrase": "moved by rail to, from and within the state (excluding through traffic)",
+   "page": 112,
+   "source": "Mississippi State Rail Plan 2022, p. 112",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "MS",
+   "state_name": "Mississippi",
+   "commodity_as_printed": "Petroleum or Coal Products",
+   "commodity_display": "petroleum or coal products",
+   "commodity_slug": null,
+   "tons": 2000000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to/from/within MS combined, excluding through traffic (Figure 38)",
+   "dir_phrase": "moved by rail to, from and within the state (excluding through traffic)",
+   "page": 112,
+   "source": "Mississippi State Rail Plan 2022, p. 112",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "MS",
+   "state_name": "Mississippi",
+   "commodity_as_printed": "Food or Kindred Products",
+   "commodity_display": "food or kindred products",
+   "commodity_slug": null,
+   "tons": 1800000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to/from/within MS combined, excluding through traffic (Figure 38)",
+   "dir_phrase": "moved by rail to, from and within the state (excluding through traffic)",
+   "page": 112,
+   "source": "Mississippi State Rail Plan 2022, p. 112",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "MS",
+   "state_name": "Mississippi",
+   "commodity_as_printed": "Farm Products",
+   "commodity_display": "farm products",
+   "commodity_slug": [
+    "corn",
+    "wheat",
+    "soybeans"
+   ],
+   "tons": 1800000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to/from/within MS combined, excluding through traffic (Figure 38)",
+   "dir_phrase": "moved by rail to, from and within the state (excluding through traffic)",
+   "page": 112,
+   "source": "Mississippi State Rail Plan 2022, p. 112",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "MS",
+   "state_name": "Mississippi",
+   "commodity_as_printed": "Waste or Scrap Materials",
+   "commodity_display": "waste or scrap materials",
+   "commodity_slug": [
+    "scrap-metal"
+   ],
+   "tons": 1400000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to/from/within MS combined, excluding through traffic (Figure 38)",
+   "dir_phrase": "moved by rail to, from and within the state (excluding through traffic)",
+   "page": 112,
+   "source": "Mississippi State Rail Plan 2022, p. 112",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "MS",
+   "state_name": "Mississippi",
+   "commodity_as_printed": "Lumber or Wood Products",
+   "commodity_display": "lumber or wood products",
+   "commodity_slug": [
+    "lumber"
+   ],
+   "tons": 1000000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to/from/within MS combined, excluding through traffic (Figure 38)",
+   "dir_phrase": "moved by rail to, from and within the state (excluding through traffic)",
+   "page": 112,
+   "source": "Mississippi State Rail Plan 2022, p. 112",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "AL",
+   "state_name": "Alabama",
+   "commodity_as_printed": "Coal (STCC 11)",
+   "commodity_display": "coal",
+   "commodity_slug": [
+    "coal"
+   ],
+   "tons": 7900000,
+   "tons_text": null,
+   "year": 2020,
+   "direction_as_printed": "Originated",
+   "dir_phrase": "originated by rail in the state",
+   "page": 102,
+   "source": "Alabama State Rail Plan 2024, p. 102",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "AL",
+   "state_name": "Alabama",
+   "commodity_as_printed": "Chemicals (STCC 28)",
+   "commodity_display": "chemicals",
+   "commodity_slug": [
+    "chemicals"
+   ],
+   "tons": 4000000,
+   "tons_text": null,
+   "year": 2020,
+   "direction_as_printed": "Originated",
+   "dir_phrase": "originated by rail in the state",
+   "page": 102,
+   "source": "Alabama State Rail Plan 2024, p. 102",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "AL",
+   "state_name": "Alabama",
+   "commodity_as_printed": "Nonmetallic Minerals (STCC 14)",
+   "commodity_display": "nonmetallic minerals",
+   "commodity_slug": [
+    "aggregates"
+   ],
+   "tons": 3500000,
+   "tons_text": null,
+   "year": 2020,
+   "direction_as_printed": "Originated",
+   "dir_phrase": "originated by rail in the state",
+   "page": 102,
+   "source": "Alabama State Rail Plan 2024, p. 102",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "AL",
+   "state_name": "Alabama",
+   "commodity_as_printed": "Primary Metal Products (STCC 33)",
+   "commodity_display": "primary metal products",
+   "commodity_slug": [
+    "steel"
+   ],
+   "tons": 3400000,
+   "tons_text": null,
+   "year": 2020,
+   "direction_as_printed": "Originated",
+   "dir_phrase": "originated by rail in the state",
+   "page": 102,
+   "source": "Alabama State Rail Plan 2024, p. 102",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "AL",
+   "state_name": "Alabama",
+   "commodity_as_printed": "Clay, Glass or Stone Products (STCC 12)",
+   "commodity_display": "clay, glass or stone products",
+   "commodity_slug": [
+    "cement"
+   ],
+   "tons": 2900000,
+   "tons_text": null,
+   "year": 2020,
+   "direction_as_printed": "Originated",
+   "dir_phrase": "originated by rail in the state",
+   "page": 102,
+   "source": "Alabama State Rail Plan 2024, p. 102",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "AL",
+   "state_name": "Alabama",
+   "commodity_as_printed": "Coal (STCC 11)",
+   "commodity_display": "coal",
+   "commodity_slug": [
+    "coal"
+   ],
+   "tons": 18600000,
+   "tons_text": null,
+   "year": 2020,
+   "direction_as_printed": "Terminated",
+   "dir_phrase": "terminated by rail in the state",
+   "page": 103,
+   "source": "Alabama State Rail Plan 2024, p. 103",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "AL",
+   "state_name": "Alabama",
+   "commodity_as_printed": "Chemicals (STCC 28)",
+   "commodity_display": "chemicals",
+   "commodity_slug": [
+    "chemicals"
+   ],
+   "tons": 4900000,
+   "tons_text": null,
+   "year": 2020,
+   "direction_as_printed": "Terminated",
+   "dir_phrase": "terminated by rail in the state",
+   "page": 103,
+   "source": "Alabama State Rail Plan 2024, p. 103",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "AL",
+   "state_name": "Alabama",
+   "commodity_as_printed": "Primary Metal Products",
+   "commodity_display": "primary metal products",
+   "commodity_slug": [
+    "steel"
+   ],
+   "tons": 3000000,
+   "tons_text": null,
+   "year": 2020,
+   "direction_as_printed": "Terminated",
+   "dir_phrase": "terminated by rail in the state",
+   "page": 103,
+   "source": "Alabama State Rail Plan 2024, p. 103",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "AL",
+   "state_name": "Alabama",
+   "commodity_as_printed": "Farm Products (STCC 01)",
+   "commodity_display": "farm products",
+   "commodity_slug": [
+    "corn",
+    "wheat",
+    "soybeans"
+   ],
+   "tons": 3000000,
+   "tons_text": null,
+   "year": 2020,
+   "direction_as_printed": "Terminated",
+   "dir_phrase": "terminated by rail in the state",
+   "page": 103,
+   "source": "Alabama State Rail Plan 2024, p. 103",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "AL",
+   "state_name": "Alabama",
+   "commodity_as_printed": "Waste or Scrap (STCC 40)",
+   "commodity_display": "waste or scrap",
+   "commodity_slug": [
+    "scrap-metal"
+   ],
+   "tons": 2300000,
+   "tons_text": null,
+   "year": 2020,
+   "direction_as_printed": "Terminated",
+   "dir_phrase": "terminated by rail in the state",
+   "page": 103,
+   "source": "Alabama State Rail Plan 2024, p. 103",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "TN",
+   "state_name": "Tennessee",
+   "commodity_as_printed": "Coal",
+   "commodity_display": "coal",
+   "commodity_slug": [
+    "coal"
+   ],
+   "tons": 91600000,
+   "tons_text": null,
+   "year": 2012,
+   "direction_as_printed": "All directions, rail mode (Table 8-3)",
+   "dir_phrase": "moved by rail in all directions",
+   "page": 80,
+   "source": "Tennessee State Rail Plan 2019, p. 80",
+   "source_type": "transearch",
+   "is_total": true
+  },
+  {
+   "state": "TN",
+   "state_name": "Tennessee",
+   "commodity_as_printed": "Gravel",
+   "commodity_display": "gravel",
+   "commodity_slug": [
+    "aggregates"
+   ],
+   "tons": 4200000,
+   "tons_text": null,
+   "year": 2012,
+   "direction_as_printed": "All directions, rail mode (Table 8-3; top TN commodity overall at 119.1M highway tons)",
+   "dir_phrase": "moved by rail in all directions",
+   "page": 80,
+   "source": "Tennessee State Rail Plan 2019, p. 80",
+   "source_type": "transearch",
+   "is_total": true
+  },
+  {
+   "state": "TN",
+   "state_name": "Tennessee",
+   "commodity_as_printed": "Agricultural products (except live animals, cereal grains, forage)",
+   "commodity_display": "agricultural products (except live animals, cereal grains, forage)",
+   "commodity_slug": null,
+   "tons": 7400000,
+   "tons_text": null,
+   "year": 2012,
+   "direction_as_printed": "All directions, rail mode (Table 8-3)",
+   "dir_phrase": "moved by rail in all directions",
+   "page": 80,
+   "source": "Tennessee State Rail Plan 2019, p. 80",
+   "source_type": "transearch",
+   "is_total": true
+  },
+  {
+   "state": "TN",
+   "state_name": "Tennessee",
+   "commodity_as_printed": "Non-metallic mineral products",
+   "commodity_display": "non-metallic mineral products",
+   "commodity_slug": null,
+   "tons": 2200000,
+   "tons_text": null,
+   "year": 2012,
+   "direction_as_printed": "All directions, rail mode (Table 8-3)",
+   "dir_phrase": "moved by rail in all directions",
+   "page": 80,
+   "source": "Tennessee State Rail Plan 2019, p. 80",
+   "source_type": "transearch",
+   "is_total": true
+  },
+  {
+   "state": "LA",
+   "state_name": "Louisiana",
+   "commodity_as_printed": "Plastics and Synthetic Resins",
+   "commodity_display": "plastics and synthetic resins",
+   "commodity_slug": [
+    "plastic-pellets"
+   ],
+   "tons": 20428151,
+   "tons_text": null,
+   "year": 2021,
+   "direction_as_printed": "All Directions (15%)",
+   "dir_phrase": "moved by rail in all directions",
+   "page": 60,
+   "source": "Louisiana State Rail Plan 2024, p. 60",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "LA",
+   "state_name": "Louisiana",
+   "commodity_as_printed": "Bituminous Coal",
+   "commodity_display": "bituminous coal",
+   "commodity_slug": [
+    "coal"
+   ],
+   "tons": 19687997,
+   "tons_text": null,
+   "year": 2021,
+   "direction_as_printed": "All Directions (14%)",
+   "dir_phrase": "moved by rail in all directions",
+   "page": 60,
+   "source": "Louisiana State Rail Plan 2024, p. 60",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "LA",
+   "state_name": "Louisiana",
+   "commodity_as_printed": "Grain",
+   "commodity_display": "grain",
+   "commodity_slug": [
+    "corn",
+    "wheat",
+    "soybeans"
+   ],
+   "tons": 10932891,
+   "tons_text": null,
+   "year": 2021,
+   "direction_as_printed": "All Directions (8%)",
+   "dir_phrase": "moved by rail in all directions",
+   "page": 60,
+   "source": "Louisiana State Rail Plan 2024, p. 60",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "LA",
+   "state_name": "Louisiana",
+   "commodity_as_printed": "Misc. Industrial Organic Chemicals",
+   "commodity_display": "misc. industrial organic chemicals",
+   "commodity_slug": [
+    "chemicals"
+   ],
+   "tons": 8812430,
+   "tons_text": null,
+   "year": 2021,
+   "direction_as_printed": "All Directions (6%)",
+   "dir_phrase": "moved by rail in all directions",
+   "page": 60,
+   "source": "Louisiana State Rail Plan 2024, p. 60",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "LA",
+   "state_name": "Louisiana",
+   "commodity_as_printed": "Potassium or Sodium Compound",
+   "commodity_display": "potassium or sodium compounds",
+   "commodity_slug": [
+    "potash",
+    "soda-ash"
+   ],
+   "tons": 5866134,
+   "tons_text": null,
+   "year": 2021,
+   "direction_as_printed": "All Directions (4%)",
+   "dir_phrase": "moved by rail in all directions",
+   "page": 60,
+   "source": "Louisiana State Rail Plan 2024, p. 60",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "LA",
+   "state_name": "Louisiana",
+   "commodity_as_printed": "Plastics and Synthetic Resins",
+   "commodity_display": "plastics and synthetic resins",
+   "commodity_slug": [
+    "plastic-pellets"
+   ],
+   "tons": 9325885,
+   "tons_text": null,
+   "year": 2021,
+   "direction_as_printed": "Outbound (41.7%)",
+   "dir_phrase": "moved by rail outbound from the state",
+   "page": 61,
+   "source": "Louisiana State Rail Plan 2024, p. 61",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "LA",
+   "state_name": "Louisiana",
+   "commodity_as_printed": "Misc. Industrial Organic Chemicals",
+   "commodity_display": "misc. industrial organic chemicals",
+   "commodity_slug": [
+    "chemicals"
+   ],
+   "tons": 4615595,
+   "tons_text": null,
+   "year": 2021,
+   "direction_as_printed": "Outbound (20.7%)",
+   "dir_phrase": "moved by rail outbound from the state",
+   "page": 61,
+   "source": "Louisiana State Rail Plan 2024, p. 61",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "LA",
+   "state_name": "Louisiana",
+   "commodity_as_printed": "Potassium or Sodium Compound",
+   "commodity_display": "potassium or sodium compounds",
+   "commodity_slug": [
+    "potash",
+    "soda-ash"
+   ],
+   "tons": 3036605,
+   "tons_text": null,
+   "year": 2021,
+   "direction_as_printed": "Outbound (13.6%)",
+   "dir_phrase": "moved by rail outbound from the state",
+   "page": 61,
+   "source": "Louisiana State Rail Plan 2024, p. 61",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "LA",
+   "state_name": "Louisiana",
+   "commodity_as_printed": "Petroleum Refining Products",
+   "commodity_display": "petroleum refining products",
+   "commodity_slug": null,
+   "tons": 2813930,
+   "tons_text": null,
+   "year": 2021,
+   "direction_as_printed": "Outbound (12.6%)",
+   "dir_phrase": "moved by rail outbound from the state",
+   "page": 61,
+   "source": "Louisiana State Rail Plan 2024, p. 61",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "LA",
+   "state_name": "Louisiana",
+   "commodity_as_printed": "Fiber, Paper, or Pulpboard",
+   "commodity_display": "fiber, paper, or pulpboard",
+   "commodity_slug": [
+    "paper"
+   ],
+   "tons": 2547785,
+   "tons_text": null,
+   "year": 2021,
+   "direction_as_printed": "Outbound (11.4%)",
+   "dir_phrase": "moved by rail outbound from the state",
+   "page": 61,
+   "source": "Louisiana State Rail Plan 2024, p. 61",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "LA",
+   "state_name": "Louisiana",
+   "commodity_as_printed": "Bituminous Coal",
+   "commodity_display": "bituminous coal",
+   "commodity_slug": [
+    "coal"
+   ],
+   "tons": 8835510,
+   "tons_text": null,
+   "year": 2021,
+   "direction_as_printed": "Inbound (43.7%)",
+   "dir_phrase": "moved by rail inbound to the state",
+   "page": 61,
+   "source": "Louisiana State Rail Plan 2024, p. 61",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "LA",
+   "state_name": "Louisiana",
+   "commodity_as_printed": "Grain",
+   "commodity_display": "grain",
+   "commodity_slug": [
+    "corn",
+    "wheat",
+    "soybeans"
+   ],
+   "tons": 3954170,
+   "tons_text": null,
+   "year": 2021,
+   "direction_as_printed": "Inbound (19.6%)",
+   "dir_phrase": "moved by rail inbound to the state",
+   "page": 61,
+   "source": "Louisiana State Rail Plan 2024, p. 61",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "LA",
+   "state_name": "Louisiana",
+   "commodity_as_printed": "Broken Stone or Riprap",
+   "commodity_display": "broken stone or riprap",
+   "commodity_slug": [
+    "aggregates"
+   ],
+   "tons": 3510949,
+   "tons_text": null,
+   "year": 2021,
+   "direction_as_printed": "Inbound (17.4%)",
+   "dir_phrase": "moved by rail inbound to the state",
+   "page": 61,
+   "source": "Louisiana State Rail Plan 2024, p. 61",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "LA",
+   "state_name": "Louisiana",
+   "commodity_as_printed": "Oil Kernels, Nuts or Seeds",
+   "commodity_display": "oil kernels, nuts or seeds",
+   "commodity_slug": [
+    "soybeans"
+   ],
+   "tons": 1985981,
+   "tons_text": null,
+   "year": 2021,
+   "direction_as_printed": "Inbound (9.8%)",
+   "dir_phrase": "moved by rail inbound to the state",
+   "page": 61,
+   "source": "Louisiana State Rail Plan 2024, p. 61",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "LA",
+   "state_name": "Louisiana",
+   "commodity_as_printed": "Crude Petroleum",
+   "commodity_display": "crude petroleum",
+   "commodity_slug": [
+    "crude-oil"
+   ],
+   "tons": 1934039,
+   "tons_text": null,
+   "year": 2021,
+   "direction_as_printed": "Inbound (9.6%)",
+   "dir_phrase": "moved by rail inbound to the state",
+   "page": 61,
+   "source": "Louisiana State Rail Plan 2024, p. 61",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "LA",
+   "state_name": "Louisiana",
+   "commodity_as_printed": "Plastics and Synthetic Resins",
+   "commodity_display": "plastics and synthetic resins",
+   "commodity_slug": [
+    "plastic-pellets"
+   ],
+   "tons": 2991756,
+   "tons_text": null,
+   "year": 2021,
+   "direction_as_printed": "Intrastate (48.1%)",
+   "dir_phrase": "moved by rail within the state",
+   "page": 61,
+   "source": "Louisiana State Rail Plan 2024, p. 61",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "LA",
+   "state_name": "Louisiana",
+   "commodity_as_printed": "Misc. Coal or Petroleum Products",
+   "commodity_display": "misc. coal or petroleum products",
+   "commodity_slug": null,
+   "tons": 1524331,
+   "tons_text": null,
+   "year": 2021,
+   "direction_as_printed": "Intrastate (24.5%)",
+   "dir_phrase": "moved by rail within the state",
+   "page": 61,
+   "source": "Louisiana State Rail Plan 2024, p. 61",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "LA",
+   "state_name": "Louisiana",
+   "commodity_as_printed": "Primary Forest Materials",
+   "commodity_display": "primary forest materials",
+   "commodity_slug": null,
+   "tons": 1266233,
+   "tons_text": null,
+   "year": 2021,
+   "direction_as_printed": "Intrastate (20.4%)",
+   "dir_phrase": "moved by rail within the state",
+   "page": 61,
+   "source": "Louisiana State Rail Plan 2024, p. 61",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "LA",
+   "state_name": "Louisiana",
+   "commodity_as_printed": "Bituminous Coal",
+   "commodity_display": "bituminous coal",
+   "commodity_slug": [
+    "coal"
+   ],
+   "tons": 10817462,
+   "tons_text": null,
+   "year": 2021,
+   "direction_as_printed": "Through (34.9%)",
+   "dir_phrase": "moved through the state by rail",
+   "page": 61,
+   "source": "Louisiana State Rail Plan 2024, p. 61",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "LA",
+   "state_name": "Louisiana",
+   "commodity_as_printed": "Plastics and Synthetic Resins",
+   "commodity_display": "plastics and synthetic resins",
+   "commodity_slug": [
+    "plastic-pellets"
+   ],
+   "tons": 7446365,
+   "tons_text": null,
+   "year": 2021,
+   "direction_as_printed": "Through (24.0%)",
+   "dir_phrase": "moved through the state by rail",
+   "page": 61,
+   "source": "Louisiana State Rail Plan 2024, p. 61",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "LA",
+   "state_name": "Louisiana",
+   "commodity_as_printed": "Grain",
+   "commodity_display": "grain",
+   "commodity_slug": [
+    "corn",
+    "wheat",
+    "soybeans"
+   ],
+   "tons": 6425057,
+   "tons_text": null,
+   "year": 2021,
+   "direction_as_printed": "Through (20.7%)",
+   "dir_phrase": "moved through the state by rail",
+   "page": 61,
+   "source": "Louisiana State Rail Plan 2024, p. 61",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "LA",
+   "state_name": "Louisiana",
+   "commodity_as_printed": "Primary Iron or Steel Products",
+   "commodity_display": "primary iron or steel products",
+   "commodity_slug": [
+    "steel"
+   ],
+   "tons": 3228081,
+   "tons_text": null,
+   "year": 2021,
+   "direction_as_printed": "Through (10.4%)",
+   "dir_phrase": "moved through the state by rail",
+   "page": 61,
+   "source": "Louisiana State Rail Plan 2024, p. 61",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "FL",
+   "state_name": "Florida",
+   "commodity_as_printed": "Nonmetallic Minerals",
+   "commodity_display": "nonmetallic minerals",
+   "commodity_slug": [
+    "aggregates"
+   ],
+   "tons": 28312196,
+   "tons_text": null,
+   "year": 2018,
+   "direction_as_printed": "all",
+   "dir_phrase": "moved by rail in all directions",
+   "page": 265,
+   "source": "Florida State Rail Plan 2023, p. 265",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "FL",
+   "state_name": "Florida",
+   "commodity_as_printed": "Chemicals or Allied Products",
+   "commodity_display": "chemicals or allied products",
+   "commodity_slug": [
+    "chemicals"
+   ],
+   "tons": 12530691,
+   "tons_text": null,
+   "year": 2018,
+   "direction_as_printed": "all",
+   "dir_phrase": "moved by rail in all directions",
+   "page": 265,
+   "source": "Florida State Rail Plan 2023, p. 265",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "FL",
+   "state_name": "Florida",
+   "commodity_as_printed": "Coal",
+   "commodity_display": "coal",
+   "commodity_slug": [
+    "coal"
+   ],
+   "tons": 6879230,
+   "tons_text": null,
+   "year": 2018,
+   "direction_as_printed": "all",
+   "dir_phrase": "moved by rail in all directions",
+   "page": 265,
+   "source": "Florida State Rail Plan 2023, p. 265",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "FL",
+   "state_name": "Florida",
+   "commodity_as_printed": "Food or Kindred Products",
+   "commodity_display": "food or kindred products",
+   "commodity_slug": null,
+   "tons": 5090034,
+   "tons_text": null,
+   "year": 2018,
+   "direction_as_printed": "all",
+   "dir_phrase": "moved by rail in all directions",
+   "page": 265,
+   "source": "Florida State Rail Plan 2023, p. 265",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "FL",
+   "state_name": "Florida",
+   "commodity_as_printed": "Pulp, Paper or Allied Products",
+   "commodity_display": "pulp, paper or allied products",
+   "commodity_slug": [
+    "paper"
+   ],
+   "tons": 3882701,
+   "tons_text": null,
+   "year": 2018,
+   "direction_as_printed": "all",
+   "dir_phrase": "moved by rail in all directions",
+   "page": 265,
+   "source": "Florida State Rail Plan 2023, p. 265",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "FL",
+   "state_name": "Florida",
+   "commodity_as_printed": "Clay, Concrete, Glass or Stone",
+   "commodity_display": "clay, concrete, glass or stone",
+   "commodity_slug": [
+    "cement"
+   ],
+   "tons": 2785765,
+   "tons_text": null,
+   "year": 2018,
+   "direction_as_printed": "all",
+   "dir_phrase": "moved by rail in all directions",
+   "page": 265,
+   "source": "Florida State Rail Plan 2023, p. 265",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "FL",
+   "state_name": "Florida",
+   "commodity_as_printed": "Transportation Equipment",
+   "commodity_display": "transportation equipment",
+   "commodity_slug": [
+    "vehicles"
+   ],
+   "tons": 2428924,
+   "tons_text": null,
+   "year": 2018,
+   "direction_as_printed": "all",
+   "dir_phrase": "moved by rail in all directions",
+   "page": 265,
+   "source": "Florida State Rail Plan 2023, p. 265",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "FL",
+   "state_name": "Florida",
+   "commodity_as_printed": "Lumber or Wood Products",
+   "commodity_display": "lumber or wood products",
+   "commodity_slug": [
+    "lumber"
+   ],
+   "tons": 1711680,
+   "tons_text": null,
+   "year": 2018,
+   "direction_as_printed": "all",
+   "dir_phrase": "moved by rail in all directions",
+   "page": 265,
+   "source": "Florida State Rail Plan 2023, p. 265",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "FL",
+   "state_name": "Florida",
+   "commodity_as_printed": "Waste or Scrap Materials",
+   "commodity_display": "waste or scrap materials",
+   "commodity_slug": [
+    "scrap-metal"
+   ],
+   "tons": 1550672,
+   "tons_text": null,
+   "year": 2018,
+   "direction_as_printed": "all",
+   "dir_phrase": "moved by rail in all directions",
+   "page": 265,
+   "source": "Florida State Rail Plan 2023, p. 265",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "FL",
+   "state_name": "Florida",
+   "commodity_as_printed": "Farm Products",
+   "commodity_display": "farm products",
+   "commodity_slug": [
+    "corn",
+    "wheat",
+    "soybeans"
+   ],
+   "tons": 1344543,
+   "tons_text": null,
+   "year": 2018,
+   "direction_as_printed": "all",
+   "dir_phrase": "moved by rail in all directions",
+   "page": 265,
+   "source": "Florida State Rail Plan 2023, p. 265",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "FL",
+   "state_name": "Florida",
+   "commodity_as_printed": "Primary Metal Products",
+   "commodity_display": "primary metal products",
+   "commodity_slug": [
+    "steel"
+   ],
+   "tons": 1090421,
+   "tons_text": null,
+   "year": 2018,
+   "direction_as_printed": "all",
+   "dir_phrase": "moved by rail in all directions",
+   "page": 265,
+   "source": "Florida State Rail Plan 2023, p. 265",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "FL",
+   "state_name": "Florida",
+   "commodity_as_printed": "Petroleum or Coal Products",
+   "commodity_display": "petroleum or coal products",
+   "commodity_slug": null,
+   "tons": 863727,
+   "tons_text": null,
+   "year": 2018,
+   "direction_as_printed": "all",
+   "dir_phrase": "moved by rail in all directions",
+   "page": 265,
+   "source": "Florida State Rail Plan 2023, p. 265",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Gravel",
+   "commodity_display": "gravel",
+   "commodity_slug": [
+    "aggregates"
+   ],
+   "tons": 18305000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to, from, within Georgia (rail tons, FAF-4)",
+   "dir_phrase": "moved by rail to, from and within the state",
+   "page": 15,
+   "source": "Georgia State Rail Plan 2021, p. 15",
+   "source_type": "faf",
+   "is_total": true
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Coal",
+   "commodity_display": "coal",
+   "commodity_slug": [
+    "coal"
+   ],
+   "tons": 13395000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to, from, within Georgia (rail tons, FAF-4)",
+   "dir_phrase": "moved by rail to, from and within the state",
+   "page": 15,
+   "source": "Georgia State Rail Plan 2021, p. 15",
+   "source_type": "faf",
+   "is_total": true
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Agricultural Products",
+   "commodity_display": "agricultural products",
+   "commodity_slug": [
+    "corn",
+    "wheat",
+    "soybeans"
+   ],
+   "tons": 12567000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to, from, within Georgia (rail tons, FAF-4)",
+   "dir_phrase": "moved by rail to, from and within the state",
+   "page": 15,
+   "source": "Georgia State Rail Plan 2021, p. 15",
+   "source_type": "faf",
+   "is_total": true
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Forest Products/Pulp and Paper",
+   "commodity_display": "forest products, pulp and paper",
+   "commodity_slug": [
+    "lumber",
+    "paper"
+   ],
+   "tons": 9034000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to, from, within Georgia (rail tons, FAF-4)",
+   "dir_phrase": "moved by rail to, from and within the state",
+   "page": 15,
+   "source": "Georgia State Rail Plan 2021, p. 15",
+   "source_type": "faf",
+   "is_total": true
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Chemical Products, Pharmaceuticals, Fertilizer",
+   "commodity_display": "chemical products, pharmaceuticals and fertilizer",
+   "commodity_slug": [
+    "chemicals",
+    "fertilizer"
+   ],
+   "tons": 7185000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to, from, within Georgia (rail tons, FAF-4)",
+   "dir_phrase": "moved by rail to, from and within the state",
+   "page": 15,
+   "source": "Georgia State Rail Plan 2021, p. 15",
+   "source_type": "faf",
+   "is_total": true
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Mineral Products excl. Gravel",
+   "commodity_display": "mineral products excl. gravel",
+   "commodity_slug": null,
+   "tons": 5575000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to, from, within Georgia (rail tons, FAF-4)",
+   "dir_phrase": "moved by rail to, from and within the state",
+   "page": 15,
+   "source": "Georgia State Rail Plan 2021, p. 15",
+   "source_type": "faf",
+   "is_total": true
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Food Products",
+   "commodity_display": "food products",
+   "commodity_slug": null,
+   "tons": 4766000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to, from, within Georgia (rail tons, FAF-4)",
+   "dir_phrase": "moved by rail to, from and within the state",
+   "page": 15,
+   "source": "Georgia State Rail Plan 2021, p. 15",
+   "source_type": "faf",
+   "is_total": true
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Plastics/Rubber",
+   "commodity_display": "plastics and rubber",
+   "commodity_slug": [
+    "plastic-pellets"
+   ],
+   "tons": 3634000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to, from, within Georgia (rail tons, FAF-4)",
+   "dir_phrase": "moved by rail to, from and within the state",
+   "page": 15,
+   "source": "Georgia State Rail Plan 2021, p. 15",
+   "source_type": "faf",
+   "is_total": true
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Waste/Scrap",
+   "commodity_display": "waste and scrap",
+   "commodity_slug": [
+    "scrap-metal"
+   ],
+   "tons": 2596000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to, from, within Georgia (rail tons, FAF-4)",
+   "dir_phrase": "moved by rail to, from and within the state",
+   "page": 15,
+   "source": "Georgia State Rail Plan 2021, p. 15",
+   "source_type": "faf",
+   "is_total": true
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Petroleum Products",
+   "commodity_display": "petroleum products",
+   "commodity_slug": null,
+   "tons": 2014000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to, from, within Georgia (rail tons, FAF-4)",
+   "dir_phrase": "moved by rail to, from and within the state",
+   "page": 15,
+   "source": "Georgia State Rail Plan 2021, p. 15",
+   "source_type": "faf",
+   "is_total": true
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Vehicles/Transportation Equipment",
+   "commodity_display": "vehicles and transportation equipment",
+   "commodity_slug": [
+    "vehicles"
+   ],
+   "tons": 1622000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to, from, within Georgia (rail tons, FAF-4)",
+   "dir_phrase": "moved by rail to, from and within the state",
+   "page": 15,
+   "source": "Georgia State Rail Plan 2021, p. 15",
+   "source_type": "faf",
+   "is_total": true
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Metals/Metal Products",
+   "commodity_display": "metals and metal products",
+   "commodity_slug": [
+    "steel"
+   ],
+   "tons": 1488000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to, from, within Georgia (rail tons, FAF-4)",
+   "dir_phrase": "moved by rail to, from and within the state",
+   "page": 15,
+   "source": "Georgia State Rail Plan 2021, p. 15",
+   "source_type": "faf",
+   "is_total": true
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Textiles/Leather",
+   "commodity_display": "textiles/leather",
+   "commodity_slug": null,
+   "tons": 561000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to, from, within Georgia (rail tons, FAF-4)",
+   "dir_phrase": "moved by rail to, from and within the state",
+   "page": 15,
+   "source": "Georgia State Rail Plan 2021, p. 15",
+   "source_type": "faf",
+   "is_total": true
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Machinery",
+   "commodity_display": "machinery",
+   "commodity_slug": null,
+   "tons": 453000,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "to, from, within Georgia (rail tons, FAF-4)",
+   "dir_phrase": "moved by rail to, from and within the state",
+   "page": 15,
+   "source": "Georgia State Rail Plan 2021, p. 15",
+   "source_type": "faf",
+   "is_total": true
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Coal",
+   "commodity_display": "coal",
+   "commodity_slug": [
+    "coal"
+   ],
+   "tons": 16649522,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Inbound",
+   "dir_phrase": "moved by rail inbound to the state",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Coal",
+   "commodity_display": "coal",
+   "commodity_slug": [
+    "coal"
+   ],
+   "tons": 9440,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Outbound",
+   "dir_phrase": "moved by rail outbound from the state",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Coal",
+   "commodity_display": "coal",
+   "commodity_slug": [
+    "coal"
+   ],
+   "tons": 16658962,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Total (excl. overhead)",
+   "dir_phrase": "moved by rail to, from and within the state (excluding pass-through traffic)",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Nonmetallic Minerals",
+   "commodity_display": "nonmetallic minerals",
+   "commodity_slug": [
+    "aggregates"
+   ],
+   "tons": 1521536,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Inbound",
+   "dir_phrase": "moved by rail inbound to the state",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Nonmetallic Minerals",
+   "commodity_display": "nonmetallic minerals",
+   "commodity_slug": [
+    "aggregates"
+   ],
+   "tons": 4791365,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Intrastate",
+   "dir_phrase": "moved by rail within the state",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Nonmetallic Minerals",
+   "commodity_display": "nonmetallic minerals",
+   "commodity_slug": [
+    "aggregates"
+   ],
+   "tons": 6334322,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Outbound",
+   "dir_phrase": "moved by rail outbound from the state",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Nonmetallic Minerals",
+   "commodity_display": "nonmetallic minerals",
+   "commodity_slug": [
+    "aggregates"
+   ],
+   "tons": 12647223,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Total (excl. overhead)",
+   "dir_phrase": "moved by rail to, from and within the state (excluding pass-through traffic)",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Chemicals",
+   "commodity_display": "chemicals",
+   "commodity_slug": [
+    "chemicals"
+   ],
+   "tons": 6688663,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Inbound",
+   "dir_phrase": "moved by rail inbound to the state",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Chemicals",
+   "commodity_display": "chemicals",
+   "commodity_slug": [
+    "chemicals"
+   ],
+   "tons": 450480,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Intrastate",
+   "dir_phrase": "moved by rail within the state",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Chemicals",
+   "commodity_display": "chemicals",
+   "commodity_slug": [
+    "chemicals"
+   ],
+   "tons": 1384408,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Outbound",
+   "dir_phrase": "moved by rail outbound from the state",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Chemicals",
+   "commodity_display": "chemicals",
+   "commodity_slug": [
+    "chemicals"
+   ],
+   "tons": 8523551,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Total (excl. overhead)",
+   "dir_phrase": "moved by rail to, from and within the state (excluding pass-through traffic)",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Farm Products",
+   "commodity_display": "farm products",
+   "commodity_slug": [
+    "corn",
+    "wheat",
+    "soybeans"
+   ],
+   "tons": 6092742,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Inbound",
+   "dir_phrase": "moved by rail inbound to the state",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Farm Products",
+   "commodity_display": "farm products",
+   "commodity_slug": [
+    "corn",
+    "wheat",
+    "soybeans"
+   ],
+   "tons": 734836,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Outbound",
+   "dir_phrase": "moved by rail outbound from the state",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Farm Products",
+   "commodity_display": "farm products",
+   "commodity_slug": [
+    "corn",
+    "wheat",
+    "soybeans"
+   ],
+   "tons": 6827578,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Total (excl. overhead)",
+   "dir_phrase": "moved by rail to, from and within the state (excluding pass-through traffic)",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Food and Kindred Products",
+   "commodity_display": "food and kindred products",
+   "commodity_slug": null,
+   "tons": 4689771,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Inbound",
+   "dir_phrase": "moved by rail inbound to the state",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Food and Kindred Products",
+   "commodity_display": "food and kindred products",
+   "commodity_slug": null,
+   "tons": 177164,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Intrastate",
+   "dir_phrase": "moved by rail within the state",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Food and Kindred Products",
+   "commodity_display": "food and kindred products",
+   "commodity_slug": null,
+   "tons": 1184448,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Outbound",
+   "dir_phrase": "moved by rail outbound from the state",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Food and Kindred Products",
+   "commodity_display": "food and kindred products",
+   "commodity_slug": null,
+   "tons": 6051383,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Total (excl. overhead)",
+   "dir_phrase": "moved by rail to, from and within the state (excluding pass-through traffic)",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Stone, Clay, Glass, Concrete Prd",
+   "commodity_display": "stone, clay, glass and concrete products",
+   "commodity_slug": [
+    "cement"
+   ],
+   "tons": 2501924,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Inbound",
+   "dir_phrase": "moved by rail inbound to the state",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Stone, Clay, Glass, Concrete Prd",
+   "commodity_display": "stone, clay, glass and concrete products",
+   "commodity_slug": [
+    "cement"
+   ],
+   "tons": 987440,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Intrastate",
+   "dir_phrase": "moved by rail within the state",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Stone, Clay, Glass, Concrete Prd",
+   "commodity_display": "stone, clay, glass and concrete products",
+   "commodity_slug": [
+    "cement"
+   ],
+   "tons": 2101423,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Outbound",
+   "dir_phrase": "moved by rail outbound from the state",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Stone, Clay, Glass, Concrete Prd",
+   "commodity_display": "stone, clay, glass and concrete products",
+   "commodity_slug": [
+    "cement"
+   ],
+   "tons": 5590787,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Total (excl. overhead)",
+   "dir_phrase": "moved by rail to, from and within the state (excluding pass-through traffic)",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Pulp, Paper and Allied Products",
+   "commodity_display": "pulp, paper and allied products",
+   "commodity_slug": [
+    "paper"
+   ],
+   "tons": 2536600,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Inbound",
+   "dir_phrase": "moved by rail inbound to the state",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Pulp, Paper and Allied Products",
+   "commodity_display": "pulp, paper and allied products",
+   "commodity_slug": [
+    "paper"
+   ],
+   "tons": 532880,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Intrastate",
+   "dir_phrase": "moved by rail within the state",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Pulp, Paper and Allied Products",
+   "commodity_display": "pulp, paper and allied products",
+   "commodity_slug": [
+    "paper"
+   ],
+   "tons": 2414720,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Outbound",
+   "dir_phrase": "moved by rail outbound from the state",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": false
+  },
+  {
+   "state": "GA",
+   "state_name": "Georgia",
+   "commodity_as_printed": "Pulp, Paper and Allied Products",
+   "commodity_display": "pulp, paper and allied products",
+   "commodity_slug": [
+    "paper"
+   ],
+   "tons": 5484200,
+   "tons_text": null,
+   "year": 2017,
+   "direction_as_printed": "Total (excl. overhead)",
+   "dir_phrase": "moved by rail to, from and within the state (excluding pass-through traffic)",
+   "page": 97,
+   "source": "Georgia State Rail Plan 2021, p. 97",
+   "source_type": "waybill",
+   "is_total": true
+  },
+  {
+   "state": "AR",
+   "state_name": "Arkansas",
+   "commodity_as_printed": "Coal",
+   "commodity_display": "coal",
+   "commodity_slug": [
+    "coal"
+   ],
+   "tons": 50000000,
+   "tons_text": "nearly 50 million tons",
+   "year": 2019,
+   "direction_as_printed": "all directions (largely inbound/through from Wyoming)",
+   "dir_phrase": "moved by rail in all directions",
+   "page": 71,
+   "source": "Arkansas State Rail Plan 2025, p. 71",
+   "source_type": "plan",
+   "is_total": true
+  }
+ ]
+}

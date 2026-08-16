@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-08-16",
+  "pages": [
+    {
+      "loc": "/rail-served",
+      "priority": "0.8"
+    },
+    {
+      "loc": "/rail-served/alabama",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/arkansas",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/florida",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/georgia",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/louisiana",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/mississippi",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/tennessee",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/paper-mills",
+      "priority": "0.5"
+    }
+  ]
+}

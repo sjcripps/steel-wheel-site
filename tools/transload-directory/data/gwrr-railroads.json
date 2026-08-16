@@ -1,0 +1,615 @@
+[
+ {
+  "slug": "alabama-and-gulf-coast-railway",
+  "name": "Alabama & Gulf Coast Railway (AGR)",
+  "city": "Monroeville",
+  "state": "AL"
+ },
+ {
+  "slug": "aliquippa-and-ohio-river-railroad",
+  "name": "Aliquippa & Ohio River Railroad (AOR)",
+  "city": "McKees Rocks",
+  "state": "PA"
+ },
+ {
+  "slug": "arkansas-louisiana-and-missisippi-railroad",
+  "name": "Arkansas Louisiana & Mississippi Railroad (ALM)",
+  "city": "Crossett",
+  "state": "AR"
+ },
+ {
+  "slug": "arizona-and-california-railroad",
+  "name": "Arizona & California Railroad (ARZC)",
+  "city": "Parker",
+  "state": "AZ"
+ },
+ {
+  "slug": "an-railway",
+  "name": "AN Railway (AN)",
+  "city": "Port St. Joe",
+  "state": "FL"
+ },
+ {
+  "slug": "arizona-eastern-railway",
+  "name": "Arizona Eastern Railway (AZER)",
+  "city": "Claypool",
+  "state": "AZ"
+ },
+ {
+  "slug": "arkansas-midland-railroad",
+  "name": "Arkansas Midland Railroad (AKMD)",
+  "city": "Malvern",
+  "state": "AR"
+ },
+ {
+  "slug": "atlantic-and-western-railway",
+  "name": "Atlantic and Western Railway (ATW)",
+  "city": "Sanford",
+  "state": "NC"
+ },
+ {
+  "slug": "bauxite-and-northern-railway",
+  "name": "Bauxite & Northern Railway (BXN)",
+  "city": "Bauxite",
+  "state": "AR"
+ },
+ {
+  "slug": "bay-line-railroad",
+  "name": "Bay Line Railroad (BAYL)",
+  "city": "Panama City",
+  "state": "FL"
+ },
+ {
+  "slug": "buffalo-and-pittsburgh-railroad",
+  "name": "Buffalo & Pittsburgh Railroad (BPRR)",
+  "city": "Butler",
+  "state": "PA"
+ },
+ {
+  "slug": "california-northern-railroad",
+  "name": "California Northern Railroad (CFNR)",
+  "city": "Woodland",
+  "state": "CA"
+ },
+ {
+  "slug": "cape-breton-and-central-nova-scotia-railway",
+  "name": "Cape Breton & Central Nova Scotia Railway (CBNS)",
+  "city": null,
+  "state": null
+ },
+ {
+  "slug": "cascade-and-columbia-river-railroad",
+  "name": "Cascade and Columbia River Railroad (CSCD)",
+  "city": "Omak",
+  "state": "WA"
+ },
+ {
+  "slug": "carolina-piedmont-railroad",
+  "name": "Carolina Piedmont Railroad (CPDR)",
+  "city": null,
+  "state": null
+ },
+ {
+  "slug": "central-oregon-and-pacific-railroad",
+  "name": "Central Oregon & Pacific Railroad (CORP)",
+  "city": "Roseburg",
+  "state": "OR"
+ },
+ {
+  "slug": "central-railroad-company-of-indiana",
+  "name": "Central Railroad of Indiana (CIND)",
+  "city": "Cincinnati",
+  "state": "OH"
+ },
+ {
+  "slug": "central-railroad-of-indianapolis",
+  "name": "Central Railroad of Indianapolis (CERA)",
+  "city": "Kokomo",
+  "state": "IN"
+ },
+ {
+  "slug": "chattahoochee-industrial-railroad",
+  "name": "Chattahoochee Industrial Railroad (CIRR)",
+  "city": "Cedar Springs",
+  "state": "GA"
+ },
+ {
+  "slug": "chattooga-and-chickamauga-railway",
+  "name": "Chattooga & Chickamauga Railway (CCKY)",
+  "city": "Lafayette",
+  "state": "GA"
+ },
+ {
+  "slug": "chesapeake-and-albemarle-railroad",
+  "name": "Chesapeake & Albemarle Railroad (CA)",
+  "city": "Ahoskie",
+  "state": "NC"
+ },
+ {
+  "slug": "chicago-ft-wayne-and-eastern-railroad",
+  "name": "Chicago, Ft. Wayne & Eastern Railroad (CFE)",
+  "city": "Ft. Wayne",
+  "state": "IN"
+ },
+ {
+  "slug": "columbus-and-chattahoochee-railroad",
+  "name": "Columbus & Chattahoochee Railroad (CCH)",
+  "city": "Columbus",
+  "state": "GA"
+ },
+ {
+  "slug": "columbus-and-greenville-railway",
+  "name": "Columbus and Greenville Railway (CAGY)",
+  "city": "Columbus",
+  "state": "MS"
+ },
+ {
+  "slug": "columbus-and-ohio-river-rail-road",
+  "name": "Columbus & Ohio River Rail Road (CUOH)",
+  "city": "Coshocton",
+  "state": "OH"
+ },
+ {
+  "slug": "commonwealth-railway",
+  "name": "Commonwealth Railway (CWRY)",
+  "city": "Suffolk",
+  "state": "VA"
+ },
+ {
+  "slug": "conecuh-valley-railway",
+  "name": "Conecuh Valley Railway (COEH)",
+  "city": "Enterprise",
+  "state": "AL"
+ },
+ {
+  "slug": "connecticut-southern-railroad",
+  "name": "Connecticut Southern Railroad (CSO)",
+  "city": "Hartford",
+  "state": "CT"
+ },
+ {
+  "slug": "dallas-garland-and-northeastern-railroad",
+  "name": "Dallas, Garland & Northeastern Railroad (DGNO)",
+  "city": "Garland",
+  "state": "TX"
+ },
+ {
+  "slug": "east-tennessee-railway",
+  "name": "East Tennessee Railway (ETRY)",
+  "city": "Johnson City",
+  "state": "TN"
+ },
+ {
+  "slug": "eastern-alabama-railway",
+  "name": "Eastern Alabama Railway (EARY)",
+  "city": "Sylacauga",
+  "state": "AL"
+ },
+ {
+  "slug": "first-coast-railroad",
+  "name": "First Coast Railroad (FCRD)",
+  "city": "Fernandina",
+  "state": "FL"
+ },
+ {
+  "slug": "galveston-railroad",
+  "name": "Galveston Railroad (GVSR)",
+  "city": "Galveston",
+  "state": "TX"
+ },
+ {
+  "slug": "georgia-central-railway",
+  "name": "Georgia Central Railway (GC)",
+  "city": "Lyons",
+  "state": "GA"
+ },
+ {
+  "slug": "georgia-southwestern-railroad",
+  "name": "Georgia Southwestern Railroad (GSWR)",
+  "city": "Dawson",
+  "state": "GA"
+ },
+ {
+  "slug": "goderich-exeter-railway",
+  "name": "Goderich-Exeter Railway (GEXR)",
+  "city": null,
+  "state": null
+ },
+ {
+  "slug": "golden-isles-terminal-railroad",
+  "name": "Golden Isles Terminal Railroad (GITM)",
+  "city": "Brunswick",
+  "state": "GA"
+ },
+ {
+  "slug": "grand-rapids-eastern-railroad",
+  "name": "Grand Rapids Eastern Railroad (GR)",
+  "city": "Bay City",
+  "state": "MI"
+ },
+ {
+  "slug": "heart-of-georgia-railroad",
+  "name": "Heart of Georgia Railroad (HOG)",
+  "city": "Americus",
+  "state": "GA"
+ },
+ {
+  "slug": "hilton-and-albany-railroad",
+  "name": "Hilton & Albany Railroad (HAL)",
+  "city": "Dawson",
+  "state": "GA"
+ },
+ {
+  "slug": "huron-and-eastern-railway",
+  "name": "Huron and Eastern Railway (HESR)",
+  "city": "Bay City",
+  "state": "MI"
+ },
+ {
+  "slug": "huron-central-railway",
+  "name": "Huron Central Railway (HCRY)",
+  "city": null,
+  "state": null
+ },
+ {
+  "slug": "illinois-and-midland-railroad",
+  "name": "Illinois & Midland Railroad (IMRR)",
+  "city": "Springfield",
+  "state": "IL"
+ },
+ {
+  "slug": "indiana-and-ohio-railway",
+  "name": "Indiana & Ohio Railway (IORY)",
+  "city": "Cincinnati",
+  "state": "OH"
+ },
+ {
+  "slug": "indiana-southern-railroad",
+  "name": "Indiana Southern Railroad (ISRR)",
+  "city": "Petersburg",
+  "state": "IN"
+ },
+ {
+  "slug": "kwt-railway",
+  "name": "KWT Railway (KWT)",
+  "city": "Paris",
+  "state": "TN"
+ },
+ {
+  "slug": "kiamichi-railroad-company",
+  "name": "kiamichi-railroad-company",
+  "city": null,
+  "state": null,
+  "err": "HTTP Error 404: Not Found"
+ },
+ {
+  "slug": "knob-lake-and-timmins-railway-company",
+  "name": "Knob Lake & Timmins Railway (KLT)",
+  "city": null,
+  "state": null
+ },
+ {
+  "slug": "kyle-railroad",
+  "name": "Kyle Railroad (KYLE)",
+  "city": "Phillipsburg",
+  "state": "KS"
+ },
+ {
+  "slug": "little-rock-and-western-railway",
+  "name": "Little Rock & Western Railway (LRWN)",
+  "city": "Perry",
+  "state": "AR"
+ },
+ {
+  "slug": "louisiana-and-delta-railroad",
+  "name": "Louisiana & Delta Railroad (LDRR)",
+  "city": "New Iberia",
+  "state": "LA"
+ },
+ {
+  "slug": "luxapalila-valley-railroad",
+  "name": "Luxapalila Valley Railroad (LXVR)",
+  "city": "Columbus",
+  "state": "MS"
+ },
+ {
+  "slug": "mahoning-valley-railway",
+  "name": "Mahoning Valley Railway (MVRY)",
+  "city": "Youngstown",
+  "state": "OH"
+ },
+ {
+  "slug": "marquette-rail",
+  "name": "Marquette Rail (MQT)",
+  "city": "Bay City",
+  "state": "MI"
+ },
+ {
+  "slug": "maryland-midland-railway",
+  "name": "Maryland Midland Railway (MMID)",
+  "city": "Union Bridge",
+  "state": "MD"
+ },
+ {
+  "slug": "massena-terminal-railroad",
+  "name": "Massena Terminal Railroad (MSTR)",
+  "city": "Massena",
+  "state": "NY"
+ },
+ {
+  "slug": "meridian-and-bigbee-railroad",
+  "name": "Meridian & Bigbee Railroad (MNBR)",
+  "city": "Meridian",
+  "state": "MS"
+ },
+ {
+  "slug": "michigan-shore-railroad",
+  "name": "Michigan Shore Railroad (MS)",
+  "city": "Bay City",
+  "state": "MI"
+ },
+ {
+  "slug": "mid-michigan-railroad",
+  "name": "Mid-Michigan Railroad (MMRR)",
+  "city": "Bay City",
+  "state": "MI"
+ },
+ {
+  "slug": "missouri-and-northern-arkansas-railroad",
+  "name": "Missouri & Northern Arkansas Railroad (MNA)",
+  "city": "Carthage",
+  "state": "MO"
+ },
+ {
+  "slug": "new-england-central-railroad",
+  "name": "New England Central Railroad (NECR)",
+  "city": "Palmer",
+  "state": "MA"
+ },
+ {
+  "slug": "north-carolina-and-virginia-railroad",
+  "name": "North Carolina & Virginia Railroad (NCVA)",
+  "city": "Ahoskie",
+  "state": "NC"
+ },
+ {
+  "slug": "ohio-central-railroad",
+  "name": "Ohio Central Railroad (OHCR)",
+  "city": "Coshocton",
+  "state": "OH"
+ },
+ {
+  "slug": "ohio-southern-railroad",
+  "name": "Ohio Southern Railroad (OSRR)",
+  "city": "Coshocton",
+  "state": "OH"
+ },
+ {
+  "slug": "olympia-and-belmore-railroad",
+  "name": "Olympia & Belmore Railroad (OYLO)",
+  "city": "Centralia",
+  "state": "WA"
+ },
+ {
+  "slug": "ottawa-valley-railway",
+  "name": "Ottawa Valley Railway (RLK)",
+  "city": null,
+  "state": null
+ },
+ {
+  "slug": "otter-tail-valley-railroad",
+  "name": "Otter Tail Valley Railroad (OTVR)",
+  "city": "Fergus Falls",
+  "state": "MN"
+ },
+ {
+  "slug": "pittsburgh-and-ohio-central-railroad",
+  "name": "Pittsburgh & Ohio Central Railroad (POHC)",
+  "city": "McKee's Rocks",
+  "state": "PA"
+ },
+ {
+  "slug": "point-comfort-and-northern-railway",
+  "name": "Point Comfort & Northern Railway (PCN)",
+  "city": "Lolita",
+  "state": "TX"
+ },
+ {
+  "slug": "portland-and-western-railroad",
+  "name": "Portland & Western Railroad (PNWR)",
+  "city": "Albany",
+  "state": "OR"
+ },
+ {
+  "slug": "prescott-and-northwestern-railroad",
+  "name": "Prescott and Northwestern Railroad (PNW)",
+  "city": "Malvern",
+  "state": "AR"
+ },
+ {
+  "slug": "providence-and-worcester-railroad",
+  "name": "Providence and Worcester Railroad (PW)",
+  "city": "Worcester",
+  "state": "MA"
+ },
+ {
+  "slug": "puget-sound-and-pacific-railroad",
+  "name": "Puget Sound & Pacific Railroad (PSAP)",
+  "city": "Centralia",
+  "state": "WA"
+ },
+ {
+  "slug": "quebec-gatineau-railway",
+  "name": "Quebec Gatineau Railway (QGRY)",
+  "city": null,
+  "state": null
+ },
+ {
+  "slug": "rapid-city-pierre-and-eastern-railroad",
+  "name": "Rapid City, Pierre & Eastern Railroad (RCPE)",
+  "city": "Rapid City",
+  "state": "SD"
+ },
+ {
+  "slug": "riceboro-southern-railway",
+  "name": "Riceboro Southern Railway (RSOR)",
+  "city": "Riceboro",
+  "state": "GA"
+ },
+ {
+  "slug": "rochester-and-southern-railroad",
+  "name": "Rochester & Southern Railroad (RSR)",
+  "city": "West Henrietta",
+  "state": "NY"
+ },
+ {
+  "slug": "san-joaquin-valley-railroad",
+  "name": "San Joaquin Valley Railroad (SJVR)",
+  "city": "Exeter",
+  "state": "CA"
+ },
+ {
+  "slug": "san-diego-and-imperial-valley-railroad",
+  "name": "San Diego & Imperial Valley Railroad (SDIY)",
+  "city": "San Diego",
+  "state": "CA"
+ },
+ {
+  "slug": "savannah-port-terminal-railroad",
+  "name": "Savannah Port Terminal Railroad (SAPT)",
+  "city": "Garden City",
+  "state": "GA"
+ },
+ {
+  "slug": "south-carolina-central-railroad",
+  "name": "South Carolina Central Railroad (SCRF)",
+  "city": "Darlington",
+  "state": "SC"
+ },
+ {
+  "slug": "southern-ontario-railway",
+  "name": "Southern Ontario Railway (RLHH)",
+  "city": null,
+  "state": null
+ },
+ {
+  "slug": "st-lawrence-and-atlantic-railroad-quebec",
+  "name": "St. Lawrence & Atlantic Railroad (Quebec) (SLQ)",
+  "city": null,
+  "state": null
+ },
+ {
+  "slug": "st-lawrence-and-atlantic-railroad",
+  "name": "St. Lawrence & Atlantic Railroad (SLR)",
+  "city": "Auburn",
+  "state": "ME"
+ },
+ {
+  "slug": "tazewell-and-peoria-railroad",
+  "name": "Tazewell & Peoria Railroad (TZPR)",
+  "city": "Creve Coeur",
+  "state": "IL"
+ },
+ {
+  "slug": "texas-northeastern-railroad",
+  "name": "Texas Northeastern Railroad (TNER)",
+  "city": "Garland",
+  "state": "TX"
+ },
+ {
+  "slug": "toledo-peoria-and-western-railway",
+  "name": "Toledo, Peoria & Western Railway (TPW)",
+  "city": "East Peoria",
+  "state": "IL"
+ },
+ {
+  "slug": "tomahawk-railway",
+  "name": "Tomahawk Railway (TR)",
+  "city": "Tomahawk",
+  "state": "WI"
+ },
+ {
+  "slug": "utah-railway-company",
+  "name": "Utah Railway (UTAH)",
+  "city": "Provo",
+  "state": "UT"
+ },
+ {
+  "slug": "valdosta-railway",
+  "name": "Valdosta Railway (VR)",
+  "city": "Valdosta",
+  "state": "GA"
+ },
+ {
+  "slug": "ventura-county-railroad",
+  "name": "Ventura County Railroad (VCRR)",
+  "city": "San Diego",
+  "state": "CA"
+ },
+ {
+  "slug": "warren-and-trumbull-railroad",
+  "name": "Warren & Trumbull Railroad (WTRM)",
+  "city": "Youngstown",
+  "state": "OH"
+ },
+ {
+  "slug": "wellsboro-and-corning-railroad",
+  "name": "Wellsboro & Corning Railroad (WCOR)",
+  "city": "West Henrietta",
+  "state": "NY"
+ },
+ {
+  "slug": "wilmington-terminal-railroad",
+  "name": "Wilmington Terminal Railroad (WTRY)",
+  "city": "Wilmington",
+  "state": "NC"
+ },
+ {
+  "slug": "wiregrass-central-railway",
+  "name": "Wiregrass Central Railway (WGCR)",
+  "city": "Enterprise",
+  "state": "AL"
+ },
+ {
+  "slug": "york-railway",
+  "name": "York Railway (YRC)",
+  "city": "York",
+  "state": "PA"
+ },
+ {
+  "slug": "youngstown-belt-railroad",
+  "name": "Youngstown Belt Railroad (YB)",
+  "city": "Youngstown",
+  "state": "OH"
+ },
+ {
+  "slug": "youngstown-and-austintown-railroad",
+  "name": "Youngstown & Austintown Railroad (YARR)",
+  "city": "Youngstown",
+  "state": "OH"
+ },
+ {
+  "slug": "warren-and-saline-river-railroad",
+  "name": "Warren & Saline River Railroad (WSR)",
+  "city": "Malvern",
+  "state": "AR"
+ },
+ {
+  "slug": "western-labrador-rail-services",
+  "name": "Western Labrador Rail Services (WLRS)",
+  "city": null,
+  "state": null
+ },
+ {
+  "slug": "red-deer-railway",
+  "name": "Red Deer Railway (RDR)",
+  "city": null,
+  "state": null
+ },
+ {
+  "slug": "goderich-exeter-railway/carrying-wind-qgry",
+  "name": "Carrying the Wind on QGRY",
+  "city": null,
+  "state": null
+ }
+]

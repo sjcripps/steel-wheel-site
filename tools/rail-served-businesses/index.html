@@ -567,7 +567,7 @@
           </div>
 
           <div class="filter-group">
-            <h3>Nearest Class I</h3>
+            <h3>Serving Railroad</h3>
             <select id="classiFilter">
               <option value="">All carriers</option>
             </select>
@@ -607,7 +607,7 @@
                 <th data-sort="name">Company / Site <span class="sort-arrow">▼</span></th>
                 <th data-sort="city">City, State <span class="sort-arrow">▼</span></th>
                 <th data-sort="commodity">Commodity <span class="sort-arrow">▼</span></th>
-                <th>Class I</th>
+                <th>Railroad</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -623,7 +623,7 @@
         </div>
 
         <div class="disclaimer">
-          Listings compiled from SWL's internal commodity-flow map, transload directory, and lane history. Sites change ownership, capabilities, and rail-service status — confirm directly with the operator before committing freight. SWL provides indicative rail-rate estimates only; we do not guarantee rates. Steel Wheel Logistics is a rail logistics provider; we don't operate the listed facilities.
+          Listings compiled from public map data (OpenStreetMap spur geometry + FRA rail-network ownership), published state rail plans, and industry association member lists. Entries marked "reported" come from a published source and are not spur-verified. Sites change ownership, capabilities, and rail-service status — confirm directly with the operator before committing freight. SWL provides indicative rail-rate estimates only; we do not guarantee rates. Steel Wheel Logistics is a rail logistics provider; we don't operate the listed facilities.
         </div>
 
         <div class="cta-row">
@@ -988,6 +988,9 @@
         const classiPill = b.nearest_class_i
           ? `<span class="pill pill-classi">${escape(b.nearest_class_i)}</span>`
           : '<span style="color:var(--text-grey);font-size:0.8rem;">—</span>';
+        const confPill = b.confidence === 'medium'
+          ? ` <span class="pill pill-conf-high" title="Reported by a published source (state rail plan or industry association); not spur-verified from map data">reported</span>`
+          : '';
 
         const rateUrl = `/tools/rail-rate-quote/?origin_city=${encodeURIComponent(b.city || '')}&origin_state=${encodeURIComponent(b.state || '')}`;
         const rateBtn = `<a href="${rateUrl}" class="act-rate" title="Get a rail rate from this origin">Get a rate</a>`;
@@ -996,7 +999,7 @@
           : '';
 
         tr.innerHTML = `
-          <td class="col-loc"><strong>${escape(b.company_name)}</strong></td>
+          <td class="col-loc"><strong>${escape(b.company_name)}</strong>${confPill}</td>
           <td class="col-loc">${escape(b.city || '')}<span class="city-state">${escape(b.state || '')}</span></td>
           <td>${commodityPill}</td>
           <td>${classiPill}</td>

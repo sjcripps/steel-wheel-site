@@ -20,6 +20,24 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
     } catch {
       console.warn('sitemap: transload/pages.json missing — run scripts/build-transload-pages.js');
     }
+    // Commodity + rail-hub pages (crawlable layer for the commodity-flow map).
+    // Same degrade-to-empty contract as the transload manifest.
+    let commodityPages: Array<{ loc: string; priority: string }> = [];
+    try {
+      const cp = join(process.cwd(), 'commodities', 'pages.json');
+      commodityPages = JSON.parse(readFileSync(cp, 'utf-8')).pages || [];
+    } catch {
+      console.warn('sitemap: commodities/pages.json missing — run scripts/build-commodity-pages.js');
+    }
+    // Rail-served business pages (crawlable layer for the confidence-tiered
+    // rail-served dataset). Same degrade-to-empty contract as the manifests above.
+    let railServedPages: Array<{ loc: string; priority: string }> = [];
+    try {
+      const rp = join(process.cwd(), 'rail-served', 'pages.json');
+      railServedPages = JSON.parse(readFileSync(rp, 'utf-8')).pages || [];
+    } catch {
+      console.warn('sitemap: rail-served/pages.json missing — run scripts/build-railserved-pages.js');
+    }
     // NOTE: the ~359 programmatic /rates lane pages are intentionally EXCLUDED
     // from the sitemap (2026-06-01). GSC showed 27 impressions / 0 clicks across
     // all of them over 90d — no search demand — and they were diluting the
@@ -32,6 +50,7 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
       { loc: "/", priority: "1.0", changefreq: "weekly" },
       { loc: "/services", priority: "0.9", changefreq: "monthly" },
       { loc: "/outsourced-rail-department", priority: "0.9", changefreq: "monthly" },
+      { loc: "/rail-transload-services", priority: "0.9", changefreq: "monthly" },
       { loc: "/contact", priority: "0.8", changefreq: "monthly" },
       { loc: "/blog", priority: "0.9", changefreq: "daily" },
       { loc: "/courses", priority: "0.9", changefreq: "weekly" },
@@ -53,7 +72,6 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
       { loc: "/tools/rail-fleet-calculator", priority: "0.8", changefreq: "monthly" },
       { loc: "/tools/rail-served-businesses", priority: "0.8", changefreq: "monthly" },
       { loc: "/tools/commodity-flow-map", priority: "0.8", changefreq: "monthly" },
-      { loc: "/tools/storage-locator", priority: "0.8", changefreq: "monthly" },
       { loc: "/tools/sublease-board", priority: "0.8", changefreq: "weekly" },
       // Regenerated from data/fsc/current.json on the 1st of each month, so
       // changefreq is monthly and genuinely accurate.
@@ -92,6 +110,18 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
 
     for (const page of transloadPages) {
       xml += `  <url>\n    <loc>https://steelwheellogistics.com${page.loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>${page.priority}</priority>\n  </url>\n`;
+    }
+
+    for (const page of railServedPages) {
+      xml += `  <url>\n    <loc>https://steelwheellogistics.com${page.loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>${page.priority}</priority>\n  </url>\n`;
+    }
+
+    for (const page of commodityPages) {
+      // commodities/pages.json stores absolute URLs; tolerate either form.
+      const loc = page.loc.startsWith('http')
+        ? page.loc
+        : `https://steelwheellogistics.com${page.loc}`;
+      xml += `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>${page.priority}</priority>\n  </url>\n`;
     }
 
     xml += `</urlset>`;

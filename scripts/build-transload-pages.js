@@ -55,6 +55,14 @@ const REGIONS = {
   TX: "Texas", UT: "Utah", VT: "Vermont", VA: "Virginia", WA: "Washington",
   WV: "West Virginia", WI: "Wisconsin", WY: "Wyoming", DC: "District of Columbia",
   // Canadian provinces — SWL quotes cross-border carload, so these belong.
+  // Mexican states (2026-08-14) — 27 facilities (Bulkmatic de Mexico, FR
+  // Terminales, Watco SLP, Lazaro Cardenas port ops...) were skipped for lack
+  // of region names, invisible to search. Codes verified against the facility
+  // cities themselves (Tuxpan->VL=Veracruz, Lazaro Cardenas->MH=Michoacan...).
+  SL: "San Luis Potosi", EM: "Estado de Mexico", HG: "Hidalgo",
+  GJ: "Guanajuato", JA: "Jalisco", QA: "Queretaro", BJ: "Baja California",
+  SO: "Sonora", TM: "Tamaulipas", VL: "Veracruz", DF: "Mexico City",
+  MH: "Michoacan",
   AB: "Alberta", BC: "British Columbia", MB: "Manitoba", NB: "New Brunswick",
   NL: "Newfoundland and Labrador", NS: "Nova Scotia", ON: "Ontario",
   PQ: "Quebec", SK: "Saskatchewan",

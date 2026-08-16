@@ -67,6 +67,37 @@
     .tools-section .card .card-cta a:hover {
       background: var(--steel-blue-dark);
     }
+    /* Featured spine tool — full-width, visually first */
+    .featured-tool {
+      max-width: 1100px;
+      margin: 0 auto 8px auto;
+      padding: 0 24px;
+    }
+    .featured-tool .card {
+      display: flex;
+      flex-direction: column;
+      border: 2px solid var(--steel-blue);
+      box-shadow: 0 6px 24px rgba(30, 58, 92, 0.12);
+    }
+    .featured-tool .badge {
+      display: inline-block;
+      align-self: flex-start;
+      background: var(--steel-blue);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    .tools-section .section-sub {
+      margin: -30px 0 32px 0;
+      color: #5a6b7d;
+      font-size: 1rem;
+      max-width: 720px;
+    }
   </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
@@ -108,15 +139,14 @@
   <!-- Hero -->
   <section class="tools-hero">
     <h1>Free Rail Logistics Tools</h1>
-    <p>Practical tools for shippers — estimate a rail rate, pick the right car for your commodity, scope your next move. Built on STB and BTS data, free to use.</p>
+    <p>Practical tools for shippers, built on STB and BTS data and free to use. They work together: find your commodity, pick the car, size the fleet, locate a facility — and hand it all into a rate estimate without re-typing a thing.</p>
   </section>
 
-  <!-- Calculators & Estimators -->
-  <section class="tools-section">
-    <h2 style="margin-bottom: 40px; font-size: 1.8rem; color: var(--navy);">Calculators & Estimators</h2>
-    <div class="card-grid">
-
+  <!-- Featured: the spine — every reference tool hands off into the estimator -->
+  <section class="tools-section" style="padding-bottom: 0;">
+    <div class="featured-tool" style="padding: 0;">
       <div class="card">
+        <span class="badge">Start here</span>
         <div class="card-icon">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
         </div>
@@ -126,6 +156,76 @@
           <a href="/tools/rail-rate-quote">Estimate a Rate &rarr;</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="tools-section">
+    <h2 style="margin-bottom: 40px; font-size: 1.8rem; color: var(--navy);">Price &amp; Plan a Move</h2>
+    <p class="section-sub">Work out cost, timing, and exposure for a lane — then save it to the dashboard and we watch it for you.</p>
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 18h18"/><path d="M7 18V8"/><path d="M11 18V12"/><path d="M15 18V6"/><path d="M19 18V10"/></svg>
+        </div>
+        <h3>Rail-vs-Truck Mode-Shift Calculator</h3>
+        <p>Compare rail and truck side-by-side on any U.S. lane. Per-load cost, annual spend, and CO2e emissions delta — using URCS 2024 rail costs, ATRI 2025 trucking averages, and EPA SmartWay 2024 emission factors.</p>
+        <div class="card-cta">
+          <a href="/tools/rail-vs-truck">Compare Modes &rarr;</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </div>
+        <h3>Rail Transit Time Calculator</h3>
+        <p>Estimate carload transit between any two points from nine years of STB Class I service filings — speed by train type, terminal dwell, and whether your carriers are running at their seasonal norm right now.</p>
+        <div class="card-cta">
+          <a href="/tools/rail-transit-time">Estimate Transit &rarr;</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 22h12V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M15 12h3a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-3"/><path d="M7 10h4"/><path d="M7 14h4"/></svg>
+        </div>
+        <h3>Rail Fuel Surcharge Rates</h3>
+        <p>Current mileage-based fuel surcharge factors for BNSF, Union Pacific, CSX, Norfolk Southern, CN and CPKC — with the formula and carrier source behind every number. Refreshed monthly.</p>
+        <div class="card-cta">
+          <a href="/tools/rail-fuel-surcharge">View Current Rates &rarr;</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 4v4"/><path d="M16 4v4"/></svg>
+        </div>
+        <h3>Demurrage Calculator</h3>
+        <p>Estimate rail demurrage exposure on a held car using current Class I rate structures. Pick equipment, days held, and surcharges — get an itemized per-car and grand-total breakdown.</p>
+        <div class="card-cta">
+          <a href="/tools/demurrage-calculator">Calculate Demurrage &rarr;</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+        </div>
+        <h3>Shipper Dashboard</h3>
+        <p>Save your lanes once and we watch them — indicative rate, transit estimate, and whether your railroads are running at their seasonal norm, refreshed every Tuesday with week-over-week movement flagged. Free account.</p>
+        <div class="card-cta">
+          <a href="/tools/rail-dashboard">Open Dashboard &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="tools-section" style="background-color: var(--light-bg); border-top: 1px solid var(--border-color);">
+    <h2 style="margin-bottom: 40px; font-size: 1.8rem; color: var(--navy);">Railcars &amp; Equipment</h2>
+    <p class="section-sub">Pick the right car, size the fleet for your tonnage, and see what cars actually cost — each tool hands into the next.</p>
+    <div class="card-grid">
 
       <div class="card">
         <div class="card-icon">
@@ -151,78 +251,12 @@
 
       <div class="card">
         <div class="card-icon">
-          <svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="M14.5 14.5L21 21"/><path d="M7.5 10h5"/><path d="M10 7.5v5"/></svg>
-        </div>
-        <h3>STCC Code Finder</h3>
-        <p>What's the STCC for your commodity? Search plain-English terms — get candidate codes with the full hierarchy behind them, guided walkthroughs for waste and hazmat, and railroad-published 7-digit examples with sources.</p>
-        <div class="card-cta">
-          <a href="/tools/stcc-finder">Find Your STCC &rarr;</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 4v4"/><path d="M16 4v4"/></svg>
-        </div>
-        <h3>Demurrage Calculator</h3>
-        <p>Estimate rail demurrage exposure on a held car using current Class I rate structures. Pick equipment, days held, and surcharges — get an itemized per-car and grand-total breakdown.</p>
-        <div class="card-cta">
-          <a href="/tools/demurrage-calculator">Calculate Demurrage &rarr;</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 22h12V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M15 12h3a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-3"/><path d="M7 10h4"/><path d="M7 14h4"/></svg>
-        </div>
-        <h3>Rail Fuel Surcharge Rates</h3>
-        <p>Current mileage-based fuel surcharge factors for BNSF, Union Pacific, CSX, Norfolk Southern, CN and CPKC — with the formula and carrier source behind every number. Refreshed monthly.</p>
-        <div class="card-cta">
-          <a href="/tools/rail-fuel-surcharge">View Current Rates &rarr;</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-        </div>
-        <h3>Rail Transit Time Calculator</h3>
-        <p>Estimate carload transit between any two points from nine years of STB Class I service filings — speed by train type, terminal dwell, and whether your carriers are running at their seasonal norm right now.</p>
-        <div class="card-cta">
-          <a href="/tools/rail-transit-time">Estimate Transit &rarr;</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
-        </div>
-        <h3>Shipper Dashboard</h3>
-        <p>Save your lanes once and we watch them — indicative rate, transit estimate, and whether your railroads are running at their seasonal norm, refreshed every Tuesday with week-over-week movement flagged. Free account.</p>
-        <div class="card-cta">
-          <a href="/tools/rail-dashboard">Open Dashboard &rarr;</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">
           <svg viewBox="0 0 24 24"><path d="M6 3v18"/><path d="M18 3v18"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><rect x="7" y="4" width="3" height="2" fill="currentColor"/><rect x="14" y="4" width="3" height="2" fill="currentColor"/></svg>
         </div>
         <h3>Rail Fleet Calculator</h3>
         <p>Calculate your optimal fleet size, composition, and car mix. Input annual tonnage, trip duration, and utilization targets — get recommendations for baseline and peak season fleet requirements.</p>
         <div class="card-cta">
           <a href="/tools/rail-fleet-calculator">Calculate Fleet &rarr;</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 18h18"/><path d="M7 18V8"/><path d="M11 18V12"/><path d="M15 18V6"/><path d="M19 18V10"/></svg>
-        </div>
-        <h3>Rail-vs-Truck Mode-Shift Calculator</h3>
-        <p>Compare rail and truck side-by-side on any U.S. lane. Per-load cost, annual spend, and CO2e emissions delta — using URCS 2024 rail costs, ATRI 2025 trucking averages, and EPA SmartWay 2024 emission factors.</p>
-        <div class="card-cta">
-          <a href="/tools/rail-vs-truck">Compare Modes &rarr;</a>
         </div>
       </div>
 
@@ -239,21 +273,21 @@
 
       <div class="card">
         <div class="card-icon">
-          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/><line x1="10" y1="9" x2="11" y2="9"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm3 7h-6v-2h6v2z"/></svg>
         </div>
-        <h3>Free Rail Bill of Lading Builder</h3>
-        <p>Generate compliant rail BoLs in PDF and Word format. Supports domestic, US to Mexico, and US to Canada lanes. Hazmat-aware — auto-inserts §172.204 shipper certification and validates §172.604 emergency-response provider contract.</p>
+        <h3>Railcar Sublease Board</h3>
+        <p>List excess railcars or find cars you need — connect directly with shippers. Search by car type, geography, and timeline. No broker fees.</p>
         <div class="card-cta">
-          <a href="/tools/rail-bol-builder">Build a Bill of Lading &rarr;</a>
+          <a href="/tools/sublease-board">Browse Board &rarr;</a>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- Directories & Marketplaces -->
-  <section class="tools-section" style="background-color: var(--light-bg); border-top: 1px solid var(--border-color);">
-    <h2 style="margin-bottom: 40px; font-size: 1.8rem; color: var(--navy);">Directories & Marketplaces</h2>
+  <section class="tools-section">
+    <h2 style="margin-bottom: 40px; font-size: 1.8rem; color: var(--navy);">Find Facilities &amp; Partners</h2>
+    <p class="section-sub">Transloads, storage, rail-served businesses, and the hubs freight moves through — filterable and linked straight into a rate estimate.</p>
     <div class="card-grid">
 
       <div class="card">
@@ -265,17 +299,6 @@
         <div class="card-cta">
           <a href="/tools/transload-directory">Browse Directory &rarr;</a>
           <a href="/transload/">Browse by State &rarr;</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/><path d="M5 11l2 2 4-4"/></svg>
-        </div>
-        <h3>Rail Storage Locator</h3>
-        <p>Find 900+ verified rail storage facilities and distribution hubs from Norfolk Southern, CSX, BNSF, and KCS. Filter by state, commodity type, and rail capabilities — get contact info and facility details.</p>
-        <div class="card-cta">
-          <a href="/tools/storage-locator">Locate Storage &rarr;</a>
         </div>
       </div>
 
@@ -301,14 +324,33 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <section class="tools-section" style="background-color: var(--light-bg); border-top: 1px solid var(--border-color);">
+    <h2 style="margin-bottom: 40px; font-size: 1.8rem; color: var(--navy);">Reference &amp; Paperwork</h2>
+    <p class="section-sub">Classification and documentation — search a commodity code or generate a compliant bill of lading.</p>
+    <div class="card-grid">
+
       <div class="card">
         <div class="card-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm3 7h-6v-2h6v2z"/></svg>
+          <svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="M14.5 14.5L21 21"/><path d="M7.5 10h5"/><path d="M10 7.5v5"/></svg>
         </div>
-        <h3>Railcar Sublease Board</h3>
-        <p>List excess railcars or find cars you need — connect directly with shippers. Search by car type, geography, and timeline. No broker fees.</p>
+        <h3>STCC Code Finder</h3>
+        <p>What's the STCC for your commodity? Search plain-English terms — get candidate codes with the full hierarchy behind them, guided walkthroughs for waste and hazmat, and railroad-published 7-digit examples with sources.</p>
         <div class="card-cta">
-          <a href="/tools/sublease-board">Browse Board &rarr;</a>
+          <a href="/tools/stcc-finder">Find Your STCC &rarr;</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/><line x1="10" y1="9" x2="11" y2="9"/></svg>
+        </div>
+        <h3>Free Rail Bill of Lading Builder</h3>
+        <p>Generate compliant rail BoLs in PDF and Word format. Supports domestic, US to Mexico, and US to Canada lanes. Hazmat-aware — auto-inserts §172.204 shipper certification and validates §172.604 emergency-response provider contract.</p>
+        <div class="card-cta">
+          <a href="/tools/rail-bol-builder">Build a Bill of Lading &rarr;</a>
         </div>
       </div>
 

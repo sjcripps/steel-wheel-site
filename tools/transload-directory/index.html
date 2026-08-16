@@ -928,7 +928,38 @@
       buildFilterUI();
       buildStateOptions();
       initMap();
+      applyDeepLinkFilters();
       applyFilters();
+    }
+
+    // Deep-link prefill: /tools/transload-directory?state=WI&commodity=plastic
+    // lets the rate-quote result (and any reference page) hand off into a
+    // pre-filtered directory instead of a blank one. ?commodity= accepts the
+    // ESTIMATOR's commodity ids and translates to this page's display options;
+    // ids with no directory equivalent (grain, coal, aggregates...) silently
+    // fall back to state-only. ?q= prefills the text search.
+    const EST_TO_DIRECTORY_COMMODITY = {
+      'plastic': 'Plastics (Dry)', 'sand-frac': 'Frac Sand',
+      'chemicals': 'Chemicals (Liq)', 'crude-oil': 'Petroleum Products',
+      'ethanol': 'Petroleum Products', 'lpg': 'Petroleum Products',
+      'asphalt': 'Asphalt', 'lumber': 'Lumber', 'steel': 'Steel',
+      'barite': 'Minerals', 'iron-ore': 'Minerals',
+      'fertilizer': 'Chemicals (Dry)',
+    };
+    function applyDeepLinkFilters() {
+      const p = new URLSearchParams(location.search);
+      const state = (p.get('state') || '').toUpperCase();
+      if (state) {
+        const sel = document.getElementById('stateFilter');
+        if (sel.querySelector(`option[value="${CSS.escape(state)}"]`)) sel.value = state;
+      }
+      const q = p.get('q');
+      if (q) document.getElementById('searchBox').value = q;
+      const dir = EST_TO_DIRECTORY_COMMODITY[p.get('commodity') || ''];
+      if (dir) {
+        const box = document.querySelector(`#commodityFilters input[data-commodity="${CSS.escape(dir)}"]`);
+        if (box) box.checked = true;
+      }
     }
 
     function buildStateOptions() {
