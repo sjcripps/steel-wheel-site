@@ -6,15 +6,29 @@
  * disclaimer pattern, esc/slug helpers, ItemList JSON-LD, pages.json manifest).
  *
  * Source of truth: the canonical confidence-tiered merged dataset built in
- * Phase A1 of the Rail Data Foundation —
- *   /home/ubuntu/bots/assistant/businesses/steel-wheel/data/railserved-merged-v1.json
- * (2,542 records; evidence tiers: spur_verified = OSM spur geometry + NARN
+ * the Rail Data Foundation —
+ *   /home/ubuntu/bots/assistant/businesses/steel-wheel/data/railserved-merged-v3.json
+ * (11,319 records; evidence tiers: spur_verified = OSM spur geometry + NARN
  * ownership, state_rail_plan = page-cited shipper listings, afandpa = AF&PA
  * member mill list, named_spur = low confidence, never published here).
+ * v2 fallback: railserved-merged-v2.json (36-state wave, 9,777 records);
+ * v1 fallback: railserved-merged-v1.json (SE-7 wave, 2,542 records) — pass
+ * either as argv[2] to roll back.
+ *
+ * v2 display rules enforced here:
+ *   - in_default_view: false (rail-adjacent-utility) records are dropped at load.
+ *   - serving_display ("freight operator unresolved (passenger-owned track)")
+ *     renders as that text — never a bare mark (marks are empty on these).
+ *   - serving_qualifier ("plant/terminal trackage — Class I via interchange" /
+ *     "US Government trackage") renders next to the mark, never a bare mark.
+ *   - serving_flags "non-freight-owner" renders as its flag text (marks cleared
+ *     upstream).
+ *   - XXXX/XMDT sentinels + passenger-owner marks are stripped upstream and
+ *     asserted absent here.
  *
  * Pages emitted to /rail-served/:
  *   - index.html                     hub, links every state page
- *   - {state}.html                   one per SE-7 state (AL AR FL GA LA MS TN),
+ *   - {state}.html                   one per geometry state (48 states in v3),
  *                                    HIGH-confidence records only, grouped by
  *                                    serving railroad, each entry with an
  *                                    evidence note
@@ -40,18 +54,32 @@ import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from "fs";
 import { join, dirname } from "path";
 
 const ROOT = join(dirname(new URL(import.meta.url).pathname), "..");
+// v2 fallback: .../railserved-merged-v2.json (36-state wave)
+// v1 fallback: .../railserved-merged-v1.json (SE-7 wave)
 const DATA_FILE =
   process.argv[2] ||
-  "/home/ubuntu/bots/assistant/businesses/steel-wheel/data/railserved-merged-v1.json";
+  "/home/ubuntu/bots/assistant/businesses/steel-wheel/data/railserved-merged-v3.json";
 const OUTPUT_DIR = join(ROOT, "rail-served");
 
 const GTAG_ID = "G-RSWDYHVY7Z";
 const BASE = "https://steelwheellogistics.com";
 
-// SE-7 wave. Slugs double as /transload/{slug} sibling links.
+// v3 geometry-state wave (48 states, matches merged.states_geometry —
+// the full lower 48). Slugs double as /transload/{slug} sibling links —
+// all 48 exist there.
 const STATES = {
-  AL: "Alabama", AR: "Arkansas", FL: "Florida", GA: "Georgia",
-  LA: "Louisiana", MS: "Mississippi", TN: "Tennessee",
+  AL: "Alabama", AR: "Arkansas", AZ: "Arizona", CA: "California",
+  CO: "Colorado", CT: "Connecticut", DE: "Delaware", FL: "Florida",
+  GA: "Georgia", IA: "Iowa", ID: "Idaho", IL: "Illinois",
+  IN: "Indiana", KS: "Kansas", KY: "Kentucky", LA: "Louisiana",
+  MA: "Massachusetts", MD: "Maryland", ME: "Maine", MI: "Michigan",
+  MN: "Minnesota", MO: "Missouri", MS: "Mississippi", MT: "Montana",
+  NC: "North Carolina", ND: "North Dakota", NE: "Nebraska", NH: "New Hampshire",
+  NJ: "New Jersey", NM: "New Mexico", NV: "Nevada", NY: "New York",
+  OH: "Ohio", OK: "Oklahoma", OR: "Oregon", PA: "Pennsylvania",
+  RI: "Rhode Island", SC: "South Carolina", SD: "South Dakota", TN: "Tennessee",
+  TX: "Texas", UT: "Utah", VA: "Virginia", VT: "Vermont",
+  WA: "Washington", WI: "Wisconsin", WV: "West Virginia", WY: "Wyoming",
 };
 
 // Full names for grouping headers on the national paper-mills page. Only
@@ -90,17 +118,47 @@ const slug = (s) =>
 
 // ── Load + partition ────────────────────────────────────────────────────────
 const merged = JSON.parse(readFileSync(DATA_FILE, "utf-8"));
-const records = merged.records || [];
+// v2: rail-adjacent-utility false positives (in_default_view: false) never
+// reach any customer-facing surface.
+const records = (merged.records || []).filter((r) => r.in_default_view !== false);
 const today = new Date().toISOString().split("T")[0];
+
+// Geometry-state drift gate: the merge's declared geometry wave must equal
+// the STATES table above, or pages silently go missing.
+if (Array.isArray(merged.states_geometry)) {
+  const declared = [...merged.states_geometry].sort().join(",");
+  const ours = Object.keys(STATES).sort().join(",");
+  if (declared !== ours) {
+    console.error(`FATAL: STATES table != merged.states_geometry\n  ours:     ${ours}\n  declared: ${declared}`);
+    process.exit(1);
+  }
+}
+
+// Sentinel + passenger-owner marks are stripped upstream in the v2/v3 merges;
+// tripwire here so a regression can never render one as a serving railroad.
+// v3 additions (western-state passenger/transit/heritage owners):
+// DRTD, RTDC, TRAX, NMRX, NNRX, NSRM.
+const BANNED_MARKS = new Set([
+  "XXXX", "XMDT", "LI", "NJT", "SCAX", "NIRC", "NICD", "VPRA", "MNCW",
+  "PATH", "MARC", "MBTA", "SDNR", "JPBX", "SMRT", "MTS",
+  "DRTD", "RTDC", "TRAX", "NMRX", "NNRX", "NSRM",
+]);
+for (const r of records) {
+  const bad = (r.serving_railroads || []).filter((m) => BANNED_MARKS.has(m));
+  if (bad.length) {
+    console.error(`FATAL: banned mark(s) ${bad.join(",")} on ${r.name} (${r.state})`);
+    process.exit(1);
+  }
+}
 
 const high = records.filter((r) => r.confidence === "high");
 const highSE = high.filter((r) => STATES[r.state]);
 const highNonSE = high.filter((r) => !STATES[r.state]);
 if (highNonSE.length) {
   // Contract: high confidence requires spur geometry, which only exists for the
-  // SE-7 wave. A high record outside it means the merge changed under us.
+  // geometry-state wave. A high record outside it means the merge changed under us.
   console.error(
-    `FATAL: ${highNonSE.length} high-confidence records outside SE-7: ` +
+    `FATAL: ${highNonSE.length} high-confidence records outside the geometry-state wave: ` +
       highNonSE.map((r) => `${r.name} (${r.state})`).join(", ")
   );
   process.exit(1);
@@ -130,9 +188,40 @@ function evidenceNote(r, stateName) {
       bits.push(`listed in the ${stateName} State Rail Plan${page}`);
     } else if (ev.tier === "afandpa") {
       bits.push("AF&amp;PA member mill (association-verified)");
+    } else if (ev.tier === "named_spur") {
+      bits.push("named spur in map data (unverified)");
     }
   }
   return bits.join(" &middot; ");
+}
+
+// ── v2 serving-railroad display (never a bare mark on flagged records) ──────
+// serving_display and the non-freight-owner flag come with marks already
+// cleared upstream; serving_qualifier accompanies a real mark and must render
+// with it.
+const NO_RR_KEY = "—";
+const NON_FREIGHT_KEY = "non-freight owner";
+
+function servingGroupKey(r) {
+  if (r.serving_display) return r.serving_display;
+  const first = (r.serving_railroads || [])[0];
+  if (first) return first;
+  if ((r.serving_flags || []).includes("non-freight-owner")) return NON_FREIGHT_KEY;
+  return NO_RR_KEY;
+}
+
+function servingLineHtml(r) {
+  if (r.serving_display) return esc(r.serving_display);
+  const marks = r.serving_railroads || [];
+  if (!marks.length) {
+    return (r.serving_flags || []).includes("non-freight-owner")
+      ? NON_FREIGHT_KEY
+      : "not identified from map data";
+  }
+  const names = marks.map((m) => esc(CLASS_I_NAMES[m] || m)).join(", ");
+  return r.serving_qualifier
+    ? `${names} <span style="color:#666;font-size:0.9em">(${esc(r.serving_qualifier)})</span>`
+    : names;
 }
 
 function nearestClassIFromAfandpa(r) {
@@ -252,15 +341,10 @@ function cta(context) {
 }
 
 function entryCard(r, stateName) {
-  const rrs = (r.serving_railroads || []).length
-    ? (r.serving_railroads || [])
-        .map((m) => (CLASS_I_NAMES[m] ? `${esc(CLASS_I_NAMES[m])}` : esc(m)))
-        .join(", ")
-    : "not identified from map data";
   return `      <div class="railroad-item" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">${esc(r.name)}</h3>
         <div style="color:#555;font-size:0.9em">${r.city ? esc(r.city) + ", " : ""}${esc(r.state)}</div>
-        <div><strong>Serving railroad${(r.serving_railroads || []).length > 1 ? "s" : ""}:</strong> ${rrs}</div>
+        <div><strong>Serving railroad${(r.serving_railroads || []).length > 1 ? "s" : ""}:</strong> ${servingLineHtml(r)}</div>
         <div style="color:#666;font-size:0.85em;font-style:italic">Evidence: ${evidenceNote(r, stateName)}</div>
       </div>`;
 }
@@ -310,24 +394,37 @@ for (const [code, stateName] of Object.entries(STATES)) {
     `grouped by serving railroad. Every listing is spur-verified from map data or ` +
     `cited to the ${stateName} State Rail Plan. Steel Wheel Logistics.`;
 
-  // Group by first serving railroad; order groups by size, then mark.
+  // Group by serving-display key (first mark, or the v2 qualifier text for
+  // flagged records); order groups by size, then key.
   const byRR = new Map();
   for (const r of list) {
-    const key = (r.serving_railroads || [])[0] || "—";
+    const key = servingGroupKey(r);
     if (!byRR.has(key)) byRR.set(key, []);
     byRR.get(key).push(r);
   }
   const groups = [...byRR.entries()].sort(
     (a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0])
   );
-  // "Not identified" group renders last regardless of size.
-  groups.sort((a, b) => (a[0] === "—") - (b[0] === "—"));
+  // Qualifier-text groups render after real marks; "not identified" last.
+  const SPECIAL_KEYS = new Set([
+    NO_RR_KEY, NON_FREIGHT_KEY,
+    "freight operator unresolved (passenger-owned track)",
+  ]);
+  groups.sort(
+    (a, b) =>
+      SPECIAL_KEYS.has(a[0]) - SPECIAL_KEYS.has(b[0]) ||
+      (a[0] === NO_RR_KEY) - (b[0] === NO_RR_KEY)
+  );
 
   const groupHtml = groups
     .map(([mark, rs]) => {
       const label =
-        mark === "—"
+        mark === NO_RR_KEY
           ? "Serving railroad not identified from map data"
+          : mark === NON_FREIGHT_KEY
+          ? "Non-freight owner trackage"
+          : SPECIAL_KEYS.has(mark)
+          ? esc(mark.charAt(0).toUpperCase() + mark.slice(1))
           : `Served by ${esc(CLASS_I_NAMES[mark] || mark)}`;
       return `    <section>
       <h2>${label} (${rs.length})</h2>
@@ -471,7 +568,7 @@ ${cta("of pulp, paper or packaging board")}
   const title = "Rail-Served Businesses by State | Steel Wheel Logistics";
   const description =
     `${placedHigh} verified rail-served businesses and industrial sites across ` +
-    `${Object.keys(STATES).length} Southeastern states, grouped by serving railroad ` +
+    `${Object.keys(STATES).length} states, grouped by serving railroad ` +
     `with published evidence for every listing. Steel Wheel Logistics.`;
 
   const body = `
@@ -480,7 +577,7 @@ ${cta("of pulp, paper or packaging board")}
       <h1>Rail-Served Businesses by State</h1>
       <p>
         ${placedHigh} verified rail-served businesses and industrial sites across
-        ${Object.keys(STATES).length} Southeastern states. Every listing is
+        ${Object.keys(STATES).length} states. Every listing is
         high-confidence &mdash; spur-verified from public map data (OpenStreetMap
         spur geometry cross-referenced with FRA rail-network ownership), listed
         as a rail shipper in a state rail plan, or both &mdash; and each entry
@@ -547,7 +644,8 @@ if (placedHigh !== high.length) {
   failures++;
 }
 
-// 2. Named-record gate: Leaf River with OAR attribution on the Mississippi page.
+// 2. Named-record gates: Leaf River/OAR on Mississippi, Nucor Berkeley/PR on
+// South Carolina (a v2 wave state — proves the new states really rendered).
 const msHtml = readFileSync(join(OUTPUT_DIR, "mississippi.html"), "utf-8");
 if (!(msHtml.includes("Georgia Pacific Leaf River Mill") && /Leaf River[\s\S]{0,400}OAR/.test(msHtml))) {
   console.error("  GATE FAILED: Leaf River / OAR missing from mississippi.html");
@@ -555,12 +653,32 @@ if (!(msHtml.includes("Georgia Pacific Leaf River Mill") && /Leaf River[\s\S]{0,
 } else {
   console.log("  named-record gate: Leaf River + OAR on mississippi.html OK");
 }
+const scHtml = readFileSync(join(OUTPUT_DIR, "south-carolina.html"), "utf-8");
+if (!(scHtml.includes("Nucor Steel Berkeley") && /Nucor Steel Berkeley[\s\S]{0,400}\bPR\b/.test(scHtml))) {
+  console.error("  GATE FAILED: Nucor Steel Berkeley / PR missing from south-carolina.html");
+  failures++;
+} else {
+  console.log("  named-record gate: Nucor Steel Berkeley + PR on south-carolina.html OK");
+}
+// v3 named-record gate: Intrepid Potash/BNSF on New Mexico (a western-wave
+// state — proves the 12 new states really rendered).
+const nmHtml = readFileSync(join(OUTPUT_DIR, "new-mexico.html"), "utf-8");
+if (!(nmHtml.includes("Intrepid Potash") && /Intrepid Potash[\s\S]{0,400}BNSF/.test(nmHtml))) {
+  console.error("  GATE FAILED: Intrepid Potash / BNSF missing from new-mexico.html");
+  failures++;
+} else {
+  console.log("  named-record gate: Intrepid Potash + BNSF on new-mexico.html OK");
+}
 
 // 3. Banned-word gate (brand rules): intermodal / drayage / container never in
 // our copy. Facility proper names from the dataset are data, not copy — mask
 // exact names before scanning so a banned word we WROTE still fails.
+// Mask both the HTML-escaped form (body copy) and the raw form (JSON-LD embeds
+// names unescaped — an "&" in a proper name defeats an esc()-only mask).
 const properNames = new Set(
-  records.filter((r) => /intermodal|drayage|container/i.test(r.name)).map((r) => esc(r.name))
+  records
+    .filter((r) => /intermodal|drayage|container/i.test(r.name))
+    .flatMap((r) => [esc(r.name), r.name])
 );
 let bad = 0;
 for (const p of written) {

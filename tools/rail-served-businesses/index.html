@@ -623,7 +623,7 @@
         </div>
 
         <div class="disclaimer">
-          Listings compiled from public map data (OpenStreetMap spur geometry + FRA rail-network ownership), published state rail plans, and industry association member lists. Entries marked "reported" come from a published source and are not spur-verified. Sites change ownership, capabilities, and rail-service status — confirm directly with the operator before committing freight. SWL provides indicative rail-rate estimates only; we do not guarantee rates. Steel Wheel Logistics is a rail logistics provider; we don't operate the listed facilities.
+          Listings compiled from public map data (OpenStreetMap spur geometry + FRA rail-network ownership), published state rail plans, and industry association member lists. Entries marked "reported" come from a published source and are not spur-verified. Entries marked "unverified" are named spurs in public map data without a confirmed facility polygon. Sites change ownership, capabilities, and rail-service status — confirm directly with the operator before committing freight. SWL provides indicative rail-rate estimates only; we do not guarantee rates. Steel Wheel Logistics is a rail logistics provider; we don't operate the listed facilities.
         </div>
 
         <div class="cta-row">
@@ -985,11 +985,23 @@
         const commodityPill = b.primary_commodity
           ? `<span class="pill">${escape(b.primary_commodity)}</span>`
           : '<span style="color:var(--text-grey);font-size:0.8rem;">—</span>';
-        const classiPill = b.nearest_class_i
-          ? `<span class="pill pill-classi">${escape(b.nearest_class_i)}</span>`
-          : '<span style="color:var(--text-grey);font-size:0.8rem;">—</span>';
+        // v2 serving-display rules: qualifier/display text must render — a
+        // flagged record never shows a bare railroad mark.
+        let classiPill;
+        if (b.serving_display) {
+          classiPill = `<span style="color:var(--text-grey);font-size:0.8rem;">${escape(b.serving_display)}</span>`;
+        } else if (b.nearest_class_i) {
+          classiPill = `<span class="pill pill-classi">${escape(b.nearest_class_i)}</span>` +
+            (b.serving_qualifier ? ` <span style="color:var(--text-grey);font-size:0.8rem;">${escape(b.serving_qualifier)}</span>` : '');
+        } else if ((b.serving_flags || []).includes('non-freight-owner')) {
+          classiPill = '<span style="color:var(--text-grey);font-size:0.8rem;">non-freight owner</span>';
+        } else {
+          classiPill = '<span style="color:var(--text-grey);font-size:0.8rem;">—</span>';
+        }
         const confPill = b.confidence === 'medium'
           ? ` <span class="pill pill-conf-high" title="Reported by a published source (state rail plan or industry association); not spur-verified from map data">reported</span>`
+          : b.confidence === 'low'
+          ? ` <span class="pill pill-conf-high" title="Named spur in public map data only; not spur-verified against a facility polygon">unverified</span>`
           : '';
 
         const rateUrl = `/tools/rail-rate-quote/?origin_city=${encodeURIComponent(b.city || '')}&origin_state=${encodeURIComponent(b.state || '')}`;
@@ -1051,7 +1063,11 @@
           <strong>${escapeAttr(b.company_name)}</strong><br>
           ${escapeAttr(b.city || '')}, ${escapeAttr(b.state || '')}<br>
           ${b.primary_commodity ? '<em>' + escapeAttr(b.primary_commodity) + '</em>' : ''}
-          ${b.nearest_class_i ? ' · ' + escapeAttr(b.nearest_class_i) : ''}
+          ${b.serving_display
+            ? ' · ' + escapeAttr(b.serving_display)
+            : b.nearest_class_i
+              ? ' · ' + escapeAttr(b.nearest_class_i) + (b.serving_qualifier ? ' (' + escapeAttr(b.serving_qualifier) + ')' : '')
+              : ''}
           <br>
           <a href="${escapeAttr(rateUrl)}">Get a rail rate from here &rarr;</a>
         `;

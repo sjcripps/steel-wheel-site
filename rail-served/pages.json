@@ -14,6 +14,26 @@
       "priority": "0.6"
     },
     {
+      "loc": "/rail-served/arizona",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/california",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/colorado",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/connecticut",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/delaware",
+      "priority": "0.6"
+    },
+    {
       "loc": "/rail-served/florida",
       "priority": "0.6"
     },
@@ -22,7 +42,55 @@
       "priority": "0.6"
     },
     {
+      "loc": "/rail-served/iowa",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/idaho",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/illinois",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/indiana",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/kansas",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/kentucky",
+      "priority": "0.6"
+    },
+    {
       "loc": "/rail-served/louisiana",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/massachusetts",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/maryland",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/maine",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/michigan",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/minnesota",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/missouri",
       "priority": "0.6"
     },
     {
@@ -30,7 +98,103 @@
       "priority": "0.6"
     },
     {
+      "loc": "/rail-served/montana",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/north-carolina",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/north-dakota",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/nebraska",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/new-hampshire",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/new-jersey",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/new-mexico",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/nevada",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/new-york",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/ohio",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/oklahoma",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/oregon",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/pennsylvania",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/rhode-island",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/south-carolina",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/south-dakota",
+      "priority": "0.6"
+    },
+    {
       "loc": "/rail-served/tennessee",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/texas",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/utah",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/virginia",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/vermont",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/washington",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/wisconsin",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/west-virginia",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served/wyoming",
       "priority": "0.6"
     },
     {
