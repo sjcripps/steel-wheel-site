@@ -2,9 +2,16 @@
  * lib-plan-flows.js — page-cited state-rail-plan tonnage stats for the
  * commodity page generator (Phase A3 of the rail data foundation).
  *
- * Data: scripts/plan-flows.json, generated from the 7 Southeast state rail
+ * Data: scripts/plan-flows.json, generated from all 48 lower-48 state rail
  * plan extracts by bots/assistant/businesses/steel-wheel/scripts/
  * build-plan-flows.py. Each row is ONE citable figure with its plan page.
+ *
+ * BASIS RULE: a statewide total (often including through traffic) and a
+ * single-direction figure (originated / inbound / outbound) measure different
+ * things. Ranking them in one sorted list implies a comparison that does not
+ * hold — Texas 50.8M "all directions" against Wisconsin 22.3M "originated" is
+ * not a like-for-like ordering. So stats are returned in TWO groups and the
+ * page renders them under separate headings. Never merge the groups.
  *
  * SOURCE-MIXING RULE: rows are tagged source_type (waybill | faf | transearch
  * | plan). FAF and STB Waybill measure different things and must NEVER be
@@ -47,27 +54,36 @@ function tonsText(r) {
  * state, sorted by tonnage. Each entry: { text, state, source_type, year }.
  */
 export function statsForCommodity(slug, limit = 5) {
-  const byState = new Map();
-  for (const r of DATA.flows) {
-    const slugs = r.commodity_slug == null ? []
-      : Array.isArray(r.commodity_slug) ? r.commodity_slug : [r.commodity_slug];
-    if (!slugs.includes(slug)) continue;
-    if (!(r.tons > 0)) continue;
-    const prev = byState.get(r.state);
-    if (!prev || score(r) > score(prev) ||
-        (score(r) === score(prev) && r.tons > prev.tons)) {
-      byState.set(r.state, r);
+  const pick = (wantTotal) => {
+    const byState = new Map();
+    for (const r of DATA.flows) {
+      if (Boolean(r.is_total) !== wantTotal) continue;
+      const slugs = r.commodity_slug == null ? []
+        : Array.isArray(r.commodity_slug) ? r.commodity_slug : [r.commodity_slug];
+      if (!slugs.includes(slug)) continue;
+      if (!(r.tons > 0)) continue;
+      const prev = byState.get(r.state);
+      if (!prev || score(r) > score(prev) ||
+          (score(r) === score(prev) && r.tons > prev.tons)) {
+        byState.set(r.state, r);
+      }
     }
-  }
-  return [...byState.values()]
-    .sort((a, b) => b.tons - a.tons)
-    .slice(0, limit)
-    .map((r) => ({
-      state: r.state_name,
-      source_type: r.source_type,
-      year: r.year,
-      text: `${r.state_name}: ${tonsText(r)} of ${r.commodity_display} ` +
-            `${r.dir_phrase} in ${r.year} (${r.source}).`,
-    }))
-    .filter((s) => !BANNED.test(s.text));
+    return [...byState.values()]
+      .sort((a, b) => b.tons - a.tons)
+      .slice(0, limit)
+      .map((r) => ({
+        state: r.state_name,
+        source_type: r.source_type,
+        year: r.year,
+        basis: wantTotal ? "total" : "directional",
+        text: `${r.state_name}: ${tonsText(r)} of ${r.commodity_display} ` +
+              `${r.dir_phrase} in ${r.year} (${r.source}).`,
+      }))
+      .filter((s) => !BANNED.test(s.text));
+  };
+  const totals = pick(true);
+  const seen = new Set(totals.map((s) => s.state));
+  // A state already shown as a total is not repeated as a direction figure.
+  const directional = pick(false).filter((s) => !seen.has(s.state));
+  return { totals, directional };
 }

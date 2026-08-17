@@ -453,26 +453,41 @@ function faq(c) {
   ];
 }
 
-/* "By the numbers" — page-cited tonnage figures from the Southeast state
+/* "By the numbers" — page-cited tonnage figures from all 48 lower-48 state
  * rail plans (scripts/plan-flows.json via lib-plan-flows.js). Each line
  * renders exactly ONE plan row with its own citation; FAF- and Waybill-
  * sourced figures are never combined in a stat (see lib-plan-flows.js).
+ * Statewide totals and single-direction figures render as SEPARATE lists —
+ * they measure different things and must not share a ranking.
  * Copy rules: figure labeled with its data year, commodity named as the plan
  * prints it, no claims beyond the row. Renders only when >=1 stat exists. */
 function byTheNumbers(c) {
-  const stats = statsForCommodity(c.slug, 5);
-  if (!stats.length) return "";
+  const { totals, directional } = statsForCommodity(c.slug, 5);
+  if (!totals.length && !directional.length) return "";
+  const list = (rows) =>
+    `    <ul>\n${rows.map((s) => `      <li>${esc(deIntermodal(s.text))}</li>`).join("\n")}\n    </ul>`;
+  const blocks = [];
+  if (totals.length) {
+    blocks.push(`    <h3>Statewide rail tonnage</h3>\n${list(totals)}`);
+  }
+  if (directional.length) {
+    blocks.push(
+      `    <h3>Single-direction figures</h3>\n` +
+      `    <p>These count movement in one direction only &mdash; originated, inbound or\n` +
+      `      outbound as each plan defines it &mdash; so they are not comparable with the\n` +
+      `      statewide totals above.</p>\n${list(directional)}`);
+  }
   return `
     <h2>By the numbers: state rail plan figures</h2>
-    <p>How much of this commodity group moves by rail across the Southeast,
-      as published in the states' own federally mandated rail plans:</p>
-    <ul>
-${stats.map((s) => `      <li>${esc(deIntermodal(s.text))}</li>`).join("\n")}
-    </ul>
+    <p>How much of this commodity group moves by rail, as published in the
+      states' own federally mandated rail plans:</p>
+${blocks.join("\n")}
     <p style="font-size:0.85em;color:#666">
       Each figure is quoted from the cited state rail plan and reflects that
       plan's own data year, commodity grouping and methodology &mdash; figures
-      from different plans are not directly comparable with each other.
+      from different plans are not directly comparable with each other. Some
+      plans count traffic passing through the state and others exclude it; each
+      line says which.
     </p>`;
 }
 
