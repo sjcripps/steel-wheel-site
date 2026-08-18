@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rail shipping rates are priced per car, not per ton. Learn the five inputs that drive the number and how to build an estimate you can actually defend.">
+  <meta name="keywords" content="rail shipping rates, ship by rail rates, cost to ship by rail, rail freight rate estimate, rail carload rate, rail rate per car, estimate rail freight cost">
+  <link rel="canonical" href="https://steelwheellogistics.com/blog/estimating-rail-shipping-rates">
+  <meta property="og:title" content="How to Estimate Rail Shipping Rates: What Drives the Number">
+  <meta property="og:description" content="Rail shipping rates are priced per car, not per ton. Learn the five inputs that drive the number and how to build an estimate you can actually defend.">
+  <meta property="og:url" content="https://steelwheellogistics.com/blog/estimating-rail-shipping-rates">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Estimate Rail Shipping Rates: What Drives the Number">
+  <meta name="twitter:description" content="Rail shipping rates are priced per car, not per ton. Learn the five inputs that drive the number and how to build an estimate you can actually defend.">
+  <title>How to Estimate Rail Shipping Rates: What Drives the Number | Steel Wheel Logistics</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Estimate Rail Shipping Rates: What Drives the Number", "description": "Rail shipping rates are priced per car, not per ton. Learn the five inputs that drive the number and how to build an estimate you can actually defend.", "datePublished": "2026-08-18", "dateModified": "2026-08-18", "author": {"@type": "Organization", "name": "Steel Wheel Logistics"}, "publisher": {"@type": "Organization", "name": "Steel Wheel Logistics", "logo": {"@type": "ImageObject", "url": "https://steelwheellogistics.com/images/logo-192.png"}}, "url": "https://steelwheellogistics.com/blog/estimating-rail-shipping-rates", "image": ["https://steelwheellogistics.com/images/logo-192.png"], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://steelwheellogistics.com/blog/estimating-rail-shipping-rates"}}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I estimate rail shipping rates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with the unit: rail carload freight is priced per car, so convert your volume to cars first. Then build the number in layers \u2014 a line-haul anchor for the lane, the applicable fuel surcharge using a 12-month average, equipment cost if you supply the cars, and the end charges (transload, drayage, switching, and a realistic demurrage allowance). Compare the total against your truck alternative on a full landed basis, including the inventory cost of a longer transit cycle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does it cost to ship by rail per car?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There is no single figure, because the line-haul rate is driven by distance, cars per release, which railroads touch the move, and the commodity and car type. What is consistent is the shape: the per-mile cost drops steeply as the haul gets longer, and short lanes price against an effective floor. Anyone who quotes you a flat national per-car number without asking about your lane and volume is guessing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the weight of my freight change the rail rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually not, within the load limit of the car. You are buying the car and its slot in the train, so a hopper loaded to capacity and the same hopper loaded 15 percent light generally cost the same to move. That makes underloading expensive \u2014 if your product runs out of space before it runs out of weight allowance, the answer is a different car type, not a different rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my rail estimate higher than the trucking rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most often because the load belongs on a truck. A shipment that fits legally on a highway trailer at standard dimensions can move door to door with one driver and no terminal handling, which rail cannot match on cost. Rail's advantage shows up on bulk volume, on freight too heavy or too large for the highway, and on long hauls with sustained lane density."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does the fuel surcharge add to a rail rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It varies month to month, which is exactly why it should never be estimated from a single data point. Class I carriers publish their programs in tariffs and reset them monthly against a fuel index, applied on a lag. Programs are either mileage-based (cents per car-mile) or percentage-based (a percentage of the line-haul rate), and the two behave very differently on a long lane. Pull 12 months of the applicable program and plan on the average."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are rail rate estimates binding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. An indicative estimate is a planning figure built from published tariffs, comparable lanes, and current surcharge programs. Actual pricing depends on the specific commodity code, routing, equipment availability at the time of the move, and the contract you negotiate with the carriers involved. Use an estimate to decide whether a lane is worth pursuing, then get firm pricing before committing to a customer."
+      }
+    }
+  ]
+}</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RSWDYHVY7Z');
+  </script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://steelwheellogistics.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://steelwheellogistics.com/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How to Estimate Rail Shipping Rates: What Drives the Number",
+      "item": "https://steelwheellogistics.com/blog/estimating-rail-shipping-rates"
+    }
+  ]
+}</script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog" class="active">Blog</a>
+        <a href="/courses">Courses</a>
+        <a href="/tools">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Blog Hero -->
+  <section class="blog-hero">
+    <div class="blog-breadcrumb">
+      <a href="/blog">Blog</a><span class="separator">/</span><span>Cost &amp; Strategy</span>
+    </div>
+    <h1>How to Estimate Rail Shipping Rates: What Drives the Number</h1>
+    <div class="blog-hero-meta">
+      <span>August 18, 2026</span>
+      <span class="dot">&middot;</span>
+      <span>11 min read</span>
+      <span class="dot">&middot;</span>
+      <span class="blog-tag">Cost &amp; Strategy</span>
+    </div>
+  </section>
+
+  <article class="blog-post">
+    <div class="blog-post-content">
+
+      <div class="blog-highlight">
+        <strong>Start here:</strong> rail carload freight is priced <strong>per car</strong>, not per ton and not per shipment. Every estimate you build has to start from that unit or the number will be wrong by a multiple, not a percentage.
+      </div>
+
+      <p class="blog-lead">Most shippers who ask what it costs to ship by rail are really asking two questions at once: what is the number, and can I trust it. The second one matters more. A rail rate is not one price &mdash; it is a line-haul rate, a fuel surcharge that moves every month, a set of charges that only appear if something goes wrong, and often a truck leg on one or both ends. You can build a defensible estimate before you ever talk to a carrier, but only if you know which inputs actually move the number and which ones you have been told matter and don't.</p>
+
+      <nav class="blog-toc">
+        <div class="blog-toc-title">In This Guide</div>
+        <ol>
+          <li><a href="#unit">The Unit: Rail Prices Per Car</a></li>
+          <li><a href="#drivers">The Five Inputs That Move the Number</a></li>
+          <li><a href="#distance">Distance Is Not Linear, and There Is a Floor</a></li>
+          <li><a href="#carriers">How Many Railroads Touch the Car</a></li>
+          <li><a href="#fuel">Fuel Surcharge: The Part That Changes Monthly</a></li>
+          <li><a href="#outside">The Costs That Live Outside the Line-Haul Rate</a></li>
+          <li><a href="#build">Building the Estimate, Step by Step</a></li>
+          <li><a href="#sanity">Three Ways an Estimate Goes Wrong</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="unit">The Unit: Rail Prices Per Car</h2>
+
+      <p>A carload rail rate is quoted per railcar, origin to destination. If a carrier comes back with $4,800 on your lane and you are moving six cars, your line-haul exposure is $28,800 &mdash; not $4,800. This sounds obvious written down. It is the single most common misread we see from shippers coming out of truckload, where a rate is a rate and one number equals one move.</p>
+
+      <p>The per-car basis has two consequences worth internalizing before you estimate anything.</p>
+
+      <p>First, <strong>weight is mostly not a pricing input</strong>. Within the load limit of the car, a covered hopper of grain loaded to 100 tons and the same hopper loaded to 85 tons usually cost the same to move. You are buying the car and the slot in the train, not the tonnage. That is why underloading is expensive in a way truckers don't experience &mdash; you pay the full car rate for a partial car. If your product cubes out before it weighs out, the fix is a different car type, not a different rate.</p>
+
+      <p>Second, <strong>per-ton and per-ton-mile figures are derived, not quoted</strong>. Industry averages expressed in cents per ton-mile are useful for comparing rail against truck at a strategic level, and we cover that math in <a href="/blog/how-much-does-it-cost-to-ship-by-rail">how much it costs to ship by rail</a>. But no railroad will quote you in ton-miles. Convert to per-car early, keep your estimate there, and normalize back to per-ton only when you are presenting to finance.</p>
+
+      <h2 id="drivers">The Five Inputs That Move the Number</h2>
+
+      <p>Line-haul pricing on a carload move is driven by five things, roughly in order of how much they move the number:</p>
+
+      <div class="blog-steps">
+        <ol>
+          <li><strong>Distance.</strong> The dominant term, but not proportional &mdash; the per-mile cost falls sharply as the haul gets longer.</li>
+          <li><strong>Number of cars per release.</strong> Volume moved together buys a discount. One car at a time is the most expensive way to ship by rail.</li>
+          <li><strong>Carrier mix on the route.</strong> How many railroads touch the car, and whether any of them face competition for your traffic.</li>
+          <li><strong>Commodity and car type.</strong> Which tariff item applies, what equipment is required, and who supplies the car.</li>
+          <li><strong>Market and timing.</strong> Fuel index level, network congestion, seasonal demand for the same equipment you need.</li>
+        </ol>
+      </div>
+
+      <p>Notice what is not on that list: your company size, your shipping history with the carrier, and how urgently you need the move. Those affect whether you get a contract and how fast you get answers. They do not meaningfully change the underlying cost structure the rate is built from.</p>
+
+      <h2 id="distance">Distance Is Not Linear, and There Is a Floor</h2>
+
+      <p>Rail rate curves are steeply concave. The cost of the first 200 miles &mdash; crew, switching, yard time, terminal handling at both ends &mdash; is largely fixed and gets incurred whether the car goes 150 miles or 1,500. Stretch the haul and that fixed block spreads across more miles, so the effective per-mile rate drops fast through the first several hundred miles and then flattens.</p>
+
+      <p>Two practical consequences:</p>
+
+      <ul>
+        <li><strong>Short lanes look expensive per mile and often are.</strong> Below roughly a few hundred miles, most carload moves are competing against a truck that can do the same job door to door with no terminal handling. Rail rate structures carry effective minimums per move, so a 90-mile move may price close to a 200-mile move. If your estimate on a short lane comes out suspiciously cheap, you have probably applied a per-mile figure below the floor.</li>
+        <li><strong>Long lanes are where rail's advantage compounds.</strong> The same fixed terminal cost is doing far more work at 1,800 miles than at 300. This is why a lane that fails a rail evaluation at 400 miles can pass comfortably at 1,400.</li>
+      </ul>
+
+      <p>Rail also takes significantly longer than truck door to door &mdash; think in weeks rather than days on a cross-country move, with variability at every handoff. That is an inventory-carrying cost, and it belongs in your comparison even though it never appears on a rate sheet. Our post on <a href="/blog/rail-freight-transit-times">rail freight transit times</a> covers where the time actually goes.</p>
+
+      <h2 id="carriers">How Many Railroads Touch the Car</h2>
+
+      <p>The route matters as much as the mileage, because every carrier boundary on the route is a place where revenue has to be divided and where the car can sit.</p>
+
+      <p>A single-line move &mdash; one railroad from origin to destination &mdash; is the cleanest and usually the cheapest structure available on a given lane. Add an interchange and you now have two carriers splitting one rate, each with its own cost floor to cover. Add a short line on each end, which is extremely common for plants that aren't on a Class I main, and you have three or four participants in a move that still shows up to you as a single number on a single bill of lading.</p>
+
+      <p>Sometimes it does not show up as a single number. Under a <a href="/blog/rule-11-rail-rates-explained">Rule 11 arrangement</a>, each carrier bills its own segment separately and you assemble the total yourself. Shippers estimating a fragmented route frequently price the Class I line haul, forget the short-line segments entirely, and end up 20&ndash;30% light. The first-mile and last-mile carriers are short in miles and not short in dollars.</p>
+
+      <p>The other thing carrier mix tells you is <strong>leverage</strong>. If exactly one railroad can serve your facility and one railroad serves your customer, your negotiating position is what it is. If your plant sits inside a switching district where a second carrier can reach you, or the destination has a competing route, the pricing conversation changes materially. That is worth checking before you accept a first number &mdash; <a href="/blog/reciprocal-switching-rate-negotiations">reciprocal switching and rate negotiations</a> walks through how to find out.</p>
+
+      <h2 id="fuel">Fuel Surcharge: The Part That Changes Monthly</h2>
+
+      <p>The fuel surcharge is a separate line item on top of the line-haul rate, and it is the reason a rate you were quoted in March does not reproduce in July. Class I carriers publish their surcharge programs in public tariffs and reset them on a monthly cycle against a published fuel index, typically applied on a lag &mdash; so the number you pay this month reflects fuel prices from a prior period, not today's pump price.</p>
+
+      <p>Two program structures dominate: a <strong>mileage-based</strong> surcharge expressed in cents per car-mile, and a <strong>percentage-based</strong> surcharge applied to the line-haul rate. They behave very differently on your lane. A mileage-based program punishes long hauls proportionally; a percentage-based program scales with whatever the base rate happens to be. Ask which one applies to your traffic before modeling it.</p>
+
+      <div class="blog-highlight">
+        <strong>Estimating rule of thumb:</strong> never build an annual freight budget off a single month's surcharge. Pull the last 12 months of the applicable program, use the average for planning, and use the high month for your downside case. Our <a href="/blog/rail-fuel-surcharges-calculated">guide to how rail fuel surcharges are calculated</a> shows how to read the published tables, and the <a href="/tools/rail-fuel-surcharge">fuel surcharge tool</a> tracks current carrier programs.
+      </div>
+
+      <h2 id="outside">The Costs That Live Outside the Line-Haul Rate</h2>
+
+      <p>This is where estimates go from wrong to badly wrong. The line-haul rate covers moving a loaded car between two points on the rail network. It does not cover:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Cost</th>
+            <th>When it applies</th>
+            <th>How to estimate it</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Car supply</td>
+            <td>When the railroad does not furnish the equipment, or supply is tight</td>
+            <td>Monthly lease rate &divide; expected turns per month, added per car</td>
+          </tr>
+          <tr>
+            <td>Demurrage</td>
+            <td>Cars held beyond free time at origin or destination</td>
+            <td>Your realistic load/unload cycle vs. the tariff's free time</td>
+          </tr>
+          <tr>
+            <td>Switching and spotting</td>
+            <td>Intra-plant moves, extra spots, industrial switch charges</td>
+            <td>Per-move charge &times; expected extra spots per car</td>
+          </tr>
+          <tr>
+            <td>Transload</td>
+            <td>Either end lacks rail service at the door</td>
+            <td>Per-ton or per-car handling fee plus dray to the final point</td>
+          </tr>
+          <tr>
+            <td>Truck drayage</td>
+            <td>Any non-rail-served leg</td>
+            <td>Local truck rate for the actual miles, both ends if applicable</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Demurrage is the one that surprises people most, because it is entirely self-inflicted and entirely predictable. If your unloading crew realistically needs four days and the tariff gives you two, that gap is a recurring cost, not an exception &mdash; budget it. The <a href="/blog/rail-demurrage-fees-guide">demurrage fees guide</a> and the <a href="/tools/demurrage-calculator">demurrage calculator</a> will get you a number in a few minutes.</p>
+
+      <p>Transload is the other big one. If your facility has no rail spur, your all-in cost includes a handling fee and a truck leg, and the rail portion has to beat truck by enough to absorb both. Sometimes it does &mdash; on long hauls it frequently does. Run it explicitly rather than assuming. <a href="/blog/what-is-transloading">What transloading is and when it pays</a> covers the arithmetic.</p>
+
+      <h2 id="build">Building the Estimate, Step by Step</h2>
+
+      <p>Here is the sequence we use internally when a shipper wants a number before there is a formal rate request on the table.</p>
+
+      <div class="blog-steps">
+        <ol>
+          <li><strong>Fix the unit.</strong> Cars per shipment, shipments per month, tons per car. Write the annual car count down &mdash; that is the number that determines what pricing you can ask for.</li>
+          <li><strong>Establish the rail route, not the road route.</strong> Rail mileage between two points is not highway mileage, and the routing depends on which carriers connect where. Identify the origin-serving railroad, the destination-serving railroad, and any carriers in between.</li>
+          <li><strong>Get a line-haul anchor.</strong> Either a published tariff rate for the commodity and lane, a rate you have paid on a comparable lane, or an indicative estimate. Convert everything to dollars per car.</li>
+          <li><strong>Add the fuel surcharge</strong> using the applicable program and a 12-month average, not the current month.</li>
+          <li><strong>Add equipment cost</strong> if you supply or lease the cars &mdash; monthly lease divided by turns, plus any repositioning of empties.</li>
+          <li><strong>Add the ends.</strong> Transload handling, drayage, extra switching, and a realistic demurrage allowance based on your actual dwell, not your target dwell.</li>
+          <li><strong>Compare on a full landed basis</strong> against your truck alternative, including inventory carrying cost for the longer cycle and any safety-stock increase the transit variability forces.</li>
+        </ol>
+      </div>
+
+      <p>Do this on paper and you will have a number you can defend in a budget meeting and a list of the three or four assumptions that actually control it. That list is more valuable than the number, because it tells you where to push when you do go to market. If you want the mechanics behind each pricing lever in depth, the <a href="/courses/">free rail logistics course</a> covers rate structure, carrier economics, and network design across ten modules.</p>
+
+      <h2 id="sanity">Three Ways an Estimate Goes Wrong</h2>
+
+      <h3>1. Wrong mode</h3>
+      <p>If your shipment fits legally on a truck &mdash; roughly 25 tons, standard dimensions, no permits &mdash; rail is very often the more expensive answer regardless of distance, because you are paying for a full car plus terminal handling to move a load a single driver could take door to door. Rail wins on bulk volume, on freight that is too heavy or too large for the highway, and on sustained lane density. When someone's rail estimate comes back at double their truck cost, the usual explanation is not a bad rate. It is a load that should not be on a railcar in the first place. Our post on <a href="/blog/evaluate-if-rail-makes-sense">evaluating whether rail makes sense</a> works through the threshold.</p>
+
+      <h3>2. Wrong unit</h3>
+      <p>Multiplying a per-car rate by tons, or dividing an annual budget by shipments instead of cars, produces errors of several hundred percent. Every time a rail number feels wildly off from expectation, check the unit before you check the rate.</p>
+
+      <h3>3. Wrong endpoint</h3>
+      <p>The rail network does not serve every address, and it does not serve dense urban cores the way a truck does. A "destination" that is really a city name can resolve to a terminal well outside the metro, with a truck leg from there. If your estimate assumes rail delivers to the door and it actually delivers 40 miles away, the missing dray can swamp the savings. Confirm the actual serving point and the actual rail-served facility at both ends before you trust any number.</p>
+
+      <div class="blog-highlight">
+        <strong>One standing caveat:</strong> anything you build this way is indicative. Real pricing depends on the specific commodity code, the specific routing, equipment availability at the time of the move, and the contract terms you negotiate. Use the estimate to decide whether to pursue the lane &mdash; not to sign a customer contract against. <a href="/blog/how-to-get-rail-shipping-quote">Getting an actual rail quote</a> is the next step once the estimate clears your hurdle.
+      </div>
+
+      <p>If you would rather not assemble the pieces yourself, that is most of what we do. Send the origin, destination, commodity, car type, and annual volume and we will map the carriers on the route, flag where you have competitive options, and come back with an indicative all-in number and the assumptions behind it. See <a href="/services">our rail logistics services</a> for how the engagement works, or run your lane through the <a href="/tools/rail-rate-quote">rail rate estimator</a> for a starting figure in about a minute.</p>
+
+
+      <section class="blog-faq" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <h3>How do I estimate rail shipping rates?</h3>
+          <p>Start with the unit: rail carload freight is priced per car, so convert your volume to cars first. Then build the number in layers — a line-haul anchor for the lane, the applicable fuel surcharge using a 12-month average, equipment cost if you supply the cars, and the end charges (transload, drayage, switching, and a realistic demurrage allowance). Compare the total against your truck alternative on a full landed basis, including the inventory cost of a longer transit cycle.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What does it cost to ship by rail per car?</h3>
+          <p>There is no single figure, because the line-haul rate is driven by distance, cars per release, which railroads touch the move, and the commodity and car type. What is consistent is the shape: the per-mile cost drops steeply as the haul gets longer, and short lanes price against an effective floor. Anyone who quotes you a flat national per-car number without asking about your lane and volume is guessing.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Does the weight of my freight change the rail rate?</h3>
+          <p>Usually not, within the load limit of the car. You are buying the car and its slot in the train, so a hopper loaded to capacity and the same hopper loaded 15 percent light generally cost the same to move. That makes underloading expensive — if your product runs out of space before it runs out of weight allowance, the answer is a different car type, not a different rate.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Why is my rail estimate higher than the trucking rate?</h3>
+          <p>Most often because the load belongs on a truck. A shipment that fits legally on a highway trailer at standard dimensions can move door to door with one driver and no terminal handling, which rail cannot match on cost. Rail's advantage shows up on bulk volume, on freight too heavy or too large for the highway, and on long hauls with sustained lane density.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How much does the fuel surcharge add to a rail rate?</h3>
+          <p>It varies month to month, which is exactly why it should never be estimated from a single data point. Class I carriers publish their programs in tariffs and reset them monthly against a fuel index, applied on a lag. Programs are either mileage-based (cents per car-mile) or percentage-based (a percentage of the line-haul rate), and the two behave very differently on a long lane. Pull 12 months of the applicable program and plan on the average.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Are rail rate estimates binding?</h3>
+          <p>No. An indicative estimate is a planning figure built from published tariffs, comparable lanes, and current surcharge programs. Actual pricing depends on the specific commodity code, routing, equipment availability at the time of the move, and the contract you negotiate with the carriers involved. Use an estimate to decide whether a lane is worth pursuing, then get firm pricing before committing to a customer.</p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Author -->
+    <div class="blog-author">
+      <div class="blog-author-icon">
+        <img src="/images/logo.png" alt="Steel Wheel Logistics" width="48" height="48">
+      </div>
+      <div class="blog-author-info">
+        <div class="blog-author-name">Steel Wheel Logistics</div>
+        <div class="blog-author-bio">We coordinate bulk rail freight across North America &mdash; from rate negotiation and car sourcing to transload coordination and tracking. Based in Mississippi, serving shippers nationwide.</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="blog-cta">
+      <h3>Want a Real Number for Your Lane?</h3>
+      <p>Send us the origin, destination, commodity, car type, and annual volume. We will map the carriers on the route, flag where you have competitive options, and come back with an indicative all-in estimate and the assumptions behind it. No obligation.</p>
+      <a href="/contact" class="btn btn-primary">Request an Indicative Estimate</a>
+    </div>
+
+    <div class="blog-back">
+      <a href="/blog">&larr; Back to All Posts</a>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/tools">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -156,6 +156,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     ''
   );
   const userAgent = String(req.headers['user-agent'] || '').slice(0, 500);
+  const referrer = String(req.headers['referer'] || '').slice(0, 500);
 
   const record = {
     ts: nowIsoUtc(),
@@ -166,11 +167,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     company: company || null,
     ip: clientIp,
     user_agent: userAgent,
+    referrer: referrer || null,
   };
 
   const companyStr = company ? ` (${company})` : '';
+  const refStr = referrer ? ` [from: ${new URL(referrer).hostname || referrer}]` : '';
   const message =
-    `\u{1F684} SWL transload-directory lead: ${email}${companyStr}. ${nowCstShort()}`;
+    `\u{1F684} SWL transload-directory lead: ${email}${companyStr}${refStr}. ${nowCstShort()}`;
 
   const emailPromise = sendLeadEmail({
     toolName: 'transload directory',
@@ -183,6 +186,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       ...(leadPhone ? [{ label: 'Phone', value: leadPhone }] : []),
       { label: 'Company', value: company || '(not provided)' },
       { label: 'Submitted', value: nowCstShort() },
+      ...(referrer ? [{ label: 'Referrer', value: referrer }] : []),
       { label: 'IP / UA', value: `${clientIp} / ${userAgent}` },
     ],
   });
@@ -201,6 +205,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       `  Tool: transload directory`,
       company ? `  Company: ${company}` : '',
       leadPhone ? `  Phone: ${leadPhone}` : '',
+      referrer ? `  Referrer: ${referrer}` : `  Referrer: (direct)`,
       `  IP/UA: ${clientIp} / ${userAgent.slice(0, 120)}`,
     ],
   });
