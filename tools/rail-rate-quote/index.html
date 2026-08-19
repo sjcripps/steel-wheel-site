@@ -1313,21 +1313,29 @@
       function updateStccMatch() {
         const digits = stccInput.value.replace(/[^0-9]/g, '');
         if (digits.length < 2) { stccNote.textContent = ''; return; }
-        let best = null, bestLen = 0;
+        let bestLen = 0, best = [];
         commodityList.forEach(c => {
           if (!c.stcc) return;
           let n = 0;
           while (n < digits.length && n < c.stcc.length && digits[n] === c.stcc[n]) n++;
-          if (n > bestLen) { bestLen = n; best = c; }
+          if (n > bestLen) { bestLen = n; best = [c]; }
+          else if (n === bestLen && n > 0) best.push(c);
         });
-        if (best && bestLen >= 2) {
-          commSel.value = best.id;
-          applyCarRestrictions();
-          stccNote.textContent = `→ matched: ${best.name}`;
-          stccNote.style.color = '';
-        } else {
-          stccNote.textContent = 'No matching bucket — pick a commodity manually.';
+        if (bestLen < 2) {
+          stccNote.textContent = 'No match — pick a commodity manually.';
           stccNote.style.color = '#b45309';
+        } else if (best.length > 1) {
+          // A 2-digit STCC group can span several priced buckets (28 covers
+          // plastic, fertilizer AND chemicals, each with a different
+          // multiplier). Guessing one would silently pick a tariff; say it's
+          // ambiguous instead. Same call the STCC finder makes on its deep link.
+          stccNote.textContent = `STCC ${digits} spans ${best.map(c => c.name).join(', ')} — pick one.`;
+          stccNote.style.color = '#b45309';
+        } else {
+          commSel.value = best[0].id;
+          applyCarRestrictions();
+          stccNote.textContent = `→ ${best[0].name}`;
+          stccNote.style.color = '';
         }
       }
       stccInput.addEventListener('input', updateStccMatch);
