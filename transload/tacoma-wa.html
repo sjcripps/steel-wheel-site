@@ -297,6 +297,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Tacoma, WA</h1>
@@ -310,64 +328,75 @@
 
     <section>
       <h2>Facilities in Tacoma</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (1)</option><option value="tacoma">Tacoma</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="auger">Auger</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="hot water heating">Hot Water Heating</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (7)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (7)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 4 of 16 sites and capability detail for 4. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="auto warehousing company tacoma   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Auto Warehousing Company</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><strong>Phone:</strong> (800) 446-0221</div>
         <div><a href="https://www.autowc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="carlile transportation systems tacoma   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carlile Transportation Systems</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><strong>Phone:</strong> (800) 478-1853</div>
         <div><a href="https://www.carlile.biz/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="verified" data-phone="0" data-comm="foods (dry)" data-cap="blower|sampling services|scale" data-text="food express inc tacoma  foods (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Food Express Inc</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><strong>Commodities:</strong> Foods (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="https://www.foodexp.com/html/locations.htm" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="holroyd recycle south tacoma   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Holroyd Recycle South</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><strong>Phone:</strong> (253) 474-0725</div>
         <div><a href="https://holroyd.co/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lineage logistics tacoma   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lineage Logistics</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><a href="https://www.onelineage.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="loup logistics tacoma railport tacoma operated by mhx  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Loup Logistics Tacoma Railport</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><a href="https://www.louplogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>operated by MHX</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="macmillan-piper inc tacoma   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Macmillan-Piper Inc</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><strong>Phone:</strong> (253) 627-3767</div>
         <div><a href="http://www.macpiper.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="pacific coast container inc tacoma   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pacific Coast Container Inc</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><a href="https://pcclogistics.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="pcc logistics tacoma port of rd. facility  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">PCC Logistics</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><a href="https://pcclogistics.com/port-of-tacoma-rd-facility/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Port of Rd. Facility</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express tacoma  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
@@ -375,41 +404,38 @@
         <div><strong>Phone:</strong> (253) 922-7448</div>
         <div><a href="http://www.plasticexpress.com/operations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="seaport sound terminal tacoma   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">SeaPort Sound Terminal</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="verified" data-phone="0" data-comm="foods (dry)" data-cap="bulk conveyor" data-text="tacoma transload tacoma  foods (dry) bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tacoma Transload</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><strong>Commodities:</strong> Foods (Dry)</div>
         <div><strong>Capabilities:</strong> Bulk Conveyor</div>
         <div><a href="https://www.portoftacoma.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="tripak inc tacoma   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tripak Inc</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><strong>Phone:</strong> (253) 404-1030</div>
         <div><a href="https://ttsi.com/services/intermodal-drayage-warehousing/warehousing/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>⚠ website unreachable 2026-08-14 (timeout)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|petroleum products|plastics (dry)" data-cap="air compressor|auger|blower|hot water heating|liquid pumps|liquid storage tanks|sampling services|scale|steam heating|tank trailer cleaning" data-text="truck-rail handling inc tacoma  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) petroleum products plastics (dry) air compressor auger blower hot water heating liquid pumps liquid storage tanks sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Truck-Rail Handling Inc</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Auger, Blower, Hot Water Heating, Liquid Pumps, Liquid Storage Tanks, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="https://qatp-trh.com/services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="united motor freight tacoma   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">United Motor Freight</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><strong>Phone:</strong> (800) 652-6622</div>
         <div><a href="http://www.unitedmotorfreight.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="wallenius wilhelmsen solutions tacoma   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Wallenius Wilhelmsen Solutions</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><a href="https://www.walleniuswilhelmsen.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
@@ -442,6 +468,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

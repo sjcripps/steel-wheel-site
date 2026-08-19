@@ -1514,6 +1514,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Texas</h1>
@@ -1528,42 +1546,59 @@
 
     <section>
       <h2>Cities in Texas</h2>
-      <p><a href="/transload/houston-tx">Houston (12)</a> &middot; <a href="/transload/pasadena-tx">Pasadena (7)</a> &middot; <a href="/transload/brownsville-tx">Brownsville (5)</a> &middot; <a href="/transload/garland-tx">Garland (5)</a> &middot; <a href="/transload/lubbock-tx">Lubbock (5)</a> &middot; <a href="/transload/baytown-tx">Baytown (4)</a> &middot; <a href="/transload/dallas-tx">Dallas (4)</a> &middot; <a href="/transload/fort-worth-tx">Fort Worth (4)</a> &middot; <a href="/transload/galena-park-tx">Galena Park (4)</a> &middot; <a href="/transload/big-lake-tx">Big Lake (3)</a> &middot; <a href="/transload/la-porte-tx">La Porte (3)</a> &middot; <a href="/transload/port-arthur-tx">Port Arthur (3)</a> &middot; <span>Anthony (2)</span> &middot; <span>Arlington (2)</span> &middot; <span>Barnhart (2)</span> &middot; <span>Beaumont (2)</span> &middot; <span>Big Spring (2)</span> &middot; <span>Borger (2)</span> &middot; <span>Cleburne (2)</span> &middot; <span>Comanche (2)</span> &middot; <span>Corpus Christi (2)</span> &middot; <span>Cresson (2)</span> &middot; <span>El Paso (2)</span> &middot; <span>Elmendorf (2)</span> &middot; <span>Hereford (2)</span> &middot; <span>Irving (2)</span> &middot; <span>Odessa (2)</span> &middot; <span>Pecos (2)</span> &middot; <span>Rusk (2)</span> &middot; <span>San Angelo (2)</span> &middot; <span>San Antonio (2)</span> &middot; <span>Sweetwater (2)</span> &middot; <span>Temple (2)</span> &middot; <span>Alvin (1)</span> &middot; <span>Amarillo (1)</span> &middot; <span>Ashley (1)</span> &middot; <span>Bay City (1)</span> &middot; <span>Bellville (1)</span> &middot; <span>Bishop (1)</span> &middot; <span>Brownwood (1)</span> &middot; <span>Burnet (1)</span> &middot; <span>Channelview (1)</span> &middot; <span>Cleveland (1)</span> &middot; <span>Coady (1)</span> &middot; <span>Cotulla (1)</span> &middot; <span>Dallas Miller Yard (1)</span> &middot; <span>Dayton (1)</span> &middot; <span>Diboll (1)</span> &middot; <span>Dilley (1)</span> &middot; <span>Etter (1)</span> &middot; <span>Euless (1)</span> &middot; <span>Floresville (1)</span> &middot; <span>Freeport (1)</span> &middot; <span>Ft Stockton (1)</span> &middot; <span>Galveston (1)</span> &middot; <span>Gonzales (1)</span> &middot; <span>Grand Prairie (1)</span> &middot; <span>Hempstead (1)</span> &middot; <span>Henderson (1)</span> &middot; <span>Hondo (1)</span> &middot; <span>Joshua (1)</span> &middot; <span>Krum (1)</span> &middot; <span>Laredo (1)</span> &middot; <span>Levelland (1)</span> &middot; <span>Lolita (1)</span> &middot; <span>Lufkin (1)</span> &middot; <span>Midlothian (1)</span> &middot; <span>Mockingbird (1)</span> &middot; <span>Monahans (1)</span> &middot; <span>Navasota (1)</span> &middot; <span>New Boston (1)</span> &middot; <span>Odem (1)</span> &middot; <span>Orange (1)</span> &middot; <span>Paris (1)</span> &middot; <span>Plainview (1)</span> &middot; <span>Refugio (1)</span> &middot; <span>Saginaw (1)</span> &middot; <span>Scottsville (1)</span> &middot; <span>Seabrook (1)</span> &middot; <span>Seagraves (1)</span> &middot; <span>Silsbee (1)</span> &middot; <span>Slaton (1)</span> &middot; <span>Spence (1)</span> &middot; <span>Sulphur Jct (1)</span> &middot; <span>Taylor (1)</span> &middot; <span>Texas City (1)</span> &middot; <span>Venus (1)</span> &middot; <span>Victoria (1)</span> &middot; <span>Vidor (1)</span> &middot; <span>Waxahachie (1)</span> &middot; <span>Witco (1)</span></p>
+      <div class="tl-citylist is-collapsed" id="tlCityList" data-total="91">
+        <p><a href="/transload/houston-tx">Houston (12)</a> &middot; <a href="/transload/pasadena-tx">Pasadena (7)</a> &middot; <a href="/transload/brownsville-tx">Brownsville (5)</a> &middot; <a href="/transload/garland-tx">Garland (5)</a> &middot; <a href="/transload/lubbock-tx">Lubbock (5)</a> &middot; <a href="/transload/baytown-tx">Baytown (4)</a> &middot; <a href="/transload/dallas-tx">Dallas (4)</a> &middot; <a href="/transload/fort-worth-tx">Fort Worth (4)</a> &middot; <a href="/transload/galena-park-tx">Galena Park (4)</a> &middot; <a href="/transload/big-lake-tx">Big Lake (3)</a> &middot; <a href="/transload/la-porte-tx">La Porte (3)</a> &middot; <a href="/transload/port-arthur-tx">Port Arthur (3)</a> &middot; <span>Anthony (2)</span> &middot; <span>Arlington (2)</span> &middot; <span>Barnhart (2)</span> &middot; <span>Beaumont (2)</span> &middot; <span>Big Spring (2)</span> &middot; <span>Borger (2)</span> &middot; <span>Cleburne (2)</span> &middot; <span>Comanche (2)</span> &middot; <span>Corpus Christi (2)</span> &middot; <span>Cresson (2)</span> &middot; <span>El Paso (2)</span> &middot; <span>Elmendorf (2)</span><span class="tl-city-extra"> &middot; <span>Hereford (2)</span></span><span class="tl-city-extra"> &middot; <span>Irving (2)</span></span><span class="tl-city-extra"> &middot; <span>Odessa (2)</span></span><span class="tl-city-extra"> &middot; <span>Pecos (2)</span></span><span class="tl-city-extra"> &middot; <span>Rusk (2)</span></span><span class="tl-city-extra"> &middot; <span>San Angelo (2)</span></span><span class="tl-city-extra"> &middot; <span>San Antonio (2)</span></span><span class="tl-city-extra"> &middot; <span>Sweetwater (2)</span></span><span class="tl-city-extra"> &middot; <span>Temple (2)</span></span><span class="tl-city-extra"> &middot; <span>Alvin (1)</span></span><span class="tl-city-extra"> &middot; <span>Amarillo (1)</span></span><span class="tl-city-extra"> &middot; <span>Ashley (1)</span></span><span class="tl-city-extra"> &middot; <span>Bay City (1)</span></span><span class="tl-city-extra"> &middot; <span>Bellville (1)</span></span><span class="tl-city-extra"> &middot; <span>Bishop (1)</span></span><span class="tl-city-extra"> &middot; <span>Brownwood (1)</span></span><span class="tl-city-extra"> &middot; <span>Burnet (1)</span></span><span class="tl-city-extra"> &middot; <span>Channelview (1)</span></span><span class="tl-city-extra"> &middot; <span>Cleveland (1)</span></span><span class="tl-city-extra"> &middot; <span>Coady (1)</span></span><span class="tl-city-extra"> &middot; <span>Cotulla (1)</span></span><span class="tl-city-extra"> &middot; <span>Dallas Miller Yard (1)</span></span><span class="tl-city-extra"> &middot; <span>Dayton (1)</span></span><span class="tl-city-extra"> &middot; <span>Diboll (1)</span></span><span class="tl-city-extra"> &middot; <span>Dilley (1)</span></span><span class="tl-city-extra"> &middot; <span>Etter (1)</span></span><span class="tl-city-extra"> &middot; <span>Euless (1)</span></span><span class="tl-city-extra"> &middot; <span>Floresville (1)</span></span><span class="tl-city-extra"> &middot; <span>Freeport (1)</span></span><span class="tl-city-extra"> &middot; <span>Ft Stockton (1)</span></span><span class="tl-city-extra"> &middot; <span>Galveston (1)</span></span><span class="tl-city-extra"> &middot; <span>Gonzales (1)</span></span><span class="tl-city-extra"> &middot; <span>Grand Prairie (1)</span></span><span class="tl-city-extra"> &middot; <span>Hempstead (1)</span></span><span class="tl-city-extra"> &middot; <span>Henderson (1)</span></span><span class="tl-city-extra"> &middot; <span>Hondo (1)</span></span><span class="tl-city-extra"> &middot; <span>Joshua (1)</span></span><span class="tl-city-extra"> &middot; <span>Krum (1)</span></span><span class="tl-city-extra"> &middot; <span>Laredo (1)</span></span><span class="tl-city-extra"> &middot; <span>Levelland (1)</span></span><span class="tl-city-extra"> &middot; <span>Lolita (1)</span></span><span class="tl-city-extra"> &middot; <span>Lufkin (1)</span></span><span class="tl-city-extra"> &middot; <span>Midlothian (1)</span></span><span class="tl-city-extra"> &middot; <span>Mockingbird (1)</span></span><span class="tl-city-extra"> &middot; <span>Monahans (1)</span></span><span class="tl-city-extra"> &middot; <span>Navasota (1)</span></span><span class="tl-city-extra"> &middot; <span>New Boston (1)</span></span><span class="tl-city-extra"> &middot; <span>Odem (1)</span></span><span class="tl-city-extra"> &middot; <span>Orange (1)</span></span><span class="tl-city-extra"> &middot; <span>Paris (1)</span></span><span class="tl-city-extra"> &middot; <span>Plainview (1)</span></span><span class="tl-city-extra"> &middot; <span>Refugio (1)</span></span><span class="tl-city-extra"> &middot; <span>Saginaw (1)</span></span><span class="tl-city-extra"> &middot; <span>Scottsville (1)</span></span><span class="tl-city-extra"> &middot; <span>Seabrook (1)</span></span><span class="tl-city-extra"> &middot; <span>Seagraves (1)</span></span><span class="tl-city-extra"> &middot; <span>Silsbee (1)</span></span><span class="tl-city-extra"> &middot; <span>Slaton (1)</span></span><span class="tl-city-extra"> &middot; <span>Spence (1)</span></span><span class="tl-city-extra"> &middot; <span>Sulphur Jct (1)</span></span><span class="tl-city-extra"> &middot; <span>Taylor (1)</span></span><span class="tl-city-extra"> &middot; <span>Texas City (1)</span></span><span class="tl-city-extra"> &middot; <span>Venus (1)</span></span><span class="tl-city-extra"> &middot; <span>Victoria (1)</span></span><span class="tl-city-extra"> &middot; <span>Vidor (1)</span></span><span class="tl-city-extra"> &middot; <span>Waxahachie (1)</span></span><span class="tl-city-extra"> &middot; <span>Witco (1)</span></span></p>
+        <button type="button" class="tl-morecities" id="tlMoreCities">Show all 91 cities</button>
+      </div>
     </section>
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (91)</option><option value="alvin">Alvin</option><option value="amarillo">Amarillo</option><option value="anthony">Anthony</option><option value="arlington">Arlington</option><option value="ashley">Ashley</option><option value="barnhart">Barnhart</option><option value="bay city">Bay City</option><option value="baytown">Baytown</option><option value="beaumont">Beaumont</option><option value="bellville">Bellville</option><option value="big lake">Big Lake</option><option value="big spring">Big Spring</option><option value="bishop">Bishop</option><option value="borger">Borger</option><option value="brownsville">Brownsville</option><option value="brownwood">Brownwood</option><option value="burnet">Burnet</option><option value="channelview">Channelview</option><option value="cleburne">Cleburne</option><option value="cleveland">Cleveland</option><option value="coady">Coady</option><option value="comanche">Comanche</option><option value="corpus christi">Corpus Christi</option><option value="cotulla">Cotulla</option><option value="cresson">Cresson</option><option value="dallas">Dallas</option><option value="dallas miller yard">Dallas Miller Yard</option><option value="dayton">Dayton</option><option value="diboll">Diboll</option><option value="dilley">Dilley</option><option value="el paso">El Paso</option><option value="elmendorf">Elmendorf</option><option value="etter">Etter</option><option value="euless">Euless</option><option value="floresville">Floresville</option><option value="fort worth">Fort Worth</option><option value="freeport">Freeport</option><option value="ft stockton">Ft Stockton</option><option value="galena park">Galena Park</option><option value="galveston">Galveston</option><option value="garland">Garland</option><option value="gonzales">Gonzales</option><option value="grand prairie">Grand Prairie</option><option value="hempstead">Hempstead</option><option value="henderson">Henderson</option><option value="hereford">Hereford</option><option value="hondo">Hondo</option><option value="houston">Houston</option><option value="irving">Irving</option><option value="joshua">Joshua</option><option value="krum">Krum</option><option value="la porte">La Porte</option><option value="laredo">Laredo</option><option value="levelland">Levelland</option><option value="lolita">Lolita</option><option value="lubbock">Lubbock</option><option value="lufkin">Lufkin</option><option value="midlothian">Midlothian</option><option value="mockingbird">Mockingbird</option><option value="monahans">Monahans</option><option value="navasota">Navasota</option><option value="new boston">New Boston</option><option value="odem">Odem</option><option value="odessa">Odessa</option><option value="orange">Orange</option><option value="paris">Paris</option><option value="pasadena">Pasadena</option><option value="pecos">Pecos</option><option value="plainview">Plainview</option><option value="port arthur">Port Arthur</option><option value="refugio">Refugio</option><option value="rusk">Rusk</option><option value="saginaw">Saginaw</option><option value="san angelo">San Angelo</option><option value="san antonio">San Antonio</option><option value="scottsville">Scottsville</option><option value="seabrook">Seabrook</option><option value="seagraves">Seagraves</option><option value="silsbee">Silsbee</option><option value="slaton">Slaton</option><option value="spence">Spence</option><option value="sulphur jct">Sulphur Jct</option><option value="sweetwater">Sweetwater</option><option value="taylor">Taylor</option><option value="temple">Temple</option><option value="texas city">Texas City</option><option value="venus">Venus</option><option value="victoria">Victoria</option><option value="vidor">Vidor</option><option value="waxahachie">Waxahachie</option><option value="witco">Witco</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="asphalt">Asphalt</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="auger">Auger</option><option value="blending meters">Blending Meters</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="hot water heating">Hot Water Heating</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (59)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (77)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 55 of 159 sites and capability detail for 43. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="alvin" data-tier="verified" data-phone="1" data-comm="lumber" data-cap="" data-text="mountain view reload usa inc alvin  lumber " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mountain View Reload USA Inc</h3>
         <div style="color:#555;font-size:0.9em">Alvin, TX</div>
         <div><strong>Commodities:</strong> Lumber</div>
         <div><strong>Phone:</strong> (832) 626-2972</div>
         <div><a href="http://www.arrow.ca/reload/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="amarillo" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="amarillo warehouse inc. amarillo   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Amarillo Warehouse Inc.</h3>
         <div style="color:#555;font-size:0.9em">Amarillo, TX</div>
         <div><a href="https://www.amarillowarehouse.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="anthony" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="brokers logistics ltd anthony   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Brokers Logistics Ltd</h3>
         <div style="color:#555;font-size:0.9em">Anthony, TX</div>
         <div><strong>Phone:</strong> (915) 778-7751</div>
         <div><a href="https://brokerslogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="anthony" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="stagecoach cartage &amp; distribution anthony   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Stagecoach Cartage &amp; Distribution</h3>
         <div style="color:#555;font-size:0.9em">Anthony, TX</div>
         <div><strong>Phone:</strong> (915) 779-8315</div>
         <div><a href="http://www.stagecoachcartage.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="arlington" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="heniff food grade arlington   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Heniff Food Grade</h3>
         <div style="color:#555;font-size:0.9em">Arlington, TX</div>
         <div><a href="https://www.heniff.com/about-heniff/locations/locations-detail/arlington-tx" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="arlington" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|petroleum products|plastics (dry)" data-cap="air compressor|blending meters|blower|liquid pumps|liquid storage tanks|sampling services|steam heating|tank trailer cleaning" data-text="superior carriers arlington  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) petroleum products plastics (dry) air compressor blending meters blower liquid pumps liquid storage tanks sampling services steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Superior Carriers</h3>
         <div style="color:#555;font-size:0.9em">Arlington, TX</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Petroleum Products, Plastics (Dry)</div>
@@ -1571,24 +1606,24 @@
         <div><strong>Phone:</strong> (972) 263-1343</div>
         <div><a href="https://carrytransit.com/services#transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ashley" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="brokers logistics ltd ashley   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Brokers Logistics Ltd</h3>
         <div style="color:#555;font-size:0.9em">Ashley, TX</div>
         <div><strong>Phone:</strong> (915) 778-7751</div>
         <div><a href="https://brokerslogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="barnhart" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="vista proppants and logistics barnhart terminal; former maalt terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Vista Proppants and Logistics</h3>
         <div style="color:#555;font-size:0.9em">Barnhart, TX</div>
         <div><a href="https://www.vmsand.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Terminal; former Maalt terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="barnhart" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="vista proppants and logistics barnhart   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Vista Proppants And Logistics</h3>
         <div style="color:#555;font-size:0.9em">Barnhart, TX</div>
         <div><a href="https://www.vmsand.com/locations" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bay city" data-tier="verified" data-phone="1" data-comm="acids|chemicals (liq)|petroleum products" data-cap="air compressor|blending meters|liquid pumps|liquid storage tanks|sampling services|steam heating" data-text="chemicals inc bay city  acids chemicals (liq) petroleum products air compressor blending meters liquid pumps liquid storage tanks sampling services steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Chemicals Inc</h3>
         <div style="color:#555;font-size:0.9em">Bay City, TX</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Liq), Petroleum Products</div>
@@ -1596,61 +1631,57 @@
         <div><strong>Phone:</strong> (979) 244-0100</div>
         <div><a href="http://www.chemicalsinc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="baytown" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="access world usa llc baytown   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Access World Usa LLC</h3>
         <div style="color:#555;font-size:0.9em">Baytown, TX</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="baytown" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="county line rail baytown   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">County Line Rail</h3>
         <div style="color:#555;font-size:0.9em">Baytown, TX</div>
         <div><strong>Phone:</strong> (409) 202-6543</div>
         <div><a href="https://www.clrail.com/county-line-industrial-park" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="baytown" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="rail logix ameriport industrial park baytown   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rail Logix AmeriPort Industrial Park</h3>
         <div style="color:#555;font-size:0.9em">Baytown, TX</div>
         <div><a href="https://rail-logix.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="baytown" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="tgs cedar port railroad transload terminal baytown   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TGS Cedar Port Railroad Transload Terminal</h3>
         <div style="color:#555;font-size:0.9em">Baytown, TX</div>
         <div><a href="https://www.tgscedarportrailroad.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="beaumont" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="iron horse rail beaumont terminal beaumont   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Iron Horse Rail Beaumont Terminal</h3>
         <div style="color:#555;font-size:0.9em">Beaumont, TX</div>
         <div><strong>Phone:</strong> (409) 333-4085</div>
         <div><a href="https://www.ihrail.com/beaumont" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="beaumont" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="port of beaumont beaumont   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of Beaumont</h3>
         <div style="color:#555;font-size:0.9em">Beaumont, TX</div>
         <div><strong>Phone:</strong> (409) 835-5367</div>
         <div><a href="https://www.pobtx.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bellville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="tld ramp bellville transloading facility bellville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TLD Ramp Bellville Transloading Facility</h3>
         <div style="color:#555;font-size:0.9em">Bellville, TX</div>
         <div><a href="https://tldramp.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="big lake" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="ghmr operations big lake transload terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">GHMR Operations</h3>
         <div style="color:#555;font-size:0.9em">Big Lake, TX</div>
         <div><strong>Phone:</strong> (817) 879-7414</div>
         <div><a href="https://www.ghmroperations.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Transload Terminal — phone from operator website 2026-08-14</div>
+        <div>Transload Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="big lake" data-tier="review" data-phone="0" data-comm="" data-cap="" data-text="omnitrax energy services big lake   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Omnitrax Energy Services</h3>
         <div style="color:#555;font-size:0.9em">Big Lake, TX</div>
         <div><a href="http://omnitrax.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="big lake" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|plastics (dry)" data-cap="portable vacuum|sampling services|scale|tank trailer cleaning" data-text="tidewater transit co big lake  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) plastics (dry) portable vacuum sampling services scale tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tidewater Transit Co</h3>
         <div style="color:#555;font-size:0.9em">Big Lake, TX</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Plastics (Dry)</div>
@@ -1658,86 +1689,80 @@
         <div><strong>Phone:</strong> (252) 523-4103</div>
         <div><a href="https://www.tidewater-transit.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="big spring" data-tier="review" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="savage service corp big spring  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor bulk conveyor liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Service Corp</h3>
         <div style="color:#555;font-size:0.9em">Big Spring, TX</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="https://www.savageservices.com/services/terminal-transload/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="big spring" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="twin eagle terminals &amp; logistics big spring permian rail terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Twin Eagle Terminals &amp; Logistics</h3>
         <div style="color:#555;font-size:0.9em">Big Spring, TX</div>
         <div><a href="https://teterminals.com/terminals-logistics/big-spring/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Permian Rail Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bishop" data-tier="review" data-phone="0" data-comm="steel" data-cap="" data-text="transportation partners &amp; logistic llc bishop  steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transportation Partners &amp; Logistic LLC</h3>
         <div style="color:#555;font-size:0.9em">Bishop, TX</div>
         <div><strong>Commodities:</strong> Steel</div>
         <div><a href="https://tpandl.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="borger" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="omnitrax logistics services borger   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Omnitrax Logistics Services</h3>
         <div style="color:#555;font-size:0.9em">Borger, TX</div>
         <div><a href="http://omnitrax.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="borger" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="panhandle northern railroad borger   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Panhandle Northern Railroad</h3>
         <div style="color:#555;font-size:0.9em">Borger, TX</div>
         <div><a href="https://omnitrax.com/panhandle-northern-railroad/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="brownsville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="brownsville gulfside warehouse brownsville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Brownsville Gulfside Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Brownsville, TX</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="brownsville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="motus energy t1/t2 terminals brownsville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Motus Energy T1/T2 Terminals</h3>
         <div style="color:#555;font-size:0.9em">Brownsville, TX</div>
         <div><strong>Phone:</strong> (210) 939-5316</div>
         <div><a href="https://motus.energy/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="brownsville" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="omnitrax logistics services brownsville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Omnitrax Logistics Services</h3>
         <div style="color:#555;font-size:0.9em">Brownsville, TX</div>
         <div><strong>Phone:</strong> (956) 372-1880</div>
         <div><a href="http://omnitrax.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="brownsville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="savage brownsville transload terminal brownsville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Brownsville Transload Terminal</h3>
         <div style="color:#555;font-size:0.9em">Brownsville, TX</div>
         <div><a href="https://www.savageservices.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="brownsville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="west plains port of brownsville grain elevator brownsville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">West Plains Port of Brownsville Grain Elevator</h3>
         <div style="color:#555;font-size:0.9em">Brownsville, TX</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="brownwood" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="tnw logistics brownwood transload facility brownwood   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TNW Logistics Brownwood Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Brownwood, TX</div>
         <div><strong>Phone:</strong> (972) 386-0117</div>
         <div><a href="https://www.tnwcorporation.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="burnet" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="mccoy mc reload burnet   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mccoy Mc Reload</h3>
         <div style="color:#555;font-size:0.9em">Burnet, TX</div>
         <div><strong>Phone:</strong> (512) 715-8880</div>
         <div><a href="https://www.mcreload.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="channelview" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="cando channelview terminal channelview   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cando Channelview Terminal</h3>
         <div style="color:#555;font-size:0.9em">Channelview, TX</div>
         <div><a href="https://www.candorail.com/channelviewterminal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cleburne" data-tier="verified" data-phone="1" data-comm="foods (dry)|foods (liq)" data-cap="air compressor|liquid pumps|portable vacuum|sampling services|scale|steam heating" data-text="carry transit cleburne  foods (dry) foods (liq) air compressor liquid pumps portable vacuum sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carry Transit</h3>
         <div style="color:#555;font-size:0.9em">Cleburne, TX</div>
         <div><strong>Commodities:</strong> Foods (Dry), Foods (Liq)</div>
@@ -1745,157 +1770,151 @@
         <div><strong>Phone:</strong> (817) 640-5334</div>
         <div><a href="https://www.carrytransit.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cleburne" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="nsg logistics cleburne transload cleburne   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">NSG Logistics Cleburne Transload</h3>
         <div style="color:#555;font-size:0.9em">Cleburne, TX</div>
         <div><strong>Phone:</strong> (308) 537-7191</div>
         <div><a href="https://nsgco.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cleveland" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="arrow north houston reload cleveland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Arrow North Houston Reload</h3>
         <div style="color:#555;font-size:0.9em">Cleveland, TX</div>
         <div><a href="https://www.arrow.ca/reload/location/north-houston-tx-reload-%F0%9F%86%95/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="coady" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="watco coady transload terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco</h3>
         <div style="color:#555;font-size:0.9em">Coady, TX</div>
         <div><a href="https://www.watco.com/service/terminals/coady-transload-terminal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="comanche" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="comanche transload &amp; cold storage comanche   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Comanche Transload &amp; Cold Storage</h3>
         <div style="color:#555;font-size:0.9em">Comanche, TX</div>
         <div><strong>Phone:</strong> (817) 946-3488</div>
         <div><a href="https://comanchetransloading.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="comanche" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="deleon super grow nutt company comanche   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">DeLeon Super Grow Nutt Company</h3>
         <div style="color:#555;font-size:0.9em">Comanche, TX</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="corpus christi" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bronco road rail terminal corpus christi   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bronco Road Rail Terminal</h3>
         <div style="color:#555;font-size:0.9em">Corpus Christi, TX</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="corpus christi" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="midstream texas south corpus rail terminal corpus christi   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Midstream Texas South Corpus Rail Terminal</h3>
         <div style="color:#555;font-size:0.9em">Corpus Christi, TX</div>
         <div><strong>Phone:</strong> (713) 581-6940</div>
         <div><a href="https://www.midstreamtx.com/midstream-texas-south-corpus-rail-terminal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cotulla" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="c &amp; c transloads cotulla   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">C &amp; C Transloads</h3>
         <div style="color:#555;font-size:0.9em">Cotulla, TX</div>
-        <div>⚠ website unreachable 2026-08-14 (dns) — dead domain link removed 2026-08-15</div>
+
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cresson" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="cresson transmodal distribution cresson   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cresson Transmodal Distribution</h3>
         <div style="color:#555;font-size:0.9em">Cresson, TX</div>
         <div><strong>Phone:</strong> (817) 763-8297</div>
         <div><a href="https://www.fwwr.net/transload-team-track" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cresson" data-tier="verified" data-phone="1" data-comm="lumber" data-cap="" data-text="metro west transload cresson  lumber " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Metro West Transload</h3>
         <div style="color:#555;font-size:0.9em">Cresson, TX</div>
         <div><strong>Commodities:</strong> Lumber</div>
         <div><strong>Phone:</strong> (817) 396-4549</div>
         <div><a href="http://www.metrowesttransload.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dallas" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="cpkc zacha dallas warehouse specialists  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">CPKC Zacha</h3>
         <div style="color:#555;font-size:0.9em">Dallas, TX</div>
         <div><a href="https://www.wsinc.com/locations/dallas-rail-terminal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Warehouse Specialists</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dallas" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="loup railport dallas   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Loup RailPort</h3>
         <div style="color:#555;font-size:0.9em">Dallas, TX</div>
         <div><a href="https://www.louplogistics.com/resource-center/what-is-a-railport.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dallas" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="warehouse specialists dallas   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Warehouse Specialists</h3>
         <div style="color:#555;font-size:0.9em">Dallas, TX</div>
         <div><a href="https://www.wsinc.com/locations/dallas-distribution-center/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dallas" data-tier="verified" data-phone="0" data-comm="lumber|steel" data-cap="" data-text="watco terminal &amp; port services dallas  lumber steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Dallas, TX</div>
         <div><strong>Commodities:</strong> Lumber, Steel</div>
         <div><a href="https://www.watcocompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dallas miller yard" data-tier="verified" data-phone="1" data-comm="lumber|steel" data-cap="" data-text="arrow reload systems inc dallas miller yard  lumber steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Arrow Reload Systems Inc</h3>
         <div style="color:#555;font-size:0.9em">Dallas Miller Yard, TX</div>
         <div><strong>Commodities:</strong> Lumber, Steel</div>
         <div><strong>Phone:</strong> (817) 662-7123</div>
         <div><a href="http://arrow.ca/reload/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dayton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="loup railport dayton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Loup RailPort</h3>
         <div style="color:#555;font-size:0.9em">Dayton, TX</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="diboll" data-tier="verified" data-phone="0" data-comm="chemicals (dry)|chemicals (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="" data-text="rj corman (rsi logistics) diboll  chemicals (dry) chemicals (liq) frac sand lumber minerals petroleum products plastics (dry) steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rj Corman (RSI Logistics)</h3>
         <div style="color:#555;font-size:0.9em">Diboll, TX</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dilley" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="ghmr operations dilley transload terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">GHMR Operations</h3>
         <div style="color:#555;font-size:0.9em">Dilley, TX</div>
         <div><strong>Phone:</strong> (817) 879-7414</div>
         <div><a href="https://www.ghmroperations.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Transload Terminal — phone from operator website 2026-08-14</div>
+        <div>Transload Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="el paso" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="jobe materials dyer railyard el paso   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Jobe Materials Dyer Railyard</h3>
         <div style="color:#555;font-size:0.9em">El Paso, TX</div>
         <div><strong>Phone:</strong> (915) 298-9900</div>
         <div><a href="https://jobematerials.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="el paso" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|petroleum products|plastics (dry)" data-cap="air compressor|blower|liquid pumps|sampling services|scale" data-text="truck-rail handling inc el paso  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) petroleum products plastics (dry) air compressor blower liquid pumps sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Truck-Rail Handling Inc</h3>
         <div style="color:#555;font-size:0.9em">El Paso, TX</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Liquid Pumps, Sampling Services, Scale</div>
         <div><a href="https://qatp-trh.com/services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="elmendorf" data-tier="verified" data-phone="0" data-comm="frac sand" data-cap="" data-text="precision terminal logistics llc elmendorf  frac sand " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Precision Terminal Logistics LLC</h3>
         <div style="color:#555;font-size:0.9em">Elmendorf, TX</div>
         <div><strong>Commodities:</strong> Frac Sand</div>
         <div><a href="https://www.precisiontl.com/#" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="elmendorf" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="rail logix alamo junction elmendorf   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rail Logix Alamo Junction</h3>
         <div style="color:#555;font-size:0.9em">Elmendorf, TX</div>
         <div><a href="https://rail-logix.com/locations/rail-logix-alamo-junction/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="etter" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="rsi logistics etter terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">RSI Logistics</h3>
         <div style="color:#555;font-size:0.9em">Etter, TX</div>
         <div><a href="https://www.rsilogistics.com/rail-solutions/rail-terminal-services/etter-tx/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="euless" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kinder morgan dallas-fort worth rail terminal euless   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kinder Morgan Dallas-Fort Worth Rail Terminal</h3>
         <div style="color:#555;font-size:0.9em">Euless, TX</div>
         <div><a href="https://www.kindermorgan.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="floresville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="twin eagle mission rail terminal floresville mission rail park  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Twin Eagle Mission Rail Terminal</h3>
         <div style="color:#555;font-size:0.9em">Floresville, TX</div>
         <div><a href="https://teterminals.com/terminals-logistics/mission-rail/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Mission Rail Park</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fort worth" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="a&amp;r transport inc fort worth  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">Fort Worth, TX</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
@@ -1903,33 +1922,31 @@
         <div><strong>Phone:</strong> (817) 378-9995</div>
         <div><a href="http://www.artransport.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fort worth" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="bulkmatic transport co fort worth  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulkmatic Transport Co</h3>
         <div style="color:#555;font-size:0.9em">Fort Worth, TX</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale</div>
         <div><a href="https://www.bulkmatic.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fort worth" data-tier="verified" data-phone="0" data-comm="lumber|steel" data-cap="" data-text="material transport trucking &amp; storage fort worth  lumber steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Material Transport Trucking &amp; Storage</h3>
         <div style="color:#555;font-size:0.9em">Fort Worth, TX</div>
         <div><strong>Commodities:</strong> Lumber, Steel</div>
         <div><a href="https://materialtransport.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fort worth" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="united states cold storage inc. fort worth   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">United States Cold Storage Inc.</h3>
         <div style="color:#555;font-size:0.9em">Fort Worth, TX</div>
         <div><a href="https://www.uscold.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="freeport" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="port freeport railyard freeport   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port Freeport Railyard</h3>
         <div style="color:#555;font-size:0.9em">Freeport, TX</div>
         <div><strong>Phone:</strong> (800) 362-5743</div>
         <div><a href="https://www.portfreeport.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ft stockton" data-tier="verified" data-phone="1" data-comm="frac sand" data-cap="bulk conveyor|scale" data-text="titan lansing transloading ft stockton  frac sand bulk conveyor scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Titan Lansing Transloading</h3>
         <div style="color:#555;font-size:0.9em">Ft Stockton, TX</div>
         <div><strong>Commodities:</strong> Frac Sand</div>
@@ -1937,32 +1954,31 @@
         <div><strong>Phone:</strong> (432) 395-2235</div>
         <div><a href="http://www.titanlansing.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="galena park" data-tier="verified" data-phone="1" data-comm="steel" data-cap="" data-text="alltrans terminal companies llc galena park  steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Alltrans Terminal Companies LLC</h3>
         <div style="color:#555;font-size:0.9em">Galena Park, TX</div>
         <div><strong>Commodities:</strong> Steel</div>
         <div><strong>Phone:</strong> (713) 676-1559</div>
         <div><a href="http://www.alltranstc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="galena park" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="enstructure houston terminals galena park   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Enstructure Houston Terminals</h3>
         <div style="color:#555;font-size:0.9em">Galena Park, TX</div>
         <div><a href="https://enstructure.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="galena park" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="loup railport galena park   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Loup RailPort</h3>
         <div style="color:#555;font-size:0.9em">Galena Park, TX</div>
         <div><a href="https://www.louplogistics.com/resource-center/what-is-a-railport.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="galena park" data-tier="verified" data-phone="0" data-comm="frac sand|minerals" data-cap="bulk conveyor" data-text="watco terminal &amp; port services galena park  frac sand minerals bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Galena Park, TX</div>
         <div><strong>Commodities:</strong> Frac Sand, Minerals</div>
         <div><strong>Capabilities:</strong> Bulk Conveyor</div>
         <div><a href="https://www.watcocompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="galveston" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="savage service corp galveston  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor bulk conveyor liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Service Corp</h3>
         <div style="color:#555;font-size:0.9em">Galveston, TX</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1970,51 +1986,49 @@
         <div><strong>Phone:</strong> (409) 935-8388</div>
         <div><a href="https://savageservices.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="garland" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="custom form transportation garland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Custom Form Transportation</h3>
         <div style="color:#555;font-size:0.9em">Garland, TX</div>
         <div><strong>Phone:</strong> (800) 229-5519</div>
         <div><a href="https://whitestarlogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="garland" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="dallas, garland &amp; northeastern railroad (dgno) garland genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Dallas, Garland &amp; Northeastern Railroad (DGNO)</h3>
         <div style="color:#555;font-size:0.9em">Garland, TX</div>
         <div><a href="https://www.gwrr.com/railroads/dallas-garland-and-northeastern-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="garland" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="gravity rail garland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Gravity Rail</h3>
         <div style="color:#555;font-size:0.9em">Garland, TX</div>
         <div><strong>Phone:</strong> (713) 714-3625</div>
         <div><a href="https://www.gravity-rail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="garland" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="texas northeastern railroad (tner) garland genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Texas Northeastern Railroad (TNER)</h3>
         <div style="color:#555;font-size:0.9em">Garland, TX</div>
         <div><a href="https://www.gwrr.com/railroads/texas-northeastern-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="garland" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="warehouse specialists garland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Warehouse Specialists</h3>
         <div style="color:#555;font-size:0.9em">Garland, TX</div>
         <div><a href="https://www.wsinc.com/locations/dallas-fulfillment/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="gonzales" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="vista proppants and logistics gonzales terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Vista Proppants and Logistics</h3>
         <div style="color:#555;font-size:0.9em">Gonzales, TX</div>
         <div><a href="https://www.vmsand.com/locations" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="grand prairie" data-tier="verified" data-phone="0" data-comm="foods (dry)|foods (liq)" data-cap="air compressor|liquid pumps|portable vacuum|sampling services|scale|steam heating" data-text="carry transit grand prairie  foods (dry) foods (liq) air compressor liquid pumps portable vacuum sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carry Transit</h3>
         <div style="color:#555;font-size:0.9em">Grand Prairie, TX</div>
         <div><strong>Commodities:</strong> Foods (Dry), Foods (Liq)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating</div>
         <div><a href="https://carrytransit.com/services#transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hempstead" data-tier="verified" data-phone="1" data-comm="acids|asphalt|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating" data-text="rcr hempstead rail park hempstead  acids asphalt chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) steel air compressor blower hot water heating liquid pumps portable vacuum sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">RCR Hempstead Rail Park</h3>
         <div style="color:#555;font-size:0.9em">Hempstead, TX</div>
         <div><strong>Commodities:</strong> Acids, Asphalt, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
@@ -2022,82 +2036,75 @@
         <div><strong>Phone:</strong> (346) 462-5545</div>
         <div><a href="https://hempstead.rcrrailco.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="henderson" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="hob railroad and transload henderson   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">HOB Railroad and Transload</h3>
         <div style="color:#555;font-size:0.9em">Henderson, TX</div>
         <div><strong>Phone:</strong> (903) 439-0738</div>
         <div><a href="https://www.blacklandsrailroad.com/henderson-overton-branch" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hereford" data-tier="verified" data-phone="0" data-comm="foods (dry)" data-cap="auger|bulk conveyor|sampling services|scale" data-text="agridyne llc hereford  foods (dry) auger bulk conveyor sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Agridyne LLC</h3>
         <div style="color:#555;font-size:0.9em">Hereford, TX</div>
         <div><strong>Commodities:</strong> Foods (Dry)</div>
         <div><strong>Capabilities:</strong> Auger, Bulk Conveyor, Sampling Services, Scale</div>
         <div><a href="https://www.mix30.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hereford" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="norag hereford transload hereford   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">NORAG Hereford Transload</h3>
         <div style="color:#555;font-size:0.9em">Hereford, TX</div>
         <div><strong>Phone:</strong> (913) 851-7200</div>
         <div><a href="https://www.norag-us.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hondo" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="hondo railway hondo   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Hondo Railway</h3>
         <div style="color:#555;font-size:0.9em">Hondo, TX</div>
         <div><strong>Phone:</strong> (830) 275-3302</div>
         <div><a href="https://hondorailway.com/our-facilities/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="houston" data-tier="listed" data-phone="0" data-comm="chemicals (dry)|plastics (dry)" data-cap="" data-text="bulkmatic transport co — houston houston bulkmatic transload terminal chemicals (dry) plastics (dry) " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulkmatic Transport Co — Houston</h3>
         <div style="color:#555;font-size:0.9em">Houston, TX</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Plastics (Dry)</div>
         <div><a href="https://www.bulkmatic.com/service/transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Bulkmatic transload terminal — via Commtrex, sweep 2026-08-14</div>
+        <div>Bulkmatic transload terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="houston" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="houston peninsula terminals houston   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Houston Peninsula Terminals</h3>
         <div style="color:#555;font-size:0.9em">Houston, TX</div>
         <div><strong>Phone:</strong> (713) 389-0373</div>
         <div><a href="https://houstonpeninsulaterminals.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="houston" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="houston rail park (jaguar transport) houston jaguar transport holdings rail park  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Houston Rail Park (Jaguar Transport)</h3>
         <div style="color:#555;font-size:0.9em">Houston, TX</div>
         <div><a href="https://jag-transport.com/houston-rail-park/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Jaguar Transport Holdings rail park</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="houston" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="jacintoport international terminal houston   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Jacintoport International Terminal</h3>
         <div style="color:#555;font-size:0.9em">Houston, TX</div>
         <div><strong>Phone:</strong> (713) 673-7000</div>
         <div><a href="https://www.jacintoport.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="houston" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="lone star integrated distribution houston   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lone Star Integrated Distribution</h3>
         <div style="color:#555;font-size:0.9em">Houston, TX</div>
         <div><strong>Phone:</strong> (713) 227-2381</div>
         <div><a href="https://lsid.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="houston" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="pinnacle machine works houston   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pinnacle Machine Works</h3>
         <div style="color:#555;font-size:0.9em">Houston, TX</div>
         <div><strong>Phone:</strong> (281) 860-2520</div>
         <div><a href="https://pinnaclemw.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="houston" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="savage services — houston, tx houston savage location — 11757 katy fwy #1400 — 281) 531-8400  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Services — Houston, TX</h3>
         <div style="color:#555;font-size:0.9em">Houston, TX</div>
         <div><a href="https://savageco.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Savage location — 11757 Katy Fwy #1400 — 281) 531-8400 — operator sweep 2026-08-14</div>
+        <div>Savage location — 11757 Katy Fwy #1400 — 281) 531-8400</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="houston" data-tier="verified" data-phone="1" data-comm="acids|chemicals (liq)|petroleum products" data-cap="air compressor|blending meters|liquid pumps|liquid storage tanks|sampling services|scale|steam heating" data-text="stolt-nielsen rail services houston  acids chemicals (liq) petroleum products air compressor blending meters liquid pumps liquid storage tanks sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Stolt-Nielsen Rail Services</h3>
         <div style="color:#555;font-size:0.9em">Houston, TX</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Liq), Petroleum Products</div>
@@ -2105,7 +2112,7 @@
         <div><strong>Phone:</strong> (281) 457-0303</div>
         <div><a href="http://www.stolt-nielsen.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="houston" data-tier="verified" data-phone="1" data-comm="chemicals (liq)|petroleum products" data-cap="air compressor|liquid pumps|liquid storage tanks|sampling services|steam heating" data-text="texas blending &amp; warehousing corp houston  chemicals (liq) petroleum products air compressor liquid pumps liquid storage tanks sampling services steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Texas Blending &amp; Warehousing Corp</h3>
         <div style="color:#555;font-size:0.9em">Houston, TX</div>
         <div><strong>Commodities:</strong> Chemicals (Liq), Petroleum Products</div>
@@ -2113,7 +2120,7 @@
         <div><strong>Phone:</strong> (713) 223-1053</div>
         <div><a href="https://www.tbwc.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="houston" data-tier="verified" data-phone="1" data-comm="acids|asphalt|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|blending meters|hot water heating|liquid pumps|liquid storage tanks|sampling services|scale" data-text="totalchem llc houston  acids asphalt chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) steel air compressor blending meters hot water heating liquid pumps liquid storage tanks sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Totalchem LLC</h3>
         <div style="color:#555;font-size:0.9em">Houston, TX</div>
         <div><strong>Commodities:</strong> Acids, Asphalt, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
@@ -2121,65 +2128,63 @@
         <div><strong>Phone:</strong> (713) 878-1700</div>
         <div><a href="http://www.totalchem.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="houston" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="w m dewey &amp; son inc. houston   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">W M Dewey &amp; Son Inc.</h3>
         <div style="color:#555;font-size:0.9em">Houston, TX</div>
         <div><strong>Phone:</strong> (800) 231-4659</div>
         <div><a href="https://wmdewey.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="houston" data-tier="verified" data-phone="0" data-comm="chemicals (dry)|chemicals (liq)|frac sand|minerals|petroleum products|steel" data-cap="air compressor|bulk conveyor|liquid pumps|sampling services|scale" data-text="watco terminal &amp; port services houston  chemicals (dry) chemicals (liq) frac sand minerals petroleum products steel air compressor bulk conveyor liquid pumps sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Houston, TX</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Frac Sand, Minerals, Petroleum Products, Steel</div>
         <div><strong>Capabilities:</strong> Air Compressor, Bulk Conveyor, Liquid Pumps, Sampling Services, Scale</div>
         <div><a href="https://www.watcocompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="irving" data-tier="verified" data-phone="1" data-comm="lumber" data-cap="" data-text="mountain view reload usa inc irving  lumber " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mountain View Reload USA Inc</h3>
         <div style="color:#555;font-size:0.9em">Irving, TX</div>
         <div><strong>Commodities:</strong> Lumber</div>
         <div><strong>Phone:</strong> (214) 260-0672</div>
         <div><a href="https://www.arrow.ca/reload/location/irving-reload/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="irving" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="network logistics irving transload irving   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Network Logistics Irving Transload</h3>
         <div style="color:#555;font-size:0.9em">Irving, TX</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="joshua" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="arrow cleburne reload joshua   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Arrow Cleburne Reload</h3>
         <div style="color:#555;font-size:0.9em">Joshua, TX</div>
         <div><a href="https://www.arrow.ca/reload/location/cleburne-reload/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="krum" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="patriot rail krum denton rail park  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Patriot Rail</h3>
         <div style="color:#555;font-size:0.9em">Krum, TX</div>
         <div><a href="https://patriotrail.com/wp-content/uploads/2026/03/HYDRA-DENTONds2bhmm.pdf" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Denton Rail Park</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="la porte" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="intercontinental terminals company deer park terminal la porte   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Intercontinental Terminals Company Deer Park Terminal</h3>
         <div style="color:#555;font-size:0.9em">La Porte, TX</div>
         <div><a href="https://www.iterm.com/locations/deer-park/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="la porte" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="new orleans cold storage la porte   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">New Orleans Cold Storage</h3>
         <div style="color:#555;font-size:0.9em">La Porte, TX</div>
         <div><a href="https://www.onelineage.com/facilities/houston-la-porte" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="la porte" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="rail logix port crossing commerce center la porte   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rail Logix Port Crossing Commerce Center</h3>
         <div style="color:#555;font-size:0.9em">La Porte, TX</div>
         <div><a href="https://rail-logix.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="laredo" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="loup railport laredo   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Loup RailPort</h3>
         <div style="color:#555;font-size:0.9em">Laredo, TX</div>
         <div><a href="https://www.louplogistics.com/resource-center/what-is-a-railport.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="levelland" data-tier="verified" data-phone="1" data-comm="frac sand" data-cap="bulk conveyor|scale" data-text="titan lansing transloading levelland  frac sand bulk conveyor scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Titan Lansing Transloading</h3>
         <div style="color:#555;font-size:0.9em">Levelland, TX</div>
         <div><strong>Commodities:</strong> Frac Sand</div>
@@ -2187,32 +2192,31 @@
         <div><strong>Phone:</strong> (806) 891-4679</div>
         <div><a href="http://www.titanlansing.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lolita" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="point comfort &amp; northern railway (pcn) lolita genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Point Comfort &amp; Northern Railway (PCN)</h3>
         <div style="color:#555;font-size:0.9em">Lolita, TX</div>
         <div><a href="https://www.gwrr.com/railroads/point-comfort-and-northern-railway" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lubbock" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="brite reload lubbock   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Brite Reload</h3>
         <div style="color:#555;font-size:0.9em">Lubbock, TX</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lubbock" data-tier="verified" data-phone="0" data-comm="frac sand" data-cap="scale" data-text="cig logistics services lubbock  frac sand scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cig Logistics Services</h3>
         <div style="color:#555;font-size:0.9em">Lubbock, TX</div>
         <div><strong>Commodities:</strong> Frac Sand</div>
         <div><strong>Capabilities:</strong> Scale</div>
         <div><a href="https://ciglogistics.com/wp-content/uploads/2020/01/Lubbock.pdf" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lubbock" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="robertson bonded warehouse lubbock   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Robertson Bonded Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Lubbock, TX</div>
         <div><strong>Phone:</strong> (806) 765-8233</div>
         <div><a href="https://robertsonbonded.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lubbock" data-tier="verified" data-phone="1" data-comm="frac sand" data-cap="bulk conveyor|scale" data-text="titan lansing transloading lubbock  frac sand bulk conveyor scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Titan Lansing Transloading</h3>
         <div style="color:#555;font-size:0.9em">Lubbock, TX</div>
         <div><strong>Commodities:</strong> Frac Sand</div>
@@ -2220,33 +2224,32 @@
         <div><strong>Phone:</strong> (806) 893-7915</div>
         <div><a href="http://www.titanlansing.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lubbock" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|petroleum products|plastics (dry)" data-cap="air compressor|auger|blower|hot water heating|liquid pumps|liquid storage tanks|sampling services|scale|steam heating|tank trailer cleaning" data-text="truck-rail handling inc lubbock  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) petroleum products plastics (dry) air compressor auger blower hot water heating liquid pumps liquid storage tanks sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Truck-Rail Handling Inc</h3>
         <div style="color:#555;font-size:0.9em">Lubbock, TX</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Auger, Blower, Hot Water Heating, Liquid Pumps, Liquid Storage Tanks, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="https://qatp-trh.com/services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lufkin" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="angelina &amp; neches river railroad lufkin transload lufkin   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Angelina &amp; Neches River Railroad Lufkin Transload</h3>
         <div style="color:#555;font-size:0.9em">Lufkin, TX</div>
         <div><strong>Phone:</strong> (936) 634-4403</div>
         <div><a href="https://www.anrrr.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="midlothian" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="texas central business lines midlothian   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Texas Central Business Lines</h3>
         <div style="color:#555;font-size:0.9em">Midlothian, TX</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mockingbird" data-tier="verified" data-phone="0" data-comm="foods (dry)|foods (liq)" data-cap="air compressor|liquid pumps|portable vacuum|sampling services|scale|steam heating" data-text="carry transit mockingbird  foods (dry) foods (liq) air compressor liquid pumps portable vacuum sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carry Transit</h3>
         <div style="color:#555;font-size:0.9em">Mockingbird, TX</div>
         <div><strong>Commodities:</strong> Foods (Dry), Foods (Liq)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating</div>
         <div><a href="https://carrytransit.com/services#transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="monahans" data-tier="verified" data-phone="1" data-comm="frac sand" data-cap="bulk conveyor|scale" data-text="bulk transfer llc monahans  frac sand bulk conveyor scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulk Transfer LLC</h3>
         <div style="color:#555;font-size:0.9em">Monahans, TX</div>
         <div><strong>Commodities:</strong> Frac Sand</div>
@@ -2254,7 +2257,7 @@
         <div><strong>Phone:</strong> (432) 553-7171</div>
         <div><a href="https://www.bulktransfertx.com/contact/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="navasota" data-tier="verified" data-phone="1" data-comm="frac sand" data-cap="scale" data-text="cig logistics services navasota  frac sand scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cig Logistics Services</h3>
         <div style="color:#555;font-size:0.9em">Navasota, TX</div>
         <div><strong>Commodities:</strong> Frac Sand</div>
@@ -2262,79 +2265,73 @@
         <div><strong>Phone:</strong> (817) 768-6391</div>
         <div><a href="http://ciglogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new boston" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="texamericas - spring creek enterprises new boston   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TexAmericas - Spring Creek Enterprises</h3>
         <div style="color:#555;font-size:0.9em">New Boston, TX</div>
         <div><strong>Phone:</strong> (903) 223-9841</div>
         <div><a href="https://www.texamericascenter.com/logistics-services/transload-services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="odem" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="county line rail gulf coast rail gateway odem   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">County Line Rail Gulf Coast Rail Gateway</h3>
         <div style="color:#555;font-size:0.9em">Odem, TX</div>
         <div><strong>Phone:</strong> (409) 202-6543</div>
         <div><a href="https://countylineindustrialpark.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="odessa" data-tier="verified" data-phone="1" data-comm="frac sand|minerals" data-cap="bulk conveyor" data-text="black gold terminals odessa  frac sand minerals bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Black Gold Terminals</h3>
         <div style="color:#555;font-size:0.9em">Odessa, TX</div>
         <div><strong>Commodities:</strong> Frac Sand, Minerals</div>
         <div><strong>Capabilities:</strong> Bulk Conveyor</div>
         <div><strong>Phone:</strong> (903) 439-0738</div>
         <div><a href="https://www.blacklandsrailroad.com/transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="odessa" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="loup railport odessa   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Loup RailPort</h3>
         <div style="color:#555;font-size:0.9em">Odessa, TX</div>
         <div><a href="https://www.louplogistics.com/resource-center/what-is-a-railport.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="orange" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="usa rail orange orange   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">USA Rail Orange</h3>
         <div style="color:#555;font-size:0.9em">Orange, TX</div>
         <div><strong>Phone:</strong> (409) 540-5360</div>
         <div><a href="https://usarailterminals.com/rail-facilities/usa-rail-orange/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="paris" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="we pack logistics paris   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">We Pack Logistics</h3>
         <div style="color:#555;font-size:0.9em">Paris, TX</div>
         <div><strong>Phone:</strong> (903) 783-7102</div>
         <div><a href="https://www.wepack.com/?utm_source=local&amp;utm_medium=organic&amp;utm_campaign=gmblisting&amp;utm_content=paris_nw_loop" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pasadena" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="225 rail terminal pasadena   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">225 Rail Terminal</h3>
         <div style="color:#555;font-size:0.9em">Pasadena, TX</div>
         <div><strong>Phone:</strong> (832) 577-6588</div>
         <div><a href="https://225rail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pasadena" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|petroleum products|plastics (dry)" data-cap="" data-text="alpha technical services pasadena  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) petroleum products plastics (dry) " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Alpha Technical Services</h3>
         <div style="color:#555;font-size:0.9em">Pasadena, TX</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Petroleum Products, Plastics (Dry)</div>
         <div><strong>Phone:</strong> (832) 328-4176</div>
         <div><a href="http://alpha-tech-service.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pasadena" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="dci pasadena   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Dci</h3>
         <div style="color:#555;font-size:0.9em">Pasadena, TX</div>
         <div><strong>Phone:</strong> (800) 835-6252</div>
         <div><a href="https://depotconnect.com/faq/transloading/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pasadena" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="intercontinental terminals company pasadena terminal pasadena   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Intercontinental Terminals Company Pasadena Terminal</h3>
         <div style="color:#555;font-size:0.9em">Pasadena, TX</div>
         <div><a href="https://www.iterm.com/locations/pasadena/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pasadena" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kinder morgan deer park rail terminal pasadena   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kinder Morgan Deer Park Rail Terminal</h3>
         <div style="color:#555;font-size:0.9em">Pasadena, TX</div>
         <div><a href="https://www.kindermorgan.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pasadena" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express pasadena  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Pasadena, TX</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
@@ -2342,7 +2339,7 @@
         <div><strong>Phone:</strong> (626) 336-8111</div>
         <div><a href="http://www.plasticexpress.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pasadena" data-tier="verified" data-phone="1" data-comm="acids|chemicals (liq)|petroleum products" data-cap="air compressor|liquid pumps|sampling services|scale|steam heating|tank trailer cleaning" data-text="quality transload inc pasadena  acids chemicals (liq) petroleum products air compressor liquid pumps sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Quality Transload Inc</h3>
         <div style="color:#555;font-size:0.9em">Pasadena, TX</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Liq), Petroleum Products</div>
@@ -2350,76 +2347,72 @@
         <div><strong>Phone:</strong> (281) 474-3673</div>
         <div><a href="https://www.qualitycarriersinc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pecos" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="pecos transload terminal pecos   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pecos Transload Terminal</h3>
         <div style="color:#555;font-size:0.9em">Pecos, TX</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pecos" data-tier="verified" data-phone="0" data-comm="frac sand|minerals" data-cap="bulk conveyor" data-text="watco terminal &amp; port services pecos  frac sand minerals bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Pecos, TX</div>
         <div><strong>Commodities:</strong> Frac Sand, Minerals</div>
         <div><strong>Capabilities:</strong> Bulk Conveyor</div>
         <div><a href="https://www.watcocompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="plainview" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="bnsf logistics plainview   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">BNSF Logistics</h3>
         <div style="color:#555;font-size:0.9em">Plainview, TX</div>
         <div><strong>Phone:</strong> (800) 275-8521</div>
         <div><a href="https://www.bnsflogistics.com/gallery/plainview-texas/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="port arthur" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="gt omniport port arthur   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">GT OmniPort</h3>
         <div style="color:#555;font-size:0.9em">Port Arthur, TX</div>
         <div><strong>Phone:</strong> (713) 875-9111</div>
         <div><a href="https://gtomniport.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="port arthur" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="usa rail port arthur port arthur   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">USA Rail Port Arthur</h3>
         <div style="color:#555;font-size:0.9em">Port Arthur, TX</div>
         <div><strong>Phone:</strong> (409) 540-5360</div>
         <div><a href="https://usarailterminals.com/rail-facilities/port-arthur-tx-rail-storage-facility/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="port arthur" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="watco port arthur dedicated terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco</h3>
         <div style="color:#555;font-size:0.9em">Port Arthur, TX</div>
         <div><a href="https://www.watco.com/service/terminal-services/dedicated" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Dedicated Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="refugio" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="refugio transload terminal refugio   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Refugio Transload Terminal</h3>
         <div style="color:#555;font-size:0.9em">Refugio, TX</div>
         <div><a href="https://www.watco.com/service/terminals/refugio-transload-terminal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="rusk" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lone star &amp; eastern railroad rusk jaguar transport holdings — same campus as texas and eastern railroad  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lone Star &amp; Eastern Railroad</h3>
         <div style="color:#555;font-size:0.9em">Rusk, TX</div>
         <div><a href="https://jag-transport.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Jaguar Transport Holdings — same campus as Texas and Eastern Railroad — website repointed to homepage 2026-08-15 (old page removed)</div>
+        <div>Jaguar Transport Holdings — same campus as Texas and Eastern Railroad</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="rusk" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="texas and eastern railroad rusk jaguar transport holdings  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Texas and Eastern Railroad</h3>
         <div style="color:#555;font-size:0.9em">Rusk, TX</div>
         <div><a href="https://jag-transport.com/texas-and-eastern-railroad/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Jaguar Transport Holdings</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="saginaw" data-tier="verified" data-phone="0" data-comm="acids|chemicals (liq)|petroleum products" data-cap="air compressor|liquid pumps|sampling services|scale|steam heating|tank trailer cleaning" data-text="quality transload inc saginaw  acids chemicals (liq) petroleum products air compressor liquid pumps sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Quality Transload Inc</h3>
         <div style="color:#555;font-size:0.9em">Saginaw, TX</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Liq), Petroleum Products</div>
         <div><strong>Capabilities:</strong> Air Compressor, Liquid Pumps, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="https://www.qualitydistribution.com/About-QDI/Our-Companies/Quality-Transload-Terminals.aspx" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="san angelo" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="san angelo rail port san angelo   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">San Angelo Rail Port</h3>
         <div style="color:#555;font-size:0.9em">San Angelo, TX</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="san angelo" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|plastics (dry)" data-cap="portable vacuum|sampling services|scale|tank trailer cleaning" data-text="tidewater transit co san angelo  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) plastics (dry) portable vacuum sampling services scale tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tidewater Transit Co</h3>
         <div style="color:#555;font-size:0.9em">San Angelo, TX</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Plastics (Dry)</div>
@@ -2427,28 +2420,27 @@
         <div><strong>Phone:</strong> (855) 718-9564</div>
         <div><a href="http://www.tidewater-logistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="san antonio" data-tier="verified" data-phone="0" data-comm="frac sand" data-cap="scale" data-text="cig logistics services san antonio  frac sand scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cig Logistics Services</h3>
         <div style="color:#555;font-size:0.9em">San Antonio, TX</div>
         <div><strong>Commodities:</strong> Frac Sand</div>
         <div><strong>Capabilities:</strong> Scale</div>
         <div><a href="https://ciglogistics.com/wp-content/uploads/2020/01/San-Antonio.pdf" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="san antonio" data-tier="verified" data-phone="0" data-comm="frac sand" data-cap="scale" data-text="precision terminal logistics llc san antonio  frac sand scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Precision Terminal Logistics LLC</h3>
         <div style="color:#555;font-size:0.9em">San Antonio, TX</div>
         <div><strong>Commodities:</strong> Frac Sand</div>
         <div><strong>Capabilities:</strong> Scale</div>
         <div><a href="https://www.precisiontl.com/#" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="scottsville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="rb products scottsville transload scottsville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">RB Products Scottsville Transload</h3>
         <div style="color:#555;font-size:0.9em">Scottsville, TX</div>
         <div><strong>Phone:</strong> (281) 992-3500</div>
         <div><a href="https://www.rbproductsinc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="seabrook" data-tier="verified" data-phone="1" data-comm="acids|chemicals (liq)|foods (liq)|petroleum products" data-cap="liquid pumps|liquid storage tanks|sampling services|scale|steam heating" data-text="odfjell terminals seabrook  acids chemicals (liq) foods (liq) petroleum products liquid pumps liquid storage tanks sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Odfjell Terminals</h3>
         <div style="color:#555;font-size:0.9em">Seabrook, TX</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Liq), Foods (Liq), Petroleum Products</div>
@@ -2456,7 +2448,7 @@
         <div><strong>Phone:</strong> (713) 844-2300</div>
         <div><a href="http://odfjell.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="seagraves" data-tier="verified" data-phone="1" data-comm="frac sand" data-cap="bulk conveyor|scale" data-text="bulk transfer llc seagraves  frac sand bulk conveyor scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulk Transfer LLC</h3>
         <div style="color:#555;font-size:0.9em">Seagraves, TX</div>
         <div><strong>Commodities:</strong> Frac Sand</div>
@@ -2464,14 +2456,13 @@
         <div><strong>Phone:</strong> (432) 553-7171</div>
         <div><a href="http://bulktransfertx.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="silsbee" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="county line rail silsbee   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">County Line Rail</h3>
         <div style="color:#555;font-size:0.9em">Silsbee, TX</div>
         <div><strong>Phone:</strong> (409) 202-6543</div>
         <div><a href="https://www.clrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="slaton" data-tier="verified" data-phone="1" data-comm="frac sand" data-cap="scale" data-text="cig logistics services slaton  frac sand scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cig Logistics Services</h3>
         <div style="color:#555;font-size:0.9em">Slaton, TX</div>
         <div><strong>Commodities:</strong> Frac Sand</div>
@@ -2479,14 +2470,14 @@
         <div><strong>Phone:</strong> (806) 786-3214</div>
         <div><a href="http://ciglogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="spence" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|petroleum products" data-cap="air compressor|blending meters|liquid pumps|sampling services|steam heating" data-text="chempak international inc spence  acids chemicals (dry) chemicals (liq) petroleum products air compressor blending meters liquid pumps sampling services steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Chempak International Inc</h3>
         <div style="color:#555;font-size:0.9em">Spence, TX</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Petroleum Products</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blending Meters, Liquid Pumps, Sampling Services, Steam Heating</div>
         <div><a href="http://www.chempak.net/RailTransfer.asp" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sulphur jct" data-tier="verified" data-phone="1" data-comm="frac sand" data-cap="bulk conveyor|scale" data-text="titan lansing transloading sulphur jct  frac sand bulk conveyor scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Titan Lansing Transloading</h3>
         <div style="color:#555;font-size:0.9em">Sulphur Jct, TX</div>
         <div><strong>Commodities:</strong> Frac Sand</div>
@@ -2494,23 +2485,21 @@
         <div><strong>Phone:</strong> (806) 993-0554</div>
         <div><a href="http://www.titanlansing.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sweetwater" data-tier="verified" data-phone="1" data-comm="foods (dry)" data-cap="bulk conveyor" data-text="cape and son sweetwater  foods (dry) bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cape And Son</h3>
         <div style="color:#555;font-size:0.9em">Sweetwater, TX</div>
         <div><strong>Commodities:</strong> Foods (Dry)</div>
         <div><strong>Capabilities:</strong> Bulk Conveyor</div>
         <div><strong>Phone:</strong> (325) 455-3525</div>
         <div><a href="https://www.capeandson.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>⚠ website unreachable 2026-08-14 (error)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sweetwater" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="sweetwater logistics center sweetwater   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sweetwater Logistics Center</h3>
         <div style="color:#555;font-size:0.9em">Sweetwater, TX</div>
         <div><strong>Phone:</strong> (806) 744-0118</div>
         <div><a href="https://pycoindustriesinc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="taylor" data-tier="verified" data-phone="1" data-comm="acids|asphalt|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating" data-text="rcr taylor rail park taylor  acids asphalt chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) steel air compressor blower hot water heating liquid pumps portable vacuum sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">RCR Taylor Rail Park</h3>
         <div style="color:#555;font-size:0.9em">Taylor, TX</div>
         <div><strong>Commodities:</strong> Acids, Asphalt, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
@@ -2518,54 +2507,51 @@
         <div><strong>Phone:</strong> (346) 462-5545</div>
         <div><a href="https://www.rcrrailco.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="temple" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="crossroads 3pl solutions temple   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Crossroads 3pl Solutions</h3>
         <div style="color:#555;font-size:0.9em">Temple, TX</div>
         <div><strong>Phone:</strong> (254) 773-0018</div>
         <div><a href="https://crossroads3pl.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="temple" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="temple &amp; central railroad temple   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Temple &amp; Central Railroad</h3>
         <div style="color:#555;font-size:0.9em">Temple, TX</div>
         <div><a href="https://patriotrail.com/rail/temple-central-texas-railway-tc/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="texas city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="r.j. corman texas lines (rjcd) texas city r.j. corman short line — transload service available  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">R.J. Corman Texas Lines (RJCD)</h3>
         <div style="color:#555;font-size:0.9em">Texas City, TX</div>
         <div><a href="https://www.rjcorman.com/companies/railroad-company/our-short-lines" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>R.J. Corman short line — transload service available — operator sweep 2026-08-14</div>
+        <div>R.J. Corman short line — transload service available</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="venus" data-tier="verified" data-phone="1" data-comm="petroleum products" data-cap="air compressor|liquid pumps|liquid storage tanks|sampling services|scale" data-text="american petrolog llc venus  petroleum products air compressor liquid pumps liquid storage tanks sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">American Petrolog LLC</h3>
         <div style="color:#555;font-size:0.9em">Venus, TX</div>
         <div><strong>Commodities:</strong> Petroleum Products</div>
         <div><strong>Capabilities:</strong> Air Compressor, Liquid Pumps, Liquid Storage Tanks, Sampling Services, Scale</div>
         <div><strong>Phone:</strong> (877) 203-3283</div>
         <div><a href="https://www.americanpetrolog.com/about/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="victoria" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="tnw port of victoria transload victoria   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TNW Port of Victoria Transload</h3>
         <div style="color:#555;font-size:0.9em">Victoria, TX</div>
         <div><strong>Phone:</strong> (361) 570-8855</div>
         <div><a href="https://www.portofvictoria.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="vidor" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="rsi logistics vidor terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">RSI Logistics</h3>
         <div style="color:#555;font-size:0.9em">Vidor, TX</div>
         <div><a href="https://www.rsilogistics.com/rail-solutions/rail-terminal-services/vidor-tx/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="waxahachie" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|petroleum products|plastics (dry)" data-cap="air compressor|hot water heating|liquid pumps|sampling services|scale|steam heating|tank trailer cleaning" data-text="coal city cob company inc waxahachie  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) petroleum products plastics (dry) air compressor hot water heating liquid pumps sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Coal City Cob Company Inc</h3>
         <div style="color:#555;font-size:0.9em">Waxahachie, TX</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Hot Water Heating, Liquid Pumps, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="http://www.cccob.com/dfwrailyard/index.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="witco" data-tier="verified" data-phone="1" data-comm="frac sand" data-cap="scale" data-text="cig logistics services witco  frac sand scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cig Logistics Services</h3>
         <div style="color:#555;font-size:0.9em">Witco, TX</div>
         <div><strong>Commodities:</strong> Frac Sand</div>
@@ -2599,6 +2585,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

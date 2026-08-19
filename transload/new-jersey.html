@@ -1136,6 +1136,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in New Jersey</h1>
@@ -1150,173 +1168,181 @@
 
     <section>
       <h2>Cities in New Jersey</h2>
-      <p><a href="/transload/elizabeth-nj">Elizabeth (8)</a> &middot; <a href="/transload/edison-nj">Edison (4)</a> &middot; <a href="/transload/north-bergen-nj">North Bergen (4)</a> &middot; <a href="/transload/bayonne-nj">Bayonne (3)</a> &middot; <a href="/transload/sparta-nj">Sparta (3)</a> &middot; <span>Avenel (2)</span> &middot; <span>Cedar Knolls (2)</span> &middot; <span>Jersey City (2)</span> &middot; <span>Logan Township (2)</span> &middot; <span>Monroe Township (2)</span> &middot; <span>Oakland (2)</span> &middot; <span>Perth Amboy (2)</span> &middot; <span>Bayway (1)</span> &middot; <span>Bridgeport (1)</span> &middot; <span>Bridgeton (1)</span> &middot; <span>Bridgewater (1)</span> &middot; <span>Burlington (1)</span> &middot; <span>Burlington Township (1)</span> &middot; <span>Camden (1)</span> &middot; <span>Dayton (1)</span> &middot; <span>Dover (1)</span> &middot; <span>Flemington (1)</span> &middot; <span>Gibbstown (1)</span> &middot; <span>Gloucester City (1)</span> &middot; <span>Hainesport (1)</span> &middot; <span>Hillsborough (1)</span> &middot; <span>Kearny (1)</span> &middot; <span>Keasbey (1)</span> &middot; <span>Kenvil (1)</span> &middot; <span>Linden (1)</span> &middot; <span>Millville (1)</span> &middot; <span>Monmouth Junction (1)</span> &middot; <span>Morristown (1)</span> &middot; <span>North Brunswick (1)</span> &middot; <span>Paterson (1)</span> &middot; <span>Paulsboro (1)</span> &middot; <span>Pennsauken (1)</span> &middot; <span>Piscataway (1)</span> &middot; <span>Port Murray (1)</span> &middot; <span>Port Reading (1)</span> &middot; <span>Ringoes (1)</span> &middot; <span>Rockaway (1)</span> &middot; <span>Saddle Brook (1)</span> &middot; <span>South Kearny (1)</span> &middot; <span>South Plainfield (1)</span> &middot; <span>Swedesboro (1)</span> &middot; <span>Totowa (1)</span> &middot; <span>Washington (1)</span> &middot; <span>Westville (1)</span> &middot; <span>Whippany (1)</span> &middot; <span>Woodstown (1)</span></p>
+      <div class="tl-citylist is-collapsed" id="tlCityList" data-total="51">
+        <p><a href="/transload/elizabeth-nj">Elizabeth (8)</a> &middot; <a href="/transload/edison-nj">Edison (4)</a> &middot; <a href="/transload/north-bergen-nj">North Bergen (4)</a> &middot; <a href="/transload/bayonne-nj">Bayonne (3)</a> &middot; <a href="/transload/sparta-nj">Sparta (3)</a> &middot; <span>Avenel (2)</span> &middot; <span>Cedar Knolls (2)</span> &middot; <span>Jersey City (2)</span> &middot; <span>Logan Township (2)</span> &middot; <span>Monroe Township (2)</span> &middot; <span>Oakland (2)</span> &middot; <span>Perth Amboy (2)</span> &middot; <span>Bayway (1)</span> &middot; <span>Bridgeport (1)</span> &middot; <span>Bridgeton (1)</span> &middot; <span>Bridgewater (1)</span> &middot; <span>Burlington (1)</span> &middot; <span>Burlington Township (1)</span> &middot; <span>Camden (1)</span> &middot; <span>Dayton (1)</span> &middot; <span>Dover (1)</span> &middot; <span>Flemington (1)</span> &middot; <span>Gibbstown (1)</span> &middot; <span>Gloucester City (1)</span><span class="tl-city-extra"> &middot; <span>Hainesport (1)</span></span><span class="tl-city-extra"> &middot; <span>Hillsborough (1)</span></span><span class="tl-city-extra"> &middot; <span>Kearny (1)</span></span><span class="tl-city-extra"> &middot; <span>Keasbey (1)</span></span><span class="tl-city-extra"> &middot; <span>Kenvil (1)</span></span><span class="tl-city-extra"> &middot; <span>Linden (1)</span></span><span class="tl-city-extra"> &middot; <span>Millville (1)</span></span><span class="tl-city-extra"> &middot; <span>Monmouth Junction (1)</span></span><span class="tl-city-extra"> &middot; <span>Morristown (1)</span></span><span class="tl-city-extra"> &middot; <span>North Brunswick (1)</span></span><span class="tl-city-extra"> &middot; <span>Paterson (1)</span></span><span class="tl-city-extra"> &middot; <span>Paulsboro (1)</span></span><span class="tl-city-extra"> &middot; <span>Pennsauken (1)</span></span><span class="tl-city-extra"> &middot; <span>Piscataway (1)</span></span><span class="tl-city-extra"> &middot; <span>Port Murray (1)</span></span><span class="tl-city-extra"> &middot; <span>Port Reading (1)</span></span><span class="tl-city-extra"> &middot; <span>Ringoes (1)</span></span><span class="tl-city-extra"> &middot; <span>Rockaway (1)</span></span><span class="tl-city-extra"> &middot; <span>Saddle Brook (1)</span></span><span class="tl-city-extra"> &middot; <span>South Kearny (1)</span></span><span class="tl-city-extra"> &middot; <span>South Plainfield (1)</span></span><span class="tl-city-extra"> &middot; <span>Swedesboro (1)</span></span><span class="tl-city-extra"> &middot; <span>Totowa (1)</span></span><span class="tl-city-extra"> &middot; <span>Washington (1)</span></span><span class="tl-city-extra"> &middot; <span>Westville (1)</span></span><span class="tl-city-extra"> &middot; <span>Whippany (1)</span></span><span class="tl-city-extra"> &middot; <span>Woodstown (1)</span></span></p>
+        <button type="button" class="tl-morecities" id="tlMoreCities">Show all 51 cities</button>
+      </div>
     </section>
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (51)</option><option value="avenel">Avenel</option><option value="bayonne">Bayonne</option><option value="bayway">Bayway</option><option value="bridgeport">Bridgeport</option><option value="bridgeton">Bridgeton</option><option value="bridgewater">Bridgewater</option><option value="burlington">Burlington</option><option value="burlington township">Burlington Township</option><option value="camden">Camden</option><option value="cedar knolls">Cedar Knolls</option><option value="dayton">Dayton</option><option value="dover">Dover</option><option value="edison">Edison</option><option value="elizabeth">Elizabeth</option><option value="flemington">Flemington</option><option value="gibbstown">Gibbstown</option><option value="gloucester city">Gloucester City</option><option value="hainesport">Hainesport</option><option value="hillsborough">Hillsborough</option><option value="jersey city">Jersey City</option><option value="kearny">Kearny</option><option value="keasbey">Keasbey</option><option value="kenvil">Kenvil</option><option value="linden">Linden</option><option value="logan township">Logan Township</option><option value="millville">Millville</option><option value="monmouth junction">Monmouth Junction</option><option value="monroe township">Monroe Township</option><option value="morristown">Morristown</option><option value="north bergen">North Bergen</option><option value="north brunswick">North Brunswick</option><option value="oakland">Oakland</option><option value="paterson">Paterson</option><option value="paulsboro">Paulsboro</option><option value="pennsauken">Pennsauken</option><option value="perth amboy">Perth Amboy</option><option value="piscataway">Piscataway</option><option value="port murray">Port Murray</option><option value="port reading">Port Reading</option><option value="ringoes">Ringoes</option><option value="rockaway">Rockaway</option><option value="saddle brook">Saddle Brook</option><option value="south kearny">South Kearny</option><option value="south plainfield">South Plainfield</option><option value="sparta">Sparta</option><option value="swedesboro">Swedesboro</option><option value="totowa">Totowa</option><option value="washington">Washington</option><option value="westville">Westville</option><option value="whippany">Whippany</option><option value="woodstown">Woodstown</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="asphalt">Asphalt</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="blending meters">Blending Meters</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="hot water heating">Hot Water Heating</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (12)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (24)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 12 of 75 sites and capability detail for 12. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="avenel" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="a&amp;r transport inc avenel  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">Avenel, NJ</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="https://ardoingitright.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="avenel" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="jerich usa avenel terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Jerich USA</h3>
         <div style="color:#555;font-size:0.9em">Avenel, NJ</div>
         <div><a href="https://www.jerich.com/avenel-new-jersey-usa" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bayonne" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="duraport marine &amp; rail terminal bayonne   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">DuraPort Marine &amp; Rail Terminal</h3>
         <div style="color:#555;font-size:0.9em">Bayonne, NJ</div>
         <div><strong>Phone:</strong> (201) 437-0703</div>
         <div><a href="https://duraport.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bayonne" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="imtt bayonne terminal bayonne   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">IMTT Bayonne Terminal</h3>
         <div style="color:#555;font-size:0.9em">Bayonne, NJ</div>
         <div><a href="https://imtt.com/terminals/bayonne-nj/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bayonne" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="port elizabeth terminal &amp; warehouse corporation bayonne   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port Elizabeth Terminal &amp; Warehouse Corporation</h3>
         <div style="color:#555;font-size:0.9em">Bayonne, NJ</div>
         <div><strong>Phone:</strong> (973) 491-0600</div>
         <div><a href="https://thejudgeorg.com/what-we-do/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bayway" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="watco bayway dedicated terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco</h3>
         <div style="color:#555;font-size:0.9em">Bayway, NJ</div>
         <div><a href="https://www.watco.com/service/terminal-services/dedicated" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Dedicated Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bridgeport" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="sms rail lines (sms rail service, inc.) - pureland industrial park bridgeport   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">SMS Rail Lines (SMS Rail Service, Inc.) - Pureland Industrial Park</h3>
         <div style="color:#555;font-size:0.9em">Bridgeport, NJ</div>
         <div><strong>Phone:</strong> (888) 840-1228</div>
         <div><a href="https://smsrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bridgeton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="omnitrax bridgeton transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">OmniTRAX</h3>
         <div style="color:#555;font-size:0.9em">Bridgeton, NJ</div>
         <div><a href="https://omnitrax.com/rail-transportation/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bridgewater" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="dameo trucking and distribution bridgewater   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Dameo Trucking and Distribution</h3>
         <div style="color:#555;font-size:0.9em">Bridgewater, NJ</div>
         <div><strong>Phone:</strong> (800) 733-3262</div>
         <div><a href="https://www.danacompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="burlington" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="ace warehouse &amp; logistics burlington   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ace Warehouse &amp; Logistics</h3>
         <div style="color:#555;font-size:0.9em">Burlington, NJ</div>
         <div><strong>Phone:</strong> (732) 248-1515</div>
         <div><a href="http://www.aceworldclass.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="burlington township" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="hgmg transload burlington township   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">HGMG Transload</h3>
         <div style="color:#555;font-size:0.9em">Burlington Township, NJ</div>
         <div><strong>Phone:</strong> (609) 387-6130</div>
         <div><a href="https://Www.HGMGtransload.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="camden" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="broadway marine terminal camden   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Broadway Marine Terminal</h3>
         <div style="color:#555;font-size:0.9em">Camden, NJ</div>
         <div><a href="https://www.southjerseyport.com/facilities/broadway-terminal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cedar knolls" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="morristown &amp; erie cedar knolls east frederick transload facility  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Morristown &amp; Erie</h3>
         <div style="color:#555;font-size:0.9em">Cedar Knolls, NJ</div>
         <div><a href="https://www.merail.com/east-frederick-transload-facility" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>East Frederick Transload Facility</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cedar knolls" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="morristown &amp; erie cedar knolls jefferson road transload facility  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Morristown &amp; Erie</h3>
         <div style="color:#555;font-size:0.9em">Cedar Knolls, NJ</div>
         <div><a href="https://www.merail.com/jeffersonroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Jefferson Road Transload Facility</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dayton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="jerich usa dayton terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Jerich USA</h3>
         <div style="color:#555;font-size:0.9em">Dayton, NJ</div>
         <div><a href="https://www.jerich.com/international-freight-forwarder" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dover" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="jan global transportation solutions dover   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Jan Global Transportation Solutions</h3>
         <div style="color:#555;font-size:0.9em">Dover, NJ</div>
         <div><a href="https://www.janpackaging.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>⚠ website unreachable 2026-08-14 (error)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="edison" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="katoen natie northeast edison   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Katoen Natie NorthEast</h3>
         <div style="color:#555;font-size:0.9em">Edison, NJ</div>
         <div><a href="https://www.katoennatie.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="edison" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="plastic express - raritan center distribution center edison   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express - Raritan Center Distribution Center</h3>
         <div style="color:#555;font-size:0.9em">Edison, NJ</div>
         <div><a href="https://www.plasticexpress.com/operations/bulk-terminals/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="edison" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="sea jet warehousing &amp; distribution edison   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sea Jet Warehousing &amp; Distribution</h3>
         <div style="color:#555;font-size:0.9em">Edison, NJ</div>
         <div><strong>Phone:</strong> (732) 541-4800</div>
         <div><a href="https://www.sea-jet.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="edison" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="unis/logistics team edison   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">UNIS/Logistics Team</h3>
         <div style="color:#555;font-size:0.9em">Edison, NJ</div>
         <div><strong>Phone:</strong> (800) 858-9889</div>
         <div><a href="https://www.unisco.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="elizabeth" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="a&amp;r bulk pak incorporated elizabeth   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Bulk Pak Incorporated</h3>
         <div style="color:#555;font-size:0.9em">Elizabeth, NJ</div>
         <div><a href="https://www.arbulkpak.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="elizabeth" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="a&amp;r transport inc elizabeth  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">Elizabeth, NJ</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="https://ardoingitright.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="elizabeth" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="construction &amp; marine equipment co. marine/rail terminal elizabeth   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Construction &amp; Marine Equipment Co. Marine/Rail Terminal</h3>
         <div style="color:#555;font-size:0.9em">Elizabeth, NJ</div>
         <div><strong>Phone:</strong> (908) 820-9500</div>
         <div><a href="https://www.cmeqco.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="elizabeth" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="elizabeth ns tbt elizabeth   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Elizabeth NS TBT</h3>
         <div style="color:#555;font-size:0.9em">Elizabeth, NJ</div>
         <div><a href="https://www.nscorp.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="elizabeth" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="norfolk southern tbt (rsi logistics) elizabeth  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower hot water heating liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norfolk Southern TBT (RSI Logistics)</h3>
         <div style="color:#555;font-size:0.9em">Elizabeth, NJ</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Hot Water Heating, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="https://www.rsilogistics.com/rail-solutions/rail-terminal-services/elizabeth-nj/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="elizabeth" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ny terminals elizabeth   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">NY Terminals</h3>
         <div style="color:#555;font-size:0.9em">Elizabeth, NJ</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="elizabeth" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="transflo csxt elizabeth  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transflo CSXT</h3>
         <div style="color:#555;font-size:0.9em">Elizabeth, NJ</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1324,83 +1350,80 @@
         <div><strong>Phone:</strong> (908) 820-9149</div>
         <div><a href="https://www.transflo.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="elizabeth" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="watco elizabeth mts dedicated terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco</h3>
         <div style="color:#555;font-size:0.9em">Elizabeth, NJ</div>
         <div><a href="https://www.watco.com/service/terminal-services/dedicated" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>MTS Dedicated Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="flemington" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="chesapeake &amp; delaware flemington transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Chesapeake &amp; Delaware</h3>
         <div style="color:#555;font-size:0.9em">Flemington, NJ</div>
         <div><a href="https://www.cadrailroads.com/services" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="gibbstown" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="repauno port &amp; rail terminal gibbstown   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Repauno Port &amp; Rail Terminal</h3>
         <div style="color:#555;font-size:0.9em">Gibbstown, NJ</div>
         <div><a href="https://www.repauno.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="gloucester city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="gloucester marine terminal gloucester city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Gloucester Marine Terminal</h3>
         <div style="color:#555;font-size:0.9em">Gloucester City, NJ</div>
         <div><strong>Phone:</strong> (856) 742-3169</div>
         <div><a href="https://www.holtlogistics.com/facilities/gloucester-marine-terminal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hainesport" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="hainesport secondary railroad hainesport   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Hainesport Secondary Railroad</h3>
         <div style="color:#555;font-size:0.9em">Hainesport, NJ</div>
         <div><strong>Phone:</strong> (609) 261-8036</div>
         <div><a href="https://thehtg.com/companies/hainesport-secondary-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hillsborough" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="mid state packaging inc. hillsborough   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mid State Packaging Inc.</h3>
         <div style="color:#555;font-size:0.9em">Hillsborough, NJ</div>
         <div><a href="https://www.t-g-c.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="jersey city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="east coast warehouse &amp; distribution corp jersey city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">East Coast Warehouse &amp; Distribution Corp</h3>
         <div style="color:#555;font-size:0.9em">Jersey City, NJ</div>
         <div><a href="https://eastcoastwarehouse.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="jersey city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="mid-states packaging jersey city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mid-States Packaging</h3>
         <div style="color:#555;font-size:0.9em">Jersey City, NJ</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kearny" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="new jersey rail carriers llc kearny   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">New Jersey Rail Carriers LLC</h3>
         <div style="color:#555;font-size:0.9em">Kearny, NJ</div>
         <div><strong>Phone:</strong> (845) 527-3365</div>
         <div><a href="https://interstatewaste.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="keasbey" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="bayshore recycling corporation keasbey eco-complex  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bayshore Recycling Corporation</h3>
         <div style="color:#555;font-size:0.9em">Keasbey, NJ</div>
         <div><strong>Phone:</strong> (732) 738-6000</div>
         <div><a href="https://www.bayshorerecycling.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Eco-Complex — phone from operator website 2026-08-14</div>
+        <div>Eco-Complex</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kenvil" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kenvil transload kenvil   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kenvil Transload</h3>
         <div style="color:#555;font-size:0.9em">Kenvil, NJ</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="linden" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="watco linden dedicated terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco</h3>
         <div style="color:#555;font-size:0.9em">Linden, NJ</div>
         <div><a href="https://www.watco.com/service/terminal-services/dedicated" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Dedicated Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="logan township" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="separation and recovery systems - srs@sms rail depot logan township   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Separation and Recovery Systems - SRS@SMS Rail Depot</h3>
         <div style="color:#555;font-size:0.9em">Logan Township, NJ</div>
         <div><a href="https://www.sarexusa.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="logan township" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|frac sand|minerals|petroleum products" data-cap="air compressor|blower|bulk conveyor|liquid pumps|sampling services|scale|steam heating|tank trailer cleaning" data-text="sms transloading services logan township  acids chemicals (dry) chemicals (liq) frac sand minerals petroleum products air compressor blower bulk conveyor liquid pumps sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sms Transloading Services</h3>
         <div style="color:#555;font-size:0.9em">Logan Township, NJ</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Frac Sand, Minerals, Petroleum Products</div>
@@ -1408,48 +1431,47 @@
         <div><strong>Phone:</strong> (856) 467-4800</div>
         <div><a href="https://www.smsrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="millville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="winchester &amp; western millville transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Winchester &amp; Western</h3>
         <div style="color:#555;font-size:0.9em">Millville, NJ</div>
         <div><a href="https://omnitrax.com/rail-transportation/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="monmouth junction" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="hermann warehouse corp monmouth junction   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Hermann Warehouse Corp</h3>
         <div style="color:#555;font-size:0.9em">Monmouth Junction, NJ</div>
         <div><strong>Phone:</strong> (800) 524-0067</div>
         <div><a href="http://www.hermanntds.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="monroe township" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="port jersey logistics monroe township   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port Jersey Logistics</h3>
         <div style="color:#555;font-size:0.9em">Monroe Township, NJ</div>
         <div><a href="https://pjlnetwork.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="monroe township" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="tyler distribution monroe township   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tyler Distribution</h3>
         <div style="color:#555;font-size:0.9em">Monroe Township, NJ</div>
         <div><a href="https://www.portjersey.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="morristown" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="morristown &amp; erie morristown yard  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Morristown &amp; Erie</h3>
         <div style="color:#555;font-size:0.9em">Morristown, NJ</div>
         <div><a href="https://www.merail.com/morristownyard" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Yard</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north bergen" data-tier="review" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="bulkmatic transport co north bergen  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulkmatic Transport Co</h3>
         <div style="color:#555;font-size:0.9em">North Bergen, NJ</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale</div>
         <div><a href="https://www.bulkmatic.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north bergen" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="resources warehouse north bergen   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Resources Warehouse</h3>
         <div style="color:#555;font-size:0.9em">North Bergen, NJ</div>
         <div><a href="https://www.resources-warehouse.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north bergen" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="susquehanna bulk services north bergen  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Susquehanna Bulk Services</h3>
         <div style="color:#555;font-size:0.9em">North Bergen, NJ</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
@@ -1457,18 +1479,18 @@
         <div><strong>Phone:</strong> (973) 579-7477</div>
         <div><a href="http://www.nysw.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north bergen" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="watco north bergen transload terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco</h3>
         <div style="color:#555;font-size:0.9em">North Bergen, NJ</div>
         <div><a href="https://www.watco.com/service/terminals/north-bergen-terminal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north brunswick" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="pioneer commodities usa north brunswick   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pioneer Commodities USA</h3>
         <div style="color:#555;font-size:0.9em">North Brunswick, NJ</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="oakland" data-tier="verified" data-phone="1" data-comm="foods (dry)|foods (liq)" data-cap="air compressor|liquid pumps|portable vacuum|sampling services|scale|steam heating" data-text="carry transit oakland  foods (dry) foods (liq) air compressor liquid pumps portable vacuum sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carry Transit</h3>
         <div style="color:#555;font-size:0.9em">Oakland, NJ</div>
         <div><strong>Commodities:</strong> Foods (Dry), Foods (Liq)</div>
@@ -1476,81 +1498,78 @@
         <div><strong>Phone:</strong> (201) 337-3358</div>
         <div><a href="https://www.carrytransit.com/services/carry-locations/detail/oakland-nj" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="oakland" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="heniff food grade oakland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Heniff Food Grade</h3>
         <div style="color:#555;font-size:0.9em">Oakland, NJ</div>
         <div><a href="https://www.heniff.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="paterson" data-tier="review" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="bulkmatic transport co paterson  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulkmatic Transport Co</h3>
         <div style="color:#555;font-size:0.9em">Paterson, NJ</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale</div>
         <div><a href="https://www.bulkmatic.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="paulsboro" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="paulsboro marine terminal paulsboro   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Paulsboro Marine Terminal</h3>
         <div style="color:#555;font-size:0.9em">Paulsboro, NJ</div>
         <div><strong>Phone:</strong> (856) 742-3000</div>
         <div><a href="https://www.holtlogistics.com/facilities/paulsboro-marine-terminal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pennsauken" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="lyons &amp;sons pennsauken   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lyons &amp;Sons</h3>
         <div style="color:#555;font-size:0.9em">Pennsauken, NJ</div>
         <div><strong>Phone:</strong> (856) 665-1550</div>
         <div><a href="https://www.stechgroup.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="perth amboy" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="buckeye perth amboy terminal perth amboy   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Buckeye Perth Amboy Terminal</h3>
         <div style="color:#555;font-size:0.9em">Perth Amboy, NJ</div>
         <div><a href="https://www.buckeye.com/what-we-do/pipelines-terminals" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="perth amboy" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kinder morgan perth amboy terminal perth amboy   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kinder Morgan Perth Amboy Terminal</h3>
         <div style="color:#555;font-size:0.9em">Perth Amboy, NJ</div>
         <div><a href="https://www.kindermorgan.com/Operations/Terminals/Index" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="piscataway" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kinkisharyo international llc piscataway   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kinkisharyo International LLC</h3>
         <div style="color:#555;font-size:0.9em">Piscataway, NJ</div>
         <div><a href="https://www.kinkisharyo.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="port murray" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="chesapeake &amp; delaware port murray transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Chesapeake &amp; Delaware</h3>
         <div style="color:#555;font-size:0.9em">Port Murray, NJ</div>
         <div><a href="https://www.cadrailroads.com/services" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="port reading" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="buckeye port reading terminal port reading   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Buckeye Port Reading Terminal</h3>
         <div style="color:#555;font-size:0.9em">Port Reading, NJ</div>
         <div><a href="https://www.buckeye.com/what-we-do/pipelines-terminals" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ringoes" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="black river &amp; western corporation ringoes   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Black River &amp; Western Corporation</h3>
         <div style="color:#555;font-size:0.9em">Ringoes, NJ</div>
         <div><a href="https://www.bdrry.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="rockaway" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="franklin avenue transload rockaway   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Franklin Avenue Transload</h3>
         <div style="color:#555;font-size:0.9em">Rockaway, NJ</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="saddle brook" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="plastic express saddle brook new jersey yard  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Saddle Brook, NJ</div>
         <div><a href="https://www.plasticexpress.com/operations/bulk-terminals/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>New Jersey Yard</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="south kearny" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="port priority express (the triangle group) south kearny   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port Priority Express (The Triangle Group)</h3>
         <div style="color:#555;font-size:0.9em">South Kearny, NJ</div>
         <div><a href="https://www.thetrianglegroup.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="south plainfield" data-tier="verified" data-phone="1" data-comm="asphalt|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|minerals|petroleum products" data-cap="air compressor|blower|bulk conveyor|liquid pumps|sampling services|scale" data-text="venezia transport south plainfield  asphalt chemicals (dry) chemicals (liq) foods (dry) foods (liq) minerals petroleum products air compressor blower bulk conveyor liquid pumps sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Venezia Transport</h3>
         <div style="color:#555;font-size:0.9em">South Plainfield, NJ</div>
         <div><strong>Commodities:</strong> Asphalt, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Minerals, Petroleum Products</div>
@@ -1558,12 +1577,12 @@
         <div><strong>Phone:</strong> (610) 495-5200</div>
         <div><a href="https://www.veneziainc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sparta" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="heniff transportation systems llc sparta   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Heniff Transportation Systems LLC</h3>
         <div style="color:#555;font-size:0.9em">Sparta, NJ</div>
         <div><a href="https://www.heniff.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sparta" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|petroleum products|plastics (dry)" data-cap="air compressor|blending meters|blower|liquid pumps|liquid storage tanks|sampling services|steam heating|tank trailer cleaning" data-text="superior carriers sparta  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) petroleum products plastics (dry) air compressor blending meters blower liquid pumps liquid storage tanks sampling services steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Superior Carriers</h3>
         <div style="color:#555;font-size:0.9em">Sparta, NJ</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Petroleum Products, Plastics (Dry)</div>
@@ -1571,48 +1590,47 @@
         <div><strong>Phone:</strong> (888) 928-7727</div>
         <div><a href="http://superior-carriers.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sparta" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="susquehanna bulk services sparta  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Susquehanna Bulk Services</h3>
         <div style="color:#555;font-size:0.9em">Sparta, NJ</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="http://www.nysw.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="swedesboro" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="loyalty delivers logistics operations center swedesboro   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Loyalty Delivers Logistics Operations Center</h3>
         <div style="color:#555;font-size:0.9em">Swedesboro, NJ</div>
         <div><a href="https://loyaltydelivers.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="totowa" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="chesapeake &amp; delaware totowa transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Chesapeake &amp; Delaware</h3>
         <div style="color:#555;font-size:0.9em">Totowa, NJ</div>
         <div><a href="https://www.cadrailroads.com/services" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="washington" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="chesapeake &amp; delaware washington transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Chesapeake &amp; Delaware</h3>
         <div style="color:#555;font-size:0.9em">Washington, NJ</div>
         <div><a href="https://www.cadrailroads.com/services" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="westville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="energy transfer westville eagle point terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Energy Transfer</h3>
         <div style="color:#555;font-size:0.9em">Westville, NJ</div>
         <div><strong>Phone:</strong> (214) 840-5820</div>
         <div><a href="https://www.energytransfer.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Eagle Point Terminal — phone from operator website 2026-08-14</div>
+        <div>Eagle Point Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="whippany" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="morristown &amp; erie railway whippany   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Morristown &amp; Erie Railway</h3>
         <div style="color:#555;font-size:0.9em">Whippany, NJ</div>
         <div><a href="https://www.merail.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="woodstown" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="sj transportation company facility woodstown   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">SJ Transportation Company Facility</h3>
         <div style="color:#555;font-size:0.9em">Woodstown, NJ</div>
         <div><strong>Phone:</strong> (800) 524-2552</div>
         <div><a href="https://sjtransportation.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
       </div>
     <p style="font-size:0.85em;color:#666;margin-top:28px">
@@ -1640,6 +1658,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

@@ -323,6 +323,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Connecticut</h1>
@@ -342,89 +360,98 @@
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (15)</option><option value="branford">Branford</option><option value="canaan">Canaan</option><option value="danielson">Danielson</option><option value="hartford">Hartford</option><option value="manchester">Manchester</option><option value="middletown">Middletown</option><option value="montville">Montville</option><option value="new haven">New Haven</option><option value="new london">New London</option><option value="newtown">Newtown</option><option value="niantic-fitchville">Niantic-Fitchville</option><option value="north haven">North Haven</option><option value="plainfield">Plainfield</option><option value="south windham">South Windham</option><option value="wallingford">Wallingford</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="liquid pumps">Liquid Pumps</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (1)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (7)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 1 of 18 sites and capability detail for 1. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="branford" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="palumbo trucking branford   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Palumbo Trucking</h3>
         <div style="color:#555;font-size:0.9em">Branford, CT</div>
         <div><a href="https://palumbotruckingct.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="canaan" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="housatonic railroad canaan bulk distribution facility canaan   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Housatonic Railroad Canaan Bulk Distribution Facility</h3>
         <div style="color:#555;font-size:0.9em">Canaan, CT</div>
         <div><strong>Phone:</strong> (860) 824-0850</div>
         <div><a href="https://www.hrrc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="danielson" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="delta bulk transport danielson   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Delta Bulk Transport</h3>
         <div style="color:#555;font-size:0.9em">Danielson, CT</div>
         <div><strong>Phone:</strong> (508) 588-8026</div>
         <div><a href="https://www.jpnoonan.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hartford" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="connecticut southern railroad (cso) hartford genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Connecticut Southern Railroad (CSO)</h3>
         <div style="color:#555;font-size:0.9em">Hartford, CT</div>
         <div><a href="https://www.gwrr.com/railroads/connecticut-southern-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hartford" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="russo brothers hartford   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Russo Brothers</h3>
         <div style="color:#555;font-size:0.9em">Hartford, CT</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="manchester" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="tri-state brick of connecticut inc. manchester   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tri-State Brick of Connecticut Inc.</h3>
         <div style="color:#555;font-size:0.9em">Manchester, CT</div>
         <div><strong>Phone:</strong> (860) 649-8886</div>
         <div><a href="https://tristatebrickct.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="middletown" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="palumbo trucking middletown railyard middletown   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Palumbo Trucking Middletown Railyard</h3>
         <div style="color:#555;font-size:0.9em">Middletown, CT</div>
         <div><a href="https://palumbotruckingct.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="montville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="enstructure montville terminal montville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Enstructure Montville Terminal</h3>
         <div style="color:#555;font-size:0.9em">Montville, CT</div>
         <div><a href="https://enstructure.com/network/northeast/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new haven" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="a. anastasio &amp; sons trucking rail reload new haven   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A. Anastasio &amp; Sons Trucking Rail Reload</h3>
         <div style="color:#555;font-size:0.9em">New Haven, CT</div>
         <div><strong>Phone:</strong> (203) 787-5746</div>
         <div><a href="https://anastasiotrucking.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new haven" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="gateway new haven   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Gateway</h3>
         <div style="color:#555;font-size:0.9em">New Haven, CT</div>
         <div><a href="https://enstructure.com/network/northeast/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new haven" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="palumbo trucking new haven railyard new haven   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Palumbo Trucking New Haven Railyard</h3>
         <div style="color:#555;font-size:0.9em">New Haven, CT</div>
         <div><a href="https://palumbotruckingct.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new london" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="logistec corp new london   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Logistec Corp</h3>
         <div style="color:#555;font-size:0.9em">New London, CT</div>
         <div><a href="https://enstructure.com/network/northeast/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="newtown" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="shepaug lumber distribution facility newtown   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Shepaug Lumber Distribution Facility</h3>
         <div style="color:#555;font-size:0.9em">Newtown, CT</div>
         <div><strong>Phone:</strong> (860) 824-0850</div>
         <div><a href="https://www.hrrc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="niantic-fitchville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="can-am trading &amp; logistics llc niantic-fitchville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Can-Am Trading &amp; Logistics LLC</h3>
         <div style="color:#555;font-size:0.9em">Niantic-Fitchville, CT</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north haven" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="transflo csxt north haven  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transflo CSXT</h3>
         <div style="color:#555;font-size:0.9em">North Haven, CT</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -432,19 +459,18 @@
         <div><strong>Phone:</strong> (904) 366-5642</div>
         <div><a href="https://www.transflo.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="plainfield" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="east coast material management plainfield   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">East Coast Material Management</h3>
         <div style="color:#555;font-size:0.9em">Plainfield, CT</div>
         <div><strong>Phone:</strong> (860) 317-8009</div>
         <div><a href="https://ec-mm.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="south windham" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="c c lounsbury inc. south windham   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">C C Lounsbury Inc.</h3>
         <div style="color:#555;font-size:0.9em">South Windham, CT</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wallingford" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="palumbo trucking wallingford railyard wallingford   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Palumbo Trucking Wallingford Railyard</h3>
         <div style="color:#555;font-size:0.9em">Wallingford, CT</div>
         <div><a href="https://palumbotruckingct.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
@@ -475,6 +501,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

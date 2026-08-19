@@ -1465,6 +1465,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Georgia</h1>
@@ -1479,61 +1497,77 @@
 
     <section>
       <h2>Cities in Georgia</h2>
-      <p><a href="/transload/atlanta-ga">Atlanta (9)</a> &middot; <a href="/transload/doraville-ga">Doraville (6)</a> &middot; <a href="/transload/garden-city-ga">Garden City (5)</a> &middot; <a href="/transload/dalton-ga">Dalton (4)</a> &middot; <a href="/transload/sandersville-ga">Sandersville (4)</a> &middot; <a href="/transload/augusta-ga">Augusta (3)</a> &middot; <a href="/transload/bainbridge-ga">Bainbridge (3)</a> &middot; <a href="/transload/brunswick-ga">Brunswick (3)</a> &middot; <a href="/transload/duluth-ga">Duluth (3)</a> &middot; <a href="/transload/east-point-ga">East Point (3)</a> &middot; <a href="/transload/savannah-ga">Savannah (3)</a> &middot; <a href="/transload/valdosta-ga">Valdosta (3)</a> &middot; <span>Dawson (2)</span> &middot; <span>Fairburn (2)</span> &middot; <span>Lafayette (2)</span> &middot; <span>Norcross (2)</span> &middot; <span>Oakwood (2)</span> &middot; <span>Pembroke (2)</span> &middot; <span>Pooler (2)</span> &middot; <span>Ackerman (1)</span> &middot; <span>Albany (1)</span> &middot; <span>Americus (1)</span> &middot; <span>Barnesville (1)</span> &middot; <span>Bloomingdale (1)</span> &middot; <span>Canton (1)</span> &middot; <span>Cedar Springs (1)</span> &middot; <span>Claxton (1)</span> &middot; <span>Cobb (1)</span> &middot; <span>Columbus (1)</span> &middot; <span>Cordele (1)</span> &middot; <span>Cornelia (1)</span> &middot; <span>Dublin (1)</span> &middot; <span>Ellabell (1)</span> &middot; <span>Fitzgerald (1)</span> &middot; <span>Forest Park (1)</span> &middot; <span>Fulco (1)</span> &middot; <span>Griffin (1)</span> &middot; <span>Jonesboro (1)</span> &middot; <span>Kathleen (1)</span> &middot; <span>Lula (1)</span> &middot; <span>Lyons (1)</span> &middot; <span>Macon (1)</span> &middot; <span>Marietta (1)</span> &middot; <span>Mcdonough (1)</span> &middot; <span>Newnan (1)</span> &middot; <span>Port Wentworth (1)</span> &middot; <span>Riceboro (1)</span> &middot; <span>Rincon (1)</span> &middot; <span>Rockmart (1)</span> &middot; <span>St. Marys (1)</span> &middot; <span>Toccoa (1)</span> &middot; <span>Union City (1)</span> &middot; <span>Waresboro (1)</span> &middot; <span>Washington (1)</span></p>
+      <div class="tl-citylist is-collapsed" id="tlCityList" data-total="54">
+        <p><a href="/transload/atlanta-ga">Atlanta (9)</a> &middot; <a href="/transload/doraville-ga">Doraville (6)</a> &middot; <a href="/transload/garden-city-ga">Garden City (5)</a> &middot; <a href="/transload/dalton-ga">Dalton (4)</a> &middot; <a href="/transload/sandersville-ga">Sandersville (4)</a> &middot; <a href="/transload/augusta-ga">Augusta (3)</a> &middot; <a href="/transload/bainbridge-ga">Bainbridge (3)</a> &middot; <a href="/transload/brunswick-ga">Brunswick (3)</a> &middot; <a href="/transload/duluth-ga">Duluth (3)</a> &middot; <a href="/transload/east-point-ga">East Point (3)</a> &middot; <a href="/transload/savannah-ga">Savannah (3)</a> &middot; <a href="/transload/valdosta-ga">Valdosta (3)</a> &middot; <span>Dawson (2)</span> &middot; <span>Fairburn (2)</span> &middot; <span>Lafayette (2)</span> &middot; <span>Norcross (2)</span> &middot; <span>Oakwood (2)</span> &middot; <span>Pembroke (2)</span> &middot; <span>Pooler (2)</span> &middot; <span>Ackerman (1)</span> &middot; <span>Albany (1)</span> &middot; <span>Americus (1)</span> &middot; <span>Barnesville (1)</span> &middot; <span>Bloomingdale (1)</span><span class="tl-city-extra"> &middot; <span>Canton (1)</span></span><span class="tl-city-extra"> &middot; <span>Cedar Springs (1)</span></span><span class="tl-city-extra"> &middot; <span>Claxton (1)</span></span><span class="tl-city-extra"> &middot; <span>Cobb (1)</span></span><span class="tl-city-extra"> &middot; <span>Columbus (1)</span></span><span class="tl-city-extra"> &middot; <span>Cordele (1)</span></span><span class="tl-city-extra"> &middot; <span>Cornelia (1)</span></span><span class="tl-city-extra"> &middot; <span>Dublin (1)</span></span><span class="tl-city-extra"> &middot; <span>Ellabell (1)</span></span><span class="tl-city-extra"> &middot; <span>Fitzgerald (1)</span></span><span class="tl-city-extra"> &middot; <span>Forest Park (1)</span></span><span class="tl-city-extra"> &middot; <span>Fulco (1)</span></span><span class="tl-city-extra"> &middot; <span>Griffin (1)</span></span><span class="tl-city-extra"> &middot; <span>Jonesboro (1)</span></span><span class="tl-city-extra"> &middot; <span>Kathleen (1)</span></span><span class="tl-city-extra"> &middot; <span>Lula (1)</span></span><span class="tl-city-extra"> &middot; <span>Lyons (1)</span></span><span class="tl-city-extra"> &middot; <span>Macon (1)</span></span><span class="tl-city-extra"> &middot; <span>Marietta (1)</span></span><span class="tl-city-extra"> &middot; <span>Mcdonough (1)</span></span><span class="tl-city-extra"> &middot; <span>Newnan (1)</span></span><span class="tl-city-extra"> &middot; <span>Port Wentworth (1)</span></span><span class="tl-city-extra"> &middot; <span>Riceboro (1)</span></span><span class="tl-city-extra"> &middot; <span>Rincon (1)</span></span><span class="tl-city-extra"> &middot; <span>Rockmart (1)</span></span><span class="tl-city-extra"> &middot; <span>St. Marys (1)</span></span><span class="tl-city-extra"> &middot; <span>Toccoa (1)</span></span><span class="tl-city-extra"> &middot; <span>Union City (1)</span></span><span class="tl-city-extra"> &middot; <span>Waresboro (1)</span></span><span class="tl-city-extra"> &middot; <span>Washington (1)</span></span></p>
+        <button type="button" class="tl-morecities" id="tlMoreCities">Show all 54 cities</button>
+      </div>
     </section>
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (54)</option><option value="ackerman">Ackerman</option><option value="albany">Albany</option><option value="americus">Americus</option><option value="atlanta">Atlanta</option><option value="augusta">Augusta</option><option value="bainbridge">Bainbridge</option><option value="barnesville">Barnesville</option><option value="bloomingdale">Bloomingdale</option><option value="brunswick">Brunswick</option><option value="canton">Canton</option><option value="cedar springs">Cedar Springs</option><option value="claxton">Claxton</option><option value="cobb">Cobb</option><option value="columbus">Columbus</option><option value="cordele">Cordele</option><option value="cornelia">Cornelia</option><option value="dalton">Dalton</option><option value="dawson">Dawson</option><option value="doraville">Doraville</option><option value="dublin">Dublin</option><option value="duluth">Duluth</option><option value="east point">East Point</option><option value="ellabell">Ellabell</option><option value="fairburn">Fairburn</option><option value="fitzgerald">Fitzgerald</option><option value="forest park">Forest Park</option><option value="fulco">Fulco</option><option value="garden city">Garden City</option><option value="griffin">Griffin</option><option value="jonesboro">Jonesboro</option><option value="kathleen">Kathleen</option><option value="lafayette">Lafayette</option><option value="lula">Lula</option><option value="lyons">Lyons</option><option value="macon">Macon</option><option value="marietta">Marietta</option><option value="mcdonough">Mcdonough</option><option value="newnan">Newnan</option><option value="norcross">Norcross</option><option value="oakwood">Oakwood</option><option value="pembroke">Pembroke</option><option value="pooler">Pooler</option><option value="port wentworth">Port Wentworth</option><option value="riceboro">Riceboro</option><option value="rincon">Rincon</option><option value="rockmart">Rockmart</option><option value="sandersville">Sandersville</option><option value="savannah">Savannah</option><option value="st. marys">St. Marys</option><option value="toccoa">Toccoa</option><option value="union city">Union City</option><option value="valdosta">Valdosta</option><option value="waresboro">Waresboro</option><option value="washington">Washington</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="auger">Auger</option><option value="blending meters">Blending Meters</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="gravity (trestle)">Gravity (Trestle)</option><option value="hot water heating">Hot Water Heating</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (24)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (36)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 18 of 98 sites and capability detail for 17. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ackerman" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="a&amp;r transport inc ackerman  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">Ackerman, GA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="https://ardoingitright.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="albany" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="omnitrax logistics services albany   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Omnitrax Logistics Services</h3>
         <div style="color:#555;font-size:0.9em">Albany, GA</div>
         <div><a href="http://omnitrax.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="americus" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="heart of georgia railroad (hog) americus genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Heart of Georgia Railroad (HOG)</h3>
         <div style="color:#555;font-size:0.9em">Americus, GA</div>
         <div><a href="https://www.gwrr.com/railroads/heart-of-georgia-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="atlanta" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="foodliner inc. atlanta   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Foodliner Inc.</h3>
         <div style="color:#555;font-size:0.9em">Atlanta, GA</div>
         <div><a href="https://foodliner.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="atlanta" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="fulton county railway, llc (omnitrax) atlanta multi-commodity transload terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Fulton County Railway, LLC (OmniTRAX)</h3>
         <div style="color:#555;font-size:0.9em">Atlanta, GA</div>
         <div><a href="https://omnitrax.com/fulton-county-railway-llc/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Multi-Commodity Transload Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="atlanta" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="mcpherson oil atlanta   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">McPherson Oil</h3>
         <div style="color:#555;font-size:0.9em">Atlanta, GA</div>
         <div><a href="https://www.mcphersonoil.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="atlanta" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="omnitrax logistics services atlanta   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Omnitrax Logistics Services</h3>
         <div style="color:#555;font-size:0.9em">Atlanta, GA</div>
         <div><strong>Phone:</strong> (404) 362-9802</div>
         <div><a href="https://omnilogistics.com/locations/omni-logistics-atlanta-logistics-company-in-atlanta-georgia/?y_source=1_NTI1NjQ2NjktNzE1LWxvY2F0aW9uLndlYnNpdGU%3D" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="atlanta" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="porter logistics atlanta facility 2, fulton campus  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Porter Logistics</h3>
         <div style="color:#555;font-size:0.9em">Atlanta, GA</div>
         <div><strong>Phone:</strong> (404) 574-4641</div>
         <div><a href="https://www.porter-logistics.com/3pl-services/transload/atlanta" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Facility 2, Fulton Campus — phone from operator website 2026-08-14</div>
+        <div>Facility 2, Fulton Campus</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="atlanta" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="transflo csxt atlanta  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transflo CSXT</h3>
         <div style="color:#555;font-size:0.9em">Atlanta, GA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1541,47 +1575,46 @@
         <div><strong>Phone:</strong> (404) 350-5018</div>
         <div><a href="http://www.transflo.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="atlanta" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="transflo georgia-atlanta terminal atlanta   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TRANSFLO Georgia-Atlanta Terminal</h3>
         <div style="color:#555;font-size:0.9em">Atlanta, GA</div>
         <div><a href="https://www.transflo.net/locations/georgia-atlanta/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="atlanta" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="transflo georgia-atlanta-tilford terminal atlanta   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TRANSFLO Georgia-Atlanta-Tilford Terminal</h3>
         <div style="color:#555;font-size:0.9em">Atlanta, GA</div>
         <div><a href="https://www.transflo.net/locations/georgia-atlanta-tilford/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="atlanta" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="west inman ns tbt atlanta   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">West Inman NS TBT</h3>
         <div style="color:#555;font-size:0.9em">Atlanta, GA</div>
         <div><a href="https://www.nscorp.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="augusta" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="augusta ns tbt augusta   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Augusta NS TBT</h3>
         <div style="color:#555;font-size:0.9em">Augusta, GA</div>
         <div><a href="https://www.nscorp.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="augusta" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="norfolk southern tbt (rsi logistics) augusta  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) steel air compressor blower hot water heating liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norfolk Southern TBT (RSI Logistics)</h3>
         <div style="color:#555;font-size:0.9em">Augusta, GA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Hot Water Heating, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="https://www.rsilogistics.com/rail-solutions/rail-terminal-services/augusta-ga/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="augusta" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="transflo csxt augusta  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transflo CSXT</h3>
         <div style="color:#555;font-size:0.9em">Augusta, GA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale</div>
         <div><a href="https://www.transflo.net/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bainbridge" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="gswr choice terminals bainbridge   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Gswr Choice Terminals</h3>
         <div style="color:#555;font-size:0.9em">Bainbridge, GA</div>
         <div><a href="https://www.gwrr.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bainbridge" data-tier="verified" data-phone="1" data-comm="chemicals (liq)|petroleum products" data-cap="air compressor|blending meters|liquid pumps|liquid storage tanks|sampling services|scale|steam heating" data-text="liquid transfer terminal bainbridge  chemicals (liq) petroleum products air compressor blending meters liquid pumps liquid storage tanks sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Liquid Transfer Terminal</h3>
         <div style="color:#555;font-size:0.9em">Bainbridge, GA</div>
         <div><strong>Commodities:</strong> Chemicals (Liq), Petroleum Products</div>
@@ -1589,209 +1622,200 @@
         <div><strong>Phone:</strong> (229) 246-7880</div>
         <div><a href="http://liquidtransfer.us/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bainbridge" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="texpar bainbridge   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Texpar</h3>
         <div style="color:#555;font-size:0.9em">Bainbridge, GA</div>
         <div><strong>Phone:</strong> (608) 779-6550</div>
         <div><a href="https://texpar.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="barnesville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bulkmatic barnesville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulkmatic</h3>
         <div style="color:#555;font-size:0.9em">Barnesville, GA</div>
         <div><a href="https://www.bulkmatic.com/service/transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bloomingdale" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="smt bulk transload bloomingdale   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">SMT Bulk Transload</h3>
         <div style="color:#555;font-size:0.9em">Bloomingdale, GA</div>
         <div><a href="https://www.smtbulk.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="brunswick" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="east river terminal &amp; lanier dock brunswick   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">East River Terminal &amp; Lanier Dock</h3>
         <div style="color:#555;font-size:0.9em">Brunswick, GA</div>
         <div><a href="https://gaports.com/facilities/port-of-brunswick/east-river-terminal-lanier-dock/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="brunswick" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="golden isles terminal railroad (gitm) brunswick genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Golden Isles Terminal Railroad (GITM)</h3>
         <div style="color:#555;font-size:0.9em">Brunswick, GA</div>
         <div><a href="https://www.gwrr.com/railroads/golden-isles-terminal-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="brunswick" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="mayor’s point terminal brunswick   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mayor’s Point Terminal</h3>
         <div style="color:#555;font-size:0.9em">Brunswick, GA</div>
         <div><a href="https://gaports.com/cargo/breakbulk/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="canton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="patriot rail canton atlanta metro  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Patriot Rail</h3>
         <div style="color:#555;font-size:0.9em">Canton, GA</div>
         <div><a href="https://patriotrail.com/wp-content/uploads/2025/01/PR113_TransloadingOnePagerm1bh.pdf" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Atlanta Metro</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cedar springs" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="chattahoochee industrial railroad (cirr) cedar springs genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Chattahoochee Industrial Railroad (CIRR)</h3>
         <div style="color:#555;font-size:0.9em">Cedar Springs, GA</div>
         <div><a href="https://www.gwrr.com/railroads/chattahoochee-industrial-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="claxton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="meherrin fertilizer claxton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Meherrin Fertilizer</h3>
         <div style="color:#555;font-size:0.9em">Claxton, GA</div>
         <div><a href="https://meherrinfertilizer.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cobb" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lyle farms cobb   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lyle Farms</h3>
         <div style="color:#555;font-size:0.9em">Cobb, GA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="columbus" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="columbus &amp; chattahoochee railroad (cch) columbus genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Columbus &amp; Chattahoochee Railroad (CCH)</h3>
         <div style="color:#555;font-size:0.9em">Columbus, GA</div>
         <div><a href="https://www.gwrr.com/railroads/columbus-and-chattahoochee-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cordele" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lyle farms cordele   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lyle Farms</h3>
         <div style="color:#555;font-size:0.9em">Cordele, GA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cornelia" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="pickens railway company cornelia   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pickens Railway Company</h3>
         <div style="color:#555;font-size:0.9em">Cornelia, GA</div>
         <div><a href="https://www.pickensrailway.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dalton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="dalton ns tbt dalton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Dalton NS TBT</h3>
         <div style="color:#555;font-size:0.9em">Dalton, GA</div>
         <div><a href="https://www.nscorp.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dalton" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="norfolk southern tbt (rsi logistics) dalton  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower hot water heating liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norfolk Southern TBT (RSI Logistics)</h3>
         <div style="color:#555;font-size:0.9em">Dalton, GA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Hot Water Heating, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="https://www.rsilogistics.com/rail-solutions/rail-terminal-services/dalton-ga/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dalton" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="transflo csxt dalton  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transflo CSXT</h3>
         <div style="color:#555;font-size:0.9em">Dalton, GA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale</div>
         <div><a href="https://www.transflo.net/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dalton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="transflo georgia-dalton terminal dalton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TRANSFLO Georgia-Dalton Terminal</h3>
         <div style="color:#555;font-size:0.9em">Dalton, GA</div>
         <div><a href="https://www.transflo.net/locations/georgia-dalton/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dawson" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="hilton &amp; albany railroad (hal) dawson genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Hilton &amp; Albany Railroad (HAL)</h3>
         <div style="color:#555;font-size:0.9em">Dawson, GA</div>
         <div><a href="https://www.gwrr.com/railroads/hilton-and-albany-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dawson" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="locke farms dawson   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Locke Farms</h3>
         <div style="color:#555;font-size:0.9em">Dawson, GA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="doraville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="agro merchants group doraville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Agro Merchants Group</h3>
         <div style="color:#555;font-size:0.9em">Doraville, GA</div>
         <div><a href="https://www.americold.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="doraville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bulkmatic doraville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulkmatic</h3>
         <div style="color:#555;font-size:0.9em">Doraville, GA</div>
         <div><a href="https://www.bulkmatic.com/service/transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="doraville" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="norfolk southern tbt doraville  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower hot water heating liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norfolk Southern TBT</h3>
         <div style="color:#555;font-size:0.9em">Doraville, GA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Hot Water Heating, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="http://www.nscorp.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="doraville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="northeast atlanta railroad doraville jaguar transport holdings  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Northeast Atlanta Railroad</h3>
         <div style="color:#555;font-size:0.9em">Doraville, GA</div>
         <div><a href="https://jag-transport.com/northeast-atlanta-railroad/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Jaguar Transport Holdings</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="doraville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="plant improvement company doraville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plant Improvement Company</h3>
         <div style="color:#555;font-size:0.9em">Doraville, GA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="doraville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="venezia transport services inc. doraville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Venezia Transport Services Inc.</h3>
         <div style="color:#555;font-size:0.9em">Doraville, GA</div>
         <div><strong>Phone:</strong> (800) 523-5572</div>
         <div><a href="https://www.veneziainc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dublin" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="griffin industries dublin   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Griffin Industries</h3>
         <div style="color:#555;font-size:0.9em">Dublin, GA</div>
         <div><strong>Phone:</strong> (972) 717-0300</div>
         <div><a href="https://www.darlingii.com/en/media/news/20250218-converts-wastewater-emissions-into-renewable-natural-gas-cutting-scope-1-emissions" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="duluth" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="anthill cross docking duluth anthill logistic inc.  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Anthill Cross Docking</h3>
         <div style="color:#555;font-size:0.9em">Duluth, GA</div>
         <div><strong>Phone:</strong> (626) 206-8293</div>
         <div><a href="https://anthillcrossdocking.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Anthill Logistic Inc. — phone from operator website 2026-08-14</div>
+        <div>Anthill Logistic Inc.</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="duluth" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bulkmatic duluth   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulkmatic</h3>
         <div style="color:#555;font-size:0.9em">Duluth, GA</div>
         <div><a href="https://www.bulkmatic.com/service/transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="duluth" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="pax industries, inc. duluth   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pax Industries, Inc.</h3>
         <div style="color:#555;font-size:0.9em">Duluth, GA</div>
         <div><strong>Phone:</strong> (770) 242-8000</div>
         <div><a href="https://www.paxind.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="east point" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="east point ns tbt east point   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">East Point NS TBT</h3>
         <div style="color:#555;font-size:0.9em">East Point, GA</div>
         <div><a href="https://www.nscorp.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="east point" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="nicholson transfer &amp; storage company incorporated east point   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Nicholson Transfer &amp; Storage Company Incorporated</h3>
         <div style="color:#555;font-size:0.9em">East Point, GA</div>
         <div><a href="https://www.nicholsontransfer.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>⚠ website unreachable 2026-08-14 (error)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="east point" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="norfolk southern tbt east point  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) steel air compressor blower hot water heating liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norfolk Southern TBT</h3>
         <div style="color:#555;font-size:0.9em">East Point, GA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Hot Water Heating, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><strong>Phone:</strong> (855) 667-3655</div>
         <div><a href="http://nscorp.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ellabell" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="mclendon enterprises ellabell   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">McLendon Enterprises</h3>
         <div style="color:#555;font-size:0.9em">Ellabell, GA</div>
         <div><strong>Phone:</strong> (912) 537-7887</div>
         <div><a href="https://www.mclendonenterprises.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fairburn" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="bulk plus logistics fairburn   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulk Plus Logistics</h3>
         <div style="color:#555;font-size:0.9em">Fairburn, GA</div>
         <div><strong>Phone:</strong> (866) 487-4622</div>
         <div><a href="https://www.bulkplus.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fairburn" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|petroleum products|plastics (dry)" data-cap="air compressor|blower|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="trimac inc fairburn  acids chemicals (dry) chemicals (liq) petroleum products plastics (dry) air compressor blower liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Trimac Inc</h3>
         <div style="color:#555;font-size:0.9em">Fairburn, GA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Petroleum Products, Plastics (Dry)</div>
@@ -1799,167 +1823,158 @@
         <div><strong>Phone:</strong> (770) 969-9177</div>
         <div><a href="http://www.trimac.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fitzgerald" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="vls recovery services fitzgerald   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">VLS Recovery Services</h3>
         <div style="color:#555;font-size:0.9em">Fitzgerald, GA</div>
         <div><strong>Phone:</strong> (877) 861-8588</div>
         <div><a href="https://www.vlses.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="forest park" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="all south warehouse d/c, inc. forest park   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">All South Warehouse D/C, Inc.</h3>
         <div style="color:#555;font-size:0.9em">Forest Park, GA</div>
         <div><strong>Phone:</strong> (404) 243-7566</div>
         <div><a href="https://www.allsouthwarehouse.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fulco" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="a&amp;r transport inc fulco  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">Fulco, GA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="https://ardoingitright.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="garden city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="coastal logistics group, inc. garden city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Coastal Logistics Group, Inc.</h3>
         <div style="color:#555;font-size:0.9em">Garden City, GA</div>
         <div><strong>Phone:</strong> (866) 455-4633</div>
         <div><a href="https://www.clg-inc.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="garden city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="distribution services international, inc. garden city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Distribution Services International, Inc.</h3>
         <div style="color:#555;font-size:0.9em">Garden City, GA</div>
         <div><strong>Phone:</strong> (912) 964-0399</div>
         <div><a href="https://www.dsicompanies.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="garden city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="jimco limestone mills, llc garden city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Jimco Limestone Mills, LLC</h3>
         <div style="color:#555;font-size:0.9em">Garden City, GA</div>
         <div><strong>Phone:</strong> (800) 379-1093</div>
         <div><a href="https://www.jimcogroup.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="garden city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="savannah port terminal railroad (sapt) garden city genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savannah Port Terminal Railroad (SAPT)</h3>
         <div style="color:#555;font-size:0.9em">Garden City, GA</div>
         <div><a href="https://www.gwrr.com/railroads/savannah-port-terminal-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="garden city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="savannah re-load garden city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savannah Re-Load</h3>
         <div style="color:#555;font-size:0.9em">Garden City, GA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="griffin" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bulkmatic griffin   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulkmatic</h3>
         <div style="color:#555;font-size:0.9em">Griffin, GA</div>
         <div><a href="https://www.bulkmatic.com/service/transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="jonesboro" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="shippers warehouse of georgia jonesboro   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Shippers Warehouse of Georgia</h3>
         <div style="color:#555;font-size:0.9em">Jonesboro, GA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kathleen" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="gilmer warehouse &amp; logistics llc kathleen   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Gilmer Warehouse &amp; Logistics LLC</h3>
         <div style="color:#555;font-size:0.9em">Kathleen, GA</div>
         <div><strong>Phone:</strong> (478) 987-1516</div>
         <div><a href="http://www.gilmer1.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lafayette" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bulkmatic lafayette   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulkmatic</h3>
         <div style="color:#555;font-size:0.9em">Lafayette, GA</div>
         <div><a href="https://www.bulkmatic.com/service/transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lafayette" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="chattooga &amp; chickamauga railway (ccky) lafayette genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Chattooga &amp; Chickamauga Railway (CCKY)</h3>
         <div style="color:#555;font-size:0.9em">Lafayette, GA</div>
         <div><a href="https://www.gwrr.com/railroads/chattooga-and-chickamauga-railway" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lula" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lanier cold storage lula   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lanier Cold Storage</h3>
         <div style="color:#555;font-size:0.9em">Lula, GA</div>
         <div><a href="https://www.americold.com/facilities/lula/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lyons" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="georgia central railway (gc) lyons genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Georgia Central Railway (GC)</h3>
         <div style="color:#555;font-size:0.9em">Lyons, GA</div>
         <div><a href="https://www.gwrr.com/railroads/georgia-central-railway" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="macon" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="gilmer warehouse &amp; logistics llc macon   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Gilmer Warehouse &amp; Logistics LLC</h3>
         <div style="color:#555;font-size:0.9em">Macon, GA</div>
         <div><strong>Phone:</strong> (478) 781-0771</div>
         <div><a href="https://gilmer1.com/careers" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="marietta" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="georgia northeastern railroad (patriot rail) marietta patriot rail short line, transload service  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Georgia Northeastern Railroad (Patriot Rail)</h3>
         <div style="color:#555;font-size:0.9em">Marietta, GA</div>
         <div><a href="https://patriotrail.com/railroads/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Patriot Rail short line, transload service — added from operator locations sweep 2026-08-14</div>
+        <div>Patriot Rail short line, transload service</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mcdonough" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="wel companies mcdonough   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Wel Companies</h3>
         <div style="color:#555;font-size:0.9em">Mcdonough, GA</div>
         <div><strong>Phone:</strong> (800) 333-4415</div>
         <div><a href="https://www.welcompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="newnan" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="newnan transload inc. newnan   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Newnan Transload Inc.</h3>
         <div style="color:#555;font-size:0.9em">Newnan, GA</div>
         <div><strong>Phone:</strong> (770) 252-5883</div>
         <div><a href="https://www.newnantransload.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="norcross" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bulkmatic norcross   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulkmatic</h3>
         <div style="color:#555;font-size:0.9em">Norcross, GA</div>
         <div><a href="https://www.bulkmatic.com/service/transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="norcross" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="doraville ns tbt norcross   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Doraville NS TBT</h3>
         <div style="color:#555;font-size:0.9em">Norcross, GA</div>
         <div><a href="https://www.nscorp.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="oakwood" data-tier="verified" data-phone="1" data-comm="lumber" data-cap="" data-text="atlanta metro lumber &amp; reload oakwood  lumber " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Atlanta Metro Lumber &amp; Reload</h3>
         <div style="color:#555;font-size:0.9em">Oakwood, GA</div>
         <div><strong>Commodities:</strong> Lumber</div>
         <div><strong>Phone:</strong> (770) 967-7772</div>
         <div><a href="http://www.atlmetroreload.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="oakwood" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="crystal farms oakwood   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Crystal Farms</h3>
         <div style="color:#555;font-size:0.9em">Oakwood, GA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pembroke" data-tier="verified" data-phone="0" data-comm="lumber" data-cap="air compressor|auger|bulk conveyor|sampling services|scale" data-text="arreff terminals inc pembroke  lumber air compressor auger bulk conveyor sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Arreff Terminals Inc</h3>
         <div style="color:#555;font-size:0.9em">Pembroke, GA</div>
         <div><strong>Commodities:</strong> Lumber</div>
         <div><strong>Capabilities:</strong> Air Compressor, Auger, Bulk Conveyor, Sampling Services, Scale</div>
         <div><a href="http://www.arreff.com/our-services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pembroke" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="global commodities pembroke   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Global Commodities</h3>
         <div style="color:#555;font-size:0.9em">Pembroke, GA</div>
         <div><strong>Phone:</strong> (757) 393-6534</div>
         <div><a href="https://www.arreff.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pooler" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="heniff transportation pooler transload facility  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Heniff Transportation</h3>
         <div style="color:#555;font-size:0.9em">Pooler, GA</div>
         <div><a href="https://www.heniff.com/about-heniff/locations/locations-detail/pooler--ga" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload Facility</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pooler" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express pooler  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Pooler, GA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
@@ -1967,30 +1982,29 @@
         <div><strong>Phone:</strong> (626) 336-8111</div>
         <div><a href="http://www.plasticexpress.com/about-us/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="port wentworth" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="distribution services international, inc. port wentworth   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Distribution Services International, Inc.</h3>
         <div style="color:#555;font-size:0.9em">Port Wentworth, GA</div>
         <div><strong>Phone:</strong> (912) 964-0399</div>
         <div><a href="https://www.dsicompanies.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="riceboro" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="riceboro southern railway (rsor) riceboro genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Riceboro Southern Railway (RSOR)</h3>
         <div style="color:#555;font-size:0.9em">Riceboro, GA</div>
         <div><a href="https://www.gwrr.com/railroads/riceboro-southern-railway" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="rincon" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="savannah industrial transportation rincon   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savannah Industrial Transportation</h3>
         <div style="color:#555;font-size:0.9em">Rincon, GA</div>
         <div><a href="https://omnitrax.com/savannah-gateway-industrial-hub-2/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="rockmart" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="agro merchants group rockmart   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Agro Merchants Group</h3>
         <div style="color:#555;font-size:0.9em">Rockmart, GA</div>
         <div><a href="https://www.americold.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sandersville" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|chemicals (liq)|minerals" data-cap="air compressor|blower|bulk conveyor|liquid pumps|sampling services|scale|tank trailer cleaning" data-text="b-h transfer co sandersville  chemicals (dry) chemicals (liq) minerals air compressor blower bulk conveyor liquid pumps sampling services scale tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">B-H Transfer Co</h3>
         <div style="color:#555;font-size:0.9em">Sandersville, GA</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Minerals</div>
@@ -1998,26 +2012,24 @@
         <div><strong>Phone:</strong> (478) 552-5119</div>
         <div><a href="http://b-htransfer.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sandersville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="sandersville railroad bulk transfer facility sandersville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sandersville Railroad Bulk Transfer Facility</h3>
         <div style="color:#555;font-size:0.9em">Sandersville, GA</div>
         <div><strong>Phone:</strong> (478) 552-5151</div>
         <div><a href="https://www.sandersvillerailroad.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sandersville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="sandersville railroad reload sandersville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sandersville Railroad Reload</h3>
         <div style="color:#555;font-size:0.9em">Sandersville, GA</div>
         <div><strong>Phone:</strong> (478) 552-5151</div>
         <div><a href="https://www.sandersvillerailroad.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sandersville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="veal farms transload sandersville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Veal Farms Transload</h3>
         <div style="color:#555;font-size:0.9em">Sandersville, GA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="savannah" data-tier="verified" data-phone="1" data-comm="chemicals (liq)|petroleum products" data-cap="air compressor|blending meters|liquid pumps|sampling services|scale" data-text="chemical south transport savannah  chemicals (liq) petroleum products air compressor blending meters liquid pumps sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Chemical South Transport</h3>
         <div style="color:#555;font-size:0.9em">Savannah, GA</div>
         <div><strong>Commodities:</strong> Chemicals (Liq), Petroleum Products</div>
@@ -2025,7 +2037,7 @@
         <div><strong>Phone:</strong> (912) 966-1000</div>
         <div><a href="http://www.chemicalsouthtransport.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="savannah" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|petroleum products" data-cap="air compressor|blending meters|gravity (trestle)|liquid pumps|liquid storage tanks|sampling services|scale|steam heating" data-text="colonial terminals inc savannah  acids chemicals (dry) chemicals (liq) petroleum products air compressor blending meters gravity (trestle) liquid pumps liquid storage tanks sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Colonial Terminals Inc</h3>
         <div style="color:#555;font-size:0.9em">Savannah, GA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Petroleum Products</div>
@@ -2033,24 +2045,23 @@
         <div><strong>Phone:</strong> (800) 944-3835</div>
         <div><a href="https://colonialterminals.com/?y_source=1_MTc3NDM3OTQtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="savannah" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="epic midstream llc savannah   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Epic Midstream LLC</h3>
         <div style="color:#555;font-size:0.9em">Savannah, GA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="st. marys" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="st. marys railroad transloading st. marys   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">St. Marys Railroad Transloading</h3>
         <div style="color:#555;font-size:0.9em">St. Marys, GA</div>
         <div><strong>Phone:</strong> (912) 882-0111</div>
         <div><a href="https://stmarysrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="toccoa" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="hartwell railroad toccoa transload facility toccoa   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Hartwell Railroad Toccoa Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Toccoa, GA</div>
         <div><a href="https://www.greatwaltonrailroad.com/hartwell.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="union city" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="a&amp;r transport inc union city  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">Union City, GA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
@@ -2058,33 +2069,30 @@
         <div><strong>Phone:</strong> (404) 761-2111</div>
         <div><a href="https://ardoingitright.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="valdosta" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="cjb industries valdosta   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">CJB Industries</h3>
         <div style="color:#555;font-size:0.9em">Valdosta, GA</div>
         <div><strong>Phone:</strong> (229) 293-0800</div>
         <div><a href="https://cjbindustries.com/contact/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="valdosta" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="georgia petroleum valdosta   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Georgia Petroleum</h3>
         <div style="color:#555;font-size:0.9em">Valdosta, GA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="valdosta" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="standlee valdosta   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Standlee</h3>
         <div style="color:#555;font-size:0.9em">Valdosta, GA</div>
         <div><strong>Phone:</strong> (208) 825-5117</div>
         <div><a href="https://www.standleeforage.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="waresboro" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="st. marys railway west transload facility waresboro   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">St. Marys Railway West Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Waresboro, GA</div>
         <div><strong>Phone:</strong> (912) 490-0115</div>
         <div><a href="https://www.smwrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="washington" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="georgia woodlands railroad transload washington   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Georgia Woodlands Railroad Transload</h3>
         <div style="color:#555;font-size:0.9em">Washington, GA</div>
         <div><a href="https://omnitrax.com/georgia-woodlands-railroad-llc/" target="_blank" rel="noopener nofollow">Operator website</a></div>
@@ -2115,6 +2123,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

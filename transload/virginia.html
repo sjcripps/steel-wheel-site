@@ -798,6 +798,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Virginia</h1>
@@ -812,204 +830,209 @@
 
     <section>
       <h2>Cities in Virginia</h2>
-      <p><a href="/transload/chesapeake-va">Chesapeake (7)</a> &middot; <a href="/transload/portsmouth-va">Portsmouth (4)</a> &middot; <a href="/transload/richmond-va">Richmond (4)</a> &middot; <a href="/transload/roanoke-va">Roanoke (4)</a> &middot; <a href="/transload/norfolk-va">Norfolk (3)</a> &middot; <a href="/transload/petersburg-va">Petersburg (3)</a> &middot; <span>Dillwyn (2)</span> &middot; <span>Newport News (2)</span> &middot; <span>Winchester (2)</span> &middot; <span>Alexandria (1)</span> &middot; <span>Cameron (1)</span> &middot; <span>Clear Brook (1)</span> &middot; <span>Clifton Forge (1)</span> &middot; <span>Culpeper (1)</span> &middot; <span>Disputanta (1)</span> &middot; <span>Doswell (1)</span> &middot; <span>Fishersville (1)</span> &middot; <span>Glasgow (1)</span> &middot; <span>Harrisonburg (1)</span> &middot; <span>Hopewell (1)</span> &middot; <span>Keysville (1)</span> &middot; <span>Lynchburg (1)</span> &middot; <span>New Church (1)</span> &middot; <span>Orange (1)</span> &middot; <span>Springfield (1)</span> &middot; <span>Suffolk (1)</span> &middot; <span>Va Beach (1)</span> &middot; <span>Virginia Beach (1)</span> &middot; <span>Weyers Cave (1)</span></p>
+      <div class="tl-citylist is-collapsed" id="tlCityList" data-total="29">
+        <p><a href="/transload/chesapeake-va">Chesapeake (7)</a> &middot; <a href="/transload/portsmouth-va">Portsmouth (4)</a> &middot; <a href="/transload/richmond-va">Richmond (4)</a> &middot; <a href="/transload/roanoke-va">Roanoke (4)</a> &middot; <a href="/transload/norfolk-va">Norfolk (3)</a> &middot; <a href="/transload/petersburg-va">Petersburg (3)</a> &middot; <span>Dillwyn (2)</span> &middot; <span>Newport News (2)</span> &middot; <span>Winchester (2)</span> &middot; <span>Alexandria (1)</span> &middot; <span>Cameron (1)</span> &middot; <span>Clear Brook (1)</span> &middot; <span>Clifton Forge (1)</span> &middot; <span>Culpeper (1)</span> &middot; <span>Disputanta (1)</span> &middot; <span>Doswell (1)</span> &middot; <span>Fishersville (1)</span> &middot; <span>Glasgow (1)</span> &middot; <span>Harrisonburg (1)</span> &middot; <span>Hopewell (1)</span> &middot; <span>Keysville (1)</span> &middot; <span>Lynchburg (1)</span> &middot; <span>New Church (1)</span> &middot; <span>Orange (1)</span><span class="tl-city-extra"> &middot; <span>Springfield (1)</span></span><span class="tl-city-extra"> &middot; <span>Suffolk (1)</span></span><span class="tl-city-extra"> &middot; <span>Va Beach (1)</span></span><span class="tl-city-extra"> &middot; <span>Virginia Beach (1)</span></span><span class="tl-city-extra"> &middot; <span>Weyers Cave (1)</span></span></p>
+        <button type="button" class="tl-morecities" id="tlMoreCities">Show all 29 cities</button>
+      </div>
     </section>
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (29)</option><option value="alexandria">Alexandria</option><option value="cameron">Cameron</option><option value="chesapeake">Chesapeake</option><option value="clear brook">Clear Brook</option><option value="clifton forge">Clifton Forge</option><option value="culpeper">Culpeper</option><option value="dillwyn">Dillwyn</option><option value="disputanta">Disputanta</option><option value="doswell">Doswell</option><option value="fishersville">Fishersville</option><option value="glasgow">Glasgow</option><option value="harrisonburg">Harrisonburg</option><option value="hopewell">Hopewell</option><option value="keysville">Keysville</option><option value="lynchburg">Lynchburg</option><option value="new church">New Church</option><option value="newport news">Newport News</option><option value="norfolk">Norfolk</option><option value="orange">Orange</option><option value="petersburg">Petersburg</option><option value="portsmouth">Portsmouth</option><option value="richmond">Richmond</option><option value="roanoke">Roanoke</option><option value="springfield">Springfield</option><option value="suffolk">Suffolk</option><option value="va beach">Va Beach</option><option value="virginia beach">Virginia Beach</option><option value="weyers cave">Weyers Cave</option><option value="winchester">Winchester</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="auger">Auger</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="hot water heating">Hot Water Heating</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (11)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (20)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 11 of 51 sites and capability detail for 9. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="alexandria" data-tier="verified" data-phone="0" data-comm="chemicals (liq)|petroleum products" data-cap="air compressor|liquid pumps|liquid storage tanks|portable vacuum|sampling services|scale" data-text="norfolk southern tbt alexandria  chemicals (liq) petroleum products air compressor liquid pumps liquid storage tanks portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norfolk Southern TBT</h3>
         <div style="color:#555;font-size:0.9em">Alexandria, VA</div>
         <div><strong>Commodities:</strong> Chemicals (Liq), Petroleum Products</div>
         <div><strong>Capabilities:</strong> Air Compressor, Liquid Pumps, Liquid Storage Tanks, Portable Vacuum, Sampling Services, Scale</div>
         <div><a href="http://www.nscorp.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cameron" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="alexandria ns tbt cameron   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Alexandria NS TBT</h3>
         <div style="color:#555;font-size:0.9em">Cameron, VA</div>
         <div><a href="https://www.nscorp.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chesapeake" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="a&amp;r transport inc chesapeake  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">Chesapeake, VA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="https://ardoingitright.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chesapeake" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="chesapeake ns tbt chesapeake   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Chesapeake NS TBT</h3>
         <div style="color:#555;font-size:0.9em">Chesapeake, VA</div>
         <div><a href="https://www.nscorp.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chesapeake" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="continental terminals chesapeake   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Continental Terminals</h3>
         <div style="color:#555;font-size:0.9em">Chesapeake, VA</div>
         <div><a href="https://www.continentalterminals.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chesapeake" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="imtt chesapeake terminal chesapeake   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">IMTT Chesapeake Terminal</h3>
         <div style="color:#555;font-size:0.9em">Chesapeake, VA</div>
         <div><a href="https://imtt.com/terminals/chesapeake-va/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chesapeake" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kinder morgan elizabeth river terminal chesapeake   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kinder Morgan Elizabeth River Terminal</h3>
         <div style="color:#555;font-size:0.9em">Chesapeake, VA</div>
         <div><a href="https://www.kindermorgan.com/Operations/Terminals/Index" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chesapeake" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kinder morgan south hill terminal chesapeake   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kinder Morgan South Hill Terminal</h3>
         <div style="color:#555;font-size:0.9em">Chesapeake, VA</div>
         <div><a href="https://www.kindermorgan.com/Operations/Terminals/Index" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chesapeake" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ngl energy partners chesapeake terminal chesapeake   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">NGL Energy Partners Chesapeake Terminal</h3>
         <div style="color:#555;font-size:0.9em">Chesapeake, VA</div>
         <div><a href="https://www.nglenergypartners.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="clear brook" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="winchester &amp; western railroad (omnitrax) clear brook transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Winchester &amp; Western Railroad (OmniTRAX)</h3>
         <div style="color:#555;font-size:0.9em">Clear Brook, VA</div>
         <div><a href="https://omnitrax.com/winchester-and-western-railroad-company-west-virginia/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="clifton forge" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="houff corporation clifton forge   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Houff Corporation</h3>
         <div style="color:#555;font-size:0.9em">Clifton Forge, VA</div>
         <div><a href="https://houffcorp.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="culpeper" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="j and e reload, llc culpeper   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">J and E Reload, LLC</h3>
         <div style="color:#555;font-size:0.9em">Culpeper, VA</div>
         <div><strong>Phone:</strong> (540) 937-6054</div>
         <div><a href="https://www.jandereload.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dillwyn" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="buckingham branch alpha yard transload site dillwyn   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Buckingham Branch Alpha Yard Transload Site</h3>
         <div style="color:#555;font-size:0.9em">Dillwyn, VA</div>
         <div><strong>Phone:</strong> (434) 983-3300</div>
         <div><a href="https://buckinghambranch.com/site-location/alpha-yard-transload-site-buckingham-county-bb-buckingham-division/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dillwyn" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="buckingham branch buckingham yard transload site dillwyn   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Buckingham Branch Buckingham Yard Transload Site</h3>
         <div style="color:#555;font-size:0.9em">Dillwyn, VA</div>
         <div><strong>Phone:</strong> (434) 983-3300</div>
         <div><a href="https://buckinghambranch.com/site-location/buckingham-yard-transload-site-buckingham-county-bb-buckingham-division/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="disputanta" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="ancos polymer handling specialist disputanta   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ancos Polymer Handling Specialist</h3>
         <div style="color:#555;font-size:0.9em">Disputanta, VA</div>
         <div><strong>Phone:</strong> (804) 732-3356</div>
         <div><a href="https://ancosusa.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="doswell" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="buckingham branch railroad doswell   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Buckingham Branch Railroad</h3>
         <div style="color:#555;font-size:0.9em">Doswell, VA</div>
         <div><strong>Phone:</strong> (434) 983-3300</div>
         <div><a href="https://www.buckinghambranch.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fishersville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="buckingham branch fishersville transload fishersville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Buckingham Branch Fishersville Transload</h3>
         <div style="color:#555;font-size:0.9em">Fishersville, VA</div>
         <div><strong>Phone:</strong> (434) 983-3300</div>
         <div><a href="https://www.buckinghambranch.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="glasgow" data-tier="verified" data-phone="0" data-comm="chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="scale" data-text="rj corman glasgow  chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) steel scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rj Corman</h3>
         <div style="color:#555;font-size:0.9em">Glasgow, VA</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
         <div><strong>Capabilities:</strong> Scale</div>
         <div><a href="RJ Corman Transload Location Guide.pdf" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="harrisonburg" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="virginia rail services harrisonburg   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Virginia Rail Services</h3>
         <div style="color:#555;font-size:0.9em">Harrisonburg, VA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hopewell" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="commonwealth industrial services incorporated hopewell   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Commonwealth Industrial Services Incorporated</h3>
         <div style="color:#555;font-size:0.9em">Hopewell, VA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="keysville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="buckingham branch keysville transfer and storage keysville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Buckingham Branch Keysville Transfer and Storage</h3>
         <div style="color:#555;font-size:0.9em">Keysville, VA</div>
         <div><strong>Phone:</strong> (434) 983-3300</div>
         <div><a href="https://www.buckinghambranch.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lynchburg" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="tomahawk warehousing services lynchburg   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tomahawk Warehousing Services</h3>
         <div style="color:#555;font-size:0.9em">Lynchburg, VA</div>
         <div><strong>Phone:</strong> (434) 219-0014</div>
         <div><a href="https://TOMAHAWKWAREHOUSING.COM" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new church" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="coastline chemical new church   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Coastline Chemical</h3>
         <div style="color:#555;font-size:0.9em">New Church, VA</div>
         <div><strong>Phone:</strong> (757) 824-3831</div>
         <div><a href="https://www.prideantifreeze.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="newport news" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kinder morgan pier ix and x terminals newport news   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kinder Morgan Pier IX and X Terminals</h3>
         <div style="color:#555;font-size:0.9em">Newport News, VA</div>
         <div><a href="https://www.kindermorgan.com/Operations/Terminals/Index" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="newport news" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="newport news marine terminal newport news   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Newport News Marine Terminal</h3>
         <div style="color:#555;font-size:0.9em">Newport News, VA</div>
         <div><a href="https://www.portofvirginia.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="norfolk" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="katoen natie norfolk norfolk   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Katoen Natie Norfolk</h3>
         <div style="color:#555;font-size:0.9em">Norfolk, VA</div>
         <div><a href="https://www.katoennatie.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="norfolk" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kinder morgan norfolk terminal norfolk   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kinder Morgan Norfolk Terminal</h3>
         <div style="color:#555;font-size:0.9em">Norfolk, VA</div>
         <div><a href="https://www.kindermorgan.com/Operations/Terminals/Index" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="norfolk" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lambert's point docks inc. norfolk   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lambert's Point Docks Inc.</h3>
         <div style="color:#555;font-size:0.9em">Norfolk, VA</div>
         <div><a href="http://www.nscorp.com/content/nscorp/en/get-to-kn*" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="orange" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="buckingham branch orange transload site orange   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Buckingham Branch Orange Transload Site</h3>
         <div style="color:#555;font-size:0.9em">Orange, VA</div>
         <div><strong>Phone:</strong> (434) 983-3300</div>
         <div><a href="https://buckinghambranch.com/site-location/orange-transload-site-orange-county-buckingham-branch-rr-richmond-alleghany-division/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="petersburg" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="norfolk southern tbt (rsi logistics) petersburg  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower hot water heating liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norfolk Southern TBT (RSI Logistics)</h3>
         <div style="color:#555;font-size:0.9em">Petersburg, VA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Hot Water Heating, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="https://www.rsilogistics.com/rail-solutions/rail-terminal-services/petersburg-va/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="petersburg" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="petersburg ns tbt petersburg   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Petersburg NS TBT</h3>
         <div style="color:#555;font-size:0.9em">Petersburg, VA</div>
         <div><a href="https://www.nscorp.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="petersburg" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="transflo virginia-petersburg terminal petersburg   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TRANSFLO Virginia-Petersburg Terminal</h3>
         <div style="color:#555;font-size:0.9em">Petersburg, VA</div>
         <div><a href="https://www.transflo.net/locations/virginia-petersburg/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div> — VERIFIED OPEN 2026-08-14: newest TRANSFLO terminal, opened early 2026 (transflo.net announcement); absent from Commtrex because their list predates it.</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="portsmouth" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="a&amp;r transport inc portsmouth  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">Portsmouth, VA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
@@ -1017,7 +1040,7 @@
         <div><strong>Phone:</strong> (757) 393-7860</div>
         <div><a href="https://ardoingitright.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="portsmouth" data-tier="verified" data-phone="1" data-comm="lumber" data-cap="air compressor|auger|bulk conveyor|sampling services|scale" data-text="arreff terminals inc portsmouth  lumber air compressor auger bulk conveyor sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Arreff Terminals Inc</h3>
         <div style="color:#555;font-size:0.9em">Portsmouth, VA</div>
         <div><strong>Commodities:</strong> Lumber</div>
@@ -1025,30 +1048,29 @@
         <div><strong>Phone:</strong> (757) 393-6534</div>
         <div><a href="http://www.arreff.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="portsmouth" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ray-mont logistics portsmouth port norfolk transload facility  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ray-Mont Logistics</h3>
         <div style="color:#555;font-size:0.9em">Portsmouth, VA</div>
         <div><a href="https://www.ray-mont.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Port Norfolk Transload Facility</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="portsmouth" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="us rail &amp; logistics (usrl) portsmouth   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">US Rail &amp; Logistics (USRL)</h3>
         <div style="color:#555;font-size:0.9em">Portsmouth, VA</div>
         <div><strong>Phone:</strong> (817) 442-6177</div>
         <div><a href="https://usrailandlogistics.com/portsmouth-va/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="richmond" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="recycling management resources richmond   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Recycling Management Resources</h3>
         <div style="color:#555;font-size:0.9em">Richmond, VA</div>
         <div><a href="https://www.recyclingmr.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="richmond" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="richmond marine terminal richmond   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Richmond Marine Terminal</h3>
         <div style="color:#555;font-size:0.9em">Richmond, VA</div>
         <div><a href="https://www.portofvirginia.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="richmond" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="transflo csxt richmond  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transflo CSXT</h3>
         <div style="color:#555;font-size:0.9em">Richmond, VA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1056,27 +1078,24 @@
         <div><strong>Phone:</strong> (804) 226-7768</div>
         <div><a href="https://www.transflo.net/locations/virginia-richmond/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="richmond" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="usd group richmond terminal richmond   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">USD Group Richmond Terminal</h3>
         <div style="color:#555;font-size:0.9em">Richmond, VA</div>
         <div><a href="https://usdg.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="roanoke" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="genesis rail services llc roanoke   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Genesis Rail Services LLC</h3>
         <div style="color:#555;font-size:0.9em">Roanoke, VA</div>
         <div><strong>Phone:</strong> (540) 203-9214</div>
         <div><a href="https://genesisrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="roanoke" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="h. l. lawson &amp; son incorporated roanoke   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">H. L. Lawson &amp; Son Incorporated</h3>
         <div style="color:#555;font-size:0.9em">Roanoke, VA</div>
         <div><strong>Phone:</strong> (540) 344-9266</div>
         <div><a href="http://lawsonroanoke.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="roanoke" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="norfolk southern tbt roanoke  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower hot water heating liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norfolk Southern TBT</h3>
         <div style="color:#555;font-size:0.9em">Roanoke, VA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1084,54 +1103,52 @@
         <div><strong>Phone:</strong> (540) 524-4045</div>
         <div><a href="https://www.watco.com/service/terminals/roanoke-va-tbt-2/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="roanoke" data-tier="verified" data-phone="0" data-comm="acids|chemicals (liq)|petroleum products" data-cap="air compressor|liquid pumps|sampling services|scale|steam heating|tank trailer cleaning" data-text="quality transload inc roanoke  acids chemicals (liq) petroleum products air compressor liquid pumps sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Quality Transload Inc</h3>
         <div style="color:#555;font-size:0.9em">Roanoke, VA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Liq), Petroleum Products</div>
         <div><strong>Capabilities:</strong> Air Compressor, Liquid Pumps, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="https://www.qualitydistribution.com/About-QDI/Our-Companies/Quality-Transload-Terminals.aspx" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="springfield" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="robinson terminal warehouse coroporation springfield   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Robinson Terminal Warehouse Coroporation</h3>
         <div style="color:#555;font-size:0.9em">Springfield, VA</div>
         <div><a href="https://RobinsonTerminal.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="suffolk" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="cargoways logistics suffolk   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cargoways Logistics</h3>
         <div style="color:#555;font-size:0.9em">Suffolk, VA</div>
         <div><strong>Phone:</strong> (303) 893-0552</div>
         <div><a href="https://www.cargowayslogistics.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="va beach" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="pro trade international transfer services va beach   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pro Trade International Transfer Services</h3>
         <div style="color:#555;font-size:0.9em">Va Beach, VA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="virginia beach" data-tier="verified" data-phone="0" data-comm="lumber" data-cap="" data-text="mid-atlantic transloading inc virginia beach  lumber " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mid-Atlantic Transloading Inc</h3>
         <div style="color:#555;font-size:0.9em">Virginia Beach, VA</div>
         <div><strong>Commodities:</strong> Lumber</div>
         <div><a href="https://www.google.com/maps/place/2429+Fairway+Ave,+Virginia+Beach,+VA+23462/@36.8172499,-76.1480624,16z/data=!4m5!3m4!1s0x89babe25e5093bff:0x1306805e38864c9c!8m2!3d36.817171!4d-76.1440232" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="weyers cave" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="houff's feed and fertilizer co. inc. weyers cave   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Houff's Feed and Fertilizer Co. Inc.</h3>
         <div style="color:#555;font-size:0.9em">Weyers Cave, VA</div>
         <div><a href="https://houffcorp.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="winchester" data-tier="verified" data-phone="1" data-comm="steel" data-cap="" data-text="hh omps inc winchester  steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Hh Omps Inc</h3>
         <div style="color:#555;font-size:0.9em">Winchester, VA</div>
         <div><strong>Commodities:</strong> Steel</div>
         <div><strong>Phone:</strong> (540) 667-4919</div>
         <div><a href="http://www.hhomps.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="winchester" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="r&amp;g reload center winchester   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">R&amp;G Reload Center</h3>
         <div style="color:#555;font-size:0.9em">Winchester, VA</div>
         <div><strong>Phone:</strong> (540) 550-4374</div>
         <div><a href="https://www.rgreload.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
       </div>
     <p style="font-size:0.85em;color:#666;margin-top:28px">
@@ -1159,6 +1176,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

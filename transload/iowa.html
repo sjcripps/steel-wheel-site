@@ -889,6 +889,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Iowa</h1>
@@ -903,13 +921,30 @@
 
     <section>
       <h2>Cities in Iowa</h2>
-      <p><a href="/transload/council-bluffs-ia">Council Bluffs (5)</a> &middot; <a href="/transload/davenport-ia">Davenport (5)</a> &middot; <a href="/transload/sioux-city-ia">Sioux City (5)</a> &middot; <a href="/transload/des-moines-ia">Des Moines (3)</a> &middot; <a href="/transload/mason-city-ia">Mason City (3)</a> &middot; <a href="/transload/newton-ia">Newton (3)</a> &middot; <span>Clinton (2)</span> &middot; <span>Fairfax (2)</span> &middot; <span>Keokuk (2)</span> &middot; <span>Le Mars (2)</span> &middot; <span>Muscatine (2)</span> &middot; <span>Ottumwa (2)</span> &middot; <span>Waterloo (2)</span> &middot; <span>Altoona (1)</span> &middot; <span>Boone (1)</span> &middot; <span>Burlington (1)</span> &middot; <span>Camanche (1)</span> &middot; <span>Cedar Falls (1)</span> &middot; <span>Cedar Rapids (1)</span> &middot; <span>Centerville (1)</span> &middot; <span>Clayton (1)</span> &middot; <span>Dubuque (1)</span> &middot; <span>Dysart (1)</span> &middot; <span>Emery (1)</span> &middot; <span>Hawarden (1)</span> &middot; <span>Iowa City (1)</span> &middot; <span>Manly (1)</span> &middot; <span>Moravia (1)</span> &middot; <span>New Hampton (1)</span> &middot; <span>Shell Rock (1)</span> &middot; <span>Souix City (1)</span> &middot; <span>Williams (1)</span></p>
+      <div class="tl-citylist is-collapsed" id="tlCityList" data-total="32">
+        <p><a href="/transload/council-bluffs-ia">Council Bluffs (5)</a> &middot; <a href="/transload/davenport-ia">Davenport (5)</a> &middot; <a href="/transload/sioux-city-ia">Sioux City (5)</a> &middot; <a href="/transload/des-moines-ia">Des Moines (3)</a> &middot; <a href="/transload/mason-city-ia">Mason City (3)</a> &middot; <a href="/transload/newton-ia">Newton (3)</a> &middot; <span>Clinton (2)</span> &middot; <span>Fairfax (2)</span> &middot; <span>Keokuk (2)</span> &middot; <span>Le Mars (2)</span> &middot; <span>Muscatine (2)</span> &middot; <span>Ottumwa (2)</span> &middot; <span>Waterloo (2)</span> &middot; <span>Altoona (1)</span> &middot; <span>Boone (1)</span> &middot; <span>Burlington (1)</span> &middot; <span>Camanche (1)</span> &middot; <span>Cedar Falls (1)</span> &middot; <span>Cedar Rapids (1)</span> &middot; <span>Centerville (1)</span> &middot; <span>Clayton (1)</span> &middot; <span>Dubuque (1)</span> &middot; <span>Dysart (1)</span> &middot; <span>Emery (1)</span><span class="tl-city-extra"> &middot; <span>Hawarden (1)</span></span><span class="tl-city-extra"> &middot; <span>Iowa City (1)</span></span><span class="tl-city-extra"> &middot; <span>Manly (1)</span></span><span class="tl-city-extra"> &middot; <span>Moravia (1)</span></span><span class="tl-city-extra"> &middot; <span>New Hampton (1)</span></span><span class="tl-city-extra"> &middot; <span>Shell Rock (1)</span></span><span class="tl-city-extra"> &middot; <span>Souix City (1)</span></span><span class="tl-city-extra"> &middot; <span>Williams (1)</span></span></p>
+        <button type="button" class="tl-morecities" id="tlMoreCities">Show all 32 cities</button>
+      </div>
     </section>
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (32)</option><option value="altoona">Altoona</option><option value="boone">Boone</option><option value="burlington">Burlington</option><option value="camanche">Camanche</option><option value="cedar falls">Cedar Falls</option><option value="cedar rapids">Cedar Rapids</option><option value="centerville">Centerville</option><option value="clayton">Clayton</option><option value="clinton">Clinton</option><option value="council bluffs">Council Bluffs</option><option value="davenport">Davenport</option><option value="des moines">Des Moines</option><option value="dubuque">Dubuque</option><option value="dysart">Dysart</option><option value="emery">Emery</option><option value="fairfax">Fairfax</option><option value="hawarden">Hawarden</option><option value="iowa city">Iowa City</option><option value="keokuk">Keokuk</option><option value="le mars">Le Mars</option><option value="manly">Manly</option><option value="mason city">Mason City</option><option value="moravia">Moravia</option><option value="muscatine">Muscatine</option><option value="new hampton">New Hampton</option><option value="newton">Newton</option><option value="ottumwa">Ottumwa</option><option value="shell rock">Shell Rock</option><option value="sioux city">Sioux City</option><option value="souix city">Souix City</option><option value="waterloo">Waterloo</option><option value="williams">Williams</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="auger">Auger</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="liquid pumps">Liquid Pumps</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (18)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (26)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 17 of 57 sites and capability detail for 16. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="altoona" data-tier="verified" data-phone="1" data-comm="chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|plastics (dry)|steel" data-cap="auger|bulk conveyor|portable vacuum|sampling services|scale" data-text="merchants transloading, warehoue, distribution services altoona  chemicals (liq) foods (dry) foods (liq) frac sand lumber plastics (dry) steel auger bulk conveyor portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Merchants Transloading, Warehoue, Distribution Services</h3>
         <div style="color:#555;font-size:0.9em">Altoona, IA</div>
         <div><strong>Commodities:</strong> Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Plastics (Dry), Steel</div>
@@ -917,14 +952,13 @@
         <div><strong>Phone:</strong> (515) 244-2123</div>
         <div><a href="http://www.merchantsdsm.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="boone" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="pdm railcar &amp; cross-docking services boone   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">PDM Railcar &amp; Cross-Docking Services</h3>
         <div style="color:#555;font-size:0.9em">Boone, IA</div>
         <div><strong>Phone:</strong> (641) 752-7876</div>
         <div><a href="https://pdmcompany.com/warehousing/railcar_cross_dock_services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="burlington" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|bulk conveyor|liquid pumps|sampling services|scale" data-text="burlington junction transload burlington  chemicals (dry) chemicals (liq) foods (dry) foods (liq) lumber minerals petroleum products plastics (dry) steel air compressor bulk conveyor liquid pumps sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Burlington Junction Transload</h3>
         <div style="color:#555;font-size:0.9em">Burlington, IA</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
@@ -932,136 +966,125 @@
         <div><strong>Phone:</strong> (319) 753-6157</div>
         <div><a href="https://bjryrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="camanche" data-tier="verified" data-phone="1" data-comm="foods (dry)" data-cap="auger|bulk conveyor|sampling services|scale" data-text="adm terminal service camanche  foods (dry) auger bulk conveyor sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">ADM Terminal Service</h3>
         <div style="color:#555;font-size:0.9em">Camanche, IA</div>
         <div><strong>Commodities:</strong> Foods (Dry)</div>
         <div><strong>Capabilities:</strong> Auger, Bulk Conveyor, Sampling Services, Scale</div>
         <div><strong>Phone:</strong> (563) 259-9559</div>
         <div><a href="https://www.adm.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cedar falls" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="standard distribution co. cedar falls   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Standard Distribution Co.</h3>
         <div style="color:#555;font-size:0.9em">Cedar Falls, IA</div>
         <div><strong>Phone:</strong> (319) 277-9280</div>
         <div><a href="https://www.standarddist.com/rail-transloading/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cedar rapids" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="crandic wilson avenue team track cedar rapids   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">CRANDIC Wilson Avenue Team Track</h3>
         <div style="color:#555;font-size:0.9em">Cedar Rapids, IA</div>
         <div><strong>Phone:</strong> (319) 786-3692</div>
         <div><a href="https://www.travero.com/ourservices/rail-freight-services" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="centerville" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|blower|bulk conveyor|liquid pumps|sampling services|scale|steam heating" data-text="carload connection centerville  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) steel air compressor blower bulk conveyor liquid pumps sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carload Connection</h3>
         <div style="color:#555;font-size:0.9em">Centerville, IA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Sampling Services, Scale, Steam Heating</div>
         <div><a href="https://www.progressiverail.com/rrpgr/lakeville.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="clayton" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="consolidated grain &amp; barge co clayton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Consolidated Grain &amp; Barge Co</h3>
         <div style="color:#555;font-size:0.9em">Clayton, IA</div>
         <div><strong>Phone:</strong> (985) 867-3500</div>
         <div><a href="https://cgb.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="clinton" data-tier="verified" data-phone="0" data-comm="foods (dry)" data-cap="auger|bulk conveyor|sampling services|scale" data-text="adm terminal service clinton  foods (dry) auger bulk conveyor sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">ADM Terminal Service</h3>
         <div style="color:#555;font-size:0.9em">Clinton, IA</div>
         <div><strong>Commodities:</strong> Foods (Dry)</div>
         <div><strong>Capabilities:</strong> Auger, Bulk Conveyor, Sampling Services, Scale</div>
         <div><a href="https://www.adm.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="clinton" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="clausen warehousing clinton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Clausen Warehousing</h3>
         <div style="color:#555;font-size:0.9em">Clinton, IA</div>
         <div><strong>Phone:</strong> (563) 242-4995</div>
         <div><a href="https://www.clausenco.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="council bluffs" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="bulkmatic transport co council bluffs  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulkmatic Transport Co</h3>
         <div style="color:#555;font-size:0.9em">Council Bluffs, IA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale</div>
         <div><a href="https://www.bulkmatic.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="council bluffs" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="icecap cold storage council bluffs   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">IceCap Cold Storage</h3>
         <div style="color:#555;font-size:0.9em">Council Bluffs, IA</div>
         <div><strong>Phone:</strong> (712) 524-8434</div>
         <div><a href="https://icecapcoldstorage.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="council bluffs" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="iowa interstate railroad council bluffs   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Iowa Interstate Railroad</h3>
         <div style="color:#555;font-size:0.9em">Council Bluffs, IA</div>
         <div><strong>Phone:</strong> (319) 298-5400</div>
         <div><a href="http://www.iaisrr.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="council bluffs" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="omaha transloading council bluffs   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Omaha Transloading</h3>
         <div style="color:#555;font-size:0.9em">Council Bluffs, IA</div>
         <div><strong>Phone:</strong> (402) 238-8631</div>
         <div><a href="https://www.watco.com/service/terminals/councilbluffs/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="council bluffs" data-tier="verified" data-phone="0" data-comm="chemicals (liq)|foods (dry)|foods (liq)|lumber|minerals|petroleum products|steel" data-cap="air compressor|bulk conveyor|liquid pumps|sampling services|scale" data-text="watco terminal &amp; port services council bluffs  chemicals (liq) foods (dry) foods (liq) lumber minerals petroleum products steel air compressor bulk conveyor liquid pumps sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Council Bluffs, IA</div>
         <div><strong>Commodities:</strong> Chemicals (Liq), Foods (Dry), Foods (Liq), Lumber, Minerals, Petroleum Products, Steel</div>
         <div><strong>Capabilities:</strong> Air Compressor, Bulk Conveyor, Liquid Pumps, Sampling Services, Scale</div>
         <div><a href="https://www.watcocompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="davenport" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="alter river terminal davenport   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Alter River Terminal</h3>
         <div style="color:#555;font-size:0.9em">Davenport, IA</div>
         <div><a href="https://www.alterlogistics.com/development-network/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="davenport" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="catch-up logistics davenport davenport   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Catch-Up Logistics Davenport</h3>
         <div style="color:#555;font-size:0.9em">Davenport, IA</div>
         <div><strong>Phone:</strong> (412) 441-9512</div>
         <div><a href="https://www.catchuplogistics.com/davenport" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="davenport" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="davenport industrial railroad (dir) transload center davenport   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Davenport Industrial Railroad (DIR) Transload Center</h3>
         <div style="color:#555;font-size:0.9em">Davenport, IA</div>
         <div><a href="https://davenportrail.com/transloading-services" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="davenport" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="murray warehousing inc. davenport   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Murray Warehousing Inc.</h3>
         <div style="color:#555;font-size:0.9em">Davenport, IA</div>
         <div><strong>Phone:</strong> (563) 333-4587</div>
         <div><a href="https://murrayswarehousing.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="davenport" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="savage service corp davenport  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor bulk conveyor liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Service Corp</h3>
         <div style="color:#555;font-size:0.9em">Davenport, IA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="https://www.savageservices.com/services/terminal-transload/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="des moines" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="des moines industrial des moines   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Des Moines Industrial</h3>
         <div style="color:#555;font-size:0.9em">Des Moines, IA</div>
         <div><strong>Phone:</strong> (515) 452-0271</div>
         <div><a href="https://www.dsmindustrial.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="des moines" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="luckey logistics des moines transload des moines   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Luckey Logistics Des Moines Transload</h3>
         <div style="color:#555;font-size:0.9em">Des Moines, IA</div>
         <div><a href="https://www.luckeylogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="des moines" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|plastics (dry)|steel" data-cap="auger|bulk conveyor|portable vacuum|sampling services|scale" data-text="merchants transloading, warehoue, distribution services des moines  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals plastics (dry) steel auger bulk conveyor portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Merchants Transloading, Warehoue, Distribution Services</h3>
         <div style="color:#555;font-size:0.9em">Des Moines, IA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Plastics (Dry), Steel</div>
@@ -1069,35 +1092,35 @@
         <div><strong>Phone:</strong> (515) 244-2123</div>
         <div><a href="http://www.merchantsdsm.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dubuque" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="dubuque river terminals, inc. dubuque   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Dubuque River Terminals, Inc.</h3>
         <div style="color:#555;font-size:0.9em">Dubuque, IA</div>
         <div><a href="https://newtmarine.com/dubuque-river-terminals-inc/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dysart" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="tama-benton cooperative dysart   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tama-Benton Cooperative</h3>
         <div style="color:#555;font-size:0.9em">Dysart, IA</div>
         <div><a href="https://www.tamabentoncoop.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="emery" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|blower|bulk conveyor|liquid pumps|sampling services|scale|steam heating" data-text="carload connection emery  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) steel air compressor blower bulk conveyor liquid pumps sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carload Connection</h3>
         <div style="color:#555;font-size:0.9em">Emery, IA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Sampling Services, Scale, Steam Heating</div>
         <div><a href="https://www.progressiverail.com/rrpgr/lakeville.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fairfax" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="foodliner inc. fairfax   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Foodliner Inc.</h3>
         <div style="color:#555;font-size:0.9em">Fairfax, IA</div>
         <div><a href="https://foodliner.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fairfax" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="logistics park cedar rapids fairfax travero  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Logistics Park Cedar Rapids</h3>
         <div style="color:#555;font-size:0.9em">Fairfax, IA</div>
         <div><a href="https://www.travero.com/ourservices/warehousing/lpcr" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Travero</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hawarden" data-tier="verified" data-phone="1" data-comm="foods (dry)|frac sand|lumber|minerals|petroleum products|steel" data-cap="bulk conveyor|liquid pumps|sampling services" data-text="l.g. everist inc hawarden  foods (dry) frac sand lumber minerals petroleum products steel bulk conveyor liquid pumps sampling services" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">L.G. Everist Inc</h3>
         <div style="color:#555;font-size:0.9em">Hawarden, IA</div>
         <div><strong>Commodities:</strong> Foods (Dry), Frac Sand, Lumber, Minerals, Petroleum Products, Steel</div>
@@ -1105,149 +1128,139 @@
         <div><strong>Phone:</strong> (712) 552-1347</div>
         <div><a href="http://www.lgeverist.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="iowa city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="iowa city transload facility iowa city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Iowa City Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Iowa City, IA</div>
         <div><a href="https://iaisrr.com/iowa-city-transload-facility/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="keokuk" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="hendricks river logistics keokuk   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Hendricks River Logistics</h3>
         <div style="color:#555;font-size:0.9em">Keokuk, IA</div>
         <div><a href="https://www.hendricksholding.com/portfolio" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="keokuk" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="keokuk junction railway (patriot rail) keokuk patriot rail short line, transload service  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Keokuk Junction Railway (Patriot Rail)</h3>
         <div style="color:#555;font-size:0.9em">Keokuk, IA</div>
         <div><a href="https://patriotrail.com/railroads/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Patriot Rail short line, transload service — added from operator locations sweep 2026-08-14</div>
+        <div>Patriot Rail short line, transload service</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="le mars" data-tier="verified" data-phone="0" data-comm="chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|bulk conveyor|liquid pumps|sampling services|scale" data-text="burlington junction transload le mars  chemicals (dry) chemicals (liq) foods (dry) foods (liq) lumber minerals petroleum products plastics (dry) steel air compressor bulk conveyor liquid pumps sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Burlington Junction Transload</h3>
         <div style="color:#555;font-size:0.9em">Le Mars, IA</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
         <div><strong>Capabilities:</strong> Air Compressor, Bulk Conveyor, Liquid Pumps, Sampling Services, Scale</div>
         <div><a href="http://www.bjryrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="le mars" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="le mars public storage le mars   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Le Mars Public Storage</h3>
         <div style="color:#555;font-size:0.9em">Le Mars, IA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="manly" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="manly terminal manly   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Manly Terminal</h3>
         <div style="color:#555;font-size:0.9em">Manly, IA</div>
         <div><strong>Phone:</strong> (855) 277-8217</div>
         <div><a href="https://www.manlyterminal.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mason city" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|blower|bulk conveyor|liquid pumps|sampling services|scale|steam heating" data-text="carload connection mason city  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) steel air compressor blower bulk conveyor liquid pumps sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carload Connection</h3>
         <div style="color:#555;font-size:0.9em">Mason City, IA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Sampling Services, Scale, Steam Heating</div>
         <div><a href="https://www.progressiverail.com/rrpgr/lakeville.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mason city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="cartersville elevator inc. mason city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cartersville Elevator Inc.</h3>
         <div style="color:#555;font-size:0.9em">Mason City, IA</div>
         <div><strong>Phone:</strong> (641) 423-8525</div>
         <div><a href="https://ggecorn.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mason city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="vogelsberg trucking mason city rail warehouse mason city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Vogelsberg Trucking Mason City Rail Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Mason City, IA</div>
         <div><strong>Phone:</strong> (507) 333-5085</div>
         <div><a href="https://vogelsbergtrucking.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="moravia" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|blower|bulk conveyor|liquid pumps|sampling services|scale|steam heating" data-text="carload connection moravia  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) steel air compressor blower bulk conveyor liquid pumps sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carload Connection</h3>
         <div style="color:#555;font-size:0.9em">Moravia, IA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Sampling Services, Scale, Steam Heating</div>
         <div><a href="https://www.progressiverail.com/rrpgr/lakeville.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="muscatine" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="cam ii warehouse inc. muscatine   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cam II Warehouse Inc.</h3>
         <div style="color:#555;font-size:0.9em">Muscatine, IA</div>
         <div><strong>Phone:</strong> (563) 264-8871</div>
         <div><a href="https://www.camiiwarehouse.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="muscatine" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="tantara bulk transload &amp; storage co. muscatine   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TanTara Bulk Transload &amp; Storage Co.</h3>
         <div style="color:#555;font-size:0.9em">Muscatine, IA</div>
         <div><strong>Phone:</strong> (800) 650-0292</div>
         <div><a href="https://www.tantara.us/about/tantara-bulk-transload-storage-co/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new hampton" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="new hampton transfer and storage new hampton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">New Hampton Transfer and Storage</h3>
         <div style="color:#555;font-size:0.9em">New Hampton, IA</div>
         <div><strong>Phone:</strong> (800) 237-9098</div>
         <div><a href="https://nhwarehouse.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="newton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="luckey logistics newton yard newton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Luckey Logistics Newton Yard</h3>
         <div style="color:#555;font-size:0.9em">Newton, IA</div>
         <div><a href="https://www.luckeylogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="newton" data-tier="review" data-phone="0" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="luckey trucking inc newton  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Luckey Trucking Inc</h3>
         <div style="color:#555;font-size:0.9em">Newton, IA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="http://www.luckeytanklines.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="newton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="newton rail park renewable energy transload center newton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Newton Rail Park Renewable Energy Transload Center</h3>
         <div style="color:#555;font-size:0.9em">Newton, IA</div>
         <div><a href="https://iaisrr.com/newton-rail-park-rail-ready-market-connected-built-for-reach/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ottumwa" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="jbs swift and company ottumwa   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Jbs Swift And Company</h3>
         <div style="color:#555;font-size:0.9em">Ottumwa, IA</div>
         <div><a href="https://jbsfoodsgroup.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ottumwa" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lineage logistics ottumwa   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lineage Logistics</h3>
         <div style="color:#555;font-size:0.9em">Ottumwa, IA</div>
         <div><a href="https://www.onelineage.com/facilities/ottumwa" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="shell rock" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="butler intermodal terminal shell rock   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Butler Intermodal Terminal</h3>
         <div style="color:#555;font-size:0.9em">Shell Rock, IA</div>
         <div><a href="https://www.valorvictoria.com/private-terminals" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sioux city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="big soo terminal sioux city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Big Soo Terminal</h3>
         <div style="color:#555;font-size:0.9em">Sioux City, IA</div>
         <div><strong>Phone:</strong> (712) 258-0357</div>
         <div><a href="https://www.bigsoo.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sioux city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bwc terminals sioux city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bwc Terminals</h3>
         <div style="color:#555;font-size:0.9em">Sioux City, IA</div>
         <div><a href="https://bwcterminals.com/locations/sioux-city-ia/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sioux city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="cold-link logistics sioux city sioux city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cold-Link Logistics Sioux City</h3>
         <div style="color:#555;font-size:0.9em">Sioux City, IA</div>
         <div><strong>Phone:</strong> (712) 317-3901</div>
         <div><a href="https://cold-linklogistics.com/siouxcity" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sioux city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="floyd valley transload sioux city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Floyd Valley Transload</h3>
         <div style="color:#555;font-size:0.9em">Sioux City, IA</div>
         <div><a href="https://c2ccorps.com/floyd-valley-transload/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sioux city" data-tier="verified" data-phone="1" data-comm="foods (dry)|frac sand|lumber|minerals|petroleum products|steel" data-cap="bulk conveyor|liquid pumps|sampling services" data-text="l.g. everist inc sioux city  foods (dry) frac sand lumber minerals petroleum products steel bulk conveyor liquid pumps sampling services" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">L.G. Everist Inc</h3>
         <div style="color:#555;font-size:0.9em">Sioux City, IA</div>
         <div><strong>Commodities:</strong> Foods (Dry), Frac Sand, Lumber, Minerals, Petroleum Products, Steel</div>
@@ -1255,27 +1268,25 @@
         <div><strong>Phone:</strong> (712) 277-3312</div>
         <div><a href="http://www.lgeverist.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="souix city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="quest liner souix city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Quest Liner</h3>
         <div style="color:#555;font-size:0.9em">Souix City, IA</div>
         <div><strong>Phone:</strong> (800) 251-9569</div>
         <div><a href="https://questliner.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="waterloo" data-tier="verified" data-phone="0" data-comm="steel" data-cap="" data-text="watco terminal &amp; port services waterloo  steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Waterloo, IA</div>
         <div><strong>Commodities:</strong> Steel</div>
         <div><a href="https://www.watcocompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="waterloo" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="waterloo railroad, llc waterloo jaguar transport holdings  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Waterloo Railroad, LLC</h3>
         <div style="color:#555;font-size:0.9em">Waterloo, IA</div>
         <div><a href="https://jag-transport.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Jaguar Transport Holdings</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="williams" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="williams bulk transfer williams   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Williams Bulk Transfer</h3>
         <div style="color:#555;font-size:0.9em">Williams, IA</div>
 
@@ -1306,6 +1317,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

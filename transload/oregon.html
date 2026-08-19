@@ -719,6 +719,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Oregon</h1>
@@ -733,33 +751,48 @@
 
     <section>
       <h2>Cities in Oregon</h2>
-      <p><a href="/transload/portland-or">Portland (8)</a> &middot; <a href="/transload/junction-city-or">Junction City (5)</a> &middot; <a href="/transload/salem-or">Salem (5)</a> &middot; <a href="/transload/eugene-or">Eugene (3)</a> &middot; <span>North Portland (2)</span> &middot; <span>Albany (1)</span> &middot; <span>Boardman (1)</span> &middot; <span>Central Point (1)</span> &middot; <span>Clackamas (1)</span> &middot; <span>Corvallis (1)</span> &middot; <span>Forest Grove (1)</span> &middot; <span>Gervais (1)</span> &middot; <span>Independence (1)</span> &middot; <span>Klamath Falls (1)</span> &middot; <span>Lakeview (1)</span> &middot; <span>Lebanon (1)</span> &middot; <span>Milwaukee (1)</span> &middot; <span>Milwaukie (1)</span> &middot; <span>North Bend (1)</span> &middot; <span>Prineville (1)</span> &middot; <span>Rainier (1)</span> &middot; <span>Redmond (1)</span> &middot; <span>Scappoose (1)</span> &middot; <span>Tangent (1)</span> &middot; <span>Umatilla (1)</span> &middot; <span>Vale (1)</span> &middot; <span>White City (1)</span> &middot; <span>Winston (1)</span></p>
+      <div class="tl-citylist is-collapsed" id="tlCityList" data-total="28">
+        <p><a href="/transload/portland-or">Portland (8)</a> &middot; <a href="/transload/junction-city-or">Junction City (5)</a> &middot; <a href="/transload/salem-or">Salem (5)</a> &middot; <a href="/transload/eugene-or">Eugene (3)</a> &middot; <span>North Portland (2)</span> &middot; <span>Albany (1)</span> &middot; <span>Boardman (1)</span> &middot; <span>Central Point (1)</span> &middot; <span>Clackamas (1)</span> &middot; <span>Corvallis (1)</span> &middot; <span>Forest Grove (1)</span> &middot; <span>Gervais (1)</span> &middot; <span>Independence (1)</span> &middot; <span>Klamath Falls (1)</span> &middot; <span>Lakeview (1)</span> &middot; <span>Lebanon (1)</span> &middot; <span>Milwaukee (1)</span> &middot; <span>Milwaukie (1)</span> &middot; <span>North Bend (1)</span> &middot; <span>Prineville (1)</span> &middot; <span>Rainier (1)</span> &middot; <span>Redmond (1)</span> &middot; <span>Scappoose (1)</span> &middot; <span>Tangent (1)</span><span class="tl-city-extra"> &middot; <span>Umatilla (1)</span></span><span class="tl-city-extra"> &middot; <span>Vale (1)</span></span><span class="tl-city-extra"> &middot; <span>White City (1)</span></span><span class="tl-city-extra"> &middot; <span>Winston (1)</span></span></p>
+        <button type="button" class="tl-morecities" id="tlMoreCities">Show all 28 cities</button>
+      </div>
     </section>
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (28)</option><option value="albany">Albany</option><option value="boardman">Boardman</option><option value="central point">Central Point</option><option value="clackamas">Clackamas</option><option value="corvallis">Corvallis</option><option value="eugene">Eugene</option><option value="forest grove">Forest Grove</option><option value="gervais">Gervais</option><option value="independence">Independence</option><option value="junction city">Junction City</option><option value="klamath falls">Klamath Falls</option><option value="lakeview">Lakeview</option><option value="lebanon">Lebanon</option><option value="milwaukee">Milwaukee</option><option value="milwaukie">Milwaukie</option><option value="north bend">North Bend</option><option value="north portland">North Portland</option><option value="portland">Portland</option><option value="prineville">Prineville</option><option value="rainier">Rainier</option><option value="redmond">Redmond</option><option value="salem">Salem</option><option value="scappoose">Scappoose</option><option value="tangent">Tangent</option><option value="umatilla">Umatilla</option><option value="vale">Vale</option><option value="white city">White City</option><option value="winston">Winston</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="auger">Auger</option><option value="blending meters">Blending Meters</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="hot water heating">Hot Water Heating</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (14)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (19)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 9 of 46 sites and capability detail for 6. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="albany" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="portland &amp; western railroad (pnwr) albany genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Portland &amp; Western Railroad (PNWR)</h3>
         <div style="color:#555;font-size:0.9em">Albany, OR</div>
         <div><a href="https://www.gwrr.com/railroads/portland-and-western-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="boardman" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="port of morrow warehousing boardman   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of Morrow Warehousing</h3>
         <div style="color:#555;font-size:0.9em">Boardman, OR</div>
         <div><strong>Phone:</strong> (541) 945-1093</div>
         <div><a href="https://portofmorrow.com/warehousing" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="central point" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="blackwell consolidation central point   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Blackwell Consolidation</h3>
         <div style="color:#555;font-size:0.9em">Central Point, OR</div>
         <div><strong>Phone:</strong> (800) 547-2870</div>
         <div><a href="https://blackwellfreight.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="clackamas" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|chemicals (liq)|foods (liq)|petroleum products|plastics (dry)" data-cap="air compressor|auger|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="wymore transfer co clackamas  chemicals (dry) chemicals (liq) foods (liq) petroleum products plastics (dry) air compressor auger blower hot water heating liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Wymore Transfer Co</h3>
         <div style="color:#555;font-size:0.9em">Clackamas, OR</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Foods (Liq), Petroleum Products, Plastics (Dry)</div>
@@ -767,151 +800,146 @@
         <div><strong>Phone:</strong> (503) 656-2693</div>
         <div><a href="https://www.wymoretransfer.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="corvallis" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="albany &amp; eastern railroad corvallis venell line east valley facility  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Albany &amp; Eastern Railroad</h3>
         <div style="color:#555;font-size:0.9em">Corvallis, OR</div>
         <div><a href="https://albanyeastern.com/reload-transload/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Venell Line East Valley Facility</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="eugene" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="carson oil company eugene   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carson Oil Company</h3>
         <div style="color:#555;font-size:0.9em">Eugene, OR</div>
         <div><strong>Phone:</strong> (800) 998-7767</div>
         <div><a href="https://carsonteam.com/locations/eugene/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="eugene" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="m&amp;p reload eugene   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">M&amp;P Reload</h3>
         <div style="color:#555;font-size:0.9em">Eugene, OR</div>
         <div><strong>Phone:</strong> (541) 342-3234</div>
         <div><a href="https://www.mpreload.com/index.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="eugene" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="tyree eugene   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tyree</h3>
         <div style="color:#555;font-size:0.9em">Eugene, OR</div>
         <div><strong>Phone:</strong> (541) 687-0076</div>
         <div><a href="https://www.tyreeoil.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="forest grove" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="henningsen cold storage forest grove   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Henningsen Cold Storage</h3>
         <div style="color:#555;font-size:0.9em">Forest Grove, OR</div>
         <div><a href="https://www.onelineage.com/facilities/forest-grove" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="gervais" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="gvt services gervais   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">GVT Services</h3>
         <div style="color:#555;font-size:0.9em">Gervais, OR</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="independence" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="whites hauling independence   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Whites Hauling</h3>
         <div style="color:#555;font-size:0.9em">Independence, OR</div>
         <div><a href="https://whiteshaulingfarm.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="junction city" data-tier="verified" data-phone="0" data-comm="lumber|steel" data-cap="" data-text="cascade warehouse junction city  lumber steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cascade Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Junction City, OR</div>
         <div><strong>Commodities:</strong> Lumber, Steel</div>
         <div><a href="http://www.cascadewarehouse.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="junction city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="junction city reload junction city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Junction City Reload</h3>
         <div style="color:#555;font-size:0.9em">Junction City, OR</div>
         <div><a href="https://www.junctioncityreload.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="junction city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="roseburg forest junction city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Roseburg Forest</h3>
         <div style="color:#555;font-size:0.9em">Junction City, OR</div>
         <div><a href="https://www.junctioncityreload.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="junction city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="savage services junction city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Services</h3>
         <div style="color:#555;font-size:0.9em">Junction City, OR</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="junction city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="savage transload network llc junction city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Transload Network LLC</h3>
         <div style="color:#555;font-size:0.9em">Junction City, OR</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="klamath falls" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="j &amp; p wholesale klamath falls   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">J &amp; P Wholesale</h3>
         <div style="color:#555;font-size:0.9em">Klamath Falls, OR</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lakeview" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="goos transload lakeview   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">GOOS Transload</h3>
         <div style="color:#555;font-size:0.9em">Lakeview, OR</div>
         <div><strong>Phone:</strong> (800) 376-3998</div>
         <div><a href="https://nexxtlogistics.com/goose.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lebanon" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="albany &amp; eastern railroad lebanon   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Albany &amp; Eastern Railroad</h3>
         <div style="color:#555;font-size:0.9em">Lebanon, OR</div>
         <div><a href="https://albanyeastern.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="milwaukee" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="oregon transfer milwaukee   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Oregon Transfer</h3>
         <div style="color:#555;font-size:0.9em">Milwaukee, OR</div>
-        <div>⚠ website unreachable 2026-08-14 (dns) — dead domain link removed 2026-08-15</div>
+
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="milwaukie" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="alpine food distributing, inc. milwaukie   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Alpine Food Distributing, Inc.</h3>
         <div style="color:#555;font-size:0.9em">Milwaukie, OR</div>
         <div><a href="https://www.alpinefoods.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north bend" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="greenhill reload north bend yard  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Greenhill Reload</h3>
         <div style="color:#555;font-size:0.9em">North Bend, OR</div>
         <div><strong>Phone:</strong> (541) 935-3629</div>
         <div><a href="https://greenhillreload.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Yard — phone from operator website 2026-08-14</div>
+        <div>Yard</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north portland" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|chemicals (liq)|petroleum products" data-cap="air compressor|blower|bulk conveyor|liquid pumps|sampling services|scale" data-text="bulk transportation co north portland  chemicals (dry) chemicals (liq) petroleum products air compressor blower bulk conveyor liquid pumps sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulk Transportation Co</h3>
         <div style="color:#555;font-size:0.9em">North Portland, OR</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Petroleum Products</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Sampling Services, Scale</div>
         <div><strong>Phone:</strong> (503) 283-5684</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north portland" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="peninsula terminal co north portland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Peninsula Terminal Co</h3>
         <div style="color:#555;font-size:0.9em">North Portland, OR</div>
         <div><strong>Phone:</strong> (503) 285-5023</div>
         <div><a href="https://peninsulaterminal.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="portland" data-tier="review" data-phone="0" data-comm="foods (dry)|foods (liq)|frac sand|lumber|minerals|plastics (dry)|steel" data-cap="" data-text="arrow reload systems inc portland  foods (dry) foods (liq) frac sand lumber minerals plastics (dry) steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Arrow Reload Systems Inc</h3>
         <div style="color:#555;font-size:0.9em">Portland, OR</div>
         <div><strong>Commodities:</strong> Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Plastics (Dry), Steel</div>
         <div><a href="https://reload.arrow.ca/location/portland-tfr/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="portland" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="carson oil company portland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carson Oil Company</h3>
         <div style="color:#555;font-size:0.9em">Portland, OR</div>
         <div><strong>Phone:</strong> (800) 998-7767</div>
         <div><a href="https://carsonteam.com/locations/portland/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="portland" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="fulcrum logistics portland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Fulcrum Logistics</h3>
         <div style="color:#555;font-size:0.9em">Portland, OR</div>
         <div><strong>Phone:</strong> (503) 943-3509</div>
         <div><a href="http://www.wagnerlogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="portland" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="nustar portland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Nustar</h3>
         <div style="color:#555;font-size:0.9em">Portland, OR</div>
         <div><a href="https://www.sunocolp.com/segments/fuel-terminals/view/portland" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="portland" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="oregon transfer portland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Oregon Transfer</h3>
         <div style="color:#555;font-size:0.9em">Portland, OR</div>
-        <div>⚠ website unreachable 2026-08-14 (dns) — dead domain link removed 2026-08-15</div>
+
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="portland" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express portland  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Portland, OR</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
@@ -919,31 +947,30 @@
         <div><strong>Phone:</strong> (626) 336-8111</div>
         <div><a href="http://www.plasticexpress.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="portland" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="pronto distribution portland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pronto Distribution</h3>
         <div style="color:#555;font-size:0.9em">Portland, OR</div>
         <div><strong>Phone:</strong> (503) 222-1152</div>
         <div><a href="http://prontodist.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="portland" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="warehouse specialists llc portland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Warehouse Specialists LLC</h3>
         <div style="color:#555;font-size:0.9em">Portland, OR</div>
         <div><strong>Phone:</strong> (503) 610-4943</div>
         <div><a href="https://www.wsinc.com/locations/portland-warehouse/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="prineville" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="prineville freight depot prineville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Prineville Freight Depot</h3>
         <div style="color:#555;font-size:0.9em">Prineville, OR</div>
         <div><strong>Phone:</strong> (541) 480-4330</div>
         <div><a href="https://www.google.com/maps/place/Prineville+freight+depot/@44.3346988,-120.8897522,377m/data=!3m1!1e3!4m5!3m4!1s0x0:0x3a157e73af9edf0f!8m2!3d44.335032!4d-120.890846" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="rainier" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="teevin bros rainier   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Teevin Bros</h3>
         <div style="color:#555;font-size:0.9em">Rainier, OR</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="redmond" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|petroleum products|plastics (dry)" data-cap="air compressor|blending meters|blower|liquid pumps|liquid storage tanks|sampling services|steam heating|tank trailer cleaning" data-text="superior carriers redmond  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) petroleum products plastics (dry) air compressor blending meters blower liquid pumps liquid storage tanks sampling services steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Superior Carriers</h3>
         <div style="color:#555;font-size:0.9em">Redmond, OR</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Petroleum Products, Plastics (Dry)</div>
@@ -951,66 +978,64 @@
         <div><strong>Phone:</strong> (541) 527-9159</div>
         <div><a href="http://superior-carriers.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="salem" data-tier="verified" data-phone="0" data-comm="lumber|steel" data-cap="" data-text="cascade warehouse salem  lumber steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cascade Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Salem, OR</div>
         <div><strong>Commodities:</strong> Lumber, Steel</div>
         <div><a href="http://www.cascadewarehouse.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="salem" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express salem  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Salem, OR</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Sampling Services, Scale</div>
         <div><a href="http://www.plasticexpress.com/operations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="salem" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="savage services salem   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Services</h3>
         <div style="color:#555;font-size:0.9em">Salem, OR</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="salem" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="savage transload network llc salem   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Transload Network LLC</h3>
         <div style="color:#555;font-size:0.9em">Salem, OR</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="salem" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="whites hauling salem   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Whites Hauling</h3>
         <div style="color:#555;font-size:0.9em">Salem, OR</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="scappoose" data-tier="verified" data-phone="0" data-comm="foods (dry)" data-cap="blower|sampling services|scale" data-text="food express inc scappoose  foods (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Food Express Inc</h3>
         <div style="color:#555;font-size:0.9em">Scappoose, OR</div>
         <div><strong>Commodities:</strong> Foods (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="https://www.foodexp.com/html/locations.htm" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tangent" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="linn west tangent transload facility tangent   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Linn West Tangent Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Tangent, OR</div>
         <div><strong>Phone:</strong> (541) 926-2524</div>
         <div><a href="https://linnwest.com/rail-transloading-services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="umatilla" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="a-1 inventory management umatilla   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A-1 Inventory Management</h3>
         <div style="color:#555;font-size:0.9em">Umatilla, OR</div>
         <div><strong>Phone:</strong> (541) 922-5077</div>
         <div><a href="https://www.a1invmang.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="vale" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="oregon eastern railroad, llc vale   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Oregon Eastern Railroad, LLC</h3>
         <div style="color:#555;font-size:0.9em">Vale, OR</div>
         <div><a href="https://jag-transport.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="white city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="rvtr white city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rvtr</h3>
         <div style="color:#555;font-size:0.9em">White City, OR</div>
         <div><a href="https://www.roguevalleyrr.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="winston" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="dillard choice terminal winston   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Dillard Choice Terminal</h3>
         <div style="color:#555;font-size:0.9em">Winston, OR</div>
         <div><a href="https://www.gwrr.com/railroads/central-oregon-and-pacific-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
@@ -1041,6 +1066,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

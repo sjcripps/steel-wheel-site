@@ -255,6 +255,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Chicago, IL</h1>
@@ -268,43 +286,54 @@
 
     <section>
       <h2>Facilities in Chicago</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (1)</option><option value="chicago">Chicago</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="blending meters">Blending Meters</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (7)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (7)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 7 of 13 sites and capability detail for 6. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chicago" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ashland cold storage chicago   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ashland Cold Storage</h3>
         <div style="color:#555;font-size:0.9em">Chicago, IL</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chicago" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="asphalt operating services of chicago chicago   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Asphalt Operating Services of Chicago</h3>
         <div style="color:#555;font-size:0.9em">Chicago, IL</div>
         <div><strong>Phone:</strong> (773) 221-7200</div>
         <div><a href="https://www.aoschicago.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chicago" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="chicago rail link, llc (omnitrax) chicago multi-commodity transload terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Chicago Rail Link, LLC (OmniTRAX)</h3>
         <div style="color:#555;font-size:0.9em">Chicago, IL</div>
         <div><a href="https://omnitrax.com/chicago-rail-link-2/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Multi-Commodity Transload Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chicago" data-tier="verified" data-phone="1" data-comm="foods (dry)|foods (liq)" data-cap="sampling services" data-text="foodliner inc chicago  foods (dry) foods (liq) sampling services" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Foodliner Inc</h3>
         <div style="color:#555;font-size:0.9em">Chicago, IL</div>
         <div><strong>Commodities:</strong> Foods (Dry), Foods (Liq)</div>
         <div><strong>Capabilities:</strong> Sampling Services</div>
         <div><strong>Phone:</strong> (800) 251-9569</div>
         <div><a href="http://www.foodliner.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chicago" data-tier="verified" data-phone="1" data-comm="steel" data-cap="" data-text="great lakes reloading llc chicago  steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Great Lakes Reloading LLC</h3>
         <div style="color:#555;font-size:0.9em">Chicago, IL</div>
         <div><strong>Commodities:</strong> Steel</div>
         <div><strong>Phone:</strong> (773) 646-6363</div>
         <div><a href="http://greatlakesreload.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chicago" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)" data-cap="air compressor|bulk conveyor|sampling services|scale|steam heating" data-text="norfolk southern tbt chicago  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) air compressor bulk conveyor sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norfolk Southern TBT</h3>
         <div style="color:#555;font-size:0.9em">Chicago, IL</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -312,7 +341,7 @@
         <div><strong>Phone:</strong> (773) 451-1510</div>
         <div><a href="http://www.nscorp.com/content/nscorp/en/shipping-options/intermodal/terminals-and-schedules/chicago-ill-47thstreet.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chicago" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|foods (dry)|foods (liq)|frac sand|lumber|minerals|plastics (dry)|steel" data-cap="air compressor|bulk conveyor|sampling services" data-text="north america stevedoring company llc chicago  chemicals (dry) foods (dry) foods (liq) frac sand lumber minerals plastics (dry) steel air compressor bulk conveyor sampling services" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">North America Stevedoring Company LLC</h3>
         <div style="color:#555;font-size:0.9em">Chicago, IL</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Plastics (Dry), Steel</div>
@@ -320,31 +349,30 @@
         <div><strong>Phone:</strong> (773) 734-4885</div>
         <div><a href="https://www.qsl.com/en/network#port-A5" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chicago" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express chicago  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Chicago, IL</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Sampling Services, Scale</div>
         <div><a href="http://www.plasticexpress.com/operations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chicago" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="qsl america chicago   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">QSL America</h3>
         <div style="color:#555;font-size:0.9em">Chicago, IL</div>
         <div><a href="https://qsl.com/our-network/chicago-lake-calumet/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chicago" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="s.h. bell south avenue o terminal chicago   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">S.H. Bell South Avenue O Terminal</h3>
         <div style="color:#555;font-size:0.9em">Chicago, IL</div>
         <div><strong>Phone:</strong> (773) 375-1010</div>
         <div><a href="https://shbellco.com/facilities/chicago-south-avenue-terminal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chicago" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="savage chicago ns thoroughbred bulk terminal chicago   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Chicago NS Thoroughbred Bulk Terminal</h3>
         <div style="color:#555;font-size:0.9em">Chicago, IL</div>
         <div><a href="https://savageco.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chicago" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|petroleum products|plastics (dry)" data-cap="air compressor|blending meters|blower|liquid pumps|liquid storage tanks|sampling services|steam heating|tank trailer cleaning" data-text="superior carriers chicago  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) petroleum products plastics (dry) air compressor blending meters blower liquid pumps liquid storage tanks sampling services steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Superior Carriers</h3>
         <div style="color:#555;font-size:0.9em">Chicago, IL</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Petroleum Products, Plastics (Dry)</div>
@@ -352,13 +380,12 @@
         <div><strong>Phone:</strong> (773) 374-8573</div>
         <div><a href="https://carrytransit.com/services#transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chicago" data-tier="verified" data-phone="0" data-comm="frac sand|minerals|steel" data-cap="bulk conveyor|sampling services|scale" data-text="watco terminal &amp; port services chicago  frac sand minerals steel bulk conveyor sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Chicago, IL</div>
         <div><strong>Commodities:</strong> Frac Sand, Minerals, Steel</div>
         <div><strong>Capabilities:</strong> Bulk Conveyor, Sampling Services, Scale</div>
         <div><a href="https://www.watcocompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
       </div>
     <p style="font-size:0.85em;color:#666;margin-top:28px">
@@ -388,6 +415,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

@@ -196,6 +196,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Idaho</h1>
@@ -215,15 +233,28 @@
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (7)</option><option value="boise">Boise</option><option value="burley">Burley</option><option value="emmett">Emmett</option><option value="heyburn">Heyburn</option><option value="jerome">Jerome</option><option value="lewiston">Lewiston</option><option value="pocatello">Pocatello</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="foods (dry)">Foods (Dry)</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="sampling services">Sampling Services</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (1)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (4)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 1 of 9 sites and capability detail for 1. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="boise" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="compton transfer &amp; storage boise   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Compton Transfer &amp; Storage</h3>
         <div style="color:#555;font-size:0.9em">Boise, ID</div>
         <div><strong>Phone:</strong> (208) 331-3800</div>
         <div><a href="https://www.comptontransfer.com/rail-transloading/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="burley" data-tier="verified" data-phone="1" data-comm="foods (dry)" data-cap="sampling services" data-text="watco terminal &amp; port services burley  foods (dry) sampling services" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Burley, ID</div>
         <div><strong>Commodities:</strong> Foods (Dry)</div>
@@ -231,41 +262,39 @@
         <div><strong>Phone:</strong> (208) 219-0703</div>
         <div><a href="https://www.watco.com/service/terminals/burley-id/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="emmett" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="chemflo north america transloading emmett   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">ChemFlo North America Transloading</h3>
         <div style="color:#555;font-size:0.9em">Emmett, ID</div>
         <div><strong>Phone:</strong> (208) 425-2944</div>
         <div><a href="https://chemflo.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="heyburn" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="willtran heyburn rail yard heyburn   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">WillTran Heyburn Rail Yard</h3>
         <div style="color:#555;font-size:0.9em">Heyburn, ID</div>
         <div><strong>Phone:</strong> (208) 343-2450</div>
         <div><a href="https://www.willtraninc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="jerome" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="pioneer commodities jerome   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pioneer Commodities</h3>
         <div style="color:#555;font-size:0.9em">Jerome, ID</div>
         <div><a href="https://pioneerfeed.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lewiston" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="clearwater transload and storage inc. lewiston   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Clearwater Transload And Storage Inc.</h3>
         <div style="color:#555;font-size:0.9em">Lewiston, ID</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lewiston" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="port of lewiston lewiston   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of Lewiston</h3>
         <div style="color:#555;font-size:0.9em">Lewiston, ID</div>
         <div><a href="https://portoflewiston.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pocatello" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="savage pocatello transload terminal pocatello   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Pocatello Transload Terminal</h3>
         <div style="color:#555;font-size:0.9em">Pocatello, ID</div>
         <div><a href="https://savageco.com/transload/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pocatello" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="savage railport - southern idaho pocatello   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Railport - Southern Idaho</h3>
         <div style="color:#555;font-size:0.9em">Pocatello, ID</div>
         <div><a href="https://savageco.com/transload/" target="_blank" rel="noopener nofollow">Operator website</a></div>
@@ -296,6 +325,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

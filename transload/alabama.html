@@ -981,6 +981,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Alabama</h1>
@@ -995,74 +1013,87 @@
 
     <section>
       <h2>Cities in Alabama</h2>
-      <p><a href="/transload/mobile-al">Mobile (10)</a> &middot; <a href="/transload/birmingham-al">Birmingham (7)</a> &middot; <a href="/transload/gadsden-al">Gadsden (4)</a> &middot; <a href="/transload/enterprise-al">Enterprise (3)</a> &middot; <a href="/transload/montgomery-al">Montgomery (3)</a> &middot; <span>Attalla (2)</span> &middot; <span>Chickasaw (2)</span> &middot; <span>Decatur (2)</span> &middot; <span>Eufaula (2)</span> &middot; <span>Florence (2)</span> &middot; <span>Sylacauga (2)</span> &middot; <span>Adamsville (1)</span> &middot; <span>Bay Minette (1)</span> &middot; <span>Bridgeport (1)</span> &middot; <span>Calera (1)</span> &middot; <span>Childersburg (1)</span> &middot; <span>Creola (1)</span> &middot; <span>Demopolis (1)</span> &middot; <span>Dora (1)</span> &middot; <span>Dothan (1)</span> &middot; <span>Fort Payne (1)</span> &middot; <span>Glencoe (1)</span> &middot; <span>Guntersville (1)</span> &middot; <span>Huntsville (1)</span> &middot; <span>Lincoln (1)</span> &middot; <span>Moundville (1)</span> &middot; <span>Mulga (1)</span> &middot; <span>Ohatchee (1)</span> &middot; <span>Pennington (1)</span> &middot; <span>Pickensville (1)</span> &middot; <span>Prichard (1)</span> &middot; <span>Saraland (1)</span> &middot; <span>Talladega (1)</span> &middot; <span>Tanner (1)</span> &middot; <span>Theodore (1)</span> &middot; <span>Tuscaloosa (1)</span></p>
+      <div class="tl-citylist is-collapsed" id="tlCityList" data-total="36">
+        <p><a href="/transload/mobile-al">Mobile (10)</a> &middot; <a href="/transload/birmingham-al">Birmingham (7)</a> &middot; <a href="/transload/gadsden-al">Gadsden (4)</a> &middot; <a href="/transload/enterprise-al">Enterprise (3)</a> &middot; <a href="/transload/montgomery-al">Montgomery (3)</a> &middot; <span>Attalla (2)</span> &middot; <span>Chickasaw (2)</span> &middot; <span>Decatur (2)</span> &middot; <span>Eufaula (2)</span> &middot; <span>Florence (2)</span> &middot; <span>Sylacauga (2)</span> &middot; <span>Adamsville (1)</span> &middot; <span>Bay Minette (1)</span> &middot; <span>Bridgeport (1)</span> &middot; <span>Calera (1)</span> &middot; <span>Childersburg (1)</span> &middot; <span>Creola (1)</span> &middot; <span>Demopolis (1)</span> &middot; <span>Dora (1)</span> &middot; <span>Dothan (1)</span> &middot; <span>Fort Payne (1)</span> &middot; <span>Glencoe (1)</span> &middot; <span>Guntersville (1)</span> &middot; <span>Huntsville (1)</span><span class="tl-city-extra"> &middot; <span>Lincoln (1)</span></span><span class="tl-city-extra"> &middot; <span>Moundville (1)</span></span><span class="tl-city-extra"> &middot; <span>Mulga (1)</span></span><span class="tl-city-extra"> &middot; <span>Ohatchee (1)</span></span><span class="tl-city-extra"> &middot; <span>Pennington (1)</span></span><span class="tl-city-extra"> &middot; <span>Pickensville (1)</span></span><span class="tl-city-extra"> &middot; <span>Prichard (1)</span></span><span class="tl-city-extra"> &middot; <span>Saraland (1)</span></span><span class="tl-city-extra"> &middot; <span>Talladega (1)</span></span><span class="tl-city-extra"> &middot; <span>Tanner (1)</span></span><span class="tl-city-extra"> &middot; <span>Theodore (1)</span></span><span class="tl-city-extra"> &middot; <span>Tuscaloosa (1)</span></span></p>
+        <button type="button" class="tl-morecities" id="tlMoreCities">Show all 36 cities</button>
+      </div>
     </section>
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (36)</option><option value="adamsville">Adamsville</option><option value="attalla">Attalla</option><option value="bay minette">Bay Minette</option><option value="birmingham">Birmingham</option><option value="bridgeport">Bridgeport</option><option value="calera">Calera</option><option value="chickasaw">Chickasaw</option><option value="childersburg">Childersburg</option><option value="creola">Creola</option><option value="decatur">Decatur</option><option value="demopolis">Demopolis</option><option value="dora">Dora</option><option value="dothan">Dothan</option><option value="enterprise">Enterprise</option><option value="eufaula">Eufaula</option><option value="florence">Florence</option><option value="fort payne">Fort Payne</option><option value="gadsden">Gadsden</option><option value="glencoe">Glencoe</option><option value="guntersville">Guntersville</option><option value="huntsville">Huntsville</option><option value="lincoln">Lincoln</option><option value="mobile">Mobile</option><option value="montgomery">Montgomery</option><option value="moundville">Moundville</option><option value="mulga">Mulga</option><option value="ohatchee">Ohatchee</option><option value="pennington">Pennington</option><option value="pickensville">Pickensville</option><option value="prichard">Prichard</option><option value="saraland">Saraland</option><option value="sylacauga">Sylacauga</option><option value="talladega">Talladega</option><option value="tanner">Tanner</option><option value="theodore">Theodore</option><option value="tuscaloosa">Tuscaloosa</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="auger">Auger</option><option value="blending meters">Blending Meters</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="hot water heating">Hot Water Heating</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (11)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (24)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 9 of 64 sites and capability detail for 8. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="adamsville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bessie junction adamsville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bessie Junction</h3>
         <div style="color:#555;font-size:0.9em">Adamsville, AL</div>
         <div><a href="https://www.bondindustries.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>⚠ website unreachable 2026-08-14 (error)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="attalla" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lineage logistics attalla   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lineage Logistics</h3>
         <div style="color:#555;font-size:0.9em">Attalla, AL</div>
         <div><a href="https://www.onelineage.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="attalla" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="omaha track attalla industrial terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Omaha Track</h3>
         <div style="color:#555;font-size:0.9em">Attalla, AL</div>
         <div><a href="https://www.omahatrack.com/attalla-al/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Industrial Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bay minette" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="railroad resource services, llc bay minette   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Railroad Resource Services, LLC</h3>
         <div style="color:#555;font-size:0.9em">Bay Minette, AL</div>
         <div><strong>Phone:</strong> (251) 937-9786</div>
         <div><a href="https://www.rrrllc.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="birmingham" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="dc warehouse, llc birmingham   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">DC Warehouse, LLC</h3>
         <div style="color:#555;font-size:0.9em">Birmingham, AL</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="birmingham" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="goggin warehousing llc birmingham   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Goggin Warehousing LLC</h3>
         <div style="color:#555;font-size:0.9em">Birmingham, AL</div>
         <div><strong>Phone:</strong> (931) 684-8971</div>
         <div><a href="https://www.gogginwarehousing.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="birmingham" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="industrial chemicals, inc. birmingham   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Industrial Chemicals, Inc.</h3>
         <div style="color:#555;font-size:0.9em">Birmingham, AL</div>
         <div><strong>Phone:</strong> (800) 476-2042</div>
         <div><a href="https://industrialchem.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="birmingham" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lincoln terminal company birmingham unit train terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lincoln Terminal Company</h3>
         <div style="color:#555;font-size:0.9em">Birmingham, AL</div>
         <div><a href="https://lincolnenergysolutions.com/terminals/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Unit Train Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="birmingham" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="pegasus national inc. birmingham   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pegasus National Inc.</h3>
         <div style="color:#555;font-size:0.9em">Birmingham, AL</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="birmingham" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="savage service corp birmingham  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor bulk conveyor liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Service Corp</h3>
         <div style="color:#555;font-size:0.9em">Birmingham, AL</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="https://www.savageservices.com/services/terminal-transload/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="birmingham" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="transflo csxt birmingham  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transflo CSXT</h3>
         <div style="color:#555;font-size:0.9em">Birmingham, AL</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1070,224 +1101,211 @@
         <div><strong>Phone:</strong> (205) 849-2602</div>
         <div><a href="https://www.transflo.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bridgeport" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="sequatchie valley switching company bridgeport team track  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sequatchie Valley Switching Company</h3>
         <div style="color:#555;font-size:0.9em">Bridgeport, AL</div>
         <div><a href="https://ironhorseresources.com/sequatchie-valley-switching-company-llc/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Team Track</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="calera" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="transportation services inc. calera   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transportation Services Inc.</h3>
         <div style="color:#555;font-size:0.9em">Calera, AL</div>
         <div><a href="https://tsi-rci.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chickasaw" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bwc terminals chickasaw   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">BWC Terminals</h3>
         <div style="color:#555;font-size:0.9em">Chickasaw, AL</div>
         <div><a href="https://bwcterminals.com/locations/chickasaw-al/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chickasaw" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="center point terminal chickasaw chickasaw   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Center Point Terminal Chickasaw</h3>
         <div style="color:#555;font-size:0.9em">Chickasaw, AL</div>
         <div><strong>Phone:</strong> (251) 456-8492</div>
         <div><a href="https://apexoil.com/location/chickasaw-al/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="childersburg" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="r.j. corman childersburg line (rjal) childersburg r.j. corman short line — transload service available  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">R.J. Corman Childersburg Line (RJAL)</h3>
         <div style="color:#555;font-size:0.9em">Childersburg, AL</div>
         <div><a href="https://www.rjcorman.com/companies/railroad-company/our-short-lines" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>R.J. Corman short line — transload service available — operator sweep 2026-08-14</div>
+        <div>R.J. Corman short line — transload service available</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="creola" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="gulf coast transload of alabama creola   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Gulf Coast Transload of Alabama</h3>
         <div style="color:#555;font-size:0.9em">Creola, AL</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="decatur" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="decatur river port decatur   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Decatur River Port</h3>
         <div style="color:#555;font-size:0.9em">Decatur, AL</div>
         <div><a href="https://www.watco.com/service/terminals/decatur-riverport-al/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="decatur" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="watco terminal &amp; port services decatur   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Decatur, AL</div>
         <div><a href="https://www.watcocompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="demopolis" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="superior inland terminals demopolis terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Superior Inland Terminals</h3>
         <div style="color:#555;font-size:0.9em">Demopolis, AL</div>
         <div><strong>Phone:</strong> (334) 290-8264</div>
         <div><a href="https://siterminals.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Terminal — phone from operator website 2026-08-14</div>
+        <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dora" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="pacific steel &amp; recycling dora   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pacific Steel &amp; Recycling</h3>
         <div style="color:#555;font-size:0.9em">Dora, AL</div>
         <div><strong>Phone:</strong> (406) 727-6222</div>
         <div><a href="https://www.pacific-steel.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dothan" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="dothan warehouse dothan   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Dothan Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Dothan, AL</div>
         <div><strong>Phone:</strong> (334) 793-6003</div>
         <div><a href="https://dothanwarehouse.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="enterprise" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="conecuh valley railway (coeh) enterprise genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Conecuh Valley Railway (COEH)</h3>
         <div style="color:#555;font-size:0.9em">Enterprise, AL</div>
         <div><a href="https://www.gwrr.com/railroads/conecuh-valley-railway" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="enterprise" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="session peanuts enterprise   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Session Peanuts</h3>
         <div style="color:#555;font-size:0.9em">Enterprise, AL</div>
         <div><strong>Phone:</strong> (334) 393-0200</div>
         <div><a href="https://sessionspeanuts.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="enterprise" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="wiregrass central railway (wgcr) enterprise genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Wiregrass Central Railway (WGCR)</h3>
         <div style="color:#555;font-size:0.9em">Enterprise, AL</div>
         <div><a href="https://www.gwrr.com/railroads/wiregrass-central-railway" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="eufaula" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="alabama interforest products eufaula   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Alabama Interforest Products</h3>
         <div style="color:#555;font-size:0.9em">Eufaula, AL</div>
         <div><a href="https://www.panel.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="eufaula" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="mineral mfg corp eufaula   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mineral Mfg Corp</h3>
         <div style="color:#555;font-size:0.9em">Eufaula, AL</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="florence" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="patriot rail florence port of al  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Patriot Rail</h3>
         <div style="color:#555;font-size:0.9em">Florence, AL</div>
         <div><a href="https://patriotrail.com/wp-content/uploads/2026/03/HYDRA-PORT-OF-FLORENCEds7bhmmRev.pdf" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Port of AL</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="florence" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="port of florence florence lauderdale county port authority  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of Florence</h3>
         <div style="color:#555;font-size:0.9em">Florence, AL</div>
         <div><a href="http://www.portofflorence.org/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Lauderdale County Port Authority</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fort payne" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="ys, inc. fort payne   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">YS, Inc.</h3>
         <div style="color:#555;font-size:0.9em">Fort Payne, AL</div>
         <div><strong>Phone:</strong> (256) 845-5501</div>
         <div><a href="https://ys-inc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="gadsden" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="alabama &amp; tennessee river railway, llc (omnitrax) gadsden transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Alabama &amp; Tennessee River Railway, LLC (OmniTRAX)</h3>
         <div style="color:#555;font-size:0.9em">Gadsden, AL</div>
         <div><a href="https://omnitrax.com/alabama-tennessee-2/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="gadsden" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="gadsden industrial park gadsden   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Gadsden Industrial Park</h3>
         <div style="color:#555;font-size:0.9em">Gadsden, AL</div>
         <div><strong>Phone:</strong> (256) 914-7028</div>
         <div><a href="https://gadsdenindustrialpark.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="gadsden" data-tier="review" data-phone="0" data-comm="" data-cap="" data-text="omnitrax logistics services gadsden   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Omnitrax Logistics Services</h3>
         <div style="color:#555;font-size:0.9em">Gadsden, AL</div>
         <div><a href="http://omnitrax.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="gadsden" data-tier="review" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="auger|sampling services|scale" data-text="rj corman gadsden  acids chemicals (dry) chemicals (liq) frac sand lumber minerals petroleum products plastics (dry) steel auger sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rj Corman</h3>
         <div style="color:#555;font-size:0.9em">Gadsden, AL</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
         <div><strong>Capabilities:</strong> Auger, Sampling Services, Scale</div>
         <div><a href="RJ Corman Transload Location Guide.pdf" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="glencoe" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="r.j. corman glencoe gadsden yard  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">R.J. Corman</h3>
         <div style="color:#555;font-size:0.9em">Glencoe, AL</div>
         <div><a href="https://www.rjcorman.com/companies/transload-connect/locations" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Gadsden Yard</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="guntersville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="guntersville terminal guntersville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Guntersville Terminal</h3>
         <div style="color:#555;font-size:0.9em">Guntersville, AL</div>
         <div><a href="https://www.watco.com/service/terminals/guntersville-al/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="huntsville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="huntsville &amp; madison county railroad authority huntsville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Huntsville &amp; Madison County Railroad Authority</h3>
         <div style="color:#555;font-size:0.9em">Huntsville, AL</div>
         <div><a href="https://www.hmcra.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lincoln" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products" data-cap="air compressor|blower|bulk conveyor|liquid pumps|sampling services|scale|tank trailer cleaning" data-text="bulk transport co lincoln  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products air compressor blower bulk conveyor liquid pumps sampling services scale tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulk Transport Co</h3>
         <div style="color:#555;font-size:0.9em">Lincoln, AL</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Sampling Services, Scale, Tank Trailer Cleaning</div>
         <div><strong>Phone:</strong> (636) 717-2600</div>
         <div><a href="https://btcbulk.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mobile" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ale transload mobile alabama export railroad / mississippi export railroad  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">ALE Transload</h3>
         <div style="color:#555;font-size:0.9em">Mobile, AL</div>
         <div><a href="https://mserr.com/alerr/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Alabama Export Railroad / Mississippi Export Railroad</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mobile" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="automobile international terminal mobile   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">AutoMOBILE International Terminal</h3>
         <div style="color:#555;font-size:0.9em">Mobile, AL</div>
         <div><strong>Phone:</strong> (251) 930-6452</div>
         <div><a href="https://automobileterminal.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mobile" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="cg railway mobile rail ferry terminal mobile   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">CG Railway Mobile Rail Ferry Terminal</h3>
         <div style="color:#555;font-size:0.9em">Mobile, AL</div>
         <div><strong>Phone:</strong> (904) 440-7070</div>
         <div><a href="https://www.cgrailway.co/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mobile" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="cooper/t. smith mobile pig iron dock  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cooper/T. Smith</h3>
         <div style="color:#555;font-size:0.9em">Mobile, AL</div>
         <div><strong>Phone:</strong> (251) 431-6100</div>
         <div><a href="https://www.coopertsmith.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Pig Iron Dock — phone from operator website 2026-08-14</div>
+        <div>Pig Iron Dock</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mobile" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="csa port of mobile terminal operations mobile   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">CSA Port of Mobile Terminal Operations</h3>
         <div style="color:#555;font-size:0.9em">Mobile, AL</div>
         <div><strong>Phone:</strong> (251) 432-5404</div>
         <div><a href="https://www.csaports.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mobile" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="harcros chemicals mobile terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Harcros Chemicals</h3>
         <div style="color:#555;font-size:0.9em">Mobile, AL</div>
         <div><a href="https://www.harcros.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mobile" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="mcduffie coal terminal mobile   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">McDuffie Coal Terminal</h3>
         <div style="color:#555;font-size:0.9em">Mobile, AL</div>
         <div><a href="https://alports.com/facilities/coal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mobile" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="meador warehousing &amp; distribution mobile   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Meador Warehousing &amp; Distribution</h3>
         <div style="color:#555;font-size:0.9em">Mobile, AL</div>
         <div><strong>Phone:</strong> (251) 380-7089</div>
         <div><a href="https://meadorwarehouse.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mobile" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="norfolk southern tbt mobile  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower hot water heating liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norfolk Southern TBT</h3>
         <div style="color:#555;font-size:0.9em">Mobile, AL</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1295,64 +1313,64 @@
         <div><strong>Phone:</strong> (251) 434-5924</div>
         <div><a href="http://www.nscorp.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mobile" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="seaonus refrigerated services mobile   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Seaonus Refrigerated Services</h3>
         <div style="color:#555;font-size:0.9em">Mobile, AL</div>
         <div><a href="https://enstructure.com/network/gulf-coast/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="montgomery" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="superior inland terminals montgomery terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Superior Inland Terminals</h3>
         <div style="color:#555;font-size:0.9em">Montgomery, AL</div>
         <div><strong>Phone:</strong> (334) 290-8264</div>
         <div><a href="https://siterminals.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Terminal — phone from operator website 2026-08-14</div>
+        <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="montgomery" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="transflo alabama-montgomery terminal montgomery   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TRANSFLO Alabama-Montgomery Terminal</h3>
         <div style="color:#555;font-size:0.9em">Montgomery, AL</div>
         <div><a href="https://www.transflo.net/locations/alabama-montgomery/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="montgomery" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="transflo csxt montgomery  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transflo CSXT</h3>
         <div style="color:#555;font-size:0.9em">Montgomery, AL</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale</div>
         <div><a href="https://www.transflo.net/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="moundville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="nwa llc moundville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Nwa LLC</h3>
         <div style="color:#555;font-size:0.9em">Moundville, AL</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mulga" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="watco terminal &amp; port services mulga   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Mulga, AL</div>
         <div><strong>Phone:</strong> (205) 436-3893</div>
         <div><a href="https://www.watco.com/service/terminals/port-birmingham-al/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ohatchee" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="angler rail transloading facility ohatchee   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Angler Rail Transloading Facility</h3>
         <div style="color:#555;font-size:0.9em">Ohatchee, AL</div>
         <div><a href="https://anglerrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pennington" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="pennco warehouse, inc. pennington   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pennco Warehouse, Inc.</h3>
         <div style="color:#555;font-size:0.9em">Pennington, AL</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pickensville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="parker towing pickensville pickens county port  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Parker Towing</h3>
         <div style="color:#555;font-size:0.9em">Pickensville, AL</div>
         <div><a href="https://www.gmsbr.com/services/portsandterminals" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Pickens County Port</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="prichard" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="heniff mobile transload facility prichard nstbt  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Heniff Mobile Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Prichard, AL</div>
         <div><a href="https://www.heniff.com/about-heniff/locations/locations-detail/mobile-al" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>NSTBT</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="saraland" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|petroleum products|plastics (dry)" data-cap="air compressor|blending meters|blower|liquid pumps|liquid storage tanks|sampling services|steam heating|tank trailer cleaning" data-text="superior carriers saraland  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) petroleum products plastics (dry) air compressor blending meters blower liquid pumps liquid storage tanks sampling services steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Superior Carriers</h3>
         <div style="color:#555;font-size:0.9em">Saraland, AL</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Petroleum Products, Plastics (Dry)</div>
@@ -1360,7 +1378,7 @@
         <div><strong>Phone:</strong> (251) 679-7080</div>
         <div><a href="http://superior-carriers.com/#locations" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sylacauga" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|minerals" data-cap="tank trailer cleaning" data-text="b-h transfer co sylacauga  chemicals (dry) minerals tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">B-H Transfer Co</h3>
         <div style="color:#555;font-size:0.9em">Sylacauga, AL</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Minerals</div>
@@ -1368,35 +1386,33 @@
         <div><strong>Phone:</strong> (256) 245-3166</div>
         <div><a href="https://www.b-htransfer.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sylacauga" data-tier="verified" data-phone="1" data-comm="steel" data-cap="" data-text="heritage freight warehouse &amp; logistics sylacauga  steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Heritage Freight Warehouse &amp; Logistics</h3>
         <div style="color:#555;font-size:0.9em">Sylacauga, AL</div>
         <div><strong>Commodities:</strong> Steel</div>
         <div><strong>Phone:</strong> (256) 245-2488</div>
         <div><a href="https://www.heritagefreight.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="talladega" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="b-h transfer co talladega   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">B-H Transfer Co</h3>
         <div style="color:#555;font-size:0.9em">Talladega, AL</div>
         <div><a href="https://www.gwrr.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tanner" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="heniff tanner facility tanner   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Heniff Tanner Facility</h3>
         <div style="color:#555;font-size:0.9em">Tanner, AL</div>
         <div><a href="https://www.heniff.com/about-heniff/locations/locations-detail/tanner-al" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="theodore" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="millard maritime theodore   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Millard Maritime</h3>
         <div style="color:#555;font-size:0.9em">Theodore, AL</div>
         <div><a href="https://millardmaritime.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tuscaloosa" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="industrial warehouse services tuscaloosa   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Industrial Warehouse Services</h3>
         <div style="color:#555;font-size:0.9em">Tuscaloosa, AL</div>
         <div><strong>Phone:</strong> (205) 759-1290</div>
         <div><a href="https://iwslogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
       </div>
     <p style="font-size:0.85em;color:#666;margin-top:28px">
@@ -1424,6 +1440,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

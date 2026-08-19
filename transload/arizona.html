@@ -521,6 +521,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Arizona</h1>
@@ -540,55 +558,68 @@
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (12)</option><option value="aguila">Aguila</option><option value="benson">Benson</option><option value="buckeye">Buckeye</option><option value="casa grande">Casa Grande</option><option value="glendale">Glendale</option><option value="globe">Globe</option><option value="kingman">Kingman</option><option value="parker">Parker</option><option value="phoenix">Phoenix</option><option value="salome">Salome</option><option value="snowflake">Snowflake</option><option value="tucson">Tucson</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="asphalt">Asphalt</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="blending meters">Blending Meters</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (11)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (11)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 11 of 32 sites and capability detail for 10. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="aguila" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bean co. aguila   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bean Co.</h3>
         <div style="color:#555;font-size:0.9em">Aguila, AZ</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="benson" data-tier="verified" data-phone="0" data-comm="frac sand|lumber|minerals|steel" data-cap="bulk conveyor|sampling services|scale" data-text="mountain reload llc benson  frac sand lumber minerals steel bulk conveyor sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mountain Reload LLC</h3>
         <div style="color:#555;font-size:0.9em">Benson, AZ</div>
         <div><strong>Commodities:</strong> Frac Sand, Lumber, Minerals, Steel</div>
         <div><strong>Capabilities:</strong> Bulk Conveyor, Sampling Services, Scale</div>
         <div><a href="https://www.transloadgroup.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="benson" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|petroleum products|plastics (dry)" data-cap="air compressor|blending meters|blower|liquid pumps|liquid storage tanks|sampling services|steam heating|tank trailer cleaning" data-text="superior carriers benson  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) petroleum products plastics (dry) air compressor blending meters blower liquid pumps liquid storage tanks sampling services steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Superior Carriers</h3>
         <div style="color:#555;font-size:0.9em">Benson, AZ</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blending Meters, Blower, Liquid Pumps, Liquid Storage Tanks, Sampling Services, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="https://carrytransit.com/services#transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="buckeye" data-tier="verified" data-phone="0" data-comm="chemicals (dry)|chemicals (liq)|petroleum products" data-cap="air compressor|blower|bulk conveyor|liquid pumps|sampling services|scale" data-text="bulk transportation co buckeye  chemicals (dry) chemicals (liq) petroleum products air compressor blower bulk conveyor liquid pumps sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulk Transportation Co</h3>
         <div style="color:#555;font-size:0.9em">Buckeye, AZ</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Petroleum Products</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Sampling Services, Scale</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="buckeye" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ponderosa solutions buckeye   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ponderosa Solutions</h3>
         <div style="color:#555;font-size:0.9em">Buckeye, AZ</div>
         <div><a href="https://theponderosasolution.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="casa grande" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="sunset route transloading casa grande   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sunset Route Transloading</h3>
         <div style="color:#555;font-size:0.9em">Casa Grande, AZ</div>
         <div><strong>Phone:</strong> (520) 836-9272</div>
         <div><a href="https://sunsetroutetransload.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="glendale" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="glendale transload terminal glendale   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Glendale Transload Terminal</h3>
         <div style="color:#555;font-size:0.9em">Glendale, AZ</div>
         <div><a href="https://www.watco.com/service/terminals/glendale-az/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="glendale" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="warehouse specialists llc glendale   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Warehouse Specialists LLC</h3>
         <div style="color:#555;font-size:0.9em">Glendale, AZ</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="glendale" data-tier="verified" data-phone="1" data-comm="chemicals (liq)|lumber|petroleum products|steel" data-cap="air compressor|liquid pumps|sampling services" data-text="watco terminal &amp; port services glendale  chemicals (liq) lumber petroleum products steel air compressor liquid pumps sampling services" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Glendale, AZ</div>
         <div><strong>Commodities:</strong> Chemicals (Liq), Lumber, Petroleum Products, Steel</div>
@@ -596,22 +627,22 @@
         <div><strong>Phone:</strong> (623) 939-9125</div>
         <div><a href="http://www.watcocompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="glendale" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="wsi phoenix warehouse glendale   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">WSI Phoenix Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Glendale, AZ</div>
         <div><a href="https://www.wsinc.com/locations/phoenix-warehouse/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="globe" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="arizona eastern railway globe transload facility globe   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Arizona Eastern Railway Globe Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Globe, AZ</div>
         <div><a href="https://www.gwrr.com/railroads/arizona-eastern-railway/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kingman" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kingman terminal railroad transload facility kingman   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kingman Terminal Railroad Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Kingman, AZ</div>
         <div><a href="https://patriotrail.com/services/transloading/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kingman" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express kingman  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Kingman, AZ</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
@@ -619,81 +650,78 @@
         <div><strong>Phone:</strong> (626) 336-8111</div>
         <div><a href="http://www.plasticexpress.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="parker" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="arizona &amp; california railroad (arzc) parker genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Arizona &amp; California Railroad (ARZC)</h3>
         <div style="color:#555;font-size:0.9em">Parker, AZ</div>
         <div><a href="https://www.gwrr.com/railroads/arizona-and-california-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="parker" data-tier="review" data-phone="0" data-comm="asphalt|chemicals (liq)|petroleum products" data-cap="air compressor|blending meters|liquid pumps|liquid storage tanks|sampling services|steam heating" data-text="liquid titan llc parker  asphalt chemicals (liq) petroleum products air compressor blending meters liquid pumps liquid storage tanks sampling services steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Liquid Titan LLC</h3>
         <div style="color:#555;font-size:0.9em">Parker, AZ</div>
         <div><strong>Commodities:</strong> Asphalt, Chemicals (Liq), Petroleum Products</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blending Meters, Liquid Pumps, Liquid Storage Tanks, Sampling Services, Steam Heating</div>
         <div><a href="http://www.liquidtitan.com/terminal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="parker" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="pcp parker   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pcp</h3>
         <div style="color:#555;font-size:0.9em">Parker, AZ</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="parker" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|petroleum products|plastics (dry)" data-cap="air compressor|blending meters|blower|liquid pumps|liquid storage tanks|sampling services|steam heating|tank trailer cleaning" data-text="superior carriers parker  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) petroleum products plastics (dry) air compressor blending meters blower liquid pumps liquid storage tanks sampling services steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Superior Carriers</h3>
         <div style="color:#555;font-size:0.9em">Parker, AZ</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blending Meters, Blower, Liquid Pumps, Liquid Storage Tanks, Sampling Services, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="https://carrytransit.com/services#transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="phoenix" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="caljet 53rd avenue terminal phoenix   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">CalJet 53rd Avenue Terminal</h3>
         <div style="color:#555;font-size:0.9em">Phoenix, AZ</div>
         <div><strong>Phone:</strong> (602) 272-5522</div>
         <div><a href="https://www.caljet.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="phoenix" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="caljet monroe i terminal phoenix   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">CalJet Monroe I Terminal</h3>
         <div style="color:#555;font-size:0.9em">Phoenix, AZ</div>
         <div><strong>Phone:</strong> (602) 272-5522</div>
         <div><a href="https://www.caljet.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="phoenix" data-tier="verified" data-phone="0" data-comm="foods (dry)" data-cap="blower|sampling services|scale" data-text="food express inc phoenix  foods (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Food Express Inc</h3>
         <div style="color:#555;font-size:0.9em">Phoenix, AZ</div>
         <div><strong>Commodities:</strong> Foods (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="https://www.foodexp.com/html/locations.htm" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="phoenix" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="freeport logistics inc phoenix   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Freeport Logistics Inc</h3>
         <div style="color:#555;font-size:0.9em">Phoenix, AZ</div>
         <div><strong>Phone:</strong> (602) 233-3891</div>
         <div><a href="https://www.freeport-logistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="phoenix" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="kelly's reload / kelly's railroad services phoenix   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kelly's Reload / Kelly's Railroad Services</h3>
         <div style="color:#555;font-size:0.9em">Phoenix, AZ</div>
         <div><strong>Phone:</strong> (602) 253-8660</div>
         <div><a href="https://kellysreload.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="phoenix" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kinder morgan phoenix terminal phoenix   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kinder Morgan Phoenix Terminal</h3>
         <div style="color:#555;font-size:0.9em">Phoenix, AZ</div>
         <div><a href="https://www.kindermorgan.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="phoenix" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="loup railport phoenix   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Loup RailPort</h3>
         <div style="color:#555;font-size:0.9em">Phoenix, AZ</div>
         <div><a href="https://mhx.solutions/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="phoenix" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="precision components inc. ***up purchased** phoenix   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Precision Components Inc. ***Up Purchased**</h3>
         <div style="color:#555;font-size:0.9em">Phoenix, AZ</div>
         <div><a href="https://mhx.solutions/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="phoenix" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale|steam heating" data-text="ventura transfer co phoenix  acids chemicals (dry) chemicals (liq) minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ventura Transfer Co</h3>
         <div style="color:#555;font-size:0.9em">Phoenix, AZ</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -701,7 +729,7 @@
         <div><strong>Phone:</strong> (602) 252-9440</div>
         <div><a href="http://www.venturatransfercompany.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="phoenix" data-tier="verified" data-phone="1" data-comm="foods (liq)" data-cap="air compressor|liquid pumps|sampling services|steam heating" data-text="watco terminal &amp; port services phoenix  foods (liq) air compressor liquid pumps sampling services steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Phoenix, AZ</div>
         <div><strong>Commodities:</strong> Foods (Liq)</div>
@@ -709,31 +737,30 @@
         <div><strong>Phone:</strong> (623) 939-9125</div>
         <div><a href="https://www.watco.com/service/terminals/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="salome" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bean co. salome   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bean Co.</h3>
         <div style="color:#555;font-size:0.9em">Salome, AZ</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="snowflake" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="apache railway snowflake transload snowflake   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Apache Railway Snowflake Transload</h3>
         <div style="color:#555;font-size:0.9em">Snowflake, AZ</div>
         <div><strong>Phone:</strong> (928) 536-4696</div>
         <div><a href="https://apacherailway.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tucson" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kinder morgan tucson terminal tucson   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kinder Morgan Tucson Terminal</h3>
         <div style="color:#555;font-size:0.9em">Tucson, AZ</div>
         <div><a href="https://www.kindermorgan.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tucson" data-tier="verified" data-phone="1" data-comm="lumber|steel" data-cap="" data-text="port of tucson tucson  lumber steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port Of Tucson</h3>
         <div style="color:#555;font-size:0.9em">Tucson, AZ</div>
         <div><strong>Commodities:</strong> Lumber, Steel</div>
         <div><strong>Phone:</strong> (520) 574-1320</div>
         <div><a href="https://0370bdc.netsolhost.com/PortofTucson/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tucson" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="titan nrg tucson rail terminal tucson   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Titan NRG Tucson Rail Terminal</h3>
         <div style="color:#555;font-size:0.9em">Tucson, AZ</div>
         <div><a href="https://www.titannrg.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
@@ -764,6 +791,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

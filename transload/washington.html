@@ -931,6 +931,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Washington</h1>
@@ -945,64 +963,78 @@
 
     <section>
       <h2>Cities in Washington</h2>
-      <p><a href="/transload/tacoma-wa">Tacoma (16)</a> &middot; <a href="/transload/seattle-wa">Seattle (6)</a> &middot; <a href="/transload/vancouver-wa">Vancouver (6)</a> &middot; <a href="/transload/pasco-wa">Pasco (4)</a> &middot; <span>Chehalis (2)</span> &middot; <span>Kent (2)</span> &middot; <span>Longview (2)</span> &middot; <span>Puyallup (2)</span> &middot; <span>Richland (2)</span> &middot; <span>Sumas (2)</span> &middot; <span>Aberdeen (1)</span> &middot; <span>Belfair (1)</span> &middot; <span>Centralia (1)</span> &middot; <span>Ferndale (1)</span> &middot; <span>Hoquiam (1)</span> &middot; <span>Kettle Falls (1)</span> &middot; <span>Mead (1)</span> &middot; <span>Medical Lake (1)</span> &middot; <span>Olympia (1)</span> &middot; <span>Omak (1)</span> &middot; <span>Oroville (1)</span> &middot; <span>Spokane (1)</span> &middot; <span>Tenino (1)</span> &middot; <span>Velox (1)</span> &middot; <span>Warden (1)</span> &middot; <span>Yakima (1)</span></p>
+      <div class="tl-citylist is-collapsed" id="tlCityList" data-total="26">
+        <p><a href="/transload/tacoma-wa">Tacoma (16)</a> &middot; <a href="/transload/seattle-wa">Seattle (6)</a> &middot; <a href="/transload/vancouver-wa">Vancouver (6)</a> &middot; <a href="/transload/pasco-wa">Pasco (4)</a> &middot; <span>Chehalis (2)</span> &middot; <span>Kent (2)</span> &middot; <span>Longview (2)</span> &middot; <span>Puyallup (2)</span> &middot; <span>Richland (2)</span> &middot; <span>Sumas (2)</span> &middot; <span>Aberdeen (1)</span> &middot; <span>Belfair (1)</span> &middot; <span>Centralia (1)</span> &middot; <span>Ferndale (1)</span> &middot; <span>Hoquiam (1)</span> &middot; <span>Kettle Falls (1)</span> &middot; <span>Mead (1)</span> &middot; <span>Medical Lake (1)</span> &middot; <span>Olympia (1)</span> &middot; <span>Omak (1)</span> &middot; <span>Oroville (1)</span> &middot; <span>Spokane (1)</span> &middot; <span>Tenino (1)</span> &middot; <span>Velox (1)</span><span class="tl-city-extra"> &middot; <span>Warden (1)</span></span><span class="tl-city-extra"> &middot; <span>Yakima (1)</span></span></p>
+        <button type="button" class="tl-morecities" id="tlMoreCities">Show all 26 cities</button>
+      </div>
     </section>
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (26)</option><option value="aberdeen">Aberdeen</option><option value="belfair">Belfair</option><option value="centralia">Centralia</option><option value="chehalis">Chehalis</option><option value="ferndale">Ferndale</option><option value="hoquiam">Hoquiam</option><option value="kent">Kent</option><option value="kettle falls">Kettle Falls</option><option value="longview">Longview</option><option value="mead">Mead</option><option value="medical lake">Medical Lake</option><option value="olympia">Olympia</option><option value="omak">Omak</option><option value="oroville">Oroville</option><option value="pasco">Pasco</option><option value="puyallup">Puyallup</option><option value="richland">Richland</option><option value="seattle">Seattle</option><option value="spokane">Spokane</option><option value="sumas">Sumas</option><option value="tacoma">Tacoma</option><option value="tenino">Tenino</option><option value="vancouver">Vancouver</option><option value="velox">Velox</option><option value="warden">Warden</option><option value="yakima">Yakima</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="lumber">Lumber</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="auger">Auger</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="hot water heating">Hot Water Heating</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (23)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (27)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 15 of 60 sites and capability detail for 10. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="aberdeen" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="port of grays harbor terminal 4 aberdeen   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of Grays Harbor Terminal 4</h3>
         <div style="color:#555;font-size:0.9em">Aberdeen, WA</div>
         <div><strong>Phone:</strong> (360) 533-9528</div>
         <div><a href="https://www.portofgraysharbor.com/terminal-info" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="belfair" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="north mason fiber belfair   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">North Mason Fiber</h3>
         <div style="color:#555;font-size:0.9em">Belfair, WA</div>
         <div><strong>Phone:</strong> (360) 275-0228</div>
         <div><a href="https://northmasonfiber.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="centralia" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="olympia &amp; belmore railroad (oylo) centralia genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Olympia &amp; Belmore Railroad (OYLO)</h3>
         <div style="color:#555;font-size:0.9em">Centralia, WA</div>
         <div><a href="https://www.gwrr.com/railroads/olympia-and-belmore-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chehalis" data-tier="verified" data-phone="0" data-comm="lumber|steel" data-cap="" data-text="cascade warehouse chehalis  lumber steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cascade Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Chehalis, WA</div>
         <div><strong>Commodities:</strong> Lumber, Steel</div>
         <div><a href="http://www.cascadewarehouse.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chehalis" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="port of chehalis grain terminal &amp; transload facility chehalis   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of Chehalis Grain Terminal &amp; Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Chehalis, WA</div>
         <div><strong>Phone:</strong> (360) 748-9365</div>
         <div><a href="https://portofchehalis.com/swwagp-faqs/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ferndale" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="watco ferndale dedicated terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco</h3>
         <div style="color:#555;font-size:0.9em">Ferndale, WA</div>
         <div><a href="https://www.watco.com/service/terminals/dedicated/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Dedicated Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hoquiam" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bwc terminals grays harbor hoquiam   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">BWC Terminals Grays Harbor</h3>
         <div style="color:#555;font-size:0.9em">Hoquiam, WA</div>
         <div><a href="https://bwcterminals.com/locations/grays-harbor-wa/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kent" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express kent  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Kent, WA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Sampling Services, Scale</div>
         <div><a href="http://www.plasticexpress.com/operations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kent" data-tier="verified" data-phone="1" data-comm="acids|chemicals (liq)|petroleum products" data-cap="air compressor|liquid pumps|sampling services|scale|steam heating|tank trailer cleaning" data-text="quality transload inc kent  acids chemicals (liq) petroleum products air compressor liquid pumps sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Quality Transload Inc</h3>
         <div style="color:#555;font-size:0.9em">Kent, WA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Liq), Petroleum Products</div>
@@ -1010,57 +1042,55 @@
         <div><strong>Phone:</strong> (866) 208-7763</div>
         <div><a href="https://www.qualitycarriersinc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kettle falls" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kettle falls international railway (omnitrax) kettle falls omnitrax short line, transload service  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kettle Falls International Railway (OmniTRAX)</h3>
         <div style="color:#555;font-size:0.9em">Kettle Falls, WA</div>
         <div><a href="https://omnitrax.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>OmniTRAX short line, transload service — added from operator locations sweep 2026-08-14</div>
+        <div>OmniTRAX short line, transload service</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="longview" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="columbia &amp; cowlitz railway (patriot rail) longview patriot rail short line, transload service  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Columbia &amp; Cowlitz Railway (Patriot Rail)</h3>
         <div style="color:#555;font-size:0.9em">Longview, WA</div>
         <div><a href="https://patriotrail.com/railroads/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Patriot Rail short line, transload service — added from operator locations sweep 2026-08-14</div>
+        <div>Patriot Rail short line, transload service</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="longview" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="port of longview marine terminals and warehouse complex longview   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of Longview Marine Terminals and Warehouse Complex</h3>
         <div style="color:#555;font-size:0.9em">Longview, WA</div>
         <div><strong>Phone:</strong> (360) 425-3305</div>
         <div><a href="https://www.portoflongview.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mead" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="tristar north inc. mead spokane/  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tristar North Inc.</h3>
         <div style="color:#555;font-size:0.9em">Mead, WA</div>
         <div><a href="https://tristarpnw.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Spokane/</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="medical lake" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="washington eastern railroad, llc medical lake   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Washington Eastern Railroad, LLC</h3>
         <div style="color:#555;font-size:0.9em">Medical Lake, WA</div>
         <div><a href="https://jag-transport.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="olympia" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="port of olympia marine terminal olympia   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of Olympia Marine Terminal</h3>
         <div style="color:#555;font-size:0.9em">Olympia, WA</div>
         <div><strong>Phone:</strong> (360) 528-8033</div>
         <div><a href="https://seaport.portolympia.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="omak" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="cascade and columbia river railroad (cscd) omak genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cascade and Columbia River Railroad (CSCD)</h3>
         <div style="color:#555;font-size:0.9em">Omak, WA</div>
         <div><a href="https://www.gwrr.com/railroads/cascade-and-columbia-river-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="oroville" data-tier="verified" data-phone="1" data-comm="lumber" data-cap="" data-text="oroville reman &amp; reload inc oroville  lumber " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Oroville Reman &amp; Reload Inc</h3>
         <div style="color:#555;font-size:0.9em">Oroville, WA</div>
         <div><strong>Commodities:</strong> Lumber</div>
         <div><strong>Phone:</strong> (509) 476-2935</div>
         <div><a href="http://www.orovilleremanandreload.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pasco" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|petroleum products" data-cap="liquid pumps|sampling services|tank trailer cleaning" data-text="harms pacific transport inc pasco  acids chemicals (dry) chemicals (liq) petroleum products liquid pumps sampling services tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Harms Pacific Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">Pasco, WA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Petroleum Products</div>
@@ -1068,157 +1098,151 @@
         <div><strong>Phone:</strong> (509) 547-0011</div>
         <div><a href="https://www.harmspacific.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pasco" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="inland empire distribution systems inc pasco   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Inland Empire Distribution Systems Inc</h3>
         <div style="color:#555;font-size:0.9em">Pasco, WA</div>
         <div><a href="http://ieds.net/locations/contract-services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pasco" data-tier="verified" data-phone="1" data-comm="lumber|steel" data-cap="" data-text="mid columbia warehouses inc pasco  lumber steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mid Columbia Warehouses Inc</h3>
         <div style="color:#555;font-size:0.9em">Pasco, WA</div>
         <div><strong>Commodities:</strong> Lumber, Steel</div>
         <div><strong>Phone:</strong> (509) 547-7761</div>
         <div><a href="https://www.google.com/maps/place/Mid+Columbia+Warehouse+Inc/@46.2168758,-119.0742485,3094m/data=!3m1!1e3!4m5!3m4!1s0x0:0xf5b169e490f904d2!8m2!3d46.2168461!4d-119.0742914" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pasco" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="tidewater snake river terminal pasco   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tidewater Snake River Terminal</h3>
         <div style="color:#555;font-size:0.9em">Pasco, WA</div>
         <div><strong>Phone:</strong> (360) 693-1491</div>
         <div><a href="https://www.tidewater.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="puyallup" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="sound delivery service rail transload facility puyallup   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sound Delivery Service Rail Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Puyallup, WA</div>
-        <div>⚠ website unreachable 2026-08-14 (dns) — dead domain link removed 2026-08-15</div>
+
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="puyallup" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="v. van dyke, inc. transload yard puyallup   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">V. Van Dyke, Inc. Transload Yard</h3>
         <div style="color:#555;font-size:0.9em">Puyallup, WA</div>
         <div><strong>Phone:</strong> (253) 272-2222</div>
         <div><a href="https://vvandyke.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="richland" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="central washington corn processors richland grain transload richland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Central Washington Corn Processors Richland Grain Transload</h3>
         <div style="color:#555;font-size:0.9em">Richland, WA</div>
         <div><strong>Phone:</strong> (509) 795-8632</div>
         <div><a href="https://www.cw-cp.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="richland" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="delhur industries richland transload richland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">DelHur Industries Richland Transload</h3>
         <div style="color:#555;font-size:0.9em">Richland, WA</div>
         <div><a href="https://delhur.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="seattle" data-tier="verified" data-phone="0" data-comm="foods (dry)" data-cap="blower|sampling services|scale" data-text="food express inc seattle  foods (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Food Express Inc</h3>
         <div style="color:#555;font-size:0.9em">Seattle, WA</div>
         <div><strong>Commodities:</strong> Foods (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="https://www.foodexp.com/html/locations.htm" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="seattle" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="macmillan-piper inc seattle   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Macmillan-Piper Inc</h3>
         <div style="color:#555;font-size:0.9em">Seattle, WA</div>
         <div><strong>Phone:</strong> (206) 624-5135</div>
         <div><a href="http://www.macpiper.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="seattle" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="pacific coast container inc seattle   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pacific Coast Container Inc</h3>
         <div style="color:#555;font-size:0.9em">Seattle, WA</div>
         <div><a href="https://pcclogistics.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="seattle" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="pacific terminals ltd seattle   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pacific Terminals Ltd</h3>
         <div style="color:#555;font-size:0.9em">Seattle, WA</div>
         <div><strong>Phone:</strong> (206) 981-2230</div>
         <div><a href="http://www.pacificterminals.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="seattle" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ray-mont logistics seattle seattle   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ray-Mont Logistics Seattle</h3>
         <div style="color:#555;font-size:0.9em">Seattle, WA</div>
         <div><a href="https://www.ray-mont.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="seattle" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="sea pac transport services, llc seattle   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sea Pac Transport Services, LLC</h3>
         <div style="color:#555;font-size:0.9em">Seattle, WA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="spokane" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="spokane international airport rail-truck transload facility spokane   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Spokane International Airport Rail-Truck Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Spokane, WA</div>
         <div><a href="https://jag-transport.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sumas" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="martin’s feed inc. sumas   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Martin’s Feed Inc.</h3>
         <div style="color:#555;font-size:0.9em">Sumas, WA</div>
         <div><a href="https://martinsfeedinc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sumas" data-tier="verified" data-phone="1" data-comm="lumber" data-cap="" data-text="mountain view reload usa inc sumas  lumber " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mountain View Reload USA Inc</h3>
         <div style="color:#555;font-size:0.9em">Sumas, WA</div>
         <div><strong>Commodities:</strong> Lumber</div>
         <div><strong>Phone:</strong> +1 250-374-3831</div>
         <div><a href="https://arrow.ca/reload" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="auto warehousing company tacoma   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Auto Warehousing Company</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><strong>Phone:</strong> (800) 446-0221</div>
         <div><a href="https://www.autowc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="carlile transportation systems tacoma   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carlile Transportation Systems</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><strong>Phone:</strong> (800) 478-1853</div>
         <div><a href="https://www.carlile.biz/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="verified" data-phone="0" data-comm="foods (dry)" data-cap="blower|sampling services|scale" data-text="food express inc tacoma  foods (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Food Express Inc</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><strong>Commodities:</strong> Foods (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="https://www.foodexp.com/html/locations.htm" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="holroyd recycle south tacoma   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Holroyd Recycle South</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><strong>Phone:</strong> (253) 474-0725</div>
         <div><a href="https://holroyd.co/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lineage logistics tacoma   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lineage Logistics</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><a href="https://www.onelineage.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="loup logistics tacoma railport tacoma operated by mhx  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Loup Logistics Tacoma Railport</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><a href="https://www.louplogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>operated by MHX</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="macmillan-piper inc tacoma   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Macmillan-Piper Inc</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><strong>Phone:</strong> (253) 627-3767</div>
         <div><a href="http://www.macpiper.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="pacific coast container inc tacoma   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pacific Coast Container Inc</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><a href="https://pcclogistics.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="pcc logistics tacoma port of rd. facility  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">PCC Logistics</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><a href="https://pcclogistics.com/port-of-tacoma-rd-facility/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Port of Rd. Facility</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express tacoma  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
@@ -1226,60 +1250,55 @@
         <div><strong>Phone:</strong> (253) 922-7448</div>
         <div><a href="http://www.plasticexpress.com/operations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="seaport sound terminal tacoma   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">SeaPort Sound Terminal</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="verified" data-phone="0" data-comm="foods (dry)" data-cap="bulk conveyor" data-text="tacoma transload tacoma  foods (dry) bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tacoma Transload</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><strong>Commodities:</strong> Foods (Dry)</div>
         <div><strong>Capabilities:</strong> Bulk Conveyor</div>
         <div><a href="https://www.portoftacoma.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="tripak inc tacoma   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tripak Inc</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><strong>Phone:</strong> (253) 404-1030</div>
         <div><a href="https://ttsi.com/services/intermodal-drayage-warehousing/warehousing/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>⚠ website unreachable 2026-08-14 (timeout)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|petroleum products|plastics (dry)" data-cap="air compressor|auger|blower|hot water heating|liquid pumps|liquid storage tanks|sampling services|scale|steam heating|tank trailer cleaning" data-text="truck-rail handling inc tacoma  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) petroleum products plastics (dry) air compressor auger blower hot water heating liquid pumps liquid storage tanks sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Truck-Rail Handling Inc</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Auger, Blower, Hot Water Heating, Liquid Pumps, Liquid Storage Tanks, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="https://qatp-trh.com/services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="united motor freight tacoma   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">United Motor Freight</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><strong>Phone:</strong> (800) 652-6622</div>
         <div><a href="http://www.unitedmotorfreight.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tacoma" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="wallenius wilhelmsen solutions tacoma   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Wallenius Wilhelmsen Solutions</h3>
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><a href="https://www.walleniuswilhelmsen.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tenino" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="rainier rail western junction transload tenino   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rainier Rail Western Junction Transload</h3>
         <div style="color:#555;font-size:0.9em">Tenino, WA</div>
         <div><strong>Phone:</strong> (360) 203-4442</div>
         <div><a href="https://rainierrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="vancouver" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="commodities plus, inc. vancouver   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Commodities Plus, Inc.</h3>
         <div style="color:#555;font-size:0.9em">Vancouver, WA</div>
         <div><strong>Phone:</strong> (360) 693-5249</div>
         <div><a href="https://commoditiesplus.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="vancouver" data-tier="verified" data-phone="1" data-comm="foods (dry)" data-cap="blower|sampling services|scale" data-text="food express inc vancouver  foods (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Food Express Inc</h3>
         <div style="color:#555;font-size:0.9em">Vancouver, WA</div>
         <div><strong>Commodities:</strong> Foods (Dry)</div>
@@ -1287,43 +1306,43 @@
         <div><strong>Phone:</strong> (360) 694-1596</div>
         <div><a href="http://www.foodexp.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="vancouver" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express vancouver  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Vancouver, WA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Sampling Services, Scale</div>
         <div><a href="http://www.plasticexpress.com/operations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="vancouver" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="sunoco lp vancouver main terminal vancouver   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sunoco LP Vancouver Main Terminal</h3>
         <div style="color:#555;font-size:0.9em">Vancouver, WA</div>
         <div><a href="https://www.sunocolp.com/segments/fuel-terminals/view/vancouver-main" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="vancouver" data-tier="verified" data-phone="1" data-comm="lumber" data-cap="" data-text="tristar flc inc vancouver  lumber " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tristar Flc Inc</h3>
         <div style="color:#555;font-size:0.9em">Vancouver, WA</div>
         <div><strong>Commodities:</strong> Lumber</div>
         <div><strong>Phone:</strong> (360) 823-1000</div>
         <div><a href="http://www.tristarpnw.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="vancouver" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="vanport warehousing, inc. vancouver   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Vanport Warehousing, Inc.</h3>
         <div style="color:#555;font-size:0.9em">Vancouver, WA</div>
         <div><a href="https://www.vpwhse.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="velox" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="inland empire distribution systems inc velox   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Inland Empire Distribution Systems Inc</h3>
         <div style="color:#555;font-size:0.9em">Velox, WA</div>
         <div><strong>Phone:</strong> (509) 922-0944</div>
         <div><a href="http://www.ieds.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="warden" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="columbia basin railroad / jaguar transport warden transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Columbia Basin Railroad / Jaguar Transport</h3>
         <div style="color:#555;font-size:0.9em">Warden, WA</div>
         <div><a href="https://jag-transport.com/columbia-basin-railroad/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="yakima" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="central washington railroad yakima cwa  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Central Washington Railroad</h3>
         <div style="color:#555;font-size:0.9em">Yakima, WA</div>
         <div><a href="https://jag-transport.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
@@ -1355,6 +1374,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

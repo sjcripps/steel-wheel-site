@@ -253,6 +253,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Nevada</h1>
@@ -272,15 +290,28 @@
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (9)</option><option value="battle mountain">Battle Mountain</option><option value="elko">Elko</option><option value="fernley">Fernley</option><option value="henderson">Henderson</option><option value="jean">Jean</option><option value="mccarran">Mccarran</option><option value="moapa">Moapa</option><option value="north las vegas">North Las Vegas</option><option value="sparks">Sparks</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="asphalt">Asphalt</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="bulk conveyor">Bulk Conveyor</option><option value="liquid pumps">Liquid Pumps</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (4)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (6)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 4 of 13 sites and capability detail for 3. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="battle mountain" data-tier="verified" data-phone="0" data-comm="steel" data-cap="" data-text="metro group battle mountain  steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Metro Group</h3>
         <div style="color:#555;font-size:0.9em">Battle Mountain, NV</div>
         <div><strong>Commodities:</strong> Steel</div>
         <div><a href="https://www.metrogroup.com/metro-recycling-services/transloading/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>⚠ website unreachable 2026-08-14 (530)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="elko" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="savage service corp elko  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor bulk conveyor liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Service Corp</h3>
         <div style="color:#555;font-size:0.9em">Elko, NV</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -288,50 +319,48 @@
         <div><strong>Phone:</strong> (775) 777-1755</div>
         <div><a href="https://www.savageservices.com/services/terminal-transload/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fernley" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="victory logistics district fernley   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Victory Logistics District</h3>
         <div style="color:#555;font-size:0.9em">Fernley, NV</div>
         <div><a href="https://victorylogisticsdistrict.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fernley" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="western nevada transload, llc fernley   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Western Nevada Transload, LLC</h3>
         <div style="color:#555;font-size:0.9em">Fernley, NV</div>
         <div><strong>Phone:</strong> (775) 867-3619</div>
         <div><a href="https://www.westernnevadatransload.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="henderson" data-tier="verified" data-phone="0" data-comm="chemicals (dry)|chemicals (liq)|lumber|petroleum products|steel" data-cap="air compressor|bulk conveyor|liquid pumps" data-text="arrow reload systems inc henderson  chemicals (dry) chemicals (liq) lumber petroleum products steel air compressor bulk conveyor liquid pumps" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Arrow Reload Systems Inc</h3>
         <div style="color:#555;font-size:0.9em">Henderson, NV</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Lumber, Petroleum Products, Steel</div>
         <div><strong>Capabilities:</strong> Air Compressor, Bulk Conveyor, Liquid Pumps</div>
         <div><a href="https://reload.arrow.ca/location/las-vegas-tfr/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="jean" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="loup railport jean   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Loup RailPort</h3>
         <div style="color:#555;font-size:0.9em">Jean, NV</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mccarran" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="savage mccarran reno transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage</h3>
         <div style="color:#555;font-size:0.9em">Mccarran, NV</div>
         <div><a href="https://savageco.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Reno Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="moapa" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="plastic express moapa yard  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Moapa, NV</div>
         <div><a href="https://www.plasticexpress.com/operations/bulk-terminals/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Yard</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north las vegas" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="lighthouse logistics usa north las vegas   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lighthouse Logistics USA</h3>
         <div style="color:#555;font-size:0.9em">North Las Vegas, NV</div>
         <div><strong>Phone:</strong> (702) 358-0728</div>
         <div><a href="https://lighthouselogistics.wordpress.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north las vegas" data-tier="verified" data-phone="1" data-comm="acids|asphalt|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="bulk conveyor|liquid pumps" data-text="strategic materials north las vegas  acids asphalt chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) bulk conveyor liquid pumps" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Strategic Materials</h3>
         <div style="color:#555;font-size:0.9em">North Las Vegas, NV</div>
         <div><strong>Commodities:</strong> Acids, Asphalt, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -339,24 +368,23 @@
         <div><strong>Phone:</strong> (702) 643-6001</div>
         <div><a href="http://www.smi.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north las vegas" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="u.s. energy (u.s. venture) north las vegas las vegas rail transload &amp; bulk plant  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">U.S. Energy (U.S. Venture)</h3>
         <div style="color:#555;font-size:0.9em">North Las Vegas, NV</div>
         <div><strong>Phone:</strong> (800) 876-4526</div>
         <div><a href="https://www.us-energy.com/u-s-energy-expands-its-freight-service-refined-products-offerings-in-las-vegas/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Las Vegas Rail Transload &amp; Bulk Plant — phone from operator website (headless) 2026-08-15</div>
+        <div>Las Vegas Rail Transload &amp; Bulk Plant</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sparks" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bnsf qdc sparks sparks   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">BNSF QDC Sparks</h3>
         <div style="color:#555;font-size:0.9em">Sparks, NV</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sparks" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="nexxt logistics reno-sparks transload facility sparks   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Nexxt Logistics Reno-Sparks Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Sparks, NV</div>
         <div><strong>Phone:</strong> (800) 376-3998</div>
         <div><a href="https://www.nexxtlogistics.com/transload.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
       </div>
     <p style="font-size:0.85em;color:#666;margin-top:28px">
@@ -384,6 +412,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

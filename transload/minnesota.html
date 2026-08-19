@@ -957,6 +957,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Minnesota</h1>
@@ -971,197 +989,202 @@
 
     <section>
       <h2>Cities in Minnesota</h2>
-      <p><a href="/transload/minneapolis-mn">Minneapolis (7)</a> &middot; <a href="/transload/duluth-mn">Duluth (5)</a> &middot; <a href="/transload/saint-paul-mn">Saint Paul (4)</a> &middot; <a href="/transload/bloomington-mn">Bloomington (3)</a> &middot; <a href="/transload/st-paul-mn">St. Paul (3)</a> &middot; <span>Cannon Falls (2)</span> &middot; <span>Eagan (2)</span> &middot; <span>Lakeville (2)</span> &middot; <span>Randolph (2)</span> &middot; <span>Saint Cloud (2)</span> &middot; <span>Winona (2)</span> &middot; <span>Albert Lea (1)</span> &middot; <span>Becker (1)</span> &middot; <span>Breckenridge (1)</span> &middot; <span>Campbell (1)</span> &middot; <span>Cottage Grove (1)</span> &middot; <span>Dilworth (1)</span> &middot; <span>Eden Prairie (1)</span> &middot; <span>Faribault (1)</span> &middot; <span>Fergus Falls (1)</span> &middot; <span>Fridley (1)</span> &middot; <span>Glencoe (1)</span> &middot; <span>Green Isle (1)</span> &middot; <span>Hugo (1)</span> &middot; <span>Luverne (1)</span> &middot; <span>Montevideo (1)</span> &middot; <span>New Brighton (1)</span> &middot; <span>New Hope (1)</span> &middot; <span>Newport (1)</span> &middot; <span>North Branch (1)</span> &middot; <span>Ortonville (1)</span> &middot; <span>Roseville (1)</span> &middot; <span>Saint Joseph (1)</span> &middot; <span>Shoreham (1)</span> &middot; <span>South Saint Paul (1)</span> &middot; <span>Two Harbors (1)</span> &middot; <span>Wabasha (1)</span> &middot; <span>Waite Park (1)</span> &middot; <span>Worthington (1)</span></p>
+      <div class="tl-citylist is-collapsed" id="tlCityList" data-total="39">
+        <p><a href="/transload/minneapolis-mn">Minneapolis (7)</a> &middot; <a href="/transload/duluth-mn">Duluth (5)</a> &middot; <a href="/transload/saint-paul-mn">Saint Paul (4)</a> &middot; <a href="/transload/bloomington-mn">Bloomington (3)</a> &middot; <a href="/transload/st-paul-mn">St. Paul (3)</a> &middot; <span>Cannon Falls (2)</span> &middot; <span>Eagan (2)</span> &middot; <span>Lakeville (2)</span> &middot; <span>Randolph (2)</span> &middot; <span>Saint Cloud (2)</span> &middot; <span>Winona (2)</span> &middot; <span>Albert Lea (1)</span> &middot; <span>Becker (1)</span> &middot; <span>Breckenridge (1)</span> &middot; <span>Campbell (1)</span> &middot; <span>Cottage Grove (1)</span> &middot; <span>Dilworth (1)</span> &middot; <span>Eden Prairie (1)</span> &middot; <span>Faribault (1)</span> &middot; <span>Fergus Falls (1)</span> &middot; <span>Fridley (1)</span> &middot; <span>Glencoe (1)</span> &middot; <span>Green Isle (1)</span> &middot; <span>Hugo (1)</span><span class="tl-city-extra"> &middot; <span>Luverne (1)</span></span><span class="tl-city-extra"> &middot; <span>Montevideo (1)</span></span><span class="tl-city-extra"> &middot; <span>New Brighton (1)</span></span><span class="tl-city-extra"> &middot; <span>New Hope (1)</span></span><span class="tl-city-extra"> &middot; <span>Newport (1)</span></span><span class="tl-city-extra"> &middot; <span>North Branch (1)</span></span><span class="tl-city-extra"> &middot; <span>Ortonville (1)</span></span><span class="tl-city-extra"> &middot; <span>Roseville (1)</span></span><span class="tl-city-extra"> &middot; <span>Saint Joseph (1)</span></span><span class="tl-city-extra"> &middot; <span>Shoreham (1)</span></span><span class="tl-city-extra"> &middot; <span>South Saint Paul (1)</span></span><span class="tl-city-extra"> &middot; <span>Two Harbors (1)</span></span><span class="tl-city-extra"> &middot; <span>Wabasha (1)</span></span><span class="tl-city-extra"> &middot; <span>Waite Park (1)</span></span><span class="tl-city-extra"> &middot; <span>Worthington (1)</span></span></p>
+        <button type="button" class="tl-morecities" id="tlMoreCities">Show all 39 cities</button>
+      </div>
     </section>
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (39)</option><option value="albert lea">Albert Lea</option><option value="becker">Becker</option><option value="bloomington">Bloomington</option><option value="breckenridge">Breckenridge</option><option value="campbell">Campbell</option><option value="cannon falls">Cannon Falls</option><option value="cottage grove">Cottage Grove</option><option value="dilworth">Dilworth</option><option value="duluth">Duluth</option><option value="eagan">Eagan</option><option value="eden prairie">Eden Prairie</option><option value="faribault">Faribault</option><option value="fergus falls">Fergus Falls</option><option value="fridley">Fridley</option><option value="glencoe">Glencoe</option><option value="green isle">Green Isle</option><option value="hugo">Hugo</option><option value="lakeville">Lakeville</option><option value="luverne">Luverne</option><option value="minneapolis">Minneapolis</option><option value="montevideo">Montevideo</option><option value="new brighton">New Brighton</option><option value="new hope">New Hope</option><option value="newport">Newport</option><option value="north branch">North Branch</option><option value="ortonville">Ortonville</option><option value="randolph">Randolph</option><option value="roseville">Roseville</option><option value="saint cloud">Saint Cloud</option><option value="saint joseph">Saint Joseph</option><option value="saint paul">Saint Paul</option><option value="shoreham">Shoreham</option><option value="south saint paul">South Saint Paul</option><option value="st. paul">St. Paul</option><option value="two harbors">Two Harbors</option><option value="wabasha">Wabasha</option><option value="waite park">Waite Park</option><option value="winona">Winona</option><option value="worthington">Worthington</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="liquid pumps">Liquid Pumps</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (16)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (29)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 14 of 62 sites and capability detail for 13. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="albert lea" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="minnesota freezer warehouse company albert lea   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Minnesota Freezer Warehouse Company</h3>
         <div style="color:#555;font-size:0.9em">Albert Lea, MN</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="becker" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="becker warehouse and reload becker   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Becker Warehouse and Reload</h3>
         <div style="color:#555;font-size:0.9em">Becker, MN</div>
         <div><strong>Phone:</strong> (763) 262-5830</div>
         <div><a href="https://warehouseandreload.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bloomington" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="brunk llc bloomington  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Brunk LLC</h3>
         <div style="color:#555;font-size:0.9em">Bloomington, MN</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="https://brunkus.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>⚠ website unreachable 2026-08-14 (timeout)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bloomington" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|blower|bulk conveyor|liquid pumps|sampling services|scale|steam heating" data-text="carload connection bloomington  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) steel air compressor blower bulk conveyor liquid pumps sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carload Connection</h3>
         <div style="color:#555;font-size:0.9em">Bloomington, MN</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Sampling Services, Scale, Steam Heating</div>
         <div><a href="https://www.progressiverail.com/rrpgr/lakeville.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bloomington" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="progressive rail bloomington transload bloomington   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Progressive Rail Bloomington Transload</h3>
         <div style="color:#555;font-size:0.9em">Bloomington, MN</div>
         <div><a href="https://progressiverail.com/rrpgr/pgr.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="breckenridge" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="rrvw breckenridge crossdock and transload tracks breckenridge   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">RRVW Breckenridge Crossdock and Transload Tracks</h3>
         <div style="color:#555;font-size:0.9em">Breckenridge, MN</div>
         <div><strong>Phone:</strong> (800) 747-4919</div>
         <div><a href="https://www.rrvw.net/transload" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="campbell" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="nps campbell terminal campbell   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">NPS Campbell Terminal</h3>
         <div style="color:#555;font-size:0.9em">Campbell, MN</div>
         <div><a href="https://www.niagaraportservices.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cannon falls" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="cannon falls transload cannon falls   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cannon Falls Transload</h3>
         <div style="color:#555;font-size:0.9em">Cannon Falls, MN</div>
         <div><a href="https://progressiverail.com/rrcvrc/cvrc.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cannon falls" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|blower|bulk conveyor|liquid pumps|sampling services|scale|steam heating" data-text="carload connection cannon falls  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) steel air compressor blower bulk conveyor liquid pumps sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carload Connection</h3>
         <div style="color:#555;font-size:0.9em">Cannon Falls, MN</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Sampling Services, Scale, Steam Heating</div>
         <div><a href="https://www.progressiverail.com/rrpgr/lakeville.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cottage grove" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="cottage grove automotive compound cottage grove   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cottage Grove Automotive Compound</h3>
         <div style="color:#555;font-size:0.9em">Cottage Grove, MN</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dilworth" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="bnsf dilworth vehicle facility dilworth   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">BNSF Dilworth Vehicle Facility</h3>
         <div style="color:#555;font-size:0.9em">Dilworth, MN</div>
         <div><strong>Phone:</strong> (888) 428-2673</div>
         <div><a href="https://www.bnsf.com/ship-with-bnsf/support-services/facility-listings.page" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="duluth" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ceres global duluth   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ceres Global</h3>
         <div style="color:#555;font-size:0.9em">Duluth, MN</div>
         <div><a href="https://bartlettco.com/locations/mn/duluth/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="duluth" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="duluth harbor industrial park duluth   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Duluth Harbor Industrial Park</h3>
         <div style="color:#555;font-size:0.9em">Duluth, MN</div>
         <div><strong>Phone:</strong> (218) 606-1220</div>
         <div><a href="https://www.duluthharborindustrialpark.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="duluth" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="hallett dock company duluth   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Hallett Dock Company</h3>
         <div style="color:#555;font-size:0.9em">Duluth, MN</div>
         <div><strong>Phone:</strong> (218) 628-2281</div>
-        <div>⚠ website unreachable 2026-08-14 (dns) — dead domain link removed 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="duluth" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="hallett railroad storage and services duluth   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Hallett Railroad Storage And Services</h3>
         <div style="color:#555;font-size:0.9em">Duluth, MN</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="duluth" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="lake superior warehousing co duluth   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lake Superior Warehousing Co</h3>
         <div style="color:#555;font-size:0.9em">Duluth, MN</div>
         <div><strong>Phone:</strong> (218) 727-6646</div>
         <div><a href="https://lakesuperiorwarehousing.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="eagan" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="citi-cargo &amp; storage eagan   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Citi-Cargo &amp; Storage</h3>
         <div style="color:#555;font-size:0.9em">Eagan, MN</div>
         <div><strong>Phone:</strong> (800) 864-3752</div>
         <div><a href="https://citi-cargo.com/minnesota-warehousing-locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="eagan" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="murphy logistics eagan distribution center eagan   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Murphy Logistics Eagan Distribution Center</h3>
         <div style="color:#555;font-size:0.9em">Eagan, MN</div>
         <div><strong>Phone:</strong> (612) 623-1200</div>
         <div><a href="https://www.murphylogistics.com/warehousing/mn-warehousing/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="eden prairie" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="arrow reload eden prairie   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Arrow Reload</h3>
         <div style="color:#555;font-size:0.9em">Eden Prairie, MN</div>
         <div><a href="https://www.arrow.ca/reload/location/minneapolis-reload-%F0%9F%86%95/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="faribault" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="vogelsberg trucking faribault   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Vogelsberg Trucking</h3>
         <div style="color:#555;font-size:0.9em">Faribault, MN</div>
         <div><strong>Phone:</strong> (507) 333-5085</div>
         <div><a href="https://vogelsbergtrucking.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fergus falls" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="otter tail valley railroad (otvr) fergus falls genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Otter Tail Valley Railroad (OTVR)</h3>
         <div style="color:#555;font-size:0.9em">Fergus Falls, MN</div>
         <div><a href="https://www.gwrr.com/railroads/otter-tail-valley-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fridley" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="commercial transload of minnesota trucklines inc. fridley   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Commercial Transload Of Minnesota Trucklines Inc.</h3>
         <div style="color:#555;font-size:0.9em">Fridley, MN</div>
         <div><a href="https://ctm-truck.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="glencoe" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="twin cities &amp; western railroad glencoe   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Twin Cities &amp; Western Railroad</h3>
         <div style="color:#555;font-size:0.9em">Glencoe, MN</div>
         <div><strong>Phone:</strong> (320) 864-7200</div>
         <div><a href="http://www.tcwr.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="green isle" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="green isle team track green isle   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Green Isle Team Track</h3>
         <div style="color:#555;font-size:0.9em">Green Isle, MN</div>
         <div><strong>Phone:</strong> (800) 290-8297</div>
         <div><a href="https://tcwr.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hugo" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="hugo team track hugo   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Hugo Team Track</h3>
         <div style="color:#555;font-size:0.9em">Hugo, MN</div>
         <div><a href="https://mnnr.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lakeville" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|blower|bulk conveyor|liquid pumps|sampling services|scale|steam heating" data-text="carload connection lakeville  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) steel air compressor blower bulk conveyor liquid pumps sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carload Connection</h3>
         <div style="color:#555;font-size:0.9em">Lakeville, MN</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Sampling Services, Scale, Steam Heating</div>
         <div><a href="https://www.progressiverail.com/rrpgr/lakeville.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lakeville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="progressive rail lakeville transload lakeville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Progressive Rail Lakeville Transload</h3>
         <div style="color:#555;font-size:0.9em">Lakeville, MN</div>
         <div><a href="https://progressiverail.com/rrpgr/pgr.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="luverne" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lineage luverne luverne   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lineage Luverne</h3>
         <div style="color:#555;font-size:0.9em">Luverne, MN</div>
         <div><a href="https://www.onelineage.com/facilities/luverne" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="minneapolis" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="cpkc shoreham minneapolis stonearch  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">CPKC Shoreham</h3>
         <div style="color:#555;font-size:0.9em">Minneapolis, MN</div>
         <div><strong>Phone:</strong> (612) 356-5160</div>
         <div><a href="https://www.stonearchcom.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Stonearch — phone from operator website 2026-08-14</div>
+        <div>Stonearch</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="minneapolis" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="distribution centers of minnesota inc. minneapolis   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Distribution Centers of Minnesota Inc.</h3>
         <div style="color:#555;font-size:0.9em">Minneapolis, MN</div>
         <div><strong>Phone:</strong> (800) 625-5292</div>
         <div><a href="https://kochtrucking.com/koch-companies/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="minneapolis" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|chemicals (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="ee-jay motor transports inc minneapolis  chemicals (dry) chemicals (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ee-Jay Motor Transports Inc</h3>
         <div style="color:#555;font-size:0.9em">Minneapolis, MN</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1169,28 +1192,27 @@
         <div><strong>Phone:</strong> (800) 421-0124</div>
         <div><a href="http://www.ee-jay.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="minneapolis" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="forest specialties, llc minneapolis mpls-reload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Forest Specialties, LLC</h3>
         <div style="color:#555;font-size:0.9em">Minneapolis, MN</div>
         <div><strong>Phone:</strong> (763) 235-2050</div>
         <div><a href="https://fsmn.co/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Mpls-Reload — phone from operator website 2026-08-14</div>
+        <div>Mpls-Reload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="minneapolis" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="murphy warehouse company minneapolis   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Murphy Warehouse Company</h3>
         <div style="color:#555;font-size:0.9em">Minneapolis, MN</div>
         <div><strong>Phone:</strong> (612) 623-1200</div>
         <div><a href="https://www.murphylogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="minneapolis" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express minneapolis  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Minneapolis, MN</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Sampling Services, Scale</div>
         <div><a href="http://www.plasticexpress.com/operations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="minneapolis" data-tier="verified" data-phone="1" data-comm="foods (dry)|frac sand|minerals" data-cap="bulk conveyor" data-text="stone arch commodities minneapolis  foods (dry) frac sand minerals bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Stone Arch Commodities</h3>
         <div style="color:#555;font-size:0.9em">Minneapolis, MN</div>
         <div><strong>Commodities:</strong> Foods (Dry), Frac Sand, Minerals</div>
@@ -1198,29 +1220,28 @@
         <div><strong>Phone:</strong> (612) 356-5160</div>
         <div><a href="https://www.stonearchcom.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="montevideo" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="tcwr montevideo transload montevideo   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TCWR Montevideo Transload</h3>
         <div style="color:#555;font-size:0.9em">Montevideo, MN</div>
         <div><strong>Phone:</strong> (320) 864-7233</div>
         <div><a href="https://tcwr.net/customers/non-rail-served/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new brighton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="commercial transload of minnesota new brighton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Commercial Transload of Minnesota</h3>
         <div style="color:#555;font-size:0.9em">New Brighton, MN</div>
         <div><a href="https://regional-rail.com/commercial-transload-of-minnesota-ctm/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new hope" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="world transload &amp; logistics llc new hope   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">World Transload &amp; Logistics LLC</h3>
         <div style="color:#555;font-size:0.9em">New Hope, MN</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="newport" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="americold logistics llc newport   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Americold Logistics LLC</h3>
         <div style="color:#555;font-size:0.9em">Newport, MN</div>
         <div><a href="https://www.americold.com/facilities/newport/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north branch" data-tier="verified" data-phone="1" data-comm="frac sand" data-cap="bulk conveyor|scale" data-text="titan lansing transloading north branch  frac sand bulk conveyor scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Titan Lansing Transloading</h3>
         <div style="color:#555;font-size:0.9em">North Branch, MN</div>
         <div><strong>Commodities:</strong> Frac Sand</div>
@@ -1228,7 +1249,7 @@
         <div><strong>Phone:</strong> (651) 797-6447</div>
         <div><a href="http://www.titanlansing.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ortonville" data-tier="verified" data-phone="1" data-comm="foods (dry)|frac sand|lumber|minerals|petroleum products|steel" data-cap="bulk conveyor|liquid pumps|sampling services" data-text="l.g. everist inc ortonville  foods (dry) frac sand lumber minerals petroleum products steel bulk conveyor liquid pumps sampling services" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">L.G. Everist Inc</h3>
         <div style="color:#555;font-size:0.9em">Ortonville, MN</div>
         <div><strong>Commodities:</strong> Foods (Dry), Frac Sand, Lumber, Minerals, Petroleum Products, Steel</div>
@@ -1236,71 +1257,66 @@
         <div><strong>Phone:</strong> (320) 839-6131</div>
         <div><a href="http://www.lgeverist.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="randolph" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|blower|bulk conveyor|liquid pumps|sampling services|scale|steam heating" data-text="carload connection randolph  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) steel air compressor blower bulk conveyor liquid pumps sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carload Connection</h3>
         <div style="color:#555;font-size:0.9em">Randolph, MN</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Sampling Services, Scale, Steam Heating</div>
         <div><a href="https://www.progressiverail.com/rrpgr/lakeville.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="randolph" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="randolph transload randolph   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Randolph Transload</h3>
         <div style="color:#555;font-size:0.9em">Randolph, MN</div>
         <div><a href="https://progressiverail.com/rrcvrc/cvrc.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="roseville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="twin city reload roseville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Twin City Reload</h3>
         <div style="color:#555;font-size:0.9em">Roseville, MN</div>
         <div><strong>Phone:</strong> (651) 631-8118</div>
         <div><a href="https://tcreload.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="saint cloud" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="maiers transport &amp; warehousing saint cloud   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Maiers Transport &amp; Warehousing</h3>
         <div style="color:#555;font-size:0.9em">Saint Cloud, MN</div>
         <div><strong>Phone:</strong> (320) 251-6882</div>
         <div><a href="https://www.mtwstcloud.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="saint cloud" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="nlr yard transload track saint cloud   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">NLR Yard Transload Track</h3>
         <div style="color:#555;font-size:0.9em">Saint Cloud, MN</div>
         <div><a href="https://www.anacostia.com/our-companies/nlr/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="saint joseph" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="rail to road st. joe terminal saint joseph   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rail to Road St. Joe Terminal</h3>
         <div style="color:#555;font-size:0.9em">Saint Joseph, MN</div>
         <div><strong>Phone:</strong> (605) 336-5855</div>
         <div><a href="https://railtoroad.com/transloading/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="saint paul" data-tier="verified" data-phone="1" data-comm="frac sand|lumber|minerals|steel" data-cap="" data-text="alter river terminal st paul saint paul  frac sand lumber minerals steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Alter River Terminal St Paul</h3>
         <div style="color:#555;font-size:0.9em">Saint Paul, MN</div>
         <div><strong>Commodities:</strong> Frac Sand, Lumber, Minerals, Steel</div>
         <div><strong>Phone:</strong> (651) 222-2754</div>
         <div><a href="http://alterlogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="saint paul" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="bnsf dayton's bluff vehicle facility saint paul   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">BNSF Dayton's Bluff Vehicle Facility</h3>
         <div style="color:#555;font-size:0.9em">Saint Paul, MN</div>
         <div><strong>Phone:</strong> (888) 428-2673</div>
         <div><a href="https://www.bnsf.com/ship-with-bnsf/support-services/facility-listings.page" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="saint paul" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="rail transfer inc. saint paul   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rail Transfer Inc.</h3>
         <div style="color:#555;font-size:0.9em">Saint Paul, MN</div>
         <div><strong>Phone:</strong> (651) 487-1713</div>
         <div><a href="https://railtransfer.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="saint paul" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="union pacific drake street automotive facility saint paul   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Union Pacific Drake Street Automotive Facility</h3>
         <div style="color:#555;font-size:0.9em">Saint Paul, MN</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="shoreham" data-tier="verified" data-phone="1" data-comm="foods (dry)|foods (liq)" data-cap="sampling services" data-text="foodliner inc shoreham  foods (dry) foods (liq) sampling services" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Foodliner Inc</h3>
         <div style="color:#555;font-size:0.9em">Shoreham, MN</div>
         <div><strong>Commodities:</strong> Foods (Dry), Foods (Liq)</div>
@@ -1308,44 +1324,44 @@
         <div><strong>Phone:</strong> (651) 345-2860</div>
         <div><a href="https://foodliner.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="south saint paul" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kinder morgan dakota bulk terminal south saint paul   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kinder Morgan Dakota Bulk Terminal</h3>
         <div style="color:#555;font-size:0.9em">South Saint Paul, MN</div>
         <div><a href="https://www.kindermorgan.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="st. paul" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="gavilon grain llc st. paul   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Gavilon Grain LLC</h3>
         <div style="color:#555;font-size:0.9em">St. Paul, MN</div>
         <div><a href="https://www.viterra.us/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="st. paul" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express st. paul  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">St. Paul, MN</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Sampling Services, Scale</div>
         <div><a href="http://www.plasticexpress.com/operations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="st. paul" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ponderosa solutions st. paul   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ponderosa Solutions</h3>
         <div style="color:#555;font-size:0.9em">St. Paul, MN</div>
         <div><a href="https://theponderosasolution.com/services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="two harbors" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="cn two harbors ore dock two harbors   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">CN Two Harbors Ore Dock</h3>
         <div style="color:#555;font-size:0.9em">Two Harbors, MN</div>
         <div><a href="https://www.cn.ca/en/delivering-responsibly/community/network-and-facts/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wabasha" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="roemer construction co wabasha   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Roemer Construction Co</h3>
         <div style="color:#555;font-size:0.9em">Wabasha, MN</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="waite park" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="waite park team track waite park   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Waite Park Team Track</h3>
         <div style="color:#555;font-size:0.9em">Waite Park, MN</div>
         <div><a href="https://www.anacostia.com/our-companies/nlr/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="winona" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|minerals" data-cap="bulk conveyor|scale" data-text="seven rivers intermodal terminal llc winona  chemicals (dry) minerals bulk conveyor scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Seven Rivers Intermodal Terminal LLC</h3>
         <div style="color:#555;font-size:0.9em">Winona, MN</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Minerals</div>
@@ -1353,17 +1369,17 @@
         <div><strong>Phone:</strong> (507) 474-9450</div>
         <div><a href="https://www.sevenriversintermodal.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="winona" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="the andersons winona   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">The Andersons</h3>
         <div style="color:#555;font-size:0.9em">Winona, MN</div>
         <div><a href="https://www.andersonsinc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="worthington" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="rail to road transloading worthington agate terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rail to Road Transloading</h3>
         <div style="color:#555;font-size:0.9em">Worthington, MN</div>
         <div><strong>Phone:</strong> (605) 336-5855</div>
         <div><a href="https://railtoroad.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Agate Terminal — phone from operator website 2026-08-14</div>
+        <div>Agate Terminal</div>
       </div>
       </div>
     <p style="font-size:0.85em;color:#666;margin-top:28px">
@@ -1391,6 +1407,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

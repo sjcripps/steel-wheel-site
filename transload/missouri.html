@@ -930,6 +930,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Missouri</h1>
@@ -944,159 +962,166 @@
 
     <section>
       <h2>Cities in Missouri</h2>
-      <p><a href="/transload/kansas-city-mo">Kansas City (17)</a> &middot; <a href="/transload/st-louis-mo">St. Louis (6)</a> &middot; <a href="/transload/saint-louis-mo">Saint Louis (3)</a> &middot; <a href="/transload/springfield-mo">Springfield (3)</a> &middot; <span>Carthage (2)</span> &middot; <span>Joplin (2)</span> &middot; <span>North Kansas City (2)</span> &middot; <span>Saint Joseph (2)</span> &middot; <span>Scott City (2)</span> &middot; <span>Union (2)</span> &middot; <span>Adrian (1)</span> &middot; <span>Belton (1)</span> &middot; <span>Brunswick (1)</span> &middot; <span>Chillicothe (1)</span> &middot; <span>Clarksville (1)</span> &middot; <span>Columbia (1)</span> &middot; <span>East St. Louis (1)</span> &middot; <span>Goodman (1)</span> &middot; <span>Hayti (1)</span> &middot; <span>Jefferson City (1)</span> &middot; <span>Montrose (1)</span> &middot; <span>New Madrid (1)</span> &middot; <span>Park Hills (1)</span> &middot; <span>Purdy (1)</span> &middot; <span>St Joseph (1)</span> &middot; <span>St. Joseph (1)</span> &middot; <span>Valley Park (1)</span> &middot; <span>Washington (1)</span> &middot; <span>Webb City (1)</span></p>
+      <div class="tl-citylist is-collapsed" id="tlCityList" data-total="29">
+        <p><a href="/transload/kansas-city-mo">Kansas City (17)</a> &middot; <a href="/transload/st-louis-mo">St. Louis (6)</a> &middot; <a href="/transload/saint-louis-mo">Saint Louis (3)</a> &middot; <a href="/transload/springfield-mo">Springfield (3)</a> &middot; <span>Carthage (2)</span> &middot; <span>Joplin (2)</span> &middot; <span>North Kansas City (2)</span> &middot; <span>Saint Joseph (2)</span> &middot; <span>Scott City (2)</span> &middot; <span>Union (2)</span> &middot; <span>Adrian (1)</span> &middot; <span>Belton (1)</span> &middot; <span>Brunswick (1)</span> &middot; <span>Chillicothe (1)</span> &middot; <span>Clarksville (1)</span> &middot; <span>Columbia (1)</span> &middot; <span>East St. Louis (1)</span> &middot; <span>Goodman (1)</span> &middot; <span>Hayti (1)</span> &middot; <span>Jefferson City (1)</span> &middot; <span>Montrose (1)</span> &middot; <span>New Madrid (1)</span> &middot; <span>Park Hills (1)</span> &middot; <span>Purdy (1)</span><span class="tl-city-extra"> &middot; <span>St Joseph (1)</span></span><span class="tl-city-extra"> &middot; <span>St. Joseph (1)</span></span><span class="tl-city-extra"> &middot; <span>Valley Park (1)</span></span><span class="tl-city-extra"> &middot; <span>Washington (1)</span></span><span class="tl-city-extra"> &middot; <span>Webb City (1)</span></span></p>
+        <button type="button" class="tl-morecities" id="tlMoreCities">Show all 29 cities</button>
+      </div>
     </section>
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (29)</option><option value="adrian">Adrian</option><option value="belton">Belton</option><option value="brunswick">Brunswick</option><option value="carthage">Carthage</option><option value="chillicothe">Chillicothe</option><option value="clarksville">Clarksville</option><option value="columbia">Columbia</option><option value="east st. louis">East St. Louis</option><option value="goodman">Goodman</option><option value="hayti">Hayti</option><option value="jefferson city">Jefferson City</option><option value="joplin">Joplin</option><option value="kansas city">Kansas City</option><option value="montrose">Montrose</option><option value="new madrid">New Madrid</option><option value="north kansas city">North Kansas City</option><option value="park hills">Park Hills</option><option value="purdy">Purdy</option><option value="saint joseph">Saint Joseph</option><option value="saint louis">Saint Louis</option><option value="scott city">Scott City</option><option value="springfield">Springfield</option><option value="st joseph">St Joseph</option><option value="st. joseph">St. Joseph</option><option value="st. louis">St. Louis</option><option value="union">Union</option><option value="valley park">Valley Park</option><option value="washington">Washington</option><option value="webb city">Webb City</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="auger">Auger</option><option value="blending meters">Blending Meters</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="liquid pumps">Liquid Pumps</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (14)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (28)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 12 of 60 sites and capability detail for 10. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="adrian" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="the scoular company adrian   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">The Scoular Company</h3>
         <div style="color:#555;font-size:0.9em">Adrian, MO</div>
         <div><a href="https://www.scoular.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="belton" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="laufer kansas city transload and fumigation facility belton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Laufer Kansas City Transload and Fumigation Facility</h3>
         <div style="color:#555;font-size:0.9em">Belton, MO</div>
         <div><strong>Phone:</strong> (212) 945-6000</div>
         <div><a href="https://lgi.laufer.com/insights/the-ultimate-kansas-city-terminal-guide/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="brunswick" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="agriservices of brunswick brunswick river terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">AGRIServices of Brunswick</h3>
         <div style="color:#555;font-size:0.9em">Brunswick, MO</div>
         <div><strong>Phone:</strong> (800) 279-4229</div>
         <div><a href="https://agriservices.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>River Terminal — phone from operator website 2026-08-14</div>
+        <div>River Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="carthage" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="americold logistics carthage   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Americold Logistics</h3>
         <div style="color:#555;font-size:0.9em">Carthage, MO</div>
         <div><a href="https://www.americold.com/facilities/carthage/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="carthage" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="missouri &amp; northern arkansas railroad (mna) carthage genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Missouri &amp; Northern Arkansas Railroad (MNA)</h3>
         <div style="color:#555;font-size:0.9em">Carthage, MO</div>
         <div><a href="https://www.gwrr.com/railroads/missouri-and-northern-arkansas-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chillicothe" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="missouri north central railroad / motive rail chillicothe transload chillicothe   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Missouri North Central Railroad / Motive Rail Chillicothe Transload</h3>
         <div style="color:#555;font-size:0.9em">Chillicothe, MO</div>
         <div><strong>Phone:</strong> (618) 978-0075</div>
         <div><a href="https://www.motiverail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="clarksville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="pike lincoln county port authority clarksville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pike Lincoln County Port Authority</h3>
         <div style="color:#555;font-size:0.9em">Clarksville, MO</div>
         <div><strong>Phone:</strong> (573) 324-4297</div>
         <div><a href="https://pikelincolnport.org/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="columbia" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="colt transload columbia   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">COLT Transload</h3>
         <div style="color:#555;font-size:0.9em">Columbia, MO</div>
         <div><strong>Phone:</strong> (573) 441-5561</div>
         <div><a href="https://www.COMO.gov/utilities/Columbia-colt-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="east st. louis" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|chemicals (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="ee-jay motor transports inc east st. louis  chemicals (dry) chemicals (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ee-Jay Motor Transports Inc</h3>
         <div style="color:#555;font-size:0.9em">East St. Louis, MO</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale</div>
         <div><strong>Phone:</strong> (800) 421-0124</div>
         <div><a href="https://ee-jay.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="goodman" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bcwc llc goodman   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bcwc LLC</h3>
         <div style="color:#555;font-size:0.9em">Goodman, MO</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hayti" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="pemiscot county port authority rail-truck transload site hayti   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pemiscot County Port Authority Rail-Truck Transload Site</h3>
         <div style="color:#555;font-size:0.9em">Hayti, MO</div>
         <div><strong>Phone:</strong> (573) 333-4125</div>
         <div><a href="https://www.pemiscotport.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="jefferson city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="capital area rail terminal jefferson city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Capital Area Rail Terminal</h3>
         <div style="color:#555;font-size:0.9em">Jefferson City, MO</div>
         <div><a href="https://capitalteams.com/capital-area-rail-terminal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="joplin" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="jaguar transport holdings joplin   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Jaguar Transport Holdings</h3>
         <div style="color:#555;font-size:0.9em">Joplin, MO</div>
         <div><a href="https://jag-transport.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="joplin" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="the andersons joplin   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">The Andersons</h3>
         <div style="color:#555;font-size:0.9em">Joplin, MO</div>
         <div><a href="https://www.andersonsinc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kansas city" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|foods (dry)|minerals|plastics (dry)" data-cap="auger|blower|bulk conveyor|sampling services|scale" data-text="affton terminal services kansas city  chemicals (dry) foods (dry) minerals plastics (dry) auger blower bulk conveyor sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Affton Terminal Services</h3>
         <div style="color:#555;font-size:0.9em">Kansas City, MO</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Foods (Dry), Minerals, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Auger, Blower, Bulk Conveyor, Sampling Services, Scale</div>
         <div><strong>Phone:</strong> (314) 388-9700</div>
         <div><a href="http://www.afftontrucking.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kansas city" data-tier="verified" data-phone="0" data-comm="acids|chemicals (liq)|petroleum products" data-cap="air compressor|blending meters|liquid pumps|sampling services|scale" data-text="arm-dat inc kansas city  acids chemicals (liq) petroleum products air compressor blending meters liquid pumps sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Arm-Dat Inc</h3>
         <div style="color:#555;font-size:0.9em">Kansas City, MO</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Liq), Petroleum Products</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blending Meters, Liquid Pumps, Sampling Services, Scale</div>
         <div><a href="https://www.facebook.com/armdatincorporated/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kansas city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bluelinx corporation kansas city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bluelinx Corporation</h3>
         <div style="color:#555;font-size:0.9em">Kansas City, MO</div>
         <div><a href="https://bluelinxco.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kansas city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="dfi inc. kansas city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Dfi Inc.</h3>
         <div style="color:#555;font-size:0.9em">Kansas City, MO</div>
         <div><a href="https://dunningexpress.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kansas city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="dfi/bulkmatic kansas city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">DFI/Bulkmatic</h3>
         <div style="color:#555;font-size:0.9em">Kansas City, MO</div>
         <div><a href="https://dunningexpress.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kansas city" data-tier="review" data-phone="0" data-comm="foods (dry)|foods (liq)" data-cap="sampling services" data-text="foodliner inc kansas city  foods (dry) foods (liq) sampling services" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Foodliner Inc</h3>
         <div style="color:#555;font-size:0.9em">Kansas City, MO</div>
         <div><strong>Commodities:</strong> Foods (Dry), Foods (Liq)</div>
         <div><strong>Capabilities:</strong> Sampling Services</div>
         <div><a href="http://foodliner.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kansas city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="geodis kansas city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Geodis</h3>
         <div style="color:#555;font-size:0.9em">Kansas City, MO</div>
         <div><strong>Phone:</strong> (816) 214-4742</div>
         <div><a href="https://geodis.com/us-en/locations/geodis-contract-logistics-kansas-city-1" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kansas city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="governor michael l. parson port terminal kansas city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Governor Michael L. Parson Port Terminal</h3>
         <div style="color:#555;font-size:0.9em">Kansas City, MO</div>
         <div><strong>Phone:</strong> (816) 559-3750</div>
         <div><a href="https://portkc.com/project/governor-michael-l-parson-port-terminal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kansas city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kansas city west bottoms railroad kansas city jaguar transport holdings  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kansas City West Bottoms Railroad</h3>
         <div style="color:#555;font-size:0.9em">Kansas City, MO</div>
         <div><a href="https://jag-transport.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Jaguar Transport Holdings — website repointed to homepage 2026-08-15 (old page removed)</div>
+        <div>Jaguar Transport Holdings</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kansas city" data-tier="verified" data-phone="1" data-comm="acids|chemicals (liq)|petroleum products" data-cap="blending meters|liquid pumps|sampling services|steam heating|tank trailer cleaning" data-text="liquid transport corp kansas city  acids chemicals (liq) petroleum products blending meters liquid pumps sampling services steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Liquid Transport Corp</h3>
         <div style="color:#555;font-size:0.9em">Kansas City, MO</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Liq), Petroleum Products</div>
@@ -1104,127 +1129,117 @@
         <div><strong>Phone:</strong> (816) 781-6200</div>
         <div><a href="http://www.liquidtransport.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kansas city" data-tier="verified" data-phone="1" data-comm="lumber|steel" data-cap="" data-text="midwest reload kansas city  lumber steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Midwest Reload</h3>
         <div style="color:#555;font-size:0.9em">Kansas City, MO</div>
         <div><strong>Commodities:</strong> Lumber, Steel</div>
         <div><strong>Phone:</strong> (816) 471-6754</div>
-        <div>⚠ website unreachable 2026-08-14 (dns) — dead domain link removed 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kansas city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="mode 3 logistics llc kansas city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mode 3 Logistics LLC</h3>
         <div style="color:#555;font-size:0.9em">Kansas City, MO</div>
         <div><a href="https://mode3logistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>⚠ website unreachable 2026-08-14 (503)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kansas city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="murphy logistics company kansas city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Murphy Logistics Company</h3>
         <div style="color:#555;font-size:0.9em">Kansas City, MO</div>
         <div><strong>Phone:</strong> (612) 623-1200</div>
         <div><a href="https://www.murphylogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kansas city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="norag llc kansas city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norag LLC</h3>
         <div style="color:#555;font-size:0.9em">Kansas City, MO</div>
         <div><strong>Phone:</strong> (913) 851-7200</div>
         <div><a href="https://www.norag-us.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kansas city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="paris brothers inc. kansas city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Paris Brothers Inc.</h3>
         <div style="color:#555;font-size:0.9em">Kansas City, MO</div>
         <div><strong>Phone:</strong> (816) 455-4188</div>
         <div><a href="https://parisbrothers.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kansas city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="rail modal group kansas city grain terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rail Modal Group</h3>
         <div style="color:#555;font-size:0.9em">Kansas City, MO</div>
         <div><a href="https://www.railmodalgroup.com/kansas-city-mo" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Grain Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kansas city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="savage services — kansas city, mo kansas city savage location — 4900 main st #1200 — 816) 753-6300  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Services — Kansas City, MO</h3>
         <div style="color:#555;font-size:0.9em">Kansas City, MO</div>
         <div><a href="https://savageco.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Savage location — 4900 Main St #1200 — 816) 753-6300 — operator sweep 2026-08-14</div>
+        <div>Savage location — 4900 Main St #1200 — 816) 753-6300</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="montrose" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="montrose grain montrose   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Montrose Grain</h3>
         <div style="color:#555;font-size:0.9em">Montrose, MO</div>
         <div><strong>Phone:</strong> (660) 693-2285</div>
         <div><a href="https://www.montrosegrain.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new madrid" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="new madrid county port authority new madrid   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">New Madrid County Port Authority</h3>
         <div style="color:#555;font-size:0.9em">New Madrid, MO</div>
         <div><strong>Phone:</strong> (573) 748-2530</div>
         <div><a href="https://www.newmadridcountyport.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north kansas city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="ctw logistics (consolidated transfer &amp; warehouse) north kansas city taney street transload facility  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">CTW Logistics (Consolidated Transfer &amp; Warehouse)</h3>
         <div style="color:#555;font-size:0.9em">North Kansas City, MO</div>
         <div><strong>Phone:</strong> (816) 221-3411</div>
         <div><a href="https://www.ctwlogistics.com/transload" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Taney Street Transload Facility — phone from operator website 2026-08-14</div>
+        <div>Taney Street Transload Facility</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north kansas city" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="metro park warehouses north kansas city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Metro Park Warehouses</h3>
         <div style="color:#555;font-size:0.9em">North Kansas City, MO</div>
         <div><strong>Phone:</strong> (816) 221-4546</div>
         <div><a href="https://metroparkwarehouses.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="park hills" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="capital railroad contracting park hills transloading hub  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Capital Railroad Contracting</h3>
         <div style="color:#555;font-size:0.9em">Park Hills, MO</div>
         <div><a href="https://capitalrailroad.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transloading Hub</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="purdy" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ozark transmodal inc. purdy   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ozark Transmodal Inc.</h3>
         <div style="color:#555;font-size:0.9em">Purdy, MO</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="saint joseph" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="dfi inc. saint joseph   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Dfi Inc.</h3>
         <div style="color:#555;font-size:0.9em">Saint Joseph, MO</div>
         <div><a href="https://dunningexpress.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="saint joseph" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="nor-am cold storage saint joseph   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Nor-Am Cold Storage</h3>
         <div style="color:#555;font-size:0.9em">Saint Joseph, MO</div>
         <div><strong>Phone:</strong> (712) 546-4489</div>
         <div><a href="https://www.nor-am.com/locations" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="saint louis" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="a dana company saint louis   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">a DANA Company</h3>
         <div style="color:#555;font-size:0.9em">Saint Louis, MO</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="saint louis" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lineage logistics saint louis   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lineage Logistics</h3>
         <div style="color:#555;font-size:0.9em">Saint Louis, MO</div>
         <div><a href="https://www.onelineage.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="saint louis" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="scf lewis and clark terminals mrt saint louis   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Scf Lewis And Clark Terminals Mrt</h3>
         <div style="color:#555;font-size:0.9em">Saint Louis, MO</div>
         <div><strong>Phone:</strong> (615) 298-8200</div>
         <div><a href="https://ingraminfrastructure.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="scott city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="consolidated grain &amp; barge scott city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Consolidated Grain &amp; Barge</h3>
         <div style="color:#555;font-size:0.9em">Scott City, MO</div>
         <div><strong>Phone:</strong> (985) 867-3500</div>
         <div><a href="https://www.cgbgrain.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="scott city" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|foods (dry)|plastics (dry)" data-cap="auger|bulk conveyor|scale" data-text="semo port scott city  chemicals (dry) foods (dry) plastics (dry) auger bulk conveyor scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Semo Port</h3>
         <div style="color:#555;font-size:0.9em">Scott City, MO</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Foods (Dry), Plastics (Dry)</div>
@@ -1232,35 +1247,35 @@
         <div><strong>Phone:</strong> (573) 264-4045</div>
         <div><a href="https://www.semoport.com/home-railroad/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="springfield" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="queen city warehouse springfield   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Queen City Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Springfield, MO</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="springfield" data-tier="verified" data-phone="1" data-comm="lumber|steel" data-cap="" data-text="springfield underground inc springfield  lumber steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Springfield Underground Inc</h3>
         <div style="color:#555;font-size:0.9em">Springfield, MO</div>
         <div><strong>Commodities:</strong> Lumber, Steel</div>
         <div><strong>Phone:</strong> (417) 874-1400</div>
         <div><a href="http://www.springfieldunderground.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="springfield" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ümlaut transloading springfield   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ümlaut Transloading</h3>
         <div style="color:#555;font-size:0.9em">Springfield, MO</div>
         <div><a href="https://www.umlauttransloading.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="st joseph" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bulkmatic - saint joseph st joseph   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulkmatic - Saint Joseph</h3>
         <div style="color:#555;font-size:0.9em">St Joseph, MO</div>
         <div><a href="https://www.bulkmatic.com/service/transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="st. joseph" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="transport360 st. joseph port of  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TransPort360</h3>
         <div style="color:#555;font-size:0.9em">St. Joseph, MO</div>
         <div><a href="https://www.transport360.org/blank" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Port of</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="st. louis" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|foods (dry)|minerals|plastics (dry)" data-cap="auger|blower|bulk conveyor|sampling services|scale" data-text="affton terminal services st. louis  chemicals (dry) foods (dry) minerals plastics (dry) auger blower bulk conveyor sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Affton Terminal Services</h3>
         <div style="color:#555;font-size:0.9em">St. Louis, MO</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Foods (Dry), Minerals, Plastics (Dry)</div>
@@ -1268,50 +1283,48 @@
         <div><strong>Phone:</strong> (314) 388-9700</div>
         <div><a href="http://www.afftontrucking.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="st. louis" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="carload connection st. louis   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carload Connection</h3>
         <div style="color:#555;font-size:0.9em">St. Louis, MO</div>
         <div><a href="https://www.progressiverail.com/rrpgr/lakeville.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="st. louis" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="harcros chemicals st. louis   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Harcros Chemicals</h3>
         <div style="color:#555;font-size:0.9em">St. Louis, MO</div>
         <div><a href="https://www.harcros.com/our-locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="st. louis" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="ingram tyler street terminal st. louis   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ingram Tyler Street Terminal</h3>
         <div style="color:#555;font-size:0.9em">St. Louis, MO</div>
         <div><strong>Phone:</strong> (615) 298-8200</div>
         <div><a href="https://ingrambarge.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="st. louis" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="st. louis gateway transload terminal st. louis   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">St. Louis Gateway Transload Terminal</h3>
         <div style="color:#555;font-size:0.9em">St. Louis, MO</div>
         <div><a href="https://www.watco.com/service/terminals/st-louis-gateway-mo/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="st. louis" data-tier="verified" data-phone="0" data-comm="frac sand|minerals" data-cap="bulk conveyor" data-text="watco terminal &amp; port services st. louis  frac sand minerals bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">St. Louis, MO</div>
         <div><strong>Commodities:</strong> Frac Sand, Minerals</div>
         <div><strong>Capabilities:</strong> Bulk Conveyor</div>
         <div><a href="https://www.watcocompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="union" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|blower|bulk conveyor|liquid pumps|sampling services|scale|steam heating" data-text="carload connection union  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) steel air compressor blower bulk conveyor liquid pumps sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carload Connection</h3>
         <div style="color:#555;font-size:0.9em">Union, MO</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Sampling Services, Scale, Steam Heating</div>
         <div><a href="https://www.progressiverail.com/rrpgr/lakeville.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="union" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="missouri eastern railroad union transload facility  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Missouri Eastern Railroad</h3>
         <div style="color:#555;font-size:0.9em">Union, MO</div>
         <div><a href="https://jag-transport.com/missouri-eastern-railroad/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload Facility</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="valley park" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|bulk conveyor|liquid pumps|sampling services|scale" data-text="burlington junction transload valley park  chemicals (dry) chemicals (liq) foods (dry) foods (liq) lumber minerals petroleum products plastics (dry) steel air compressor bulk conveyor liquid pumps sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Burlington Junction Transload</h3>
         <div style="color:#555;font-size:0.9em">Valley Park, MO</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
@@ -1319,17 +1332,16 @@
         <div><strong>Phone:</strong> (319) 753-6157</div>
         <div><a href="http://www.bjryrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="washington" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="city of washington team track facility washington   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">City of Washington Team Track Facility</h3>
         <div style="color:#555;font-size:0.9em">Washington, MO</div>
         <div><a href="https://www.washmo.gov/o/washmoworks/page/rail-spur-team-track" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="webb city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="standard iron &amp; steel webb city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Standard Iron &amp; Steel</h3>
         <div style="color:#555;font-size:0.9em">Webb City, MO</div>
         <div><strong>Phone:</strong> (417) 673-2444</div>
         <div><a href="https://standardironusa.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
       </div>
     <p style="font-size:0.85em;color:#666;margin-top:28px">
@@ -1357,6 +1369,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

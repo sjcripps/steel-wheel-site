@@ -1243,6 +1243,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in North Carolina</h1>
@@ -1257,20 +1275,37 @@
 
     <section>
       <h2>Cities in North Carolina</h2>
-      <p><a href="/transload/charlotte-nc">Charlotte (8)</a> &middot; <a href="/transload/wilmington-nc">Wilmington (7)</a> &middot; <a href="/transload/winston-salem-nc">Winston-Salem (5)</a> &middot; <a href="/transload/fayetteville-nc">Fayetteville (3)</a> &middot; <span>Aberdeen (2)</span> &middot; <span>Ahoskie (2)</span> &middot; <span>Gastonia (2)</span> &middot; <span>Goldsboro (2)</span> &middot; <span>Greenville (2)</span> &middot; <span>Lumberton (2)</span> &middot; <span>Midland (2)</span> &middot; <span>Raleigh (2)</span> &middot; <span>Rural Hall (2)</span> &middot; <span>Sanford (2)</span> &middot; <span>Selma (2)</span> &middot; <span>Statesville (2)</span> &middot; <span>Whiteville (2)</span> &middot; <span>Asheville (1)</span> &middot; <span>Bear Creek (1)</span> &middot; <span>Benson (1)</span> &middot; <span>Bostic (1)</span> &middot; <span>Candor (1)</span> &middot; <span>Chadbourn (1)</span> &middot; <span>Charlotte (West) (1)</span> &middot; <span>Clemmons (1)</span> &middot; <span>Conover (1)</span> &middot; <span>Edenton (1)</span> &middot; <span>Elkin (1)</span> &middot; <span>Fuquay-Varina (1)</span> &middot; <span>Gold Hill (1)</span> &middot; <span>Greensboro (1)</span> &middot; <span>Kinston (1)</span> &middot; <span>Lattimore (1)</span> &middot; <span>Laurinburg (1)</span> &middot; <span>McAdenville (1)</span> &middot; <span>Middlesex (1)</span> &middot; <span>Millers (1)</span> &middot; <span>Morehead City (1)</span> &middot; <span>Mt Gilead (1)</span> &middot; <span>Oakboro (1)</span> &middot; <span>Pineville (1)</span> &middot; <span>Raeford (1)</span> &middot; <span>Rocky Mount (1)</span> &middot; <span>Shelby (1)</span> &middot; <span>Siloam (1)</span> &middot; <span>Spruce Pine (1)</span> &middot; <span>Taylorsville (1)</span> &middot; <span>Wadesboro (1)</span> &middot; <span>Warsaw (1)</span> &middot; <span>Wilson (1)</span></p>
+      <div class="tl-citylist is-collapsed" id="tlCityList" data-total="50">
+        <p><a href="/transload/charlotte-nc">Charlotte (8)</a> &middot; <a href="/transload/wilmington-nc">Wilmington (7)</a> &middot; <a href="/transload/winston-salem-nc">Winston-Salem (5)</a> &middot; <a href="/transload/fayetteville-nc">Fayetteville (3)</a> &middot; <span>Aberdeen (2)</span> &middot; <span>Ahoskie (2)</span> &middot; <span>Gastonia (2)</span> &middot; <span>Goldsboro (2)</span> &middot; <span>Greenville (2)</span> &middot; <span>Lumberton (2)</span> &middot; <span>Midland (2)</span> &middot; <span>Raleigh (2)</span> &middot; <span>Rural Hall (2)</span> &middot; <span>Sanford (2)</span> &middot; <span>Selma (2)</span> &middot; <span>Statesville (2)</span> &middot; <span>Whiteville (2)</span> &middot; <span>Asheville (1)</span> &middot; <span>Bear Creek (1)</span> &middot; <span>Benson (1)</span> &middot; <span>Bostic (1)</span> &middot; <span>Candor (1)</span> &middot; <span>Chadbourn (1)</span> &middot; <span>Charlotte (West) (1)</span><span class="tl-city-extra"> &middot; <span>Clemmons (1)</span></span><span class="tl-city-extra"> &middot; <span>Conover (1)</span></span><span class="tl-city-extra"> &middot; <span>Edenton (1)</span></span><span class="tl-city-extra"> &middot; <span>Elkin (1)</span></span><span class="tl-city-extra"> &middot; <span>Fuquay-Varina (1)</span></span><span class="tl-city-extra"> &middot; <span>Gold Hill (1)</span></span><span class="tl-city-extra"> &middot; <span>Greensboro (1)</span></span><span class="tl-city-extra"> &middot; <span>Kinston (1)</span></span><span class="tl-city-extra"> &middot; <span>Lattimore (1)</span></span><span class="tl-city-extra"> &middot; <span>Laurinburg (1)</span></span><span class="tl-city-extra"> &middot; <span>McAdenville (1)</span></span><span class="tl-city-extra"> &middot; <span>Middlesex (1)</span></span><span class="tl-city-extra"> &middot; <span>Millers (1)</span></span><span class="tl-city-extra"> &middot; <span>Morehead City (1)</span></span><span class="tl-city-extra"> &middot; <span>Mt Gilead (1)</span></span><span class="tl-city-extra"> &middot; <span>Oakboro (1)</span></span><span class="tl-city-extra"> &middot; <span>Pineville (1)</span></span><span class="tl-city-extra"> &middot; <span>Raeford (1)</span></span><span class="tl-city-extra"> &middot; <span>Rocky Mount (1)</span></span><span class="tl-city-extra"> &middot; <span>Shelby (1)</span></span><span class="tl-city-extra"> &middot; <span>Siloam (1)</span></span><span class="tl-city-extra"> &middot; <span>Spruce Pine (1)</span></span><span class="tl-city-extra"> &middot; <span>Taylorsville (1)</span></span><span class="tl-city-extra"> &middot; <span>Wadesboro (1)</span></span><span class="tl-city-extra"> &middot; <span>Warsaw (1)</span></span><span class="tl-city-extra"> &middot; <span>Wilson (1)</span></span></p>
+        <button type="button" class="tl-morecities" id="tlMoreCities">Show all 50 cities</button>
+      </div>
     </section>
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (50)</option><option value="aberdeen">Aberdeen</option><option value="ahoskie">Ahoskie</option><option value="asheville">Asheville</option><option value="bear creek">Bear Creek</option><option value="benson">Benson</option><option value="bostic">Bostic</option><option value="candor">Candor</option><option value="chadbourn">Chadbourn</option><option value="charlotte">Charlotte</option><option value="charlotte (west)">Charlotte (West)</option><option value="clemmons">Clemmons</option><option value="conover">Conover</option><option value="edenton">Edenton</option><option value="elkin">Elkin</option><option value="fayetteville">Fayetteville</option><option value="fuquay-varina">Fuquay-Varina</option><option value="gastonia">Gastonia</option><option value="gold hill">Gold Hill</option><option value="goldsboro">Goldsboro</option><option value="greensboro">Greensboro</option><option value="greenville">Greenville</option><option value="kinston">Kinston</option><option value="lattimore">Lattimore</option><option value="laurinburg">Laurinburg</option><option value="lumberton">Lumberton</option><option value="mcadenville">Mcadenville</option><option value="middlesex">Middlesex</option><option value="midland">Midland</option><option value="millers">Millers</option><option value="morehead city">Morehead City</option><option value="mt gilead">Mt Gilead</option><option value="oakboro">Oakboro</option><option value="pineville">Pineville</option><option value="raeford">Raeford</option><option value="raleigh">Raleigh</option><option value="rocky mount">Rocky Mount</option><option value="rural hall">Rural Hall</option><option value="sanford">Sanford</option><option value="selma">Selma</option><option value="shelby">Shelby</option><option value="siloam">Siloam</option><option value="spruce pine">Spruce Pine</option><option value="statesville">Statesville</option><option value="taylorsville">Taylorsville</option><option value="wadesboro">Wadesboro</option><option value="warsaw">Warsaw</option><option value="whiteville">Whiteville</option><option value="wilmington">Wilmington</option><option value="wilson">Wilson</option><option value="winston-salem">Winston-Salem</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="asphalt">Asphalt</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="blending meters">Blending Meters</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="gravity (trestle)">Gravity (Trestle)</option><option value="hot water heating">Hot Water Heating</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (18)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (30)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 16 of 82 sites and capability detail for 14. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="aberdeen" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="sterling transport aberdeen transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sterling Transport</h3>
         <div style="color:#555;font-size:0.9em">Aberdeen, NC</div>
         <div><strong>Phone:</strong> (910) 944-2341</div>
         <div><a href="https://aberdeen-rockfish.com/freight-services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Transload — phone from operator website (headless) 2026-08-15</div>
+        <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="aberdeen" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|petroleum products|plastics (dry)" data-cap="air compressor|blending meters|blower|liquid pumps|liquid storage tanks|sampling services|steam heating|tank trailer cleaning" data-text="superior carriers aberdeen  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) petroleum products plastics (dry) air compressor blending meters blower liquid pumps liquid storage tanks sampling services steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Superior Carriers</h3>
         <div style="color:#555;font-size:0.9em">Aberdeen, NC</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Petroleum Products, Plastics (Dry)</div>
@@ -1278,51 +1313,51 @@
         <div><strong>Phone:</strong> (336) 887-8084</div>
         <div><a href="https://carrytransit.com/services#transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ahoskie" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="chesapeake &amp; albemarle railroad (ca) ahoskie genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Chesapeake &amp; Albemarle Railroad (CA)</h3>
         <div style="color:#555;font-size:0.9em">Ahoskie, NC</div>
         <div><a href="https://www.gwrr.com/railroads/chesapeake-and-albemarle-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ahoskie" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="north carolina &amp; virginia railroad (ncva) ahoskie genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">North Carolina &amp; Virginia Railroad (NCVA)</h3>
         <div style="color:#555;font-size:0.9em">Ahoskie, NC</div>
         <div><a href="https://www.gwrr.com/railroads/north-carolina-and-virginia-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="asheville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="underwood &amp; weld asheville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Underwood &amp; Weld</h3>
         <div style="color:#555;font-size:0.9em">Asheville, NC</div>
         <div><a href="https://drybulktrucking.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bear creek" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="asheboro tie yards bear creek   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Asheboro Tie Yards</h3>
         <div style="color:#555;font-size:0.9em">Bear Creek, NC</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="benson" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="americold benson benson   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Americold Benson</h3>
         <div style="color:#555;font-size:0.9em">Benson, NC</div>
         <div><a href="https://www.americold.com/facilities/benson/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bostic" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="underwood &amp; weld bostic   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Underwood &amp; Weld</h3>
         <div style="color:#555;font-size:0.9em">Bostic, NC</div>
         <div><a href="https://drybulktrucking.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="candor" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="aberdeen carolina &amp; western railway candor   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Aberdeen Carolina &amp; Western Railway</h3>
         <div style="color:#555;font-size:0.9em">Candor, NC</div>
         <div><strong>Phone:</strong> (910) 974-4219</div>
         <div><a href="http://www.acwr.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chadbourn" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="r.j. corman carolina lines (rjcs) chadbourn r.j. corman short line — transload at chadbourn (commtrex-verified)  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">R.J. Corman Carolina Lines (RJCS)</h3>
         <div style="color:#555;font-size:0.9em">Chadbourn, NC</div>
         <div><a href="https://www.rjcorman.com/companies/railroad-company/our-short-lines/carolina-lines-rjcs" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>R.J. Corman short line — transload at Chadbourn (Commtrex-verified) — operator sweep 2026-08-14</div>
+        <div>R.J. Corman short line — transload at Chadbourn (Commtrex-verified)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="charlotte" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="a&amp;r transport inc charlotte  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">Charlotte, NC</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
@@ -1330,46 +1365,45 @@
         <div><strong>Phone:</strong> (704) 399-8670</div>
         <div><a href="https://ardoingitright.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="charlotte" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="charlotte ns tbt charlotte   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Charlotte NS TBT</h3>
         <div style="color:#555;font-size:0.9em">Charlotte, NC</div>
         <div><a href="https://www.nscorp.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="charlotte" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="chem-way corporation charlotte   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Chem-Way Corporation</h3>
         <div style="color:#555;font-size:0.9em">Charlotte, NC</div>
         <div><a href="https://CHEMWAY.COM" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="charlotte" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="distribution technology incorporated charlotte   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Distribution Technology Incorporated</h3>
         <div style="color:#555;font-size:0.9em">Charlotte, NC</div>
         <div><strong>Phone:</strong> (704) 587-5587</div>
         <div><a href="https://www.distributiontechnology.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="charlotte" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="norfolk southern tbt (rsi logistics) charlotte  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) steel air compressor blower hot water heating liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norfolk Southern TBT (RSI Logistics)</h3>
         <div style="color:#555;font-size:0.9em">Charlotte, NC</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Hot Water Heating, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="https://www.rsilogistics.com/rail-solutions/rail-terminal-services/charlotte-nc/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="charlotte" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="prologis charlotte   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Prologis</h3>
         <div style="color:#555;font-size:0.9em">Charlotte, NC</div>
         <div><a href="https://www.prologue.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="charlotte" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="transflo north carolina-charlotte-east terminal charlotte   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TRANSFLO North Carolina-Charlotte-East Terminal</h3>
         <div style="color:#555;font-size:0.9em">Charlotte, NC</div>
         <div><a href="https://www.transflo.net/locations/north-carolina-charlotte-east/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="charlotte" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="transflo north carolina-charlotte-west terminal charlotte   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TRANSFLO North Carolina-Charlotte-West Terminal</h3>
         <div style="color:#555;font-size:0.9em">Charlotte, NC</div>
         <div><a href="https://www.transflo.net/locations/north-carolina-charlotte-west/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="charlotte (west)" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="transflo csxt charlotte (west)  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transflo CSXT</h3>
         <div style="color:#555;font-size:0.9em">Charlotte (West), NC</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1377,45 +1411,42 @@
         <div><strong>Phone:</strong> (904) 366-5642</div>
         <div><a href="https://www.transflo.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="clemmons" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="triangle warehouse clemmons   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Triangle Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Clemmons, NC</div>
         <div><strong>Phone:</strong> (336) 668-0156</div>
         <div><a href="https://trianglewarehouse.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="conover" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="luckey logistics llc conover  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Luckey Logistics LLC</h3>
         <div style="color:#555;font-size:0.9em">Conover, NC</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="http://www.luckeytanklines.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="edenton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ca perry and son edenton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">CA Perry and Son</h3>
         <div style="color:#555;font-size:0.9em">Edenton, NC</div>
         <div><a href="https://www.caperryandson.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="elkin" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="obe transload and warehouse elkin   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">OBE Transload and Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Elkin, NC</div>
         <div><strong>Phone:</strong> (704) 288-6065</div>
         <div><a href="https://obelogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fayetteville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="raleigh &amp; fayetteville railroad (rfcc) - r.j. corman fayetteville r.j. corman short line — transload service available  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Raleigh &amp; Fayetteville Railroad (RFCC) - R.J. Corman</h3>
         <div style="color:#555;font-size:0.9em">Fayetteville, NC</div>
         <div><a href="https://www.rjcorman.com/companies/railroad-company/our-short-lines" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>R.J. Corman short line — transload service available — operator sweep 2026-08-14</div>
+        <div>R.J. Corman short line — transload service available</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fayetteville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="strategic transload services fayetteville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Strategic Transload Services</h3>
         <div style="color:#555;font-size:0.9em">Fayetteville, NC</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fayetteville" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|plastics (dry)" data-cap="portable vacuum|sampling services|scale|tank trailer cleaning" data-text="tidewater transit co fayetteville  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) plastics (dry) portable vacuum sampling services scale tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tidewater Transit Co</h3>
         <div style="color:#555;font-size:0.9em">Fayetteville, NC</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Plastics (Dry)</div>
@@ -1423,158 +1454,150 @@
         <div><strong>Phone:</strong> (910) 483-4925</div>
         <div><a href="https://tidewater-transit.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fuquay-varina" data-tier="verified" data-phone="1" data-comm="lumber|steel" data-cap="" data-text="harnett transload intermodal llc fuquay-varina  lumber steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Harnett Transload Intermodal LLC</h3>
         <div style="color:#555;font-size:0.9em">Fuquay-Varina, NC</div>
         <div><strong>Commodities:</strong> Lumber, Steel</div>
         <div><strong>Phone:</strong> (919) 567-1057</div>
         <div><a href="http://www.htandi.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="gastonia" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|blower|bulk conveyor|liquid pumps|sampling services|scale|steam heating" data-text="carload connection gastonia  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) steel air compressor blower bulk conveyor liquid pumps sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carload Connection</h3>
         <div style="color:#555;font-size:0.9em">Gastonia, NC</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Sampling Services, Scale, Steam Heating</div>
         <div><a href="https://www.progressiverail.com/rrpgr/lakeville.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="gastonia" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="charlotte western railroad, llc gastonia jaguar transport holdings  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Charlotte Western Railroad, LLC</h3>
         <div style="color:#555;font-size:0.9em">Gastonia, NC</div>
         <div><a href="https://jag-transport.com/charlotte-western-railroad/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Jaguar Transport Holdings</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="gold hill" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="trexler trucking incorporated gold hill   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Trexler Trucking Incorporated</h3>
         <div style="color:#555;font-size:0.9em">Gold Hill, NC</div>
         <div><strong>Phone:</strong> (704) 633-0690</div>
         <div><a href="https://www.trexlertruckinginc.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="goldsboro" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="americold goldsboro commerce goldsboro   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Americold Goldsboro Commerce</h3>
         <div style="color:#555;font-size:0.9em">Goldsboro, NC</div>
         <div><a href="https://www.americold.com/facilities/goldsboro-commerce/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="goldsboro" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="norfolk southern tbt goldsboro  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower hot water heating liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norfolk Southern TBT</h3>
         <div style="color:#555;font-size:0.9em">Goldsboro, NC</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Hot Water Heating, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="http://www.nscorp.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="greensboro" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="transmontaigne greensboro-set terminal greensboro   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TransMontaigne Greensboro-SET Terminal</h3>
         <div style="color:#555;font-size:0.9em">Greensboro, NC</div>
         <div><a href="https://www.transmontaignepartners.com/operations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="greenville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="greenville transload greenville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Greenville Transload</h3>
         <div style="color:#555;font-size:0.9em">Greenville, NC</div>
         <div><a href="https://regional-rail.com/carolina-coastal-railway/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="greenville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="tes logistics rail transload greenville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TES Logistics Rail Transload</h3>
         <div style="color:#555;font-size:0.9em">Greenville, NC</div>
         <div><strong>Phone:</strong> (252) 752-1515</div>
         <div><a href="https://www.teslogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kinston" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kinston railroad (knr) - jaguar transport holdings kinston   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kinston Railroad (KNR) - Jaguar Transport Holdings</h3>
         <div style="color:#555;font-size:0.9em">Kinston, NC</div>
         <div><a href="https://jag-transport.com/kinston-railroad/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lattimore" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="underwood &amp; weld lattimore   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Underwood &amp; Weld</h3>
         <div style="color:#555;font-size:0.9em">Lattimore, NC</div>
         <div><a href="https://drybulktrucking.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="laurinburg" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="laurinburg &amp; southern railroad transload facility laurinburg   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Laurinburg &amp; Southern Railroad Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Laurinburg, NC</div>
         <div><a href="https://gulfandohio.com/laurinburg-and-southern" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lumberton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="americold lumberton lumberton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Americold Lumberton</h3>
         <div style="color:#555;font-size:0.9em">Lumberton, NC</div>
         <div><a href="https://www.americold.com/facilities/lumberton/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lumberton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="united states cold storage lumberton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">United States Cold Storage</h3>
         <div style="color:#555;font-size:0.9em">Lumberton, NC</div>
         <div><a href="https://www.uscold.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mcadenville" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|petroleum products|plastics (dry)" data-cap="air compressor|blending meters|blower|liquid pumps|liquid storage tanks|sampling services|steam heating|tank trailer cleaning" data-text="superior carriers mcadenville  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) petroleum products plastics (dry) air compressor blending meters blower liquid pumps liquid storage tanks sampling services steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Superior Carriers</h3>
         <div style="color:#555;font-size:0.9em">McAdenville, NC</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blending Meters, Blower, Liquid Pumps, Liquid Storage Tanks, Sampling Services, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="https://carrytransit.com/services#transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="middlesex" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="foodliner middlesex   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Foodliner</h3>
         <div style="color:#555;font-size:0.9em">Middlesex, NC</div>
         <div><a href="https://foodliner.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="midland" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="heniff midland facility midland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Heniff Midland Facility</h3>
         <div style="color:#555;font-size:0.9em">Midland, NC</div>
         <div><a href="https://www.heniff.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="midland" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="midland transload yard midland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Midland Transload Yard</h3>
         <div style="color:#555;font-size:0.9em">Midland, NC</div>
         <div><strong>Phone:</strong> (877) 533-6913</div>
         <div><a href="https://www.ACWR.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="millers" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="goldsboro ns tbt millers   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Goldsboro NS TBT</h3>
         <div style="color:#555;font-size:0.9em">Millers, NC</div>
         <div><a href="https://www.nscorp.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="morehead city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="port of morehead city general cargo terminal morehead city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of Morehead City General Cargo Terminal</h3>
         <div style="color:#555;font-size:0.9em">Morehead City, NC</div>
         <div><strong>Phone:</strong> (800) 334-0682</div>
         <div><a href="https://ncports.com/port-facilities/port-of-morehead-city/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mt gilead" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="acwr transload/megawood mt gilead megawood transload yard and storage  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">ACWR Transload/Megawood</h3>
         <div style="color:#555;font-size:0.9em">Mt Gilead, NC</div>
         <div><strong>Phone:</strong> (877) 533-6913</div>
         <div><a href="https://www.acwr.com/transloading/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Megawood Transload Yard and Storage — phone from operator website 2026-08-14</div>
+        <div>Megawood Transload Yard and Storage</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="oakboro" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="oakboro transload yard oakboro   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Oakboro Transload Yard</h3>
         <div style="color:#555;font-size:0.9em">Oakboro, NC</div>
         <div><strong>Phone:</strong> (877) 533-6913</div>
         <div><a href="https://Www.ACWR.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pineville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="pineville ns tbt pineville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pineville NS TBT</h3>
         <div style="color:#555;font-size:0.9em">Pineville, NC</div>
         <div><a href="https://www.nscorp.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="raeford" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="aberdeen &amp; rockfish raeford transload raeford   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Aberdeen &amp; Rockfish Raeford Transload</h3>
         <div style="color:#555;font-size:0.9em">Raeford, NC</div>
         <div><strong>Phone:</strong> (910) 944-2341</div>
         <div><a href="https://aberdeen-rockfish.com/freight-services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="raleigh" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="security bonded warehouse raleigh   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Security Bonded Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Raleigh, NC</div>
         <div><strong>Phone:</strong> (919) 834-1341</div>
         <div><a href="https://securitybonded.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="raleigh" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="transflo csxt raleigh  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transflo CSXT</h3>
         <div style="color:#555;font-size:0.9em">Raleigh, NC</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1582,75 +1605,73 @@
         <div><strong>Phone:</strong> (919) 890-4599</div>
         <div><a href="https://www.transflo.net/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="rocky mount" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="rocky mount transload rocky mount   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rocky Mount Transload</h3>
         <div style="color:#555;font-size:0.9em">Rocky Mount, NC</div>
         <div><a href="https://regional-rail.com/carolina-coastal-railway/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="rural hall" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="obe / oneida business enterprises warehousing rural hall   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">OBE / Oneida Business Enterprises Warehousing</h3>
         <div style="color:#555;font-size:0.9em">Rural Hall, NC</div>
         <div><strong>Phone:</strong> (704) 288-6065</div>
         <div><a href="https://obelogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="rural hall" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="yadkin valley railroad rural hall transload rural hall   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Yadkin Valley Railroad Rural Hall Transload</h3>
         <div style="color:#555;font-size:0.9em">Rural Hall, NC</div>
         <div><a href="https://gulfandohio.com/yadkin-valley-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sanford" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="atlantic and western railway (atw) sanford genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Atlantic and Western Railway (ATW)</h3>
         <div style="color:#555;font-size:0.9em">Sanford, NC</div>
         <div><a href="https://www.gwrr.com/railroads/atlantic-and-western-railway" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sanford" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="atw choice terminals sanford   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Atw Choice Terminals</h3>
         <div style="color:#555;font-size:0.9em">Sanford, NC</div>
         <div><a href="https://www.gwrr.com/customers/transload?radius=300&amp;state=NA&amp;railroad=ATW" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="selma" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="nsew corp. selma bailey feed mill  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">NSEW Corp.</h3>
         <div style="color:#555;font-size:0.9em">Selma, NC</div>
         <div><strong>Phone:</strong> (252) 235-3961</div>
         <div><a href="https://www.baileyfeedmill.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Bailey Feed Mill — phone from operator website 2026-08-14</div>
+        <div>Bailey Feed Mill</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="selma" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="transmontaigne selma terminal selma   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TransMontaigne Selma Terminal</h3>
         <div style="color:#555;font-size:0.9em">Selma, NC</div>
         <div><a href="https://www.transmontaignepartners.com/operations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="shelby" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="shelby distribution shelby   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Shelby Distribution</h3>
         <div style="color:#555;font-size:0.9em">Shelby, NC</div>
         <div><a href="https://www.commtrex.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="siloam" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="double mountain transload siloam   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Double Mountain Transload</h3>
         <div style="color:#555;font-size:0.9em">Siloam, NC</div>
         <div><a href="https://gulfandohio.com/yadkin-valley-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="spruce pine" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="underwood &amp; weld spruce pine   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Underwood &amp; Weld</h3>
         <div style="color:#555;font-size:0.9em">Spruce Pine, NC</div>
         <div><a href="https://drybulktrucking.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="statesville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="plastic express statesville terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Statesville, NC</div>
         <div><a href="https://www.plasticexpress.com/operations/bulk-terminals/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="statesville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="shaver wood products statesville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Shaver Wood Products</h3>
         <div style="color:#555;font-size:0.9em">Statesville, NC</div>
         <div><strong>Phone:</strong> (704) 872-3148</div>
         <div><a href="https://shaverreload.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="taylorsville" data-tier="verified" data-phone="1" data-comm="lumber|plastics (dry)" data-cap="sampling services" data-text="liberty reload services taylorsville  lumber plastics (dry) sampling services" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Liberty Reload Services</h3>
         <div style="color:#555;font-size:0.9em">Taylorsville, NC</div>
         <div><strong>Commodities:</strong> Lumber, Plastics (Dry)</div>
@@ -1658,50 +1679,49 @@
         <div><strong>Phone:</strong> (828) 352-9116</div>
         <div><a href="https://libertysheds.com/taylorsville" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wadesboro" data-tier="verified" data-phone="1" data-comm="lumber" data-cap="" data-text="carolinas reload wadesboro  lumber " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carolinas Reload</h3>
         <div style="color:#555;font-size:0.9em">Wadesboro, NC</div>
         <div><strong>Commodities:</strong> Lumber</div>
         <div><strong>Phone:</strong> (704) 694-3333</div>
         <div><a href="https://www.carolinasreload.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="warsaw" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="united states cold storage warsaw   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">United States Cold Storage</h3>
         <div style="color:#555;font-size:0.9em">Warsaw, NC</div>
         <div><a href="https://www.uscold.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="whiteville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="r.j. corman transload connect whiteville transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">R.J. Corman Transload Connect</h3>
         <div style="color:#555;font-size:0.9em">Whiteville, NC</div>
         <div><a href="https://www.rjcorman.com/companies/transload-connect/locations" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="whiteville" data-tier="verified" data-phone="0" data-comm="lumber" data-cap="scale" data-text="rj corman whiteville  lumber scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rj Corman</h3>
         <div style="color:#555;font-size:0.9em">Whiteville, NC</div>
         <div><strong>Commodities:</strong> Lumber</div>
         <div><strong>Capabilities:</strong> Scale</div>
         <div><a href="https://www.rjcorman.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wilmington" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="cape fear bonded warehouse wilmington   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cape Fear Bonded Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Wilmington, NC</div>
         <div><strong>Phone:</strong> (910) 791-6753</div>
         <div><a href="https://capefearbondedwarehouse.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wilmington" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="carolina marine terminal (relay terminals) - operated by savage wilmington   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carolina Marine Terminal (Relay Terminals) - operated by Savage</h3>
         <div style="color:#555;font-size:0.9em">Wilmington, NC</div>
         <div><strong>Phone:</strong> (310) 847-4080</div>
         <div><a href="https://carolinamarineterminal.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wilmington" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="chemserve terminal of wilmington wilmington   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Chemserve Terminal of Wilmington</h3>
         <div style="color:#555;font-size:0.9em">Wilmington, NC</div>
         <div><a href="http://www.chemserveterminal.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wilmington" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|petroleum products" data-cap="air compressor|blending meters|gravity (trestle)|liquid pumps|liquid storage tanks|sampling services|scale|steam heating" data-text="colonial terminals inc wilmington  acids chemicals (dry) chemicals (liq) petroleum products air compressor blending meters gravity (trestle) liquid pumps liquid storage tanks sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Colonial Terminals Inc</h3>
         <div style="color:#555;font-size:0.9em">Wilmington, NC</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Petroleum Products</div>
@@ -1709,29 +1729,28 @@
         <div><strong>Phone:</strong> (800) 944-3835</div>
         <div><a href="https://colonialterminals.com/terminal-4-cti-nc/?y_source=1_MTc3NDM3OTctNzE1LWxvY2F0aW9uLndlYnNpdGU%3D" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wilmington" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kinder morgan river road terminal wilmington   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kinder Morgan River Road Terminal</h3>
         <div style="color:#555;font-size:0.9em">Wilmington, NC</div>
         <div><a href="https://www.kindermorgan.com/Operations/Terminals/Index" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wilmington" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kinder morgan woodbine street terminal wilmington   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kinder Morgan Woodbine Street Terminal</h3>
         <div style="color:#555;font-size:0.9em">Wilmington, NC</div>
         <div><a href="https://www.kindermorgan.com/Operations/Terminals/Index" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wilmington" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="port of wilmington cold storage wilmington   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of Wilmington Cold Storage</h3>
         <div style="color:#555;font-size:0.9em">Wilmington, NC</div>
         <div><a href="https://pwcold.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wilson" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="paxton bonded storage incorporated wilson   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Paxton Bonded Storage Incorporated</h3>
         <div style="color:#555;font-size:0.9em">Wilson, NC</div>
         <div><strong>Phone:</strong> (252) 291-9191</div>
         <div><a href="https://paxtonbondedstorages.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="winston-salem" data-tier="verified" data-phone="1" data-comm="asphalt|petroleum products" data-cap="air compressor|liquid pumps|steam heating" data-text="associated asphalt winston-salem  asphalt petroleum products air compressor liquid pumps steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Associated Asphalt</h3>
         <div style="color:#555;font-size:0.9em">Winston-Salem, NC</div>
         <div><strong>Commodities:</strong> Asphalt, Petroleum Products</div>
@@ -1739,24 +1758,23 @@
         <div><strong>Phone:</strong> (336) 294-0025</div>
         <div><a href="https://associatedasphalt.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="winston-salem" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bulkmatic llc winston-salem   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulkmatic LLC</h3>
         <div style="color:#555;font-size:0.9em">Winston-Salem, NC</div>
         <div><a href="https://www.bulkmatic.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="winston-salem" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="carolina public warehouse incorporated winston-salem   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carolina Public Warehouse Incorporated</h3>
         <div style="color:#555;font-size:0.9em">Winston-Salem, NC</div>
         <div><strong>Phone:</strong> (336) 767-2891</div>
         <div><a href="https://www.carolinapublicwhse.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="winston-salem" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="total distribution winston-salem   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Total Distribution</h3>
         <div style="color:#555;font-size:0.9em">Winston-Salem, NC</div>
         <div><a href="https://totaldistribution.com/north-carolina-warehouse-locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="winston-salem" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="winston-salem ns tbt winston-salem   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Winston-Salem NS TBT</h3>
         <div style="color:#555;font-size:0.9em">Winston-Salem, NC</div>
         <div><a href="https://www.nscorp.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
@@ -1787,6 +1805,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

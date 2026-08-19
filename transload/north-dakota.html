@@ -485,6 +485,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in North Dakota</h1>
@@ -504,157 +522,166 @@
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (23)</option><option value="ardoch">Ardoch</option><option value="beulah">Beulah</option><option value="bismarck">Bismarck</option><option value="casselton">Casselton</option><option value="dickinson">Dickinson</option><option value="dore">Dore</option><option value="east fairview">East Fairview</option><option value="fargo">Fargo</option><option value="fordville">Fordville</option><option value="fryburg">Fryburg</option><option value="gascoyne">Gascoyne</option><option value="grand forks">Grand Forks</option><option value="lansford">Lansford</option><option value="minot">Minot</option><option value="new town">New Town</option><option value="northgate">Northgate</option><option value="palermo">Palermo</option><option value="pingree">Pingree</option><option value="plaza">Plaza</option><option value="ross">Ross</option><option value="tioga">Tioga</option><option value="trenton">Trenton</option><option value="williston">Williston</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="auger">Auger</option><option value="bulk conveyor">Bulk Conveyor</option><option value="liquid pumps">Liquid Pumps</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (7)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (15)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 5 of 29 sites and capability detail for 3. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ardoch" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="holland ardoch transload facility ardoch   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Holland Ardoch Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Ardoch, ND</div>
         <div><strong>Phone:</strong> (708) 672-2300</div>
         <div><a href="https://www.hollandco.com/transloading/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="beulah" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="global north dakota beulah terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Global North Dakota</h3>
         <div style="color:#555;font-size:0.9em">Beulah, ND</div>
         <div><a href="https://globalnorthdakota.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bismarck" data-tier="verified" data-phone="0" data-comm="steel" data-cap="" data-text="tubular transport &amp; logistics bismarck  steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tubular Transport &amp; Logistics</h3>
         <div style="color:#555;font-size:0.9em">Bismarck, ND</div>
         <div><strong>Commodities:</strong> Steel</div>
         <div><a href="https://tubulartransport.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="casselton" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="red river valley &amp; western railroad casselton transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Red River Valley &amp; Western Railroad</h3>
         <div style="color:#555;font-size:0.9em">Casselton, ND</div>
         <div><strong>Phone:</strong> (800) 747-4919</div>
         <div><a href="https://www.rrvw.net/transload" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Transload — phone from operator website 2026-08-14</div>
+        <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dickinson" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="gascoyne materials handling &amp; recycling dickinson /lehigh terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Gascoyne Materials Handling &amp; Recycling</h3>
         <div style="color:#555;font-size:0.9em">Dickinson, ND</div>
         <div><strong>Phone:</strong> (701) 483-8142</div>
         <div><a href="https://www.gmhr.com/services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>/Lehigh Terminal — phone from operator website 2026-08-14</div>
+        <div>/Lehigh Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dore" data-tier="verified" data-phone="0" data-comm="chemicals (dry)|chemicals (liq)|frac sand|petroleum products|steel" data-cap="bulk conveyor|liquid pumps|scale" data-text="watco terminal &amp; port services dore  chemicals (dry) chemicals (liq) frac sand petroleum products steel bulk conveyor liquid pumps scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Dore, ND</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Frac Sand, Petroleum Products, Steel</div>
         <div><strong>Capabilities:</strong> Bulk Conveyor, Liquid Pumps, Scale</div>
         <div><a href="https://www.watcocompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="east fairview" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bridger pipeline east fairview sand transloading facility east fairview   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bridger Pipeline East Fairview Sand Transloading Facility</h3>
         <div style="color:#555;font-size:0.9em">East Fairview, ND</div>
         <div><a href="https://bridgerpipeline.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="east fairview" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="watco dore transload terminal east fairview   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Dore Transload Terminal</h3>
         <div style="color:#555;font-size:0.9em">East Fairview, ND</div>
         <div><a href="https://www.watco.com/service/terminals/dore-nd/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fargo" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="gascoyne materials handling &amp; recycling fargo terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Gascoyne Materials Handling &amp; Recycling</h3>
         <div style="color:#555;font-size:0.9em">Fargo, ND</div>
         <div><strong>Phone:</strong> (701) 483-8142</div>
         <div><a href="https://www.gmhr.com/services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Terminal — phone from operator website 2026-08-14</div>
+        <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fordville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="northern plains railroad fordville terminal transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Northern Plains Railroad</h3>
         <div style="color:#555;font-size:0.9em">Fordville, ND</div>
         <div><strong>Phone:</strong> (701) 428-4300</div>
         <div><a href="https://www.nprail.com/railroad/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Terminal Transload — phone from operator website (headless) 2026-08-15</div>
+        <div>Terminal Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fryburg" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="watco fryburg dedicated terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco</h3>
         <div style="color:#555;font-size:0.9em">Fryburg, ND</div>
         <div><a href="https://www.watco.com/service/terminal-services/dedicated" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Dedicated Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="gascoyne" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="gascoyne materials handling &amp; recycling gascoyne terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Gascoyne Materials Handling &amp; Recycling</h3>
         <div style="color:#555;font-size:0.9em">Gascoyne, ND</div>
         <div><strong>Phone:</strong> (701) 483-8142</div>
         <div><a href="https://www.gmhr.com/services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Terminal — phone from operator website 2026-08-14</div>
+        <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="grand forks" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="northern plains grand forks terminal grand forks   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Northern Plains Grand Forks Terminal</h3>
         <div style="color:#555;font-size:0.9em">Grand Forks, ND</div>
         <div><strong>Phone:</strong> (701) 428-4300</div>
         <div><a href="https://www.nprail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="grand forks" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="reile's transfer &amp; delivery inc grand forks   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Reile's Transfer &amp; Delivery Inc</h3>
         <div style="color:#555;font-size:0.9em">Grand Forks, ND</div>
         <div><strong>Phone:</strong> (701) 232-5109</div>
         <div><a href="http://www.reiles.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="grand forks" data-tier="verified" data-phone="0" data-comm="steel" data-cap="" data-text="transportation partners &amp; logistic llc grand forks  steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transportation Partners &amp; Logistic LLC</h3>
         <div style="color:#555;font-size:0.9em">Grand Forks, ND</div>
         <div><strong>Commodities:</strong> Steel</div>
         <div><a href="https://tpandl.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lansford" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="northern plains railroad lansford terminal transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Northern Plains Railroad</h3>
         <div style="color:#555;font-size:0.9em">Lansford, ND</div>
         <div><strong>Phone:</strong> (701) 428-4300</div>
         <div><a href="https://www.nprail.com/railroad/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Terminal Transload — phone from operator website (headless) 2026-08-15</div>
+        <div>Terminal Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="minot" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="northwest transloading facility minot   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Northwest Transloading Facility</h3>
         <div style="color:#555;font-size:0.9em">Minot, ND</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="minot" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="rail modal group minot intermodal facility minot   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rail Modal Group Minot Intermodal Facility</h3>
         <div style="color:#555;font-size:0.9em">Minot, ND</div>
         <div><a href="https://www.railmodalgroup.com/minot-nd" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new town" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="cicada new town terminal llc new town   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cicada New Town Terminal LLC</h3>
         <div style="color:#555;font-size:0.9em">New Town, ND</div>
         <div><a href="https://www.cicadalogistics.co/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new town" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="wildcat minerals new town   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Wildcat Minerals</h3>
         <div style="color:#555;font-size:0.9em">New Town, ND</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="northgate" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ceres northgate terminal northgate   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ceres Northgate Terminal</h3>
         <div style="color:#555;font-size:0.9em">Northgate, ND</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="palermo" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="phillips 66 palermo rail terminal palermo   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Phillips 66 Palermo Rail Terminal</h3>
         <div style="color:#555;font-size:0.9em">Palermo, ND</div>
         <div><a href="https://www.phillips66.com/midstream/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pingree" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="pingree transload llc pingree rrvw  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pingree Transload LLC</h3>
         <div style="color:#555;font-size:0.9em">Pingree, ND</div>
         <div><strong>Phone:</strong> (866) 481-7333</div>
         <div><a href="https://www.peterson.ag/about-us/pingree-transload/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>RRVW — phone from operator website 2026-08-14</div>
+        <div>RRVW</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="plaza" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="dakota gold transfer plaza llc plaza   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Dakota Gold Transfer Plaza LLC</h3>
         <div style="color:#555;font-size:0.9em">Plaza, ND</div>
         <div><strong>Phone:</strong> (701) 509-6958</div>
         <div><a href="https://dakotagoldtransfer.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ross" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|chemicals (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|auger|bulk conveyor|liquid pumps|sampling services" data-text="bakken transload, llc ross  chemicals (dry) chemicals (liq) frac sand lumber minerals petroleum products plastics (dry) steel air compressor auger bulk conveyor liquid pumps sampling services" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bakken Transload, LLC</h3>
         <div style="color:#555;font-size:0.9em">Ross, ND</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
@@ -662,13 +689,13 @@
         <div><strong>Phone:</strong> (701) 755-3477</div>
         <div><a href="-" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tioga" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="watco tioga dedicated terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco</h3>
         <div style="color:#555;font-size:0.9em">Tioga, ND</div>
         <div><a href="https://www.watco.com/service/terminal-services/dedicated" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Dedicated Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="trenton" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="savage service corp trenton  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor bulk conveyor liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Service Corp</h3>
         <div style="color:#555;font-size:0.9em">Trenton, ND</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -676,14 +703,14 @@
         <div><strong>Phone:</strong> (701) 774-9301</div>
         <div><a href="https://savageservices.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="williston" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="red river oilfield services williston stony creek rail yard  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Red River Oilfield Services</h3>
         <div style="color:#555;font-size:0.9em">Williston, ND</div>
         <div><strong>Phone:</strong> (701) 774-9418</div>
         <div><a href="https://www.redriversupply.us/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Stony Creek Rail Yard — phone from operator website 2026-08-14</div>
+        <div>Stony Creek Rail Yard</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="williston" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="red river supply inc williston   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Red River Supply Inc</h3>
         <div style="color:#555;font-size:0.9em">Williston, ND</div>
         <div><strong>Phone:</strong> (701) 774-3904</div>
@@ -715,6 +742,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

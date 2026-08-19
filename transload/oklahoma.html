@@ -699,6 +699,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Oklahoma</h1>
@@ -713,190 +731,198 @@
 
     <section>
       <h2>Cities in Oklahoma</h2>
-      <p><a href="/transload/el-reno-ok">El Reno (4)</a> &middot; <a href="/transload/oklahoma-city-ok">Oklahoma City (4)</a> &middot; <a href="/transload/ardmore-ok">Ardmore (3)</a> &middot; <a href="/transload/catoosa-ok">Catoosa (3)</a> &middot; <a href="/transload/enid-ok">Enid (3)</a> &middot; <a href="/transload/sand-springs-ok">Sand Springs (3)</a> &middot; <a href="/transload/shattuck-ok">Shattuck (3)</a> &middot; <a href="/transload/tulsa-ok">Tulsa (3)</a> &middot; <span>Hugo (2)</span> &middot; <span>Blackwell (1)</span> &middot; <span>Chandler (1)</span> &middot; <span>Del City (1)</span> &middot; <span>Elk City (1)</span> &middot; <span>Howe (1)</span> &middot; <span>Mcalester (1)</span> &middot; <span>Minco (1)</span> &middot; <span>Muskogee (1)</span> &middot; <span>Pocasset (1)</span> &middot; <span>Pond Creek (1)</span> &middot; <span>Shawnee (1)</span> &middot; <span>Stroud (1)</span> &middot; <span>Thomas (1)</span> &middot; <span>Westhom (1)</span> &middot; <span>Woodward (1)</span> &middot; <span>Wright City (1)</span></p>
+      <div class="tl-citylist is-collapsed" id="tlCityList" data-total="25">
+        <p><a href="/transload/el-reno-ok">El Reno (4)</a> &middot; <a href="/transload/oklahoma-city-ok">Oklahoma City (4)</a> &middot; <a href="/transload/ardmore-ok">Ardmore (3)</a> &middot; <a href="/transload/catoosa-ok">Catoosa (3)</a> &middot; <a href="/transload/enid-ok">Enid (3)</a> &middot; <a href="/transload/sand-springs-ok">Sand Springs (3)</a> &middot; <a href="/transload/shattuck-ok">Shattuck (3)</a> &middot; <a href="/transload/tulsa-ok">Tulsa (3)</a> &middot; <span>Hugo (2)</span> &middot; <span>Blackwell (1)</span> &middot; <span>Chandler (1)</span> &middot; <span>Del City (1)</span> &middot; <span>Elk City (1)</span> &middot; <span>Howe (1)</span> &middot; <span>Mcalester (1)</span> &middot; <span>Minco (1)</span> &middot; <span>Muskogee (1)</span> &middot; <span>Pocasset (1)</span> &middot; <span>Pond Creek (1)</span> &middot; <span>Shawnee (1)</span> &middot; <span>Stroud (1)</span> &middot; <span>Thomas (1)</span> &middot; <span>Westhom (1)</span> &middot; <span>Woodward (1)</span><span class="tl-city-extra"> &middot; <span>Wright City (1)</span></span></p>
+        <button type="button" class="tl-morecities" id="tlMoreCities">Show all 25 cities</button>
+      </div>
     </section>
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (25)</option><option value="ardmore">Ardmore</option><option value="blackwell">Blackwell</option><option value="catoosa">Catoosa</option><option value="chandler">Chandler</option><option value="del city">Del City</option><option value="el reno">El Reno</option><option value="elk city">Elk City</option><option value="enid">Enid</option><option value="howe">Howe</option><option value="hugo">Hugo</option><option value="mcalester">Mcalester</option><option value="minco">Minco</option><option value="muskogee">Muskogee</option><option value="oklahoma city">Oklahoma City</option><option value="pocasset">Pocasset</option><option value="pond creek">Pond Creek</option><option value="sand springs">Sand Springs</option><option value="shattuck">Shattuck</option><option value="shawnee">Shawnee</option><option value="stroud">Stroud</option><option value="thomas">Thomas</option><option value="tulsa">Tulsa</option><option value="westhom">Westhom</option><option value="woodward">Woodward</option><option value="wright city">Wright City</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="bulk conveyor">Bulk Conveyor</option><option value="liquid pumps">Liquid Pumps</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (13)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (17)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 10 of 44 sites and capability detail for 10. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ardmore" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="asphalt express enterprises rail terminal ardmore   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Asphalt Express Enterprises Rail Terminal</h3>
         <div style="color:#555;font-size:0.9em">Ardmore, OK</div>
         <div><strong>Phone:</strong> (800) 651-4971</div>
         <div><a href="https://www.asphaltexpress.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ardmore" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="cig logistics ardmore   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">CIG Logistics</h3>
         <div style="color:#555;font-size:0.9em">Ardmore, OK</div>
         <div><a href="https://www.ciglogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ardmore" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="watco ardmore transload terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco</h3>
         <div style="color:#555;font-size:0.9em">Ardmore, OK</div>
         <div><a href="https://www.watco.com/service/terminals/ardmore-transload-terminal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="blackwell" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="land rush rail blackwell transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Land Rush Rail</h3>
         <div style="color:#555;font-size:0.9em">Blackwell, OK</div>
         <div><a href="https://www.farmrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="catoosa" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ponderosa solutions catoosa   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ponderosa Solutions</h3>
         <div style="color:#555;font-size:0.9em">Catoosa, OK</div>
         <div><a href="https://theponderosasolution.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="catoosa" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="port of catoosa industrial railroad (omnitrax) catoosa omnitrax port railroad  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of Catoosa Industrial Railroad (OmniTRAX)</h3>
         <div style="color:#555;font-size:0.9em">Catoosa, OK</div>
         <div><a href="https://omnitrax.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>OmniTRAX port railroad — added from operator locations sweep 2026-08-14</div>
+        <div>OmniTRAX port railroad</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="catoosa" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="watco terminal &amp; port services catoosa   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Catoosa, OK</div>
         <div><a href="https://www.watcocompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chandler" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="t &amp; j marketing chandler rail and storage facility  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">T &amp; J Marketing</h3>
         <div style="color:#555;font-size:0.9em">Chandler, OK</div>
         <div><a href="https://www.tjmarketingok.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Rail and Storage Facility</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="del city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="stillwater central railroad del city transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Stillwater Central Railroad</h3>
         <div style="color:#555;font-size:0.9em">Del City, OK</div>
         <div><a href="https://www.watco.com/service/rail/stillwater-central-railroad-slwc/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="el reno" data-tier="review" data-phone="0" data-comm="frac sand" data-cap="bulk conveyor" data-text="northern white sands el reno  frac sand bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Northern White Sands</h3>
         <div style="color:#555;font-size:0.9em">El Reno, OK</div>
         <div><strong>Commodities:</strong> Frac Sand</div>
         <div><strong>Capabilities:</strong> Bulk Conveyor</div>
         <div><a href="https://www.coviacorp.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="el reno" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="oklahoma central rail park el reno jaguar transport holdings  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Oklahoma Central Rail Park</h3>
         <div style="color:#555;font-size:0.9em">El Reno, OK</div>
         <div><a href="https://jag-transport.com/oklahoma-central-rail-park/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Jaguar Transport Holdings</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="el reno" data-tier="verified" data-phone="0" data-comm="frac sand" data-cap="" data-text="precision terminal logistics llc el reno  frac sand " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Precision Terminal Logistics LLC</h3>
         <div style="color:#555;font-size:0.9em">El Reno, OK</div>
         <div><strong>Commodities:</strong> Frac Sand</div>
         <div><a href="https://www.precisiontl.com/#" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="el reno" data-tier="verified" data-phone="1" data-comm="frac sand" data-cap="bulk conveyor" data-text="rjr trans loading el reno  frac sand bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rjr Trans Loading</h3>
         <div style="color:#555;font-size:0.9em">El Reno, OK</div>
         <div><strong>Commodities:</strong> Frac Sand</div>
         <div><strong>Capabilities:</strong> Bulk Conveyor</div>
         <div><strong>Phone:</strong> (405) 262-1747</div>
         <div><a href="http://jrtransportinc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="elk city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="farmrail elk city transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Farmrail</h3>
         <div style="color:#555;font-size:0.9em">Elk City, OK</div>
         <div><a href="https://www.farmrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="enid" data-tier="verified" data-phone="1" data-comm="" data-cap="bulk conveyor" data-text="cgb enterprises enid   bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cgb Enterprises</h3>
         <div style="color:#555;font-size:0.9em">Enid, OK</div>
         <div><strong>Capabilities:</strong> Bulk Conveyor</div>
         <div><strong>Phone:</strong> (985) 867-3500</div>
         <div><a href="https://www.cgb.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="enid" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="consolidated terminals and logistics enid terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Consolidated Terminals and Logistics</h3>
         <div style="color:#555;font-size:0.9em">Enid, OK</div>
         <div><a href="https://ctlconline.com/enid-ok/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="enid" data-tier="verified" data-phone="0" data-comm="steel" data-cap="" data-text="transportation partners &amp; logistic llc enid  steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transportation Partners &amp; Logistic LLC</h3>
         <div style="color:#555;font-size:0.9em">Enid, OK</div>
         <div><strong>Commodities:</strong> Steel</div>
         <div><a href="https://tpandl.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="howe" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="arkansas-oklahoma railroad howe transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Arkansas-Oklahoma Railroad</h3>
         <div style="color:#555;font-size:0.9em">Howe, OK</div>
         <div><strong>Phone:</strong> (918) 465-0299</div>
         <div><a href="https://aokrr.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Transload — phone from operator website 2026-08-14</div>
+        <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hugo" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kiamichi railroad (krr) hugo genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kiamichi Railroad (KRR)</h3>
         <div style="color:#555;font-size:0.9em">Hugo, OK</div>
         <div><a href="https://www.gwrr.com/krr/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — verified HQ, operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hugo" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="rsi logistics hugo terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">RSI Logistics</h3>
         <div style="color:#555;font-size:0.9em">Hugo, OK</div>
         <div><a href="https://www.rsilogistics.com/rail-solutions/rail-terminal-services/hugo-ok/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mcalester" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="arkansas-oklahoma railroad mcalester transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Arkansas-Oklahoma Railroad</h3>
         <div style="color:#555;font-size:0.9em">Mcalester, OK</div>
         <div><strong>Phone:</strong> (918) 465-0299</div>
         <div><a href="https://aokrr.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Transload — phone from operator website 2026-08-14</div>
+        <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="minco" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="fitzgerald transloading minco siding  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Fitzgerald Transloading</h3>
         <div style="color:#555;font-size:0.9em">Minco, OK</div>
         <div><strong>Phone:</strong> (405) 352-4902</div>
         <div><a href="https://www.fitzgeraldtruck.com/transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Siding — phone from operator website 2026-08-14</div>
+        <div>Siding</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="muskogee" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="oakley's terminal muskogee muskogee   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Oakley's Terminal Muskogee</h3>
         <div style="color:#555;font-size:0.9em">Muskogee, OK</div>
         <div><strong>Phone:</strong> (918) 739-7120</div>
         <div><a href="https://bruceoakley.com/divisions/river-ports/muskogee/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="oklahoma city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="d &amp; m distribution service oklahoma city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">D &amp; M Distribution Service</h3>
         <div style="color:#555;font-size:0.9em">Oklahoma City, OK</div>
         <div><strong>Phone:</strong> (405) 745-2142</div>
         <div><a href="https://dmdsinc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="oklahoma city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="titan lansing transloading oklahoma city flynn yard  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Titan Lansing Transloading</h3>
         <div style="color:#555;font-size:0.9em">Oklahoma City, OK</div>
         <div><a href="https://www.titanlansing.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Flynn Yard</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="oklahoma city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="us rail &amp; logistics oklahoma city terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">US Rail &amp; Logistics</h3>
         <div style="color:#555;font-size:0.9em">Oklahoma City, OK</div>
         <div><strong>Phone:</strong> (817) 442-6177</div>
         <div><a href="https://usrailandlogistics.com/oklahoma-city/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Terminal — phone from operator website (headless) 2026-08-15</div>
+        <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="oklahoma city" data-tier="verified" data-phone="0" data-comm="chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="watco terminal &amp; port services oklahoma city  chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Oklahoma City, OK</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale</div>
         <div><a href="https://www.watcocompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pocasset" data-tier="verified" data-phone="1" data-comm="frac sand" data-cap="bulk conveyor" data-text="rjr trans loading pocasset  frac sand bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rjr Trans Loading</h3>
         <div style="color:#555;font-size:0.9em">Pocasset, OK</div>
         <div><strong>Commodities:</strong> Frac Sand</div>
@@ -904,19 +930,18 @@
         <div><strong>Phone:</strong> (580) 456-7300</div>
         <div><a href="https://www.google.com/maps/place/Pocasset,+OK+73079/@35.210812,-97.9514226,228m/data=!3m1!1e3!4m5!3m4!1s0x87ad8e18aea8bbf9:0x6b76022860e8cced!8m2!3d35.1936734!4d-97.9525455" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pond creek" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="omaha track pond creek industrial park  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Omaha Track</h3>
         <div style="color:#555;font-size:0.9em">Pond Creek, OK</div>
         <div><a href="https://www.omahatrack.com/locations/pond-creek-ok/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Industrial Park</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sand springs" data-tier="review" data-phone="0" data-comm="" data-cap="" data-text="omnitrax logistics services sand springs   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Omnitrax Logistics Services</h3>
         <div style="color:#555;font-size:0.9em">Sand Springs, OK</div>
         <div><a href="http://omnitrax.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sand springs" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express sand springs  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Sand Springs, OK</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
@@ -924,67 +949,63 @@
         <div><strong>Phone:</strong> (918) 241-1515 ext. 19</div>
         <div><a href="https://www.parker-plastics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sand springs" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="tulsa rail transload sand springs   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tulsa Rail Transload</h3>
         <div style="color:#555;font-size:0.9em">Sand Springs, OK</div>
         <div><strong>Phone:</strong> (918) 256-7883</div>
         <div><a href="https://www.trtransload.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="shattuck" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="&amp; logistics co. shattuck   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">&amp; Logistics Co.</h3>
         <div style="color:#555;font-size:0.9em">Shattuck, OK</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="shattuck" data-tier="verified" data-phone="1" data-comm="" data-cap="bulk conveyor" data-text="cgb enterprises shattuck   bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cgb Enterprises</h3>
         <div style="color:#555;font-size:0.9em">Shattuck, OK</div>
         <div><strong>Capabilities:</strong> Bulk Conveyor</div>
         <div><strong>Phone:</strong> (985) 867-3500</div>
         <div><a href="https://www.cgb.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="shattuck" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="consolidated terminals and logistics shattuck terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Consolidated Terminals and Logistics</h3>
         <div style="color:#555;font-size:0.9em">Shattuck, OK</div>
         <div><a href="https://ctlconline.com/shattuck/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="shawnee" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="arkansas-oklahoma railroad shawnee transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Arkansas-Oklahoma Railroad</h3>
         <div style="color:#555;font-size:0.9em">Shawnee, OK</div>
         <div><strong>Phone:</strong> (918) 465-0299</div>
         <div><a href="https://aokrr.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Transload — phone from operator website 2026-08-14</div>
+        <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="stroud" data-tier="verified" data-phone="0" data-comm="frac sand|minerals" data-cap="bulk conveyor" data-text="watco terminal &amp; port services stroud  frac sand minerals bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Stroud, OK</div>
         <div><strong>Commodities:</strong> Frac Sand, Minerals</div>
         <div><strong>Capabilities:</strong> Bulk Conveyor</div>
         <div><a href="https://www.watcocompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="thomas" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="grainbelt/farmrail thomas transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Grainbelt/Farmrail</h3>
         <div style="color:#555;font-size:0.9em">Thomas, OK</div>
         <div><a href="https://www.farmrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tulsa" data-tier="verified" data-phone="0" data-comm="chemicals (liq)|foods (liq)" data-cap="steam heating" data-text="base inc tulsa  chemicals (liq) foods (liq) steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Base Inc</h3>
         <div style="color:#555;font-size:0.9em">Tulsa, OK</div>
         <div><strong>Commodities:</strong> Chemicals (Liq), Foods (Liq)</div>
         <div><strong>Capabilities:</strong> Steam Heating</div>
         <div><a href="https://www.linkedin.com/company/base-transportation/about/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tulsa" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="omnitrax logistics services tulsa   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Omnitrax Logistics Services</h3>
         <div style="color:#555;font-size:0.9em">Tulsa, OK</div>
         <div><a href="http://omnitrax.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tulsa" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express tulsa  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Tulsa, OK</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
@@ -992,25 +1013,24 @@
         <div><strong>Phone:</strong> (626) 336-8111</div>
         <div><a href="https://www.plasticexpress.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="westhom" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="farmrail westhom transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Farmrail</h3>
         <div style="color:#555;font-size:0.9em">Westhom, OK</div>
         <div><a href="https://www.farmrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="woodward" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="4c transloaders woodward on northwest oklahoma railroad  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">4C Transloaders</h3>
         <div style="color:#555;font-size:0.9em">Woodward, OK</div>
         <div><strong>Phone:</strong> (580) 256-8901</div>
         <div><a href="https://www.noklrailroad.com/transloading-services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>on Northwest Oklahoma Railroad — phone from operator website 2026-08-14</div>
+        <div>on Northwest Oklahoma Railroad</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wright city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="tlc rail services wright city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TLC Rail Services</h3>
         <div style="color:#555;font-size:0.9em">Wright City, OK</div>
         <div><strong>Phone:</strong> (833) 607-7245</div>
         <div><a href="https://tlcrailservices.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
       </div>
     <p style="font-size:0.85em;color:#666;margin-top:28px">
@@ -1038,6 +1058,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

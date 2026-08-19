@@ -499,6 +499,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in West Virginia</h1>
@@ -518,130 +536,140 @@
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (24)</option><option value="benwood">Benwood</option><option value="bridgeport">Bridgeport</option><option value="ceredo">Ceredo</option><option value="elkins">Elkins</option><option value="fairmont">Fairmont</option><option value="follansbee">Follansbee</option><option value="huntington">Huntington</option><option value="kenova">Kenova</option><option value="kingwood">Kingwood</option><option value="maidsville">Maidsville</option><option value="marmet">Marmet</option><option value="martinsburg">Martinsburg</option><option value="moorefield">Moorefield</option><option value="moundsville">Moundsville</option><option value="mount hope">Mount Hope</option><option value="mt. hope">Mt. Hope</option><option value="new martinsville">New Martinsville</option><option value="nitro">Nitro</option><option value="parkersburg">Parkersburg</option><option value="quincy">Quincy</option><option value="ravenswood">Ravenswood</option><option value="ridgeley">Ridgeley</option><option value="south charleston">South Charleston</option><option value="weirton">Weirton</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="asphalt">Asphalt</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="blending meters">Blending Meters</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="hot water heating">Hot Water Heating</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (6)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (13)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 6 of 30 sites and capability detail for 4. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="benwood" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="transload solutions benwood   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transload Solutions</h3>
         <div style="color:#555;font-size:0.9em">Benwood, WV</div>
         <div><a href="https://transloadsolutionsllc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bridgeport" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="twin eagle bridgeport terminal bridgeport   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Twin Eagle Bridgeport Terminal</h3>
         <div style="color:#555;font-size:0.9em">Bridgeport, WV</div>
         <div><a href="https://teterminals.com/terminals-logistics/bridgeport/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bridgeport" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="twin eagle terminals &amp; logistics bridgeport rail terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Twin Eagle Terminals &amp; Logistics</h3>
         <div style="color:#555;font-size:0.9em">Bridgeport, WV</div>
         <div><a href="https://teterminals.com/terminals-logistics/bridgeport/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Rail Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ceredo" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kanawha river terminal ceredo dock  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kanawha River Terminal</h3>
         <div style="color:#555;font-size:0.9em">Ceredo, WV</div>
         <div><a href="https://www.suncoke.com/en/our-business/industrial-services/logistics" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Dock</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="elkins" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="j.f. allen company elkins plant transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">J.F. Allen Company</h3>
         <div style="color:#555;font-size:0.9em">Elkins, WV</div>
         <div><strong>Phone:</strong> (800) 287-1503</div>
         <div><a href="https://jfallenco.com/contact/aggregate-quarry-elkins-plant/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Plant Transload — phone from operator website 2026-08-14</div>
+        <div>Plant Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fairmont" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="csx transflo fairmont   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">CSX Transflo</h3>
         <div style="color:#555;font-size:0.9em">Fairmont, WV</div>
         <div><a href="https://transflo.net/locations/west-virginia-fairmont/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fairmont" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="transflo fairmont terminal fairmont   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TRANSFLO Fairmont Terminal</h3>
         <div style="color:#555;font-size:0.9em">Fairmont, WV</div>
         <div><a href="https://transflo.net/locations/west-virginia-fairmont/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="follansbee" data-tier="verified" data-phone="1" data-comm="acids|asphalt|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="" data-text="port of west virginia follansbee  acids asphalt chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port Of West Virginia</h3>
         <div style="color:#555;font-size:0.9em">Follansbee, WV</div>
         <div><strong>Commodities:</strong> Acids, Asphalt, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
         <div><strong>Phone:</strong> (304) 914-4624</div>
         <div><a href="http://www.portofwestvirginia.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="huntington" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="total distribution huntington huntington   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Total Distribution Huntington</h3>
         <div style="color:#555;font-size:0.9em">Huntington, WV</div>
         <div><a href="https://totaldistribution.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kenova" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="docks creek llc kenova   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Docks Creek LLC</h3>
         <div style="color:#555;font-size:0.9em">Kenova, WV</div>
         <div><strong>Phone:</strong> (513) 651-9444</div>
         <div><a href="https://www.rtcltd.com/docks-creek-llc" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kingwood" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="r.j. corman west virginia line (rjcv) kingwood r.j. corman short line — transload service available  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">R.J. Corman West Virginia Line (RJCV)</h3>
         <div style="color:#555;font-size:0.9em">Kingwood, WV</div>
         <div><a href="https://www.rjcorman.com/companies/railroad-company/our-short-lines" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>R.J. Corman short line — transload service available — operator sweep 2026-08-14</div>
+        <div>R.J. Corman short line — transload service available</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="maidsville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="maidsville ns tbt maidsville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Maidsville NS TBT</h3>
         <div style="color:#555;font-size:0.9em">Maidsville, WV</div>
         <div><a href="https://www.nscorp.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="maidsville" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="norfolk southern tbt maidsville  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower hot water heating liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norfolk Southern TBT</h3>
         <div style="color:#555;font-size:0.9em">Maidsville, WV</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Hot Water Heating, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="http://www.nscorp.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="marmet" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="river point llc marmet   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">River Point LLC</h3>
         <div style="color:#555;font-size:0.9em">Marmet, WV</div>
         <div><strong>Phone:</strong> (513) 651-9444</div>
         <div><a href="https://www.rtcltd.com/river-point-llc" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="martinsburg" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="winchester &amp; western railroad martinsburg transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Winchester &amp; Western Railroad</h3>
         <div style="color:#555;font-size:0.9em">Martinsburg, WV</div>
         <div><a href="https://omnitrax.com/winchester-and-western-railroad-company-west-virginia/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="moorefield" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="south branch valley railroad moorefield transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">South Branch Valley Railroad</h3>
         <div style="color:#555;font-size:0.9em">Moorefield, WV</div>
         <div><a href="https://omnitrax.com/south-branch-valley-railroad/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="moundsville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="moundsville industrial park moundsville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Moundsville Industrial Park</h3>
         <div style="color:#555;font-size:0.9em">Moundsville, WV</div>
         <div><strong>Phone:</strong> (330) 418-9287</div>
         <div><a href="https://moundsvilleindustrialpark.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mount hope" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="" data-text="rj corman mount hope  chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rj Corman</h3>
         <div style="color:#555;font-size:0.9em">Mount Hope, WV</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Phone:</strong> (304) 465-8517</div>
         <div><a href="https://www.rjcorman.com/companies/railroad-company/our-short-lines" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mt. hope" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="r.j. corman mt. hope transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">R.J. Corman</h3>
         <div style="color:#555;font-size:0.9em">Mt. Hope, WV</div>
         <div><a href="https://www.rjcorman.com/companies/transload-connect/locations" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new martinsville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="watco new martinsville dedicated terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco</h3>
         <div style="color:#555;font-size:0.9em">New Martinsville, WV</div>
         <div><a href="https://www.watco.com/service/terminal-services/dedicated" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Dedicated Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="nitro" data-tier="verified" data-phone="1" data-comm="minerals" data-cap="bulk conveyor" data-text="watco terminal &amp; port services nitro  minerals bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Nitro, WV</div>
         <div><strong>Commodities:</strong> Minerals</div>
@@ -649,7 +677,7 @@
         <div><strong>Phone:</strong> (304) 550-6347</div>
         <div><a href="https://www.watco.com/service/terminals/nitro-wv/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="parkersburg" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="a&amp;r transport inc parkersburg  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">Parkersburg, WV</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
@@ -657,55 +685,51 @@
         <div><strong>Phone:</strong> (304) 420-9099</div>
         <div><a href="https://ardoingitright.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="parkersburg" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="industrial cleaners inc. parkersburg   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Industrial Cleaners Inc.</h3>
         <div style="color:#555;font-size:0.9em">Parkersburg, WV</div>
         <div><strong>Phone:</strong> (304) 488-9513</div>
         <div><a href="https://industrialcleanersinc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="parkersburg" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="little kanawha river rail parkersburg transload facility parkersburg   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Little Kanawha River Rail Parkersburg Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Parkersburg, WV</div>
         <div><strong>Phone:</strong> (740) 373-2252</div>
         <div><a href="https://lkrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="quincy" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kanawha river terminal quincy dock  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kanawha River Terminal</h3>
         <div style="color:#555;font-size:0.9em">Quincy, WV</div>
         <div><a href="https://www.suncoke.com/en/our-business/industrial-services/logistics" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Dock</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ravenswood" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="hartley oil company rail transload ravenswood   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Hartley Oil Company Rail Transload</h3>
         <div style="color:#555;font-size:0.9em">Ravenswood, WV</div>
         <div><a href="https://www.hartleyoil.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ridgeley" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="western maryland scenic railroad ridgeley transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Western Maryland Scenic Railroad</h3>
         <div style="color:#555;font-size:0.9em">Ridgeley, WV</div>
         <div><strong>Phone:</strong> (301) 759-4400</div>
         <div><a href="https://www.georgescreekfreight.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Transload — phone from operator website 2026-08-14</div>
+        <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="south charleston" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)" data-cap="blending meters|liquid pumps|liquid storage tanks|sampling services|steam heating" data-text="nelson brothers llc south charleston  acids chemicals (dry) chemicals (liq) blending meters liquid pumps liquid storage tanks sampling services steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Nelson Brothers LLC</h3>
         <div style="color:#555;font-size:0.9em">South Charleston, WV</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq)</div>
         <div><strong>Capabilities:</strong> Blending Meters, Liquid Pumps, Liquid Storage Tanks, Sampling Services, Steam Heating</div>
         <div><strong>Phone:</strong> (800) 217-2936</div>
         <div><a href="http://nelsonbrothers.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="weirton" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="weirton frontier crossing weirton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Weirton Frontier Crossing</h3>
         <div style="color:#555;font-size:0.9em">Weirton, WV</div>
         <div><strong>Phone:</strong> (330) 418-9287</div>
         <div><a href="https://www.weirtonfrontiercrossings.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="weirton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="weirton ice and coal supply company weirton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Weirton Ice and Coal Supply Company</h3>
         <div style="color:#555;font-size:0.9em">Weirton, WV</div>
 
@@ -736,6 +760,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

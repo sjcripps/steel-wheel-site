@@ -575,6 +575,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Arkansas</h1>
@@ -594,155 +612,165 @@
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (22)</option><option value="batesville">Batesville</option><option value="bauxite">Bauxite</option><option value="blytheville">Blytheville</option><option value="camden">Camden</option><option value="crossett">Crossett</option><option value="de queen">De Queen</option><option value="el dorado">El Dorado</option><option value="fort smith">Fort Smith</option><option value="gateway">Gateway</option><option value="helena">Helena</option><option value="jacksonville">Jacksonville</option><option value="little rock">Little Rock</option><option value="malvern">Malvern</option><option value="monticello">Monticello</option><option value="north little rock">North Little Rock</option><option value="perry">Perry</option><option value="pine bluff">Pine Bluff</option><option value="russellville">Russellville</option><option value="springdale">Springdale</option><option value="tenark">Tenark</option><option value="van buren">Van Buren</option><option value="west memphis">West Memphis</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (9)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (8)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 6 of 36 sites and capability detail for 5. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="batesville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="natural minerals batesville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Natural Minerals</h3>
         <div style="color:#555;font-size:0.9em">Batesville, AR</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bauxite" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bauxite &amp; northern railway (bxn) bauxite genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bauxite &amp; Northern Railway (BXN)</h3>
         <div style="color:#555;font-size:0.9em">Bauxite, AR</div>
         <div><a href="https://www.gwrr.com/railroads/bauxite-and-northern-railway" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="blytheville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="watco blytheville marine terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco</h3>
         <div style="color:#555;font-size:0.9em">Blytheville, AR</div>
         <div><a href="https://www.watco.com/service/terminals/blytheville-ar/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Marine Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="blytheville" data-tier="verified" data-phone="0" data-comm="chemicals (liq)|minerals|petroleum products|steel" data-cap="bulk conveyor|liquid pumps|liquid storage tanks|sampling services|scale" data-text="watco terminal &amp; port services blytheville  chemicals (liq) minerals petroleum products steel bulk conveyor liquid pumps liquid storage tanks sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Blytheville, AR</div>
         <div><strong>Commodities:</strong> Chemicals (Liq), Minerals, Petroleum Products, Steel</div>
         <div><strong>Capabilities:</strong> Bulk Conveyor, Liquid Pumps, Liquid Storage Tanks, Sampling Services, Scale</div>
         <div><a href="https://www.watcocompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="camden" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="camden &amp; southern railroad / south arkansas intermodal park camden   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Camden &amp; Southern Railroad / South Arkansas Intermodal Park</h3>
         <div style="color:#555;font-size:0.9em">Camden, AR</div>
         <div><a href="https://omnitrax.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="crossett" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="arkansas louisiana &amp; mississippi railroad (alm) crossett genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Arkansas Louisiana &amp; Mississippi Railroad (ALM)</h3>
         <div style="color:#555;font-size:0.9em">Crossett, AR</div>
         <div><a href="https://www.gwrr.com/railroads/arkansas-louisiana-and-missisippi-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="de queen" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="dequeen and eastern railroad (patriot rail) de queen patriot rail short line, transload service  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">DeQueen and Eastern Railroad (Patriot Rail)</h3>
         <div style="color:#555;font-size:0.9em">De Queen, AR</div>
         <div><a href="https://patriotrail.com/railroads/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Patriot Rail short line, transload service — added from operator locations sweep 2026-08-14</div>
+        <div>Patriot Rail short line, transload service</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="el dorado" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ouachita railroad transload el dorado   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ouachita Railroad Transload</h3>
         <div style="color:#555;font-size:0.9em">El Dorado, AR</div>
         <div><a href="https://omnitrax.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fort smith" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="arkansas refrigerated services fort smith   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Arkansas Refrigerated Services</h3>
         <div style="color:#555;font-size:0.9em">Fort Smith, AR</div>
         <div><strong>Phone:</strong> (479) 783-1006</div>
         <div><a href="https://arssco.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fort smith" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="g&amp;d trucking inc. fort smith   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">G&amp;D Trucking Inc.</h3>
         <div style="color:#555;font-size:0.9em">Fort Smith, AR</div>
         <div><a href="https://www.hoffmantransportation.com/facilities" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fort smith" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="heniff food grade fort smith facility  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Heniff Food Grade</h3>
         <div style="color:#555;font-size:0.9em">Fort Smith, AR</div>
         <div><a href="https://www.heniff.com/about-heniff/locations/locations-detail/fort-smith-ar" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Facility</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fort smith" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="jei fort smith north 4th street transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Jei</h3>
         <div style="color:#555;font-size:0.9em">Fort Smith, AR</div>
         <div><a href="https://jeitransload.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>North 4th Street Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fort smith" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="jei fort smith south e street transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Jei</h3>
         <div style="color:#555;font-size:0.9em">Fort Smith, AR</div>
         <div><a href="https://jeitransload.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>South E Street Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fort smith" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="logistic services inc. fort smith port of terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Logistic Services Inc.</h3>
         <div style="color:#555;font-size:0.9em">Fort Smith, AR</div>
         <div>Port of Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="gateway" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="ozark transmodal gateway   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ozark Transmodal</h3>
         <div style="color:#555;font-size:0.9em">Gateway, AR</div>
         <div><strong>Phone:</strong> (800) 687-8600</div>
         <div><a href="https://www.amrailroad.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="helena" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="griffin river terminal helena   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Griffin River Terminal</h3>
         <div style="color:#555;font-size:0.9em">Helena, AR</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="jacksonville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="smart warehousing jacksonville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Smart Warehousing</h3>
         <div style="color:#555;font-size:0.9em">Jacksonville, AR</div>
         <div><a href="https://www.smartwarehousing.com/warehouses-contacts" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="little rock" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products" data-cap="air compressor|blower|bulk conveyor|liquid pumps|sampling services|scale|tank trailer cleaning" data-text="bulk transport co little rock  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products air compressor blower bulk conveyor liquid pumps sampling services scale tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulk Transport Co</h3>
         <div style="color:#555;font-size:0.9em">Little Rock, AR</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Sampling Services, Scale, Tank Trailer Cleaning</div>
         <div><strong>Phone:</strong> (636) 717-2600</div>
         <div><a href="https://btcbulk.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="malvern" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="arkansas midland railroad (akmd) malvern genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Arkansas Midland Railroad (AKMD)</h3>
         <div style="color:#555;font-size:0.9em">Malvern, AR</div>
         <div><a href="https://www.gwrr.com/railroads/arkansas-midland-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="malvern" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="arkansas transload malvern   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Arkansas Transload</h3>
         <div style="color:#555;font-size:0.9em">Malvern, AR</div>
         <div><a href="https://arkansastransload.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="malvern" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="prescott and northwestern railroad (pnw) malvern genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Prescott and Northwestern Railroad (PNW)</h3>
         <div style="color:#555;font-size:0.9em">Malvern, AR</div>
         <div><a href="https://www.gwrr.com/railroads/prescott-and-northwestern-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="malvern" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="warren &amp; saline river railroad (wsr) malvern genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Warren &amp; Saline River Railroad (WSR)</h3>
         <div style="color:#555;font-size:0.9em">Malvern, AR</div>
         <div><a href="https://www.gwrr.com/railroads/warren-and-saline-river-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="malvern" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="we pack logistics malvern   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">We Pack Logistics</h3>
         <div style="color:#555;font-size:0.9em">Malvern, AR</div>
         <div><a href="https://www.wepack.com/what-we-do#transload-services" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="monticello" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="arrow reload monticello   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Arrow Reload</h3>
         <div style="color:#555;font-size:0.9em">Monticello, AR</div>
         <div><a href="https://www.arrow.ca/reload/location/monticello-reload/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="monticello" data-tier="verified" data-phone="0" data-comm="lumber" data-cap="" data-text="we pack logistics monticello  lumber " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">We Pack Logistics</h3>
         <div style="color:#555;font-size:0.9em">Monticello, AR</div>
         <div><strong>Commodities:</strong> Lumber</div>
         <div><a href="https://www.wepack.com/what-we-do#transload-services" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north little rock" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|foods (dry)|minerals|plastics (dry)" data-cap="bulk conveyor|scale|tank trailer cleaning" data-text="bruce oakley inc north little rock  chemicals (dry) foods (dry) minerals plastics (dry) bulk conveyor scale tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bruce Oakley Inc</h3>
         <div style="color:#555;font-size:0.9em">North Little Rock, AR</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Foods (Dry), Minerals, Plastics (Dry)</div>
@@ -750,56 +778,53 @@
         <div><strong>Phone:</strong> (501) 945-0875</div>
         <div><a href="http://bruceoakley.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north little rock" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="we pack logistics north little rock   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">We Pack Logistics</h3>
         <div style="color:#555;font-size:0.9em">North Little Rock, AR</div>
         <div><a href="https://www.wepack.com/what-we-do#transload-services" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="perry" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="little rock &amp; western railway (lrwn) perry genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Little Rock &amp; Western Railway (LRWN)</h3>
         <div style="color:#555;font-size:0.9em">Perry, AR</div>
         <div><a href="https://www.gwrr.com/railroads/little-rock-and-western-railway" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pine bluff" data-tier="verified" data-phone="0" data-comm="frac sand|minerals" data-cap="bulk conveyor" data-text="watco terminal &amp; port services pine bluff  frac sand minerals bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Pine Bluff, AR</div>
         <div><strong>Commodities:</strong> Frac Sand, Minerals</div>
         <div><strong>Capabilities:</strong> Bulk Conveyor</div>
         <div><a href="https://www.watcocompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="russellville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="dardanelle and russellville railroad transload russellville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Dardanelle and Russellville Railroad Transload</h3>
         <div style="color:#555;font-size:0.9em">Russellville, AR</div>
         <div><a href="https://omnitrax.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="springdale" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="ozark transmodal inc. springdale   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ozark Transmodal Inc.</h3>
         <div style="color:#555;font-size:0.9em">Springdale, AR</div>
         <div><strong>Phone:</strong> (800) 687-8600</div>
         <div><a href="https://www.amrailroad.com/freight/ozark-transmodal-inc" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tenark" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="west memphis transload tenark   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">West Memphis Transload</h3>
         <div style="color:#555;font-size:0.9em">Tenark, AR</div>
         <div><strong>Phone:</strong> (870) 702-6077</div>
         <div><a href="https://jag-transport.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="van buren" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="consolidated grain &amp; barge van buren   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Consolidated Grain &amp; Barge</h3>
         <div style="color:#555;font-size:0.9em">Van Buren, AR</div>
         <div><strong>Phone:</strong> (870) 576-4163</div>
         <div><a href="https://cgb.com/find-us/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="van buren" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="logistic services inc. van buren port of terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Logistic Services Inc.</h3>
         <div style="color:#555;font-size:0.9em">Van Buren, AR</div>
         <div>Port of Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="west memphis" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|frac sand|minerals" data-cap="blower|bulk conveyor|liquid pumps|liquid storage tanks|portable vacuum|sampling services|scale" data-text="mid-south bulk services inc west memphis  chemicals (dry) frac sand minerals blower bulk conveyor liquid pumps liquid storage tanks portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mid-South Bulk Services Inc</h3>
         <div style="color:#555;font-size:0.9em">West Memphis, AR</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Frac Sand, Minerals</div>
@@ -807,7 +832,7 @@
         <div><strong>Phone:</strong> (870) 735-8550</div>
         <div><a href="http://midsouthbulk.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="west memphis" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="west memphis base railroad, llc west memphis jaguar transport holdings  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">West Memphis Base Railroad, LLC</h3>
         <div style="color:#555;font-size:0.9em">West Memphis, AR</div>
         <div><a href="https://jag-transport.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
@@ -839,6 +864,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

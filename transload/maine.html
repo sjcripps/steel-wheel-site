@@ -326,6 +326,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Maine</h1>
@@ -345,8 +363,22 @@
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (11)</option><option value="auburn">Auburn</option><option value="bangor">Bangor</option><option value="fairfield">Fairfield</option><option value="hermon">Hermon</option><option value="mechanic falls">Mechanic Falls</option><option value="portland">Portland</option><option value="scarborough">Scarborough</option><option value="searsport">Searsport</option><option value="south paris">South Paris</option><option value="south portland">South Portland</option><option value="van buren">Van Buren</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="bulk conveyor">Bulk Conveyor</option><option value="liquid pumps">Liquid Pumps</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (2)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (7)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 2 of 18 sites and capability detail for 1. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="auburn" data-tier="verified" data-phone="1" data-comm="lumber" data-cap="" data-text="dirigo transfer auburn 1924 hotel rd — casco bay rail holdings trade name; handling and storage rates on request lumber " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Dirigo Transfer</h3>
         <div style="color:#555;font-size:0.9em">Auburn, ME</div>
         <div><strong>Commodities:</strong> Lumber</div>
@@ -354,106 +386,99 @@
         <div><a href="https://cascobayrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>1924 Hotel Rd — Casco Bay Rail Holdings trade name; handling and storage rates on request</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="auburn" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="lynch logistics, inc. auburn   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lynch Logistics, Inc.</h3>
         <div style="color:#555;font-size:0.9em">Auburn, ME</div>
         <div><strong>Phone:</strong> (800) 639-9704</div>
         <div><a href="https://www.lynchlogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="auburn" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="nepw logistics auburn   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">NEPW Logistics</h3>
         <div style="color:#555;font-size:0.9em">Auburn, ME</div>
         <div><a href="https://www.nepw.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="auburn" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="savage safe handling inc auburn  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor bulk conveyor liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Safe Handling Inc</h3>
         <div style="color:#555;font-size:0.9em">Auburn, ME</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><strong>Phone:</strong> (207) 440-2500</div>
         <div><a href="https://savageco.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="auburn" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="st. lawrence &amp; atlantic railroad (slr) auburn genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">St. Lawrence &amp; Atlantic Railroad (SLR)</h3>
         <div style="color:#555;font-size:0.9em">Auburn, ME</div>
         <div><a href="https://www.gwrr.com/railroads/st-lawrence-and-atlantic-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bangor" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="lynch logistics rice street warehouse bangor   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lynch Logistics Rice Street Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Bangor, ME</div>
         <div><strong>Phone:</strong> (207) 659-3577</div>
         <div><a href="https://drive.lynchlogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bangor" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="sibley transportation bangor warehouse bangor   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sibley Transportation Bangor Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Bangor, ME</div>
         <div><a href="https://www.sibleytransport.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fairfield" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="nepw logistics fairfield fairfield   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">NEPW Logistics Fairfield</h3>
         <div style="color:#555;font-size:0.9em">Fairfield, ME</div>
         <div><a href="https://www.nepw.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hermon" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="dysarts warehouse hermon   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Dysarts Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Hermon, ME</div>
         <div><a href="https://dysartsservicecenter.com/warehouse/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mechanic falls" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="nepw logistics mechanic falls   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">NEPW Logistics</h3>
         <div style="color:#555;font-size:0.9em">Mechanic Falls, ME</div>
         <div><a href="https://www.nepw.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="portland" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="maine international cold storage facility portland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Maine International Cold Storage Facility</h3>
         <div style="color:#555;font-size:0.9em">Portland, ME</div>
         <div><strong>Phone:</strong> (207) 464-7648</div>
         <div><a href="https://coldstoragemaine.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="portland" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="nepw logistics portland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">NEPW Logistics</h3>
         <div style="color:#555;font-size:0.9em">Portland, ME</div>
         <div><a href="https://www.nepw.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="scarborough" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="nepw logistics scarborough   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">NEPW Logistics</h3>
         <div style="color:#555;font-size:0.9em">Scarborough, ME</div>
         <div><a href="https://www.nepw.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="searsport" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="gac chemical searsport logistics facility searsport   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">GAC Chemical Searsport Logistics Facility</h3>
         <div style="color:#555;font-size:0.9em">Searsport, ME</div>
         <div><strong>Phone:</strong> (800) 266-5155</div>
         <div><a href="https://www.gacchemical.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="searsport" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="sprague terminals searsport   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sprague Terminals</h3>
         <div style="color:#555;font-size:0.9em">Searsport, ME</div>
         <div><a href="https://www.spragueenergy.com/materials-handling/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="south paris" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="nepw logistics south paris   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">NEPW Logistics</h3>
         <div style="color:#555;font-size:0.9em">South Paris, ME</div>
         <div><a href="https://www.nepw.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="south portland" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="transflo portland terminal south portland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TRANSFLO Portland Terminal</h3>
         <div style="color:#555;font-size:0.9em">South Portland, ME</div>
         <div><a href="https://www.transflo.net/locations/maine-portland/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div> — VERIFIED ACTIVE 2026-08-14: operated by Precision Terminal Logistics for CSX; Rigby improvement project bid Jan 2026.</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="van buren" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="nbm railways van buren reload van buren   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">NBM Railways Van Buren Reload</h3>
         <div style="color:#555;font-size:0.9em">Van Buren, ME</div>
         <div><strong>Phone:</strong> (506) 635-3952</div>
         <div><a href="https://www.nbmrailways.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
       </div>
     <p style="font-size:0.85em;color:#666;margin-top:28px">
@@ -481,6 +506,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

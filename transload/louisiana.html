@@ -1246,6 +1246,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Louisiana</h1>
@@ -1260,257 +1278,264 @@
 
     <section>
       <h2>Cities in Louisiana</h2>
-      <p><a href="/transload/new-orleans-la">New Orleans (20)</a> &middot; <a href="/transload/shreveport-la">Shreveport (5)</a> &middot; <a href="/transload/baton-rouge-la">Baton Rouge (4)</a> &middot; <a href="/transload/geismar-la">Geismar (4)</a> &middot; <a href="/transload/lafayette-la">Lafayette (4)</a> &middot; <a href="/transload/harvey-la">Harvey (3)</a> &middot; <span>Iowa (2)</span> &middot; <span>Monroe (2)</span> &middot; <span>Port Allen (2)</span> &middot; <span>Raceland (2)</span> &middot; <span>St. James (2)</span> &middot; <span>St. Rose (2)</span> &middot; <span>Westwego (2)</span> &middot; <span>Arabi (1)</span> &middot; <span>Athens (1)</span> &middot; <span>Avondale (1)</span> &middot; <span>Belle Chasse (1)</span> &middot; <span>Braithwaite (1)</span> &middot; <span>Breaux Bridge (1)</span> &middot; <span>Campti (1)</span> &middot; <span>Carville (1)</span> &middot; <span>Chalmette (1)</span> &middot; <span>Convent (1)</span> &middot; <span>Crowley (1)</span> &middot; <span>Franklin (1)</span> &middot; <span>Gibsland (1)</span> &middot; <span>Hahnville (1)</span> &middot; <span>Haynesville (1)</span> &middot; <span>Homer (1)</span> &middot; <span>Lake Charles (1)</span> &middot; <span>Manchac (1)</span> &middot; <span>Minden (1)</span> &middot; <span>Morgan City (1)</span> &middot; <span>Mulnix (1)</span> &middot; <span>Pineville (1)</span> &middot; <span>Plaquemine (1)</span> &middot; <span>Reserve (1)</span> &middot; <span>Schriever (1)</span> &middot; <span>Sunshine (1)</span> &middot; <span>Tallulah (1)</span> &middot; <span>West Monroe (1)</span> &middot; <span>Westlake (1)</span></p>
+      <div class="tl-citylist is-collapsed" id="tlCityList" data-total="42">
+        <p><a href="/transload/new-orleans-la">New Orleans (20)</a> &middot; <a href="/transload/shreveport-la">Shreveport (5)</a> &middot; <a href="/transload/baton-rouge-la">Baton Rouge (4)</a> &middot; <a href="/transload/geismar-la">Geismar (4)</a> &middot; <a href="/transload/lafayette-la">Lafayette (4)</a> &middot; <a href="/transload/harvey-la">Harvey (3)</a> &middot; <span>Iowa (2)</span> &middot; <span>Monroe (2)</span> &middot; <span>Port Allen (2)</span> &middot; <span>Raceland (2)</span> &middot; <span>St. James (2)</span> &middot; <span>St. Rose (2)</span> &middot; <span>Westwego (2)</span> &middot; <span>Arabi (1)</span> &middot; <span>Athens (1)</span> &middot; <span>Avondale (1)</span> &middot; <span>Belle Chasse (1)</span> &middot; <span>Braithwaite (1)</span> &middot; <span>Breaux Bridge (1)</span> &middot; <span>Campti (1)</span> &middot; <span>Carville (1)</span> &middot; <span>Chalmette (1)</span> &middot; <span>Convent (1)</span> &middot; <span>Crowley (1)</span><span class="tl-city-extra"> &middot; <span>Franklin (1)</span></span><span class="tl-city-extra"> &middot; <span>Gibsland (1)</span></span><span class="tl-city-extra"> &middot; <span>Hahnville (1)</span></span><span class="tl-city-extra"> &middot; <span>Haynesville (1)</span></span><span class="tl-city-extra"> &middot; <span>Homer (1)</span></span><span class="tl-city-extra"> &middot; <span>Lake Charles (1)</span></span><span class="tl-city-extra"> &middot; <span>Manchac (1)</span></span><span class="tl-city-extra"> &middot; <span>Minden (1)</span></span><span class="tl-city-extra"> &middot; <span>Morgan City (1)</span></span><span class="tl-city-extra"> &middot; <span>Mulnix (1)</span></span><span class="tl-city-extra"> &middot; <span>Pineville (1)</span></span><span class="tl-city-extra"> &middot; <span>Plaquemine (1)</span></span><span class="tl-city-extra"> &middot; <span>Reserve (1)</span></span><span class="tl-city-extra"> &middot; <span>Schriever (1)</span></span><span class="tl-city-extra"> &middot; <span>Sunshine (1)</span></span><span class="tl-city-extra"> &middot; <span>Tallulah (1)</span></span><span class="tl-city-extra"> &middot; <span>West Monroe (1)</span></span><span class="tl-city-extra"> &middot; <span>Westlake (1)</span></span></p>
+        <button type="button" class="tl-morecities" id="tlMoreCities">Show all 42 cities</button>
+      </div>
     </section>
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (42)</option><option value="arabi">Arabi</option><option value="athens">Athens</option><option value="avondale">Avondale</option><option value="baton rouge">Baton Rouge</option><option value="belle chasse">Belle Chasse</option><option value="braithwaite">Braithwaite</option><option value="breaux bridge">Breaux Bridge</option><option value="campti">Campti</option><option value="carville">Carville</option><option value="chalmette">Chalmette</option><option value="convent">Convent</option><option value="crowley">Crowley</option><option value="franklin">Franklin</option><option value="geismar">Geismar</option><option value="gibsland">Gibsland</option><option value="hahnville">Hahnville</option><option value="harvey">Harvey</option><option value="haynesville">Haynesville</option><option value="homer">Homer</option><option value="iowa">Iowa</option><option value="lafayette">Lafayette</option><option value="lake charles">Lake Charles</option><option value="manchac">Manchac</option><option value="minden">Minden</option><option value="monroe">Monroe</option><option value="morgan city">Morgan City</option><option value="mulnix">Mulnix</option><option value="new orleans">New Orleans</option><option value="pineville">Pineville</option><option value="plaquemine">Plaquemine</option><option value="port allen">Port Allen</option><option value="raceland">Raceland</option><option value="reserve">Reserve</option><option value="schriever">Schriever</option><option value="shreveport">Shreveport</option><option value="st. james">St. James</option><option value="st. rose">St. Rose</option><option value="sunshine">Sunshine</option><option value="tallulah">Tallulah</option><option value="west monroe">West Monroe</option><option value="westlake">Westlake</option><option value="westwego">Westwego</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="asphalt">Asphalt</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="liquid pumps">Liquid Pumps</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (6)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (28)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 4 of 83 sites and capability detail for 4. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="arabi" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="associated terminals, llc. arabi   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Associated Terminals, LLC.</h3>
         <div style="color:#555;font-size:0.9em">Arabi, LA</div>
         <div><a href="https://www.associatedterminals.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="athens" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="louisiana &amp; north west railroad athens transload site  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Louisiana &amp; North West Railroad</h3>
         <div style="color:#555;font-size:0.9em">Athens, LA</div>
         <div><a href="https://patriotrail.com/rail/louisiana-and-north-west-railroad-lnw/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>transload site</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="avondale" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="imtt avondale terminal avondale   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">IMTT Avondale Terminal</h3>
         <div style="color:#555;font-size:0.9em">Avondale, LA</div>
         <div><a href="https://imtt.com/terminals/avondale-la/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="baton rouge" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="a&amp;r transport inc baton rouge  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">Baton Rouge, LA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="https://ardoingitright.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="baton rouge" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="baton rouge southern railroad transload baton rouge   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Baton Rouge Southern Railroad Transload</h3>
         <div style="color:#555;font-size:0.9em">Baton Rouge, LA</div>
         <div><a href="https://www.watco.com/service/rail/baton-rouge-southern-railroad-brs/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="baton rouge" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="genesis scenic station baton rouge   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Genesis Scenic Station</h3>
         <div style="color:#555;font-size:0.9em">Baton Rouge, LA</div>
         <div><a href="https://www.genesisenergy.com/operations/onshore-facilities-and-transportation/onshore-terminals" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="baton rouge" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="savage services — baton rouge, la baton rouge savage location — 13232 leisure rd — 225) 775-6211  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Services — Baton Rouge, LA</h3>
         <div style="color:#555;font-size:0.9em">Baton Rouge, LA</div>
         <div><a href="https://savageco.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Savage location — 13232 Leisure Rd — 225) 775-6211 — operator sweep 2026-08-14</div>
+        <div>Savage location — 13232 Leisure Rd — 225) 775-6211</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="belle chasse" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="nogc kaiser yard transload facility belle chasse   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">NOGC Kaiser Yard Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Belle Chasse, LA</div>
         <div><strong>Phone:</strong> (682) 703-8505</div>
         <div><a href="https://www.rgpc.com/new-orleans-gulf-coast" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="braithwaite" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="stolthaven new orleans braithwaite   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Stolthaven New Orleans</h3>
         <div style="color:#555;font-size:0.9em">Braithwaite, LA</div>
         <div><a href="https://stolt-nielsen.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="breaux bridge" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="o’neal steel breaux bridge   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">O’Neal Steel</h3>
         <div style="color:#555;font-size:0.9em">Breaux Bridge, LA</div>
         <div><strong>Phone:</strong> (337) 332-4575</div>
         <div><a href="https://www.onealsteel.com/locations/lafayette-la/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="campti" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="natchitoches parish port campti   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Natchitoches Parish Port</h3>
         <div style="color:#555;font-size:0.9em">Campti, LA</div>
         <div><strong>Phone:</strong> (318) 356-9686</div>
         <div><a href="https://www.natchitochesparishport.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="carville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="rail logix railport carville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rail Logix Railport</h3>
         <div style="color:#555;font-size:0.9em">Carville, LA</div>
         <div><a href="https://rail-logix.com/locations/rail-logix-railport/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chalmette" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="dci chalmette   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Dci</h3>
         <div style="color:#555;font-size:0.9em">Chalmette, LA</div>
         <div><strong>Phone:</strong> (800) 835-6252</div>
         <div><a href="https://depotconnect.com/locations/chalmette-depot/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="convent" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="convent marine terminal convent   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Convent Marine Terminal</h3>
         <div style="color:#555;font-size:0.9em">Convent, LA</div>
         <div><a href="https://cmt.suncoke.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="crowley" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="crowley rail terminal crowley   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Crowley Rail Terminal</h3>
         <div style="color:#555;font-size:0.9em">Crowley, LA</div>
         <div><strong>Phone:</strong> (337) 824-2500</div>
         <div><a href="https://www.canalcompanies.com/crowley_rail_terminal" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="franklin" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="port of west st. mary franklin   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of West St. Mary</h3>
         <div style="color:#555;font-size:0.9em">Franklin, LA</div>
         <div><strong>Phone:</strong> (337) 828-3410</div>
         <div><a href="https://www.portofwsm.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="geismar" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="imtt geismar terminal geismar   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">IMTT Geismar Terminal</h3>
         <div style="color:#555;font-size:0.9em">Geismar, LA</div>
         <div><a href="https://imtt.com/terminals/geismar-la/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="geismar" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kinder morgan geismar logistics terminal geismar   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kinder Morgan Geismar Logistics Terminal</h3>
         <div style="color:#555;font-size:0.9em">Geismar, LA</div>
         <div><a href="https://www.kindermorgan.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="geismar" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kinder morgan geismar methanol terminal geismar   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kinder Morgan Geismar Methanol Terminal</h3>
         <div style="color:#555;font-size:0.9em">Geismar, LA</div>
         <div><a href="https://www.kindermorgan.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="geismar" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kinder morgan geismar river terminal geismar   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kinder Morgan Geismar River Terminal</h3>
         <div style="color:#555;font-size:0.9em">Geismar, LA</div>
         <div><a href="https://www.kindermorgan.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="gibsland" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="patriot rail gibsland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Patriot Rail</h3>
         <div style="color:#555;font-size:0.9em">Gibsland, LA</div>
         <div><a href="https://patriotrail.com/wp-content/uploads/2025/01/PR113_TransloadingOnePagerm1bh.pdf" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hahnville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="vopak viia st. charles hahnville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Vopak VIIA St. Charles</h3>
         <div style="color:#555;font-size:0.9em">Hahnville, LA</div>
         <div><strong>Phone:</strong> (281) 604-6000</div>
         <div><a href="https://www.vopak.com/terminals/viia-st-charles-louisiana" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="harvey" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bwc terminals harvey gretna terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">BWC Terminals</h3>
         <div style="color:#555;font-size:0.9em">Harvey, LA</div>
         <div><a href="https://bwcterminals.com/locations/gretna-la/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Gretna Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="harvey" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bwc terminals harvey terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">BWC Terminals</h3>
         <div style="color:#555;font-size:0.9em">Harvey, LA</div>
         <div><a href="https://bwcterminals.com/locations/harvey-la/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="harvey" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kinder morgan harvey terminal harvey   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kinder Morgan Harvey Terminal</h3>
         <div style="color:#555;font-size:0.9em">Harvey, LA</div>
         <div><a href="https://www.kindermorgan.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="haynesville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="louisiana &amp; north west railroad haynesville transload site  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Louisiana &amp; North West Railroad</h3>
         <div style="color:#555;font-size:0.9em">Haynesville, LA</div>
         <div><a href="https://patriotrail.com/rail/louisiana-and-north-west-railroad-lnw/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>transload site</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="homer" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="louisiana &amp; north west railroad homer transload site  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Louisiana &amp; North West Railroad</h3>
         <div style="color:#555;font-size:0.9em">Homer, LA</div>
         <div><a href="https://patriotrail.com/rail/louisiana-and-north-west-railroad-lnw/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>transload site</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="iowa" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lacassine operating company iowa   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lacassine Operating Company</h3>
         <div style="color:#555;font-size:0.9em">Iowa, LA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="iowa" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lacassine operating company (loc) iowa   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lacassine Operating Company (LOC)</h3>
         <div style="color:#555;font-size:0.9em">Iowa, LA</div>
         <div><a href="https://www.linkedin.com/company/lacassine-operating-company" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lafayette" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="branch warehouse lafayette   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Branch Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Lafayette, LA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lafayette" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="branch warehousing &amp; distribution center lafayette   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Branch Warehousing &amp; Distribution Center</h3>
         <div style="color:#555;font-size:0.9em">Lafayette, LA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lafayette" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="euclid chemical lafayette   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Euclid Chemical</h3>
         <div style="color:#555;font-size:0.9em">Lafayette, LA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lafayette" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="washington penn lafayette   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Washington Penn</h3>
         <div style="color:#555;font-size:0.9em">Lafayette, LA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lake charles" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="port of lake charles bulk terminal no. 1 lake charles   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of Lake Charles Bulk Terminal No. 1</h3>
         <div style="color:#555;font-size:0.9em">Lake Charles, LA</div>
         <div><strong>Phone:</strong> (337) 439-3661</div>
         <div><a href="https://portlc.com/our-business/marine/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="manchac" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="port manchac intermodal terminal manchac   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port Manchac Intermodal Terminal</h3>
         <div style="color:#555;font-size:0.9em">Manchac, LA</div>
         <div><strong>Phone:</strong> (985) 386-9309</div>
         <div><a href="https://portmanchac.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="minden" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="louisiana southern railroad minden transload minden   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Louisiana Southern Railroad Minden Transload</h3>
         <div style="color:#555;font-size:0.9em">Minden, LA</div>
         <div><a href="https://www.watco.com/service/rail/louisiana-southern-railroad-las/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="monroe" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="delta warehouse llc monroe gulf south warehouse  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Delta Warehouse LLC</h3>
         <div style="color:#555;font-size:0.9em">Monroe, LA</div>
         <div>Gulf South Warehouse</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="monroe" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="gulf south warehouse monroe   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Gulf South Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Monroe, LA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="morgan city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="port of morgan city morgan city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of Morgan City</h3>
         <div style="color:#555;font-size:0.9em">Morgan City, LA</div>
         <div><a href="https://portofmc.com/marine-terminal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mulnix" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="louisiana &amp; north west railroad mulnix transload site  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Louisiana &amp; North West Railroad</h3>
         <div style="color:#555;font-size:0.9em">Mulnix, LA</div>
         <div><a href="https://patriotrail.com/rail/louisiana-and-north-west-railroad-lnw/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>transload site</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new orleans" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="access world usa llc new orleans   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Access World Usa LLC</h3>
         <div style="color:#555;font-size:0.9em">New Orleans, LA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new orleans" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="associated terminals new orleans bulk terminal new orleans   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Associated Terminals New Orleans Bulk Terminal</h3>
         <div style="color:#555;font-size:0.9em">New Orleans, LA</div>
         <div><a href="https://www.associatedterminals.com/locations/new-orleans-bulk-terminal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new orleans" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="better boxing company new orleans   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Better Boxing Company</h3>
         <div style="color:#555;font-size:0.9em">New Orleans, LA</div>
         <div><strong>Phone:</strong> (504) 322-7711</div>
         <div><a href="https://betterboxingcompany.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new orleans" data-tier="verified" data-phone="1" data-comm="acids|asphalt|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|bulk conveyor|portable vacuum|sampling services|scale" data-text="cn cargoflo (kearney companies) new orleans  acids asphalt chemicals (dry) chemicals (liq) foods (dry) foods (liq) lumber minerals petroleum products plastics (dry) steel air compressor bulk conveyor portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">CN Cargoflo (Kearney Companies)</h3>
         <div style="color:#555;font-size:0.9em">New Orleans, LA</div>
         <div><strong>Commodities:</strong> Acids, Asphalt, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
@@ -1518,92 +1543,88 @@
         <div><strong>Phone:</strong> (504) 831-0266</div>
         <div><a href="http://www.kearneycompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new orleans" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="coastal cargo new orleans louisiana ave facility  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Coastal Cargo</h3>
         <div style="color:#555;font-size:0.9em">New Orleans, LA</div>
         <div><strong>Phone:</strong> (504) 587-1100</div>
         <div><a href="https://www.coastalcargogroup.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Louisiana Ave Facility — phone from operator website 2026-08-14</div>
+        <div>Louisiana Ave Facility</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new orleans" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="dupuy storage &amp; forwarding new orleans   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Dupuy Storage &amp; Forwarding</h3>
         <div style="color:#555;font-size:0.9em">New Orleans, LA</div>
         <div><strong>Phone:</strong> (504) 245-7600</div>
         <div><a href="https://dupuygroup.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new orleans" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="empire stevedoring co. new orleans   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Empire Stevedoring Co.</h3>
         <div style="color:#555;font-size:0.9em">New Orleans, LA</div>
         <div><a href="https://qsl.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new orleans" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="freedom intermodal tank services new orleans   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Freedom Intermodal Tank Services</h3>
         <div style="color:#555;font-size:0.9em">New Orleans, LA</div>
         <div><strong>Phone:</strong> (504) 949-2250</div>
         <div><a href="https://www.freedomintermodal.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new orleans" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="gulf gateway terminal new orleans   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Gulf Gateway Terminal</h3>
         <div style="color:#555;font-size:0.9em">New Orleans, LA</div>
         <div><a href="https://gulfgatewayterminal.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new orleans" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="kearney companies new orleans   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kearney Companies</h3>
         <div style="color:#555;font-size:0.9em">New Orleans, LA</div>
         <div><strong>Phone:</strong> (504) 831-0266</div>
         <div><a href="http://www.kearneycompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new orleans" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lineage logistics new orleans   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lineage Logistics</h3>
         <div style="color:#555;font-size:0.9em">New Orleans, LA</div>
         <div><a href="https://www.onelineage.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new orleans" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="new orleans terminal, llc new orleans   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">New Orleans Terminal, LLC</h3>
         <div style="color:#555;font-size:0.9em">New Orleans, LA</div>
         <div><a href="https://notml.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new orleans" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="new orleans transloading industrial park new orleans heniff transportation / nopb  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">New Orleans Transloading Industrial Park</h3>
         <div style="color:#555;font-size:0.9em">New Orleans, LA</div>
         <div><strong>Phone:</strong> (504) 388-4898</div>
         <div><a href="https://portnola.com/info/news-media/press-releases/new-orleans-public-belt-railroad-and-heniff-transportation-systems-llc-celebrate-new-3-million-transloading-industrial-park-in-new-orleans-east" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Heniff Transportation / NOPB — phone from operator website 2026-08-14</div>
+        <div>Heniff Transportation / NOPB</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new orleans" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="nopb transloading industrial park new orleans public belt railroad  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">NOPB Transloading Industrial Park</h3>
         <div style="color:#555;font-size:0.9em">New Orleans, LA</div>
         <div><strong>Phone:</strong> (504) 896-7400</div>
         <div><a href="https://railnola.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Public Belt Railroad — phone from operator website 2026-08-14</div>
+        <div>Public Belt Railroad</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new orleans" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="qsl new orleans new orleans   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">QSL New Orleans</h3>
         <div style="color:#555;font-size:0.9em">New Orleans, LA</div>
         <div><a href="https://qsl.com/network/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new orleans" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="qsl new orleans (qsl america / quebec stevedoring) - nopb new orleans   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">QSL New Orleans (QSL America / Quebec Stevedoring) - NOPB</h3>
         <div style="color:#555;font-size:0.9em">New Orleans, LA</div>
         <div><a href="https://qsl.com/our-network/new-orleans-first-street/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new orleans" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="tci (transportation consultants, inc.) new orleans   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TCI (Transportation Consultants, Inc.)</h3>
         <div style="color:#555;font-size:0.9em">New Orleans, LA</div>
         <div><strong>Phone:</strong> (504) 734-0561</div>
         <div><a href="https://tcitrucking.com/new-orleans/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new orleans" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="tci packaging new orleans   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TCI Packaging</h3>
         <div style="color:#555;font-size:0.9em">New Orleans, LA</div>
         <div><strong>Phone:</strong> (504) 226-8247</div>
         <div><a href="https://www.tcipackaging.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new orleans" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="transflo csxt new orleans  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transflo CSXT</h3>
         <div style="color:#555;font-size:0.9em">New Orleans, LA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1611,144 +1632,135 @@
         <div><strong>Phone:</strong> (904) 366-5642</div>
         <div><a href="http://www.transflo.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new orleans" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="transflo louisiana-new orleans terminal new orleans   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TRANSFLO Louisiana-New Orleans Terminal</h3>
         <div style="color:#555;font-size:0.9em">New Orleans, LA</div>
         <div><a href="https://www.transflo.net/locations/louisiana-new-orleans/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pineville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="beaver lake industrial park pineville top rail solutions  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Beaver Lake Industrial Park</h3>
         <div style="color:#555;font-size:0.9em">Pineville, LA</div>
         <div><a href="https://www.trsrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Top Rail Solutions</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="plaquemine" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="vopak viia plaquemine plaquemine   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Vopak VIIA Plaquemine</h3>
         <div style="color:#555;font-size:0.9em">Plaquemine, LA</div>
         <div><strong>Phone:</strong> (281) 604-6000</div>
         <div><a href="https://www.vopak.com/terminals/viia-plaquemine-louisiana" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="port allen" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bwc terminals port allen terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">BWC Terminals</h3>
         <div style="color:#555;font-size:0.9em">Port Allen, LA</div>
         <div><a href="https://bwcterminals.com/locations/port-allen-la/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="port allen" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="usa rail baton rouge port allen   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">USA Rail Baton Rouge</h3>
         <div style="color:#555;font-size:0.9em">Port Allen, LA</div>
         <div><strong>Phone:</strong> (409) 540-5360</div>
         <div><a href="https://usarailterminals.com/rail-facilities/port-allen-la-rail-storage-facility/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="raceland" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="genesis raceland terminal raceland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Genesis Raceland Terminal</h3>
         <div style="color:#555;font-size:0.9em">Raceland, LA</div>
         <div><a href="https://www.genesisenergy.com/operations/onshore-facilities-and-transportation/onshore-terminals" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="raceland" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="material translogistics inc. raceland mti  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Material Translogistics Inc.</h3>
         <div style="color:#555;font-size:0.9em">Raceland, LA</div>
         <div>MTI</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="reserve" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="globalplex intermodal terminal reserve   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Globalplex Intermodal Terminal</h3>
         <div style="color:#555;font-size:0.9em">Reserve, LA</div>
         <div><strong>Phone:</strong> (855) 752-7678</div>
         <div><a href="https://portsl.com/globalplex-intermodal-terminal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="schriever" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="louisiana &amp; delta railroad schriever transload facility schriever   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Louisiana &amp; Delta Railroad Schriever Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Schriever, LA</div>
         <div><a href="https://www.gwrr.com/railroads/louisiana-and-delta-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="shreveport" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="black gold terminals shreveport   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Black Gold Terminals</h3>
         <div style="color:#555;font-size:0.9em">Shreveport, LA</div>
         <div><strong>Phone:</strong> (903) 439-0738</div>
         <div><a href="https://www.blacklandsrailroad.com/transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="shreveport" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="c &amp; c transloads shreveport   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">C &amp; C Transloads</h3>
         <div style="color:#555;font-size:0.9em">Shreveport, LA</div>
         <div><strong>Phone:</strong> (318) 562-6101</div>
-        <div>⚠ website unreachable 2026-08-14 (dns) — dead domain link removed 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="shreveport" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="genesis red river terminal shreveport   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Genesis Red River Terminal</h3>
         <div style="color:#555;font-size:0.9em">Shreveport, LA</div>
         <div><a href="https://www.genesisenergy.com/operations/onshore-facilities-and-transportation/onshore-terminals" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="shreveport" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="loup railport shreveport   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Loup RailPort</h3>
         <div style="color:#555;font-size:0.9em">Shreveport, LA</div>
         <div><a href="https://www.louplogistics.com/news/articles/2021/20210401Shreveport.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="shreveport" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="port of caddo-bossier general cargo dock shreveport   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of Caddo-Bossier General Cargo Dock</h3>
         <div style="color:#555;font-size:0.9em">Shreveport, LA</div>
         <div><strong>Phone:</strong> (318) 524-2272</div>
         <div><a href="https://portcb.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="st. james" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="plains st. james rail terminal st. james   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plains St. James Rail Terminal</h3>
         <div style="color:#555;font-size:0.9em">St. James, LA</div>
         <div><strong>Phone:</strong> (800) 708-5071</div>
         <div><a href="https://www.plains.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="st. james" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="sunoco st. james terminal st. james   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sunoco St. James Terminal</h3>
         <div style="color:#555;font-size:0.9em">St. James, LA</div>
         <div><a href="https://www.sunocolp.com/segments/fuel-terminals/view/st-james" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="st. rose" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="imtt st. rose terminal st. rose   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">IMTT St. Rose Terminal</h3>
         <div style="color:#555;font-size:0.9em">St. Rose, LA</div>
         <div><a href="https://imtt.com/terminals/st-rose-la/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="st. rose" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="port cargo service st. rose   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port Cargo Service</h3>
         <div style="color:#555;font-size:0.9em">St. Rose, LA</div>
         <div><a href="https://portcargo.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>⚠ website unreachable 2026-08-14 (error)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sunshine" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lbc baton rouge terminal sunshine   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">LBC Baton Rouge Terminal</h3>
         <div style="color:#555;font-size:0.9em">Sunshine, LA</div>
         <div><a href="https://www.lbctt.com/location/lbc-baton-rouge/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tallulah" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="delta southern railroad tallulah madison parish port transload site  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Delta Southern Railroad</h3>
         <div style="color:#555;font-size:0.9em">Tallulah, LA</div>
         <div><a href="https://patriotrail.com/rail/delta-southern-railroad-dsrr/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Madison Parish Port Transload Site</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="west monroe" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ouachita terminals inc. west monroe   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ouachita Terminals Inc.</h3>
         <div style="color:#555;font-size:0.9em">West Monroe, LA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="westlake" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="savage service corp westlake  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor bulk conveyor liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Service Corp</h3>
         <div style="color:#555;font-size:0.9em">Westlake, LA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><strong>Phone:</strong> (801) 944-6600</div>
         <div><a href="https://savageco.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="westwego" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bwc terminals westwego terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">BWC Terminals</h3>
         <div style="color:#555;font-size:0.9em">Westwego, LA</div>
         <div><a href="https://bwcterminals.com/locations/westwego-la/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="westwego" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kinder morgan seven oaks terminal westwego   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kinder Morgan Seven Oaks Terminal</h3>
         <div style="color:#555;font-size:0.9em">Westwego, LA</div>
         <div><a href="https://www.kindermorgan.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
@@ -1779,6 +1791,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

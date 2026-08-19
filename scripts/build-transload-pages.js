@@ -211,24 +211,206 @@ function cta(context) {
     </section>`;
 }
 
+// `note` carries an internal provenance trail — "phone from operator website
+// 2026-08-14", "website repointed to homepage 2026-08-15 (old page removed)",
+// "⚠ website unreachable ... (dns)". That is real audit value and STAYS in the
+// dataset, but it was being printed verbatim on the public card: 781 of the
+// 1,199 populated notes read as maintenance chatter to a shipper. Drop any
+// dash-delimited clause carrying an ISO date and keep the descriptive ones, so
+// "on Northwest Oklahoma Railroad — phone from operator website 2026-08-14"
+// becomes "on Northwest Oklahoma Railroad". Checked against all 2,585 records:
+// 418 useful notes survive, 781 are fully suppressed, 0 dates leak through.
+const NOTE_SPLIT = /\s+[—–]\s+|\s+-\s+/;
+const ISO_DATE = /\d{4}-\d{2}-\d{2}/;
+function publicNote(note) {
+  const raw = String(note || "").trim();
+  if (!raw) return "";
+  return raw
+    .split(NOTE_SPLIT)
+    .map((s) => s.trim())
+    .filter((s) => s && !ISO_DATE.test(s))
+    .join(" — ");
+}
+
 function facilityCard(f) {
   const bits = [];
-  if (Array.isArray(f.commodities) && f.commodities.length) {
-    bits.push(`<div><strong>Commodities:</strong> ${esc(f.commodities.map(titleCase).join(", "))}</div>`);
+  const comms = Array.isArray(f.commodities) ? f.commodities : [];
+  const caps = Array.isArray(f.capabilities) ? f.capabilities : [];
+  const note = publicNote(f.note);
+  if (comms.length) {
+    bits.push(`<div><strong>Commodities:</strong> ${esc(comms.map(titleCase).join(", "))}</div>`);
   }
-  if (Array.isArray(f.capabilities) && f.capabilities.length) {
-    bits.push(`<div><strong>Capabilities:</strong> ${esc(f.capabilities.map(titleCase).join(", "))}</div>`);
+  if (caps.length) {
+    bits.push(`<div><strong>Capabilities:</strong> ${esc(caps.map(titleCase).join(", "))}</div>`);
   }
   if (f.phone) bits.push(`<div><strong>Phone:</strong> ${esc(f.phone)}</div>`);
   if (f.website) {
     bits.push(`<div><a href="${esc(f.website)}" target="_blank" rel="noopener nofollow">Operator website</a></div>`);
   }
-  if (f.note) bits.push(`<div>${esc(f.note)}</div>`);
+  if (note) bits.push(`<div>${esc(note)}</div>`);
 
-  return `      <div class="railroad-item" style="margin-bottom:14px">
+  // data-* attributes drive the client-side filter below. Pre-lowercased and
+  // pipe-delimited so filtering is a substring/equality test with no parsing.
+  const lc = (v) => String(v || "").toLowerCase();
+  const blob = [f.name, f.city, note, comms.join(" "), caps.join(" ")].join(" ").toLowerCase();
+  const attrs = [
+    `data-city="${esc(lc(f.city))}"`,
+    `data-tier="${esc(lc(f.tier))}"`,
+    `data-phone="${f.phone ? "1" : "0"}"`,
+    `data-comm="${esc(comms.map(lc).join("|"))}"`,
+    `data-cap="${esc(caps.map(lc).join("|"))}"`,
+    `data-text="${esc(blob)}"`,
+  ].join(" ");
+
+  return `      <div class="railroad-item tl-card" ${attrs} style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">${esc(f.name)}</h3>
         <div style="color:#555;font-size:0.9em">${esc(f.city)}, ${esc(f.state)}</div>
 ${bits.map((b) => `        ${b}`).join("\n")}
+      </div>`;
+}
+
+// ── Client-side filter ──────────────────────────────────────────────────────
+// Progressive enhancement, deliberately: the control ships `hidden` and JS
+// reveals it, so a crawler (and anyone with JS off) still receives every card
+// in the HTML. These pages exist for search visibility first. Nothing is
+// fetched — the filter only toggles cards already in the DOM, so a 110-facility
+// state page costs no extra request.
+const FILTER_ASSETS = `
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>`;
+
+const FILTER_JS = `
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>`;
+
+// Below this many facilities the grid is already scannable and a filter bar is
+// just chrome. Chicago (13) gets one; a 3-facility city page does not.
+const MIN_FACILITIES_FOR_FILTER = 8;
+
+function filterBar(list) {
+  if (list.length < MIN_FACILITIES_FOR_FILTER) return "";
+  const uniq = (a) => [...new Set(a.filter(Boolean).map((x) => String(x)))].sort();
+  const cities = uniq(list.map((f) => f.city));
+  const comms = uniq(list.flatMap((f) => (Array.isArray(f.commodities) ? f.commodities : [])));
+  const caps = uniq(list.flatMap((f) => (Array.isArray(f.capabilities) ? f.capabilities : [])));
+  const withComm = list.filter((f) => (f.commodities || []).length).length;
+  const withCap = list.filter((f) => (f.capabilities || []).length).length;
+  const verified = list.filter((f) => String(f.tier || "").toLowerCase() === "verified").length;
+  const withPhone = list.filter((f) => f.phone).length;
+  const opt = (v) => `<option value="${esc(String(v).toLowerCase())}">${esc(titleCase(v))}</option>`;
+
+  // Commodity/capability are populated for roughly a quarter of the dataset, so
+  // filtering on them hides sites we simply have not verified yet — NOT sites
+  // that lack the capability. Saying so prevents the filter from reading as an
+  // authoritative "no such facility here".
+  const sparse =
+    withComm < list.length || withCap < list.length
+      ? `<p class="tl-sparse">Commodity detail is confirmed for ${withComm} of ${list.length} sites and capability detail for ${withCap}. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>`
+      : "";
+
+  return `
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (${cities.length})</option>${cities.map(opt).join("")}</select>
+        ${comms.length ? `<select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option>${comms.map(opt).join("")}</select>` : ""}
+        ${caps.length ? `<select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option>${caps.map(opt).join("")}</select>` : ""}
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        ${verified ? `<label><input type="checkbox" id="tlVerified"> Verified only (${verified})</label>` : ""}
+        ${withPhone ? `<label><input type="checkbox" id="tlPhone"> Has phone (${withPhone})</label>` : ""}
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div>${sparse}
+    </div>`;
+}
+
+// The full city list is worth keeping — the linked ones are internal links to
+// city pages. But 71 of them as one undifferentiated run of text is the wall
+// Jacob hit, so collapse past CITY_FOLD and let the filter carry the browsing.
+const CITY_FOLD = 24;
+function cityListHtml(cities, ownPage) {
+  const link = (c) =>
+    ownPage.has(c.slug)
+      ? `<a href="/transload/${c.slug}">${esc(c.city)} (${c.list.length})</a>`
+      : `<span>${esc(c.city)} (${c.list.length})</span>`;
+  if (cities.length <= CITY_FOLD) return `<p>${cities.map(link).join(" &middot; ")}</p>`;
+  const shown = cities.slice(0, CITY_FOLD).map(link).join(" &middot; ");
+  // Separator lives INSIDE the hidden span, otherwise collapsing leaves a
+  // trail of orphaned middots.
+  const extra = cities
+    .slice(CITY_FOLD)
+    .map((c) => `<span class="tl-city-extra"> &middot; ${link(c)}</span>`)
+    .join("");
+  return `<div class="tl-citylist is-collapsed" id="tlCityList" data-total="${cities.length}">
+        <p>${shown}${extra}</p>
+        <button type="button" class="tl-morecities" id="tlMoreCities">Show all ${cities.length} cities</button>
       </div>`;
 }
 
@@ -299,13 +481,7 @@ for (const r of regionPages) {
     `rail-to-truck handoff from Steel Wheel Logistics.`;
 
   const ownPage = new Set(cityPages.filter((c) => c.code === r.code).map((c) => c.slug));
-  const cityLinks = r.cities
-    .map((c) =>
-      ownPage.has(c.slug)
-        ? `<a href="/transload/${c.slug}">${esc(c.city)} (${c.list.length})</a>`
-        : `<span>${esc(c.city)} (${c.list.length})</span>`
-    )
-    .join(" &middot; ");
+  const cityLinks = cityListHtml(r.cities, ownPage);
 
   const siblings = regionPages
     .filter((x) => x.code !== r.code)
@@ -328,11 +504,11 @@ for (const r of regionPages) {
 
     <section>
       <h2>Cities in ${esc(r.name)}</h2>
-      <p>${cityLinks}</p>
+      ${cityLinks}
     </section>
 
     <section>
-      <h2>Facilities</h2>
+      <h2>Facilities</h2>${filterBar(r.list)}
       <div class="railroads-grid">
 ${r.list
   .slice()
@@ -349,9 +525,16 @@ ${cta(`through ${r.name}`)}
   </main>
 `;
 
+  // Only ship the filter CSS/JS to pages that actually render one of the two
+  // controls it drives; a 4-facility region needs neither.
+  const interactive = r.list.length >= MIN_FACILITIES_FOR_FILTER || r.cities.length > CITY_FOLD;
   writeFileSync(
     join(OUTPUT_DIR, `${r.slug}.html`),
-    head({ title, description, canonical: url, jsonLd: itemListLd(r.list, title, url) }) + body + FOOTER
+    head({ title, description, canonical: url, jsonLd: itemListLd(r.list, title, url) }) +
+      (interactive ? FILTER_ASSETS : "") +
+      body +
+      (interactive ? FILTER_JS : "") +
+      FOOTER
   );
   written.push({ loc: `/transload/${r.slug}`, priority: "0.6" });
 }
@@ -384,7 +567,7 @@ for (const c of cityPages) {
     </section>
 
     <section>
-      <h2>Facilities in ${esc(c.city)}</h2>
+      <h2>Facilities in ${esc(c.city)}</h2>${filterBar(c.list)}
       <div class="railroads-grid">
 ${c.list.slice().sort((a, b) => a.name.localeCompare(b.name)).map(facilityCard).join("\n")}
       </div>${DISCLAIMER}
@@ -399,9 +582,14 @@ ${cta(`in and out of ${c.city}`)}
   </main>
 `;
 
+  const cityInteractive = c.list.length >= MIN_FACILITIES_FOR_FILTER;
   writeFileSync(
     join(OUTPUT_DIR, `${c.slug}.html`),
-    head({ title, description, canonical: url, jsonLd: itemListLd(c.list, title, url) }) + body + FOOTER
+    head({ title, description, canonical: url, jsonLd: itemListLd(c.list, title, url) }) +
+      (cityInteractive ? FILTER_ASSETS : "") +
+      body +
+      (cityInteractive ? FILTER_JS : "") +
+      FOOTER
   );
   written.push({ loc: `/transload/${c.slug}`, priority: "0.5" });
 }

@@ -1503,6 +1503,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in California</h1>
@@ -1517,69 +1535,85 @@
 
     <section>
       <h2>Cities in California</h2>
-      <p><a href="/transload/stockton-ca">Stockton (19)</a> &middot; <a href="/transload/bakersfield-ca">Bakersfield (8)</a> &middot; <a href="/transload/wilmington-ca">Wilmington (8)</a> &middot; <a href="/transload/san-diego-ca">San Diego (7)</a> &middot; <a href="/transload/long-beach-ca">Long Beach (5)</a> &middot; <a href="/transload/mcclellan-park-ca">McClellan Park (4)</a> &middot; <a href="/transload/modesto-ca">Modesto (4)</a> &middot; <a href="/transload/oakland-ca">Oakland (4)</a> &middot; <a href="/transload/colton-ca">Colton (3)</a> &middot; <a href="/transload/santa-fe-springs-ca">Santa Fe Springs (3)</a> &middot; <a href="/transload/valla-ca">Valla (3)</a> &middot; <span>Anaheim (2)</span> &middot; <span>Atwater (2)</span> &middot; <span>City of Industry (2)</span> &middot; <span>Commerce (2)</span> &middot; <span>Fontana (2)</span> &middot; <span>Lathrop (2)</span> &middot; <span>Maywood (2)</span> &middot; <span>Pomona (2)</span> &middot; <span>Richmond (2)</span> &middot; <span>Sacramento (2)</span> &middot; <span>San Bernardino (2)</span> &middot; <span>Vernon (2)</span> &middot; <span>Woodland (2)</span> &middot; <span>Antioch (1)</span> &middot; <span>Benicia (1)</span> &middot; <span>Bloomington (1)</span> &middot; <span>Buena Park (1)</span> &middot; <span>Calipatria (1)</span> &middot; <span>Carmenita (1)</span> &middot; <span>Carson (1)</span> &middot; <span>Compton (1)</span> &middot; <span>Cucamonga (1)</span> &middot; <span>East Modesto (1)</span> &middot; <span>El Centro (1)</span> &middot; <span>Fowler (1)</span> &middot; <span>Fremont (1)</span> &middot; <span>Fresno (1)</span> &middot; <span>Fullerton (1)</span> &middot; <span>Hamilton City (1)</span> &middot; <span>Helendale (1)</span> &middot; <span>Hesperia (1)</span> &middot; <span>Los Angeles (1)</span> &middot; <span>Maricopa (1)</span> &middot; <span>Merced (1)</span> &middot; <span>National City (1)</span> &middot; <span>Oildale (1)</span> &middot; <span>Oxnard (1)</span> &middot; <span>Paramount (1)</span> &middot; <span>Petaluma (1)</span> &middot; <span>Pico Rivera (1)</span> &middot; <span>Port Hueneme (1)</span> &middot; <span>Port of Stockton (1)</span> &middot; <span>Rancho Cucamonga (1)</span> &middot; <span>Redwood City (1)</span> &middot; <span>Riverside (1)</span> &middot; <span>Rogers (1)</span> &middot; <span>San Francisco (1)</span> &middot; <span>Santa Maria (1)</span> &middot; <span>Santa Paula (1)</span> &middot; <span>Schellville (1)</span> &middot; <span>Selma (1)</span> &middot; <span>Shafter (1)</span> &middot; <span>South Anaheim (1)</span> &middot; <span>South Fontana (1)</span> &middot; <span>South Gate (1)</span> &middot; <span>Vidal (1)</span> &middot; <span>Vina Vista (1)</span> &middot; <span>West Colton (1)</span> &middot; <span>West Sacramento (1)</span> &middot; <span>Yreka (1)</span></p>
+      <div class="tl-citylist is-collapsed" id="tlCityList" data-total="71">
+        <p><a href="/transload/stockton-ca">Stockton (19)</a> &middot; <a href="/transload/bakersfield-ca">Bakersfield (8)</a> &middot; <a href="/transload/wilmington-ca">Wilmington (8)</a> &middot; <a href="/transload/san-diego-ca">San Diego (7)</a> &middot; <a href="/transload/long-beach-ca">Long Beach (5)</a> &middot; <a href="/transload/mcclellan-park-ca">McClellan Park (4)</a> &middot; <a href="/transload/modesto-ca">Modesto (4)</a> &middot; <a href="/transload/oakland-ca">Oakland (4)</a> &middot; <a href="/transload/colton-ca">Colton (3)</a> &middot; <a href="/transload/santa-fe-springs-ca">Santa Fe Springs (3)</a> &middot; <a href="/transload/valla-ca">Valla (3)</a> &middot; <span>Anaheim (2)</span> &middot; <span>Atwater (2)</span> &middot; <span>City of Industry (2)</span> &middot; <span>Commerce (2)</span> &middot; <span>Fontana (2)</span> &middot; <span>Lathrop (2)</span> &middot; <span>Maywood (2)</span> &middot; <span>Pomona (2)</span> &middot; <span>Richmond (2)</span> &middot; <span>Sacramento (2)</span> &middot; <span>San Bernardino (2)</span> &middot; <span>Vernon (2)</span> &middot; <span>Woodland (2)</span><span class="tl-city-extra"> &middot; <span>Antioch (1)</span></span><span class="tl-city-extra"> &middot; <span>Benicia (1)</span></span><span class="tl-city-extra"> &middot; <span>Bloomington (1)</span></span><span class="tl-city-extra"> &middot; <span>Buena Park (1)</span></span><span class="tl-city-extra"> &middot; <span>Calipatria (1)</span></span><span class="tl-city-extra"> &middot; <span>Carmenita (1)</span></span><span class="tl-city-extra"> &middot; <span>Carson (1)</span></span><span class="tl-city-extra"> &middot; <span>Compton (1)</span></span><span class="tl-city-extra"> &middot; <span>Cucamonga (1)</span></span><span class="tl-city-extra"> &middot; <span>East Modesto (1)</span></span><span class="tl-city-extra"> &middot; <span>El Centro (1)</span></span><span class="tl-city-extra"> &middot; <span>Fowler (1)</span></span><span class="tl-city-extra"> &middot; <span>Fremont (1)</span></span><span class="tl-city-extra"> &middot; <span>Fresno (1)</span></span><span class="tl-city-extra"> &middot; <span>Fullerton (1)</span></span><span class="tl-city-extra"> &middot; <span>Hamilton City (1)</span></span><span class="tl-city-extra"> &middot; <span>Helendale (1)</span></span><span class="tl-city-extra"> &middot; <span>Hesperia (1)</span></span><span class="tl-city-extra"> &middot; <span>Los Angeles (1)</span></span><span class="tl-city-extra"> &middot; <span>Maricopa (1)</span></span><span class="tl-city-extra"> &middot; <span>Merced (1)</span></span><span class="tl-city-extra"> &middot; <span>National City (1)</span></span><span class="tl-city-extra"> &middot; <span>Oildale (1)</span></span><span class="tl-city-extra"> &middot; <span>Oxnard (1)</span></span><span class="tl-city-extra"> &middot; <span>Paramount (1)</span></span><span class="tl-city-extra"> &middot; <span>Petaluma (1)</span></span><span class="tl-city-extra"> &middot; <span>Pico Rivera (1)</span></span><span class="tl-city-extra"> &middot; <span>Port Hueneme (1)</span></span><span class="tl-city-extra"> &middot; <span>Port of Stockton (1)</span></span><span class="tl-city-extra"> &middot; <span>Rancho Cucamonga (1)</span></span><span class="tl-city-extra"> &middot; <span>Redwood City (1)</span></span><span class="tl-city-extra"> &middot; <span>Riverside (1)</span></span><span class="tl-city-extra"> &middot; <span>Rogers (1)</span></span><span class="tl-city-extra"> &middot; <span>San Francisco (1)</span></span><span class="tl-city-extra"> &middot; <span>Santa Maria (1)</span></span><span class="tl-city-extra"> &middot; <span>Santa Paula (1)</span></span><span class="tl-city-extra"> &middot; <span>Schellville (1)</span></span><span class="tl-city-extra"> &middot; <span>Selma (1)</span></span><span class="tl-city-extra"> &middot; <span>Shafter (1)</span></span><span class="tl-city-extra"> &middot; <span>South Anaheim (1)</span></span><span class="tl-city-extra"> &middot; <span>South Fontana (1)</span></span><span class="tl-city-extra"> &middot; <span>South Gate (1)</span></span><span class="tl-city-extra"> &middot; <span>Vidal (1)</span></span><span class="tl-city-extra"> &middot; <span>Vina Vista (1)</span></span><span class="tl-city-extra"> &middot; <span>West Colton (1)</span></span><span class="tl-city-extra"> &middot; <span>West Sacramento (1)</span></span><span class="tl-city-extra"> &middot; <span>Yreka (1)</span></span></p>
+        <button type="button" class="tl-morecities" id="tlMoreCities">Show all 71 cities</button>
+      </div>
     </section>
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (71)</option><option value="anaheim">Anaheim</option><option value="antioch">Antioch</option><option value="atwater">Atwater</option><option value="bakersfield">Bakersfield</option><option value="benicia">Benicia</option><option value="bloomington">Bloomington</option><option value="buena park">Buena Park</option><option value="calipatria">Calipatria</option><option value="carmenita">Carmenita</option><option value="carson">Carson</option><option value="city of industry">City Of Industry</option><option value="colton">Colton</option><option value="commerce">Commerce</option><option value="compton">Compton</option><option value="cucamonga">Cucamonga</option><option value="east modesto">East Modesto</option><option value="el centro">El Centro</option><option value="fontana">Fontana</option><option value="fowler">Fowler</option><option value="fremont">Fremont</option><option value="fresno">Fresno</option><option value="fullerton">Fullerton</option><option value="hamilton city">Hamilton City</option><option value="helendale">Helendale</option><option value="hesperia">Hesperia</option><option value="lathrop">Lathrop</option><option value="long beach">Long Beach</option><option value="los angeles">Los Angeles</option><option value="maricopa">Maricopa</option><option value="maywood">Maywood</option><option value="mcclellan park">Mcclellan Park</option><option value="merced">Merced</option><option value="modesto">Modesto</option><option value="national city">National City</option><option value="oakland">Oakland</option><option value="oildale">Oildale</option><option value="oxnard">Oxnard</option><option value="paramount">Paramount</option><option value="petaluma">Petaluma</option><option value="pico rivera">Pico Rivera</option><option value="pomona">Pomona</option><option value="port hueneme">Port Hueneme</option><option value="port of stockton">Port Of Stockton</option><option value="rancho cucamonga">Rancho Cucamonga</option><option value="redwood city">Redwood City</option><option value="richmond">Richmond</option><option value="riverside">Riverside</option><option value="rogers">Rogers</option><option value="sacramento">Sacramento</option><option value="san bernardino">San Bernardino</option><option value="san diego">San Diego</option><option value="san francisco">San Francisco</option><option value="santa fe springs">Santa Fe Springs</option><option value="santa maria">Santa Maria</option><option value="santa paula">Santa Paula</option><option value="schellville">Schellville</option><option value="selma">Selma</option><option value="shafter">Shafter</option><option value="south anaheim">South Anaheim</option><option value="south fontana">South Fontana</option><option value="south gate">South Gate</option><option value="stockton">Stockton</option><option value="valla">Valla</option><option value="vernon">Vernon</option><option value="vidal">Vidal</option><option value="vina vista">Vina Vista</option><option value="west colton">West Colton</option><option value="west sacramento">West Sacramento</option><option value="wilmington">Wilmington</option><option value="woodland">Woodland</option><option value="yreka">Yreka</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="asphalt">Asphalt</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="blending meters">Blending Meters</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (65)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (67)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 59 of 141 sites and capability detail for 46. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="anaheim" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="a&amp;r transport inc anaheim  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">Anaheim, CA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="https://ardoingitright.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="anaheim" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express anaheim  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Anaheim, CA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Sampling Services, Scale</div>
         <div><a href="http://www.plasticexpress.com/operations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="antioch" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="antioch rail &amp; trans loading antioch   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Antioch Rail &amp; Trans Loading</h3>
         <div style="color:#555;font-size:0.9em">Antioch, CA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="atwater" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="hydra - merced atwater   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">HYDRA - Merced</h3>
         <div style="color:#555;font-size:0.9em">Atwater, CA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="atwater" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="hydra distribution &amp; rail services - merced atwater   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">HYDRA Distribution &amp; Rail Services - Merced</h3>
         <div style="color:#555;font-size:0.9em">Atwater, CA</div>
         <div><a href="https://hydralg.com/rail-services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bakersfield" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="amber chemical inc. bakersfield   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Amber Chemical Inc.</h3>
         <div style="color:#555;font-size:0.9em">Bakersfield, CA</div>
         <div><strong>Phone:</strong> (661) 325-2072</div>
         <div><a href="https://www.amberchem.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bakersfield" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bakersfield qdc bakersfield   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bakersfield QDC</h3>
         <div style="color:#555;font-size:0.9em">Bakersfield, CA</div>
         <div><a href="https://www.bakersfieldqdc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bakersfield" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="calcot ltd. bakersfield   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Calcot Ltd.</h3>
         <div style="color:#555;font-size:0.9em">Bakersfield, CA</div>
         <div><a href="https://calcot.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bakersfield" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="delta trading bakersfield   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Delta Trading</h3>
         <div style="color:#555;font-size:0.9em">Bakersfield, CA</div>
         <div><a href="https://deltatradinglp.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bakersfield" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="h lima bakersfield   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">H Lima</h3>
         <div style="color:#555;font-size:0.9em">Bakersfield, CA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bakersfield" data-tier="verified" data-phone="1" data-comm="foods (dry)" data-cap="bulk conveyor" data-text="quality distribution bakersfield  foods (dry) bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Quality Distribution</h3>
         <div style="color:#555;font-size:0.9em">Bakersfield, CA</div>
         <div><strong>Commodities:</strong> Foods (Dry)</div>
@@ -1587,33 +1621,33 @@
         <div><strong>Phone:</strong> (661) 588-8203</div>
         <div><a href="http://bakersfieldqdc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bakersfield" data-tier="verified" data-phone="1" data-comm="steel" data-cap="" data-text="tubular transport &amp; logistics bakersfield  steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tubular Transport &amp; Logistics</h3>
         <div style="color:#555;font-size:0.9em">Bakersfield, CA</div>
         <div><strong>Commodities:</strong> Steel</div>
         <div><strong>Phone:</strong> (562) 280-7185</div>
         <div><a href="http://tubulartransport.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bakersfield" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="united states cold storage bakersfield   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">United States Cold Storage</h3>
         <div style="color:#555;font-size:0.9em">Bakersfield, CA</div>
         <div><a href="https://www.uscold.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="benicia" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="santa clara warehouses (yandell companies) benicia 363 industrial way  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Santa Clara Warehouses (Yandell Companies)</h3>
         <div style="color:#555;font-size:0.9em">Benicia, CA</div>
         <div><strong>Phone:</strong> (877) 750-0012</div>
         <div><a href="https://www.yandellcompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>363 Industrial Way — phone from operator website 2026-08-14</div>
+        <div>363 Industrial Way</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bloomington" data-tier="verified" data-phone="0" data-comm="frac sand|lumber|minerals|steel" data-cap="bulk conveyor|sampling services|scale" data-text="mountain reload llc bloomington  frac sand lumber minerals steel bulk conveyor sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mountain Reload LLC</h3>
         <div style="color:#555;font-size:0.9em">Bloomington, CA</div>
         <div><strong>Commodities:</strong> Frac Sand, Lumber, Minerals, Steel</div>
         <div><strong>Capabilities:</strong> Bulk Conveyor, Sampling Services, Scale</div>
         <div><a href="https://www.transloadgroup.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="buena park" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="a&amp;r transport inc buena park  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">Buena Park, CA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
@@ -1621,55 +1655,54 @@
         <div><strong>Phone:</strong> (909) 329-6885</div>
         <div><a href="https://ardoingitright.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="calipatria" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="imperial valley rail terminal calipatria   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Imperial Valley Rail Terminal</h3>
         <div style="color:#555;font-size:0.9em">Calipatria, CA</div>
         <div><strong>Phone:</strong> (760) 348-2600</div>
         <div><a href="https://imperialvalleyrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="carmenita" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="a&amp;r transport inc carmenita  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">Carmenita, CA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="https://ardoingitright.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="carson" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="pacific coast container inc carson   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pacific Coast Container Inc</h3>
         <div style="color:#555;font-size:0.9em">Carson, CA</div>
         <div><a href="https://pcclogistics.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="city of industry" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="cts city of industry   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cts</h3>
         <div style="color:#555;font-size:0.9em">City of Industry, CA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="city of industry" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express city of industry  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">City of Industry, CA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Sampling Services, Scale</div>
         <div><a href="http://www.plasticexpress.com/operations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="colton" data-tier="verified" data-phone="1" data-comm="lumber|steel" data-cap="" data-text="cascade warehouse colton  lumber steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cascade Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Colton, CA</div>
         <div><strong>Commodities:</strong> Lumber, Steel</div>
         <div><strong>Phone:</strong> (909) 825-5760</div>
         <div><a href="https://www.louplogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="colton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="loup logistics colton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Loup Logistics</h3>
         <div style="color:#555;font-size:0.9em">Colton, CA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="colton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="loup railport colton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Loup RailPort</h3>
         <div style="color:#555;font-size:0.9em">Colton, CA</div>
         <div><a href="https://www.louplogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="commerce" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express commerce  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Commerce, CA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
@@ -1677,7 +1710,7 @@
         <div><strong>Phone:</strong> (626) 336-8111</div>
         <div><a href="https://www.plasticexpress.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="commerce" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale|steam heating" data-text="ventura transfer co commerce  acids chemicals (dry) chemicals (liq) minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ventura Transfer Co</h3>
         <div style="color:#555;font-size:0.9em">Commerce, CA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1685,18 +1718,18 @@
         <div><strong>Phone:</strong> (310) 549-1660</div>
         <div><a href="http://www.venturatransfercompany.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="compton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="adp express compton transload compton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">ADP Express Compton Transload</h3>
         <div style="color:#555;font-size:0.9em">Compton, CA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cucamonga" data-tier="verified" data-phone="0" data-comm="steel" data-cap="" data-text="mhx llc cucamonga  steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mhx LLC</h3>
         <div style="color:#555;font-size:0.9em">Cucamonga, CA</div>
         <div><strong>Commodities:</strong> Steel</div>
         <div><a href="https://mhx.solutions/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="east modesto" data-tier="verified" data-phone="1" data-comm="foods (dry)|frac sand|minerals" data-cap="bulk conveyor|sampling services|scale" data-text="central valley ag transport east modesto  foods (dry) frac sand minerals bulk conveyor sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Central Valley AG Transport</h3>
         <div style="color:#555;font-size:0.9em">East Modesto, CA</div>
         <div><strong>Commodities:</strong> Foods (Dry), Frac Sand, Minerals</div>
@@ -1704,7 +1737,7 @@
         <div><strong>Phone:</strong> (209) 869-1721</div>
         <div><a href="http://www.cv-ag.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="el centro" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale|steam heating" data-text="ventura transfer co el centro  acids chemicals (dry) chemicals (liq) minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ventura Transfer Co</h3>
         <div style="color:#555;font-size:0.9em">El Centro, CA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1712,21 +1745,21 @@
         <div><strong>Phone:</strong> (310) 549-1660</div>
         <div><a href="http://www.venturatransfercompany.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fontana" data-tier="verified" data-phone="1" data-comm="steel" data-cap="" data-text="mhx llc fontana  steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mhx LLC</h3>
         <div style="color:#555;font-size:0.9em">Fontana, CA</div>
         <div><strong>Commodities:</strong> Steel</div>
         <div><strong>Phone:</strong> (909) 371-1939</div>
         <div><a href="http://www.mhx.solutions/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fontana" data-tier="verified" data-phone="1" data-comm="lumber" data-cap="" data-text="tristar flc inc fontana  lumber " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tristar Flc Inc</h3>
         <div style="color:#555;font-size:0.9em">Fontana, CA</div>
         <div><strong>Commodities:</strong> Lumber</div>
         <div><strong>Phone:</strong> (909) 823-3000</div>
         <div><a href="http://www.tristarpnw.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fowler" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="van-g logistics fowler  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Van-G Logistics</h3>
         <div style="color:#555;font-size:0.9em">Fowler, CA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1734,43 +1767,42 @@
         <div><strong>Phone:</strong> (559) 834-5500</div>
         <div><a href="https://www.vanglogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fremont" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="truck rail handling fremont   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Truck Rail Handling</h3>
         <div style="color:#555;font-size:0.9em">Fremont, CA</div>
         <div><a href="https://qatp-trh.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fresno" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="united states cold storage of california fresno   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">United States Cold Storage Of California</h3>
         <div style="color:#555;font-size:0.9em">Fresno, CA</div>
         <div><a href="https://www.uscold.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fullerton" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express fullerton  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Fullerton, CA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Sampling Services, Scale</div>
         <div><a href="http://www.plasticexpress.com/operations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hamilton city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="nutrien ag hamilton city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Nutrien Ag</h3>
         <div style="color:#555;font-size:0.9em">Hamilton City, CA</div>
         <div><a href="https://nutriensolutions.com/content/nutrienagsolutions/us/en/find-location.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="helendale" data-tier="verified" data-phone="1" data-comm="steel" data-cap="" data-text="mhx llc helendale  steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mhx LLC</h3>
         <div style="color:#555;font-size:0.9em">Helendale, CA</div>
         <div><strong>Commodities:</strong> Steel</div>
         <div><strong>Phone:</strong> (800) 825-1205</div>
         <div><a href="https://mhx.solutions/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hesperia" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="brent-wood products inc. hesperia   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Brent-Wood Products Inc.</h3>
         <div style="color:#555;font-size:0.9em">Hesperia, CA</div>
         <div><strong>Phone:</strong> (310) 327-1655</div>
         <div><a href="https://www.brent-wood.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lathrop" data-tier="verified" data-phone="1" data-comm="foods (dry)" data-cap="blower|sampling services|scale" data-text="food express inc lathrop  foods (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Food Express Inc</h3>
         <div style="color:#555;font-size:0.9em">Lathrop, CA</div>
         <div><strong>Commodities:</strong> Foods (Dry)</div>
@@ -1778,62 +1810,57 @@
         <div><strong>Phone:</strong> (209) 858-2142</div>
         <div><a href="https://www.foodexp.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lathrop" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="van-g logistics lathrop  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Van-G Logistics</h3>
         <div style="color:#555;font-size:0.9em">Lathrop, CA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale</div>
         <div><strong>Phone:</strong> (559) 834-5500</div>
         <div><a href="http://www.vanglogistics.com/service/transloading/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="long beach" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="los angeles harbor grain terminal long beach   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Los Angeles Harbor Grain Terminal</h3>
         <div style="color:#555;font-size:0.9em">Long Beach, CA</div>
         <div><strong>Phone:</strong> (562) 595-7559</div>
         <div><a href="https://lagrain.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="long beach" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="metro ports pier g bulk terminal long beach   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Metro Ports Pier G Bulk Terminal</h3>
         <div style="color:#555;font-size:0.9em">Long Beach, CA</div>
         <div><strong>Phone:</strong> (310) 816-6533</div>
         <div><a href="https://www.metroports.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="long beach" data-tier="verified" data-phone="0" data-comm="steel" data-cap="" data-text="mhx llc long beach  steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mhx LLC</h3>
         <div style="color:#555;font-size:0.9em">Long Beach, CA</div>
         <div><strong>Commodities:</strong> Steel</div>
         <div><a href="https://mhx.solutions/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="long beach" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="ssa marine pier f berth 206 long beach   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">SSA Marine Pier F Berth 206</h3>
         <div style="color:#555;font-size:0.9em">Long Beach, CA</div>
         <div><strong>Phone:</strong> (443) 874-7700</div>
         <div><a href="https://www.ssamarine.com/services/conventional" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="long beach" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale|steam heating" data-text="ventura transfer co long beach  acids chemicals (dry) chemicals (liq) minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ventura Transfer Co</h3>
         <div style="color:#555;font-size:0.9em">Long Beach, CA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating</div>
         <div><a href="http://www.venturatransfercompany.com/facilities/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="los angeles" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="shipit logistics los angeles formerly american export lines  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">SHIPIT Logistics</h3>
         <div style="color:#555;font-size:0.9em">Los Angeles, CA</div>
         <div><a href="https://www.shipit.com/transloading-warehouse" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>formerly American Export Lines</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="maricopa" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="sjvr choice terminal maricopa   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sjvr Choice Terminal</h3>
         <div style="color:#555;font-size:0.9em">Maricopa, CA</div>
         <div><a href="https://www.gwrr.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="maywood" data-tier="verified" data-phone="1" data-comm="foods (dry)" data-cap="blower|sampling services|scale" data-text="food express inc maywood  foods (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Food Express Inc</h3>
         <div style="color:#555;font-size:0.9em">Maywood, CA</div>
         <div><strong>Commodities:</strong> Foods (Dry)</div>
@@ -1841,14 +1868,14 @@
         <div><strong>Phone:</strong> (323) 589-1417</div>
         <div><a href="https://www.foodexp.com/html/locations.htm" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="maywood" data-tier="verified" data-phone="1" data-comm="lumber" data-cap="" data-text="keeney truck lines inc maywood  lumber " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Keeney Truck Lines Inc</h3>
         <div style="color:#555;font-size:0.9em">Maywood, CA</div>
         <div><strong>Commodities:</strong> Lumber</div>
         <div><strong>Phone:</strong> (323) 589-3231</div>
         <div><a href="http://www.keeneytruck.xyz/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mcclellan park" data-tier="verified" data-phone="1" data-comm="foods (dry)|foods (liq)|lumber|petroleum products|steel" data-cap="portable vacuum" data-text="advanced logistics &amp; distribution mcclellan park  foods (dry) foods (liq) lumber petroleum products steel portable vacuum" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Advanced Logistics &amp; Distribution</h3>
         <div style="color:#555;font-size:0.9em">McClellan Park, CA</div>
         <div><strong>Commodities:</strong> Foods (Dry), Foods (Liq), Lumber, Petroleum Products, Steel</div>
@@ -1856,37 +1883,35 @@
         <div><strong>Phone:</strong> (916) 920-9200</div>
         <div><a href="https://advancedlogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mcclellan park" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="hydra distribution &amp; rail services - sacramento mcclellan park   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">HYDRA Distribution &amp; Rail Services - Sacramento</h3>
         <div style="color:#555;font-size:0.9em">McClellan Park, CA</div>
         <div><a href="https://hydralg.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mcclellan park" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="hydra reload center mcclellan park   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Hydra Reload Center</h3>
         <div style="color:#555;font-size:0.9em">McClellan Park, CA</div>
         <div><strong>Phone:</strong> (916) 570-2364</div>
         <div><a href="http://hydralg.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mcclellan park" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="interstate mcclellan terminal mcclellan park   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">InterState McClellan Terminal</h3>
         <div style="color:#555;font-size:0.9em">McClellan Park, CA</div>
         <div><strong>Phone:</strong> (844) 457-6572</div>
         <div><a href="https://www.interstateoil.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="merced" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="patriot rail merced   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Patriot Rail</h3>
         <div style="color:#555;font-size:0.9em">Merced, CA</div>
         <div><a href="https://patriotrail.com/wp-content/uploads/2026/03/HYDRA-MERCEDds2bhmm.pdf" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="modesto" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="california freight modesto warehouse modesto   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">California Freight Modesto Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Modesto, CA</div>
         <div><strong>Phone:</strong> (209) 599-5418</div>
         <div><a href="https://www.calfreight.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="modesto" data-tier="verified" data-phone="1" data-comm="foods (dry)|frac sand|minerals" data-cap="bulk conveyor|sampling services|scale" data-text="central valley ag transport modesto  foods (dry) frac sand minerals bulk conveyor sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Central Valley AG Transport</h3>
         <div style="color:#555;font-size:0.9em">Modesto, CA</div>
         <div><strong>Commodities:</strong> Foods (Dry), Frac Sand, Minerals</div>
@@ -1894,78 +1919,74 @@
         <div><strong>Phone:</strong> (209) 869-1721</div>
         <div><a href="http://www.cv-ag.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="modesto" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="modesto &amp; empire traction transload modesto   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Modesto &amp; Empire Traction Transload</h3>
         <div style="color:#555;font-size:0.9em">Modesto, CA</div>
         <div><strong>Phone:</strong> (209) 524-4632</div>
         <div><a href="https://metrr.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="modesto" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="sierra pacific distribution modesto   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sierra Pacific Distribution</h3>
         <div style="color:#555;font-size:0.9em">Modesto, CA</div>
         <div><strong>Phone:</strong> (209) 572-2882</div>
         <div><a href="https://spwg.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="national city" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express national city  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">National City, CA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Sampling Services, Scale</div>
         <div><a href="http://www.plasticexpress.com/operations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="oakland" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="a&amp;g transport inc. / a&amp;g warehouse llc oakland cbp type 3 bonded warehouse  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;G Transport Inc. / A&amp;G Warehouse LLC</h3>
         <div style="color:#555;font-size:0.9em">Oakland, CA</div>
         <div><strong>Phone:</strong> (510) 460-1484</div>
         <div><a href="https://www.agtransportinc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>CBP Type 3 Bonded Warehouse — phone from operator website 2026-08-14</div>
+        <div>CBP Type 3 Bonded Warehouse</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="oakland" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="central valley ag group oakland rail/container transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Central Valley AG Group</h3>
         <div style="color:#555;font-size:0.9em">Oakland, CA</div>
         <div><a href="https://www.cv-ag.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Rail/Container Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="oakland" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="dreisbach enterprises oakland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Dreisbach Enterprises</h3>
         <div style="color:#555;font-size:0.9em">Oakland, CA</div>
         <div><strong>Phone:</strong> (510) 533-6600</div>
         <div><a href="https://www.dreisbach.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="oakland" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="pacific coast container inc oakland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pacific Coast Container Inc</h3>
         <div style="color:#555;font-size:0.9em">Oakland, CA</div>
         <div><strong>Phone:</strong> (510) 692-2544</div>
         <div><a href="https://pcclogistics.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="oildale" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="tricor refining oildale   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tricor Refining</h3>
         <div style="color:#555;font-size:0.9em">Oildale, CA</div>
         <div><a href="https://www.tricorrefining.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="oxnard" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="diversified minerals rail services oxnard   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Diversified Minerals Rail Services</h3>
         <div style="color:#555;font-size:0.9em">Oxnard, CA</div>
         <div><a href="https://dmicement.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="paramount" data-tier="review" data-phone="0" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="a&amp;r transport inc paramount  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">Paramount, CA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Sampling Services, Scale</div>
         <div><a href="https://ardoingitright.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="petaluma" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="smart petaluma transload facility petaluma   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">SMART Petaluma Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Petaluma, CA</div>
         <div><strong>Phone:</strong> (707) 890-8252</div>
         <div><a href="https://www.sonomamarintrain.org/smart-freight" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pico rivera" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express pico rivera  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Pico Rivera, CA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
@@ -1973,31 +1994,30 @@
         <div><strong>Phone:</strong> (626) 336-8111</div>
         <div><a href="http://www.plasticexpress.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pomona" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="warehouse specialists llc pomona   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Warehouse Specialists LLC</h3>
         <div style="color:#555;font-size:0.9em">Pomona, CA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pomona" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="wsi pomona transload pomona   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">WSI Pomona Transload</h3>
         <div style="color:#555;font-size:0.9em">Pomona, CA</div>
         <div><a href="https://www.wsinc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="port hueneme" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="port of hueneme auto/ro-ro terminal port hueneme   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of Hueneme Auto/Ro-Ro Terminal</h3>
         <div style="color:#555;font-size:0.9em">Port Hueneme, CA</div>
         <div><strong>Phone:</strong> (805) 488-3677</div>
         <div><a href="https://www.portofhueneme.org/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="port of stockton" data-tier="verified" data-phone="1" data-comm="foods (dry)" data-cap="" data-text="best logistics inc port of stockton  foods (dry) " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Best Logistics Inc</h3>
         <div style="color:#555;font-size:0.9em">Port of Stockton, CA</div>
         <div><strong>Commodities:</strong> Foods (Dry)</div>
         <div><strong>Phone:</strong> (209) 931-5849</div>
         <div><a href="https://www.bestlogistics.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="rancho cucamonga" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express rancho cucamonga  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Rancho Cucamonga, CA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
@@ -2005,35 +2025,32 @@
         <div><strong>Phone:</strong> (626) 336-8111</div>
         <div><a href="http://www.plasticexpress.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="redwood city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="clean harbors san jose facility rail spur facility redwood city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Clean Harbors San Jose Facility Rail Spur Facility</h3>
         <div style="color:#555;font-size:0.9em">Redwood City, CA</div>
         <div><strong>Phone:</strong> (408) 441-0962</div>
         <div><a href="https://www.cleanharbors.com/location/san-jose-facility-rail-spur-facility" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="richmond" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="dreisbach enterprises richmond   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Dreisbach Enterprises</h3>
         <div style="color:#555;font-size:0.9em">Richmond, CA</div>
         <div><strong>Phone:</strong> (510) 533-6600</div>
         <div><a href="https://www.dreisbach.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="richmond" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="levin richmond terminal richmond   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Levin Richmond Terminal</h3>
         <div style="color:#555;font-size:0.9em">Richmond, CA</div>
         <div><strong>Phone:</strong> (510) 232-4422</div>
         <div><a href="https://www.levinterminal.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="riverside" data-tier="verified" data-phone="0" data-comm="foods (dry)" data-cap="blower|sampling services|scale" data-text="food express inc riverside  foods (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Food Express Inc</h3>
         <div style="color:#555;font-size:0.9em">Riverside, CA</div>
         <div><strong>Commodities:</strong> Foods (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="https://www.foodexp.com/html/locations.htm" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="rogers" data-tier="verified" data-phone="1" data-comm="foods (dry)|foods (liq)|lumber|petroleum products|steel" data-cap="portable vacuum" data-text="advanced logistics &amp; distribution rogers  foods (dry) foods (liq) lumber petroleum products steel portable vacuum" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Advanced Logistics &amp; Distribution</h3>
         <div style="color:#555;font-size:0.9em">Rogers, CA</div>
         <div><strong>Commodities:</strong> Foods (Dry), Foods (Liq), Lumber, Petroleum Products, Steel</div>
@@ -2041,96 +2058,93 @@
         <div><strong>Phone:</strong> (916) 920-9200</div>
         <div><a href="https://advancedlogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sacramento" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="sacramento valley railroad (patriot rail) sacramento patriot rail short line, transload service  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sacramento Valley Railroad (Patriot Rail)</h3>
         <div style="color:#555;font-size:0.9em">Sacramento, CA</div>
         <div><a href="https://patriotrail.com/railroads/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Patriot Rail short line, transload service — added from operator locations sweep 2026-08-14</div>
+        <div>Patriot Rail short line, transload service</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sacramento" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="united states cold storage inc. sacramento   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">United States Cold Storage Inc.</h3>
         <div style="color:#555;font-size:0.9em">Sacramento, CA</div>
         <div><a href="https://www.uscold.com/facilities/welcome-to-mcclellan/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="san bernardino" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="a&amp;r transport inc san bernardino  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">San Bernardino, CA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Sampling Services, Scale</div>
         <div><a href="https://ardoingitright.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="san bernardino" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express san bernardino  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">San Bernardino, CA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Sampling Services, Scale</div>
         <div><a href="http://www.plasticexpress.com/operations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="san diego" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="continental materials &amp; polymers logistics solutions san diego   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Continental Materials &amp; Polymers Logistics Solutions</h3>
         <div style="color:#555;font-size:0.9em">San Diego, CA</div>
         <div><strong>Phone:</strong> (619) 940-4025</div>
         <div><a href="https://cmp-sd.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="san diego" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="innovative cold storage enterprises san diego   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Innovative Cold Storage Enterprises</h3>
         <div style="color:#555;font-size:0.9em">San Diego, CA</div>
         <div><strong>Phone:</strong> (619) 671-9933</div>
         <div><a href="https://www.innovativecold.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="san diego" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express san diego  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">San Diego, CA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Sampling Services, Scale</div>
         <div><a href="http://www.plasticexpress.com/operations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="san diego" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="san diego &amp; imperial valley railroad (sdiy) san diego genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">San Diego &amp; Imperial Valley Railroad (SDIY)</h3>
         <div style="color:#555;font-size:0.9em">San Diego, CA</div>
         <div><a href="https://www.gwrr.com/railroads/san-diego-and-imperial-valley-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="san diego" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="" data-text="sdiy choice terminal san diego  plastics (dry) " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sdiy Choice Terminal</h3>
         <div style="color:#555;font-size:0.9em">San Diego, CA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><a href="https://www.san.org/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="san diego" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ventura county railroad (vcrr) san diego genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ventura County Railroad (VCRR)</h3>
         <div style="color:#555;font-size:0.9em">San Diego, CA</div>
         <div><a href="https://www.gwrr.com/railroads/ventura-county-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="san diego" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="weber distribution warehouses san diego   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Weber Distribution Warehouses</h3>
         <div style="color:#555;font-size:0.9em">San Diego, CA</div>
         <div><strong>Phone:</strong> (619) 423-8770</div>
         <div><a href="https://www.weberlogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="san francisco" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="san francisco bay railroad pier 96 transload san francisco   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">San Francisco Bay Railroad Pier 96 Transload</h3>
         <div style="color:#555;font-size:0.9em">San Francisco, CA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="santa fe springs" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="a&amp;r transport inc santa fe springs  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">Santa Fe Springs, CA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Sampling Services, Scale</div>
         <div><strong>Phone:</strong> (760) 248-3349</div>
         <div><a href="https://www.anrmoving.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="santa fe springs" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="dptl llc santa fe springs   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Dptl LLC</h3>
         <div style="color:#555;font-size:0.9em">Santa Fe Springs, CA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="santa fe springs" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="savage service corp santa fe springs  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor bulk conveyor liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Service Corp</h3>
         <div style="color:#555;font-size:0.9em">Santa Fe Springs, CA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -2138,25 +2152,24 @@
         <div><strong>Phone:</strong> (310) 847-4080</div>
         <div><a href="https://savageservices.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="santa maria" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="santa maria valley railroad osburn railyard santa maria   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Santa Maria Valley Railroad Osburn Railyard</h3>
         <div style="color:#555;font-size:0.9em">Santa Maria, CA</div>
         <div><a href="https://omnitrax.com/our-managed-railroad-santa-maria-valley/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="santa paula" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="sierra northern railway santa paula transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sierra Northern Railway</h3>
         <div style="color:#555;font-size:0.9em">Santa Paula, CA</div>
         <div><a href="https://www.sierranorthern.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="schellville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="smart schellville transload facility schellville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">SMART Schellville Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Schellville, CA</div>
         <div><strong>Phone:</strong> (707) 890-8252</div>
         <div><a href="https://www.sonomamarintrain.org/smart-freight" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="selma" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="van-g logistics selma  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Van-G Logistics</h3>
         <div style="color:#555;font-size:0.9em">Selma, CA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -2164,27 +2177,26 @@
         <div><strong>Phone:</strong> (559) 834-5500</div>
         <div><a href="http://vanglogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="shafter" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="west coast pipe inspection shafter   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">West Coast Pipe Inspection</h3>
         <div style="color:#555;font-size:0.9em">Shafter, CA</div>
         <div><strong>Phone:</strong> (661) 392-1900</div>
         <div><a href="https://jdrush.com/associated-companies/west-coast-pipe-inspection/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="south anaheim" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express south anaheim  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">South Anaheim, CA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Sampling Services, Scale</div>
         <div><a href="http://www.plasticexpress.com/operations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="south fontana" data-tier="verified" data-phone="0" data-comm="steel" data-cap="" data-text="mhx llc south fontana  steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mhx LLC</h3>
         <div style="color:#555;font-size:0.9em">South Fontana, CA</div>
         <div><strong>Commodities:</strong> Steel</div>
         <div><a href="https://mhx.solutions/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="south gate" data-tier="verified" data-phone="1" data-comm="acids|asphalt|chemicals (dry)|chemicals (liq)|petroleum products" data-cap="air compressor|blending meters|liquid pumps|liquid storage tanks|sampling services|scale|steam heating" data-text="titan terminal &amp; transport south gate  acids asphalt chemicals (dry) chemicals (liq) petroleum products air compressor blending meters liquid pumps liquid storage tanks sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Titan Terminal &amp; Transport</h3>
         <div style="color:#555;font-size:0.9em">South Gate, CA</div>
         <div><strong>Commodities:</strong> Acids, Asphalt, Chemicals (Dry), Chemicals (Liq), Petroleum Products</div>
@@ -2192,23 +2204,22 @@
         <div><strong>Phone:</strong> (323) 562-9529</div>
         <div><a href="http://www.titanterminal.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="stockton" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="a&amp;r transport inc stockton  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">Stockton, CA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Sampling Services, Scale</div>
         <div><strong>Phone:</strong> (209) 817-3763</div>
         <div><a href="https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&amp;query_type=queryCarrierSnapshot&amp;query_param=USDOT&amp;query_string=2834404" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="stockton" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|chemicals (liq)|petroleum products" data-cap="air compressor|blower|bulk conveyor|liquid pumps|sampling services|scale" data-text="bulk transportation co stockton  chemicals (dry) chemicals (liq) petroleum products air compressor blower bulk conveyor liquid pumps sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulk Transportation Co</h3>
         <div style="color:#555;font-size:0.9em">Stockton, CA</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Petroleum Products</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Sampling Services, Scale</div>
         <div><strong>Phone:</strong> (209) 466-0481</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="stockton" data-tier="verified" data-phone="1" data-comm="acids|chemicals (liq)" data-cap="air compressor|liquid pumps|sampling services|steam heating" data-text="chemical transfer co stockton  acids chemicals (liq) air compressor liquid pumps sampling services steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Chemical Transfer Co</h3>
         <div style="color:#555;font-size:0.9em">Stockton, CA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Liq)</div>
@@ -2216,54 +2227,52 @@
         <div><strong>Phone:</strong> (209) 466-3554</div>
         <div><a href="https://www.google.com/maps/place/Chemical+Transfer+Co/@37.9182428,-121.2795849,123m/data=!3m1!1e3!4m13!1m7!3m6!1s0x809013240b316ef3:0xd47f9fc43d41778e!2s3105+El+Dorado+St,+Stockton,+CA+95206!3b1!8m2!3d37.9181922!4d-121.2796245!3m4!1s0x809013240c57ab0b:0x34c6ffd82f79129f!8m2!3d37.9182958!4d-121.2793013" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="stockton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="foodliner inc. stockton kinder morgan  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Foodliner Inc.</h3>
         <div style="color:#555;font-size:0.9em">Stockton, CA</div>
         <div><a href="https://foodliner.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Kinder Morgan</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="stockton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="heniff food grade stockton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Heniff Food Grade</h3>
         <div style="color:#555;font-size:0.9em">Stockton, CA</div>
         <div><a href="https://www.heniff.com/about-heniff/locations/locations-detail/stockton-ca" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="stockton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="highland wholesale foods stockton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Highland Wholesale Foods</h3>
         <div style="color:#555;font-size:0.9em">Stockton, CA</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="stockton" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="highland wholesale foods rail transload stockton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Highland Wholesale Foods Rail Transload</h3>
         <div style="color:#555;font-size:0.9em">Stockton, CA</div>
         <div><strong>Phone:</strong> (209) 933-0580</div>
         <div><a href="https://www.highlandwholesalefoods.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="stockton" data-tier="verified" data-phone="1" data-comm="steel" data-cap="" data-text="mhx llc stockton  steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mhx LLC</h3>
         <div style="color:#555;font-size:0.9em">Stockton, CA</div>
         <div><strong>Commodities:</strong> Steel</div>
         <div><strong>Phone:</strong> (800) 234-2098</div>
         <div><a href="http://mhx.solutions/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="stockton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="mt railcars stockton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">MT Railcars</h3>
         <div style="color:#555;font-size:0.9em">Stockton, CA</div>
         <div><a href="https://www.mtrailcars.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="stockton" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="omnitrax logistics services stockton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Omnitrax Logistics Services</h3>
         <div style="color:#555;font-size:0.9em">Stockton, CA</div>
         <div><a href="http://omnitrax.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="stockton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="penny newman grain stockton terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Penny Newman Grain</h3>
         <div style="color:#555;font-size:0.9em">Stockton, CA</div>
         <div><a href="https://penny-newman.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="stockton" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express stockton  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Stockton, CA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
@@ -2271,30 +2280,30 @@
         <div><strong>Phone:</strong> (626) 336-8111</div>
         <div><a href="https://www.plasticexpress.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="stockton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ramsey express stockton d st warehouse; port of  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ramsey Express</h3>
         <div style="color:#555;font-size:0.9em">Stockton, CA</div>
         <div><a href="https://ramseyxpress.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>D St Warehouse; Port of</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="stockton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ramsey express stockton port of warehouses; port 1/2/3  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ramsey Express</h3>
         <div style="color:#555;font-size:0.9em">Stockton, CA</div>
         <div><a href="https://ramseyxpress.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Port of Warehouses; Port 1/2/3</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="stockton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ramsey express - fremont warehouse stockton port of  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ramsey Express - Fremont Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Stockton, CA</div>
         <div><a href="https://ramseyxpress.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Port of</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="stockton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ramsey express - gertrude warehouse stockton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ramsey Express - Gertrude Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Stockton, CA</div>
         <div><a href="https://ramseyxpress.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="stockton" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|petroleum products|plastics (dry)" data-cap="air compressor|blending meters|blower|liquid pumps|liquid storage tanks|sampling services|steam heating|tank trailer cleaning" data-text="superior carriers stockton  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) petroleum products plastics (dry) air compressor blending meters blower liquid pumps liquid storage tanks sampling services steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Superior Carriers</h3>
         <div style="color:#555;font-size:0.9em">Stockton, CA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Petroleum Products, Plastics (Dry)</div>
@@ -2302,7 +2311,7 @@
         <div><strong>Phone:</strong> (209) 484-6869</div>
         <div><a href="http://www.smtinc.org/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="stockton" data-tier="verified" data-phone="1" data-comm="foods (dry)|foods (liq)|frac sand|lumber|minerals|plastics (dry)" data-cap="air compressor|bulk conveyor|liquid pumps|sampling services|scale|steam heating" data-text="transload solutions llc stockton  foods (dry) foods (liq) frac sand lumber minerals plastics (dry) air compressor bulk conveyor liquid pumps sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transload Solutions LLC</h3>
         <div style="color:#555;font-size:0.9em">Stockton, CA</div>
         <div><strong>Commodities:</strong> Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Plastics (Dry)</div>
@@ -2310,7 +2319,7 @@
         <div><strong>Phone:</strong> (209) 932-0495</div>
         <div><a href="https://www.transloadsolutionsca.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="stockton" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|plastics (dry)" data-cap="bulk conveyor" data-text="watco terminal &amp; port services stockton  chemicals (dry) plastics (dry) bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Stockton, CA</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Plastics (Dry)</div>
@@ -2318,38 +2327,38 @@
         <div><strong>Phone:</strong> (209) 939-1753</div>
         <div><a href="http://www.watcocompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="valla" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="a&amp;r transport inc valla  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">Valla, CA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="http://www.ardoingitright.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="valla" data-tier="verified" data-phone="0" data-comm="foods (dry)" data-cap="blower|sampling services|scale" data-text="food express inc valla  foods (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Food Express Inc</h3>
         <div style="color:#555;font-size:0.9em">Valla, CA</div>
         <div><strong>Commodities:</strong> Foods (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="https://www.foodexp.com/html/locations.htm" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="valla" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="loup railport valla   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Loup RailPort</h3>
         <div style="color:#555;font-size:0.9em">Valla, CA</div>
         <div><a href="https://www.louplogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="vernon" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="arrow reload systems vernon reload vernon   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Arrow Reload Systems Vernon Reload</h3>
         <div style="color:#555;font-size:0.9em">Vernon, CA</div>
         <div><a href="https://www.arrow.ca/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="vernon" data-tier="verified" data-phone="1" data-comm="steel" data-cap="" data-text="mhx llc vernon  steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mhx LLC</h3>
         <div style="color:#555;font-size:0.9em">Vernon, CA</div>
         <div><strong>Commodities:</strong> Steel</div>
         <div><strong>Phone:</strong> (800) 234-2098</div>
         <div><a href="http://mhx.solutions/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="vidal" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express vidal  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Vidal, CA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
@@ -2357,93 +2366,89 @@
         <div><strong>Phone:</strong> (626) 336-8899</div>
         <div><a href="https://www.plasticexpress.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="vina vista" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="a&amp;r transport inc vina vista  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">Vina Vista, CA</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="https://ardoingitright.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="west colton" data-tier="verified" data-phone="0" data-comm="frac sand|lumber|minerals|steel" data-cap="bulk conveyor|sampling services|scale" data-text="mountain reload llc west colton  frac sand lumber minerals steel bulk conveyor sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mountain Reload LLC</h3>
         <div style="color:#555;font-size:0.9em">West Colton, CA</div>
         <div><strong>Commodities:</strong> Frac Sand, Lumber, Minerals, Steel</div>
         <div><strong>Capabilities:</strong> Bulk Conveyor, Sampling Services, Scale</div>
         <div><a href="https://www.transloadgroup.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="west sacramento" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="sierra northern railway west sacramento port of sacramento transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sierra Northern Railway</h3>
         <div style="color:#555;font-size:0.9em">West Sacramento, CA</div>
         <div><a href="https://www.sierranorthern.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Port of Sacramento Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wilmington" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="avalon team track wilmington   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Avalon Team Track</h3>
         <div style="color:#555;font-size:0.9em">Wilmington, CA</div>
         <div><a href="https://www.anacostia.com/our-companies/phl/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wilmington" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="konoike pacific wilmington k-pac  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Konoike Pacific</h3>
         <div style="color:#555;font-size:0.9em">Wilmington, CA</div>
         <div><strong>Phone:</strong> (310) 518-1000</div>
         <div><a href="https://www.konoike.net/en/company/group/us/konoike-pacific-california/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>K-Pac — phone from operator website 2026-08-14</div>
+        <div>K-Pac</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wilmington" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="pasha stevedoring &amp; terminals wilmington   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pasha Stevedoring &amp; Terminals</h3>
         <div style="color:#555;font-size:0.9em">Wilmington, CA</div>
         <div><strong>Phone:</strong> (310) 835-9869</div>
         <div><a href="https://www.pashagroup.com/locations/pasha-stevedoring-terminals-lp-wilmington/518" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wilmington" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="potential industries transloading facility wilmington   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Potential Industries Transloading Facility</h3>
         <div style="color:#555;font-size:0.9em">Wilmington, CA</div>
         <div><a href="https://potentialindustries.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wilmington" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="san pedro forklift rail transload wilmington   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">San Pedro Forklift Rail Transload</h3>
         <div style="color:#555;font-size:0.9em">Wilmington, CA</div>
         <div><strong>Phone:</strong> (562) 989-1400</div>
         <div><a href="https://spflogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wilmington" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale|steam heating" data-text="ventura transfer co wilmington  acids chemicals (dry) chemicals (liq) minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ventura Transfer Co</h3>
         <div style="color:#555;font-size:0.9em">Wilmington, CA</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating</div>
         <div><a href="http://www.venturatransfercompany.com/facilities/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wilmington" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="vopak terminal los angeles wilmington   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Vopak Terminal Los Angeles</h3>
         <div style="color:#555;font-size:0.9em">Wilmington, CA</div>
         <div><strong>Phone:</strong> (310) 221-5964</div>
         <div><a href="https://www.vopak.com/terminals/vopak-terminal-los-angeles" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wilmington" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="wwl vehicle services americas wilmington   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">WWL Vehicle Services Americas</h3>
         <div style="color:#555;font-size:0.9em">Wilmington, CA</div>
         <div><a href="https://www.walleniuswilhelmsen.com/what-we-do/vehicle-processing" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="woodland" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="california northern railroad (cfnr) woodland genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">California Northern Railroad (CFNR)</h3>
         <div style="color:#555;font-size:0.9em">Woodland, CA</div>
         <div><a href="https://www.gwrr.com/railroads/california-northern-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="woodland" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="inland terminal woodland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Inland Terminal</h3>
         <div style="color:#555;font-size:0.9em">Woodland, CA</div>
         <div><a href="https://www.gwrr.com/transload/inland-terminal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="yreka" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="yreka western railroad transload facility yreka   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Yreka Western Railroad Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Yreka, CA</div>
         <div><strong>Phone:</strong> (270) 477-7000</div>
         <div><a href="https://yrekawestern.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
       </div>
     <p style="font-size:0.85em;color:#666;margin-top:28px">
@@ -2471,6 +2476,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

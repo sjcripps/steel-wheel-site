@@ -1499,6 +1499,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Ohio</h1>
@@ -1513,63 +1531,78 @@
 
     <section>
       <h2>Cities in Ohio</h2>
-      <p><a href="/transload/cincinnati-oh">Cincinnati (10)</a> &middot; <a href="/transload/columbus-oh">Columbus (8)</a> &middot; <a href="/transload/cleveland-oh">Cleveland (7)</a> &middot; <a href="/transload/toledo-oh">Toledo (6)</a> &middot; <a href="/transload/youngstown-oh">Youngstown (5)</a> &middot; <a href="/transload/lima-oh">Lima (4)</a> &middot; <a href="/transload/massillon-oh">Massillon (4)</a> &middot; <a href="/transload/akron-oh">Akron (3)</a> &middot; <a href="/transload/napoleon-oh">Napoleon (3)</a> &middot; <a href="/transload/zanesville-oh">Zanesville (3)</a> &middot; <span>Ashtabula (2)</span> &middot; <span>Bellaire (2)</span> &middot; <span>Belpre (2)</span> &middot; <span>Brook Park (2)</span> &middot; <span>Dover (2)</span> &middot; <span>Euclid (2)</span> &middot; <span>Lordstown (2)</span> &middot; <span>Sandusky (2)</span> &middot; <span>Wellsville (2)</span> &middot; <span>Archbold (1)</span> &middot; <span>Buckland (1)</span> &middot; <span>Cambridge (1)</span> &middot; <span>Camden (1)</span> &middot; <span>Carson (1)</span> &middot; <span>Celina (1)</span> &middot; <span>Clare (1)</span> &middot; <span>Coldwater (1)</span> &middot; <span>Columbiana (1)</span> &middot; <span>Conesville (1)</span> &middot; <span>Conneaut (1)</span> &middot; <span>Coshocton (1)</span> &middot; <span>Dayton (1)</span> &middot; <span>De Graff (1)</span> &middot; <span>Delphos (1)</span> &middot; <span>Derwent (1)</span> &middot; <span>East Liverpool (1)</span> &middot; <span>Fairfield (1)</span> &middot; <span>Fostoria (1)</span> &middot; <span>Girard (1)</span> &middot; <span>Greenville (1)</span> &middot; <span>Hamden (1)</span> &middot; <span>Hannibal (1)</span> &middot; <span>Irondale (1)</span> &middot; <span>Jefferson (1)</span> &middot; <span>Jeffersonville (1)</span> &middot; <span>Kenton (1)</span> &middot; <span>Lilly Chapel (1)</span> &middot; <span>Lisbon (1)</span> &middot; <span>Logan (1)</span> &middot; <span>Lorain (1)</span> &middot; <span>Macedonia (1)</span> &middot; <span>Mansfield (1)</span> &middot; <span>Marion (1)</span> &middot; <span>Middleport (1)</span> &middot; <span>Milford (1)</span> &middot; <span>Mogadore (1)</span> &middot; <span>Navarre (1)</span> &middot; <span>Newark (1)</span> &middot; <span>North Bend (1)</span> &middot; <span>Painesville (1)</span> &middot; <span>Shelby (1)</span> &middot; <span>South Point (1)</span> &middot; <span>Springfield (1)</span> &middot; <span>Steubenville (1)</span> &middot; <span>Stony Ridge (1)</span> &middot; <span>Tiffin (1)</span> &middot; <span>Van Wert (1)</span> &middot; <span>Walbridge (1)</span> &middot; <span>Wapakoneta (1)</span></p>
+      <div class="tl-citylist is-collapsed" id="tlCityList" data-total="69">
+        <p><a href="/transload/cincinnati-oh">Cincinnati (10)</a> &middot; <a href="/transload/columbus-oh">Columbus (8)</a> &middot; <a href="/transload/cleveland-oh">Cleveland (7)</a> &middot; <a href="/transload/toledo-oh">Toledo (6)</a> &middot; <a href="/transload/youngstown-oh">Youngstown (5)</a> &middot; <a href="/transload/lima-oh">Lima (4)</a> &middot; <a href="/transload/massillon-oh">Massillon (4)</a> &middot; <a href="/transload/akron-oh">Akron (3)</a> &middot; <a href="/transload/napoleon-oh">Napoleon (3)</a> &middot; <a href="/transload/zanesville-oh">Zanesville (3)</a> &middot; <span>Ashtabula (2)</span> &middot; <span>Bellaire (2)</span> &middot; <span>Belpre (2)</span> &middot; <span>Brook Park (2)</span> &middot; <span>Dover (2)</span> &middot; <span>Euclid (2)</span> &middot; <span>Lordstown (2)</span> &middot; <span>Sandusky (2)</span> &middot; <span>Wellsville (2)</span> &middot; <span>Archbold (1)</span> &middot; <span>Buckland (1)</span> &middot; <span>Cambridge (1)</span> &middot; <span>Camden (1)</span> &middot; <span>Carson (1)</span><span class="tl-city-extra"> &middot; <span>Celina (1)</span></span><span class="tl-city-extra"> &middot; <span>Clare (1)</span></span><span class="tl-city-extra"> &middot; <span>Coldwater (1)</span></span><span class="tl-city-extra"> &middot; <span>Columbiana (1)</span></span><span class="tl-city-extra"> &middot; <span>Conesville (1)</span></span><span class="tl-city-extra"> &middot; <span>Conneaut (1)</span></span><span class="tl-city-extra"> &middot; <span>Coshocton (1)</span></span><span class="tl-city-extra"> &middot; <span>Dayton (1)</span></span><span class="tl-city-extra"> &middot; <span>De Graff (1)</span></span><span class="tl-city-extra"> &middot; <span>Delphos (1)</span></span><span class="tl-city-extra"> &middot; <span>Derwent (1)</span></span><span class="tl-city-extra"> &middot; <span>East Liverpool (1)</span></span><span class="tl-city-extra"> &middot; <span>Fairfield (1)</span></span><span class="tl-city-extra"> &middot; <span>Fostoria (1)</span></span><span class="tl-city-extra"> &middot; <span>Girard (1)</span></span><span class="tl-city-extra"> &middot; <span>Greenville (1)</span></span><span class="tl-city-extra"> &middot; <span>Hamden (1)</span></span><span class="tl-city-extra"> &middot; <span>Hannibal (1)</span></span><span class="tl-city-extra"> &middot; <span>Irondale (1)</span></span><span class="tl-city-extra"> &middot; <span>Jefferson (1)</span></span><span class="tl-city-extra"> &middot; <span>Jeffersonville (1)</span></span><span class="tl-city-extra"> &middot; <span>Kenton (1)</span></span><span class="tl-city-extra"> &middot; <span>Lilly Chapel (1)</span></span><span class="tl-city-extra"> &middot; <span>Lisbon (1)</span></span><span class="tl-city-extra"> &middot; <span>Logan (1)</span></span><span class="tl-city-extra"> &middot; <span>Lorain (1)</span></span><span class="tl-city-extra"> &middot; <span>Macedonia (1)</span></span><span class="tl-city-extra"> &middot; <span>Mansfield (1)</span></span><span class="tl-city-extra"> &middot; <span>Marion (1)</span></span><span class="tl-city-extra"> &middot; <span>Middleport (1)</span></span><span class="tl-city-extra"> &middot; <span>Milford (1)</span></span><span class="tl-city-extra"> &middot; <span>Mogadore (1)</span></span><span class="tl-city-extra"> &middot; <span>Navarre (1)</span></span><span class="tl-city-extra"> &middot; <span>Newark (1)</span></span><span class="tl-city-extra"> &middot; <span>North Bend (1)</span></span><span class="tl-city-extra"> &middot; <span>Painesville (1)</span></span><span class="tl-city-extra"> &middot; <span>Shelby (1)</span></span><span class="tl-city-extra"> &middot; <span>South Point (1)</span></span><span class="tl-city-extra"> &middot; <span>Springfield (1)</span></span><span class="tl-city-extra"> &middot; <span>Steubenville (1)</span></span><span class="tl-city-extra"> &middot; <span>Stony Ridge (1)</span></span><span class="tl-city-extra"> &middot; <span>Tiffin (1)</span></span><span class="tl-city-extra"> &middot; <span>Van Wert (1)</span></span><span class="tl-city-extra"> &middot; <span>Walbridge (1)</span></span><span class="tl-city-extra"> &middot; <span>Wapakoneta (1)</span></span></p>
+        <button type="button" class="tl-morecities" id="tlMoreCities">Show all 69 cities</button>
+      </div>
     </section>
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (69)</option><option value="akron">Akron</option><option value="archbold">Archbold</option><option value="ashtabula">Ashtabula</option><option value="bellaire">Bellaire</option><option value="belpre">Belpre</option><option value="brook park">Brook Park</option><option value="buckland">Buckland</option><option value="cambridge">Cambridge</option><option value="camden">Camden</option><option value="carson">Carson</option><option value="celina">Celina</option><option value="cincinnati">Cincinnati</option><option value="clare">Clare</option><option value="cleveland">Cleveland</option><option value="coldwater">Coldwater</option><option value="columbiana">Columbiana</option><option value="columbus">Columbus</option><option value="conesville">Conesville</option><option value="conneaut">Conneaut</option><option value="coshocton">Coshocton</option><option value="dayton">Dayton</option><option value="de graff">De Graff</option><option value="delphos">Delphos</option><option value="derwent">Derwent</option><option value="dover">Dover</option><option value="east liverpool">East Liverpool</option><option value="euclid">Euclid</option><option value="fairfield">Fairfield</option><option value="fostoria">Fostoria</option><option value="girard">Girard</option><option value="greenville">Greenville</option><option value="hamden">Hamden</option><option value="hannibal">Hannibal</option><option value="irondale">Irondale</option><option value="jefferson">Jefferson</option><option value="jeffersonville">Jeffersonville</option><option value="kenton">Kenton</option><option value="lilly chapel">Lilly Chapel</option><option value="lima">Lima</option><option value="lisbon">Lisbon</option><option value="logan">Logan</option><option value="lorain">Lorain</option><option value="lordstown">Lordstown</option><option value="macedonia">Macedonia</option><option value="mansfield">Mansfield</option><option value="marion">Marion</option><option value="massillon">Massillon</option><option value="middleport">Middleport</option><option value="milford">Milford</option><option value="mogadore">Mogadore</option><option value="napoleon">Napoleon</option><option value="navarre">Navarre</option><option value="newark">Newark</option><option value="north bend">North Bend</option><option value="painesville">Painesville</option><option value="sandusky">Sandusky</option><option value="shelby">Shelby</option><option value="south point">South Point</option><option value="springfield">Springfield</option><option value="steubenville">Steubenville</option><option value="stony ridge">Stony Ridge</option><option value="tiffin">Tiffin</option><option value="toledo">Toledo</option><option value="van wert">Van Wert</option><option value="walbridge">Walbridge</option><option value="wapakoneta">Wapakoneta</option><option value="wellsville">Wellsville</option><option value="youngstown">Youngstown</option><option value="zanesville">Zanesville</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="auger">Auger</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="hot water heating">Hot Water Heating</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (27)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (50)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 24 of 121 sites and capability detail for 22. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="akron" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="cotter merchandise storage company akron   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cotter Merchandise Storage Company</h3>
         <div style="color:#555;font-size:0.9em">Akron, OH</div>
         <div><strong>Phone:</strong> (866) 997-7371</div>
         <div><a href="https://www.cotterwhse.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="akron" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="sylvite akron terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sylvite</h3>
         <div style="color:#555;font-size:0.9em">Akron, OH</div>
         <div><strong>Phone:</strong> (905) 540-1164</div>
         <div><a href="https://sylvite.ca/agriculture/retail-locations/akron-ohio/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Terminal — phone from operator website 2026-08-14</div>
+        <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="akron" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="total distribution akron   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Total Distribution</h3>
         <div style="color:#555;font-size:0.9em">Akron, OH</div>
         <div><a href="https://totaldistribution.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="archbold" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="sauder edc archbold   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sauder EDC</h3>
         <div style="color:#555;font-size:0.9em">Archbold, OH</div>
         <div><a href="https://Www.sauder.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ashtabula" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="ashtabula industrial park transload ashtabula   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ashtabula Industrial Park Transload</h3>
         <div style="color:#555;font-size:0.9em">Ashtabula, OH</div>
         <div><strong>Phone:</strong> (330) 418-9287</div>
         <div><a href="https://ashtabulaindustrialpark.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ashtabula" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="pinney dock terminal ashtabula   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pinney Dock Terminal</h3>
         <div style="color:#555;font-size:0.9em">Ashtabula, OH</div>
         <div><a href="https://www.kindermorgan.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bellaire" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="mpr supply chain bellaire north terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">MPR Supply Chain</h3>
         <div style="color:#555;font-size:0.9em">Bellaire, OH</div>
         <div><strong>Phone:</strong> (740) 671-9822</div>
         <div><a href="https://www.mprsupplychain.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>North Terminal — phone from operator website 2026-08-14</div>
+        <div>North Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bellaire" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="mpr supply chain bellaire south terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">MPR Supply Chain</h3>
         <div style="color:#555;font-size:0.9em">Bellaire, OH</div>
         <div><strong>Phone:</strong> (740) 671-9822</div>
         <div><a href="https://www.mprsupplychain.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>South Terminal — phone from operator website 2026-08-14</div>
+        <div>South Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="belpre" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="bulkmatic transport co belpre  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulkmatic Transport Co</h3>
         <div style="color:#555;font-size:0.9em">Belpre, OH</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1577,59 +1610,56 @@
         <div><strong>Phone:</strong> (614) 497-2372</div>
         <div><a href="https://www.bulkmatic.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="belpre" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="wetz warehousing transload facility belpre   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Wetz Warehousing Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Belpre, OH</div>
         <div><strong>Phone:</strong> (740) 373-9028</div>
         <div><a href="https://wetzcompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="brook park" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="north coast logistics brook park   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">North Coast Logistics</h3>
         <div style="color:#555;font-size:0.9em">Brook Park, OH</div>
         <div><strong>Phone:</strong> (216) 362-7159</div>
         <div><a href="https://www.northcoastlogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="brook park" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="savage brook park cleveland, oh  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage</h3>
         <div style="color:#555;font-size:0.9em">Brook Park, OH</div>
         <div><strong>Phone:</strong> (800) 488-0910</div>
         <div><a href="https://savageco.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Cleveland, OH</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="buckland" data-tier="review" data-phone="0" data-comm="foods (dry)|plastics (dry)" data-cap="auger|bulk conveyor|sampling services" data-text="rj corman buckland  foods (dry) plastics (dry) auger bulk conveyor sampling services" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rj Corman</h3>
         <div style="color:#555;font-size:0.9em">Buckland, OH</div>
         <div><strong>Commodities:</strong> Foods (Dry), Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Auger, Bulk Conveyor, Sampling Services</div>
         <div><a href="RJ Corman Transload Location Guide.pdf" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cambridge" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="dyno nobel north america cambridge   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Dyno Nobel North America</h3>
         <div style="color:#555;font-size:0.9em">Cambridge, OH</div>
         <div><strong>Phone:</strong> (800) 473-2675</div>
         <div><a href="https://www.dynonobel.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="camden" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="good's rail/truck transfer camden   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Good's Rail/Truck Transfer</h3>
         <div style="color:#555;font-size:0.9em">Camden, OH</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="carson" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ac&amp;j carson transload carson   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">AC&amp;J Carson Transload</h3>
         <div style="color:#555;font-size:0.9em">Carson, OH</div>
         <div><a href="https://wp.acjrailroad.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="celina" data-tier="review" data-phone="0" data-comm="foods (dry)|foods (liq)|lumber|steel" data-cap="auger|bulk conveyor|portable vacuum|sampling services" data-text="rj corman celina  foods (dry) foods (liq) lumber steel auger bulk conveyor portable vacuum sampling services" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rj Corman</h3>
         <div style="color:#555;font-size:0.9em">Celina, OH</div>
         <div><strong>Commodities:</strong> Foods (Dry), Foods (Liq), Lumber, Steel</div>
         <div><strong>Capabilities:</strong> Auger, Bulk Conveyor, Portable Vacuum, Sampling Services</div>
         <div><a href="RJ Corman Transload Location Guide.pdf" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cincinnati" data-tier="verified" data-phone="1" data-comm="minerals" data-cap="bulk conveyor|scale" data-text="benchmark river &amp; rail terminals llc cincinnati  minerals bulk conveyor scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Benchmark River &amp; Rail Terminals LLC</h3>
         <div style="color:#555;font-size:0.9em">Cincinnati, OH</div>
         <div><strong>Commodities:</strong> Minerals</div>
@@ -1637,18 +1667,18 @@
         <div><strong>Phone:</strong> (513) 326-3500</div>
         <div><a href="https://www.benchmarkterminals.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cincinnati" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="central railroad of indiana (cind) cincinnati genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Central Railroad of Indiana (CIND)</h3>
         <div style="color:#555;font-size:0.9em">Cincinnati, OH</div>
         <div><a href="https://www.gwrr.com/railroads/central-railroad-company-of-indiana" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cincinnati" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="choice terminal cincinnati ohio  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Choice Terminal</h3>
         <div style="color:#555;font-size:0.9em">Cincinnati, OH</div>
         <div>Ohio</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cincinnati" data-tier="verified" data-phone="1" data-comm="minerals|steel" data-cap="bulk conveyor" data-text="cincinnati barge &amp; rail terminal llc cincinnati  minerals steel bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cincinnati Barge &amp; Rail Terminal LLC</h3>
         <div style="color:#555;font-size:0.9em">Cincinnati, OH</div>
         <div><strong>Commodities:</strong> Minerals, Steel</div>
@@ -1656,12 +1686,12 @@
         <div><strong>Phone:</strong> (513) 721-1707</div>
         <div><a href="https://www.barge2rail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cincinnati" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="heniff food grade cincinnati   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Heniff Food Grade</h3>
         <div style="color:#555;font-size:0.9em">Cincinnati, OH</div>
         <div><a href="https://www.heniff.com/about-heniff/locations/locations-detail/cincinnati-oh3" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cincinnati" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="norfolk southern tbt cincinnati  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower hot water heating liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norfolk Southern TBT</h3>
         <div style="color:#555;font-size:0.9em">Cincinnati, OH</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1669,7 +1699,7 @@
         <div><strong>Phone:</strong> (513) 246-4205</div>
         <div><a href="http://www.nscorp.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cincinnati" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="transflo csxt cincinnati  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transflo CSXT</h3>
         <div style="color:#555;font-size:0.9em">Cincinnati, OH</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1677,19 +1707,19 @@
         <div><strong>Phone:</strong> (513) 369-5181</div>
         <div><a href="https://www.transflo.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cincinnati" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="vogt warehouse cincinnati west 8th street  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Vogt Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Cincinnati, OH</div>
         <div><a href="https://www.vogtwarehouse.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>West 8th Street</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cincinnati" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="vogt warehouse / specialty logistics cincinnati east sharon road  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Vogt Warehouse / Specialty Logistics</h3>
         <div style="color:#555;font-size:0.9em">Cincinnati, OH</div>
         <div><a href="https://www.vogtwarehouse.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>East Sharon Road</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cincinnati" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|chemicals (liq)|minerals|petroleum products" data-cap="air compressor|bulk conveyor|liquid pumps|liquid storage tanks|sampling services|scale|steam heating" data-text="watco terminal &amp; port services cincinnati  chemicals (dry) chemicals (liq) minerals petroleum products air compressor bulk conveyor liquid pumps liquid storage tanks sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Cincinnati, OH</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Minerals, Petroleum Products</div>
@@ -1697,86 +1727,81 @@
         <div><strong>Phone:</strong> (513) 941-0500</div>
         <div><a href="https://www.watco.com/service/terminals/cincinnati-oh-river-t/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="clare" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="clare ns tbt clare   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Clare NS TBT</h3>
         <div style="color:#555;font-size:0.9em">Clare, OH</div>
         <div><a href="https://www.nscorp.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cleveland" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="amware distribution warehouse cleveland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Amware Distribution Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Cleveland, OH</div>
         <div><strong>Phone:</strong> (866) 997-7371</div>
         <div><a href="https://amware.com/all-services/distribution-warehousing" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cleveland" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="cleveland industrial warehouse corp. cleveland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cleveland Industrial Warehouse Corp.</h3>
         <div style="color:#555;font-size:0.9em">Cleveland, OH</div>
         <div><a href="http://www.clevelandindustrial.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cleveland" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="heniff transportation systems llc cleveland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Heniff Transportation Systems LLC</h3>
         <div style="color:#555;font-size:0.9em">Cleveland, OH</div>
         <div><a href="https://www.heniff.com/about-heniff/locations/locations-detail/cleveland-oh" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cleveland" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="newburgh &amp; south shore railroad transload cleveland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Newburgh &amp; South Shore Railroad Transload</h3>
         <div style="color:#555;font-size:0.9em">Cleveland, OH</div>
         <div><a href="https://omnitrax.com/newburgh-south-shore-railroad/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cleveland" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="port of cleveland cleveland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of Cleveland</h3>
         <div style="color:#555;font-size:0.9em">Cleveland, OH</div>
         <div><strong>Phone:</strong> (216) 241-8004</div>
         <div><a href="https://www.portofcleveland.com/transloading/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cleveland" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="transflo csxt cleveland  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transflo CSXT</h3>
         <div style="color:#555;font-size:0.9em">Cleveland, OH</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale</div>
         <div><a href="https://www.transflo.net/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cleveland" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="transflo ohio-cleveland-central terminal cleveland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TRANSFLO Ohio-Cleveland-Central Terminal</h3>
         <div style="color:#555;font-size:0.9em">Cleveland, OH</div>
         <div><a href="https://www.transflo.net/locations/ohio-cleveland-central/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="coldwater" data-tier="verified" data-phone="0" data-comm="lumber|steel" data-cap="" data-text="midwest reload coldwater  lumber steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Midwest Reload</h3>
         <div style="color:#555;font-size:0.9em">Coldwater, OH</div>
         <div><strong>Commodities:</strong> Lumber, Steel</div>
-        <div>⚠ website unreachable 2026-08-14 (dns) — dead domain link removed 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="columbiana" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale|steam heating" data-text="buckeye transfer columbiana  chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Buckeye Transfer</h3>
         <div style="color:#555;font-size:0.9em">Columbiana, OH</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating</div>
         <div><strong>Phone:</strong> (330) 719-0375</div>
         <div><a href="https://buckeye-transfer.business.site/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="columbus" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="americold logistics columbus nordic cold storage  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Americold Logistics</h3>
         <div style="color:#555;font-size:0.9em">Columbus, OH</div>
         <div><a href="https://www.americold.com/facilities/columbus/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Nordic Cold Storage</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="columbus" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="capital city reload columbus   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Capital City Reload</h3>
         <div style="color:#555;font-size:0.9em">Columbus, OH</div>
         <div><strong>Phone:</strong> (614) 257-0872</div>
         <div><a href="https://capitalcityreload.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="columbus" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="columbus frebis tbt columbus   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Columbus Frebis TBT</h3>
         <div style="color:#555;font-size:0.9em">Columbus, OH</div>
         <div><a href="https://www.nscorp.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="columbus" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="norfolk southern tbt columbus  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower hot water heating liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norfolk Southern TBT</h3>
         <div style="color:#555;font-size:0.9em">Columbus, OH</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1784,13 +1809,13 @@
         <div><strong>Phone:</strong> (614) 492-4810</div>
         <div><a href="http://www.nscorp.com/content/nscorp/en/shipping-options/intermodal/terminals-and-schedules/columbus-ohio.html" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="columbus" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="spartan logistics columbus oh 3  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Spartan Logistics</h3>
         <div style="color:#555;font-size:0.9em">Columbus, OH</div>
         <div><a href="https://www.spartanlogistics.com/columbus-ohio-3-south-0-1-0" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>OH 3</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="columbus" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="transflo csxt columbus  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transflo CSXT</h3>
         <div style="color:#555;font-size:0.9em">Columbus, OH</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1798,349 +1823,330 @@
         <div><strong>Phone:</strong> (614) 445-4251</div>
         <div><a href="https://www.transflo.net/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="columbus" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="world distribution services-discovery park columbus   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">World Distribution Services-Discovery Park</h3>
         <div style="color:#555;font-size:0.9em">Columbus, OH</div>
         <div><strong>Phone:</strong> (800) 616-6840</div>
         <div><a href="https://Www.worldds.net" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="columbus" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="yenkin-majestic columbus   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Yenkin-majestic</h3>
         <div style="color:#555;font-size:0.9em">Columbus, OH</div>
         <div><a href="https://www.yenkin-majestic.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="conesville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="conesville industrial park conesville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Conesville Industrial Park</h3>
         <div style="color:#555;font-size:0.9em">Conesville, OH</div>
         <div><strong>Phone:</strong> (330) 418-9287</div>
         <div><a href="https://www.ConesvilleIndustrialpark.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="conneaut" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="pittsburgh &amp; conneaut dock company conneaut harbor  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pittsburgh &amp; Conneaut Dock Company</h3>
         <div style="color:#555;font-size:0.9em">Conneaut, OH</div>
         <div><a href="https://www.cn.ca/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Harbor</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="coshocton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="columbus &amp; ohio river rail road (cuoh) coshocton genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Columbus &amp; Ohio River Rail Road (CUOH)</h3>
         <div style="color:#555;font-size:0.9em">Coshocton, OH</div>
         <div><a href="https://www.gwrr.com/railroads/columbus-and-ohio-river-rail-road" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dayton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="the peerless transportation company dayton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">The Peerless Transportation Company</h3>
         <div style="color:#555;font-size:0.9em">Dayton, OH</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="de graff" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="quest liner de graff   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Quest Liner</h3>
         <div style="color:#555;font-size:0.9em">De Graff, OH</div>
         <div><strong>Phone:</strong> (800) 251-9569</div>
         <div><a href="https://questliner.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="delphos" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="d&amp;d ingredients delphos   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">D&amp;D Ingredients</h3>
         <div style="color:#555;font-size:0.9em">Delphos, OH</div>
         <div><strong>Phone:</strong> (800) 543-7962</div>
         <div><a href="https://ddingredient.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="derwent" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="tidewater logistics derwent terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tidewater Logistics</h3>
         <div style="color:#555;font-size:0.9em">Derwent, OH</div>
         <div><a href="https://www.tidewater-logistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dover" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="dover yard dover r.j. corman bulk terminal; cleveland line, rjcl  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Dover Yard</h3>
         <div style="color:#555;font-size:0.9em">Dover, OH</div>
         <div><a href="https://www.rsilogistics.com/rail-solutions/rail-terminal-services/dover-oh/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>R.J. Corman Bulk Terminal; Cleveland Line, RJCL</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dover" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|chemicals (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="" data-text="rj corman (rsi logistics) dover  chemicals (dry) chemicals (liq) frac sand lumber minerals petroleum products plastics (dry) steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rj Corman (RSI Logistics)</h3>
         <div style="color:#555;font-size:0.9em">Dover, OH</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
         <div><strong>Phone:</strong> (330) 602-7847</div>
         <div><a href="http://www.rjcorman.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="east liverpool" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="s h bell east liverpool   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">S H Bell</h3>
         <div style="color:#555;font-size:0.9em">East Liverpool, OH</div>
         <div><strong>Phone:</strong> (412) 963-9910</div>
         <div><a href="https://SHBELLCO.COM" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="euclid" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="euclid ns tbt euclid   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Euclid NS TBT</h3>
         <div style="color:#555;font-size:0.9em">Euclid, OH</div>
         <div><a href="https://www.nscorp.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="euclid" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="norfolk southern tbt euclid  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower hot water heating liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norfolk Southern TBT</h3>
         <div style="color:#555;font-size:0.9em">Euclid, OH</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Hot Water Heating, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="http://www.nscorp.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fairfield" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="americold fairfield   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Americold</h3>
         <div style="color:#555;font-size:0.9em">Fairfield, OH</div>
         <div><a href="https://www.americold.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fostoria" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="buckeye reload llc fostoria   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Buckeye Reload LLC</h3>
         <div style="color:#555;font-size:0.9em">Fostoria, OH</div>
         <div><a href="https://www.transloadgroup.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="girard" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="kenilworth steel brier hill- girard, oh girard   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Kenilworth Steel Brier Hill- Girard, OH</h3>
         <div style="color:#555;font-size:0.9em">Girard, OH</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="greenville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="r.j. corman greenville terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">R.J. Corman</h3>
         <div style="color:#555;font-size:0.9em">Greenville, OH</div>
         <div><a href="https://www.rjcorman.com/companies/transload-connect/locations" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hamden" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="compass rail hamden   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Compass Rail</h3>
         <div style="color:#555;font-size:0.9em">Hamden, OH</div>
         <div><strong>Phone:</strong> (833) 510-3858</div>
         <div><a href="https://www.compassrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hannibal" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="east ohio valley railway hannibal transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">East Ohio Valley Railway</h3>
         <div style="color:#555;font-size:0.9em">Hannibal, OH</div>
         <div><strong>Phone:</strong> (800) 406-3545</div>
         <div><a href="https://transtarrail.com/our-locations/eovr/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Transload — phone from operator website (headless) 2026-08-15</div>
+        <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="irondale" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="ca joseph company irondale   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">CA Joseph Company</h3>
         <div style="color:#555;font-size:0.9em">Irondale, OH</div>
         <div><strong>Phone:</strong> (330) 385-6869</div>
         <div><a href="https://Cajoseph.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="jefferson" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ac&amp;j jefferson transload jefferson   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">AC&amp;J Jefferson Transload</h3>
         <div style="color:#555;font-size:0.9em">Jefferson, OH</div>
         <div><a href="https://wp.acjrailroad.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="jeffersonville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="central ohio logistics center jeffersonville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Central Ohio Logistics Center</h3>
         <div style="color:#555;font-size:0.9em">Jeffersonville, OH</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kenton" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="american rail center kenton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">American Rail Center</h3>
         <div style="color:#555;font-size:0.9em">Kenton, OH</div>
         <div><strong>Phone:</strong> (419) 661-9360</div>
         <div><a href="https://www.americanrailcenter.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lilly chapel" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="camp chase railway lilly chapel transload siding  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Camp Chase Railway</h3>
         <div style="color:#555;font-size:0.9em">Lilly Chapel, OH</div>
         <div><a href="https://pinsly.com/railroads/camp-chase-railroad/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload Siding</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lima" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="luckey trucking inc lima  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Luckey Trucking Inc</h3>
         <div style="color:#555;font-size:0.9em">Lima, OH</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="http://www.luckeytanklines.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lima" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="nelson packaging lima   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Nelson Packaging</h3>
         <div style="color:#555;font-size:0.9em">Lima, OH</div>
         <div><strong>Phone:</strong> (419) 229-3471</div>
         <div><a href="https://www.nelsonpackagingco.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lima" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="r.j. corman western ohio lines (rjcw) lima r.j. corman short line — transload service available  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">R.J. Corman Western Ohio Lines (RJCW)</h3>
         <div style="color:#555;font-size:0.9em">Lima, OH</div>
         <div><a href="https://www.rjcorman.com/companies/railroad-company/our-short-lines" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>R.J. Corman short line — transload service available — operator sweep 2026-08-14</div>
+        <div>R.J. Corman short line — transload service available</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lima" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="wright distribution lima   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Wright Distribution</h3>
         <div style="color:#555;font-size:0.9em">Lima, OH</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lisbon" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="youngstown &amp; southeastern railroad lisbon   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Youngstown &amp; Southeastern Railroad</h3>
         <div style="color:#555;font-size:0.9em">Lisbon, OH</div>
         <div><strong>Phone:</strong> (800) 736-0412</div>
         <div><a href="http://www.mbrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="logan" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="logan transload logan   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Logan Transload</h3>
         <div style="color:#555;font-size:0.9em">Logan, OH</div>
         <div><a href="https://www.gwrr.com/transload/logan-transload/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lorain" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="lake terminal transload lorain   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lake Terminal Transload</h3>
         <div style="color:#555;font-size:0.9em">Lorain, OH</div>
         <div><strong>Phone:</strong> (800) 406-3545</div>
         <div><a href="https://www.transtarrail.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lordstown" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="ohio commerce center transload lordstown   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ohio Commerce Center Transload</h3>
         <div style="color:#555;font-size:0.9em">Lordstown, OH</div>
         <div><strong>Phone:</strong> (330) 399-1804</div>
         <div><a href="https://www.ohiocommercecenter.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lordstown" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="savage service corp lordstown  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor bulk conveyor liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Service Corp</h3>
         <div style="color:#555;font-size:0.9em">Lordstown, OH</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="https://www.savageservices.com/services/terminal-transload/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="macedonia" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="international distribution services inc. macedonia   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">International Distribution Services Inc.</h3>
         <div style="color:#555;font-size:0.9em">Macedonia, OH</div>
         <div><strong>Phone:</strong> (313) 849-3500</div>
         <div><a href="https://www.steelpro.us" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mansfield" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="mansfield railport mansfield   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mansfield Railport</h3>
         <div style="color:#555;font-size:0.9em">Mansfield, OH</div>
         <div><a href="https://www.mansfieldrailport.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="marion" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="marion industrial rail park marion jaguar transport holdings  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Marion Industrial Rail Park</h3>
         <div style="color:#555;font-size:0.9em">Marion, OH</div>
         <div><a href="https://jag-transport.com/marion-industrial-rail-park/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Jaguar Transport Holdings</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="massillon" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ari energy co llc massillon   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">ARI Energy Co LLC</h3>
         <div style="color:#555;font-size:0.9em">Massillon, OH</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="massillon" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="peoples cartage massillon   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Peoples Cartage</h3>
         <div style="color:#555;font-size:0.9em">Massillon, OH</div>
         <div><a href="https://totaldistribution.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="massillon" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="r.j. corman massillon rsl terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">R.J. Corman</h3>
         <div style="color:#555;font-size:0.9em">Massillon, OH</div>
         <div><a href="https://www.rjcorman.com/companies/transload-connect/locations" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>RSL Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="massillon" data-tier="verified" data-phone="1" data-comm="frac sand|minerals|steel" data-cap="bulk conveyor|sampling services|scale" data-text="rsl railroad llc massillon  frac sand minerals steel bulk conveyor sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rsl Railroad LLC</h3>
         <div style="color:#555;font-size:0.9em">Massillon, OH</div>
         <div><strong>Commodities:</strong> Frac Sand, Minerals, Steel</div>
         <div><strong>Capabilities:</strong> Bulk Conveyor, Sampling Services, Scale</div>
         <div><strong>Phone:</strong> (330) 493-3377</div>
         <div><a href="https://www.massillonlogistics.com/companies/republic-short-line/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="middleport" data-tier="verified" data-phone="0" data-comm="minerals" data-cap="bulk conveyor" data-text="watco terminal &amp; port services middleport  minerals bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Middleport, OH</div>
         <div><strong>Commodities:</strong> Minerals</div>
         <div><strong>Capabilities:</strong> Bulk Conveyor</div>
         <div><a href="https://www.watcocompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="milford" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="cincinnati eastern railroad milford roundbottom transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cincinnati Eastern Railroad</h3>
         <div style="color:#555;font-size:0.9em">Milford, OH</div>
         <div>Roundbottom Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mogadore" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="asw global mogadore   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">ASW Global</h3>
         <div style="color:#555;font-size:0.9em">Mogadore, OH</div>
         <div><strong>Phone:</strong> (888) 363-8492</div>
         <div><a href="https://www.aswglobal.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="napoleon" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="americold napoleon   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Americold</h3>
         <div style="color:#555;font-size:0.9em">Napoleon, OH</div>
         <div><a href="https://www.americold.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="napoleon" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="interstate cold storage napoleon   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Interstate Cold Storage</h3>
         <div style="color:#555;font-size:0.9em">Napoleon, OH</div>
         <div><strong>Phone:</strong> (260) 428-2505</div>
         <div><a href="https://interstatecoldstorage.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="napoleon" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="napoleon, defiance &amp; western transload station napoleon   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Napoleon, Defiance &amp; Western Transload Station</h3>
         <div style="color:#555;font-size:0.9em">Napoleon, OH</div>
         <div><a href="https://patriotrail.com/rail/napoleon-defiance-western-railway-co-ndw/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="navarre" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="tidewater logistics navarre terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tidewater Logistics</h3>
         <div style="color:#555;font-size:0.9em">Navarre, OH</div>
         <div><a href="https://www.tidewater-logistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="newark" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="mid state warehouse newark   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mid State Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Newark, OH</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north bend" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="consolidated grain &amp; barge north bend   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Consolidated Grain &amp; Barge</h3>
         <div style="color:#555;font-size:0.9em">North Bend, OH</div>
         <div><a href="https://ctlconline.com/north-bend/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="painesville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="grand river railway transload center painesville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Grand River Railway Transload Center</h3>
         <div style="color:#555;font-size:0.9em">Painesville, OH</div>
         <div><a href="https://grandriverrailway.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sandusky" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="norfolk southern tbt sandusky  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower hot water heating liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norfolk Southern TBT</h3>
         <div style="color:#555;font-size:0.9em">Sandusky, OH</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Hot Water Heating, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><strong>Phone:</strong> (855) 667-3655</div>
         <div><a href="https://www.norfolksouthern.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sandusky" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="sandusky dock sandusky   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sandusky Dock</h3>
         <div style="color:#555;font-size:0.9em">Sandusky, OH</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="shelby" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="central ohio warehouse co shelby   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Central Ohio Warehouse Co</h3>
         <div style="color:#555;font-size:0.9em">Shelby, OH</div>
         <div><a href="https://centralohiowarehouse.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="south point" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="south point terminal / south point &amp; ohio railroad south point agracel rail holdings  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">South Point Terminal / South Point &amp; Ohio Railroad</h3>
         <div style="color:#555;font-size:0.9em">South Point, OH</div>
         <div>Agracel Rail Holdings</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="springfield" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="superior carrier springfield   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Superior Carrier</h3>
         <div style="color:#555;font-size:0.9em">Springfield, OH</div>
         <div><a href="https://www.heniff.com/about-heniff/locations/locations-detail/springfield-oh" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="steubenville" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|plastics (dry)" data-cap="portable vacuum|sampling services|scale|tank trailer cleaning" data-text="tidewater transit co steubenville  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) plastics (dry) portable vacuum sampling services scale tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tidewater Transit Co</h3>
         <div style="color:#555;font-size:0.9em">Steubenville, OH</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Plastics (Dry)</div>
@@ -2148,55 +2154,52 @@
         <div><strong>Phone:</strong> (740) 461-0739</div>
         <div><a href="http://tidewater-logistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="stony ridge" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="american rail center stony ridge   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">American Rail Center</h3>
         <div style="color:#555;font-size:0.9em">Stony Ridge, OH</div>
         <div><a href="https://www.americanrailcenter.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tiffin" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="northern ohio &amp; western railway tiffin transload tiffin   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Northern Ohio &amp; Western Railway Tiffin Transload</h3>
         <div style="color:#555;font-size:0.9em">Tiffin, OH</div>
         <div><a href="https://omnitrax.com/northern-ohio-western-railway-llc/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="toledo" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="american rail center toledo   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">American Rail Center</h3>
         <div style="color:#555;font-size:0.9em">Toledo, OH</div>
         <div><a href="https://www.americanrailcenter.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="toledo" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ann arbor railroad toledo team track  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ann Arbor Railroad</h3>
         <div style="color:#555;font-size:0.9em">Toledo, OH</div>
         <div><a href="https://www.watco.com/service/rail/ann-arbor-railroad-aa/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Team Track</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="toledo" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="midwest terminals toledo south end  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Midwest Terminals</h3>
         <div style="color:#555;font-size:0.9em">Toledo, OH</div>
         <div><strong>Phone:</strong> (419) 897-6868</div>
         <div><a href="https://www.midwestterminals.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>South End — phone from operator website (headless) 2026-08-15</div>
+        <div>South End</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="toledo" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="midwest terminals - ironville toledo   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Midwest Terminals - Ironville</h3>
         <div style="color:#555;font-size:0.9em">Toledo, OH</div>
         <div><strong>Phone:</strong> (419) 897-6868</div>
         <div><a href="https://www.midwestterminals.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="toledo" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="spartan logistics toledo nebraska avenue  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Spartan Logistics</h3>
         <div style="color:#555;font-size:0.9em">Toledo, OH</div>
         <div><a href="https://www.spartanlogistics.com/toledo-ohio-nebraskaavenue-0" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Nebraska Avenue</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="toledo" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="transflo ohio-toledo terminal toledo   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TRANSFLO Ohio-Toledo Terminal</h3>
         <div style="color:#555;font-size:0.9em">Toledo, OH</div>
         <div><a href="https://www.transflo.net/locations/ohio-toledo/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="van wert" data-tier="verified" data-phone="1" data-comm="chemicals (liq)|lumber|minerals|petroleum products|steel" data-cap="air compressor|bulk conveyor|liquid pumps|liquid storage tanks|scale|steam heating" data-text="van wert terminal llc van wert  chemicals (liq) lumber minerals petroleum products steel air compressor bulk conveyor liquid pumps liquid storage tanks scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Van Wert Terminal LLC</h3>
         <div style="color:#555;font-size:0.9em">Van Wert, OH</div>
         <div><strong>Commodities:</strong> Chemicals (Liq), Lumber, Minerals, Petroleum Products, Steel</div>
@@ -2204,13 +2207,12 @@
         <div><strong>Phone:</strong> (419) 238-5190</div>
         <div><a href="https://www.vanwertterminal.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="walbridge" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="american rail center walbridge   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">American Rail Center</h3>
         <div style="color:#555;font-size:0.9em">Walbridge, OH</div>
         <div><a href="https://www.americanrailcenter.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wapakoneta" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|petroleum products|plastics (dry)" data-cap="air compressor|liquid pumps|liquid storage tanks|sampling services|scale" data-text="aip logistics wapakoneta  acids chemicals (dry) chemicals (liq) petroleum products plastics (dry) air compressor liquid pumps liquid storage tanks sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Aip Logistics</h3>
         <div style="color:#555;font-size:0.9em">Wapakoneta, OH</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Petroleum Products, Plastics (Dry)</div>
@@ -2218,66 +2220,61 @@
         <div><strong>Phone:</strong> (419) 738-9211</div>
         <div><a href="https://www.aiplogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wellsville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="port of ohio at pier 48 wellsville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of Ohio at Pier 48</h3>
         <div style="color:#555;font-size:0.9em">Wellsville, OH</div>
         <div><strong>Phone:</strong> (330) 362-0361</div>
         <div><a href="https://www.portofohio.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wellsville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="wellsville terminals company wellsville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Wellsville Terminals Company</h3>
         <div style="color:#555;font-size:0.9em">Wellsville, OH</div>
         <div><strong>Phone:</strong> (330) 532-1527</div>
         <div><a href="https://www.wellsvilleterminals.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="youngstown" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="mahoning valley railway (mvry) youngstown genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mahoning Valley Railway (MVRY)</h3>
         <div style="color:#555;font-size:0.9em">Youngstown, OH</div>
         <div><a href="https://www.gwrr.com/railroads/mahoning-valley-railway" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="youngstown" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="united freezer &amp; storage co. youngstown   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">United Freezer &amp; Storage Co.</h3>
         <div style="color:#555;font-size:0.9em">Youngstown, OH</div>
         <div><strong>Phone:</strong> (800) 716-1416</div>
         <div><a href="https://unitedfreezer.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="youngstown" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="warren &amp; trumbull railroad (wtrm) youngstown genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Warren &amp; Trumbull Railroad (WTRM)</h3>
         <div style="color:#555;font-size:0.9em">Youngstown, OH</div>
         <div><a href="https://www.gwrr.com/railroads/warren-and-trumbull-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="youngstown" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="youngstown &amp; austintown railroad (yarr) youngstown genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Youngstown &amp; Austintown Railroad (YARR)</h3>
         <div style="color:#555;font-size:0.9em">Youngstown, OH</div>
         <div><a href="https://www.gwrr.com/railroads/youngstown-and-austintown-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="youngstown" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="youngstown belt railroad (yb) youngstown genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Youngstown Belt Railroad (YB)</h3>
         <div style="color:#555;font-size:0.9em">Youngstown, OH</div>
         <div><a href="https://www.gwrr.com/railroads/youngstown-belt-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="zanesville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="adams brothers zanesville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Adams Brothers</h3>
         <div style="color:#555;font-size:0.9em">Zanesville, OH</div>
         <div><strong>Phone:</strong> (740) 452-7566</div>
         <div><a href="https://www.adamsbrosconcrete.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="zanesville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="eastpointe business park rail transfer station zanesville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Eastpointe Business Park Rail Transfer Station</h3>
         <div style="color:#555;font-size:0.9em">Zanesville, OH</div>
         <div><strong>Phone:</strong> (740) 455-0742</div>
         <div><a href="https://zmcport.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="zanesville" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="savage service corp zanesville  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor bulk conveyor liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Service Corp</h3>
         <div style="color:#555;font-size:0.9em">Zanesville, OH</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -2310,6 +2307,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

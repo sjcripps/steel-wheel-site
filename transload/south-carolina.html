@@ -733,6 +733,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in South Carolina</h1>
@@ -747,119 +765,135 @@
 
     <section>
       <h2>Cities in South Carolina</h2>
-      <p><a href="/transload/north-charleston-sc">North Charleston (8)</a> &middot; <a href="/transload/chester-sc">Chester (4)</a> &middot; <a href="/transload/charleston-sc">Charleston (3)</a> &middot; <a href="/transload/spartanburg-sc">Spartanburg (3)</a> &middot; <span>Greenville (2)</span> &middot; <span>Laurens (2)</span> &middot; <span>Orangeburg (2)</span> &middot; <span>Anderson (1)</span> &middot; <span>Bennettsville (1)</span> &middot; <span>Blacksburg (1)</span> &middot; <span>Chapin (1)</span> &middot; <span>Columbia (1)</span> &middot; <span>Conway (1)</span> &middot; <span>Darlington (1)</span> &middot; <span>Fort Lawn (1)</span> &middot; <span>Gaston (1)</span> &middot; <span>Georgetown (1)</span> &middot; <span>Goose Creek (1)</span> &middot; <span>Hampton (1)</span> &middot; <span>Hanahan (1)</span> &middot; <span>Huger (1)</span> &middot; <span>Kinsler (1)</span> &middot; <span>Ladson (1)</span> &middot; <span>Lancaster (1)</span> &middot; <span>Middleton (1)</span> &middot; <span>Moncks Corner (1)</span> &middot; <span>Starr (1)</span> &middot; <span>West Columbia (1)</span> &middot; <span>Williamston (1)</span> &middot; <span>Winnsboro (1)</span></p>
+      <div class="tl-citylist is-collapsed" id="tlCityList" data-total="30">
+        <p><a href="/transload/north-charleston-sc">North Charleston (8)</a> &middot; <a href="/transload/chester-sc">Chester (4)</a> &middot; <a href="/transload/charleston-sc">Charleston (3)</a> &middot; <a href="/transload/spartanburg-sc">Spartanburg (3)</a> &middot; <span>Greenville (2)</span> &middot; <span>Laurens (2)</span> &middot; <span>Orangeburg (2)</span> &middot; <span>Anderson (1)</span> &middot; <span>Bennettsville (1)</span> &middot; <span>Blacksburg (1)</span> &middot; <span>Chapin (1)</span> &middot; <span>Columbia (1)</span> &middot; <span>Conway (1)</span> &middot; <span>Darlington (1)</span> &middot; <span>Fort Lawn (1)</span> &middot; <span>Gaston (1)</span> &middot; <span>Georgetown (1)</span> &middot; <span>Goose Creek (1)</span> &middot; <span>Hampton (1)</span> &middot; <span>Hanahan (1)</span> &middot; <span>Huger (1)</span> &middot; <span>Kinsler (1)</span> &middot; <span>Ladson (1)</span> &middot; <span>Lancaster (1)</span><span class="tl-city-extra"> &middot; <span>Middleton (1)</span></span><span class="tl-city-extra"> &middot; <span>Moncks Corner (1)</span></span><span class="tl-city-extra"> &middot; <span>Starr (1)</span></span><span class="tl-city-extra"> &middot; <span>West Columbia (1)</span></span><span class="tl-city-extra"> &middot; <span>Williamston (1)</span></span><span class="tl-city-extra"> &middot; <span>Winnsboro (1)</span></span></p>
+        <button type="button" class="tl-morecities" id="tlMoreCities">Show all 30 cities</button>
+      </div>
     </section>
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (30)</option><option value="anderson">Anderson</option><option value="bennettsville">Bennettsville</option><option value="blacksburg">Blacksburg</option><option value="chapin">Chapin</option><option value="charleston">Charleston</option><option value="chester">Chester</option><option value="columbia">Columbia</option><option value="conway">Conway</option><option value="darlington">Darlington</option><option value="fort lawn">Fort Lawn</option><option value="gaston">Gaston</option><option value="georgetown">Georgetown</option><option value="goose creek">Goose Creek</option><option value="greenville">Greenville</option><option value="hampton">Hampton</option><option value="hanahan">Hanahan</option><option value="huger">Huger</option><option value="kinsler">Kinsler</option><option value="ladson">Ladson</option><option value="lancaster">Lancaster</option><option value="laurens">Laurens</option><option value="middleton">Middleton</option><option value="moncks corner">Moncks Corner</option><option value="north charleston">North Charleston</option><option value="orangeburg">Orangeburg</option><option value="spartanburg">Spartanburg</option><option value="starr">Starr</option><option value="west columbia">West Columbia</option><option value="williamston">Williamston</option><option value="winnsboro">Winnsboro</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="auger">Auger</option><option value="blending meters">Blending Meters</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="gravity (trestle)">Gravity (Trestle)</option><option value="hot water heating">Hot Water Heating</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (9)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (9)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 9 of 47 sites and capability detail for 8. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="anderson" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="spartan logistics anderson north sc  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Spartan Logistics</h3>
         <div style="color:#555;font-size:0.9em">Anderson, SC</div>
         <div><a href="https://www.spartanlogistics.com/north-anderson-sc-" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>North SC</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bennettsville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="pee dee river railway bennettsville sterling transport transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pee Dee River Railway</h3>
         <div style="color:#555;font-size:0.9em">Bennettsville, SC</div>
         <div><strong>Phone:</strong> (910) 944-2341</div>
         <div><a href="https://aberdeen-rockfish.com/freight-services/freight-pee-dee-river-railway/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Sterling Transport Transload — phone from operator website (headless) 2026-08-15</div>
+        <div>Sterling Transport Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="blacksburg" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="pax industries blacksburg transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pax Industries</h3>
         <div style="color:#555;font-size:0.9em">Blacksburg, SC</div>
         <div><strong>Phone:</strong> (770) 242-8000</div>
         <div><a href="https://paxind.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Transload — phone from operator website 2026-08-14</div>
+        <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chapin" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="r.j. corman chapin columbia yard  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">R.J. Corman</h3>
         <div style="color:#555;font-size:0.9em">Chapin, SC</div>
         <div><a href="https://www.rjcorman.com/companies/transload-connect/locations" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Columbia Yard</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="charleston" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="palmetto railways charleston   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Palmetto Railways</h3>
         <div style="color:#555;font-size:0.9em">Charleston, SC</div>
         <div><a href="https://palmettorailways.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="charleston" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="shipyard river terminal-kinder morgan charleston   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Shipyard River Terminal-Kinder Morgan</h3>
         <div style="color:#555;font-size:0.9em">Charleston, SC</div>
         <div><a href="https://www.kindermorgan.com/business/terminals/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="charleston" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="transflo csxt charleston  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transflo CSXT</h3>
         <div style="color:#555;font-size:0.9em">Charleston, SC</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale</div>
         <div><a href="https://www.transflo.net/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chester" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bulkmatic chester   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulkmatic</h3>
         <div style="color:#555;font-size:0.9em">Chester, SC</div>
         <div><a href="https://www.bulkmatic.com/service/transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chester" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="carolina gypsum llc chester   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carolina Gypsum LLC</h3>
         <div style="color:#555;font-size:0.9em">Chester, SC</div>
         <div><strong>Phone:</strong> (706) 667-8683</div>
         <div><a href="https://Carolinagypsum.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chester" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="chester rock transload track chester   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Chester Rock Transload Track</h3>
         <div style="color:#555;font-size:0.9em">Chester, SC</div>
         <div><a href="https://gulfandohio.com/l-c" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chester" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="east chester transload track chester   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">East Chester Transload Track</h3>
         <div style="color:#555;font-size:0.9em">Chester, SC</div>
         <div><a href="https://gulfandohio.com/l-c" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="columbia" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="norfolk southern tbt (rsi logistics) columbia  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) steel air compressor blower hot water heating liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norfolk Southern TBT (RSI Logistics)</h3>
         <div style="color:#555;font-size:0.9em">Columbia, SC</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Hot Water Heating, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="https://www.rsilogistics.com/rail-solutions/rail-terminal-services/columbia-sc/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="conway" data-tier="verified" data-phone="0" data-comm="chemicals (dry)|frac sand|lumber|minerals|plastics (dry)|steel" data-cap="" data-text="rj corman (rsi logistics) conway  chemicals (dry) frac sand lumber minerals plastics (dry) steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rj Corman (RSI Logistics)</h3>
         <div style="color:#555;font-size:0.9em">Conway, SC</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Frac Sand, Lumber, Minerals, Plastics (Dry), Steel</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="darlington" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="south carolina central railroad (scrf) darlington genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">South Carolina Central Railroad (SCRF)</h3>
         <div style="color:#555;font-size:0.9em">Darlington, SC</div>
         <div><a href="https://www.gwrr.com/railroads/south-carolina-central-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fort lawn" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="fort lawn transload track fort lawn   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Fort Lawn Transload Track</h3>
         <div style="color:#555;font-size:0.9em">Fort Lawn, SC</div>
         <div><a href="https://gulfandohio.com/l-c" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="gaston" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bulkmatic gaston   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulkmatic</h3>
         <div style="color:#555;font-size:0.9em">Gaston, SC</div>
         <div><a href="https://www.bulkmatic.com/service/transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="georgetown" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|auger|blending meters|blower|bulk conveyor|gravity (trestle)|portable vacuum|sampling services|scale" data-text="rsi logistics georgetown  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) steel air compressor auger blending meters blower bulk conveyor gravity (trestle) portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">RSI Logistics</h3>
         <div style="color:#555;font-size:0.9em">Georgetown, SC</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
         <div><strong>Capabilities:</strong> Air Compressor, Auger, Blending Meters, Blower, Bulk Conveyor, Gravity (Trestle), Portable Vacuum, Sampling Services, Scale</div>
         <div><a href="https://www.rsilogistics.com/rail-solutions/rail-terminal-services/georgetown-sc/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="goose creek" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="harbor logistics goose creek premier logistics facility  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Harbor Logistics</h3>
         <div style="color:#555;font-size:0.9em">Goose Creek, SC</div>
         <div><a href="https://www.harborlogistics.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Premier Logistics Facility</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="greenville" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|chemicals (liq)|petroleum products" data-cap="air compressor|blower|liquid pumps|scale|steam heating" data-text="chempak international inc greenville  chemicals (dry) chemicals (liq) petroleum products air compressor blower liquid pumps scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Chempak International Inc</h3>
         <div style="color:#555;font-size:0.9em">Greenville, SC</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Petroleum Products</div>
@@ -867,82 +901,81 @@
         <div><strong>Phone:</strong> (864) 269-4785</div>
         <div><a href="http://www.chempakinternational.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="greenville" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="transflo csxt greenville  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transflo CSXT</h3>
         <div style="color:#555;font-size:0.9em">Greenville, SC</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale</div>
         <div><a href="https://www.transflo.net/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hampton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="palmetto railways - salkehatchie subdivision hampton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Palmetto Railways - Salkehatchie Subdivision</h3>
         <div style="color:#555;font-size:0.9em">Hampton, SC</div>
         <div><a href="https://palmettorailways.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hanahan" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="premier logistics solutions hanahan harbor logistics / nova infrastructure  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Premier Logistics Solutions</h3>
         <div style="color:#555;font-size:0.9em">Hanahan, SC</div>
         <div><a href="https://harborlogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Harbor Logistics / NOVA Infrastructure</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="huger" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="palmetto railways - charity church huger   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Palmetto Railways - Charity Church</h3>
         <div style="color:#555;font-size:0.9em">Huger, SC</div>
         <div><a href="https://palmettorailways.com/customers-and-services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kinsler" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="columbia ns tbt kinsler   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Columbia NS TBT</h3>
         <div style="color:#555;font-size:0.9em">Kinsler, SC</div>
         <div><a href="https://www.nscorp.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ladson" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="brown distribution centers inc. ladson   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Brown Distribution Centers Inc.</h3>
         <div style="color:#555;font-size:0.9em">Ladson, SC</div>
         <div><a href="https://www.rogers-brown.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lancaster" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lancaster transload track lancaster   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lancaster Transload Track</h3>
         <div style="color:#555;font-size:0.9em">Lancaster, SC</div>
         <div><a href="https://gulfandohio.com/l-c" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="laurens" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="carolina piedmont railroad (cpdr) laurens genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carolina Piedmont Railroad (CPDR)</h3>
         <div style="color:#555;font-size:0.9em">Laurens, SC</div>
         <div><a href="https://www.gwrr.com/cpdr/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — verified HQ, operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="laurens" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="spartan logistics laurens sc warehouse  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Spartan Logistics</h3>
         <div style="color:#555;font-size:0.9em">Laurens, SC</div>
         <div><a href="https://www.spartanlogistics.com/laurens-sc-0" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>SC Warehouse</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="middleton" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="a&amp;r transport inc middleton  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">Middleton, SC</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="https://ardoingitright.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="moncks corner" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="quantix charleston facility moncks corner   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Quantix Charleston Facility</h3>
         <div style="color:#555;font-size:0.9em">Moncks Corner, SC</div>
         <div><a href="https://www.quantixscs.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north charleston" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="carver maritime charleston north charleston   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Carver Maritime Charleston</h3>
         <div style="color:#555;font-size:0.9em">North Charleston, SC</div>
         <div><strong>Phone:</strong> (518) 355-6034</div>
         <div><a href="https://www.carvercompanies.com/carver-maritime-charleston/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north charleston" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lineage north charleston charleston remount road  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lineage</h3>
         <div style="color:#555;font-size:0.9em">North Charleston, SC</div>
         <div><a href="https://www.onelineage.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Charleston Remount Road</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north charleston" data-tier="verified" data-phone="1" data-comm="acids|chemicals (liq)|foods (liq)|petroleum products" data-cap="liquid pumps|liquid storage tanks|sampling services|scale|steam heating" data-text="odfjell terminals north charleston  acids chemicals (liq) foods (liq) petroleum products liquid pumps liquid storage tanks sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Odfjell Terminals</h3>
         <div style="color:#555;font-size:0.9em">North Charleston, SC</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Liq), Foods (Liq), Petroleum Products</div>
@@ -950,87 +983,83 @@
         <div><strong>Phone:</strong> (843) 579-4433</div>
         <div><a href="https://scspa.com/sc-ports-locations/north-charleston-terminal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north charleston" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="palmetto railways north charleston navy base terminal / navy base intermodal facility  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Palmetto Railways</h3>
         <div style="color:#555;font-size:0.9em">North Charleston, SC</div>
         <div><a href="https://palmettorailways.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Navy Base Terminal / Navy Base Intermodal Facility</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north charleston" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="palmetto railways north charleston former navy base  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Palmetto Railways</h3>
         <div style="color:#555;font-size:0.9em">North Charleston, SC</div>
         <div><a href="https://palmettorailways.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>former Navy base</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north charleston" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ray-mont logistics - charleston north charleston   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ray-Mont Logistics - Charleston</h3>
         <div style="color:#555;font-size:0.9em">North Charleston, SC</div>
         <div><a href="https://www.ray-mont.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north charleston" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="sunland logistics solutions north charleston   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sunland Logistics Solutions</h3>
         <div style="color:#555;font-size:0.9em">North Charleston, SC</div>
         <div><strong>Phone:</strong> (800) 295-0081</div>
         <div><a href="https://sunlandlogisticssolutions.com/locations/north-charleston-sc/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north charleston" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="transflo - charleston, sc north charleston transflo (csx) terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TRANSFLO - Charleston, SC</h3>
         <div style="color:#555;font-size:0.9em">North Charleston, SC</div>
         <div><a href="https://www.transflo.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>TRANSFLO (CSX) terminal — via Commtrex listing, operator sweep 2026-08-14</div>
+        <div>TRANSFLO (CSX) terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="orangeburg" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="cellmark orangeburg   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cellmark</h3>
         <div style="color:#555;font-size:0.9em">Orangeburg, SC</div>
         <div><a href="https://www.cellmark.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="orangeburg" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="universal trade solutions orangeburg   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Universal Trade Solutions</h3>
         <div style="color:#555;font-size:0.9em">Orangeburg, SC</div>
         <div><strong>Phone:</strong> (803) 534-8630</div>
         <div><a href="https://www.universaltradesolutions.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="spartanburg" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="norfolk southern tbt (rsi logistics) spartanburg  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower hot water heating liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norfolk Southern TBT (RSI Logistics)</h3>
         <div style="color:#555;font-size:0.9em">Spartanburg, SC</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Hot Water Heating, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="https://www.rsilogistics.com/rail-solutions/rail-terminal-services/spartanburg-sc/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="spartanburg" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="spartanburg ns tbt spartanburg   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Spartanburg NS TBT</h3>
         <div style="color:#555;font-size:0.9em">Spartanburg, SC</div>
         <div><a href="https://www.nscorp.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="spartanburg" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="upstate logistics &amp; distribution spartanburg   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Upstate Logistics &amp; Distribution</h3>
         <div style="color:#555;font-size:0.9em">Spartanburg, SC</div>
         <div><a href="https://www.upstatelogistics.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>⚠ website unreachable 2026-08-14 (500)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="starr" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="spartan logistics starr   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Spartan Logistics</h3>
         <div style="color:#555;font-size:0.9em">Starr, SC</div>
         <div><a href="https://www.spartanlogistics.com/locations" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="west columbia" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="csx dixiana automotive distribution center west columbia   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">CSX Dixiana Automotive Distribution Center</h3>
         <div style="color:#555;font-size:0.9em">West Columbia, SC</div>
         <div><a href="https://www.csx.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="williamston" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="greenville &amp; western railway co llc williamston   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Greenville &amp; Western Railway Co LLC</h3>
         <div style="color:#555;font-size:0.9em">Williamston, SC</div>
         <div><a href="https://wcrscorp.com/railroads/grlw/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="winnsboro" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="atom rail winnsboro transload facility winnsboro   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">ATOM Rail Winnsboro Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Winnsboro, SC</div>
         <div><strong>Phone:</strong> (888) 628-6677</div>
         <div><a href="https://www.atomrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
       </div>
     <p style="font-size:0.85em;color:#666;margin-top:28px">
@@ -1058,6 +1087,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

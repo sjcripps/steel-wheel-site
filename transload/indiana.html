@@ -1155,6 +1155,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Indiana</h1>
@@ -1169,32 +1187,47 @@
 
     <section>
       <h2>Cities in Indiana</h2>
-      <p><a href="/transload/indianapolis-in">Indianapolis (7)</a> &middot; <a href="/transload/jeffersonville-in">Jeffersonville (7)</a> &middot; <a href="/transload/east-chicago-in">East Chicago (5)</a> &middot; <a href="/transload/la-porte-in">La Porte (5)</a> &middot; <a href="/transload/hammond-in">Hammond (4)</a> &middot; <a href="/transload/fort-wayne-in">Fort Wayne (3)</a> &middot; <span>Charlestown (2)</span> &middot; <span>Elkhart (2)</span> &middot; <span>Evansville (2)</span> &middot; <span>Lafayette (2)</span> &middot; <span>Madison (2)</span> &middot; <span>Mount Vernon (2)</span> &middot; <span>Odon (2)</span> &middot; <span>Wolcott (2)</span> &middot; <span>Anderson (1)</span> &middot; <span>Ashley (1)</span> &middot; <span>Bluffton (1)</span> &middot; <span>Columbus (1)</span> &middot; <span>Cottage Grove (1)</span> &middot; <span>Edinburgh (1)</span> &middot; <span>Fremont (1)</span> &middot; <span>Ft Wayne Tbt (1)</span> &middot; <span>Ft. Wayne (1)</span> &middot; <span>Gary (1)</span> &middot; <span>Goshen (1)</span> &middot; <span>Hudson (1)</span> &middot; <span>Kokomo (1)</span> &middot; <span>La Crosse (1)</span> &middot; <span>Marion (1)</span> &middot; <span>Michigan City (1)</span> &middot; <span>Petersburg (1)</span> &middot; <span>Portage (1)</span> &middot; <span>Reynolds (1)</span> &middot; <span>Rochester (1)</span> &middot; <span>Schereville (1)</span> &middot; <span>South Bend (1)</span> &middot; <span>South Bens (1)</span> &middot; <span>Speed (1)</span> &middot; <span>Sullivan (1)</span> &middot; <span>Tell City (1)</span> &middot; <span>Troy (1)</span> &middot; <span>Washington (1)</span> &middot; <span>West Harrison (1)</span></p>
+      <div class="tl-citylist is-collapsed" id="tlCityList" data-total="43">
+        <p><a href="/transload/indianapolis-in">Indianapolis (7)</a> &middot; <a href="/transload/jeffersonville-in">Jeffersonville (7)</a> &middot; <a href="/transload/east-chicago-in">East Chicago (5)</a> &middot; <a href="/transload/la-porte-in">La Porte (5)</a> &middot; <a href="/transload/hammond-in">Hammond (4)</a> &middot; <a href="/transload/fort-wayne-in">Fort Wayne (3)</a> &middot; <span>Charlestown (2)</span> &middot; <span>Elkhart (2)</span> &middot; <span>Evansville (2)</span> &middot; <span>Lafayette (2)</span> &middot; <span>Madison (2)</span> &middot; <span>Mount Vernon (2)</span> &middot; <span>Odon (2)</span> &middot; <span>Wolcott (2)</span> &middot; <span>Anderson (1)</span> &middot; <span>Ashley (1)</span> &middot; <span>Bluffton (1)</span> &middot; <span>Columbus (1)</span> &middot; <span>Cottage Grove (1)</span> &middot; <span>Edinburgh (1)</span> &middot; <span>Fremont (1)</span> &middot; <span>Ft Wayne Tbt (1)</span> &middot; <span>Ft. Wayne (1)</span> &middot; <span>Gary (1)</span><span class="tl-city-extra"> &middot; <span>Goshen (1)</span></span><span class="tl-city-extra"> &middot; <span>Hudson (1)</span></span><span class="tl-city-extra"> &middot; <span>Kokomo (1)</span></span><span class="tl-city-extra"> &middot; <span>La Crosse (1)</span></span><span class="tl-city-extra"> &middot; <span>Marion (1)</span></span><span class="tl-city-extra"> &middot; <span>Michigan City (1)</span></span><span class="tl-city-extra"> &middot; <span>Petersburg (1)</span></span><span class="tl-city-extra"> &middot; <span>Portage (1)</span></span><span class="tl-city-extra"> &middot; <span>Reynolds (1)</span></span><span class="tl-city-extra"> &middot; <span>Rochester (1)</span></span><span class="tl-city-extra"> &middot; <span>Schereville (1)</span></span><span class="tl-city-extra"> &middot; <span>South Bend (1)</span></span><span class="tl-city-extra"> &middot; <span>South Bens (1)</span></span><span class="tl-city-extra"> &middot; <span>Speed (1)</span></span><span class="tl-city-extra"> &middot; <span>Sullivan (1)</span></span><span class="tl-city-extra"> &middot; <span>Tell City (1)</span></span><span class="tl-city-extra"> &middot; <span>Troy (1)</span></span><span class="tl-city-extra"> &middot; <span>Washington (1)</span></span><span class="tl-city-extra"> &middot; <span>West Harrison (1)</span></span></p>
+        <button type="button" class="tl-morecities" id="tlMoreCities">Show all 43 cities</button>
+      </div>
     </section>
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (43)</option><option value="anderson">Anderson</option><option value="ashley">Ashley</option><option value="bluffton">Bluffton</option><option value="charlestown">Charlestown</option><option value="columbus">Columbus</option><option value="cottage grove">Cottage Grove</option><option value="east chicago">East Chicago</option><option value="edinburgh">Edinburgh</option><option value="elkhart">Elkhart</option><option value="evansville">Evansville</option><option value="fort wayne">Fort Wayne</option><option value="fremont">Fremont</option><option value="ft wayne tbt">Ft Wayne Tbt</option><option value="ft. wayne">Ft. Wayne</option><option value="gary">Gary</option><option value="goshen">Goshen</option><option value="hammond">Hammond</option><option value="hudson">Hudson</option><option value="indianapolis">Indianapolis</option><option value="jeffersonville">Jeffersonville</option><option value="kokomo">Kokomo</option><option value="la crosse">La Crosse</option><option value="la porte">La Porte</option><option value="lafayette">Lafayette</option><option value="madison">Madison</option><option value="marion">Marion</option><option value="michigan city">Michigan City</option><option value="mount vernon">Mount Vernon</option><option value="odon">Odon</option><option value="petersburg">Petersburg</option><option value="portage">Portage</option><option value="reynolds">Reynolds</option><option value="rochester">Rochester</option><option value="schereville">Schereville</option><option value="south bend">South Bend</option><option value="south bens">South Bens</option><option value="speed">Speed</option><option value="sullivan">Sullivan</option><option value="tell city">Tell City</option><option value="troy">Troy</option><option value="washington">Washington</option><option value="west harrison">West Harrison</option><option value="wolcott">Wolcott</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="asphalt">Asphalt</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="auger">Auger</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="hot water heating">Hot Water Heating</option><option value="liquid pumps">Liquid Pumps</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (18)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (28)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 18 of 76 sites and capability detail for 15. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="anderson" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="crms anderson transload anderson   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">CRMS Anderson Transload</h3>
         <div style="color:#555;font-size:0.9em">Anderson, IN</div>
         <div><strong>Phone:</strong> (773) 244-8340</div>
         <div><a href="https://crmsrail.com/locations/anderson" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ashley" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ashely transload ashley   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ashely Transload</h3>
         <div style="color:#555;font-size:0.9em">Ashley, IN</div>
         <div><a href="https://inerailroad.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bluffton" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="mitchel enterprises transloading bluffton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mitchel Enterprises Transloading</h3>
         <div style="color:#555;font-size:0.9em">Bluffton, IN</div>
         <div><strong>Phone:</strong> (260) 353-1050</div>
         <div><a href="https://www.mitchelenterprises.com/Transloading/1" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="charlestown" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="a&amp;r transport inc charlestown  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">Charlestown, IN</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
@@ -1202,44 +1235,43 @@
         <div><strong>Phone:</strong> (812) 256-5413</div>
         <div><a href="https://ardoingitright.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="charlestown" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="river ridge railroad transload charlestown   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">River Ridge Railroad Transload</h3>
         <div style="color:#555;font-size:0.9em">Charlestown, IN</div>
         <div><strong>Phone:</strong> (812) 285-8979</div>
         <div><a href="https://www.riverridgecc.com/companies/river-ridge-railroad/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="columbus" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="columbus aggregate pit columbus   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Columbus Aggregate Pit</h3>
         <div style="color:#555;font-size:0.9em">Columbus, IN</div>
         <div><a href="https://www.anacostia.com/our-companies/lirc/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="cottage grove" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="indiana eastern railroad cottage grove transload cottage grove   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Indiana Eastern Railroad Cottage Grove Transload</h3>
         <div style="color:#555;font-size:0.9em">Cottage Grove, IN</div>
         <div><a href="https://regional-rail.com/indiana-eastern-railroad/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="east chicago" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="buckeye east chicago terminal east chicago   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Buckeye East Chicago Terminal</h3>
         <div style="color:#555;font-size:0.9em">East Chicago, IN</div>
         <div><a href="https://www.buckeye.com/what-we-do/pipelines-terminals" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="east chicago" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="east chicago transload llc east chicago   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">East Chicago Transload LLC</h3>
         <div style="color:#555;font-size:0.9em">East Chicago, IN</div>
         <div><a href="https://eastchicagorail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="east chicago" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="hydra lakeshore terminal east chicago   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">HYDRA Lakeshore Terminal</h3>
         <div style="color:#555;font-size:0.9em">East Chicago, IN</div>
         <div><a href="https://hydralg.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="east chicago" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="l&amp;m storage east chicago   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">L&amp;M Storage</h3>
         <div style="color:#555;font-size:0.9em">East Chicago, IN</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="east chicago" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="transflo csxt east chicago  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transflo CSXT</h3>
         <div style="color:#555;font-size:0.9em">East Chicago, IN</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1247,26 +1279,24 @@
         <div><strong>Phone:</strong> (219) 397-9202</div>
         <div><a href="https://www.transflo.net/locations/east-chicago-2/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="edinburgh" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="edinburgh terminal edinburgh   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Edinburgh Terminal</h3>
         <div style="color:#555;font-size:0.9em">Edinburgh, IN</div>
         <div><a href="https://www.anacostia.com/our-companies/lirc/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="elkhart" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="h&amp;h trucking elkhart   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">H&amp;H Trucking</h3>
         <div style="color:#555;font-size:0.9em">Elkhart, IN</div>
         <div><a href="https://hhtruckingandwarehouse.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>⚠ website unreachable 2026-08-14 (500)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="elkhart" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="norfolk southern tbt elkhart  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower hot water heating liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norfolk Southern TBT</h3>
         <div style="color:#555;font-size:0.9em">Elkhart, IN</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Hot Water Heating, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="http://www.nscorp.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="evansville" data-tier="verified" data-phone="1" data-comm="foods (dry)" data-cap="auger|bulk conveyor|sampling services|scale" data-text="adm terminal service evansville  foods (dry) auger bulk conveyor sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">ADM Terminal Service</h3>
         <div style="color:#555;font-size:0.9em">Evansville, IN</div>
         <div><strong>Commodities:</strong> Foods (Dry)</div>
@@ -1274,90 +1304,87 @@
         <div><strong>Phone:</strong> (812) 424-3581</div>
         <div><a href="https://admadvantage.com/contact-us/?location=Evansville~Indiana" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="evansville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="indiana southwestern railway (patriot rail) evansville patriot rail short line, transload service  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Indiana Southwestern Railway (Patriot Rail)</h3>
         <div style="color:#555;font-size:0.9em">Evansville, IN</div>
         <div><a href="https://patriotrail.com/railroads/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Patriot Rail short line, transload service — added from operator locations sweep 2026-08-14</div>
+        <div>Patriot Rail short line, transload service</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fort wayne" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="commercial warehouse &amp; cartage incorporated fort wayne   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Commercial Warehouse &amp; Cartage Incorporated</h3>
         <div style="color:#555;font-size:0.9em">Fort Wayne, IN</div>
         <div><a href="https://www.cwclogon.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fort wayne" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="norfolk southern tbt fort wayne  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower hot water heating liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norfolk Southern TBT</h3>
         <div style="color:#555;font-size:0.9em">Fort Wayne, IN</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Hot Water Heating, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="http://www.nscorp.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fort wayne" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="tristate warehousing fort wayne   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tristate Warehousing</h3>
         <div style="color:#555;font-size:0.9em">Fort Wayne, IN</div>
         <div><strong>Phone:</strong> (260) 436-2010</div>
         <div><a href="https://www.tristatewarehousing.com/fort-wayne-in" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="fremont" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="fremont transload fremont   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Fremont Transload</h3>
         <div style="color:#555;font-size:0.9em">Fremont, IN</div>
         <div><a href="https://inerailroad.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ft wayne tbt" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="fort wayne ns tbt ft wayne tbt   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Fort Wayne NS TBT</h3>
         <div style="color:#555;font-size:0.9em">Ft Wayne Tbt, IN</div>
         <div><a href="https://www.nscorp.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ft. wayne" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="chicago, ft. wayne &amp; eastern railroad (cfe) ft. wayne genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Chicago, Ft. Wayne &amp; Eastern Railroad (CFE)</h3>
         <div style="color:#555;font-size:0.9em">Ft. Wayne, IN</div>
         <div><a href="https://www.gwrr.com/railroads/chicago-ft-wayne-and-eastern-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="gary" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="gary team track gary   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Gary Team Track</h3>
         <div style="color:#555;font-size:0.9em">Gary, IN</div>
         <div><a href="https://www.anacostia.com/our-companies/css/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="goshen" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="brunk llc goshen  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Brunk LLC</h3>
         <div style="color:#555;font-size:0.9em">Goshen, IN</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="https://brunkus.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>⚠ website unreachable 2026-08-14 (timeout)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hammond" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="buckeye hammond terminal hammond   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Buckeye Hammond Terminal</h3>
         <div style="color:#555;font-size:0.9em">Hammond, IN</div>
         <div><a href="https://www.buckeye.com/what-we-do/pipelines-terminals" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hammond" data-tier="verified" data-phone="1" data-comm="" data-cap="" data-text="indiana harbor belt hammond   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Indiana Harbor Belt</h3>
         <div style="color:#555;font-size:0.9em">Hammond, IN</div>
         <div><strong>Phone:</strong> (219) 989-4923</div>
         <div><a href="http://www.ihbrr.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hammond" data-tier="verified" data-phone="0" data-comm="steel" data-cap="" data-text="midwest terminal services hammond  steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Midwest Terminal Services</h3>
         <div style="color:#555;font-size:0.9em">Hammond, IN</div>
         <div><strong>Commodities:</strong> Steel</div>
         <div><a href="https://www.transloadgroup.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hammond" data-tier="verified" data-phone="0" data-comm="steel" data-cap="" data-text="savage service corp hammond  steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Service Corp</h3>
         <div style="color:#555;font-size:0.9em">Hammond, IN</div>
         <div><strong>Commodities:</strong> Steel</div>
         <div><a href="https://www.savageservices.com/services/terminal-transload/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hudson" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="indiana northeastern railroad hudson transload facility hudson   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Indiana Northeastern Railroad Hudson Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Hudson, IN</div>
         <div><a href="https://inerailroad.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="indianapolis" data-tier="verified" data-phone="1" data-comm="chemicals (dry)|chemicals (liq)|lumber|minerals|petroleum products|steel" data-cap="bulk conveyor|liquid pumps" data-text="arrow reload systems inc indianapolis  chemicals (dry) chemicals (liq) lumber minerals petroleum products steel bulk conveyor liquid pumps" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Arrow Reload Systems Inc</h3>
         <div style="color:#555;font-size:0.9em">Indianapolis, IN</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Lumber, Minerals, Petroleum Products, Steel</div>
@@ -1365,31 +1392,30 @@
         <div><strong>Phone:</strong> (317) 636-2387</div>
         <div><a href="http://www.arrow.ca/reload" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="indianapolis" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="foodliner inc. indianapolis   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Foodliner Inc.</h3>
         <div style="color:#555;font-size:0.9em">Indianapolis, IN</div>
         <div><a href="https://foodliner.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="indianapolis" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="indianapolis industrial center indianapolis   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Indianapolis Industrial Center</h3>
         <div style="color:#555;font-size:0.9em">Indianapolis, IN</div>
         <div><a href="https://indianapolis-industrial-center.com/rail-services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="indianapolis" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="piper logistics indianapolis rail warehouse  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Piper Logistics</h3>
         <div style="color:#555;font-size:0.9em">Indianapolis, IN</div>
         <div><strong>Phone:</strong> (317) 396-1023</div>
         <div><a href="https://www.piperlogistics.com/our-locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Rail Warehouse — phone from operator website 2026-08-14</div>
+        <div>Rail Warehouse</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="indianapolis" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="the indiana rail road company indianapolis indianapolis   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">The Indiana Rail Road Company Indianapolis</h3>
         <div style="color:#555;font-size:0.9em">Indianapolis, IN</div>
         <div><strong>Phone:</strong> (317) 262-5140</div>
         <div><a href="https://www.inrd.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="indianapolis" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="transflo csxt indianapolis  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transflo CSXT</h3>
         <div style="color:#555;font-size:0.9em">Indianapolis, IN</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1397,116 +1423,108 @@
         <div><strong>Phone:</strong> (317) 267-4440</div>
         <div><a href="https://transflo.net/locations/indiana-indianapolis/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="indianapolis" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="venture logistics rail-served warehouse indianapolis   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Venture Logistics Rail-Served Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Indianapolis, IN</div>
         <div><a href="https://www.venturelogistics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="jeffersonville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="consolidated grain &amp; barge jeffersonville terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Consolidated Grain &amp; Barge</h3>
         <div style="color:#555;font-size:0.9em">Jeffersonville, IN</div>
         <div><strong>Phone:</strong> (985) 867-3500</div>
         <div><a href="https://www.cgb.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Terminal — phone from operator website 2026-08-14</div>
+        <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="jeffersonville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="dutch lane yard jeffersonville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Dutch Lane Yard</h3>
         <div style="color:#555;font-size:0.9em">Jeffersonville, IN</div>
         <div><a href="https://www.anacostia.com/our-companies/lirc/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="jeffersonville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="indiana river &amp; rail terminals jeffersonville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Indiana River &amp; Rail Terminals</h3>
         <div style="color:#555;font-size:0.9em">Jeffersonville, IN</div>
         <div><strong>Phone:</strong> (812) 704-3011</div>
         <div><a href="https://indianariverandrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="jeffersonville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="jeffersonville transload yard jeffersonville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Jeffersonville Transload Yard</h3>
         <div style="color:#555;font-size:0.9em">Jeffersonville, IN</div>
         <div><a href="https://www.anacostia.com/transload-sites/jeffersonville-transfer-yard/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="jeffersonville" data-tier="verified" data-phone="0" data-comm="foods (dry)" data-cap="blower|sampling services|scale" data-text="precision terminal logistics llc jeffersonville  foods (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Precision Terminal Logistics LLC</h3>
         <div style="color:#555;font-size:0.9em">Jeffersonville, IN</div>
         <div><strong>Commodities:</strong> Foods (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="https://www.precisiontl.com/#" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="jeffersonville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="tanco clark maritime jeffersonville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tanco Clark Maritime</h3>
         <div style="color:#555;font-size:0.9em">Jeffersonville, IN</div>
         <div><strong>Phone:</strong> (219) 937-4300</div>
         <div><a href="https://www.wolflakeinc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="jeffersonville" data-tier="verified" data-phone="0" data-comm="frac sand|minerals" data-cap="bulk conveyor" data-text="watco terminal &amp; port services jeffersonville  frac sand minerals bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Watco Terminal &amp; Port Services</h3>
         <div style="color:#555;font-size:0.9em">Jeffersonville, IN</div>
         <div><strong>Commodities:</strong> Frac Sand, Minerals</div>
         <div><strong>Capabilities:</strong> Bulk Conveyor</div>
         <div><a href="https://www.watcocompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kokomo" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="central railroad of indianapolis (cera) kokomo genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Central Railroad of Indianapolis (CERA)</h3>
         <div style="color:#555;font-size:0.9em">Kokomo, IN</div>
         <div><a href="https://www.gwrr.com/railroads/central-railroad-of-indianapolis" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="la crosse" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="la crosse transload facility la crosse   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">La Crosse Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">La Crosse, IN</div>
         <div><a href="https://pinsly.com/railroads/chesapeake-indiana-railroad/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="la porte" data-tier="verified" data-phone="0" data-comm="chemicals (dry)|chemicals (liq)|petroleum products" data-cap="air compressor|blower|liquid pumps|scale|steam heating" data-text="chempak international inc la porte  chemicals (dry) chemicals (liq) petroleum products air compressor blower liquid pumps scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Chempak International Inc</h3>
         <div style="color:#555;font-size:0.9em">La Porte, IN</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Petroleum Products</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Liquid Pumps, Scale, Steam Heating</div>
         <div><a href="http://www.chempak.net/RailTransfer.asp" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="la porte" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="e&amp;l paving and construction - belfast logistics la porte   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">E&amp;L Paving and Construction - Belfast Logistics</h3>
         <div style="color:#555;font-size:0.9em">La Porte, IN</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="la porte" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="glycerin traders la porte stillwell transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Glycerin Traders</h3>
         <div style="color:#555;font-size:0.9em">La Porte, IN</div>
         <div>Stillwell Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="la porte" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="jbc rail services transload la porte   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">JBC Rail Services Transload</h3>
         <div style="color:#555;font-size:0.9em">La Porte, IN</div>
         <div><strong>Phone:</strong> (630) 336-9977</div>
         <div><a href="https://jbcrailservices.net/services/transload/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="la porte" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="midwest warehousing llc la porte   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Midwest Warehousing LLC</h3>
         <div style="color:#555;font-size:0.9em">La Porte, IN</div>
         <div><strong>Phone:</strong> (219) 393-5000</div>
         <div><a href="https://www.midwestwarehousing.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lafayette" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="bulkmatic transport co lafayette  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulkmatic Transport Co</h3>
         <div style="color:#555;font-size:0.9em">Lafayette, IN</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale</div>
         <div><a href="https://www.bulkmatic.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="lafayette" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="lineage logistics lafayette   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lineage Logistics</h3>
         <div style="color:#555;font-size:0.9em">Lafayette, IN</div>
         <div><strong>Phone:</strong> (765) 477-1666</div>
         <div><a href="https://www.onelineage.eu/en/facilities/lafayette" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="madison" data-tier="verified" data-phone="1" data-comm="asphalt|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)" data-cap="air compressor|bulk conveyor|liquid pumps|scale|tank trailer cleaning" data-text="madison railroad (rsi logistics) madison  asphalt chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) air compressor bulk conveyor liquid pumps scale tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Madison Railroad (RSI Logistics)</h3>
         <div style="color:#555;font-size:0.9em">Madison, IN</div>
         <div><strong>Commodities:</strong> Asphalt, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1514,138 +1532,129 @@
         <div><strong>Phone:</strong> (812) 273-4248</div>
         <div><a href="https://www.madisonrailroad.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="madison" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|lumber|minerals|petroleum products|plastics (dry)|steel" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="rsi logistics inc (development) madison  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand lumber minerals petroleum products plastics (dry) steel air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">RSI Logistics Inc (Development)</h3>
         <div style="color:#555;font-size:0.9em">Madison, IN</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry), Steel</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale</div>
         <div><a href="https://www.rsilogistics.com/rail-solutions/rail-terminal-services/madison-in/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="marion" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="spartan logistics marion   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Spartan Logistics</h3>
         <div style="color:#555;font-size:0.9em">Marion, IN</div>
         <div><a href="https://www.spartanlogistics.com/marion-indiana" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="michigan city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="south shore transload michigan city chicago south shore &amp; south bend railroad, anacostia rail holdings  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">South Shore Transload</h3>
         <div style="color:#555;font-size:0.9em">Michigan City, IN</div>
         <div><a href="https://www.anacostia.com/transload-sites/michigan-city-team-track/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Chicago South Shore &amp; South Bend Railroad, Anacostia Rail Holdings</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mount vernon" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="ctlc mount vernon terminal mount vernon   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">CTLC Mount Vernon Terminal</h3>
         <div style="color:#555;font-size:0.9em">Mount Vernon, IN</div>
         <div><a href="https://ctlconline.com/mount-vernon-in/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="mount vernon" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="indiana river &amp; rail terminals mount vernon   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Indiana River &amp; Rail Terminals</h3>
         <div style="color:#555;font-size:0.9em">Mount Vernon, IN</div>
         <div><strong>Phone:</strong> (812) 704-3011</div>
         <div><a href="https://indianariverandrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="odon" data-tier="review" data-phone="0" data-comm="lumber" data-cap="" data-text="arrow reload systems inc odon  lumber " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Arrow Reload Systems Inc</h3>
         <div style="color:#555;font-size:0.9em">Odon, IN</div>
         <div><strong>Commodities:</strong> Lumber</div>
         <div><a href="https://reload.arrow.ca/location/odon-tfr/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="odon" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="the indiana rail road company odon odon   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">The Indiana Rail Road Company Odon</h3>
         <div style="color:#555;font-size:0.9em">Odon, IN</div>
         <div><strong>Phone:</strong> (317) 262-5140</div>
         <div><a href="https://www.inrd.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="petersburg" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="indiana southern railroad (isrr) petersburg genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Indiana Southern Railroad (ISRR)</h3>
         <div style="color:#555;font-size:0.9em">Petersburg, IN</div>
         <div><a href="https://www.gwrr.com/railroads/indiana-southern-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="portage" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="port of indiana portage   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of Indiana</h3>
         <div style="color:#555;font-size:0.9em">Portage, IN</div>
         <div><a href="https://www.portsofindiana.com/locations/burns-harbor/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="reynolds" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="co-alliance llp reynolds   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Co-Alliance LLP</h3>
         <div style="color:#555;font-size:0.9em">Reynolds, IN</div>
         <div><strong>Phone:</strong> (219) 275-2732</div>
         <div><a href="https://www.keystonecoop.com/locations" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="rochester" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="rochester &amp; erie railway transload rochester   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rochester &amp; Erie Railway Transload</h3>
         <div style="color:#555;font-size:0.9em">Rochester, IN</div>
         <div><strong>Phone:</strong> (630) 310-7248</div>
         <div><a href="https://rochesteranderie.com/services/transload/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="schereville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="savage services — schereville, in schereville savage location — 40 e joliet st — 219) 322-9054  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Services — Schereville, IN</h3>
         <div style="color:#555;font-size:0.9em">Schereville, IN</div>
         <div><a href="https://savageco.com/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Savage location — 40 E Joliet St — 219) 322-9054 — operator sweep 2026-08-14</div>
+        <div>Savage location — 40 E Joliet St — 219) 322-9054</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="south bend" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="kak warehouse south bend   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">KAK warehouse</h3>
         <div style="color:#555;font-size:0.9em">South Bend, IN</div>
         <div><strong>Phone:</strong> (574) 232-9357</div>
         <div><a href="https://www.kakllc.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="south bens" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="olive st site south bens   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Olive St site</h3>
         <div style="color:#555;font-size:0.9em">South Bens, IN</div>
         <div><strong>Phone:</strong> (855) 667-3655</div>
         <div><a href="https://Nscorp.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="speed" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="speed transload yard speed   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Speed Transload Yard</h3>
         <div style="color:#555;font-size:0.9em">Speed, IN</div>
         <div><a href="https://www.anacostia.com/our-companies/lirc/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sullivan" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="the indiana rail road (inrd) sullivan sullivan   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">The Indiana Rail Road (Inrd) Sullivan</h3>
         <div style="color:#555;font-size:0.9em">Sullivan, IN</div>
         <div><strong>Phone:</strong> (317) 262-5140</div>
         <div><a href="https://www.inrd.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tell city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="tell city river port tell city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tell City River Port</h3>
         <div style="color:#555;font-size:0.9em">Tell City, IN</div>
         <div><a href="https://pcrailport.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="troy" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="flash troy   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Flash</h3>
         <div style="color:#555;font-size:0.9em">Troy, IN</div>
         <div><strong>Phone:</strong> (920) 294-0430</div>
         <div><a href="https://flashtrucking.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="washington" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="daviess county shell building and cross dock/transload facility washington   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Daviess County Shell Building and Cross Dock/Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Washington, IN</div>
         <div><strong>Phone:</strong> (812) 254-1500</div>
         <div><a href="https://developdaviess.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="west harrison" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bulkmatic west harrison   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulkmatic</h3>
         <div style="color:#555;font-size:0.9em">West Harrison, IN</div>
         <div><a href="https://www.bulkmatic.com/service/transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wolcott" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="sampling services|scale" data-text="plastic express wolcott  plastics (dry) sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Plastic Express</h3>
         <div style="color:#555;font-size:0.9em">Wolcott, IN</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Sampling Services, Scale</div>
         <div><a href="http://www.plasticexpress.com/operations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wolcott" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="tpw hoosier lift wolcott   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">TPW Hoosier Lift</h3>
         <div style="color:#555;font-size:0.9em">Wolcott, IN</div>
 
@@ -1676,6 +1685,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

@@ -1014,6 +1014,24 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Michigan</h1>
@@ -1028,118 +1046,129 @@
 
     <section>
       <h2>Cities in Michigan</h2>
-      <p><a href="/transload/grand-rapids-mi">Grand Rapids (5)</a> &middot; <a href="/transload/bay-city-mi">Bay City (4)</a> &middot; <a href="/transload/detroit-mi">Detroit (4)</a> &middot; <a href="/transload/saginaw-mi">Saginaw (3)</a> &middot; <span>Dearborn (2)</span> &middot; <span>Melvindale (2)</span> &middot; <span>River Rouge (2)</span> &middot; <span>Willis (2)</span> &middot; <span>Adrian (1)</span> &middot; <span>Alpena (1)</span> &middot; <span>Bridgman (1)</span> &middot; <span>Burton (1)</span> &middot; <span>Canton (1)</span> &middot; <span>Charlotte (1)</span> &middot; <span>Clare (1)</span> &middot; <span>Coldwater (1)</span> &middot; <span>Comstock Park (1)</span> &middot; <span>Ecorse (1)</span> &middot; <span>Flat Rock (1)</span> &middot; <span>Flint (1)</span> &middot; <span>Gaylord (1)</span> &middot; <span>Greenbush (1)</span> &middot; <span>Hamtramck (1)</span> &middot; <span>Hartford (1)</span> &middot; <span>Holly (1)</span> &middot; <span>Jackson (1)</span> &middot; <span>Jonesville (1)</span> &middot; <span>Kincheloe (1)</span> &middot; <span>Ludington (1)</span> &middot; <span>Menominee (1)</span> &middot; <span>Middleton (1)</span> &middot; <span>Midland (1)</span> &middot; <span>Monroe (1)</span> &middot; <span>Muskegon (1)</span> &middot; <span>Muskegon Heights (1)</span> &middot; <span>New Boston (1)</span> &middot; <span>North Flint (1)</span> &middot; <span>Owosso (1)</span> &middot; <span>Richville (1)</span> &middot; <span>Romulus (1)</span> &middot; <span>Saint Clair (1)</span> &middot; <span>St. Clair (1)</span> &middot; <span>St. Louis (1)</span> &middot; <span>Standish (1)</span> &middot; <span>Taylor (1)</span> &middot; <span>Warren (1)</span> &middot; <span>Wayne (1)</span> &middot; <span>White Pigeon (1)</span> &middot; <span>Woodhaven (1)</span> &middot; <span>Wyoming (1)</span></p>
+      <div class="tl-citylist is-collapsed" id="tlCityList" data-total="50">
+        <p><a href="/transload/grand-rapids-mi">Grand Rapids (5)</a> &middot; <a href="/transload/bay-city-mi">Bay City (4)</a> &middot; <a href="/transload/detroit-mi">Detroit (4)</a> &middot; <a href="/transload/saginaw-mi">Saginaw (3)</a> &middot; <span>Dearborn (2)</span> &middot; <span>Melvindale (2)</span> &middot; <span>River Rouge (2)</span> &middot; <span>Willis (2)</span> &middot; <span>Adrian (1)</span> &middot; <span>Alpena (1)</span> &middot; <span>Bridgman (1)</span> &middot; <span>Burton (1)</span> &middot; <span>Canton (1)</span> &middot; <span>Charlotte (1)</span> &middot; <span>Clare (1)</span> &middot; <span>Coldwater (1)</span> &middot; <span>Comstock Park (1)</span> &middot; <span>Ecorse (1)</span> &middot; <span>Flat Rock (1)</span> &middot; <span>Flint (1)</span> &middot; <span>Gaylord (1)</span> &middot; <span>Greenbush (1)</span> &middot; <span>Hamtramck (1)</span> &middot; <span>Hartford (1)</span><span class="tl-city-extra"> &middot; <span>Holly (1)</span></span><span class="tl-city-extra"> &middot; <span>Jackson (1)</span></span><span class="tl-city-extra"> &middot; <span>Jonesville (1)</span></span><span class="tl-city-extra"> &middot; <span>Kincheloe (1)</span></span><span class="tl-city-extra"> &middot; <span>Ludington (1)</span></span><span class="tl-city-extra"> &middot; <span>Menominee (1)</span></span><span class="tl-city-extra"> &middot; <span>Middleton (1)</span></span><span class="tl-city-extra"> &middot; <span>Midland (1)</span></span><span class="tl-city-extra"> &middot; <span>Monroe (1)</span></span><span class="tl-city-extra"> &middot; <span>Muskegon (1)</span></span><span class="tl-city-extra"> &middot; <span>Muskegon Heights (1)</span></span><span class="tl-city-extra"> &middot; <span>New Boston (1)</span></span><span class="tl-city-extra"> &middot; <span>North Flint (1)</span></span><span class="tl-city-extra"> &middot; <span>Owosso (1)</span></span><span class="tl-city-extra"> &middot; <span>Richville (1)</span></span><span class="tl-city-extra"> &middot; <span>Romulus (1)</span></span><span class="tl-city-extra"> &middot; <span>Saint Clair (1)</span></span><span class="tl-city-extra"> &middot; <span>St. Clair (1)</span></span><span class="tl-city-extra"> &middot; <span>St. Louis (1)</span></span><span class="tl-city-extra"> &middot; <span>Standish (1)</span></span><span class="tl-city-extra"> &middot; <span>Taylor (1)</span></span><span class="tl-city-extra"> &middot; <span>Warren (1)</span></span><span class="tl-city-extra"> &middot; <span>Wayne (1)</span></span><span class="tl-city-extra"> &middot; <span>White Pigeon (1)</span></span><span class="tl-city-extra"> &middot; <span>Woodhaven (1)</span></span><span class="tl-city-extra"> &middot; <span>Wyoming (1)</span></span></p>
+        <button type="button" class="tl-morecities" id="tlMoreCities">Show all 50 cities</button>
+      </div>
     </section>
 
     <section>
       <h2>Facilities</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (50)</option><option value="adrian">Adrian</option><option value="alpena">Alpena</option><option value="bay city">Bay City</option><option value="bridgman">Bridgman</option><option value="burton">Burton</option><option value="canton">Canton</option><option value="charlotte">Charlotte</option><option value="clare">Clare</option><option value="coldwater">Coldwater</option><option value="comstock park">Comstock Park</option><option value="dearborn">Dearborn</option><option value="detroit">Detroit</option><option value="ecorse">Ecorse</option><option value="flat rock">Flat Rock</option><option value="flint">Flint</option><option value="gaylord">Gaylord</option><option value="grand rapids">Grand Rapids</option><option value="greenbush">Greenbush</option><option value="hamtramck">Hamtramck</option><option value="hartford">Hartford</option><option value="holly">Holly</option><option value="jackson">Jackson</option><option value="jonesville">Jonesville</option><option value="kincheloe">Kincheloe</option><option value="ludington">Ludington</option><option value="melvindale">Melvindale</option><option value="menominee">Menominee</option><option value="middleton">Middleton</option><option value="midland">Midland</option><option value="monroe">Monroe</option><option value="muskegon">Muskegon</option><option value="muskegon heights">Muskegon Heights</option><option value="new boston">New Boston</option><option value="north flint">North Flint</option><option value="owosso">Owosso</option><option value="richville">Richville</option><option value="river rouge">River Rouge</option><option value="romulus">Romulus</option><option value="saginaw">Saginaw</option><option value="saint clair">Saint Clair</option><option value="st. clair">St. Clair</option><option value="st. louis">St. Louis</option><option value="standish">Standish</option><option value="taylor">Taylor</option><option value="warren">Warren</option><option value="wayne">Wayne</option><option value="white pigeon">White Pigeon</option><option value="willis">Willis</option><option value="woodhaven">Woodhaven</option><option value="wyoming">Wyoming</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="asphalt">Asphalt</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="auger">Auger</option><option value="blending meters">Blending Meters</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="hot water heating">Hot Water Heating</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (15)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (29)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 16 of 66 sites and capability detail for 14. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="adrian" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="adrian &amp; blissfield railroad adrian transload adrian   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Adrian &amp; Blissfield Railroad Adrian Transload</h3>
         <div style="color:#555;font-size:0.9em">Adrian, MI</div>
         <div><strong>Phone:</strong> (517) 409-1040</div>
         <div><a href="https://abrailroad.com/railroads/adbf/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="alpena" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lake state railway alpena transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lake State Railway</h3>
         <div style="color:#555;font-size:0.9em">Alpena, MI</div>
         <div><a href="https://www.lsrc.com/services/servtrans/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bay city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="grand rapids eastern railroad (gr) bay city genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Grand Rapids Eastern Railroad (GR)</h3>
         <div style="color:#555;font-size:0.9em">Bay City, MI</div>
         <div><a href="https://www.gwrr.com/railroads/grand-rapids-eastern-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bay city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="marquette rail (mqt) bay city genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Marquette Rail (MQT)</h3>
         <div style="color:#555;font-size:0.9em">Bay City, MI</div>
         <div><a href="https://www.gwrr.com/railroads/marquette-rail" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bay city" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="mid-michigan railroad (mmrr) bay city genesee &amp; wyoming railroad — transloading, switching, storage services  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Mid-Michigan Railroad (MMRR)</h3>
         <div style="color:#555;font-size:0.9em">Bay City, MI</div>
         <div><a href="https://www.gwrr.com/railroads/mid-michigan-railroad" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services — operator sweep 2026-08-14</div>
+        <div>Genesee &amp; Wyoming railroad — transloading, switching, storage services</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bay city" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="port fisher terminals bay city   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port Fisher Terminals</h3>
         <div style="color:#555;font-size:0.9em">Bay City, MI</div>
         <div><strong>Phone:</strong> (989) 667-5990</div>
         <div><a href="https://www.portfisher.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="bridgman" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="brink railroad trans-load bridgman terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Brink Railroad Trans-Load</h3>
         <div style="color:#555;font-size:0.9em">Bridgman, MI</div>
         <div><strong>Phone:</strong> (616) 218-7527</div>
         <div><a href="https://brinkcompanies.com/bridgman-terminal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Terminal — phone from operator website 2026-08-14</div>
+        <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="burton" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="clean harbors burton rail-to-truck transfer operation burton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Clean Harbors Burton Rail-to-Truck Transfer Operation</h3>
         <div style="color:#555;font-size:0.9em">Burton, MI</div>
         <div><strong>Phone:</strong> (810) 715-2700</div>
         <div><a href="https://www.cleanharbors.com/location/burton-rail-to-truck-transfer-operation" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="canton" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bulkmatic canton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulkmatic</h3>
         <div style="color:#555;font-size:0.9em">Canton, MI</div>
         <div><a href="https://www.bulkmatic.com/service/transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="charlotte" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="cn autoport-lansing, mi charlotte   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cn Autoport-Lansing, Mi</h3>
         <div style="color:#555;font-size:0.9em">Charlotte, MI</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="clare" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="blower|sampling services" data-text="northern dry bulk clare  plastics (dry) blower sampling services" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Northern Dry Bulk</h3>
         <div style="color:#555;font-size:0.9em">Clare, MI</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services</div>
         <div><a href="https://northerndrybulk.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="coldwater" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="coldwater transload coldwater   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Coldwater Transload</h3>
         <div style="color:#555;font-size:0.9em">Coldwater, MI</div>
         <div><a href="https://inerailroad.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="comstock park" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="michigan rail and storage comstock park   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Michigan Rail and Storage</h3>
         <div style="color:#555;font-size:0.9em">Comstock Park, MI</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dearborn" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="cn autoport-dearborn, mi dearborn   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cn Autoport-Dearborn, Mi</h3>
         <div style="color:#555;font-size:0.9em">Dearborn, MI</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="dearborn" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="waterfront petroleum dearborn terminal dearborn   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Waterfront Petroleum Dearborn Terminal</h3>
         <div style="color:#555;font-size:0.9em">Dearborn, MI</div>
         <div><strong>Phone:</strong> (734) 674-4607</div>
         <div><a href="https://waterfrontpetroleum.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="detroit" data-tier="verified" data-phone="0" data-comm="lumber" data-cap="" data-text="cn cargoflo detroit  lumber " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">CN Cargoflo</h3>
         <div style="color:#555;font-size:0.9em">Detroit, MI</div>
         <div><strong>Commodities:</strong> Lumber</div>
         <div><a href="https://www.cn.ca/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="detroit" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="nicholson terminal &amp; dock detroit terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Nicholson Terminal &amp; Dock</h3>
         <div style="color:#555;font-size:0.9em">Detroit, MI</div>
         <div><a href="https://www.nicholson-terminal.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="detroit" data-tier="verified" data-phone="1" data-comm="acids|chemicals (liq)|petroleum products" data-cap="air compressor|blending meters|liquid pumps|liquid storage tanks|sampling services|scale|steam heating" data-text="pvs transportation detroit  acids chemicals (liq) petroleum products air compressor blending meters liquid pumps liquid storage tanks sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pvs Transportation</h3>
         <div style="color:#555;font-size:0.9em">Detroit, MI</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Liq), Petroleum Products</div>
@@ -1147,55 +1176,52 @@
         <div><strong>Phone:</strong> (800) 284-9735</div>
         <div><a href="https://www.pvschemicals.com/our-services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="detroit" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="transflo csxt detroit  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transflo CSXT</h3>
         <div style="color:#555;font-size:0.9em">Detroit, MI</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale</div>
         <div><a href="https://www.transflo.net/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ecorse" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="nicholson terminal &amp; dock ecorse terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Nicholson Terminal &amp; Dock</h3>
         <div style="color:#555;font-size:0.9em">Ecorse, MI</div>
         <div><a href="https://www.nicholson-terminal.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="flat rock" data-tier="verified" data-phone="0" data-comm="acids|chemicals (liq)|petroleum products" data-cap="air compressor|liquid pumps|sampling services|steam heating" data-text="cn cargoflo flat rock  acids chemicals (liq) petroleum products air compressor liquid pumps sampling services steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">CN Cargoflo</h3>
         <div style="color:#555;font-size:0.9em">Flat Rock, MI</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Liq), Petroleum Products</div>
         <div><strong>Capabilities:</strong> Air Compressor, Liquid Pumps, Sampling Services, Steam Heating</div>
         <div><a href="https://www.cn.ca/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="flint" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="michigan timber &amp; truss rail reload flint   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Michigan Timber &amp; Truss Rail Reload</h3>
         <div style="color:#555;font-size:0.9em">Flint, MI</div>
         <div><strong>Phone:</strong> (810) 742-8787</div>
         <div><a href="https://mitimber.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="gaylord" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lake state railway gaylord transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lake State Railway</h3>
         <div style="color:#555;font-size:0.9em">Gaylord, MI</div>
         <div><a href="https://www.lsrc.com/services/servtrans/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="grand rapids" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="brink railroad trans-load grand rapids   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Brink Railroad Trans-Load</h3>
         <div style="color:#555;font-size:0.9em">Grand Rapids, MI</div>
         <div><strong>Phone:</strong> (269) 751-5965</div>
         <div><a href="https://brinkcompanies.com/brink-railroad-transload/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="grand rapids" data-tier="listed" data-phone="0" data-comm="chemicals (dry)|plastics (dry)" data-cap="" data-text="bulkmatic transport co — grand rapids grand rapids bulkmatic transload terminal chemicals (dry) plastics (dry) " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulkmatic Transport Co — Grand Rapids</h3>
         <div style="color:#555;font-size:0.9em">Grand Rapids, MI</div>
         <div><strong>Commodities:</strong> Chemicals (Dry), Plastics (Dry)</div>
         <div><a href="https://www.bulkmatic.com/service/transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Bulkmatic transload terminal — via Commtrex, sweep 2026-08-14</div>
+        <div>Bulkmatic transload terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="grand rapids" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="blower|sampling services" data-text="northern dry bulk grand rapids  plastics (dry) blower sampling services" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Northern Dry Bulk</h3>
         <div style="color:#555;font-size:0.9em">Grand Rapids, MI</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
@@ -1203,7 +1229,7 @@
         <div><strong>Phone:</strong> (989) 386-2389</div>
         <div><a href="https://northerndrybulk.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="grand rapids" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|auger|blending meters|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="rsi logistics grand rapids  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor auger blending meters blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">RSI Logistics</h3>
         <div style="color:#555;font-size:0.9em">Grand Rapids, MI</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1211,7 +1237,7 @@
         <div><strong>Phone:</strong> (616) 514-1718</div>
         <div><a href="https://www.rsilogistics.com/rail-solutions/rail-terminal-services/grand-rapids-mi/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="grand rapids" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="transflo csxt grand rapids  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transflo CSXT</h3>
         <div style="color:#555;font-size:0.9em">Grand Rapids, MI</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
@@ -1219,13 +1245,13 @@
         <div><strong>Phone:</strong> (616) 246-5546</div>
         <div><a href="https://www.transflo.net/locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="greenbush" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lake state railway greenbush transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lake State Railway</h3>
         <div style="color:#555;font-size:0.9em">Greenbush, MI</div>
         <div><a href="https://www.lsrc.com/services/servtrans/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hamtramck" data-tier="verified" data-phone="1" data-comm="asphalt|chemicals (liq)|petroleum products" data-cap="air compressor|blending meters|liquid pumps|liquid storage tanks|sampling services|steam heating" data-text="sterling services ltd hamtramck  asphalt chemicals (liq) petroleum products air compressor blending meters liquid pumps liquid storage tanks sampling services steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sterling Services Ltd</h3>
         <div style="color:#555;font-size:0.9em">Hamtramck, MI</div>
         <div><strong>Commodities:</strong> Asphalt, Chemicals (Liq), Petroleum Products</div>
@@ -1233,98 +1259,92 @@
         <div><strong>Phone:</strong> (248) 298-2973</div>
         <div><a href="http://www.sterlingcompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="hartford" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="paw paw river transload llc hartford   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Paw Paw River Transload LLC</h3>
         <div style="color:#555;font-size:0.9em">Hartford, MI</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="holly" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="king steel holly warehouse rail yard holly   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">King Steel Holly Warehouse Rail Yard</h3>
         <div style="color:#555;font-size:0.9em">Holly, MI</div>
         <div><strong>Phone:</strong> (800) 638-2530</div>
         <div><a href="https://www.kingsteelcorp.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="jackson" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="miller truck &amp; storage/miller warehousing services jackson   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Miller Truck &amp; Storage/Miller Warehousing Services</h3>
         <div style="color:#555;font-size:0.9em">Jackson, MI</div>
         <div><strong>Phone:</strong> (517) 787-9970</div>
         <div><a href="https://www.millerwarehousing.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="jonesville" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="jonesville transload jonesville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Jonesville Transload</h3>
         <div style="color:#555;font-size:0.9em">Jonesville, MI</div>
         <div><a href="https://inerailroad.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="kincheloe" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="maple transport rail-served warehouse kincheloe   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Maple Transport Rail-Served Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Kincheloe, MI</div>
         <div><a href="https://maple-hardwoods.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ludington" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="towns brothers ludington   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Towns Brothers</h3>
         <div style="color:#555;font-size:0.9em">Ludington, MI</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="melvindale" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="capacity warehouse distribution center melvindale   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Capacity Warehouse Distribution Center</h3>
         <div style="color:#555;font-size:0.9em">Melvindale, MI</div>
         <div><strong>Phone:</strong> (313) 294-4500</div>
         <div><a href="https://capacitytransport.com/capacity-warehouse/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="melvindale" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="savage service corp melvindale  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor bulk conveyor liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Service Corp</h3>
         <div style="color:#555;font-size:0.9em">Melvindale, MI</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="https://www.savageservices.com/services/terminal-transload/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="menominee" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="kk integrated logistics menominee port of  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">KK Integrated Logistics</h3>
         <div style="color:#555;font-size:0.9em">Menominee, MI</div>
         <div><strong>Phone:</strong> (906) 863-7811</div>
         <div><a href="https://www.kkil.net/locations/warehousing-locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Port of — phone from operator website (headless) 2026-08-15</div>
+        <div>Port of</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="middleton" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="michigan agricultural commodities middleton   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Michigan Agricultural Commodities</h3>
         <div style="color:#555;font-size:0.9em">Middleton, MI</div>
         <div><strong>Phone:</strong> (800) 878-8900</div>
         <div><a href="https://www.michag.com/contact/middleton/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="midland" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="central warehouse operations midland   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Central Warehouse Operations</h3>
         <div style="color:#555;font-size:0.9em">Midland, MI</div>
         <div><a href="https://totaldistribution.com/michigan-warehouse-locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="monroe" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="port of monroe monroe   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of Monroe</h3>
         <div style="color:#555;font-size:0.9em">Monroe, MI</div>
         <div><strong>Phone:</strong> (734) 457-2526</div>
         <div><a href="https://Drmmgmt.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="muskegon" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="brink farms muskegon   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Brink Farms</h3>
         <div style="color:#555;font-size:0.9em">Muskegon, MI</div>
         <div><strong>Phone:</strong> (616) 218-0891</div>
         <div><a href="https://brinkcompanies.com/terminals/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="muskegon heights" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="webb chemical rail terminalization facility muskegon heights   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Webb Chemical Rail Terminalization Facility</h3>
         <div style="color:#555;font-size:0.9em">Muskegon Heights, MI</div>
         <div><a href="https://webbchemical.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new boston" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="csx tdsi new boston automotive transload terminal new boston   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">CSX TDSI New Boston Automotive Transload Terminal</h3>
         <div style="color:#555;font-size:0.9em">New Boston, MI</div>
         <div><a href="https://www.csx.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="north flint" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|petroleum products" data-cap="liquid pumps|sampling services" data-text="clean harbors environmental services inc north flint  acids chemicals (dry) chemicals (liq) petroleum products liquid pumps sampling services" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Clean Harbors Environmental Services Inc</h3>
         <div style="color:#555;font-size:0.9em">North Flint, MI</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Petroleum Products</div>
@@ -1332,52 +1352,49 @@
         <div><strong>Phone:</strong> (810) 715-2700</div>
         <div><a href="https://www.cleanharbors.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="owosso" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="great lakes central railroad owosso transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Great Lakes Central Railroad</h3>
         <div style="color:#555;font-size:0.9em">Owosso, MI</div>
         <div><a href="https://www.watco.com/service/rail/great-lakes-railroad-glc/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="richville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="labudde group incorporated richville   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Labudde Group Incorporated</h3>
         <div style="color:#555;font-size:0.9em">Richville, MI</div>
         <div><strong>Phone:</strong> (262) 375-9111</div>
         <div><a href="https://www.labudde.com/locations/richville-mi-warehouse/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="river rouge" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="delray connecting railroad transload river rouge   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Delray Connecting Railroad Transload</h3>
         <div style="color:#555;font-size:0.9em">River Rouge, MI</div>
         <div><strong>Phone:</strong> (800) 406-3545</div>
         <div><a href="https://www.transtarrail.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website (headless) 2026-08-15</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="river rouge" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="michigan marine terminal river rouge   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Michigan Marine Terminal</h3>
         <div style="color:#555;font-size:0.9em">River Rouge, MI</div>
         <div><strong>Phone:</strong> (313) 842-8040</div>
         <div><a href="https://www.mmtandff.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="romulus" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="evans distribution systems romulus huron river drive progressive distribution center  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Evans Distribution Systems</h3>
         <div style="color:#555;font-size:0.9em">Romulus, MI</div>
         <div><strong>Phone:</strong> (313) 388-3200</div>
         <div><a href="https://www.evansdist.com/warehousing-services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Huron River Drive Progressive Distribution Center — phone from operator website 2026-08-14</div>
+        <div>Huron River Drive Progressive Distribution Center</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="saginaw" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="central warehouse saginaw   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Central Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Saginaw, MI</div>
         <div><a href="https://totaldistribution.com/michigan-warehouse-locations/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="saginaw" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lake state railway saginaw transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lake State Railway</h3>
         <div style="color:#555;font-size:0.9em">Saginaw, MI</div>
         <div><a href="https://www.lsrc.com/services/servtrans/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="saginaw" data-tier="verified" data-phone="1" data-comm="minerals" data-cap="bulk conveyor|scale" data-text="sargent docks &amp; terminals saginaw  minerals bulk conveyor scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sargent Docks &amp; Terminals</h3>
         <div style="color:#555;font-size:0.9em">Saginaw, MI</div>
         <div><strong>Commodities:</strong> Minerals</div>
@@ -1385,82 +1402,77 @@
         <div><strong>Phone:</strong> (989) 752-3101</div>
         <div><a href="http://www.sargentdocks.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="saint clair" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bwp transport saint clair terminal  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">BWP Transport</h3>
         <div style="color:#555;font-size:0.9em">Saint Clair, MI</div>
         <div><a href="https://bwptransport.weebly.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Terminal</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="st. clair" data-tier="verified" data-phone="0" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="a&amp;r transport inc st. clair  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
         <div style="color:#555;font-size:0.9em">St. Clair, MI</div>
         <div><strong>Commodities:</strong> Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Blower, Sampling Services, Scale</div>
         <div><a href="https://ardoingitright.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="st. louis" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="bear truss st. louis   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bear Truss</h3>
         <div style="color:#555;font-size:0.9em">St. Louis, MI</div>
         <div><strong>Phone:</strong> (989) 681-5774</div>
         <div><a href="https://beartruss.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="standish" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="lake state railway standish transload  " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Lake State Railway</h3>
         <div style="color:#555;font-size:0.9em">Standish, MI</div>
         <div><a href="https://www.lsrc.com/services/servtrans/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="taylor" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bulkmatic taylor   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bulkmatic</h3>
         <div style="color:#555;font-size:0.9em">Taylor, MI</div>
         <div><a href="https://www.bulkmatic.com/service/transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="warren" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale|steam heating" data-text="cn cargoflo warren  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale steam heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">CN Cargoflo</h3>
         <div style="color:#555;font-size:0.9em">Warren, MI</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating</div>
         <div><strong>Phone:</strong> (586) 756-9419</div>
         <div><a href="https://www.cn.ca/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wayne" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="wayne industries incorporated wayne   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Wayne Industries Incorporated</h3>
         <div style="color:#555;font-size:0.9em">Wayne, MI</div>
         <div><strong>Phone:</strong> (313) 849-3500</div>
         <div><a href="https://www.steelpro.us" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="white pigeon" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="prm trucking white pigeon   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">PRM Trucking</h3>
         <div style="color:#555;font-size:0.9em">White Pigeon, MI</div>
         <div><a href="https://www.prmtrucking.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="willis" data-tier="verified" data-phone="0" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|hot water heating|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="norfolk southern tbt willis  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower hot water heating liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Norfolk Southern TBT</h3>
         <div style="color:#555;font-size:0.9em">Willis, MI</div>
         <div><strong>Commodities:</strong> Acids, Chemicals (Dry), Chemicals (Liq), Foods (Dry), Foods (Liq), Frac Sand, Minerals, Petroleum Products, Plastics (Dry)</div>
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Hot Water Heating, Liquid Pumps, Portable Vacuum, Sampling Services, Scale, Steam Heating, Tank Trailer Cleaning</div>
         <div><a href="http://www.nscorp.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>website repointed to homepage 2026-08-15 (old page removed)</div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="willis" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="willis ns tbt willis   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Willis NS TBT</h3>
         <div style="color:#555;font-size:0.9em">Willis, MI</div>
         <div><a href="https://www.nscorp.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="woodhaven" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="cn autoport-brownstown, mi woodhaven   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cn Autoport-Brownstown, Mi</h3>
         <div style="color:#555;font-size:0.9em">Woodhaven, MI</div>
 
       </div>
-      <div class="railroad-item" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="wyoming" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="michigan terminals / wyoming industrial wyoming   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Michigan Terminals / Wyoming Industrial</h3>
         <div style="color:#555;font-size:0.9em">Wyoming, MI</div>
         <div><strong>Phone:</strong> (616) 534-5792</div>
         <div><a href="https://mtwi-michigan.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>phone from operator website 2026-08-14</div>
       </div>
       </div>
     <p style="font-size:0.85em;color:#666;margin-top:28px">
@@ -1488,6 +1500,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
