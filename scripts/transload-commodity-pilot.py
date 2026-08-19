@@ -34,11 +34,23 @@ UA = "Mozilla/5.0 (compatible; SteelWheelLogistics-directory/1.0; +https://steel
 MAX_TEXT = 14000        # chars of page text handed to the model
 SLEEP = 1.6             # same courtesy delay as the existing enrich crawler
 
+# v1 used 8 and rejected legitimate one-word evidence ("Grains", "Steel"),
+# reporting 2 of its 3 "fabrications" against itself. A bullet list reading
+# "Grains, Fertilizer, Feed" is exactly how these pages state it. The
+# containment check is the guard that actually works; this floor only needs to
+# stop a claim being "supported" by a single letter.
+EVIDENCE_MIN_CHARS = 4
+
 ap = argparse.ArgumentParser()
 ap.add_argument("--limit", type=int, default=50)
 ap.add_argument("--tier1-only", action="store_true", default=True)
 ap.add_argument("--all-states", dest="tier1_only", action="store_false")
+ap.add_argument("--follow-links", action="store_true",
+                help="also fetch up to 2 services/locations subpages per site")
+ap.add_argument("--out", default=None, help="results jsonl (default data/commodity-pilot.jsonl)")
 a = ap.parse_args()
+if a.out:
+    OUT = Path(a.out) if Path(a.out).is_absolute() else (DATA.parent / a.out)
 
 KEY = os.environ.get("ANTHROPIC_API_KEY", "").strip()
 if not KEY:
@@ -81,7 +93,8 @@ print(f"eligible single-domain listed facilities: {len(pool)}  ->  sampling {len
 
 # ── Fetch ───────────────────────────────────────────────────────────────────
 TAG = re.compile(r"<(script|style|noscript)[^>]*>.*?</\1>", re.S | re.I)
-def page_text(url):
+def fetch(url):
+    """Returns (status, raw_html, visible_text)."""
     req = urllib.request.Request(url, headers={"User-Agent": UA,
                                                "Accept": "text/html,*/*"})
     import ssl
@@ -95,7 +108,51 @@ def page_text(url):
     body = (body.replace("&nbsp;", " ").replace("&amp;", "&")
                 .replace("&lt;", "<").replace("&gt;", ">").replace("&#39;", "'")
                 .replace("&quot;", '"'))
-    return code, re.sub(r"\s+", " ", body).strip()
+    return code, raw, re.sub(r"\s+", " ", body).strip()
+
+# v1's central finding: 26 of 43 fetched pages were corporate HOMEPAGES that
+# market the company without ever saying what the terminal handles. That list
+# lives one click away on /services, /locations, /terminals or /capabilities.
+# Same-host only, and never off-site.
+LINK_HINT = re.compile(
+    r"(servic|location|terminal|capab|commodit|product|facilit|transload|bulk|"
+    r"operation|what-we|handling|storage)", re.I)
+
+def find_subpages(base_url, raw_html, limit=2):
+    from urllib.parse import urljoin, urlparse
+    host = urlparse(base_url).netloc.lower()
+    base_norm = base_url.rstrip("/")
+    scored = {}
+    for m in re.finditer(r'<a[^>]+href=["\']([^"\'#]+)["\'][^>]*>(.*?)</a>',
+                         raw_html, re.S | re.I):
+        href, label = m.group(1), re.sub(r"<[^>]+>", " ", m.group(2))
+        try: full = urljoin(base_url, href.split("?")[0])
+        except Exception: continue
+        p = urlparse(full)
+        if p.scheme not in ("http", "https") or p.netloc.lower() != host: continue
+        if full.rstrip("/") == base_norm: continue
+        if re.search(r"\.(pdf|jpg|png|zip|docx?|xlsx?)$", full, re.I): continue
+        score = (2 if LINK_HINT.search(href) else 0) + (2 if LINK_HINT.search(label) else 0)
+        # a page literally about commodities beats a generic "services" nav item
+        if re.search(r"(commodit|product|handling)", href + " " + label, re.I): score += 1
+        if score: scored[full] = max(scored.get(full, 0), score)
+    return [u for u, _ in sorted(scored.items(), key=lambda kv: -kv[1])[:limit]]
+
+def gather(url, follow):
+    """Homepage text, plus the best services/locations subpages when following."""
+    code, raw, text = fetch(url)
+    pages = [url]
+    if follow:
+        for sub in find_subpages(url, raw):
+            time.sleep(SLEEP)
+            try:
+                _c, _r, t2 = fetch(sub)
+                if t2:
+                    text += "\n\n--- " + sub + " ---\n" + t2
+                    pages.append(sub)
+            except Exception:
+                pass                      # a dead subpage is not a failed site
+    return code, text, pages
 
 PROMPT = """You are reading the website of a freight TRANSLOAD facility to record which \
 commodities it handles and which transfer capabilities it has.
@@ -152,7 +209,7 @@ def classify(text):
 # ── Run ─────────────────────────────────────────────────────────────────────
 stats = dict(attempted=0, fetch_ok=0, fetch_fail=0, model_ok=0, model_fail=0,
              yielded=0, not_stated=0, not_transload=0,
-             claims=0, claims_verified=0, claims_rejected=0,
+             claims=0, claims_verified=0, claims_rejected=0, subpages=0,
              in_tokens=0, out_tokens=0)
 seen = set()
 if OUT.exists():
@@ -168,8 +225,9 @@ with OUT.open("a") as fh:
         stats["attempted"] += 1
         rec = {"name": r["name"], "city": r["city"], "state": r["state"], "website": url}
         try:
-            code, text = page_text(url)
+            code, text, pages = gather(url, a.follow_links)
             stats["fetch_ok"] += 1
+            stats["subpages"] += len(pages) - 1
         except Exception as e:
             stats["fetch_fail"] += 1
             rec.update(ok=False, stage="fetch", error=str(e)[:120])
@@ -201,7 +259,7 @@ with OUT.open("a") as fh:
                     rejected.append({"field": field, "value": val, "why": "not in vocabulary"})
                     stats["claims_rejected"] += 1; continue
                 ev_n = norm(ev)
-                if len(ev_n) < 8 or ev_n not in hay:
+                if len(ev_n) < EVIDENCE_MIN_CHARS or ev_n not in hay:
                     rejected.append({"field": field, "value": val, "why": "evidence not found in page",
                                      "claimed_evidence": str(ev)[:120]})
                     stats["claims_rejected"] += 1; continue
@@ -216,7 +274,7 @@ with OUT.open("a") as fh:
         else:
             stats["not_stated"] += 1
 
-        rec.update(ok=True, http=code, text_chars=len(text),
+        rec.update(ok=True, http=code, text_chars=len(text), pages=pages,
                    is_transload_page=res.get("is_transload_page", True),
                    commodities=kept["commodities"], capabilities=kept["capabilities"],
                    rejected=rejected)
