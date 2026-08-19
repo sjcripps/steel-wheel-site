@@ -79,11 +79,26 @@ def main() -> None:
     # (stripped upstream in the v2/v3 merges; asserted here as a tripwire).
     # v3 additions (western-state passenger/transit/heritage owners):
     # DRTD, RTDC, TRAX, NMRX, NNRX, NSRM.
+    # FOURTH copy of this list, and like the other three it was missing SEPA.
+    # The pages were fixed on 2026-08-19 while this tool kept serving SEPA 17,
+    # IRYM 40, LDL 37, BOTH 5 and LIRR 3 — same defect, different surface, so
+    # the fix did not actually reach every place a customer sees it. Merge the
+    # shared file; the literal set stays as the floor.
     BANNED_MARKS = {
         "XXXX", "XMDT", "LI", "NJT", "SCAX", "NIRC", "NICD", "VPRA", "MNCW",
         "PATH", "MARC", "MBTA", "SDNR", "JPBX", "SMRT", "MTS",
         "DRTD", "RTDC", "TRAX", "NMRX", "NNRX", "NSRM",
     }
+    _excl_file = Path("/home/ubuntu/bots/assistant/businesses/steel-wheel"
+                      "/data/reference/excluded-marks.json")
+    try:
+        _excl = json.loads(_excl_file.read_text())
+        for _sec in ("sentinel", "passenger", "non_freight"):
+            BANNED_MARKS |= {k for k in (_excl.get(_sec) or {})
+                             if k and not k.startswith("_")}
+        print(f"  excluded-marks.json merged: {len(BANNED_MARKS)} banned marks")
+    except (OSError, ValueError) as _e:
+        print(f"  WARNING: {_excl_file} unusable ({_e}); built-in list only")
 
     for rec in records:
         confidence = rec["confidence"]
