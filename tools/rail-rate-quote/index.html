@@ -901,6 +901,7 @@
             <select id="car_type" required>
               <option value="">Loading...</option>
             </select>
+            <div id="carHint" style="margin-top:4px; font-size:0.8rem; color:#b45309;"></div>
           </div>
 
           <div class="form-group">
@@ -1003,6 +1004,7 @@
         </div>
 
         <div class="shipment-size-note" id="shipmentSizeNote" style="display:none"></div>
+        <div class="shipment-size-note" id="equipmentNote" style="display:none"></div>
 
         <div class="disclaimer" id="disclaimer"></div>
 
@@ -1262,24 +1264,47 @@
         carSel.innerHTML = '<option value="">Failed to load</option>';
       }
 
-      // Restrict car types to those valid for the chosen commodity, and auto-select
-      // the recommended car. Prevents wrong-equipment pairings (e.g. machinery in a
-      // gondola) at the source; the rate engine enforces the same rule as a backstop.
+      // Recommend a car type for the chosen commodity and auto-select the
+      // default, but never HIDE the rest. Hiding them silently removed real
+      // choice: construction mats ride centerbeams, bulkhead flats or gondolas
+      // depending on the mill, and a shipper who knows that was stuck with
+      // whatever the commodity table preferred. Car type is not an input to the
+      // quoted price, so an unusual pick costs nothing in accuracy — the engine
+      // prices it and returns an advisory note instead of refusing.
       function applyCarRestrictions() {
         const opt = commSel.options[commSel.selectedIndex];
         const def = opt && opt.dataset.defaultCar;
         const allowed = (opt && opt.dataset.allowedCars) ? opt.dataset.allowedCars.split(',') : null;
         Array.from(carSel.options).forEach(o => {
           if (!o.value) return;
+          o.disabled = false;
+          o.hidden = false;
+          const base = o.dataset.baseName || (o.dataset.baseName = o.textContent);
           const ok = !allowed || allowed.includes(o.value);
-          o.disabled = !ok;
-          o.hidden = !ok;
+          o.textContent = ok ? base : base + ' — less common for this commodity';
         });
         if (def && carSel.querySelector(`option[value="${def}"]`) &&
             (!carSel.value || (allowed && !allowed.includes(carSel.value)))) {
           carSel.value = def;
         }
+        updateCarHint();
       }
+
+      // Inline nudge when the picked car isn't on the commodity's recommended
+      // list. Mirrors the server's equipment_note so the shipper sees it before
+      // submitting, not only after.
+      function updateCarHint() {
+        const hint = document.getElementById('carHint');
+        if (!hint) return;
+        const opt = commSel.options[commSel.selectedIndex];
+        const allowed = (opt && opt.dataset.allowedCars) ? opt.dataset.allowedCars.split(',') : null;
+        if (!carSel.value || !allowed || allowed.includes(carSel.value)) {
+          hint.textContent = '';
+          return;
+        }
+        hint.textContent = 'Unusual for this commodity — we’ll confirm equipment. The rate is unaffected.';
+      }
+      carSel.addEventListener('change', updateCarHint);
       commSel.addEventListener('change', applyCarRestrictions);
 
       // Deep-link prefill: /tools/rail-rate-quote?commodity=coal lands with the
@@ -2267,6 +2292,28 @@
           box.style.display = 'none';
         }
       } catch (e) { console.warn('shipment size note skipped:', e); }
+
+      // Equipment advisory — present only when the picked car is off the
+      // commodity's recommended list. Reuses the shipment-size note styling;
+      // deliberately NOT an error, since the quote itself is valid.
+      try {
+        const eb = document.getElementById('equipmentNote');
+        if (eb) {
+          if (d.equipment_note) {
+            eb.className = 'shipment-size-note assumed';
+            eb.innerHTML = '';
+            const h = document.createElement('strong');
+            h.textContent = 'Unusual equipment for this commodity';
+            const p = document.createElement('span');
+            p.textContent = d.equipment_note;
+            eb.appendChild(h);
+            eb.appendChild(p);
+            eb.style.display = 'block';
+          } else {
+            eb.style.display = 'none';
+          }
+        }
+      } catch (e) { console.warn('equipment note skipped:', e); }
 
       // Carry the priced lane into the dashboard so "Track This Lane" is one
       // click rather than re-entering everything.
