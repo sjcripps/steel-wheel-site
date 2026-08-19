@@ -52,6 +52,7 @@
 
 import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from "fs";
 import { join, dirname } from "path";
+import { siteHeader } from "./lib/site-nav.js";
 
 const ROOT = join(dirname(new URL(import.meta.url).pathname), "..");
 // v2 fallback: .../railserved-merged-v2.json (36-state wave)
@@ -291,31 +292,7 @@ ${JSON.stringify(jsonLd, null, 2)}
   </script>
 </head>
 <body>
-
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="/" class="logo">
-        <div class="logo-icon">
-          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
-        </div>
-        <div class="logo-text">
-          <span class="logo-name">Steel Wheel Logistics</span>
-          <span class="logo-tagline">Rail Freight Simplified</span>
-        </div>
-      </a>
-      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="main-nav">
-        <a href="/">Home</a>
-        <a href="/services">Services</a>
-        <a href="/blog">Blog</a>
-        <a href="/courses">Courses</a>
-        <a href="/contact">Contact Us</a>
-      </nav>
-    </div>
-  </header>
-`;
+${siteHeader()}`;
 }
 
 const FOOTER = `

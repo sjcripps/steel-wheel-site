@@ -10,6 +10,7 @@
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { join, dirname } from "path";
+import { siteHeader } from "./lib/site-nav.js";
 
 const ROOT = join(dirname(new URL(import.meta.url).pathname), "..");
 const CITIES_FILE = join(ROOT, "cities.json");
@@ -202,31 +203,7 @@ function generateCityPage(city) {
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="/" class="logo">
-        <div class="logo-icon">
-          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
-        </div>
-        <div class="logo-text">
-          <span class="logo-name">Steel Wheel Logistics</span>
-          <span class="logo-tagline">Rail Freight Simplified</span>
-        </div>
-      </a>
-      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="main-nav">
-        <a href="/">Home</a>
-        <a href="/services">Services</a>
-        <a href="/blog">Blog</a>
-        <a href="/courses">Courses</a>
-        <a href="/contact">Contact Us</a>
-      </nav>
-    </div>
-  </header>
-
+  <!-- Header -->${siteHeader()}
   <!-- Breadcrumb + Hero -->
   <section class="blog-hero">
     <div class="blog-breadcrumb">
@@ -394,31 +371,7 @@ ${cityCards}
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="/" class="logo">
-        <div class="logo-icon">
-          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
-        </div>
-        <div class="logo-text">
-          <span class="logo-name">Steel Wheel Logistics</span>
-          <span class="logo-tagline">Rail Freight Simplified</span>
-        </div>
-      </a>
-      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="main-nav">
-        <a href="/">Home</a>
-        <a href="/services">Services</a>
-        <a href="/blog">Blog</a>
-        <a href="/courses">Courses</a>
-        <a href="/contact">Contact Us</a>
-      </nav>
-    </div>
-  </header>
-
+  <!-- Header -->${siteHeader()}
   <!-- Hero -->
   <section class="blog-hero">
     <div class="blog-breadcrumb">
