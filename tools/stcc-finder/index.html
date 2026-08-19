@@ -68,6 +68,23 @@
       margin-bottom: 8px;
     }
     .search-card label .hint { font-weight: 400; color: var(--text-light); }
+    /* The handoff into the rate estimator. Previously had NO rule at all, so it
+       rendered as a bare inline link tucked at the end of the explanatory
+       paragraph and read as part of the prose rather than the primary action on
+       a result. It is now the only button on the card. */
+    .est-handoff {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: var(--navy, #12263f);
+      color: #fff;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .est-handoff:hover { background: var(--blue, #1f4e8c); color: #fff; }
     #stccSearchBtn {
       flex: 0 0 auto;
       padding: 0 22px;
@@ -1152,51 +1169,28 @@
       document.getElementById('noResultsCta').href = href;
     }
 
-    // STCC -> estimator commodity id (source of truth: the slug/stcc/est table
-    // in scripts/build-commodity-pages.js). Used to hand a code lookup into
-    // the rate estimator pre-filled. Prefix-matched both directions so a
-    // 3-digit group row ("011") still maps when every mapped family under it
-    // agrees; ambiguous prefixes (e.g. "28" spans plastic/fertilizer/
-    // chemicals) get NO link rather than a wrong one.
-    var STCC_TO_EST = {
-      '01132': 'grain', '01137': 'grain', '01144': 'grain',
-      '20421': 'ddgs', '20923': 'ddgs',
-      '28712': 'fertilizer', '14713': 'fertilizer',
-      '32411': 'cement', '14413': 'sand-frac', '14212': 'aggregates',
-      '11212': 'coal', '29914': 'coal', '10112': 'iron-ore',
-      '33122': 'steel', '40211': 'scrap-metal', '24211': 'lumber',
-      '26211': 'paper', '28211': 'plastic', '13111': 'crude-oil',
-      '28184': 'ethanol', '28199': 'chemicals', '29121': 'lpg',
-      '37112': 'automotive', '14711': 'barite',
-    };
-    function estFor(code) {
-      var digits = String(code || '').replace(/\D/g, '');
-      if (!digits) return null;
-      var hits = {};
-      for (var k in STCC_TO_EST) {
-        if (k.indexOf(digits) === 0 || digits.indexOf(k) === 0) hits[STCC_TO_EST[k]] = true;
-      }
-      var ids = Object.keys(hits);
-      return ids.length === 1 ? ids[0] : null;
-    }
     // True when the shipper came here from the rate estimator's "Look it up"
-    // link. The return trip hands back the CODE (?stcc=), not a commodity id,
-    // so the estimator's own prefix matcher resolves it — that works for any
-    // code in the taxonomy, not just the ~25 in STCC_TO_EST. 24992 (wood mats)
-    // is exactly that gap: no STCC_TO_EST entry, but the estimator maps it to
-    // Lumber / Wood Products fine.
+    // link — changes the wording to a return trip, nothing else.
     var FROM_RATE = new URLSearchParams(location.search).get('from') === 'rate';
 
+    // Every result gets a handoff into the estimator, carrying the CODE
+    // (?stcc=), because the estimator's own prefix matcher resolves any code in
+    // the taxonomy to a priced bucket.
+    //
+    // This used to be gated two ways and was effectively invisible: the link
+    // only appeared if you arrived with ?from=rate, and otherwise fell back to
+    // a hardcoded ~25-entry STCC->commodity map. Land on this tool directly
+    // (the normal path — it's a public SEO tool) and look up 24992 (wood mats),
+    // which has no entry in that map, and you got NO way to price it at all.
+    // Anyone who just found their code should be able to price it regardless of
+    // how they got here, so the map is gone and the link is unconditional.
     function estLinkHtml(code) {
       var digits = String(code || '').replace(/\D/g, '');
-      if (FROM_RATE && digits) {
-        return ' <a class="est-handoff" href="/tools/rail-rate-quote?stcc=' + digits +
-          '">&larr; Use this code in the rate estimator</a>';
-      }
-      var est = estFor(code);
-      if (!est) return '';
-      return ' <a class="est-handoff" href="/tools/rail-rate-quote?commodity=' + est +
-        '">Price this commodity by rail &rarr;</a>';
+      if (!digits) return '';
+      return '<a class="est-handoff" href="/tools/rail-rate-quote?stcc=' + digits + '">' +
+        (FROM_RATE ? '&larr; Use ' + digits + ' in the rate estimator'
+                   : 'Price this by rail with ' + digits + ' &rarr;') +
+        '</a>';
     }
 
     function renderHierItem(x) {
@@ -1214,7 +1208,8 @@
         '<span class="level-pill">' + levelLabel(h.code) + '</span>' +
         (crumbHtml ? '<div class="result-crumbs">' + crumbHtml + '</div>' : '') +
         (x.alias ? '<div class="alias-note">Also listed as &ldquo;' + escapeHtml(x.alias.term) + '&rdquo; (' + escapeHtml(x.alias.src) + ')</div>' : '') +
-        '<div class="result-detail">' + famNote + ' Not sure this is the right family? <a href="' + contactHref(lastQuery) + '">Talk to us</a> — classification is part of what we do.' + estLinkHtml(h.code) + '</div>' +
+        '<div class="result-detail">' + famNote + ' Not sure this is the right family? <a href="' + contactHref(lastQuery) + '">Talk to us</a> — classification is part of what we do.</div>' +
+        estLinkHtml(h.code) +
         '</div>';
     }
 
@@ -1227,7 +1222,8 @@
         '<span class="result-desc">' + escapeHtml(c.desc) + '</span>' +
         '<span class="source-badge">' + escapeHtml(c.src) + '</span>' +
         famDesc +
-        '<div class="result-detail">Published by the railroad named on the badge — treat it as a strong candidate, and have your serving railroad confirm it applies to your shipment and route.' + estLinkHtml(c.code7) + '</div>' +
+        '<div class="result-detail">Published by the railroad named on the badge — treat it as a strong candidate, and have your serving railroad confirm it applies to your shipment and route.</div>' +
+        estLinkHtml(c.code7) +
         '</div>';
     }
 
