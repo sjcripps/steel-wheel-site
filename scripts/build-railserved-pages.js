@@ -58,7 +58,11 @@ const ROOT = join(dirname(new URL(import.meta.url).pathname), "..");
 // v1 fallback: .../railserved-merged-v1.json (SE-7 wave)
 const DATA_FILE =
   process.argv[2] ||
-  "/home/ubuntu/bots/assistant/businesses/steel-wheel/data/railserved-merged-v3.json";
+  // SOURCE WAS STALE: this said v3 while the LIVE pages were built from v4.
+// Rebuilding with the old constant silently dropped 548 records and the
+// ports[] data — caught 2026-08-19 when a rebuilt Alabama page lost six
+// carriers and a state-plan citation off Kimberly Clark Mobile.
+"/home/ubuntu/bots/assistant/businesses/steel-wheel/data/railserved-merged-v4.json";
 const OUTPUT_DIR = join(ROOT, "rail-served");
 
 const GTAG_ID = "G-RSWDYHVY7Z";
@@ -138,11 +142,30 @@ if (Array.isArray(merged.states_geometry)) {
 // tripwire here so a regression can never render one as a serving railroad.
 // v3 additions (western-state passenger/transit/heritage owners):
 // DRTD, RTDC, TRAX, NMRX, NNRX, NSRM.
+// This list is now MERGED from the same file the Python builders read, because
+// maintaining it here as a third copy is what let SEPA through: SEPTA is a
+// commuter authority, and "Served by SEPA (7)" was live on the Pennsylvania
+// page until 2026-08-19. The literal set below stays as the floor — an
+// unreadable file can only fail to ADD marks, never silently drop one.
+const EXCLUDED_MARKS_FILE =
+  "/home/ubuntu/bots/assistant/businesses/steel-wheel/data/reference/excluded-marks.json";
 const BANNED_MARKS = new Set([
   "XXXX", "XMDT", "LI", "NJT", "SCAX", "NIRC", "NICD", "VPRA", "MNCW",
   "PATH", "MARC", "MBTA", "SDNR", "JPBX", "SMRT", "MTS",
   "DRTD", "RTDC", "TRAX", "NMRX", "NNRX", "NSRM",
 ]);
+try {
+  const excl = JSON.parse(readFileSync(EXCLUDED_MARKS_FILE, "utf8"));
+  for (const section of ["sentinel", "passenger", "non_freight"]) {
+    for (const mark of Object.keys(excl[section] || {})) {
+      if (mark && !mark.startsWith("_")) BANNED_MARKS.add(mark);
+    }
+  }
+  console.log(`excluded-marks.json merged: ${BANNED_MARKS.size} banned marks`);
+} catch (e) {
+  console.error(`WARNING: ${EXCLUDED_MARKS_FILE} unusable (${e.message}); ` +
+                `using the built-in list only`);
+}
 for (const r of records) {
   const bad = (r.serving_railroads || []).filter((m) => BANNED_MARKS.has(m));
   if (bad.length) {

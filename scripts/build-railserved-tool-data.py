@@ -48,7 +48,9 @@ ROOT = Path(__file__).resolve().parent.parent
 # v2 fallback: .../railserved-merged-v2.json (36-state wave, 9,777 records)
 # v1 fallback: .../railserved-merged-v1.json (SE-7 wave, 2,542 records)
 DEFAULT_INPUT = Path(
-    "/home/ubuntu/bots/assistant/businesses/steel-wheel/data/railserved-merged-v3.json"
+    # SOURCE WAS STALE: this said v3 while the LIVE pages were built from v4.
+# Rebuilding with the old constant silently dropped 548 records.
+"/home/ubuntu/bots/assistant/businesses/steel-wheel/data/railserved-merged-v4.json"
 )
 OUTPUT = ROOT / "tools" / "rail-served-businesses" / "data" / "businesses.json"
 
