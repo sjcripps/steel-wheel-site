@@ -1,0 +1,29 @@
+# Files uploaded to Vercel are publicly fetchable. This repo has no
+# buildCommand and no package.json scripts — Vercel serves it as static files
+# plus api/*.ts as functions — so everything listed here is build-time or source
+# material that was being served at 200 on steelwheellogistics.com until
+# 2026-08-19. Verified before excluding: nothing in a served page references any
+# of it, and api/*.ts only reads blog/posts.json, cities.json, and the three
+# */pages.json manifests, none of which are excluded.
+#
+# If a buildCommand is ever added that runs the page generators, `scripts/` will
+# have to come back out of this list.
+
+# ── Page generators and maintenance scripts ─────────────────────────────────
+# /scripts/build-transload-pages.js and friends were downloadable in full.
+scripts/
+
+# ── Tool build pipelines ────────────────────────────────────────────────────
+# Python builders, the source CSVs behind the transload dataset, and scraped
+# third-party PDFs/XLSX (EIA coal tables, USGS iron-ore surveys, an AAPA press
+# archive). The CSVs in particular are the raw input to the directory — the
+# data itself is the asset, and it was a public download.
+tools/*/source/
+
+# ── Raw scrapes and intermediate enrichment artifacts ───────────────────────
+# This is the only data/ dir carrying more than its runtime JSON: raw scraped
+# operator pages (a full 182KB Genesee & Wyoming page), enrichment .jsonl logs,
+# probe/failure lists, and the superseded v1 transload.json. Keep ONLY the file
+# the directory tool actually fetch()es.
+tools/transload-directory/data/*
+!tools/transload-directory/data/transload-v2.json
