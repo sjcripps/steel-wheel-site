@@ -68,6 +68,25 @@
       margin-bottom: 8px;
     }
     .search-card label .hint { font-weight: 400; color: var(--text-light); }
+    #stccSearchBtn {
+      flex: 0 0 auto;
+      padding: 0 22px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      background: var(--navy);
+      border: 2px solid var(--navy);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #stccSearchBtn:hover { background: var(--blue, #1f4e8c); }
+    #searchStatus {
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      min-height: 1.1em;
+    }
     #stccSearch {
       width: 100%;
       box-sizing: border-box;
@@ -468,7 +487,11 @@
     <!-- Search -->
     <div class="search-card">
       <label for="stccSearch">What are you shipping? <span class="hint">(commodity name or STCC digits)</span></label>
-      <input type="text" id="stccSearch" placeholder="e.g. corn, scrap steel, used antifreeze, plastic pellets..." autocomplete="off" aria-label="Search commodities">
+      <div style="display:flex; gap:8px; align-items:stretch;">
+        <input type="text" id="stccSearch" placeholder="e.g. corn, scrap steel, used antifreeze, plastic pellets..." autocomplete="off" aria-label="Search commodities" style="flex:1; min-width:0;">
+        <button type="button" id="stccSearchBtn" aria-label="Search">Search</button>
+      </div>
+      <div id="searchStatus" role="status" aria-live="polite"></div>
       <div class="search-examples">
         Try:
         <a data-q="corn">corn</a>
@@ -996,7 +1019,15 @@
       for (var i = 0; i < exps.length; i++) {
         for (var j = 0; j < words.length; j++) {
           if (words[j] === exps[i]) return 2;          // exact word
-          if (words[j].indexOf(exps[i]) === 0) return 1; // prefix
+          // Prefix match is for inflections (log/logs, mat/matting) only — NOT
+          // any word that merely starts the same. Unbounded, "mat" matched
+          // "MATERIAL" and "MATTE" (a copper/lead smelting residue), putting
+          // Radioactive Material at the top of a search for wood mats. Two
+          // guards: a token under 4 chars is too generic to prefix-match at
+          // all (exact only), and a longer one may only overhang by 3.
+          if (exps[i].length >= 4 &&
+              words[j].length <= exps[i].length + 3 &&
+              words[j].indexOf(exps[i]) === 0) return 1;
         }
       }
       return 0;
@@ -1058,6 +1089,13 @@
         if (s) cur.push({ s: s, c: c });
       });
       cur.sort(function (a, b) { return b.s - a.s || (a.c.desc.length - b.c.desc.length); });
+      // These are presented as "strong candidates the railroad published", so
+      // they have to clear a higher bar than the exploratory family list: at
+      // least half the query's words. Below that we'd be showing a 7-digit
+      // code that merely brushed the query — searching "hardwood construction
+      // mats" surfaced an empty-pallet-return code above the family the user
+      // actually needed, which reads as "here's your code" and isn't.
+      if (!isCodeQuery) cur = cur.filter(function (x) { return x.s >= 1; });
       res.curated = cur.slice(0, 12).map(function (x) { return x.c; });
 
       // aliases -> boost map (code -> alias info)
@@ -1141,7 +1179,20 @@
       var ids = Object.keys(hits);
       return ids.length === 1 ? ids[0] : null;
     }
+    // True when the shipper came here from the rate estimator's "Look it up"
+    // link. The return trip hands back the CODE (?stcc=), not a commodity id,
+    // so the estimator's own prefix matcher resolves it — that works for any
+    // code in the taxonomy, not just the ~25 in STCC_TO_EST. 24992 (wood mats)
+    // is exactly that gap: no STCC_TO_EST entry, but the estimator maps it to
+    // Lumber / Wood Products fine.
+    var FROM_RATE = new URLSearchParams(location.search).get('from') === 'rate';
+
     function estLinkHtml(code) {
+      var digits = String(code || '').replace(/\D/g, '');
+      if (FROM_RATE && digits) {
+        return ' <a class="est-handoff" href="/tools/rail-rate-quote?stcc=' + digits +
+          '">&larr; Use this code in the rate estimator</a>';
+      }
       var est = estFor(code);
       if (!est) return '';
       return ' <a class="est-handoff" href="/tools/rail-rate-quote?commodity=' + est +
@@ -1180,6 +1231,11 @@
         '</div>';
     }
 
+    function setStatus(msg) {
+      var el = document.getElementById('searchStatus');
+      if (el) el.textContent = msg || '';
+    }
+
     function renderResults(q) {
       var res = search(q);
       var bg = document.getElementById('branchGroup');
@@ -1207,7 +1263,11 @@
         hg.style.display = '';
       } else { hg.style.display = 'none'; }
 
-      nr.style.display = (res.branches.length || res.curated.length || res.hier.length) ? 'none' : '';
+      var total = res.branches.length + res.curated.length + res.hier.length;
+      nr.style.display = total ? 'none' : '';
+      setStatus(total
+        ? total + (total === 1 ? ' match' : ' matches') + ' for “' + q + '”'
+        : 'No matches for “' + q + '”');
       resultsSection.classList.add('visible');
       document.getElementById('stickyCta').classList.add('visible');
     }
@@ -1325,6 +1385,28 @@
           gtag('event', 'stcc_finder_search', { event_category: 'tools', event_label: q });
         }
       }, 900);
+    });
+
+    // Explicit Search button + Enter. Live-as-you-type stays (it's faster once
+    // you know the tool), but typing into a box and having results silently
+    // appear below the fold gives no signal that the search actually took.
+    // The button and the match count are that signal.
+    function runSearch() {
+      var q = searchInput.value.trim();
+      lastQuery = q;
+      updateCtas(q);
+      clearTimeout(debounceTimer);
+      if (q.length < 2) {
+        resultsSection.classList.remove('visible');
+        setStatus('Type at least two characters.');
+        return;
+      }
+      renderResults(q);
+      resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    document.getElementById('stccSearchBtn').addEventListener('click', runSearch);
+    searchInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { e.preventDefault(); runSearch(); }
     });
   </script>
 

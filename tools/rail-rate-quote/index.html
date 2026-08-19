@@ -892,7 +892,7 @@
               <input type="text" id="stccCode" inputmode="numeric" placeholder="e.g. 24210" autocomplete="off"
                      style="width:6.5em; margin-left:4px; padding:4px 6px; font-size:0.8rem;">
               <span id="stccMatchNote" style="margin-left:6px;"></span>
-              <a href="/tools/stcc-finder" target="_blank" rel="noopener" style="margin-left:6px;">Look it up →</a>
+              <a href="/tools/stcc-finder?from=rate" style="margin-left:6px;">Look it up →</a>
             </div>
           </div>
 
@@ -1339,6 +1339,18 @@
         }
       }
       stccInput.addEventListener('input', updateStccMatch);
+
+      // Return trip from the STCC finder (?stcc=24992). The finder hands back
+      // the raw code rather than a commodity id, so the prefix matcher above
+      // stays the single place that maps STCC -> priced bucket.
+      const preStcc = deepLink.get('stcc');
+      if (preStcc) {
+        const clean = preStcc.replace(/[^0-9]/g, '').slice(0, 7);
+        if (clean.length >= 2) {
+          stccInput.value = clean;
+          updateStccMatch();
+        }
+      }
     }
 
     loadDropdowns();
