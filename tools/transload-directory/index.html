@@ -123,6 +123,41 @@
       box-sizing: border-box;
       margin-bottom: 14px;
     }
+    .lane-group .lane-row { position: relative; margin-bottom: 6px; }
+    .lane-group input[type=text] { width: 100%; box-sizing: border-box; }
+    .lane-suggest {
+      position: absolute; z-index: 40; left: 0; right: 0; top: 100%;
+      background: #fff; border: 1px solid #c9d2da; border-radius: 5px;
+      margin: 2px 0 0; padding: 0; list-style: none; max-height: 190px;
+      overflow-y: auto; box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+    .lane-suggest li { padding: 7px 10px; cursor: pointer; font-size: 0.85rem; }
+    .lane-suggest li:hover, .lane-suggest li.active { background: #eef3f8; }
+    .lane-controls { display: flex; gap: 6px; align-items: center; margin-top: 4px; }
+    .lane-controls select { flex: 1; }
+    .lane-clear {
+      padding: 6px 10px; font-size: 0.78rem; border: 1px solid #c9d2da;
+      background: #fff; border-radius: 5px; cursor: pointer;
+    }
+    .lane-clear:hover { background: #eef1f4; }
+    .lane-status { margin-top: 6px; font-size: 0.78rem; color: var(--text-grey); line-height: 1.4; }
+    .dist-pill {
+      display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 10px;
+      background: #eef3f8; color: #1f4e8c; font-size: 0.72rem; font-weight: 600;
+      white-space: nowrap;
+    }
+    .dist-pill.dest { background: #f3eefb; color: #5b3a8c; }
+    /* Health flags derived from the enrichment probes — see healthFlag(). */
+    .health-pill {
+      display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 10px;
+      font-size: 0.72rem; font-weight: 600; white-space: nowrap;
+    }
+    .health-dead { background: #fdecea; color: #a4291c; }
+    .health-stale { background: #fff5e6; color: #8a5a00; }
+    .unconfirmed-row td {
+      background: #fbfcfd; font-size: 0.82rem; color: var(--text-grey);
+      padding: 10px 12px; line-height: 1.5;
+    }
     .filter-group {
       border-top: 1px solid var(--border-grey);
       padding-top: 12px;
@@ -637,6 +672,32 @@
           <h3>Search</h3>
           <input type="text" id="searchBox" placeholder="Operator name or city...">
 
+          <!-- Lane search. A rail move has two ends, and the transload can sit at
+               either, so origin and destination are both optional and results are
+               the UNION of what's near each — labelled so you know which end. -->
+          <div class="filter-group lane-group">
+            <h3>Lane Search <span style="font-weight:400;text-transform:none;font-size:0.78rem;color:var(--text-grey)">(within a radius)</span></h3>
+            <div class="lane-row">
+              <input type="text" id="laneOrigin" placeholder="Origin city, ST" autocomplete="off">
+              <ul class="lane-suggest" id="laneOriginSuggest" hidden></ul>
+            </div>
+            <div class="lane-row">
+              <input type="text" id="laneDest" placeholder="Destination city, ST (optional)" autocomplete="off">
+              <ul class="lane-suggest" id="laneDestSuggest" hidden></ul>
+            </div>
+            <div class="lane-controls">
+              <select id="laneRadius" aria-label="Search radius">
+                <option value="25">25 mi</option>
+                <option value="50" selected>50 mi</option>
+                <option value="100">100 mi</option>
+                <option value="150">150 mi</option>
+                <option value="250">250 mi</option>
+              </select>
+              <button type="button" id="laneClear" class="lane-clear">Clear lane</button>
+            </div>
+            <div id="laneStatus" class="lane-status"></div>
+          </div>
+
           <div class="filter-group">
             <h3>Listing Tier</h3>
             <div class="filter-checkboxes">
@@ -823,6 +884,10 @@
     let commodityOptions = [];
     let capabilityOptions = [];
     let filtered = [];
+    // In-radius facilities whose commodity handling we simply have not
+    // confirmed. Kept separate so they render below a divider rather than
+    // being silently dropped — see the comment in applyFilters().
+    let unconfirmed = [];
     let currentPage = 1;
     let sortKey = 'name';
     let sortDir = 'asc';
@@ -999,12 +1064,26 @@
       document.getElementById('storageFilter').addEventListener('change', applyFilters);
       document.getElementById('tierVerified').addEventListener('change', applyFilters);
       document.getElementById('tierListed').addEventListener('change', applyFilters);
+      // Lane search
+      attachCityLookup('laneOrigin', 'laneOriginSuggest', pt => { laneOriginPt = pt; });
+      attachCityLookup('laneDest', 'laneDestSuggest', pt => { laneDestPt = pt; });
+      document.getElementById('laneRadius').addEventListener('change', applyFilters);
+      document.getElementById('laneClear').addEventListener('click', () => {
+        laneOriginPt = null; laneDestPt = null;
+        document.getElementById('laneOrigin').value = '';
+        document.getElementById('laneDest').value = '';
+        applyFilters();
+      });
+
       document.getElementById('resetFilters').addEventListener('click', () => {
         document.getElementById('searchBox').value = '';
         document.getElementById('stateFilter').value = '';
         document.getElementById('storageFilter').value = '';
         document.getElementById('tierVerified').checked = true;
         document.getElementById('tierListed').checked = true;
+        laneOriginPt = null; laneDestPt = null;
+        document.getElementById('laneOrigin').value = '';
+        document.getElementById('laneDest').value = '';
         document.querySelectorAll('#commodityFilters input, #capabilityFilters input')
           .forEach(el => { el.checked = false; });
         applyFilters();
@@ -1040,6 +1119,116 @@
 
     function isVerified(f) { return f.tier === 'verified'; }
 
+    // ─────────────────────── Lane search ───────────────────────
+    // Origin/destination each resolve to a point; facilities are kept when they
+    // fall within the radius of EITHER end. 2,490 of 2,585 facilities carry
+    // lat/lng (96%), so this covers nearly the whole directory — the ~95 without
+    // coordinates simply can't be distance-ranked and are noted in the status.
+    var laneOriginPt = null, laneDestPt = null;
+
+    function haversineMiles(lat1, lon1, lat2, lon2) {
+      var R = 3958.8, toRad = function (d) { return d * Math.PI / 180; };
+      var p1 = toRad(lat1), p2 = toRad(lat2);
+      var dp = p2 - p1, dl = toRad(lon2 - lon1);
+      var a = Math.sin(dp / 2) * Math.sin(dp / 2) +
+              Math.cos(p1) * Math.cos(p2) * Math.sin(dl / 2) * Math.sin(dl / 2);
+      return 2 * R * Math.asin(Math.sqrt(a));
+    }
+
+    // Annotates each facility with distance to whichever end(s) are set.
+    // Returns null when no lane is active so the rest of the pipeline is
+    // untouched — lane search is additive, not a mode switch.
+    function laneDistances(f) {
+      if (!laneOriginPt && !laneDestPt) return null;
+      if (typeof f.lat !== 'number' || typeof f.lng !== 'number') return { noCoords: true };
+      var o = laneOriginPt ? haversineMiles(laneOriginPt.lat, laneOriginPt.lon, f.lat, f.lng) : null;
+      var d = laneDestPt ? haversineMiles(laneDestPt.lat, laneDestPt.lon, f.lat, f.lng) : null;
+      var best = [o, d].filter(function (x) { return x !== null; });
+      return { o: o, d: d, best: best.length ? Math.min.apply(null, best) : null };
+    }
+
+    // Health flags read the enrichment probe trail left in `note`. We already
+    // knew ~55 of these sites were dead or had lost their location page and
+    // showed them as ordinary listings — which is exactly how you end up calling
+    // a transload that closed. Surfaced as a badge rather than raw probe text.
+    function healthFlag(f) {
+      var n = String(f.note || '');
+      if (/website unreachable|dead domain link removed/i.test(n)) {
+        return { cls: 'health-dead', label: '⚠ Site unreachable',
+                 title: 'Our last check could not reach this operator\'s website. It may have closed — confirm before planning around it.' };
+      }
+      if (/website repointed to homepage/i.test(n)) {
+        return { cls: 'health-stale', label: '⚠ Page gone',
+                 title: 'This operator\'s location page disappeared and the link now goes to their homepage. The site may no longer be listed by the operator.' };
+      }
+      return null;
+    }
+
+    function commodityMatch(f, cms) {
+      if (!cms.length) return 'n/a';
+      if (!f.commodities || !f.commodities.length) return 'unknown';
+      return cms.some(function (c) { return f.commodities.indexOf(c) > -1; }) ? 'yes' : 'no';
+    }
+
+    function setLaneStatus(msg) {
+      var el = document.getElementById('laneStatus');
+      if (el) el.textContent = msg || '';
+    }
+
+    // Distance is shown per END, not as a single number — "38 mi from origin"
+    // and "12 mi from destination" are different propositions when you're
+    // deciding which end of the lane to transload at.
+    function distancePills(f) {
+      var d = f._dist;
+      if (!d || d.noCoords) return '';
+      var out = '';
+      if (typeof d.o === 'number') out += '<span class="dist-pill" title="Straight-line distance from the origin city">' + Math.round(d.o) + ' mi · origin</span>';
+      if (typeof d.d === 'number') out += '<span class="dist-pill dest" title="Straight-line distance from the destination city">' + Math.round(d.d) + ' mi · dest</span>';
+      return out;
+    }
+
+    // City typeahead against the rate server's gazetteer, which now returns
+    // lat/lon. Same endpoint the rate estimator uses.
+    function attachCityLookup(inputId, suggestId, onPick) {
+      var input = document.getElementById(inputId);
+      var list = document.getElementById(suggestId);
+      if (!input || !list) return;
+      var timer = null;
+      function close() { list.hidden = true; list.innerHTML = ''; }
+      input.addEventListener('input', function () {
+        var q = input.value.trim();
+        onPick(null); // typing invalidates any previously-picked point
+        clearTimeout(timer);
+        if (q.length < 2) { close(); return; }
+        timer = setTimeout(function () {
+          fetch('https://tools.steelwheellogistics.com/api/rail-rate-cities?q=' +
+                encodeURIComponent(q) + '&limit=8')
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+              var rows = (data && data.results) || [];
+              if (!rows.length) { close(); return; }
+              list.innerHTML = '';
+              rows.forEach(function (c) {
+                if (typeof c.lat !== 'number' || typeof c.lon !== 'number') return;
+                var li = document.createElement('li');
+                li.textContent = c.label;
+                li.addEventListener('mousedown', function (e) {
+                  e.preventDefault();
+                  input.value = c.label;
+                  onPick({ lat: c.lat, lon: c.lon, label: c.label });
+                  close();
+                  applyFilters();
+                });
+                list.appendChild(li);
+              });
+              list.hidden = !list.children.length;
+            })
+            .catch(function () { close(); });
+        }, 180);
+      });
+      input.addEventListener('blur', function () { setTimeout(close, 150); });
+    }
+
     function applyFilters() {
       const q = document.getElementById('searchBox').value.trim().toLowerCase();
       const state = document.getElementById('stateFilter').value;
@@ -1052,6 +1241,17 @@
       // (typed search, picked state, toggled commodity/capability/tier/storage).
       if (q || state || storage || cms.length || caps.length || !showVerified || !showListed) silentFireTransloadLead();
 
+      const laneActive = !!(laneOriginPt || laneDestPt);
+      const radius = Number(document.getElementById('laneRadius').value) || 50;
+
+      // With a lane set, commodity RANKS instead of excluding. Commodity data
+      // exists for 685 of 2,585 facilities (26%) — and only 5 of 1,787
+      // "listed" ones — so a hard filter answers "who handles this near here?"
+      // with a confident empty list. Real case: Lumber within 100 mi of
+      // Hattiesburg MS returns 0 of the 35 facilities actually in range. Those
+      // 35 aren't wrong answers, they're unknowns, and hiding them reads as
+      // "nothing here". They drop below a divider instead.
+      unconfirmed = [];
       filtered = allFacilities.filter(f => {
         if (isVerified(f) && !showVerified) return false;
         if (!isVerified(f) && !showListed) return false;
@@ -1061,10 +1261,42 @@
           const hay = (f.name + ' ' + f.city + ' ' + (f.note || '')).toLowerCase();
           if (!hay.includes(q)) return false;
         }
-        if (cms.length && !cms.some(c => f.commodities.includes(c))) return false;
         if (caps.length && !caps.some(c => f.capabilities.includes(c))) return false;
+
+        if (laneActive) {
+          const dist = laneDistances(f);
+          if (!dist || dist.noCoords) return false;
+          if (dist.best === null || dist.best > radius) return false;
+          f._dist = dist;
+          const match = commodityMatch(f, cms);
+          if (match === 'no') return false;          // we KNOW it's a mismatch
+          if (match === 'unknown') { unconfirmed.push(f); return false; }
+          return true;
+        }
+
+        // No lane: commodity behaves as it always has (a real filter).
+        if (cms.length && !cms.some(c => f.commodities.includes(c))) return false;
         return true;
       });
+
+      if (laneActive) {
+        const byDist = (a, b) => a._dist.best - b._dist.best;
+        filtered.sort(byDist);
+        unconfirmed.sort(byDist);
+      }
+
+      if (laneActive) {
+        const ends = [];
+        if (laneOriginPt) ends.push('origin ' + laneOriginPt.label);
+        if (laneDestPt) ends.push('dest ' + laneDestPt.label);
+        const inRange = filtered.length + unconfirmed.length;
+        setLaneStatus(
+          `${inRange} facilit${inRange === 1 ? 'y' : 'ies'} within ${radius} mi of ${ends.join(' / ')}` +
+          (cms.length ? ` — ${filtered.length} confirmed for the selected commodit${cms.length === 1 ? 'y' : 'ies'}, ${unconfirmed.length} unconfirmed.` : '.')
+        );
+      } else {
+        setLaneStatus('');
+      }
 
       currentPage = 1;
       renderResults();
@@ -1109,7 +1341,9 @@
       document.getElementById('resultsCount').textContent = filtered.length.toLocaleString();
       document.getElementById('totalCount').textContent = allFacilities.length.toLocaleString();
 
-      if (!filtered.length) {
+      const laneActive = !!(laneOriginPt || laneDestPt);
+
+      if (!filtered.length && !(laneActive && unconfirmed.length)) {
         tbody.innerHTML = `<tr><td colspan="5" class="empty-row">No facilities match the current filters. Try removing some.</td></tr>`;
         document.getElementById('pageInfo').textContent = 'Page 0 of 0';
         document.getElementById('prevPage').disabled = true;
@@ -1117,7 +1351,9 @@
         return;
       }
 
-      const sorted = [...filtered].sort((a, b) => {
+      // With a lane set, distance IS the ranking — overriding it with a name
+      // sort would bury the nearest option on page 3.
+      const sorted = laneActive ? [...filtered] : [...filtered].sort((a, b) => {
         const av = sortKey === 'city' ? `${a.state} ${a.city}` : a.name;
         const bv = sortKey === 'city' ? `${b.state} ${b.city}` : b.name;
         return sortDir === 'asc' ? av.localeCompare(bv) : bv.localeCompare(av);
@@ -1149,7 +1385,12 @@
         const tierBadge = isVerified(f)
           ? '<span class="tier-pill tier-verified" title="Confirmed operating — corroborated against current listings">✓ Verified</span>'
           : '<span class="tier-pill tier-listed" title="From railroad network directories — not yet contact-verified">Listed</span>';
+        const hf = healthFlag(f);
+        const healthBadge = hf
+          ? `<span class="health-pill ${hf.cls}" title="${escapeAttr(hf.title)}">${escape(hf.label)}</span>`
+          : '';
         const note = f.note ? `<span class="loc-note">${escape(f.note)}</span>` : '';
+        const distBadge = distancePills(f);
 
         const webBtn = f.website
           ? `<a href="${escape(f.website)}" target="_blank" rel="noopener" class="act-web">Website</a>`
@@ -1162,8 +1403,8 @@
           : '';
 
         tr.innerHTML = `
-          <td class="col-loc"><strong>${escape(f.name)}</strong>${tierBadge}${note}</td>
-          <td class="col-loc">${escape(f.city)}<span class="city-state">${escape(f.state)}</span></td>
+          <td class="col-loc"><strong>${escape(f.name)}</strong>${tierBadge}${healthBadge}${note}</td>
+          <td class="col-loc">${escape(f.city)}<span class="city-state">${escape(f.state)}</span>${distBadge}</td>
           <td><div class="badge-list">${cms}</div></td>
           <td><div class="badge-list">${caps}</div></td>
           <td class="col-actions">${webBtn}${telBtn}${emailBtn}</td>
@@ -1171,6 +1412,47 @@
         tr.addEventListener('click', () => selectFacility(realIdx));
         tbody.appendChild(tr);
       });
+
+      // In-radius but commodity handling unconfirmed. These are the ones a hard
+      // filter would have thrown away — shown, but clearly separated so nobody
+      // mistakes them for confirmed matches.
+      if (laneActive && unconfirmed.length && currentPage === 1) {
+        const cmsSel = activeCommodities();
+        const divider = document.createElement('tr');
+        divider.className = 'unconfirmed-row';
+        divider.innerHTML = `<td colspan="5"><strong>${unconfirmed.length} more within range — handling not confirmed.</strong>
+          ${cmsSel.length ? `We have no commodity record for these, which is not the same as them being unable to handle ${escape(cmsSel.join('/'))}. ` : ''}
+          Commodity detail is confirmed for about a quarter of the directory, so this list is mostly
+          &ldquo;we haven't asked yet&rdquo;. Worth a call before you rule them out.</td>`;
+        tbody.appendChild(divider);
+
+        unconfirmed.slice(0, 25).forEach(f => {
+          const realIdx = allFacilities.indexOf(f);
+          const tr = document.createElement('tr');
+          tr.dataset.idx = realIdx;
+          tr.style.opacity = '0.78';
+          const hf2 = healthFlag(f);
+          const hb = hf2 ? `<span class="health-pill ${hf2.cls}" title="${escapeAttr(hf2.title)}">${escape(hf2.label)}</span>` : '';
+          const tb = isVerified(f)
+            ? '<span class="tier-pill tier-verified">✓ Verified</span>'
+            : '<span class="tier-pill tier-listed">Listed</span>';
+          const wb = f.website ? `<a href="${escape(f.website)}" target="_blank" rel="noopener" class="act-web">Website</a>` : '';
+          const tl = f.phone ? `<a href="tel:${escape(String(f.phone).replace(/[^+\d]/g, ''))}" class="act-tel">${escape(f.phone)}</a>` : '';
+          tr.innerHTML = `
+            <td class="col-loc"><strong>${escape(f.name)}</strong>${tb}${hb}</td>
+            <td class="col-loc">${escape(f.city)}<span class="city-state">${escape(f.state)}</span>${distancePills(f)}</td>
+            <td colspan="2" style="color:var(--text-grey);font-size:0.82rem;">Commodity handling not on record</td>
+            <td class="col-actions">${wb}${tl}</td>`;
+          tr.addEventListener('click', () => selectFacility(realIdx));
+          tbody.appendChild(tr);
+        });
+        if (unconfirmed.length > 25) {
+          const more = document.createElement('tr');
+          more.className = 'unconfirmed-row';
+          more.innerHTML = `<td colspan="5">…and ${unconfirmed.length - 25} further unconfirmed sites in range. Narrow the radius, or ask us to run the list.</td>`;
+          tbody.appendChild(more);
+        }
+      }
 
       document.getElementById('pageInfo').textContent =
         `Page ${currentPage} of ${totalPages} — ${start + 1}–${Math.min(start + PAGE_SIZE, sorted.length)} of ${sorted.length}`;
