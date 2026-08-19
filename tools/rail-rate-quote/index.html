@@ -887,6 +887,13 @@
             <select id="commodity" required>
               <option value="">Loading...</option>
             </select>
+            <div id="stccHelperRow" style="margin-top:4px; font-size:0.8rem; color:var(--text-light);">
+              Know your STCC code instead?
+              <input type="text" id="stccCode" inputmode="numeric" placeholder="e.g. 24210" autocomplete="off"
+                     style="width:6.5em; margin-left:4px; padding:4px 6px; font-size:0.8rem;">
+              <span id="stccMatchNote" style="margin-left:6px;"></span>
+              <a href="/tools/stcc-finder" target="_blank" rel="noopener" style="margin-left:6px;">Look it up →</a>
+            </div>
           </div>
 
           <div class="form-group">
@@ -1071,6 +1078,12 @@
     // every keystroke.
     const cityCache = new Map();
 
+    // Populated from /api/rail-rate-commodities in loadDropdowns() — each entry
+    // carries {id, name, stcc, ...}. Used by the optional STCC-code field to
+    // resolve a shipper-supplied STCC straight to our commodity bucket instead
+    // of making them guess our dropdown wording.
+    let commodityList = [];
+
     // Commodity-flow hub index — populated from /tools/commodity-flow-map/data/hubs.json.
     // Used to surface a "Major commodity hub" badge in the autocomplete dropdown
     // when a customer types an origin that matches a curated hub by name or city.
@@ -1237,6 +1250,7 @@
       if (commRes && Array.isArray(commRes.commodities)) {
         commSel.innerHTML = '<option value="">Select a commodity</option>' +
           commRes.commodities.map(c => `<option value="${c.id}" data-default-car="${c.default_car}" data-allowed-cars="${(c.allowed_cars||[c.default_car]).join(',')}">${c.name}</option>`).join('');
+        commodityList = commRes.commodities;
       } else {
         commSel.innerHTML = '<option value="">Failed to load</option>';
       }
@@ -1287,6 +1301,36 @@
         const opt = carSel.querySelector(`option[value="${CSS.escape(preCar)}"]`);
         if (opt && !opt.disabled) carSel.value = preCar;
       }
+
+      // Optional STCC-code entry. We don't price off the raw code — the engine
+      // only knows ~20 fixed commodity buckets, each with one tariff_mult — so
+      // this resolves a typed STCC to the bucket with the longest matching
+      // digit prefix and auto-selects it, same as the STCC-finder deep link
+      // above but for shippers who already know their code instead of
+      // searching a description.
+      const stccInput = document.getElementById('stccCode');
+      const stccNote = document.getElementById('stccMatchNote');
+      function updateStccMatch() {
+        const digits = stccInput.value.replace(/[^0-9]/g, '');
+        if (digits.length < 2) { stccNote.textContent = ''; return; }
+        let best = null, bestLen = 0;
+        commodityList.forEach(c => {
+          if (!c.stcc) return;
+          let n = 0;
+          while (n < digits.length && n < c.stcc.length && digits[n] === c.stcc[n]) n++;
+          if (n > bestLen) { bestLen = n; best = c; }
+        });
+        if (best && bestLen >= 2) {
+          commSel.value = best.id;
+          applyCarRestrictions();
+          stccNote.textContent = `→ matched: ${best.name}`;
+          stccNote.style.color = '';
+        } else {
+          stccNote.textContent = 'No matching bucket — pick a commodity manually.';
+          stccNote.style.color = '#b45309';
+        }
+      }
+      stccInput.addEventListener('input', updateStccMatch);
     }
 
     loadDropdowns();
