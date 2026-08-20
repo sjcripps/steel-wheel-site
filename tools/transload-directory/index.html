@@ -332,6 +332,15 @@
       background: rgba(40, 167, 69, 0.12);
       color: var(--success);
     }
+    /* Provenance marker — deliberately muted and italic so it reads as a
+       qualifier on the pills beside it, not as another commodity. */
+    .results-table .pill.pill-src {
+      background: transparent;
+      border: 1px dashed #c9d2da;
+      color: var(--text-grey);
+      font-style: italic;
+      cursor: help;
+    }
     .results-table td.col-actions a {
       display: inline-block;
       padding: 4px 10px;
@@ -749,7 +758,14 @@
         <div class="tier-legend">
           <span class="tier-pill tier-verified">✓ Verified</span> Confirmed operating — corroborated against current business listings and railroad network directories.
           &nbsp;·&nbsp;
-          <span class="tier-pill tier-listed">Listed</span> Compiled from the railroads' own public network directories; not yet contact-verified by us. Commodity and equipment details show "—" until confirmed — always check with the operator.
+          <span class="tier-pill tier-listed">Listed</span> Compiled from the railroads' own public network directories; not yet contact-verified by us.
+          <div style="margin-top:8px;">
+            <span class="pill pill-src">directory</span>
+            Commodities carrying this marker come from a railroad network directory as a broad category, not from the operator.
+            <strong>No commodity list here is exhaustive.</strong> A short list, or a &ldquo;&mdash;&rdquo;, means we have no record &mdash;
+            plenty of working transloads have no website and publish nothing. It is never a statement that they cannot handle your freight.
+            If your commodity isn&rsquo;t shown, ask them, or ask us and we&rsquo;ll find out.
+          </div>
         </div>
 
         <div class="help-banner">
@@ -1374,9 +1390,14 @@
 
         // Unknown (not-yet-verified) capabilities render as "—", same as
         // "none recorded" — never as a claim the facility can't handle it.
-        const unknownDash = '<span style="color:var(--text-grey);font-size:0.8rem;" title="Not yet verified — confirm with the operator">—</span>';
+        const unknownDash = '<span style="color:var(--text-grey);font-size:0.8rem;" title="No record — many transloads handle more than they publish, and plenty have no website at all. Not a statement that they cannot handle it.">—</span>';
+        // Directory-sourced commodities are a railroad's broad category, not the
+        // operator's own words — measured 55-78% precision against verbatim
+        // evidence. Marked so it does not read like confirmed data.
+        const fromDir = String(f.commodities_source || '').startsWith('rebulk-category');
         const cms = f.commodities.length
-          ? f.commodities.map(c => `<span class="pill">${escape(c)}</span>`).join('')
+          ? f.commodities.map(c => `<span class="pill">${escape(c)}</span>`).join('') +
+            (fromDir ? '<span class="pill pill-src" title="Listed by a railroad network directory as a broad category — not confirmed with the operator, and likely not their full range.">directory</span>' : '')
           : unknownDash;
         const caps = f.capabilities.length
           ? f.capabilities.map(c => `<span class="pill pill-cap">${escape(c)}</span>`).join('')

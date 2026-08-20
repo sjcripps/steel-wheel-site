@@ -171,6 +171,12 @@ const DISCLAIMER = `
       for reference. Steel Wheel Logistics does not own or operate these
       facilities, and a listing does not imply a commercial relationship.
       Confirm capabilities and availability directly with the operator.
+      <strong>Commodity lists here are not exhaustive.</strong> Some are drawn from
+      railroad network directories that record broad categories, and many
+      operators publish nothing at all &mdash; an empty or short list means we have
+      no record, not that the facility cannot handle your freight. If your
+      commodity is not shown, ask them, or
+      <a href="/contact">ask us and we will find out</a>.
     </p>`;
 
 // The old CTA sold "filter the full directory by commodity and capability" —
@@ -229,8 +235,27 @@ function facilityCard(f) {
   const comms = Array.isArray(f.commodities) ? f.commodities : [];
   const caps = Array.isArray(f.capabilities) ? f.capabilities : [];
   const note = publicNote(f.note);
+  // A commodity list is never the operator's full book. Three different things
+  // produce one, with very different confidence, and none of them is complete:
+  //   hand-curated   — someone confirmed it
+  //   web-extracted  — the operator's own site said it, verbatim
+  //   rebulk-category— a railroad directory recorded a broad category (measured
+  //                    55-78% precision against verbatim evidence)
+  // And plenty of real transloads publish nothing at all — no website means no
+  // list, not no capability. Presenting any of these as definitive would be the
+  // false precision this whole dataset has been built to avoid.
+  const fromDirectory = String(f.commodities_source || "").startsWith("rebulk-category");
   if (comms.length) {
-    bits.push(`<div><strong>Commodities:</strong> ${esc(comms.map(titleCase).join(", "))}</div>`);
+    const note = fromDirectory
+      ? "listed by a railroad directory &mdash; may not be their full range"
+      : "may not be their full range";
+    bits.push(
+      `<div><strong>Commodities:</strong> ${esc(comms.map(titleCase).join(", "))}` +
+      ` <span style="color:#777;font-size:0.85em">(${note})</span></div>`);
+  } else {
+    bits.push(
+      `<div style="color:#777;font-size:0.92em"><em>No published commodity list &mdash; ` +
+      `many transloads handle more than they advertise. Worth a call.</em></div>`);
   }
   if (caps.length) {
     bits.push(`<div><strong>Capabilities:</strong> ${esc(caps.map(titleCase).join(", "))}</div>`);
