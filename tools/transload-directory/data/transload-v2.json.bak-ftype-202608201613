@@ -93,9 +93,7 @@
    "website": "https://225rail.com/",
    "lat": 29.69106,
    "lng": -95.2091,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "4C Transloaders",
@@ -112,9 +110,7 @@
    "storage": "unknown",
    "website": "https://www.noklrailroad.com/transloading-services/",
    "lat": 36.424832,
-   "lng": -99.404726,
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -99.404726
   },
   {
    "name": "a DANA Company",
@@ -182,10 +178,7 @@
    "storage": "unknown",
    "website": "https://www.agtransportinc.com/",
    "lat": 37.80436,
-   "lng": -122.27111,
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -122.27111
   },
   {
    "name": "A&R Bulk Pak Incorporated",
@@ -895,10 +888,7 @@
    "website": "https://www.a1invmang.com/",
    "lat": 45.917612,
    "lng": -119.331979,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "A. Anastasio & Sons Trucking Rail Reload",
@@ -942,9 +932,7 @@
    "website": "https://shipabdw.com/",
    "lat": 42.587526,
    "lng": -87.879996,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Aberdeen & Rockfish Raeford Transload",
@@ -1046,10 +1034,7 @@
    "website": "https://www.accessworld.com/locations/north-america/",
    "lat": 39.2904,
    "lng": -76.6122,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Access World Usa LLC",
@@ -1245,9 +1230,7 @@
     "Plastics",
     "Liquid Bulk"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Adams Industries",
@@ -1474,9 +1457,7 @@
    "lng": -84.044829,
    "commodity_categories": [
     "Dry Bulk"
-   ],
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Advanced Logistics & Distribution",
@@ -1763,10 +1744,7 @@
    "website": "https://agriservices.com/",
    "lat": 39.427184,
    "lng": -93.127184,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Agro Merchants Group",
@@ -2111,10 +2089,7 @@
    "website": "https://www.allsouthwarehouse.com",
    "lat": 33.620543,
    "lng": -84.358181,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Allegheny Petroleum Products",
@@ -2165,10 +2140,7 @@
     "Aggregates",
     "Forest Products",
     "Metals"
-   ],
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Allens Transport Ltd",
@@ -2347,9 +2319,7 @@
    "website": "https://www.alpinefoods.com/",
    "lat": 45.444835,
    "lng": -122.620848,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Alter River Terminal",
@@ -2422,10 +2392,7 @@
    "website": "https://www.amarillowarehouse.com/",
    "lat": 35.198064,
    "lng": -101.833107,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Ambassador Services Cocoa Reload Yard",
@@ -2462,9 +2429,7 @@
    "lng": -119.0187,
    "commodity_categories": [
     "Liquid Bulk"
-   ],
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Ambridge Regional Distribution",
@@ -2644,10 +2609,7 @@
    "website": "https://americantransloading.com/",
    "lat": 41.6573,
    "lng": -87.6801,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "American Warehouse, LLC",
@@ -2855,10 +2817,7 @@
    "website": "https://amicuscdp.com/",
    "lat": 39.7392,
    "lng": -104.9903,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Amware Distribution Warehouse",
@@ -2884,10 +2843,7 @@
    "website": "https://amware.com/all-services/distribution-warehousing",
    "lat": 41.4993,
    "lng": -81.6944,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Anchorage Commercial Carriers Auto Ramp",
@@ -2927,9 +2883,7 @@
    "website": "https://ancosusa.com/",
    "lat": 37.123551,
    "lng": -77.224856,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Angelina & Neches River Railroad Lufkin Transload",
@@ -2954,9 +2908,7 @@
    "website": "https://www.anrrr.com/",
    "lat": 31.322904,
    "lng": -94.729026,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Angler Rail Transloading Facility",
@@ -3010,9 +2962,7 @@
    "storage": "unknown",
    "website": "https://anthillcrossdocking.com/",
    "lat": 34.001517,
-   "lng": -84.150464,
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -84.150464
   },
   {
    "name": "Antioch Rail & Trans Loading",
@@ -3152,10 +3102,7 @@
    "lng": -94.370883,
    "commodity_categories": [
     "Agriculture"
-   ],
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Arkansas Transload",
@@ -4029,9 +3976,7 @@
    "website": "https://www.asphaltexpress.net/",
    "lat": 34.196507,
    "lng": -97.131848,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Asphalt Operating Services of Chicago",
@@ -4051,9 +3996,7 @@
    "website": "https://www.aoschicago.net/",
    "lat": 41.878113,
    "lng": -87.629799,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Associated Asphalt",
@@ -4148,10 +4091,7 @@
    "website": "https://www.aswglobal.com",
    "lat": 41.05246,
    "lng": -81.407317,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Atlanta Metro Lumber & Reload",
@@ -4196,9 +4136,7 @@
    "website": "https://www.atomrail.com/",
    "lat": 34.368598,
    "lng": -81.091378,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Atw Choice Terminals",
@@ -4300,10 +4238,7 @@
    "lng": -75.566519,
    "commodity_categories": [
     "Machinery & Dimensional"
-   ],
-   "facility_type": "private-plant",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Avalon Team Track",
@@ -4380,10 +4315,7 @@
    "commodity_categories": [
     "Forest Products"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "B&E Storage and Transfer",
@@ -4409,10 +4341,7 @@
     "Forest Products",
     "Building Materials"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "B&J Group Inc",
@@ -4462,10 +4391,7 @@
    "storage": "unknown",
    "website": "https://www.bandltransload.com/",
    "lat": 45.198779,
-   "lng": -91.566342,
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -91.566342
   },
   {
    "name": "B-H Transfer Co",
@@ -4743,9 +4669,7 @@
    "storage": "unknown",
    "website": "https://www.bayshorerecycling.com/",
    "lat": 40.514718,
-   "lng": -74.311856,
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -74.311856
   },
   {
    "name": "Bcwc LLC",
@@ -4813,9 +4737,7 @@
    "storage": "unknown",
    "website": "https://beartruss.net/",
    "lat": 43.408528,
-   "lng": -84.61123,
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -84.61123
   },
   {
    "name": "Beaver Lake Industrial Park",
@@ -4832,9 +4754,7 @@
    "storage": "unknown",
    "website": "https://www.trsrail.com/",
    "lat": 31.342926,
-   "lng": -92.40893,
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -92.40893
   },
   {
    "name": "Becker Warehouse and Reload",
@@ -4862,9 +4782,7 @@
     "Plastics",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Belle Fourche Transload",
@@ -4929,10 +4847,7 @@
     "Forest Products",
     "Agriculture"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Benlin Warehouse",
@@ -5035,10 +4950,7 @@
     "Forest Products",
     "Metals"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Bi-State Storage",
@@ -5085,10 +4997,7 @@
    "website": "https://www.bigsoo.com/",
    "lat": 42.499994,
    "lng": -96.400307,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Bighorn Divide & Wyoming Railroad",
@@ -5493,9 +5402,7 @@
     "Building Materials",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Bridger Pipeline East Fairview Sand Transloading Facility",
@@ -5515,9 +5422,7 @@
    "website": "https://bridgerpipeline.com/",
    "lat": 47.853419,
    "lng": -104.035893,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Brink Farms",
@@ -6230,9 +6135,7 @@
    "website": "https://www.bulkplus.com/",
    "lat": 33.5671,
    "lng": -84.5816,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Bulk Transfer LLC",
@@ -7706,10 +7609,7 @@
    "website": "https://www.burkhartenterprises.com",
    "lat": 35.9606,
    "lng": -83.9207,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Burlington Junction Railway",
@@ -7863,9 +7763,7 @@
    "website": "https://www.buschfarms.com/",
    "lat": 42.2639,
    "lng": -88.8443,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Butler Intermodal Terminal",
@@ -7885,9 +7783,7 @@
    "lng": -92.581658,
    "commodity_categories": [
     "Agriculture"
-   ],
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "BWC Terminals",
@@ -8060,9 +7956,7 @@
    "website": "https://bwptransport.weebly.com/",
    "lat": 42.82653,
    "lng": -82.492433,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "C & C Transloads",
@@ -8167,10 +8061,7 @@
    "website": "https://Cajoseph.com",
    "lat": 40.57215,
    "lng": -80.725708,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "CA Perry and Son",
@@ -8192,9 +8083,7 @@
    "website": "https://www.caperryandson.com/",
    "lat": 36.058565,
    "lng": -76.598979,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Caine Warehousing Ltd",
@@ -8254,10 +8143,7 @@
    "website": "https://www.calfreight.com/",
    "lat": 37.639097,
    "lng": -120.996878,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "CalJet 53rd Avenue Terminal",
@@ -8314,10 +8200,7 @@
    "storage": "unknown",
    "website": "https://www.camiiwarehouse.com/",
    "lat": 41.419058,
-   "lng": -91.067946,
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -91.067946
   },
   {
    "name": "Camden & Southern Railroad / South Arkansas Intermodal Park",
@@ -8580,10 +8463,7 @@
    "website": "https://capacitytransport.com/capacity-warehouse/",
    "lat": 42.2825,
    "lng": -83.1752,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Cape And Son",
@@ -8627,10 +8507,7 @@
    "commodities_source": "web-extracted 2026-08-20",
    "commodity_categories": [
     "Agriculture"
-   ],
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Capital Area Rail Terminal",
@@ -8654,9 +8531,7 @@
    "website": "https://capitalteams.com/capital-area-rail-terminal/",
    "lat": 38.567461,
    "lng": -92.175254,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Capital City Reload",
@@ -8676,10 +8551,7 @@
    "website": "https://capitalcityreload.com/",
    "lat": 39.9612,
    "lng": -82.9988,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Capital Railroad Contracting",
@@ -8722,9 +8594,7 @@
     "Building Materials",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Capitol Warehousing",
@@ -9308,9 +9178,7 @@
     "Dry Bulk",
     "Forest Products"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Carolina Marine Terminal (Relay Terminals) - operated by Savage",
@@ -9354,10 +9222,7 @@
    "website": "https://www.carolinapublicwhse.com",
    "lat": 36.099861,
    "lng": -80.244217,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Carolinas Reload",
@@ -9676,9 +9541,7 @@
    "storage": "unknown",
    "website": "https://ggecorn.com/",
    "lat": 43.153572,
-   "lng": -93.201037,
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -93.201037
   },
   {
    "name": "Carver Maritime Charleston",
@@ -9703,10 +9566,7 @@
     "Aggregates",
     "Building Materials"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Cascade Warehouse",
@@ -9851,9 +9711,7 @@
     "Dry Bulk",
     "Liquid Bulk",
     "Metals"
-   ],
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Catch-Up Logistics Davenport",
@@ -9873,10 +9731,7 @@
    "lng": -90.5776,
    "commodity_categories": [
     "Agriculture"
-   ],
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Cellmark",
@@ -9953,9 +9808,7 @@
    "website": "https://apexoil.com/location/chickasaw-al/",
    "lat": 30.77145,
    "lng": -88.079697,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Central Kentucky Distribution",
@@ -10250,10 +10103,7 @@
    "commodity_categories": [
     "Dry Bulk",
     "Agriculture"
-   ],
-   "facility_type": "private-plant",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Central Washington Railroad",
@@ -10302,9 +10152,7 @@
     "Building Materials",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Ceres Northgate Terminal",
@@ -10537,9 +10385,7 @@
    "website": "https://chemflo.net/",
    "lat": 43.86923,
    "lng": -116.492119,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Chemical South Transport",
@@ -10748,9 +10594,7 @@
    "lng": -77.9447,
    "commodity_categories": [
     "Liquid Bulk"
-   ],
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Chesapeake & Delaware",
@@ -10939,9 +10783,7 @@
    "website": "https://www.cicadalogistics.co/",
    "lat": 47.989075,
    "lng": -102.488305,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "CIG Logistics",
@@ -11200,9 +11042,7 @@
    "website": "https://www.citgo.com/what-we-do/terminals-and-pipelines/",
    "lat": 39.2904,
    "lng": -76.6122,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Citi-Cargo & Storage",
@@ -11219,9 +11059,7 @@
    "storage": "unknown",
    "website": "https://citi-cargo.com/minnesota-warehousing-locations/",
    "lat": 44.815217,
-   "lng": -93.162816,
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -93.162816
   },
   {
    "name": "City Of Rochelle Railroad",
@@ -11255,9 +11093,7 @@
     "Machinery & Dimensional",
     "Forest Products"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "City of Washington Team Track Facility",
@@ -11302,10 +11138,7 @@
    "website": "https://cjbindustries.com/contact/",
    "lat": 30.850126,
    "lng": -83.278833,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Clare NS TBT",
@@ -11362,10 +11195,7 @@
     "Plastics",
     "Agriculture"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Claysburg Transload Facility",
@@ -13172,9 +13002,7 @@
    "storage": "unknown",
    "website": "https://www.keystonecoop.com/locations",
    "lat": 40.749196,
-   "lng": -86.87428,
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -86.87428
   },
   {
    "name": "Coal City Cob Company Inc",
@@ -13224,9 +13052,7 @@
    "storage": "unknown",
    "website": "https://www.coastalcargogroup.com/",
    "lat": 29.9511,
-   "lng": -90.0715,
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -90.0715
   },
   {
    "name": "Coastal Logistics Group, Inc.",
@@ -13361,9 +13187,7 @@
    "storage": "unknown",
    "website": "https://www.colebrookdalerailroad.com/freight/",
    "lat": 40.33233,
-   "lng": -75.637478,
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -75.637478
   },
   {
    "name": "Colona Transfer",
@@ -13389,10 +13213,7 @@
    "website": "https://www.colonatransfer.com/",
    "lat": 40.683423,
    "lng": -80.273427,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Colonial Terminals Inc",
@@ -13471,9 +13292,7 @@
    "storage": "unknown",
    "website": "https://cxrgrr.com/",
    "lat": 37.474528,
-   "lng": -105.876956,
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -105.876956
   },
   {
    "name": "Colorado Quarries Transload",
@@ -13496,9 +13315,7 @@
    "website": "https://www.coloradoquarries.com/",
    "lat": 38.441886,
    "lng": -105.220899,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "COLT Transload",
@@ -13521,10 +13338,7 @@
    "website": "https://www.COMO.gov/utilities/Columbia-colt-railroad",
    "lat": 38.94729,
    "lng": -92.326387,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Columbia & Reading Railway Company",
@@ -13688,9 +13502,7 @@
    "website": "https://comanchetransloading.com/",
    "lat": 31.900484,
    "lng": -98.604364,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Commercial Transload of Minnesota",
@@ -13779,9 +13591,7 @@
    "website": "https://commoditiesplus.net/",
    "lat": 45.631,
    "lng": -122.6716,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Commonwealth Inc.",
@@ -13798,10 +13608,7 @@
    "storage": "unknown",
    "website": "https://www.commonwealthinc.com/",
    "lat": 38.993405,
-   "lng": -84.648186,
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -84.648186
   },
   {
    "name": "Commonwealth Industrial Services Incorporated",
@@ -13864,10 +13671,7 @@
    "website": "https://www.comptontransfer.com/rail-transloading/",
    "lat": 43.599335,
    "lng": -116.229817,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Conesville Industrial Park",
@@ -13915,9 +13719,7 @@
    "storage": "unknown",
    "website": "https://cydi.com/",
    "lat": 30.1588,
-   "lng": -85.6602,
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -85.6602
   },
   {
    "name": "Consolidated Grain & Barge",
@@ -14111,10 +13913,7 @@
    "lng": -74.2107,
    "commodity_categories": [
     "Machinery & Dimensional"
-   ],
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Continental Materials & Polymers Logistics Solutions",
@@ -14138,10 +13937,7 @@
    "website": "https://cmp-sd.com/",
    "lat": 32.715736,
    "lng": -117.161087,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Continental Terminals",
@@ -14166,10 +13962,7 @@
    "website": "https://www.continentalterminals.com",
    "lat": 36.768209,
    "lng": -76.287493,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Controladora De Terminales Mexico",
@@ -14310,9 +14103,7 @@
    "website": "https://cmt.suncoke.com/",
    "lat": 30.015211,
    "lng": -90.820234,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Cooper T Smith",
@@ -14483,10 +14274,7 @@
    "website": "https://www.cotterwhse.com",
    "lat": 41.080456,
    "lng": -81.521429,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Cotton Press Warehouse, LLC",
@@ -14506,10 +14294,7 @@
    "lng": -88.703656,
    "commodity_categories": [
     "Machinery & Dimensional"
-   ],
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "County Line Rail",
@@ -14594,9 +14379,7 @@
     "Dry Bulk",
     "Liquid Bulk"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "CPKC Shoreham",
@@ -14689,9 +14472,7 @@
    "website": "https://www.fwwr.net/transload-team-track",
    "lat": 32.53153,
    "lng": -97.61725,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "CRMS / Erman Corporation",
@@ -14859,10 +14640,7 @@
     "Metals",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "CSX Curtis Bay Coal Piers",
@@ -15138,9 +14916,7 @@
    "website": "https://ctsco.com/",
    "lat": 37.690638,
    "lng": -97.345836,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "CTW Logistics (Consolidated Transfer & Warehouse)",
@@ -15162,9 +14938,7 @@
    "website": "https://www.ctwlogistics.com/transload",
    "lat": 39.130005,
    "lng": -94.562171,
-   "commodities_source": "web-extracted 2026-08-20",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Cuba Food-Grade Transload Site",
@@ -15219,9 +14993,7 @@
    "storage": "unknown",
    "website": "https://whitestarlogistics.com/",
    "lat": 32.909826,
-   "lng": -96.630334,
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -96.630334
   },
   {
    "name": "D & M Distribution Service",
@@ -15248,10 +15020,7 @@
     "Agriculture",
     "Building Materials"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "D&D Ingredients",
@@ -15292,10 +15061,7 @@
    "website": "https://dmlumber.com/",
    "lat": null,
    "lng": null,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "D&S Warehousing Inc.",
@@ -15340,9 +15106,7 @@
    "website": "https://dakotagoldtransfer.com/",
    "lat": 48.026289,
    "lng": -101.958725,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Dalton NS TBT",
@@ -15444,10 +15208,7 @@
    "website": "https://www.danatransport.com/",
    "lat": 42.115881,
    "lng": -71.870094,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Dardanelle and Russellville Railroad Transload",
@@ -15526,10 +15287,7 @@
    "website": "https://davenportrail.com/transloading-services",
    "lat": 41.5236,
    "lng": -90.5776,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Daviess County Shell Building and Cross Dock/Transload Facility",
@@ -15699,10 +15457,7 @@
    "website": "http://centralparailcarstorage.com/",
    "lat": 40.431117,
    "lng": -78.392958,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Delaware Express",
@@ -16193,10 +15948,7 @@
    "storage": "unknown",
    "website": "https://kochtrucking.com/koch-companies/",
    "lat": 44.9778,
-   "lng": -93.265,
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -93.265
   },
   {
    "name": "Distribution Services International, Inc.",
@@ -16271,10 +16023,7 @@
    "commodity_categories": [
     "Forest Products"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Distribution Unlimited - Northeast Industrial Park",
@@ -16299,10 +16048,7 @@
    "website": "https://www.distributionunlimited.com/bulk-transload",
    "lat": 42.70424,
    "lng": -73.97096,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Diversified Minerals Rail Services",
@@ -16375,9 +16121,7 @@
    "website": "https://www.portofalaska.com/",
    "lat": 61.17425,
    "lng": -149.284329,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Doraville NS TBT",
@@ -16423,10 +16167,7 @@
    "lng": -85.406823,
    "commodity_categories": [
     "Agriculture"
-   ],
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Double Mountain Transload",
@@ -16562,9 +16303,7 @@
    "website": "https://newtmarine.com/dubuque-river-terminals-inc/",
    "lat": 42.498901,
    "lng": -90.707258,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Duluth Harbor Industrial Park",
@@ -16584,10 +16323,7 @@
    "website": "https://www.duluthharborindustrialpark.com/",
    "lat": 46.7867,
    "lng": -92.1005,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Dupuy Storage & Forwarding",
@@ -16609,10 +16345,7 @@
    "website": "https://dupuygroup.com/",
    "lat": 29.9511,
    "lng": -90.0715,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "DuraPort Marine & Rail Terminal",
@@ -16640,10 +16373,7 @@
     "Building Materials",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Dutch Lane Yard",
@@ -16686,9 +16416,7 @@
    "storage": "unknown",
    "website": "https://www.dynonobel.com/",
    "lat": 40.020933,
-   "lng": -81.585468,
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -81.585468
   },
   {
    "name": "Dysarts Warehouse",
@@ -16705,10 +16433,7 @@
    "storage": "unknown",
    "website": "https://dysartsservicecenter.com/warehouse/",
    "lat": 44.82011,
-   "lng": -68.917328,
-   "facility_type": "private-plant",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -68.917328
   },
   {
    "name": "E&L Paving and Construction - Belfast Logistics",
@@ -16838,9 +16563,7 @@
    "website": "https://ec-mm.com/",
    "lat": 41.693613,
    "lng": -71.900776,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "East Coast Warehouse & Distribution Corp",
@@ -16863,10 +16586,7 @@
    "commodity_categories": [
     "Forest Products"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "East Ohio Valley Railway",
@@ -16992,10 +16712,7 @@
    "commodity_categories": [
     "Forest Products"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Eastpointe Business Park Rail Transfer Station",
@@ -17055,9 +16772,7 @@
    "website": "https://www.eco-energy.com/distribution-services",
    "lat": 35.9606,
    "lng": -83.9207,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Eddyville Riverport",
@@ -17272,10 +16987,7 @@
    "storage": "unknown",
    "website": "https://www.elmlogistics.com/",
    "lat": 40.783918,
-   "lng": -73.252235,
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -73.252235
   },
   {
    "name": "Empire Stevedoring Co.",
@@ -17538,9 +17250,7 @@
    "website": "https://environmentalbarge.com/",
    "lat": 35.0456,
    "lng": -85.3097,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Environmental Remediation & Recovery",
@@ -17617,9 +17327,7 @@
     "Building Materials",
     "Metals"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Epic Midstream LLC",
@@ -17723,10 +17431,7 @@
    "storage": "unknown",
    "website": "https://www.evansdist.com/warehousing-services/",
    "lat": 42.223649,
-   "lng": -83.366036,
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -83.366036
   },
   {
    "name": "Fairbanks Materials Rail to Road",
@@ -17749,9 +17454,7 @@
     "Liquid Bulk",
     "Building Materials",
     "Machinery & Dimensional"
-   ],
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Fairview Mills / J-Six Enterprises",
@@ -17791,10 +17494,7 @@
    "commodities_source": "web-extracted 2026-08-20",
    "commodity_categories": [
     "Machinery & Dimensional"
-   ],
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Farmrail",
@@ -17971,9 +17671,7 @@
    "storage": "unknown",
    "website": "https://www.fingerlakesrail.com/",
    "lat": 42.9338,
-   "lng": -76.567181,
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -76.567181
   },
   {
    "name": "First Coast Railroad",
@@ -18013,9 +17711,7 @@
    "website": "https://www.fitzgeraldtruck.com/transloading",
    "lat": 35.315621,
    "lng": -97.951407,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "FJ Robers Company Inc.",
@@ -18181,9 +17877,7 @@
    "website": "https://fecrwy.com/transload/",
    "lat": 30.3322,
    "lng": -81.6557,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Florida Midland Railroad Bartow Airbase Transload",
@@ -18314,9 +18008,7 @@
     "Dry Bulk",
     "Liquid Bulk",
     "Machinery & Dimensional"
-   ],
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Flux Rail Services",
@@ -18338,9 +18030,7 @@
    "website": "https://fluxrailservices.com/",
    "lat": 40.611347,
    "lng": -112.469077,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Food Express Inc",
@@ -18924,9 +18614,7 @@
    "storage": "unknown",
    "website": "https://fsmn.co/",
    "lat": 44.9778,
-   "lng": -93.265,
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -93.265
   },
   {
    "name": "Fort Lawn Transload Track",
@@ -19108,9 +18796,7 @@
     "Agriculture",
     "Building Materials",
     "Machinery & Dimensional"
-   ],
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Fox River Terminal",
@@ -19130,9 +18816,7 @@
    "website": "https://robindale.energy/companies/frt/",
    "lat": 44.5192,
    "lng": -88.0198,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Fr Terminales Sa De Cv",
@@ -19492,9 +19176,7 @@
    "website": "https://www.freedomintermodal.com",
    "lat": 29.9511,
    "lng": -90.0715,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Freeport Logistics Inc",
@@ -19638,9 +19320,7 @@
    "website": "https://fwcobs.com/",
    "lat": 44.811538,
    "lng": -73.084462,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "G&D Trucking Inc (Hoffman Transportation)",
@@ -19833,9 +19513,7 @@
     "Agriculture",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "G3 Enterprises / G3 Logistics",
@@ -19852,9 +19530,7 @@
    "storage": "unknown",
    "website": "https://www.g3enterprises.com/logistics/3pl-warehouse-locations/illinois-3pl-warehouses",
    "lat": 41.759198,
-   "lng": -87.798661,
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -87.798661
   },
   {
    "name": "GAC Chemical Searsport Logistics Facility",
@@ -19878,9 +19554,7 @@
    "website": "https://www.gacchemical.com/",
    "lat": 44.474953,
    "lng": -68.915604,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Gadsden Industrial Park",
@@ -19903,10 +19577,7 @@
    "commodities_source": "web-extracted 2026-08-20",
    "commodity_categories": [
     "Machinery & Dimensional"
-   ],
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Gallatin Transfer",
@@ -19978,10 +19649,7 @@
    "website": "https://garveypublicwarehouse.com/",
    "lat": 37.690638,
    "lng": -97.345836,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Gary Team Track",
@@ -20110,9 +19778,7 @@
    "storage": "unknown",
    "website": "https://www.viterra.us/",
    "lat": 44.9537,
-   "lng": -93.08996,
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -93.08996
   },
   {
    "name": "General Commodities Warehouse",
@@ -20275,9 +19941,7 @@
    "storage": "unknown",
    "website": "https://geodis.com/us-en/locations/geodis-contract-logistics-kansas-city-1",
    "lat": 39.099727,
-   "lng": -94.578567,
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -94.578567
   },
   {
    "name": "Georgetown Materials",
@@ -20642,10 +20306,7 @@
     "Dry Bulk",
     "Forest Products",
     "Machinery & Dimensional"
-   ],
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Gloucester Marine Terminal",
@@ -20710,9 +20371,7 @@
     "Agriculture",
     "Building Materials"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Golden Barrel Leola",
@@ -20736,10 +20395,7 @@
    "website": "https://www.goldenbarrel.com/goldenbarrelleola/",
    "lat": 40.092953,
    "lng": -76.188963,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Golden Triangle Transload",
@@ -20762,9 +20418,7 @@
    "commodities_source": "web-extracted 2026-08-20",
    "commodity_categories": [
     "Agriculture"
-   ],
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Goldsboro NS TBT",
@@ -20867,9 +20521,7 @@
     "Agriculture",
     "Building Materials"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Grafton & Upton Terminal",
@@ -20944,9 +20596,7 @@
    "website": "https://grandriverrailway.com/",
    "lat": 41.721635,
    "lng": -81.258357,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Granite Peak Midstream",
@@ -21037,9 +20687,7 @@
    "storage": "unknown",
    "website": "https://www.gravity-rail.com/",
    "lat": 32.909826,
-   "lng": -96.630334,
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -96.630334
   },
   {
    "name": "Great Bend Transload Facility",
@@ -21129,9 +20777,7 @@
    "website": "https://gbtmass.com/",
    "lat": null,
    "lng": null,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Green Isle Team Track",
@@ -21212,9 +20858,7 @@
    "website": "https://greenhillreload.com/",
    "lat": 43.407163,
    "lng": -124.234483,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Greenup-Boyd County Riverport",
@@ -21261,9 +20905,7 @@
     "Forest Products",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Greenville Transload",
@@ -21345,9 +20987,7 @@
    "storage": "unknown",
    "website": "https://www.darlingii.com/en/media/news/20250218-converts-wastewater-emissions-into-renewable-natural-gas-cutting-scope-1-emissions",
    "lat": 32.535471,
-   "lng": -82.928807,
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -82.928807
   },
   {
    "name": "Griffin River Terminal",
@@ -21403,9 +21043,7 @@
    "website": "https://gtomniport.com/",
    "lat": 29.900008,
    "lng": -93.89442,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Gulf Coast Transload of Alabama",
@@ -21600,10 +21238,7 @@
    "website": "http://lawsonroanoke.com/",
    "lat": 37.27097,
    "lng": -79.94143,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Hailey's Harbor Intermodal River Terminal",
@@ -21781,10 +21416,7 @@
    "lng": -87.966695,
    "commodity_categories": [
     "Agriculture"
-   ],
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Happy Valley Blended Products",
@@ -21808,9 +21440,7 @@
    "commodity_categories": [
     "Dry Bulk",
     "Building Materials"
-   ],
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Harbor Logistics",
@@ -22615,9 +22245,7 @@
     "Dry Bulk",
     "Forest Products"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "HGMG Transload",
@@ -22645,10 +22273,7 @@
     "Forest Products",
     "Metals",
     "Machinery & Dimensional"
-   ],
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Hh Omps Inc",
@@ -22749,10 +22374,7 @@
    "website": "https://www.highlandwholesalefoods.com/",
    "lat": 37.957702,
    "lng": -121.29078,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "HOB Railroad and Transload",
@@ -22798,9 +22420,7 @@
    "website": "https://www.hollandco.com/transloading/",
    "lat": 48.205446,
    "lng": -97.338033,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Holroyd Recycle South",
@@ -22820,9 +22440,7 @@
    "lng": -122.4443,
    "commodity_categories": [
     "Dry Bulk"
-   ],
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Hondo Railway",
@@ -22848,9 +22466,7 @@
    "website": "https://hondorailway.com/our-facilities/",
    "lat": 29.354242,
    "lng": -99.161846,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Horseheads Sand & Transloading Terminal",
@@ -22963,9 +22579,7 @@
    "commodity_categories": [
     "Dry Bulk",
     "Building Materials"
-   ],
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Hudson Terminal Rail Services",
@@ -23019,9 +22633,7 @@
    "lng": -86.67667,
    "commodity_categories": [
     "Dry Bulk"
-   ],
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "HYDRA - Merced",
@@ -23171,9 +22783,7 @@
    "lng": -70.937913,
    "commodity_categories": [
     "Agriculture"
-   ],
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "IceCap Cold Storage",
@@ -23193,10 +22803,7 @@
    "lng": -95.860833,
    "commodity_categories": [
     "Agriculture"
-   ],
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "IHR Transload",
@@ -23233,9 +22840,7 @@
    "website": "https://imperialvalleyrail.com/",
    "lat": 33.168651,
    "lng": -115.485641,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "IMTT Avondale Terminal",
@@ -23535,10 +23140,7 @@
    "website": "https://industrialcleanersinc.com/",
    "lat": 39.266741,
    "lng": -81.561514,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Industrial Warehouse Services",
@@ -23558,9 +23160,7 @@
    "website": "https://iwslogistics.com/",
    "lat": 33.234404,
    "lng": -87.5283,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Ingram Tyler Street Terminal",
@@ -23649,10 +23249,7 @@
    "storage": "unknown",
    "website": "https://www.innovativecold.com/",
    "lat": 32.715736,
-   "lng": -117.161087,
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -117.161087
   },
   {
    "name": "Integrated Terminals",
@@ -23814,9 +23411,7 @@
    "storage": "unknown",
    "website": "https://interstatecoldstorage.com/",
    "lat": 41.397969,
-   "lng": -84.124984,
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -84.124984
   },
   {
    "name": "InterState McClellan Terminal",
@@ -23938,9 +23533,7 @@
    "website": "https://www.ihrail.com/beaumont",
    "lat": 30.084912,
    "lng": -94.14533,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Ironclad Global Warehousing",
@@ -23960,10 +23553,7 @@
    "website": "https://ironcladglobalwarehousing.com/",
    "lat": 42.796519,
    "lng": -78.8324,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Ironhorse Permian Basin, LLC",
@@ -23984,9 +23574,7 @@
    "commodity_categories": [
     "Dry Bulk",
     "Liquid Bulk"
-   ],
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "J & P Wholesale",
@@ -24034,10 +23622,7 @@
     "Forest Products",
     "Metals"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "J H Rose Logistics",
@@ -24075,9 +23660,7 @@
    "website": "https://jfallenco.com/contact/aggregate-quarry-elkins-plant/",
    "lat": 38.923719,
    "lng": -79.85426,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Jacintoport International Terminal",
@@ -24100,10 +23683,7 @@
    "website": "https://www.jacintoport.com/",
    "lat": 29.760427,
    "lng": -95.369803,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Jacksonville NS TBT",
@@ -24197,9 +23777,7 @@
    "website": "https://jbcrailservices.net/services/transload/",
    "lat": 41.611145,
    "lng": -86.715836,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Jbs Swift And Company",
@@ -24216,9 +23794,7 @@
    "storage": "unknown",
    "website": "https://jbsfoodsgroup.com/",
    "lat": 41.022251,
-   "lng": -92.423263,
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -92.423263
   },
   {
    "name": "Jeffersonville Transload Yard",
@@ -24359,10 +23935,7 @@
     "Metals",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Jimco Limestone Mills, LLC",
@@ -24386,9 +23959,7 @@
    "website": "https://www.jimcogroup.com",
    "lat": 32.087221,
    "lng": -81.176614,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Jobe Materials Dyer Railyard",
@@ -24478,9 +24049,7 @@
    "website": "https://www.bunningtransfer.com/",
    "lat": 42.264791,
    "lng": -104.742889,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Johnson City Chemical Company",
@@ -24638,10 +24207,7 @@
    "website": "https://www.kakllc.com/",
    "lat": 41.676643,
    "lng": -86.268809,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Kanawha River Terminal",
@@ -24890,9 +24456,7 @@
    "commodity_categories": [
     "Metals"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Kenilworth Steel Brier Hill- Girard, OH",
@@ -25409,9 +24973,7 @@
    "website": "https://www.kingsteelcorp.com/",
    "lat": 42.798799,
    "lng": -83.622967,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Kingman Terminal Railroad Transload Facility",
@@ -25459,9 +25021,7 @@
     "Liquid Bulk",
     "Agriculture",
     "Machinery & Dimensional"
-   ],
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Kinsdale Carriers Ltd",
@@ -25688,10 +25248,7 @@
    "storage": "unknown",
    "website": "https://www.konoike.net/en/company/group/us/konoike-pacific-california/",
    "lat": 33.785794,
-   "lng": -118.263015,
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -118.263015
   },
   {
    "name": "Kyle Railroad",
@@ -25942,9 +25499,7 @@
    "website": "https://www.labudde.com/locations/richville-mi-warehouse/",
    "lat": null,
    "lng": null,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Lacassine Operating Company",
@@ -26296,9 +25851,7 @@
    "lng": -75.281208,
    "commodity_categories": [
     "Agriculture"
-   ],
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "LaSalle County Transfer LLC",
@@ -26351,10 +25904,7 @@
     "Metals",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Laub International Inc.",
@@ -26379,10 +25929,7 @@
     "Forest Products",
     "Agriculture"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Laufer Kansas City Transload and Fumigation Facility",
@@ -26555,9 +26102,7 @@
    "lng": -122.360609,
    "commodity_categories": [
     "Dry Bulk"
-   ],
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Liberty Reload Services",
@@ -26599,10 +26144,7 @@
    "website": "https://lighthouselogistics.wordpress.com/",
    "lat": 36.1989,
    "lng": -115.1175,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Limon, CO Spur Track",
@@ -26678,10 +26220,7 @@
    "website": "https://lincolntransloadpro.com/",
    "lat": 40.150678,
    "lng": -89.370273,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Lineage",
@@ -26758,10 +26297,7 @@
    "website": "https://www.onelineage.eu/en/facilities/lafayette",
    "lat": 40.416702,
    "lng": -86.875287,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Lineage Logistics",
@@ -26906,10 +26442,7 @@
    "website": "https://linnwest.com/rail-transloading-services/",
    "lat": 44.547613,
    "lng": -123.110798,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Liquid Titan LLC",
@@ -27160,10 +26693,7 @@
    "storage": "unknown",
    "website": "https://www.lmcic.com/",
    "lat": 42.562482,
-   "lng": -77.696927,
-   "facility_type": "private-plant",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -77.696927
   },
   {
    "name": "Locke Farms",
@@ -27449,10 +26979,7 @@
    "storage": "unknown",
    "website": "https://logisticsoneny.com/",
    "lat": 43.067704,
-   "lng": -73.778142,
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -73.778142
   },
   {
    "name": "Logistics Park Cedar Rapids",
@@ -27490,10 +27017,7 @@
    "website": "https://lsid.com/",
    "lat": 29.760427,
    "lng": -95.369803,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Long Island City Rail Terminal",
@@ -27533,9 +27057,7 @@
    "commodities_source": "web-extracted 2026-08-20",
    "commodity_categories": [
     "Agriculture"
-   ],
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Louisiana & Delta Railroad Schriever Transload Facility",
@@ -27684,10 +27206,7 @@
    "website": "https://www.louisvilleseventh.com/",
    "lat": 38.2527,
    "lng": -85.7585,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Loup Logistics",
@@ -28170,9 +27689,7 @@
    "storage": "unknown",
    "website": "https://www.lynchlogistics.com/",
    "lat": 44.0979,
-   "lng": -70.2312,
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -70.2312
   },
   {
    "name": "Lyons &Sons",
@@ -28202,10 +27719,7 @@
     "Machinery & Dimensional",
     "Building Materials"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "M & M Lime Railroad Transload",
@@ -28225,9 +27739,7 @@
    "website": "https://mmlime.com/",
    "lat": 40.837987,
    "lng": -79.635032,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "M&P Reload",
@@ -28248,10 +27760,7 @@
    "website": "https://www.mpreload.com/index.html",
    "lat": 44.056848,
    "lng": -123.119019,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Macmillan-Piper Inc",
@@ -28308,10 +27817,7 @@
    "website": "https://www.americascentralport.com/",
    "lat": 38.686272,
    "lng": -90.101796,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Madison Railroad (RSI Logistics)",
@@ -28436,10 +27942,7 @@
     "Agriculture",
     "Building Materials"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Maine International Cold Storage Facility",
@@ -28463,10 +27966,7 @@
    "website": "https://coldstoragemaine.com/",
    "lat": 43.633157,
    "lng": -70.185305,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Mallory Alexander International",
@@ -28495,9 +27995,7 @@
     "Building Materials",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Manfredi Cold Storage",
@@ -28519,10 +28017,7 @@
    "website": "https://www.manfredicoldstorage.com/",
    "lat": 39.831997,
    "lng": -75.755702,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Manly Terminal",
@@ -28546,9 +28041,7 @@
    "website": "https://www.manlyterminal.com/",
    "lat": 43.288254,
    "lng": -93.200815,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Mansfield Railport",
@@ -29053,10 +28546,7 @@
    "website": "https://www.e-mrie.com/",
    "lat": 40.469019,
    "lng": -80.063328,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "McLendon Enterprises",
@@ -29125,10 +28615,7 @@
    "website": "https://meadorwarehouse.com/",
    "lat": 30.695366,
    "lng": -88.039891,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Medford Team Track",
@@ -29372,9 +28859,7 @@
    "website": "https://www.metroports.com/",
    "lat": 33.77005,
    "lng": -118.193739,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Metro West Transload",
@@ -29593,10 +29078,7 @@
    "storage": "unknown",
    "website": "https://www.michag.com/contact/middleton/",
    "lat": null,
-   "lng": null,
-   "facility_type": "private-plant",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": null
   },
   {
    "name": "Michigan Marine Terminal",
@@ -29618,9 +29100,7 @@
    "website": "https://www.mmtandff.com/",
    "lat": 42.274346,
    "lng": -83.124162,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Michigan Rail and Storage",
@@ -29660,9 +29140,7 @@
    "website": "https://mtwi-michigan.com/",
    "lat": 42.890317,
    "lng": -85.706733,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Michigan Timber & Truss Rail Reload",
@@ -29793,9 +29271,7 @@
    "website": "https://midatlanticrailservices.com/services/",
    "lat": null,
    "lng": null,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Mid-Atlantic Transloading Inc",
@@ -29863,9 +29339,7 @@
    "website": "https://serodinoinc.com/mid-south-terminals/",
    "lat": 35.0456,
    "lng": -85.3097,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Mid-States Packaging",
@@ -29887,9 +29361,7 @@
    "website": "https://www.mspack.com",
    "lat": 42.2626,
    "lng": -71.8023,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Mid-States Packaging",
@@ -30007,9 +29479,7 @@
    "commodities_source": "web-extracted 2026-08-20",
    "commodity_categories": [
     "Liquid Bulk"
-   ],
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Midwest Bulk Transload",
@@ -30195,9 +29665,7 @@
     "Agriculture",
     "Building Materials"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Midwest Warehousing LLC",
@@ -30214,9 +29682,7 @@
    "storage": "unknown",
    "website": "https://www.midwestwarehousing.net/",
    "lat": 41.611145,
-   "lng": -86.715836,
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -86.715836
   },
   {
    "name": "Milano Railway Logistics Services",
@@ -30259,9 +29725,7 @@
     "Forest Products",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Millard Maritime",
@@ -30342,10 +29806,7 @@
     "Metals",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Milwaukee Bulk Terminal",
@@ -30419,9 +29880,7 @@
    "storage": "unknown",
    "website": "https://amsrail.com/",
    "lat": null,
-   "lng": null,
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": null
   },
   {
    "name": "Mississippi Export Railroad",
@@ -30496,9 +29955,7 @@
    "website": "https://www.motiverail.com/",
    "lat": 39.796079,
    "lng": -93.549957,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Mitchel Enterprises Transloading",
@@ -30520,10 +29977,7 @@
    "website": "https://www.mitchelenterprises.com/Transloading/1",
    "lat": 40.743479,
    "lng": -85.172111,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Mobilex, LLC",
@@ -30604,9 +30058,7 @@
     "Metals",
     "Agriculture"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Mon River Industrial Group, LLC",
@@ -31028,9 +30480,7 @@
    "website": "https://mountaintraxrail.com/",
    "lat": 40.348669,
    "lng": -104.706108,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "MPR Supply Chain",
@@ -31116,10 +30566,7 @@
    "commodity_categories": [
     "Dry Bulk",
     "Machinery & Dimensional"
-   ],
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Murphy Logistics Company",
@@ -31223,10 +30670,7 @@
    "website": "https://murrayswarehousing.com/",
    "lat": 41.5236,
    "lng": -90.5776,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "MVT Warehousing",
@@ -31405,10 +30849,7 @@
    "website": "https://www.natchitochesparishport.com/",
    "lat": 31.897965,
    "lng": -93.116367,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Natural Minerals",
@@ -31447,9 +30888,7 @@
    "website": "https://www.nbmrailways.com/",
    "lat": 47.167047,
    "lng": -67.948881,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "NEBCO Intermodal",
@@ -31573,10 +31012,7 @@
    "website": "https://www.nelsonpackagingco.com/",
    "lat": 40.742551,
    "lng": -84.105225,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "NEPW Logistics",
@@ -31825,9 +31261,7 @@
    "website": "https://www.nhnorthcoast.com/",
    "lat": 43.737249,
    "lng": -71.150349,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "New Hampton Transfer and Storage",
@@ -31849,9 +31283,7 @@
    "website": "https://nhwarehouse.com/",
    "lat": 43.056219,
    "lng": -92.314725,
-   "commodities_source": "web-extracted 2026-08-20",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "New Hope Railroad (New Hope & Ivyland)",
@@ -31917,9 +31349,7 @@
     "Aggregates",
     "Agriculture"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "New Mexico Transloading",
@@ -32021,9 +31451,7 @@
    "website": "https://portnola.com/info/news-media/press-releases/new-orleans-public-belt-railroad-and-heniff-transportation-systems-llc-celebrate-new-3-million-transloading-industrial-park-in-new-orleans-east",
    "lat": 29.9511,
    "lng": -90.0715,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "New York & Atlantic Railway",
@@ -32121,9 +31549,7 @@
    "commodity_categories": [
     "Forest Products"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Newport News Marine Terminal",
@@ -32220,9 +31646,7 @@
    "lng": -76.287493,
    "commodity_categories": [
     "Liquid Bulk"
-   ],
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Nicholas Enterprise",
@@ -32392,9 +31816,7 @@
    "website": "https://www.rgpc.com/new-orleans-gulf-coast",
    "lat": 29.858697,
    "lng": -90.00329,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "NOPB Transloading Industrial Park",
@@ -32421,9 +31843,7 @@
    "website": "https://railnola.com/",
    "lat": 29.9511,
    "lng": -90.0715,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Nor-Am Cold Storage",
@@ -32443,10 +31863,7 @@
    "lng": -94.821143,
    "commodity_categories": [
     "Agriculture"
-   ],
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "NORAG Hereford Transload",
@@ -32522,10 +31939,7 @@
    "website": "https://www.noramcochicago.com/",
    "lat": 41.667328,
    "lng": -87.984411,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Nordica Warehouse",
@@ -34055,10 +33469,7 @@
    "website": "https://www.northcoastlogistics.com/",
    "lat": 41.404309,
    "lng": -81.820342,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "North Mason Fiber",
@@ -34312,9 +33723,7 @@
    "website": "https://nortonvillerail.org/",
    "lat": 39.704697,
    "lng": -111.83335,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Nova Mud",
@@ -34397,9 +33806,7 @@
    "storage": "unknown",
    "website": "https://www.baileyfeedmill.com",
    "lat": 35.539726,
-   "lng": -78.291735,
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -78.291735
   },
   {
    "name": "NSG Logistics Cleburne Transload",
@@ -34490,9 +33897,7 @@
    "storage": "unknown",
    "website": "https://nutriensolutions.com/content/nutrienagsolutions/us/en/find-location.html",
    "lat": 39.742678,
-   "lng": -122.010946,
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -122.010946
   },
   {
    "name": "NuWeld, Inc.",
@@ -34517,9 +33922,7 @@
     "Forest Products",
     "Metals"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Nwa LLC",
@@ -34769,9 +34172,7 @@
    "storage": "unknown",
    "website": "https://odysseyrailcar.com/",
    "lat": 37.762798,
-   "lng": -89.084481,
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -89.084481
   },
   {
    "name": "Ohio Commerce Center Transload",
@@ -34797,10 +34198,7 @@
     "Metals",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Oklahoma Central Rail Park",
@@ -34897,10 +34295,7 @@
    "lng": -73.12244,
    "commodity_categories": [
     "Agriculture"
-   ],
-   "facility_type": "private-plant",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Omaha Track",
@@ -34992,9 +34387,7 @@
    "website": "https://www.omnibulkservices.com/",
    "lat": 26.745114,
    "lng": -80.127038,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Omni Transloading and Logistics",
@@ -35665,9 +35058,7 @@
    "commodity_categories": [
     "Metals"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "P&H Warehouse, INC",
@@ -35810,9 +35201,7 @@
    "website": "https://www.pacific-steel.com",
    "lat": 33.728116,
    "lng": -87.081292,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Pacific Terminals Ltd",
@@ -36161,10 +35550,7 @@
    "website": "https://parisbrothers.com/",
    "lat": 39.099727,
    "lng": -94.578567,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Paris Foods Corporation",
@@ -36184,9 +35570,7 @@
    "website": "http://www.parisfoods.com/",
    "lat": 38.917349,
    "lng": -75.503892,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Park City Diesel Transloader",
@@ -36226,9 +35610,7 @@
    "lng": -88.933746,
    "commodity_categories": [
     "Liquid Bulk"
-   ],
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Parker Towing",
@@ -36457,9 +35839,7 @@
    "website": "https://pattisoncompany.com/",
    "lat": 43.041618,
    "lng": -91.135408,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Patton Warehousing",
@@ -36488,10 +35868,7 @@
     "Agriculture",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Paulsboro Marine Terminal",
@@ -36644,10 +36021,7 @@
    "lng": -77.93075,
    "commodity_categories": [
     "Agriculture"
-   ],
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "PCC Logistics",
@@ -36706,10 +36080,7 @@
    "website": "https://pdmcompany.com/warehousing/railcar_cross_dock_services/",
    "lat": 42.049257,
    "lng": -93.872526,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Peachey Rail Works",
@@ -36915,10 +36286,7 @@
    "website": "https://railenterprisegroup.com/",
    "lat": 39.937592,
    "lng": -77.661103,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Penny Newman Grain",
@@ -36941,9 +36309,7 @@
    "website": "https://penny-newman.com/",
    "lat": 37.957702,
    "lng": -121.29078,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Peoples Cartage",
@@ -37011,9 +36377,7 @@
    "lng": -102.228928,
    "commodity_categories": [
     "Liquid Bulk"
-   ],
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Phillips Station",
@@ -37057,9 +36421,7 @@
    "website": "https://phoenixrail.com/",
    "lat": 40.326132,
    "lng": -78.919139,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Pickens Railway Company",
@@ -37150,9 +36512,7 @@
    "website": "https://www.peterson.ag/about-us/pingree-transload/",
    "lat": 47.163823,
    "lng": -98.908563,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Pinnacle Machine Works",
@@ -37176,10 +36536,7 @@
     "Metals",
     "Building Materials"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Pinney Dock Terminal",
@@ -37270,10 +36627,7 @@
    "storage": "unknown",
    "website": "https://www.piperlogistics.com/our-locations/",
    "lat": 39.7684,
-   "lng": -86.1581,
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -86.1581
   },
   {
    "name": "Pittsburgh & Conneaut Dock Company",
@@ -38299,10 +37653,7 @@
     "Metals",
     "Building Materials"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Port Cargo Service",
@@ -38363,10 +37714,7 @@
    "website": "https://thejudgeorg.com/what-we-do/",
    "lat": 40.662495,
    "lng": -74.110201,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Port Fisher Terminals",
@@ -38393,9 +37741,7 @@
     "Metals",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Port Freeport Railyard",
@@ -38449,10 +37795,7 @@
     "Liquid Bulk",
     "Agriculture",
     "Machinery & Dimensional"
-   ],
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Port Jersey Logistics",
@@ -38478,10 +37821,7 @@
     "Forest Products",
     "Agriculture"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Port Manatee Railroad Transload Facility",
@@ -38535,10 +37875,7 @@
     "Metals",
     "Building Materials",
     "Machinery & Dimensional"
-   ],
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Port of Albany-Rensselaer",
@@ -38559,10 +37896,7 @@
    "website": "https://www.portofalbany.us/",
    "lat": 42.6526,
    "lng": -73.7562,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Port of Beaumont",
@@ -38656,10 +37990,7 @@
     "Metals",
     "Agriculture",
     "Machinery & Dimensional"
-   ],
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Port of Chehalis Grain Terminal & Transload Facility",
@@ -38681,9 +38012,7 @@
    "website": "https://portofchehalis.com/swwagp-faqs/",
    "lat": 46.66253,
    "lng": -122.96402,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Port of Cleveland",
@@ -38703,9 +38032,7 @@
    "website": "https://www.portofcleveland.com/transloading/",
    "lat": 41.4993,
    "lng": -81.6944,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Port of Florence",
@@ -38722,9 +38049,7 @@
    "storage": "unknown",
    "website": "http://www.portofflorence.org/",
    "lat": 34.82981,
-   "lng": -87.662202,
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -87.662202
   },
   {
    "name": "Port of Grays Harbor Terminal 4",
@@ -38748,10 +38073,7 @@
    "website": "https://www.portofgraysharbor.com/terminal-info",
    "lat": 46.975205,
    "lng": -123.811373,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Port of Greenville",
@@ -38807,10 +38129,7 @@
     "Agriculture",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Port of Hueneme Auto/Ro-Ro Terminal",
@@ -38885,10 +38204,7 @@
    "website": "https://portlc.com/our-business/marine/",
    "lat": 30.19902,
    "lng": -93.210835,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Port of Leetsdale",
@@ -38991,9 +38307,7 @@
    "website": "https://www.portoflouisville.com/",
    "lat": 38.2527,
    "lng": -85.7585,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Port of Manitowoc Transload and Warehousing Terminal",
@@ -39094,10 +38408,7 @@
    "website": "https://ncports.com/port-facilities/port-of-morehead-city/",
    "lat": 34.727891,
    "lng": -76.739088,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Port of Morgan City",
@@ -39143,10 +38454,7 @@
    "lng": -119.692793,
    "commodity_categories": [
     "Agriculture"
-   ],
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Port of Nenana",
@@ -39242,10 +38550,7 @@
     "Metals",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Port Of Tucson",
@@ -39335,10 +38640,7 @@
    "lng": -77.9447,
    "commodity_categories": [
     "Agriculture"
-   ],
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Port Priority Express (The Triangle Group)",
@@ -39355,10 +38657,7 @@
    "storage": "unknown",
    "website": "https://www.thetrianglegroup.com/",
    "lat": null,
-   "lng": null,
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": null
   },
   {
    "name": "Porter Logistics",
@@ -39448,10 +38747,7 @@
    "commodity_categories": [
     "Dry Bulk",
     "Forest Products"
-   ],
-   "facility_type": "private-plant",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Pottstown NS TBT",
@@ -39506,10 +38802,7 @@
    "website": "https://www.prairiesandandgravel.com/",
    "lat": 43.041618,
    "lng": -91.135408,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Prairie Transportation",
@@ -39533,9 +38826,7 @@
    "website": "https://prairietrans.com/",
    "lat": 40.572482,
    "lng": -79.753051,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Precision Components Inc. ***Up Purchased**",
@@ -39785,9 +39076,7 @@
    "website": "https://sherwoodlumber.com/locations/",
    "lat": null,
    "lng": null,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Prineville Freight Depot",
@@ -39837,9 +39126,7 @@
    "website": "https://www.prmtrucking.com/",
    "lat": 41.795234,
    "lng": -85.650406,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Pro Trade International Transfer Services",
@@ -39961,10 +39248,7 @@
    "website": "http://prontodist.com/",
    "lat": 45.515232,
    "lng": -122.678385,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Pvs Transportation",
@@ -40016,9 +39300,7 @@
    "website": "https://www.lhtterminals.com/",
    "lat": 40.4406,
    "lng": -79.9959,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "QSL America",
@@ -40173,10 +39455,7 @@
    "website": "https://qdislc.com/locations/salt-lake-city/",
    "lat": 40.7608,
    "lng": -111.891,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Quality Transload Inc",
@@ -40522,10 +39801,7 @@
    "website": "https://www.rgreload.com/",
    "lat": 39.1857,
    "lng": -78.1633,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "R.J. Corman",
@@ -40933,9 +40209,7 @@
    "website": "https://railtransfer.com/",
    "lat": 44.953703,
    "lng": -93.089958,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Railco Coal Terminal",
@@ -41041,9 +40315,7 @@
    "website": "https://www.rrrllc.net/",
    "lat": 30.894436,
    "lng": -87.791306,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "RailSync Transload Facility",
@@ -41253,9 +40525,7 @@
     "Dry Bulk",
     "Liquid Bulk",
     "Machinery & Dimensional"
-   ],
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Rcp Transit, Inc.",
@@ -41494,9 +40764,7 @@
     "Metals",
     "Agriculture"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Repauno Port & Rail Terminal",
@@ -41518,9 +40786,7 @@
    "website": "https://www.repauno.com/",
    "lat": 39.82454,
    "lng": -75.278082,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "ReSource Waste Services-Charter Environmental Lawrence Transload",
@@ -41537,9 +40803,7 @@
    "storage": "unknown",
    "website": "https://resourcewasteservices.com/",
    "lat": 42.700273,
-   "lng": -71.161357,
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -71.161357
   },
   {
    "name": "Resources Warehouse",
@@ -41609,10 +40873,7 @@
     "Forest Products",
     "Metals"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Richmond Hill Team Track",
@@ -41671,9 +40932,7 @@
    "website": "http://www.rivermaterialsinc.com/",
    "lat": 40.341877,
    "lng": -79.845007,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "River Point LLC",
@@ -41743,10 +41002,7 @@
    "website": "https://www.riversedgeterminals.com/",
    "lat": 38.701436,
    "lng": -90.14872,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "RiverLift Industries",
@@ -41826,9 +41082,7 @@
     "Building Materials",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Riverside & Pickering Marine Terminal",
@@ -42429,10 +41683,7 @@
    "website": "https://robertsonbonded.com/",
    "lat": 33.5779,
    "lng": -101.8552,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Robinson Terminal Warehouse Coroporation",
@@ -42474,9 +41725,7 @@
    "storage": "unknown",
    "website": "https://rochesteranderie.com/services/transload/",
    "lat": 41.060392,
-   "lng": -86.198313,
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -86.198313
   },
   {
    "name": "Rock & Rail",
@@ -42493,9 +41742,7 @@
    "storage": "unknown",
    "website": "https://rockandrail.com/",
    "lat": 40.307248,
-   "lng": -104.911205,
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -104.911205
   },
   {
    "name": "Rock Island River Terminal Corporation",
@@ -42731,10 +41978,7 @@
     "Dry Bulk",
     "Liquid Bulk",
     "Machinery & Dimensional"
-   ],
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "RRVW Breckenridge Crossdock and Transload Tracks",
@@ -43365,9 +42609,7 @@
    "website": "https://spflogistics.com/",
    "lat": 33.785794,
    "lng": -118.263015,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Sandersville Railroad Bulk Transfer Facility",
@@ -43459,10 +42701,7 @@
    "website": "https://www.yandellcompanies.com/",
    "lat": 38.072733,
    "lng": -122.155169,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Santa Maria Valley Railroad Osburn Railyard",
@@ -45010,10 +44249,7 @@
     "Forest Products",
     "Metals"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Sea Pac Transport Services, LLC",
@@ -45175,9 +44411,7 @@
    "website": "https://seaviewrr.com/",
    "lat": 41.571527,
    "lng": -71.449907,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Seaway Bulk Services",
@@ -45225,10 +44459,7 @@
    "website": "https://securitybonded.com/",
    "lat": 35.7796,
    "lng": -78.6382,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Seminole Gulf Railway Arcadia Transload",
@@ -45355,9 +44586,7 @@
    "website": "https://senergyterminal.co/",
    "lat": 43.30313,
    "lng": -96.585577,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Separation and Recovery Systems - SRS@SMS Rail Depot",
@@ -45435,9 +44664,7 @@
    "lng": -85.846071,
    "commodity_categories": [
     "Agriculture"
-   ],
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Seven Rivers Intermodal Terminal LLC",
@@ -45543,10 +44770,7 @@
    "website": "https://shaverreload.com/",
    "lat": 35.785493,
    "lng": -80.872962,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Shelburne Transload Facility",
@@ -45670,10 +44894,7 @@
    "website": "https://www.shipit.com/transloading-warehouse",
    "lat": 34.019394,
    "lng": -118.410825,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Shippers Warehouse of Georgia",
@@ -45727,9 +44948,7 @@
     "Building Materials",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Shipyard River Terminal-Kinder Morgan",
@@ -45838,9 +45057,7 @@
    "website": "https://spwg.com/",
    "lat": 37.639097,
    "lng": -120.996878,
-   "commodities_source": "web-extracted 2026-08-20",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Silver Spring Shores Lumber Transload",
@@ -45912,9 +45129,7 @@
    "lng": -75.326232,
    "commodity_categories": [
     "Liquid Bulk"
-   ],
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Sjvr Choice Terminal",
@@ -46023,10 +45238,7 @@
    "storage": "unknown",
    "website": "https://www.smartwarehousing.com/warehouses-contacts",
    "lat": 34.880512,
-   "lng": -92.13059,
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -92.13059
   },
   {
    "name": "Smith Transportation",
@@ -46049,9 +45261,7 @@
    "commodity_categories": [
     "Forest Products"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "SMS Rail Lines (SMS Rail Service, Inc.) - Pureland Industrial Park",
@@ -46166,9 +45376,7 @@
    "website": "https://www.smtbulk.com/",
    "lat": 32.124998,
    "lng": -81.308387,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "So-Pak-Co",
@@ -46193,9 +45401,7 @@
     "Forest Products",
     "Metals"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Somerset NS TBT",
@@ -46358,10 +45564,7 @@
    "website": "https://mpa.maryland.gov/Pages/south-locust-point.aspx",
    "lat": 39.2904,
    "lng": -76.6122,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "South Point Terminal / South Point & Ohio Railroad",
@@ -46418,10 +45621,7 @@
    "commodity_categories": [
     "Metals"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Southwestern Railroad, LLC",
@@ -46689,10 +45889,7 @@
    "website": "https://www.spragueenergy.com/materials-handling/",
    "lat": 44.474953,
    "lng": -68.915604,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Springfield Underground Inc",
@@ -46732,9 +45929,7 @@
    "lng": -71.054649,
    "commodity_categories": [
     "Machinery & Dimensional"
-   ],
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "SSA Marine Blount Island Breakbulk Terminal",
@@ -46821,9 +46016,7 @@
    "commodity_categories": [
     "Aggregates"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "St. Marys Railway West Transload Facility",
@@ -46849,9 +46042,7 @@
     "Plastics",
     "Agriculture"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Stagecoach Cartage & Distribution",
@@ -46932,9 +46123,7 @@
    "website": "https://standardironusa.com/",
    "lat": 37.141276,
    "lng": -94.467627,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Standlee",
@@ -46954,9 +46143,7 @@
    "lng": -83.278833,
    "commodity_categories": [
     "Agriculture"
-   ],
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Steel Warehouse",
@@ -47012,10 +46199,7 @@
     "Agriculture",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Sterling Equipment Quincy Marine Yard",
@@ -47297,9 +46481,7 @@
    "lng": -102.60347,
    "commodity_categories": [
     "Agriculture"
-   ],
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Suministros Industriales Potosinos Sa De Cv",
@@ -47361,9 +46543,7 @@
    "website": "https://sunlandlogisticssolutions.com/locations/north-charleston-sc/",
    "lat": 32.85462,
    "lng": -79.97481,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Sunoco LP Baltimore Terminal",
@@ -47467,10 +46647,7 @@
    "website": "https://sunsetroutetransload.com/",
    "lat": 32.906895,
    "lng": -111.763503,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Superior Carrier",
@@ -48167,10 +47344,7 @@
    "website": "https://agsourceusa.com",
    "lat": 40.86147,
    "lng": -76.786695,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Sweetener Supply",
@@ -48216,9 +47390,7 @@
    "website": "https://www.ingredientsplus.com/",
    "lat": 42.836761,
    "lng": -77.703154,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Sweetwater Logistics Center",
@@ -48247,9 +47419,7 @@
     "Forest Products",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "SWP S Greensburg",
@@ -48297,10 +47467,7 @@
    "website": "https://sylvite.ca/agriculture/retail-locations/akron-ohio/",
    "lat": 41.080456,
    "lng": -81.521429,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "T & J Marketing",
@@ -48320,9 +47487,7 @@
    "website": "https://www.tjmarketingok.com/",
    "lat": 35.712784,
    "lng": -96.836198,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Tacoma Transload",
@@ -48370,9 +47535,7 @@
     "Metals",
     "Agriculture"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Tanco Clark Maritime",
@@ -48398,10 +47561,7 @@
    "website": "https://www.wolflakeinc.com/",
    "lat": 38.27757,
    "lng": -85.737184,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Tank Truck Transport Inc",
@@ -48442,10 +47602,7 @@
    "commodities_source": "web-extracted 2026-08-20",
    "commodity_categories": [
     "Liquid Bulk"
-   ],
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "TCI (Transportation Consultants, Inc.)",
@@ -48482,10 +47639,7 @@
    "website": "https://www.tcipackaging.com/",
    "lat": 29.9511,
    "lng": -90.0715,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "TCWR Montevideo Transload",
@@ -48568,10 +47722,7 @@
     "Forest Products",
     "Metals"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Temple & Central Railroad",
@@ -48712,10 +47863,7 @@
    "storage": "unknown",
    "website": "https://www.teslogistics.com/",
    "lat": 35.596431,
-   "lng": -77.375256,
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -77.375256
   },
   {
    "name": "TexAmericas - Spring Creek Enterprises",
@@ -48738,9 +47886,7 @@
    "website": "https://www.texamericascenter.com/logistics-services/transload-services/",
    "lat": 33.46111,
    "lng": -94.419096,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Texas and Eastern Railroad",
@@ -48835,9 +47981,7 @@
    "website": "https://texpar.com/",
    "lat": 30.9038,
    "lng": -84.5755,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "TGS Cedar Port Railroad Transload Terminal",
@@ -48865,9 +48009,7 @@
     "Liquid Bulk",
     "Plastics",
     "Metals"
-   ],
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Thatcher Company Inc",
@@ -49199,9 +48341,7 @@
    "website": "https://www.tidewater.com/",
    "lat": 46.23958,
    "lng": -119.10057,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Tidewater Transit Co",
@@ -49558,9 +48698,7 @@
    "lng": -110.97471,
    "commodity_categories": [
     "Liquid Bulk"
-   ],
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Titan Terminal & Transport",
@@ -49608,9 +48746,7 @@
    "storage": "unknown",
    "website": "https://tlcrailservices.com/",
    "lat": 34.066286,
-   "lng": -95.00701,
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -95.00701
   },
   {
    "name": "Tld Ramp",
@@ -49696,9 +48832,7 @@
     "Aggregates",
     "Agriculture"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "TNW Port of Victoria Transload",
@@ -49767,9 +48901,7 @@
    "commodity_categories": [
     "Forest Products"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Top Notch Service Fairbanks Auto Terminal",
@@ -51790,9 +50922,7 @@
    "website": "https://transloadsolutionsllc.com/",
    "lat": 40.004606,
    "lng": -80.730567,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Transload Solutions LLC",
@@ -51843,9 +50973,7 @@
    "website": "https://transloadx.com/",
    "lat": 42.307905,
    "lng": -71.436196,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "TransMontaigne Greensboro-SET Terminal",
@@ -51999,9 +51127,7 @@
    "website": "https://www.transport360.org/blank",
    "lat": 39.75946,
    "lng": -94.821143,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Transportation Partners & Logistic LLC",
@@ -52124,9 +51250,7 @@
     "Metals",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Transrail North America",
@@ -52166,9 +51290,7 @@
    "commodity_categories": [
     "Forest Products"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Tri-State Brick of Connecticut Inc.",
@@ -52188,9 +51310,7 @@
    "lng": -72.520157,
    "commodity_categories": [
     "Building Materials"
-   ],
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Triangle Warehouse",
@@ -52213,10 +51333,7 @@
    "commodity_categories": [
     "Forest Products"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Tricor Refining",
@@ -52237,9 +51354,7 @@
    "website": "https://www.tricorrefining.com/",
    "lat": 35.42926,
    "lng": -119.030576,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Trimac Inc",
@@ -52392,10 +51507,7 @@
    "storage": "unknown",
    "website": "https://www.tristatewarehousing.com/fort-wayne-in",
    "lat": 41.079273,
-   "lng": -85.139351,
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -85.139351
   },
   {
    "name": "Trojan Recycling Rail Transfer Station",
@@ -52704,10 +51816,7 @@
     "Metals",
     "Agriculture",
     "Building Materials"
-   ],
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Tunkhannock Transload",
@@ -52727,9 +51836,7 @@
    "website": "https://www.rbmnrr.com/tunk-transload",
    "lat": 41.541084,
    "lng": -75.949058,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Tuscarora Grain Company Transload",
@@ -52752,10 +51859,7 @@
    "website": "https://www.tgcgrain.com/",
    "lat": 41.002717,
    "lng": -76.45658,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Twin Cities & Western Railroad",
@@ -52789,9 +51893,7 @@
    "storage": "unknown",
    "website": "https://tcscy.com/",
    "lat": 31.857778,
-   "lng": -106.639167,
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -106.639167
   },
   {
    "name": "Twin City Reload",
@@ -52993,10 +52095,7 @@
    "website": "https://www.twinportswarehouse.com/",
    "lat": 46.7208,
    "lng": -92.1041,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Twin State Sand and Gravel",
@@ -53069,10 +52168,7 @@
    "commodity_categories": [
     "Forest Products"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Tyree",
@@ -53199,9 +52295,7 @@
     "Dry Bulk",
     "Liquid Bulk",
     "Machinery & Dimensional"
-   ],
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Union Pacific Drake Street Automotive Facility",
@@ -53244,9 +52338,7 @@
    "website": "https://www.up.com/customers/premium/global4-transload/",
    "lat": 41.525031,
    "lng": -88.081725,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Union Railroad Duquesne Wharf",
@@ -53295,10 +52387,7 @@
     "Aggregates",
     "Forest Products"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "United Freezer & Storage Co.",
@@ -53318,10 +52407,7 @@
    "website": "https://unitedfreezer.com",
    "lat": 41.099095,
    "lng": -80.645902,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "United Motor Freight",
@@ -53338,10 +52424,7 @@
    "storage": "unknown",
    "website": "http://www.unitedmotorfreight.com/",
    "lat": 47.2529,
-   "lng": -122.4443,
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": -122.4443
   },
   {
    "name": "United States Cold Storage",
@@ -53470,10 +52553,7 @@
     "Agriculture",
     "Building Materials"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Univar Canada",
@@ -53580,10 +52660,7 @@
    "website": "https://www.universaltradesolutions.com/",
    "lat": 33.493596,
    "lng": -80.86688,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Upper Cape Regional Transfer Station",
@@ -53784,9 +52861,7 @@
    "lng": -111.891,
    "commodity_categories": [
     "Machinery & Dimensional"
-   ],
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "USD Group Richmond Terminal",
@@ -53812,9 +52887,7 @@
    "website": "https://usdg.com/",
    "lat": 37.5407,
    "lng": -77.436,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Utility Supply",
@@ -53863,10 +52936,7 @@
    "website": "https://vvandyke.com/",
    "lat": 47.179046,
    "lng": -122.291523,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Valley Distributing & Storage Co",
@@ -53893,9 +52963,7 @@
     "Metals",
     "Agriculture"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Van Wert Terminal LLC",
@@ -54055,9 +53123,7 @@
     "Agriculture",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Veal Farms Transload",
@@ -54357,10 +53423,7 @@
     "Building Materials",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Vermilion Valley Railroad",
@@ -54736,9 +53799,7 @@
     "Metals",
     "Building Materials"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Wagner Warehouse",
@@ -54763,10 +53824,7 @@
     "Plastics",
     "Forest Products"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Waite Park Team Track",
@@ -56416,10 +55474,7 @@
    "website": "https://www.waterfrontcoldstore.com/",
    "lat": 41.903324,
    "lng": -71.094987,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Waterfront Petroleum Dearborn Terminal",
@@ -56443,9 +55498,7 @@
    "website": "https://waterfrontpetroleum.com/",
    "lat": 42.313057,
    "lng": -83.211488,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Waterloo Railroad, LLC",
@@ -56482,9 +55535,7 @@
    "website": "https://watersonllc.com/",
    "lat": 41.823056,
    "lng": -71.418784,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Wayne Industries Incorporated",
@@ -56601,10 +55652,7 @@
    "website": "https://webbchemical.com/",
    "lat": 43.201921,
    "lng": -86.240963,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Weber Distribution Warehouses",
@@ -56653,10 +55701,7 @@
    "website": "https://www.weitransload.com/",
    "lat": 48.110482,
    "lng": -105.196887,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Weirton Frontier Crossing",
@@ -56687,10 +55732,7 @@
     "Agriculture",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Weirton Ice and Coal Supply Company",
@@ -56764,9 +55806,7 @@
    "website": "https://www.wellsvilleterminals.com/",
    "lat": 40.603924,
    "lng": -80.655745,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "West Coast Pipe Inspection",
@@ -56789,9 +55829,7 @@
    "commodity_categories": [
     "Metals"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "West Erie Short Line Transload Yard",
@@ -56812,9 +55850,7 @@
    "website": "https://resourcefulrail.com/west-erie-short-line-1",
    "lat": 42.116594,
    "lng": -80.073503,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "West Inman NS TBT",
@@ -56982,9 +56018,7 @@
     "Agriculture",
     "Building Materials",
     "Machinery & Dimensional"
-   ],
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Western New York & Pennsylvania Railroad",
@@ -57080,9 +56114,7 @@
     "Metals",
     "Building Materials"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "White River Warehouse",
@@ -57099,9 +56131,7 @@
    "storage": "unknown",
    "website": "https://www.whiteriverwarehouse.com/",
    "lat": null,
-   "lng": null,
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "lng": null
   },
   {
    "name": "Whites Hauling",
@@ -57323,9 +56353,7 @@
     "Liquid Bulk",
     "Aggregates"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Wilson and Associates",
@@ -57562,10 +56590,7 @@
     "Agriculture",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "World Transload & Logistics LLC",
@@ -57957,9 +56982,7 @@
    "website": "https://www.wyattbell.com/",
    "lat": 37.070892,
    "lng": -88.644477,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Wymore Transfer Co",
@@ -58013,9 +57036,7 @@
    "website": "https://www.wyconrr.com/",
    "lat": 41.916978,
    "lng": -104.295389,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Wyoming Millwork",
@@ -58039,9 +57060,7 @@
     "Forest Products",
     "Machinery & Dimensional"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Yadkin Valley Railroad Rural Hall Transload",
@@ -58096,10 +57115,7 @@
    "website": "https://www.yellowcreekport.com/",
    "lat": 34.807384,
    "lng": -88.19692,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Yellowstone Industrial Development",
@@ -58124,10 +57140,7 @@
     "Liquid Bulk",
     "Aggregates"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "Yenkin-majestic",
@@ -58153,9 +57166,7 @@
     "Plastics",
     "Liquid Bulk"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "York Rail Logistics",
@@ -58238,9 +57249,7 @@
     "Forest Products",
     "Liquid Bulk"
    ],
-   "commodities_source": "rebulk-category 2026-08-20",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "rebulk-category 2026-08-20"
   },
   {
    "name": "YS, Inc.",
@@ -58261,9 +57270,7 @@
    "commodity_categories": [
     "Dry Bulk",
     "Liquid Bulk"
-   ],
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20"
+   ]
   },
   {
    "name": "Zartman Contruction Inc.",
@@ -58310,10 +57317,7 @@
    "website": "https://www.umlauttransloading.com/",
    "lat": 37.208957,
    "lng": -93.292299,
-   "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
-   "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20"
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Houston Rail Park (Jaguar Transport)",
