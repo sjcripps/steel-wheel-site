@@ -668,6 +668,40 @@
     ]
   }
   </script>
+<script>
+  // ── SWL acquisition attribution ──────────────────────────────────────────
+  // A lead POST's HTTP Referer is always this tool page (same-origin XHR), so
+  // the server can never tell how the visitor ARRIVED. We capture the entry
+  // point here instead, once per session, and send it in the request body.
+  // Internal referrers are kept too: knowing WHICH of our pages feeds a tool
+  // is the whole question for the transload directory.
+  (function () {
+    var KEY = 'swl_attribution';
+    window.swlAttr = function () {
+      try {
+        var cached = sessionStorage.getItem(KEY);
+        if (cached) return JSON.parse(cached);
+      } catch (_) { /* private mode */ }
+      var ref = document.referrer || '';
+      var kind = 'direct';
+      if (ref) {
+        var host = '';
+        try { host = new URL(ref).hostname; } catch (_) {}
+        kind = /(^|\.)steelwheellogistics\.com$/.test(host) ? 'internal' : 'external';
+      }
+      var attr = {
+        landing_referrer: ref.slice(0, 500),
+        referrer_kind: kind,
+        entry_query: (location.search || '').slice(0, 300)
+      };
+      try { sessionStorage.setItem(KEY, JSON.stringify(attr)); } catch (_) {}
+      return attr;
+    };
+    // Freeze it at first load so later internal navigation cannot overwrite
+    // the original entry point.
+    window.swlAttr();
+  })();
+</script>
 </head>
 <body>
 
@@ -1396,7 +1430,7 @@
         const res = await fetch(LEAD_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(leadBody),
+          body: JSON.stringify(Object.assign({}, leadBody, swlAttr())),
         });
         if (!res.ok) {
           const data = await res.json().catch(() => ({}));

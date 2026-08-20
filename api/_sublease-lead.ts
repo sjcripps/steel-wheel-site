@@ -133,6 +133,24 @@ async function sendTelegram(message: string): Promise<boolean> {
   }
 }
 
+// Renders the acquisition attribution as one short human-readable line.
+// 'external' is the interesting case -- that is a real off-site channel.
+function attributionLabel(kind: string, referrer: string, entryQuery: string): string {
+  const q = entryQuery ? ` ${entryQuery}` : '';
+  if (kind === 'external' && referrer) {
+    let host = referrer;
+    try { host = new URL(referrer).hostname || referrer; } catch { /* keep raw */ }
+    return `external: ${host}${q}`;
+  }
+  if (kind === 'internal' && referrer) {
+    let path = referrer;
+    try { path = new URL(referrer).pathname || referrer; } catch { /* keep raw */ }
+    return `internal: ${path}${q}`;
+  }
+  if (kind === 'direct') return `direct / no referrer${q}`;
+  return q ? `unknown${q}` : 'unknown (pre-instrumentation client)';
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -198,6 +216,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     ''
   );
   const userAgent = String(req.headers['user-agent'] || '').slice(0, 500);
+  // Acquisition attribution, captured CLIENT-side at page load. The HTTP
+  // Referer on this POST is always the tool page itself (same-origin XHR), so
+  // it can never identify the channel that produced the lead -- see
+  // referrer_kind for what the visitor actually arrived from.
+  const landingReferrer = String(body.landing_referrer ?? '').trim().slice(0, 500);
+  const referrerKind = String(body.referrer_kind ?? '').trim().slice(0, 20);
+  const entryQuery = String(body.entry_query ?? '').trim().slice(0, 300);
+  const attribution = attributionLabel(referrerKind, landingReferrer, entryQuery);
 
   const record = {
     ts: nowIsoUtc(),
@@ -214,6 +240,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     timeline: timeline || null,
     ip: clientIp,
     user_agent: userAgent,
+    landing_referrer: landingReferrer || null,
+    referrer_kind: referrerKind || null,
+    entry_query: entryQuery || null,
   };
 
   const message =
@@ -233,6 +262,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     ...(pricing ? [{ label: 'Pricing', value: pricing }] : []),
     ...(timeline ? [{ label: 'Timeline', value: timeline }] : []),
     { label: 'Submitted', value: nowCstShort() },
+    { label: 'Came from', value: attribution },
     { label: 'IP / UA', value: `${clientIp} / ${userAgent}` },
   ];
 
