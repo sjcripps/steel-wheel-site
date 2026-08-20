@@ -48,6 +48,8 @@ ap.add_argument("--all-states", dest="tier1_only", action="store_false")
 ap.add_argument("--follow-links", action="store_true",
                 help="also fetch up to 2 services/locations subpages per site")
 ap.add_argument("--out", default=None, help="results jsonl (default data/commodity-pilot.jsonl)")
+ap.add_argument("--all", action="store_true",
+                help="full run: every eligible facility, not a sample")
 a = ap.parse_args()
 if a.out:
     OUT = Path(a.out) if Path(a.out).is_absolute() else (DATA.parent / a.out)
@@ -87,9 +89,13 @@ for r in recs:
     pool.append(r)
 
 pool.sort(key=lambda r: (r.get("state") or "", r.get("name") or ""))
-step = max(1, len(pool) // a.limit)
-sample = pool[::step][: a.limit]
-print(f"eligible single-domain listed facilities: {len(pool)}  ->  sampling {len(sample)}")
+if a.all:
+    sample = pool
+    print(f"eligible single-domain listed facilities: {len(pool)}  ->  FULL RUN")
+else:
+    step = max(1, len(pool) // a.limit)
+    sample = pool[::step][: a.limit]
+    print(f"eligible single-domain listed facilities: {len(pool)}  ->  sampling {len(sample)}")
 
 # ── Fetch ───────────────────────────────────────────────────────────────────
 TAG = re.compile(r"<(script|style|noscript)[^>]*>.*?</\1>", re.S | re.I)

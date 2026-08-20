@@ -528,19 +528,20 @@
         <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
         <select id="tlCity" aria-label="Filter by city"><option value="">All cities (23)</option><option value="ardoch">Ardoch</option><option value="beulah">Beulah</option><option value="bismarck">Bismarck</option><option value="casselton">Casselton</option><option value="dickinson">Dickinson</option><option value="dore">Dore</option><option value="east fairview">East Fairview</option><option value="fargo">Fargo</option><option value="fordville">Fordville</option><option value="fryburg">Fryburg</option><option value="gascoyne">Gascoyne</option><option value="grand forks">Grand Forks</option><option value="lansford">Lansford</option><option value="minot">Minot</option><option value="new town">New Town</option><option value="northgate">Northgate</option><option value="palermo">Palermo</option><option value="pingree">Pingree</option><option value="plaza">Plaza</option><option value="ross">Ross</option><option value="tioga">Tioga</option><option value="trenton">Trenton</option><option value="williston">Williston</option></select>
         <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
-        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="auger">Auger</option><option value="bulk conveyor">Bulk Conveyor</option><option value="liquid pumps">Liquid Pumps</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="auger">Auger</option><option value="bulk conveyor">Bulk Conveyor</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
       </div>
       <div class="tl-filter-row tl-filter-toggles">
         <label><input type="checkbox" id="tlVerified"> Verified only (7)</label>
         <label><input type="checkbox" id="tlPhone"> Has phone (15)</label>
         <button type="button" id="tlReset">Reset</button>
         <span id="tlCount" class="tl-count"></span>
-      </div><p class="tl-sparse">Commodity detail is confirmed for 5 of 29 sites and capability detail for 3. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 10 of 29 sites and capability detail for 6. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
     </div>
       <div class="railroads-grid">
-      <div class="railroad-item tl-card" data-city="ardoch" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="holland ardoch transload facility ardoch   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ardoch" data-tier="listed" data-phone="1" data-comm="minerals" data-cap="" data-text="holland ardoch transload facility ardoch  minerals " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Holland Ardoch Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Ardoch, ND</div>
+        <div><strong>Commodities:</strong> Minerals</div>
         <div><strong>Phone:</strong> (708) 672-2300</div>
         <div><a href="https://www.hollandco.com/transloading/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
@@ -577,9 +578,10 @@
         <div><strong>Capabilities:</strong> Bulk Conveyor, Liquid Pumps, Scale</div>
         <div><a href="https://www.watcocompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="east fairview" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="bridger pipeline east fairview sand transloading facility east fairview   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="east fairview" data-tier="listed" data-phone="0" data-comm="petroleum products" data-cap="" data-text="bridger pipeline east fairview sand transloading facility east fairview  petroleum products " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Bridger Pipeline East Fairview Sand Transloading Facility</h3>
         <div style="color:#555;font-size:0.9em">East Fairview, ND</div>
+        <div><strong>Commodities:</strong> Petroleum Products</div>
         <div><a href="https://bridgerpipeline.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
       <div class="railroad-item tl-card" data-city="east fairview" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="watco dore transload terminal east fairview   " style="margin-bottom:14px">
@@ -649,9 +651,11 @@
         <div style="color:#555;font-size:0.9em">Minot, ND</div>
         <div><a href="https://www.railmodalgroup.com/minot-nd" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="new town" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="cicada new town terminal llc new town   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="new town" data-tier="listed" data-phone="0" data-comm="chemicals (liq)|frac sand|petroleum products" data-cap="liquid storage tanks" data-text="cicada new town terminal llc new town  chemicals (liq) frac sand petroleum products liquid storage tanks" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Cicada New Town Terminal LLC</h3>
         <div style="color:#555;font-size:0.9em">New Town, ND</div>
+        <div><strong>Commodities:</strong> Chemicals (Liq), Frac Sand, Petroleum Products</div>
+        <div><strong>Capabilities:</strong> Liquid Storage Tanks</div>
         <div><a href="https://www.cicadalogistics.co/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
       <div class="railroad-item tl-card" data-city="new town" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="wildcat minerals new town   " style="margin-bottom:14px">
@@ -669,16 +673,20 @@
         <div style="color:#555;font-size:0.9em">Palermo, ND</div>
         <div><a href="https://www.phillips66.com/midstream/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="pingree" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="pingree transload llc pingree rrvw  " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pingree" data-tier="listed" data-phone="1" data-comm="foods (dry)" data-cap="bulk conveyor|liquid storage tanks|sampling services|scale" data-text="pingree transload llc pingree rrvw foods (dry) bulk conveyor liquid storage tanks sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Pingree Transload LLC</h3>
         <div style="color:#555;font-size:0.9em">Pingree, ND</div>
+        <div><strong>Commodities:</strong> Foods (Dry)</div>
+        <div><strong>Capabilities:</strong> Bulk Conveyor, Liquid Storage Tanks, Sampling Services, Scale</div>
         <div><strong>Phone:</strong> (866) 481-7333</div>
         <div><a href="https://www.peterson.ag/about-us/pingree-transload/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>RRVW</div>
       </div>
-      <div class="railroad-item tl-card" data-city="plaza" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="dakota gold transfer plaza llc plaza   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="plaza" data-tier="listed" data-phone="1" data-comm="petroleum products" data-cap="liquid storage tanks" data-text="dakota gold transfer plaza llc plaza  petroleum products liquid storage tanks" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Dakota Gold Transfer Plaza LLC</h3>
         <div style="color:#555;font-size:0.9em">Plaza, ND</div>
+        <div><strong>Commodities:</strong> Petroleum Products</div>
+        <div><strong>Capabilities:</strong> Liquid Storage Tanks</div>
         <div><strong>Phone:</strong> (701) 509-6958</div>
         <div><a href="https://dakotagoldtransfer.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>

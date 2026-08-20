@@ -247,15 +247,15 @@
       <div class="tl-filter-row">
         <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
         <select id="tlCity" aria-label="Filter by city"><option value="">All cities (1)</option><option value="denver">Denver</option></select>
-        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="steel">Steel</option></select>
-        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="bulk conveyor">Bulk Conveyor</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="bulk conveyor">Bulk Conveyor</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option></select>
       </div>
       <div class="tl-filter-row tl-filter-toggles">
         <label><input type="checkbox" id="tlVerified"> Verified only (2)</label>
         <label><input type="checkbox" id="tlPhone"> Has phone (5)</label>
         <button type="button" id="tlReset">Reset</button>
         <span id="tlCount" class="tl-count"></span>
-      </div><p class="tl-sparse">Commodity detail is confirmed for 2 of 10 sites and capability detail for 2. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 3 of 10 sites and capability detail for 4. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
     </div>
       <div class="railroads-grid">
       <div class="railroad-item tl-card" data-city="denver" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="access 25 logistics park (omnitrax) denver omnitrax logistics park  " style="margin-bottom:14px">
@@ -269,9 +269,11 @@
         <div style="color:#555;font-size:0.9em">Denver, CO</div>
 
       </div>
-      <div class="railroad-item tl-card" data-city="denver" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="amicus chemical solutions denver   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="denver" data-tier="listed" data-phone="1" data-comm="chemicals (dry)|chemicals (liq)" data-cap="liquid storage tanks" data-text="amicus chemical solutions denver  chemicals (dry) chemicals (liq) liquid storage tanks" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Amicus Chemical Solutions</h3>
         <div style="color:#555;font-size:0.9em">Denver, CO</div>
+        <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq)</div>
+        <div><strong>Capabilities:</strong> Liquid Storage Tanks</div>
         <div><strong>Phone:</strong> (800) 768-5643</div>
         <div><a href="https://amicuscdp.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
@@ -296,9 +298,10 @@
         <div><strong>Phone:</strong> (303) 433-1300</div>
         <div><a href="https://www.transloadgroup.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="denver" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="rfmx corp denver   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="denver" data-tier="listed" data-phone="1" data-comm="" data-cap="scale" data-text="rfmx corp denver   scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">RFMX Corp</h3>
         <div style="color:#555;font-size:0.9em">Denver, CO</div>
+        <div><strong>Capabilities:</strong> Scale</div>
         <div><strong>Phone:</strong> (303) 853-0169</div>
         <div><a href="https://www.rfmx.net" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>

@@ -977,19 +977,21 @@
         <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
         <select id="tlCity" aria-label="Filter by city"><option value="">All cities (26)</option><option value="aberdeen">Aberdeen</option><option value="belfair">Belfair</option><option value="centralia">Centralia</option><option value="chehalis">Chehalis</option><option value="ferndale">Ferndale</option><option value="hoquiam">Hoquiam</option><option value="kent">Kent</option><option value="kettle falls">Kettle Falls</option><option value="longview">Longview</option><option value="mead">Mead</option><option value="medical lake">Medical Lake</option><option value="olympia">Olympia</option><option value="omak">Omak</option><option value="oroville">Oroville</option><option value="pasco">Pasco</option><option value="puyallup">Puyallup</option><option value="richland">Richland</option><option value="seattle">Seattle</option><option value="spokane">Spokane</option><option value="sumas">Sumas</option><option value="tacoma">Tacoma</option><option value="tenino">Tenino</option><option value="vancouver">Vancouver</option><option value="velox">Velox</option><option value="warden">Warden</option><option value="yakima">Yakima</option></select>
         <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="lumber">Lumber</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
-        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="auger">Auger</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="hot water heating">Hot Water Heating</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="auger">Auger</option><option value="blending meters">Blending Meters</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="hot water heating">Hot Water Heating</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
       </div>
       <div class="tl-filter-row tl-filter-toggles">
         <label><input type="checkbox" id="tlVerified"> Verified only (23)</label>
         <label><input type="checkbox" id="tlPhone"> Has phone (27)</label>
         <button type="button" id="tlReset">Reset</button>
         <span id="tlCount" class="tl-count"></span>
-      </div><p class="tl-sparse">Commodity detail is confirmed for 15 of 60 sites and capability detail for 10. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 21 of 60 sites and capability detail for 14. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
     </div>
       <div class="railroads-grid">
-      <div class="railroad-item tl-card" data-city="aberdeen" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="port of grays harbor terminal 4 aberdeen   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="aberdeen" data-tier="listed" data-phone="1" data-comm="petroleum products" data-cap="bulk conveyor|sampling services|scale" data-text="port of grays harbor terminal 4 aberdeen  petroleum products bulk conveyor sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of Grays Harbor Terminal 4</h3>
         <div style="color:#555;font-size:0.9em">Aberdeen, WA</div>
+        <div><strong>Commodities:</strong> Petroleum Products</div>
+        <div><strong>Capabilities:</strong> Bulk Conveyor, Sampling Services, Scale</div>
         <div><strong>Phone:</strong> (360) 533-9528</div>
         <div><a href="https://www.portofgraysharbor.com/terminal-info" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
@@ -1011,9 +1013,11 @@
         <div><strong>Commodities:</strong> Lumber, Steel</div>
         <div><a href="http://www.cascadewarehouse.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="chehalis" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="port of chehalis grain terminal &amp; transload facility chehalis   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chehalis" data-tier="listed" data-phone="1" data-comm="foods (dry)" data-cap="bulk conveyor" data-text="port of chehalis grain terminal &amp; transload facility chehalis  foods (dry) bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of Chehalis Grain Terminal &amp; Transload Facility</h3>
         <div style="color:#555;font-size:0.9em">Chehalis, WA</div>
+        <div><strong>Commodities:</strong> Foods (Dry)</div>
+        <div><strong>Capabilities:</strong> Bulk Conveyor</div>
         <div><strong>Phone:</strong> (360) 748-9365</div>
         <div><a href="https://portofchehalis.com/swwagp-faqs/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
@@ -1111,9 +1115,11 @@
         <div><strong>Phone:</strong> (509) 547-7761</div>
         <div><a href="https://www.google.com/maps/place/Mid+Columbia+Warehouse+Inc/@46.2168758,-119.0742485,3094m/data=!3m1!1e3!4m5!3m4!1s0x0:0xf5b169e490f904d2!8m2!3d46.2168461!4d-119.0742914" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="pasco" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="tidewater snake river terminal pasco   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="pasco" data-tier="listed" data-phone="1" data-comm="chemicals (dry)|chemicals (liq)|foods (dry)|lumber|petroleum products" data-cap="blending meters" data-text="tidewater snake river terminal pasco  chemicals (dry) chemicals (liq) foods (dry) lumber petroleum products blending meters" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tidewater Snake River Terminal</h3>
         <div style="color:#555;font-size:0.9em">Pasco, WA</div>
+        <div><strong>Commodities:</strong> Chemicals (Dry), Chemicals (Liq), Foods (Dry), Lumber, Petroleum Products</div>
+        <div><strong>Capabilities:</strong> Blending Meters</div>
         <div><strong>Phone:</strong> (360) 693-1491</div>
         <div><a href="https://www.tidewater.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
@@ -1122,9 +1128,10 @@
         <div style="color:#555;font-size:0.9em">Puyallup, WA</div>
 
       </div>
-      <div class="railroad-item tl-card" data-city="puyallup" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="v. van dyke, inc. transload yard puyallup   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="puyallup" data-tier="listed" data-phone="1" data-comm="steel" data-cap="" data-text="v. van dyke, inc. transload yard puyallup  steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">V. Van Dyke, Inc. Transload Yard</h3>
         <div style="color:#555;font-size:0.9em">Puyallup, WA</div>
+        <div><strong>Commodities:</strong> Steel</div>
         <div><strong>Phone:</strong> (253) 272-2222</div>
         <div><a href="https://vvandyke.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
@@ -1287,15 +1294,18 @@
         <div style="color:#555;font-size:0.9em">Tacoma, WA</div>
         <div><a href="https://www.walleniuswilhelmsen.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="tenino" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="rainier rail western junction transload tenino   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="tenino" data-tier="listed" data-phone="1" data-comm="chemicals (liq)" data-cap="" data-text="rainier rail western junction transload tenino  chemicals (liq) " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Rainier Rail Western Junction Transload</h3>
         <div style="color:#555;font-size:0.9em">Tenino, WA</div>
+        <div><strong>Commodities:</strong> Chemicals (Liq)</div>
         <div><strong>Phone:</strong> (360) 203-4442</div>
         <div><a href="https://rainierrail.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="vancouver" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="commodities plus, inc. vancouver   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="vancouver" data-tier="listed" data-phone="1" data-comm="foods (dry)" data-cap="blending meters|sampling services" data-text="commodities plus, inc. vancouver  foods (dry) blending meters sampling services" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Commodities Plus, Inc.</h3>
         <div style="color:#555;font-size:0.9em">Vancouver, WA</div>
+        <div><strong>Commodities:</strong> Foods (Dry)</div>
+        <div><strong>Capabilities:</strong> Blending Meters, Sampling Services</div>
         <div><strong>Phone:</strong> (360) 693-5249</div>
         <div><a href="https://commoditiesplus.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>

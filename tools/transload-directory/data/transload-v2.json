@@ -81,13 +81,19 @@
    "state": "TX",
    "tier": "listed",
    "source": "rebulk-directory (PTRA BNSF UP CPKC)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Chemicals (Liq)"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://225rail.com/",
    "lat": 29.69106,
-   "lng": -95.2091
+   "lng": -95.2091,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "4C Transloaders",
@@ -862,13 +868,18 @@
    "state": "OR",
    "tier": "listed",
    "source": "rebulk-directory (UP)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.a1invmang.com/",
    "lat": 45.917612,
-   "lng": -119.331979
+   "lng": -119.331979,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "A. Anastasio & Sons Trucking Rail Reload",
@@ -897,12 +908,15 @@
    "tier": "listed",
    "source": "rebulk-directory (CPKC)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://shipabdw.com/",
    "lat": 42.587526,
-   "lng": -87.879996
+   "lng": -87.879996,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Aberdeen & Rockfish Raeford Transload",
@@ -981,13 +995,16 @@
    "state": "MD",
    "tier": "listed",
    "source": "rebulk-directory (Tradepoint Rail (TPR) CSX NS)",
-   "commodities": [],
+   "commodities": [
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.accessworld.com/locations/north-america/",
    "lat": 39.2904,
-   "lng": -76.6122
+   "lng": -76.6122,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Access World Usa LLC",
@@ -1490,13 +1507,17 @@
    "state": "MA",
    "tier": "listed",
    "source": "rebulk-directory (Providence and Worcester Railroad (PW))",
-   "commodities": [],
+   "commodities": [
+    "Asphalt",
+    "Minerals"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://agretechcorp.com/logistics/rail-operations/",
    "lat": 42.2626,
-   "lng": -71.8023
+   "lng": -71.8023,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Agri-Move Systems Inc / C.B. Constantini Ltd",
@@ -1620,13 +1641,19 @@
    "state": "MO",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Minerals",
+    "Steel"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://agriservices.com/",
    "lat": 39.427184,
-   "lng": -93.127184
+   "lng": -93.127184,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Agro Merchants Group",
@@ -1819,13 +1846,16 @@
    "state": "PA",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
+   "commodities": [
+    "Frac Sand"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.albatrossventures.net/",
    "lat": 40.52715,
-   "lng": -79.469786
+   "lng": -79.469786,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "ALE Transload",
@@ -1887,13 +1917,17 @@
    "state": "GA",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Foods (Dry)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.allsouthwarehouse.com",
    "lat": 33.620543,
-   "lng": -84.358181
+   "lng": -84.358181,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Allegheny Petroleum Products",
@@ -1922,12 +1956,15 @@
    "tier": "listed",
    "source": "rebulk-directory (AVR NS)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.alleghenyriverterminals.com/",
    "lat": 40.572482,
-   "lng": -79.753051
+   "lng": -79.753051,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Allens Transport Ltd",
@@ -2091,13 +2128,16 @@
    "state": "OR",
    "tier": "listed",
    "source": "rebulk-directory (G&W PNWR)",
-   "commodities": [],
+   "commodities": [
+    "Foods (Dry)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.alpinefoods.com/",
    "lat": 45.444835,
-   "lng": -122.620848
+   "lng": -122.620848,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Alter River Terminal",
@@ -2147,13 +2187,16 @@
    "state": "TX",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
+   "commodities": [
+    "Lumber"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.amarillowarehouse.com/",
    "lat": 35.198064,
-   "lng": -101.833107
+   "lng": -101.833107,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Ambassador Services Cocoa Reload Yard",
@@ -2344,13 +2387,20 @@
    "state": "IL",
    "tier": "listed",
    "source": "rebulk-directory (IHB)",
-   "commodities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Chemicals (Liq)",
+    "Foods (Dry)",
+    "Lumber",
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://americantransloading.com/",
    "lat": 41.6573,
-   "lng": -87.6801
+   "lng": -87.6801,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "American Warehouse, LLC",
@@ -2531,13 +2581,19 @@
    "state": "CO",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Chemicals (Liq)"
+   ],
+   "capabilities": [
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://amicuscdp.com/",
    "lat": 39.7392,
-   "lng": -104.9903
+   "lng": -104.9903,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Amware Distribution Warehouse",
@@ -2548,13 +2604,22 @@
    "state": "OH",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Minerals",
+    "Plastics (Dry)"
+   ],
+   "capabilities": [
+    "Bulk Conveyor",
+    "Liquid Pumps",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://amware.com/all-services/distribution-warehousing",
    "lat": 41.4993,
-   "lng": -81.6944
+   "lng": -81.6944,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Anchorage Commercial Carriers Auto Ramp",
@@ -2582,13 +2647,16 @@
    "state": "VA",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
+   "commodities": [
+    "Plastics (Dry)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://ancosusa.com/",
    "lat": 37.123551,
-   "lng": -77.224856
+   "lng": -77.224856,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Angelina & Neches River Railroad Lufkin Transload",
@@ -2599,13 +2667,21 @@
    "state": "TX",
    "tier": "listed",
    "source": "rebulk-directory (Angelina & Neches River Railroad (ANR) UP)",
-   "commodities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Chemicals (Liq)",
+    "Frac Sand",
+    "Lumber",
+    "Minerals",
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.anrrr.com/",
    "lat": 31.322904,
-   "lng": -94.729026
+   "lng": -94.729026,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Angler Rail Transloading Facility",
@@ -3530,13 +3606,23 @@
    "state": "OK",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)",
+    "Frac Sand",
+    "Lumber",
+    "Minerals",
+    "Petroleum Products",
+    "Plastics (Dry)"
+   ],
+   "capabilities": [
+    "Hot Water Heating"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.asphaltexpress.net/",
    "lat": 34.196507,
-   "lng": -97.131848
+   "lng": -97.131848,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Asphalt Operating Services of Chicago",
@@ -3547,13 +3633,16 @@
    "state": "IL",
    "tier": "listed",
    "source": "rebulk-directory (CRL)",
-   "commodities": [],
+   "commodities": [
+    "Petroleum Products"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.aoschicago.net/",
    "lat": 41.878113,
-   "lng": -87.629799
+   "lng": -87.629799,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Associated Asphalt",
@@ -3622,13 +3711,18 @@
    "state": "OH",
    "tier": "listed",
    "source": "rebulk-directory (NS W&LE)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Plastics (Dry)"
+   ],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.aswglobal.com",
    "lat": 41.05246,
-   "lng": -81.407317
+   "lng": -81.407317,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Atlanta Metro Lumber & Reload",
@@ -3658,13 +3752,22 @@
    "state": "SC",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Chemicals (Liq)",
+    "Lumber",
+    "Steel"
+   ],
+   "capabilities": [
+    "Bulk Conveyor",
+    "Liquid Pumps"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.atomrail.com/",
    "lat": 34.368598,
-   "lng": -81.091378
+   "lng": -81.091378,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Atw Choice Terminals",
@@ -4391,13 +4494,24 @@
    "state": "IA",
    "tier": "listed",
    "source": "rebulk-directory (UP)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Lumber",
+    "Minerals",
+    "Petroleum Products",
+    "Steel"
+   ],
+   "capabilities": [
+    "Bulk Conveyor",
+    "Liquid Storage Tanks",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.bigsoo.com/",
    "lat": 42.499994,
-   "lng": -96.400307
+   "lng": -96.400307,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Bighorn Divide & Wyoming Railroad",
@@ -4745,13 +4859,16 @@
    "state": "ND",
    "tier": "listed",
    "source": "rebulk-directory (BNSF Yellowstone Valley Railroad (YSVR))",
-   "commodities": [],
+   "commodities": [
+    "Petroleum Products"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://bridgerpipeline.com/",
    "lat": 47.853419,
-   "lng": -104.035893
+   "lng": -104.035893,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Brink Farms",
@@ -5306,13 +5423,17 @@
    "state": "WI",
    "tier": "listed",
    "source": "rebulk-directory (CPKC)",
-   "commodities": [],
+   "commodities": [
+    "Minerals",
+    "Plastics (Dry)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.tankstar.com/history/bulk-logistics/",
    "lat": 43.063348,
-   "lng": -87.966695
+   "lng": -87.966695,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Bulk Plus Logistics",
@@ -5323,13 +5444,21 @@
    "state": "GA",
    "tier": "listed",
    "source": "rebulk-directory",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Foods (Liq)",
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Liquid Pumps",
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.bulkplus.com/",
    "lat": 33.5671,
-   "lng": -84.5816
+   "lng": -84.5816,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Bulk Transfer LLC",
@@ -6794,13 +6923,16 @@
    "state": "TN",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
+   "commodities": [
+    "Minerals"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.burkhartenterprises.com",
    "lat": 35.9606,
-   "lng": -83.9207
+   "lng": -83.9207,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Burlington Junction Railway",
@@ -6927,13 +7059,17 @@
    "state": "IL",
    "tier": "listed",
    "source": "rebulk-directory (UP)",
-   "commodities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Foods (Liq)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.buschfarms.com/",
    "lat": 42.2639,
-   "lng": -88.8443
+   "lng": -88.8443,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Butler Intermodal Terminal",
@@ -7097,13 +7233,18 @@
    "state": "MI",
    "tier": "listed",
    "source": "rebulk-directory (CSX)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Plastics (Dry)"
+   ],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://bwptransport.weebly.com/",
    "lat": 42.82653,
-   "lng": -82.492433
+   "lng": -82.492433,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "C & C Transloads",
@@ -7192,13 +7333,16 @@
    "state": "OH",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
+   "commodities": [
+    "Frac Sand"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://Cajoseph.com",
    "lat": 40.57215,
-   "lng": -80.725708
+   "lng": -80.725708,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "CA Perry and Son",
@@ -7209,13 +7353,18 @@
    "state": "NC",
    "tier": "listed",
    "source": "rebulk-directory (CA G&W)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.caperryandson.com/",
    "lat": 36.058565,
-   "lng": -76.598979
+   "lng": -76.598979,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Caine Warehousing Ltd",
@@ -7260,13 +7409,18 @@
    "state": "CA",
    "tier": "listed",
    "source": "rebulk-directory (BNSF UP)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Liq)"
+   ],
+   "capabilities": [
+    "Liquid Pumps"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.calfreight.com/",
    "lat": 37.639097,
-   "lng": -120.996878
+   "lng": -120.996878,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "CalJet 53rd Avenue Terminal",
@@ -7536,13 +7690,19 @@
    "state": "MI",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Lumber",
+    "Steel"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://capacitytransport.com/capacity-warehouse/",
    "lat": 42.2825,
-   "lng": -83.1752
+   "lng": -83.1752,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Cape And Son",
@@ -7575,12 +7735,15 @@
    "tier": "listed",
    "source": "rebulk-directory (Wilmington Terminal Railroad (WTRY) CSX)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://capefearbondedwarehouse.com/",
    "lat": 34.2257,
-   "lng": -77.9447
+   "lng": -77.9447,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Capital Area Rail Terminal",
@@ -7591,13 +7754,20 @@
    "state": "MO",
    "tier": "listed",
    "source": "rebulk-directory (UP)",
-   "commodities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Foods (Dry)",
+    "Lumber",
+    "Minerals",
+    "Plastics (Dry)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://capitalteams.com/capital-area-rail-terminal/",
    "lat": 38.567461,
-   "lng": -92.175254
+   "lng": -92.175254,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Capital City Reload",
@@ -7608,13 +7778,16 @@
    "state": "OH",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
+   "commodities": [
+    "Lumber"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://capitalcityreload.com/",
    "lat": 39.9612,
-   "lng": -82.9988
+   "lng": -82.9988,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Capital Railroad Contracting",
@@ -8245,13 +8418,16 @@
    "state": "NC",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
+   "commodities": [
+    "Lumber"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.carolinapublicwhse.com",
    "lat": 36.099861,
-   "lng": -80.244217
+   "lng": -80.244217,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Carolinas Reload",
@@ -8672,13 +8848,17 @@
    "state": "CO",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
+   "commodities": [
+    "Lumber",
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.casttrans.com/",
    "lat": 39.9219,
-   "lng": -104.8708
+   "lng": -104.8708,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Cast Transportation Inc",
@@ -8707,12 +8887,15 @@
    "tier": "listed",
    "source": "rebulk-directory (CSX)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.castlensteel.com/transloading-facility/",
    "lat": 37.757172,
-   "lng": -87.117398
+   "lng": -87.117398,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Catch-Up Logistics Davenport",
@@ -8790,13 +8973,17 @@
    "state": "AL",
    "tier": "listed",
    "source": "rebulk-directory (Terminal Railway Alabama State Docks (TASD))",
-   "commodities": [],
+   "commodities": [
+    "Asphalt",
+    "Petroleum Products"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://apexoil.com/location/chickasaw-al/",
    "lat": 30.77145,
-   "lng": -88.079697
+   "lng": -88.079697,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Central Kentucky Distribution",
@@ -9265,13 +9452,19 @@
    "state": "ID",
    "tier": "listed",
    "source": "rebulk-directory (INPR)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)"
+   ],
+   "capabilities": [
+    "Blending Meters",
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://chemflo.net/",
    "lat": 43.86923,
-   "lng": -116.492119
+   "lng": -116.492119,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Chemical South Transport",
@@ -9624,13 +9817,20 @@
    "state": "ND",
    "tier": "listed",
    "source": "rebulk-directory (CPKC)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Frac Sand",
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.cicadalogistics.co/",
    "lat": 47.989075,
-   "lng": -102.488305
+   "lng": -102.488305,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "CIG Logistics",
@@ -9870,13 +10070,18 @@
    "state": "MD",
    "tier": "listed",
    "source": "rebulk-directory (CSX)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.citgo.com/what-we-do/terminals-and-pipelines/",
    "lat": 39.2904,
-   "lng": -76.6122
+   "lng": -76.6122,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Citi-Cargo & Storage",
@@ -9938,13 +10143,21 @@
    "state": "GA",
    "tier": "listed",
    "source": "rebulk-directory (G&W VR)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Chemicals (Liq)"
+   ],
+   "capabilities": [
+    "Auger",
+    "Blending Meters",
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://cjbindustries.com/contact/",
    "lat": 30.850126,
-   "lng": -83.278833
+   "lng": -83.278833,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Clare NS TBT",
@@ -11878,13 +12091,22 @@
    "state": "PA",
    "tier": "listed",
    "source": "rebulk-directory (CSX)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Frac Sand",
+    "Minerals",
+    "Steel"
+   ],
+   "capabilities": [
+    "Bulk Conveyor",
+    "Sampling Services",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.colonatransfer.com/",
    "lat": 40.683423,
-   "lng": -80.273427
+   "lng": -80.273427,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Colonial Terminals Inc",
@@ -11974,13 +12196,19 @@
    "state": "CO",
    "tier": "listed",
    "source": "rebulk-directory (UP)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Lumber",
+    "Minerals"
+   ],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.coloradoquarries.com/",
    "lat": 38.441886,
-   "lng": -105.220899
+   "lng": -105.220899,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "COLT Transload",
@@ -11991,13 +12219,19 @@
    "state": "MO",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Lumber",
+    "Steel"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.COMO.gov/utilities/Columbia-colt-railroad",
    "lat": 38.94729,
-   "lng": -92.326387
+   "lng": -92.326387,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Columbia & Reading Railway Company",
@@ -12112,13 +12346,17 @@
    "state": "TX",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
+   "commodities": [
+    "Frac Sand",
+    "Lumber"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://comanchetransloading.com/",
    "lat": 31.900484,
-   "lng": -98.604364
+   "lng": -98.604364,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Commercial Transload of Minnesota",
@@ -12180,13 +12418,19 @@
    "state": "WA",
    "tier": "listed",
    "source": "rebulk-directory (BNSF UP)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)"
+   ],
+   "capabilities": [
+    "Blending Meters",
+    "Sampling Services"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://commoditiesplus.net/",
    "lat": 45.631,
-   "lng": -122.6716
+   "lng": -122.6716,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Commonwealth Inc.",
@@ -12248,13 +12492,17 @@
    "state": "ID",
    "tier": "listed",
    "source": "rebulk-directory (BVRR)",
-   "commodities": [],
+   "commodities": [
+    "Lumber",
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.comptontransfer.com/rail-transloading/",
    "lat": 43.599335,
-   "lng": -116.229817
+   "lng": -116.229817,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Conesville Industrial Park",
@@ -12452,13 +12700,20 @@
    "state": "CA",
    "tier": "listed",
    "source": "rebulk-directory (SDIY BNSF)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Plastics (Dry)"
+   ],
+   "capabilities": [
+    "Bulk Conveyor",
+    "Liquid Storage Tanks",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://cmp-sd.com/",
    "lat": 32.715736,
-   "lng": -117.161087
+   "lng": -117.161087,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Continental Terminals",
@@ -12469,13 +12724,21 @@
    "state": "VA",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)",
+    "Lumber"
+   ],
+   "capabilities": [
+    "Blending Meters",
+    "Sampling Services",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.continentalterminals.com",
    "lat": 36.768209,
-   "lng": -76.287493
+   "lng": -76.287493,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Controladora De Terminales Mexico",
@@ -12602,13 +12865,21 @@
    "state": "LA",
    "tier": "listed",
    "source": "rebulk-directory (CN)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Minerals",
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Bulk Conveyor",
+    "Liquid Storage Tanks",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://cmt.suncoke.com/",
    "lat": 30.015211,
-   "lng": -90.820234
+   "lng": -90.820234,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Cooper T Smith",
@@ -12750,13 +13021,22 @@
    "state": "OH",
    "tier": "listed",
    "source": "rebulk-directory (AB NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Minerals",
+    "Plastics (Dry)"
+   ],
+   "capabilities": [
+    "Bulk Conveyor",
+    "Sampling Services",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.cotterwhse.com",
    "lat": 41.080456,
-   "lng": -81.521429
+   "lng": -81.521429,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Cotton Press Warehouse, LLC",
@@ -12903,13 +13183,18 @@
    "state": "TX",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Lumber",
+    "Plastics (Dry)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.fwwr.net/transload-team-track",
    "lat": 32.53153,
-   "lng": -97.61725
+   "lng": -97.61725,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "CRMS / Erman Corporation",
@@ -13001,13 +13286,17 @@
    "state": "LA",
    "tier": "listed",
    "source": "rebulk-directory (UP BNSF Acadiana Railway (AKDN))",
-   "commodities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Petroleum Products"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.canalcompanies.com/crowley_rail_terminal",
    "lat": 30.217897,
-   "lng": -92.37484
+   "lng": -92.37484,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Crystal Farms",
@@ -13268,12 +13557,15 @@
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Blending Meters"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://ctsco.com/",
    "lat": 37.690638,
-   "lng": -97.345836
+   "lng": -97.345836,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "CTW Logistics (Consolidated Transfer & Warehouse)",
@@ -13284,13 +13576,18 @@
    "state": "MO",
    "tier": "listed",
    "source": "rebulk-directory (BNSF Kansas City Union Pacifi)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.ctwlogistics.com/transload",
    "lat": 39.130005,
-   "lng": -94.562171
+   "lng": -94.562171,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Cuba Food-Grade Transload Site",
@@ -13386,13 +13683,16 @@
    "state": "NY",
    "tier": "listed",
    "source": "rebulk-directory (New York & Atlantic Railway (NYA))",
-   "commodities": [],
+   "commodities": [
+    "Lumber"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://dmlumber.com/",
    "lat": null,
-   "lng": null
+   "lng": null,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "D&S Warehousing Inc.",
@@ -13420,13 +13720,18 @@
    "state": "ND",
    "tier": "listed",
    "source": "rebulk-directory (CPKC)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://dakotagoldtransfer.com/",
    "lat": 48.026289,
-   "lng": -101.958725
+   "lng": -101.958725,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Dalton NS TBT",
@@ -13488,13 +13793,22 @@
    "state": "MA",
    "tier": "listed",
    "source": "rebulk-directory (Providence & Worcester Railroad (PW))",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Foods (Liq)",
+    "Minerals",
+    "Petroleum Products",
+    "Plastics (Dry)"
+   ],
+   "capabilities": [
+    "Blower"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.danatransport.com/",
    "lat": 42.115881,
-   "lng": -71.870094
+   "lng": -71.870094,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Dardanelle and Russellville Railroad Transload",
@@ -13550,13 +13864,21 @@
    "state": "IA",
    "tier": "listed",
    "source": "rebulk-directory (CPKC DIR)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Lumber",
+    "Minerals",
+    "Plastics (Dry)"
+   ],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://davenportrail.com/transloading-services",
    "lat": 41.5236,
-   "lng": -90.5776
+   "lng": -90.5776,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Daviess County Shell Building and Cross Dock/Transload Facility",
@@ -13686,13 +14008,18 @@
    "state": "PA",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)"
+   ],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "yes",
    "website": "http://centralparailcarstorage.com/",
    "lat": 40.431117,
-   "lng": -78.392958
+   "lng": -78.392958,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Delaware Express",
@@ -13913,13 +14240,20 @@
    "state": "CA",
    "tier": "listed",
    "source": "rebulk-directory (G&W SJVR)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)"
+   ],
+   "capabilities": [
+    "Hot Water Heating",
+    "Liquid Storage Tanks",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://deltatradinglp.com/",
    "lat": 35.3733,
-   "lng": -119.0187
+   "lng": -119.0187,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Delta Warehouse LLC",
@@ -14153,13 +14487,21 @@
    "state": "NY",
    "tier": "listed",
    "source": "rebulk-directory (SMS Rail Lines of New York (SNY) CSX NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Lumber",
+    "Plastics (Dry)"
+   ],
+   "capabilities": [
+    "Blower",
+    "Bulk Conveyor",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.distributionunlimited.com/bulk-transload",
    "lat": 42.70424,
-   "lng": -73.97096
+   "lng": -73.97096,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Diversified Minerals Rail Services",
@@ -14204,13 +14546,21 @@
    "state": "AK",
    "tier": "listed",
    "source": "rebulk-directory (ARR)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Minerals",
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Liquid Pumps",
+    "Liquid Storage Tanks",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.portofalaska.com/",
    "lat": 61.17425,
-   "lng": -149.284329
+   "lng": -149.284329,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Doraville NS TBT",
@@ -14357,13 +14707,17 @@
    "state": "IA",
    "tier": "listed",
    "source": "rebulk-directory (BNSF CN)",
-   "commodities": [],
+   "commodities": [
+    "Minerals",
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://newtmarine.com/dubuque-river-terminals-inc/",
    "lat": 42.498901,
-   "lng": -90.707258
+   "lng": -90.707258,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Duluth Harbor Industrial Park",
@@ -14374,13 +14728,16 @@
    "state": "MN",
    "tier": "listed",
    "source": "rebulk-directory (BNSF CN CPKC UP)",
-   "commodities": [],
+   "commodities": [
+    "Chemicals (Liq)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.duluthharborindustrialpark.com/",
    "lat": 46.7867,
-   "lng": -92.1005
+   "lng": -92.1005,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Dupuy Storage & Forwarding",
@@ -14391,13 +14748,18 @@
    "state": "LA",
    "tier": "listed",
    "source": "rebulk-directory (NOPB)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)"
+   ],
+   "capabilities": [
+    "Sampling Services"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://dupuygroup.com/",
    "lat": 29.9511,
-   "lng": -90.0715
+   "lng": -90.0715,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "DuraPort Marine & Rail Terminal",
@@ -14544,13 +14906,18 @@
    "state": "CT",
    "tier": "listed",
    "source": "rebulk-directory (Providence & Worcester Railroad (PW))",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Dry)"
+   ],
+   "capabilities": [
+    "Blending Meters"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://ec-mm.com/",
    "lat": 41.693613,
-   "lng": -71.900776
+   "lng": -71.900776,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "East Coast Warehouse & Distribution Corp",
@@ -14697,13 +15064,19 @@
    "state": "TN",
    "tier": "listed",
    "source": "rebulk-directory (CSX)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Blending Meters",
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.eco-energy.com/distribution-services",
    "lat": 35.9606,
-   "lng": -83.9207
+   "lng": -83.9207,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Eddyville Riverport",
@@ -15067,13 +15440,19 @@
    "state": "TN",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Sampling Services"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://environmentalbarge.com/",
    "lat": 35.0456,
-   "lng": -85.3097
+   "lng": -85.3097,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Environmental Remediation & Recovery",
@@ -15255,12 +15634,15 @@
    "tier": "listed",
    "source": "rebulk-directory (Massachusetts Coastal Railroad (MC))",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://fallriverlinepier.com/",
    "lat": 41.725351,
-   "lng": -71.094162
+   "lng": -71.094162,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Farmrail",
@@ -15451,13 +15833,19 @@
    "state": "OK",
    "tier": "listed",
    "source": "rebulk-directory (UP)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Minerals"
+   ],
+   "capabilities": [
+    "Bulk Conveyor",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.fitzgeraldtruck.com/transloading",
    "lat": 35.315621,
-   "lng": -97.951407
+   "lng": -97.951407,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "FJ Robers Company Inc.",
@@ -15592,13 +15980,19 @@
    "state": "FL",
    "tier": "listed",
    "source": "rebulk-directory (FEC NS)",
-   "commodities": [],
+   "commodities": [
+    "Foods (Dry)",
+    "Lumber",
+    "Minerals",
+    "Petroleum Products"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://fecrwy.com/transload/",
    "lat": 30.3322,
-   "lng": -81.6557
+   "lng": -81.6557,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Florida Midland Railroad Bartow Airbase Transload",
@@ -15728,13 +16122,18 @@
    "state": "UT",
    "tier": "listed",
    "source": "rebulk-directory (UP)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Minerals"
+   ],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://fluxrailservices.com/",
    "lat": 40.611347,
-   "lng": -112.469077
+   "lng": -112.469077,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Food Express Inc",
@@ -16377,12 +16776,17 @@
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Bulk Conveyor",
+    "Gravity (Trestle)",
+    "Liquid Pumps"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://sch.services/",
    "lat": null,
-   "lng": null
+   "lng": null,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Fox River Terminal",
@@ -16393,13 +16797,16 @@
    "state": "WI",
    "tier": "listed",
    "source": "rebulk-directory (FOXY)",
-   "commodities": [],
+   "commodities": [
+    "Minerals"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://robindale.energy/companies/frt/",
    "lat": 44.5192,
-   "lng": -88.0198
+   "lng": -88.0198,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Fr Terminales Sa De Cv",
@@ -16737,13 +17144,24 @@
    "state": "LA",
    "tier": "listed",
    "source": "rebulk-directory (NOPB NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)"
+   ],
+   "capabilities": [
+    "Air Compressor",
+    "Blending Meters",
+    "Hot Water Heating",
+    "Liquid Pumps",
+    "Sampling Services",
+    "Scale",
+    "Steam Heating"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.freedomintermodal.com",
    "lat": 29.9511,
-   "lng": -90.0715
+   "lng": -90.0715,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Freeport Logistics Inc",
@@ -16856,13 +17274,16 @@
    "state": "VT",
    "tier": "listed",
    "source": "rebulk-directory (G&W NECR)",
-   "commodities": [],
+   "commodities": [
+    "Foods (Dry)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://fwcobs.com/",
    "lat": 44.811538,
-   "lng": -73.084462
+   "lng": -73.084462,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "G&D Trucking Inc (Hoffman Transportation)",
@@ -17046,13 +17467,20 @@
    "state": "ME",
    "tier": "listed",
    "source": "rebulk-directory (CPKC)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Acids",
+    "Chemicals (Liq)"
+   ],
+   "capabilities": [
+    "Liquid Pumps",
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.gacchemical.com/",
    "lat": 44.474953,
-   "lng": -68.915604
+   "lng": -68.915604,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Gadsden Industrial Park",
@@ -17064,12 +17492,15 @@
    "tier": "listed",
    "source": "rebulk-directory (NS Alabama & Tennessee River Railway (ATN) CSX)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://gadsdenindustrialpark.com/",
    "lat": 34.0143,
-   "lng": -86.0066
+   "lng": -86.0066,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Gallatin Transfer",
@@ -17114,13 +17545,16 @@
    "state": "KS",
    "tier": "listed",
    "source": "rebulk-directory (BNSF);bnsf-premier-flipbook",
-   "commodities": [],
+   "commodities": [
+    "Lumber"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://garveypublicwarehouse.com/",
    "lat": 37.690638,
-   "lng": -97.345836
+   "lng": -97.345836,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Gary Team Track",
@@ -17659,12 +18093,15 @@
    "tier": "listed",
    "source": "rebulk-directory (CN CPKC)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://portsl.com/globalplex-intermodal-terminal/",
    "lat": 30.072962,
-   "lng": -90.555022
+   "lng": -90.555022,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Gloucester Marine Terminal",
@@ -17726,13 +18163,20 @@
    "state": "PA",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Liq)"
+   ],
+   "capabilities": [
+    "Auger",
+    "Hot Water Heating",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.goldenbarrel.com/goldenbarrelleola/",
    "lat": 40.092953,
-   "lng": -76.188963
+   "lng": -76.188963,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Golden Triangle Transload",
@@ -17744,12 +18188,15 @@
    "tier": "listed",
    "source": "rebulk-directory (BNSF UP)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.goldentriangletransload.com/",
    "lat": 40.58626,
-   "lng": -98.38987
+   "lng": -98.38987,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Goldsboro NS TBT",
@@ -17881,13 +18328,18 @@
    "state": "OH",
    "tier": "listed",
    "source": "rebulk-directory (Grand River Railway (GRRY))",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Minerals"
+   ],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://grandriverrailway.com/",
    "lat": 41.721635,
-   "lng": -81.258357
+   "lng": -81.258357,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Granite Peak Midstream",
@@ -18053,13 +18505,16 @@
    "state": "MA",
    "tier": "listed",
    "source": "rebulk-directory (CSX)",
-   "commodities": [],
+   "commodities": [
+    "Lumber"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://gbtmass.com/",
    "lat": null,
-   "lng": null
+   "lng": null,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Green Isle Team Track",
@@ -18121,13 +18576,19 @@
    "state": "OR",
    "tier": "listed",
    "source": "rebulk-directory (Coos Bay Rail Line (CBR))",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Lumber",
+    "Minerals"
+   ],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://greenhillreload.com/",
    "lat": 43.407163,
-   "lng": -124.234483
+   "lng": -124.234483,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Greenup-Boyd County Riverport",
@@ -18274,13 +18735,18 @@
    "state": "TX",
    "tier": "listed",
    "source": "rebulk-directory (BNSF UP)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://gtomniport.com/",
    "lat": 29.900008,
-   "lng": -93.89442
+   "lng": -93.89442,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Gulf Coast Transload of Alabama",
@@ -18444,13 +18910,18 @@
    "state": "VA",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Dry)"
+   ],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "http://lawsonroanoke.com/",
    "lat": 37.27097,
-   "lng": -79.94143
+   "lng": -79.94143,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Hailey's Harbor Intermodal River Terminal",
@@ -18615,12 +19086,15 @@
    "tier": "listed",
    "source": "rebulk-directory (NBER NS CPKC)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Blending Meters"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://happyvalleyblendedproducts.com/",
    "lat": 40.867277,
-   "lng": -77.744137
+   "lng": -77.744137,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Harbor Logistics",
@@ -18779,13 +19253,18 @@
    "state": "WV",
    "tier": "listed",
    "source": "rebulk-directory (CSX)",
-   "commodities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Minerals",
+    "Plastics (Dry)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.hartleyoil.com/",
    "lat": 38.956291,
-   "lng": -81.761981
+   "lng": -81.761981,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Hartwell Railroad Toccoa Transload Facility",
@@ -19283,12 +19762,15 @@
    "tier": "listed",
    "source": "rebulk-directory (CR NS)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://Www.HGMGtransload.com",
    "lat": 40.060631,
-   "lng": -74.835891
+   "lng": -74.835891,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Hh Omps Inc",
@@ -19369,13 +19851,17 @@
    "state": "CA",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
+   "commodities": [
+    "Foods (Dry)",
+    "Foods (Liq)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.highlandwholesalefoods.com/",
    "lat": 37.957702,
-   "lng": -121.29078
+   "lng": -121.29078,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "HOB Railroad and Transload",
@@ -19403,13 +19889,16 @@
    "state": "ND",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
+   "commodities": [
+    "Minerals"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.hollandco.com/transloading/",
    "lat": 48.205446,
-   "lng": -97.338033
+   "lng": -97.338033,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Holroyd Recycle South",
@@ -19437,13 +19926,22 @@
    "state": "TX",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)",
+    "Foods (Liq)",
+    "Frac Sand",
+    "Petroleum Products",
+    "Plastics (Dry)"
+   ],
+   "capabilities": [
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://hondorailway.com/our-facilities/",
    "lat": 29.354242,
-   "lng": -99.161846
+   "lng": -99.161846,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Horseheads Sand & Transloading Terminal",
@@ -19528,12 +20026,16 @@
    "tier": "listed",
    "source": "rebulk-directory (BNSF UP)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Bulk Conveyor",
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://houstonpeninsulaterminals.com/",
    "lat": 29.760427,
-   "lng": -95.369803
+   "lng": -95.369803,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Hudson Terminal Rail Services",
@@ -19765,13 +20267,16 @@
    "state": "CA",
    "tier": "listed",
    "source": "rebulk-directory (UP)",
-   "commodities": [],
+   "commodities": [
+    "Foods (Dry)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://imperialvalleyrail.com/",
    "lat": 33.168651,
-   "lng": -115.485641
+   "lng": -115.485641,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "IMTT Avondale Terminal",
@@ -20003,13 +20508,21 @@
    "state": "AL",
    "tier": "listed",
    "source": "rebulk-directory (BNSF);bnsf-premier-flipbook",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Minerals",
+    "Petroleum Products",
+    "Plastics (Dry)"
+   ],
+   "capabilities": [
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://industrialchem.com/",
    "lat": 33.5186,
-   "lng": -86.8104
+   "lng": -86.8104,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Industrial Cleaners Inc.",
@@ -20020,13 +20533,19 @@
    "state": "WV",
    "tier": "listed",
    "source": "rebulk-directory (CSX Transportation (CSXT))",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)"
+   ],
+   "capabilities": [
+    "Portable Vacuum",
+    "Steam Heating"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://industrialcleanersinc.com/",
    "lat": 39.266741,
-   "lng": -81.561514
+   "lng": -81.561514,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Industrial Warehouse Services",
@@ -20038,12 +20557,15 @@
    "tier": "listed",
    "source": "rebulk-directory (CPKC)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://iwslogistics.com/",
    "lat": 33.234404,
-   "lng": -87.5283
+   "lng": -87.5283,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Ingram Tyler Street Terminal",
@@ -20281,13 +20803,16 @@
    "state": "CA",
    "tier": "listed",
    "source": "rebulk-directory (SAV BNSF UP)",
-   "commodities": [],
+   "commodities": [
+    "Petroleum Products"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.interstateoil.com/",
    "lat": 38.6672,
-   "lng": -121.4011
+   "lng": -121.4011,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Iowa City Transload Facility",
@@ -20366,13 +20891,20 @@
    "state": "TX",
    "tier": "listed",
    "source": "rebulk-directory (BNSF UP)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Plastics (Dry)"
+   ],
+   "capabilities": [
+    "Bulk Conveyor",
+    "Liquid Pumps"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.ihrail.com/beaumont",
    "lat": 30.084912,
-   "lng": -94.14533
+   "lng": -94.14533,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Ironclad Global Warehousing",
@@ -20383,13 +20915,16 @@
    "state": "NY",
    "tier": "listed",
    "source": "rebulk-directory (BPRR G&W)",
-   "commodities": [],
+   "commodities": [
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://ironcladglobalwarehousing.com/",
    "lat": 42.796519,
-   "lng": -78.8324
+   "lng": -78.8324,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Ironhorse Permian Basin, LLC",
@@ -20468,13 +21003,17 @@
    "state": "WV",
    "tier": "listed",
    "source": "rebulk-directory (West Virginia Central Railroad (WVCR))",
-   "commodities": [],
+   "commodities": [
+    "Asphalt",
+    "Minerals"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://jfallenco.com/contact/aggregate-quarry-elkins-plant/",
    "lat": 38.923719,
-   "lng": -79.85426
+   "lng": -79.85426,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Jacintoport International Terminal",
@@ -20485,13 +21024,19 @@
    "state": "TX",
    "tier": "listed",
    "source": "rebulk-directory (PTRA)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)"
+   ],
+   "capabilities": [
+    "Bulk Conveyor",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.jacintoport.com/",
    "lat": 29.760427,
-   "lng": -95.369803
+   "lng": -95.369803,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Jacksonville NS TBT",
@@ -20553,13 +21098,17 @@
    "state": "IN",
    "tier": "listed",
    "source": "rebulk-directory (CSS)",
-   "commodities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Plastics (Dry)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://jbcrailservices.net/services/transload/",
    "lat": 41.611145,
-   "lng": -86.715836
+   "lng": -86.715836,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Jbs Swift And Company",
@@ -20706,13 +21255,20 @@
    "state": "GA",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Foods (Dry)",
+    "Minerals"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.jimcogroup.com",
    "lat": 32.087221,
-   "lng": -81.176614
+   "lng": -81.176614,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Jobe Materials Dyer Railyard",
@@ -20774,13 +21330,19 @@
    "state": "WY",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Foods (Dry)",
+    "Minerals",
+    "Petroleum Products"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.bunningtransfer.com/",
    "lat": 42.264791,
-   "lng": -104.742889
+   "lng": -104.742889,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Johnson City Chemical Company",
@@ -20876,13 +21438,18 @@
    "state": "UT",
    "tier": "listed",
    "source": "rebulk-directory (Union Pacific (UP) BNSF Railway (BNSF))",
-   "commodities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Foods (Dry)",
+    "Petroleum Products"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.kaglogistics.com/",
    "lat": 41.223,
-   "lng": -111.9738
+   "lng": -111.9738,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "KAK warehouse",
@@ -20893,13 +21460,18 @@
    "state": "IN",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.kakllc.com/",
    "lat": 41.676643,
-   "lng": -86.268809
+   "lng": -86.268809,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Kanawha River Terminal",
@@ -21511,13 +22083,16 @@
    "state": "MI",
    "tier": "listed",
    "source": "rebulk-directory (Lake State Railway (LSRC))",
-   "commodities": [],
+   "commodities": [
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.kingsteelcorp.com/",
    "lat": 42.798799,
-   "lng": -83.622967
+   "lng": -83.622967,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Kingman Terminal Railroad Transload Facility",
@@ -21994,13 +22569,16 @@
    "state": "MI",
    "tier": "listed",
    "source": "rebulk-directory (G&W HESR)",
-   "commodities": [],
+   "commodities": [
+    "Foods (Dry)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.labudde.com/locations/richville-mi-warehouse/",
    "lat": null,
-   "lng": null
+   "lng": null,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Lacassine Operating Company",
@@ -22510,12 +23088,15 @@
    "tier": "listed",
    "source": "rebulk-directory (UP)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://lighthouselogistics.wordpress.com/",
    "lat": 36.1989,
-   "lng": -115.1175
+   "lng": -115.1175,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Limon, CO Spur Track",
@@ -22577,13 +23158,21 @@
    "state": "IL",
    "tier": "listed",
    "source": "rebulk-directory (UP)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)"
+   ],
+   "capabilities": [
+    "Blending Meters",
+    "Bulk Conveyor",
+    "Liquid Storage Tanks",
+    "Portable Vacuum"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://lincolntransloadpro.com/",
    "lat": 40.150678,
-   "lng": -89.370273
+   "lng": -89.370273,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Lineage",
@@ -22645,13 +23234,16 @@
    "state": "IN",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
+   "commodities": [
+    "Foods (Liq)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.onelineage.eu/en/facilities/lafayette",
    "lat": 40.416702,
-   "lng": -86.875287
+   "lng": -86.875287,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Lineage Logistics",
@@ -22764,13 +23356,20 @@
    "state": "OR",
    "tier": "listed",
    "source": "rebulk-directory (UP)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Foods (Dry)",
+    "Minerals"
+   ],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://linnwest.com/rail-transloading-services/",
    "lat": 44.547613,
-   "lng": -123.110798
+   "lng": -123.110798,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Liquid Titan LLC",
@@ -23249,13 +23848,17 @@
    "state": "TX",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
+   "commodities": [
+    "Foods (Dry)",
+    "Lumber"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://lsid.com/",
    "lat": 29.760427,
-   "lng": -95.369803
+   "lng": -95.369803,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Long Island City Rail Terminal",
@@ -23284,12 +23887,15 @@
    "tier": "listed",
    "source": "rebulk-directory (PHL BNSF UP)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://lagrain.com/",
    "lat": 33.77005,
-   "lng": -118.193739
+   "lng": -118.193739,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Louisiana & Delta Railroad Schriever Transload Facility",
@@ -23402,13 +24008,21 @@
    "state": "KY",
    "tier": "listed",
    "source": "rebulk-directory (PAL)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Liq)",
+    "Lumber",
+    "Minerals",
+    "Steel"
+   ],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.louisvilleseventh.com/",
    "lat": 38.2527,
-   "lng": -85.7585
+   "lng": -85.7585,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Loup Logistics",
@@ -23885,13 +24499,16 @@
    "state": "PA",
    "tier": "listed",
    "source": "rebulk-directory (BPRR)",
-   "commodities": [],
+   "commodities": [
+    "Minerals"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://mmlime.com/",
    "lat": 40.837987,
-   "lng": -79.635032
+   "lng": -79.635032,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "M&P Reload",
@@ -23902,13 +24519,17 @@
    "state": "OR",
    "tier": "listed",
    "source": "rebulk-directory (G&W PNWR)",
-   "commodities": [],
+   "commodities": [
+    "Lumber",
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.mpreload.com/index.html",
    "lat": 44.056848,
-   "lng": -123.119019
+   "lng": -123.119019,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Macmillan-Piper Inc",
@@ -23953,13 +24574,19 @@
    "state": "IL",
    "tier": "listed",
    "source": "rebulk-directory (PHRR TRRA)",
-   "commodities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Foods (Dry)",
+    "Minerals",
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.americascentralport.com/",
    "lat": 38.686272,
-   "lng": -90.101796
+   "lng": -90.101796,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Madison Railroad (RSI Logistics)",
@@ -24055,13 +24682,20 @@
    "state": "ME",
    "tier": "listed",
    "source": "rebulk-directory (CSX)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)",
+    "Foods (Liq)"
+   ],
+   "capabilities": [
+    "Liquid Storage Tanks",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://coldstoragemaine.com/",
    "lat": 43.633157,
-   "lng": -70.185305
+   "lng": -70.185305,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Mallory Alexander International",
@@ -24089,13 +24723,18 @@
    "state": "PA",
    "tier": "listed",
    "source": "rebulk-directory (ESPN NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.manfredicoldstorage.com/",
    "lat": 39.831997,
-   "lng": -75.755702
+   "lng": -75.755702,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Manly Terminal",
@@ -24106,13 +24745,20 @@
    "state": "IA",
    "tier": "listed",
    "source": "rebulk-directory (CN)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Acids",
+    "Chemicals (Liq)",
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.manlyterminal.com/",
    "lat": 43.288254,
-   "lng": -93.200815
+   "lng": -93.200815,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Mansfield Railport",
@@ -24521,13 +25167,19 @@
    "state": "PA",
    "tier": "listed",
    "source": "rebulk-directory (G&W POHC)",
-   "commodities": [],
+   "commodities": [
+    "Frac Sand",
+    "Minerals",
+    "Plastics (Dry)",
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.e-mrie.com/",
    "lat": 40.469019,
-   "lng": -80.063328
+   "lng": -80.063328,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "McLendon Enterprises",
@@ -24572,13 +25224,21 @@
    "state": "AL",
    "tier": "listed",
    "source": "rebulk-directory (AGR G&W)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Chemicals (Liq)",
+    "Lumber",
+    "Steel"
+   ],
+   "capabilities": [
+    "Liquid Pumps"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://meadorwarehouse.com/",
    "lat": 30.695366,
-   "lng": -88.039891
+   "lng": -88.039891,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Medford Team Track",
@@ -24794,13 +25454,17 @@
    "state": "CA",
    "tier": "listed",
    "source": "rebulk-directory (PHL BNSF UP)",
-   "commodities": [],
+   "commodities": [
+    "Minerals",
+    "Petroleum Products"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.metroports.com/",
    "lat": 33.77005,
-   "lng": -118.193739
+   "lng": -118.193739,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Metro West Transload",
@@ -25014,13 +25678,18 @@
    "state": "MI",
    "tier": "listed",
    "source": "rebulk-directory (CSX NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.mmtandff.com/",
    "lat": 42.274346,
-   "lng": -83.124162
+   "lng": -83.124162,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Michigan Rail and Storage",
@@ -25048,13 +25717,19 @@
    "state": "MI",
    "tier": "listed",
    "source": "rebulk-directory (CSX)",
-   "commodities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Lumber",
+    "Plastics (Dry)",
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://mtwi-michigan.com/",
    "lat": 42.890317,
-   "lng": -85.706733
+   "lng": -85.706733,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Michigan Timber & Truss Rail Reload",
@@ -25065,13 +25740,16 @@
    "state": "MI",
    "tier": "listed",
    "source": "rebulk-directory (CN)",
-   "commodities": [],
+   "commodities": [
+    "Lumber"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://mitimber.com/",
    "lat": 43.02442,
-   "lng": -83.691971
+   "lng": -83.691971,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Mid Columbia Warehouses Inc",
@@ -25153,13 +25831,20 @@
    "state": "MD",
    "tier": "listed",
    "source": "rebulk-directory (Maryland & Delaware Railroad (MDDE))",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Liquid Pumps",
+    "Liquid Storage Tanks",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://midatlanticrailservices.com/services/",
    "lat": null,
-   "lng": null
+   "lng": null,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Mid-Atlantic Transloading Inc",
@@ -25218,13 +25903,16 @@
    "state": "TN",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
+   "commodities": [
+    "Minerals"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://serodinoinc.com/mid-south-terminals/",
    "lat": 35.0456,
-   "lng": -85.3097
+   "lng": -85.3097,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Mid-States Packaging",
@@ -25235,13 +25923,18 @@
    "state": "MA",
    "tier": "listed",
    "source": "rebulk-directory (NS PW)",
-   "commodities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Chemicals (Liq)",
+    "Plastics (Dry)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.mspack.com",
    "lat": 42.2626,
-   "lng": -71.8023
+   "lng": -71.8023,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Mid-States Packaging",
@@ -25321,12 +26014,15 @@
    "tier": "listed",
    "source": "rebulk-directory (CPKC)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Liquid Pumps"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.midstreamtx.com/midstream-texas-south-corpus-rail-terminal/",
    "lat": 27.754252,
-   "lng": -97.173385
+   "lng": -97.173385,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Midwest Bulk Transload",
@@ -25731,13 +26427,20 @@
    "state": "MO",
    "tier": "listed",
    "source": "rebulk-directory (MNC CPKC)",
-   "commodities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Foods (Dry)",
+    "Lumber",
+    "Minerals",
+    "Plastics (Dry)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.motiverail.com/",
    "lat": 39.796079,
-   "lng": -93.549957
+   "lng": -93.549957,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Mitchel Enterprises Transloading",
@@ -25748,13 +26451,18 @@
    "state": "IN",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)"
+   ],
+   "capabilities": [
+    "Portable Vacuum"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.mitchelenterprises.com/Transloading/1",
    "lat": 40.743479,
-   "lng": -85.172111
+   "lng": -85.172111,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Mobilex, LLC",
@@ -25952,13 +26660,19 @@
    "state": "TX",
    "tier": "listed",
    "source": "rebulk-directory (BRG)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Blending Meters",
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://motus.energy/",
    "lat": 25.90175,
-   "lng": -97.49748
+   "lng": -97.49748,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Moundsville Industrial Park",
@@ -26166,13 +26880,20 @@
    "state": "CO",
    "tier": "listed",
    "source": "rebulk-directory (UP)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Frac Sand",
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://mountaintraxrail.com/",
    "lat": 40.348669,
-   "lng": -104.706108
+   "lng": -104.706108,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "MPR Supply Chain",
@@ -26302,13 +27023,18 @@
    "state": "IA",
    "tier": "listed",
    "source": "rebulk-directory (CPKC)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://murrayswarehousing.com/",
    "lat": 41.5236,
-   "lng": -90.5776
+   "lng": -90.5776,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "MVT Warehousing",
@@ -26443,13 +27169,18 @@
    "state": "LA",
    "tier": "listed",
    "source": "rebulk-directory (CPKC)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Lumber"
+   ],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.natchitochesparishport.com/",
    "lat": 31.897965,
-   "lng": -93.116367
+   "lng": -93.116367,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Natural Minerals",
@@ -26477,13 +27208,18 @@
    "state": "ME",
    "tier": "listed",
    "source": "rebulk-directory (Maine Northern Railway (MNRY))",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Lumber"
+   ],
+   "capabilities": [
+    "Liquid Pumps"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.nbmrailways.com/",
    "lat": 47.167047,
-   "lng": -67.948881
+   "lng": -67.948881,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "NEBCO Intermodal",
@@ -26589,13 +27325,20 @@
    "state": "OH",
    "tier": "listed",
    "source": "rebulk-directory (CFE G&W)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)"
+   ],
+   "capabilities": [
+    "Blending Meters",
+    "Liquid Pumps",
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.nelsonpackagingco.com/",
    "lat": 40.742551,
-   "lng": -84.105225
+   "lng": -84.105225,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "NEPW Logistics",
@@ -26776,13 +27519,16 @@
    "state": "NH",
    "tier": "listed",
    "source": "rebulk-directory (NHN)",
-   "commodities": [],
+   "commodities": [
+    "Minerals"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.nhnorthcoast.com/",
    "lat": 43.737249,
-   "lng": -71.150349
+   "lng": -71.150349,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "New Hampton Transfer and Storage",
@@ -26793,13 +27539,18 @@
    "state": "IA",
    "tier": "listed",
    "source": "rebulk-directory (CPKC)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://nhwarehouse.com/",
    "lat": 43.056219,
-   "lng": -92.314725
+   "lng": -92.314725,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "New Hope Railroad (New Hope & Ivyland)",
@@ -26926,13 +27677,22 @@
    "state": "LA",
    "tier": "listed",
    "source": "rebulk-directory (New Orleans)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Chemicals (Liq)",
+    "Foods (Dry)",
+    "Plastics (Dry)",
+    "Steel"
+   ],
+   "capabilities": [
+    "Liquid Pumps"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://portnola.com/info/news-media/press-releases/new-orleans-public-belt-railroad-and-heniff-transportation-systems-llc-celebrate-new-3-million-transloading-industrial-park-in-new-orleans-east",
    "lat": 29.9511,
-   "lng": -90.0715
+   "lng": -90.0715,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "New York & Atlantic Railway",
@@ -27203,13 +27963,21 @@
    "state": "LA",
    "tier": "listed",
    "source": "rebulk-directory (NOGC UP)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Foods (Dry)",
+    "Petroleum Products",
+    "Steel"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.rgpc.com/new-orleans-gulf-coast",
    "lat": 29.858697,
-   "lng": -90.00329
+   "lng": -90.00329,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "NOPB Transloading Industrial Park",
@@ -27220,13 +27988,23 @@
    "state": "LA",
    "tier": "listed",
    "source": "rebulk-directory (NOPB connections)",
-   "commodities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Chemicals (Liq)",
+    "Foods (Dry)",
+    "Frac Sand",
+    "Lumber",
+    "Minerals",
+    "Petroleum Products",
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://railnola.com/",
    "lat": 29.9511,
-   "lng": -90.0715
+   "lng": -90.0715,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Nor-Am Cold Storage",
@@ -27288,13 +28066,19 @@
    "state": "IL",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Minerals",
+    "Steel"
+   ],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.noramcochicago.com/",
    "lat": 41.667328,
-   "lng": -87.984411
+   "lng": -87.984411,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Nordica Warehouse",
@@ -28810,13 +29594,21 @@
    "state": "OH",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Foods (Dry)",
+    "Plastics (Dry)"
+   ],
+   "capabilities": [
+    "Sampling Services",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.northcoastlogistics.com/",
    "lat": 41.404309,
-   "lng": -81.820342
+   "lng": -81.820342,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "North Mason Fiber",
@@ -28844,13 +29636,17 @@
    "state": "AK",
    "tier": "listed",
    "source": "rebulk-directory (ARR)",
-   "commodities": [],
+   "commodities": [
+    "Lumber",
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://northstarak.com/terminal-stevedoring-services/",
    "lat": 61.17425,
-   "lng": -149.284329
+   "lng": -149.284329,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "North Stratford Transload",
@@ -29028,13 +29824,17 @@
    "state": "UT",
    "tier": "listed",
    "source": "rebulk-directory (UP)",
-   "commodities": [],
+   "commodities": [
+    "Lumber",
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://nortonvillerail.org/",
    "lat": 39.704697,
-   "lng": -111.83335
+   "lng": -111.83335,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Nova Mud",
@@ -29543,13 +30343,20 @@
    "state": "FL",
    "tier": "listed",
    "source": "rebulk-directory (Florida East Coast Railway (FEC))",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Foods (Liq)",
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Liquid Pumps"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.omnibulkservices.com/",
    "lat": 26.745114,
-   "lng": -80.127038
+   "lng": -80.127038,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Omni Transloading and Logistics",
@@ -30242,13 +31049,16 @@
    "state": "AL",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
+   "commodities": [
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.pacific-steel.com",
    "lat": 33.728116,
-   "lng": -87.081292
+   "lng": -87.081292,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Pacific Terminals Ltd",
@@ -30543,13 +31353,21 @@
    "state": "MO",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)",
+    "Foods (Liq)"
+   ],
+   "capabilities": [
+    "Bulk Conveyor",
+    "Liquid Storage Tanks",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://parisbrothers.com/",
    "lat": 39.099727,
-   "lng": -94.578567
+   "lng": -94.578567,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Paris Foods Corporation",
@@ -30560,13 +31378,16 @@
    "state": "DE",
    "tier": "listed",
    "source": "rebulk-directory (DCR NS)",
-   "commodities": [],
+   "commodities": [
+    "Foods (Dry)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "http://www.parisfoods.com/",
    "lat": 38.917349,
-   "lng": -75.503892
+   "lng": -75.503892,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Park City Diesel Transloader",
@@ -30801,13 +31622,18 @@
    "state": "WI",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
+   "commodities": [
+    "Asphalt",
+    "Frac Sand",
+    "Minerals"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://pattisoncompany.com/",
    "lat": 43.041618,
-   "lng": -91.135408
+   "lng": -91.135408,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Patton Warehousing",
@@ -30988,13 +31814,21 @@
    "state": "IA",
    "tier": "listed",
    "source": "rebulk-directory (Boone & Scenic Valley Railroad (BSV))",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Chemicals (Liq)",
+    "Foods (Liq)",
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Blending Meters"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://pdmcompany.com/warehousing/railcar_cross_dock_services/",
    "lat": 42.049257,
-   "lng": -93.872526
+   "lng": -93.872526,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Peachey Rail Works",
@@ -31141,13 +31975,21 @@
    "state": "PA",
    "tier": "listed",
    "source": "rebulk-directory (Pennsylvania & Southern Railway CSX)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)",
+    "Foods (Liq)",
+    "Minerals",
+    "Plastics (Dry)"
+   ],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://railenterprisegroup.com/",
    "lat": 39.937592,
-   "lng": -77.661103
+   "lng": -77.661103,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Penny Newman Grain",
@@ -31158,13 +32000,19 @@
    "state": "CA",
    "tier": "listed",
    "source": "rebulk-directory (CCT BNSF UP)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Minerals"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://penny-newman.com/",
    "lat": 37.957702,
-   "lng": -121.29078
+   "lng": -121.29078,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Peoples Cartage",
@@ -31248,13 +32096,18 @@
    "state": "PA",
    "tier": "listed",
    "source": "rebulk-directory (Lehigh Valley Rail Management (LVRM) NS CSX)",
-   "commodities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Plastics (Dry)",
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://phoenixrail.com/",
    "lat": 40.326132,
-   "lng": -78.919139
+   "lng": -78.919139,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Pickens Railway Company",
@@ -31316,13 +32169,21 @@
    "state": "ND",
    "tier": "listed",
    "source": "rebulk-directory (RRVW)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)"
+   ],
+   "capabilities": [
+    "Bulk Conveyor",
+    "Liquid Storage Tanks",
+    "Sampling Services",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.peterson.ag/about-us/pingree-transload/",
    "lat": 47.163823,
-   "lng": -98.908563
+   "lng": -98.908563,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Pinnacle Machine Works",
@@ -32393,13 +33254,20 @@
    "state": "NJ",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Foods (Liq)",
+    "Steel"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://thejudgeorg.com/what-we-do/",
    "lat": 40.662495,
-   "lng": -74.110201
+   "lng": -74.110201,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Port Fisher Terminals",
@@ -32445,12 +33313,15 @@
    "tier": "listed",
    "source": "rebulk-directory (PHRR BNSF CN CPKC + 3)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.portharborrailroad.com/",
    "lat": 38.701436,
-   "lng": -90.14872
+   "lng": -90.14872,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Port Jersey Logistics",
@@ -32496,12 +33367,15 @@
    "tier": "listed",
    "source": "rebulk-directory (CN)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://portmanchac.com/",
    "lat": null,
-   "lng": null
+   "lng": null,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Port of Albany-Rensselaer",
@@ -32512,13 +33386,17 @@
    "state": "NY",
    "tier": "listed",
    "source": "rebulk-directory (Albany Port Railroad (APRR) CSX CPKC)",
-   "commodities": [],
+   "commodities": [
+    "Petroleum Products",
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.portofalbany.us/",
    "lat": 42.6526,
-   "lng": -73.7562
+   "lng": -73.7562,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Port of Beaumont",
@@ -32529,13 +33407,18 @@
    "state": "TX",
    "tier": "listed",
    "source": "rebulk-directory (BNSF UP CPKC)",
-   "commodities": [],
+   "commodities": [
+    "Foods (Dry)",
+    "Lumber",
+    "Petroleum Products"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.pobtx.com/",
    "lat": 30.084912,
-   "lng": -94.14533
+   "lng": -94.14533,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Port of Buffalo",
@@ -32581,12 +33464,15 @@
    "tier": "listed",
    "source": "rebulk-directory (TennKen Railroad CN)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.portofcateslandingtn.gov/",
    "lat": 36.376076,
-   "lng": -89.475327
+   "lng": -89.475327,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Port of Chehalis Grain Terminal & Transload Facility",
@@ -32597,13 +33483,18 @@
    "state": "WA",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)"
+   ],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://portofchehalis.com/swwagp-faqs/",
    "lat": 46.66253,
-   "lng": -122.96402
+   "lng": -122.96402,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Port of Cleveland",
@@ -32614,13 +33505,16 @@
    "state": "OH",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
+   "commodities": [
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.portofcleveland.com/transloading/",
    "lat": 41.4993,
-   "lng": -81.6944
+   "lng": -81.6944,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Port of Florence",
@@ -32648,13 +33542,20 @@
    "state": "WA",
    "tier": "listed",
    "source": "rebulk-directory (Puget Sound & Pacific Railroad (PSAP) BNSF UP)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Bulk Conveyor",
+    "Sampling Services",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.portofgraysharbor.com/terminal-info",
    "lat": 46.975205,
-   "lng": -123.811373
+   "lng": -123.811373,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Port of Greenville",
@@ -32733,13 +33634,20 @@
    "state": "LA",
    "tier": "listed",
    "source": "rebulk-directory (LCH UP CPKC)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Lumber",
+    "Minerals"
+   ],
+   "capabilities": [
+    "Bulk Conveyor",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://portlc.com/our-business/marine/",
    "lat": 30.19902,
-   "lng": -93.210835
+   "lng": -93.210835,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Port of Leetsdale",
@@ -32801,13 +33709,24 @@
    "state": "KY",
    "tier": "listed",
    "source": "rebulk-directory (CSX NS PAL)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Foods (Dry)",
+    "Lumber",
+    "Minerals",
+    "Steel"
+   ],
+   "capabilities": [
+    "Blending Meters",
+    "Bulk Conveyor",
+    "Sampling Services"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.portoflouisville.com/",
    "lat": 38.2527,
-   "lng": -85.7585
+   "lng": -85.7585,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Port of Manitowoc Transload and Warehousing Terminal",
@@ -32872,13 +33791,21 @@
    "state": "NC",
    "tier": "listed",
    "source": "rebulk-directory (Carolina Coastal Railway (CLNA) NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)",
+    "Lumber",
+    "Minerals",
+    "Steel"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://ncports.com/port-facilities/port-of-morehead-city/",
    "lat": 34.727891,
-   "lng": -76.739088
+   "lng": -76.739088,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Port of Morgan City",
@@ -32965,13 +33892,19 @@
    "state": "OH",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)",
+    "Minerals"
+   ],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.portofohio.com/",
    "lat": 40.603924,
-   "lng": -80.655745
+   "lng": -80.655745,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Port of Olympia Marine Terminal",
@@ -33152,12 +34085,16 @@
    "tier": "listed",
    "source": "rebulk-directory (PHL BNSF UP)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Bulk Conveyor",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://potentialindustries.com/",
    "lat": 33.785794,
-   "lng": -118.263015
+   "lng": -118.263015,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Pottstown NS TBT",
@@ -33185,13 +34122,20 @@
    "state": "WI",
    "tier": "listed",
    "source": "rebulk-directory (WSOR BNSF)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Minerals"
+   ],
+   "capabilities": [
+    "Bulk Conveyor",
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.prairiesandandgravel.com/",
    "lat": 43.041618,
-   "lng": -91.135408
+   "lng": -91.135408,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Prairie Transportation",
@@ -33202,13 +34146,20 @@
    "state": "PA",
    "tier": "listed",
    "source": "rebulk-directory (AVR NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)",
+    "Frac Sand",
+    "Minerals"
+   ],
+   "capabilities": [
+    "Blower"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://prairietrans.com/",
    "lat": 40.572482,
-   "lng": -79.753051
+   "lng": -79.753051,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Precision Components Inc. ***Up Purchased**",
@@ -33432,13 +34383,16 @@
    "state": "MA",
    "tier": "listed",
    "source": "rebulk-directory (G&W NECR)",
-   "commodities": [],
+   "commodities": [
+    "Lumber"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://sherwoodlumber.com/locations/",
    "lat": null,
-   "lng": null
+   "lng": null,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Prineville Freight Depot",
@@ -33466,13 +34420,16 @@
    "state": "MI",
    "tier": "listed",
    "source": "rebulk-directory",
-   "commodities": [],
+   "commodities": [
+    "Frac Sand"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.prmtrucking.com/",
    "lat": 41.795234,
-   "lng": -85.650406
+   "lng": -85.650406,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Pro Trade International Transfer Services",
@@ -33551,13 +34508,16 @@
    "state": "OR",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
+   "commodities": [
+    "Plastics (Dry)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "http://prontodist.com/",
    "lat": 45.515232,
-   "lng": -122.678385
+   "lng": -122.678385,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Pvs Transportation",
@@ -33597,13 +34557,19 @@
    "state": "PA",
    "tier": "listed",
    "source": "rebulk-directory (G&W POHC)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Blending Meters",
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.lhtterminals.com/",
    "lat": 40.4406,
-   "lng": -79.9959
+   "lng": -79.9959,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "QSL America",
@@ -33703,13 +34669,19 @@
    "state": "UT",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)",
+    "Plastics (Dry)"
+   ],
+   "capabilities": [
+    "Liquid Pumps"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://qdislc.com/locations/salt-lake-city/",
    "lat": 40.7608,
-   "lng": -111.891
+   "lng": -111.891,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Quality Transload Inc",
@@ -34018,13 +34990,16 @@
    "state": "VA",
    "tier": "listed",
    "source": "rebulk-directory (CSX)",
-   "commodities": [],
+   "commodities": [
+    "Lumber"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.rgreload.com/",
    "lat": 39.1857,
-   "lng": -78.1633
+   "lng": -78.1633,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "R.J. Corman",
@@ -34367,13 +35342,18 @@
    "state": "MN",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)"
+   ],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://railtransfer.com/",
    "lat": 44.953703,
-   "lng": -93.089958
+   "lng": -93.089958,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Railco Coal Terminal",
@@ -34435,13 +35415,20 @@
    "state": "AL",
    "tier": "listed",
    "source": "rebulk-directory (CSX)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)"
+   ],
+   "capabilities": [
+    "Liquid Storage Tanks",
+    "Scale",
+    "Steam Heating"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.rrrllc.net/",
    "lat": 30.894436,
-   "lng": -87.791306
+   "lng": -87.791306,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "RailSync Transload Facility",
@@ -34452,13 +35439,17 @@
    "state": "UT",
    "tier": "listed",
    "source": "rebulk-directory (UP)",
-   "commodities": [],
+   "commodities": [
+    "Lumber",
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://railsync.io/",
    "lat": 37.683818,
-   "lng": -113.09554
+   "lng": -113.09554,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Rainier Rail Western Junction Transload",
@@ -34469,13 +35460,16 @@
    "state": "WA",
    "tier": "listed",
    "source": "rebulk-directory (Rainier Rail BNSF UP)",
-   "commodities": [],
+   "commodities": [
+    "Chemicals (Liq)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://rainierrail.com/",
    "lat": 46.853817,
-   "lng": -122.86045
+   "lng": -122.86045,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Ramsey Express",
@@ -34853,13 +35847,18 @@
    "state": "NJ",
    "tier": "listed",
    "source": "rebulk-directory (Conrail Shared Assets Operations (CSAO) CSX NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.repauno.com/",
    "lat": 39.82454,
-   "lng": -75.278082
+   "lng": -75.278082,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "ReSource Waste Services-Charter Environmental Lawrence Transload",
@@ -34905,12 +35904,15 @@
    "tier": "listed",
    "source": "rebulk-directory (UP)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.rfmx.net",
    "lat": 39.7392,
-   "lng": -104.9903
+   "lng": -104.9903,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Rgl Logistics",
@@ -34972,13 +35974,17 @@
    "state": "PA",
    "tier": "listed",
    "source": "rebulk-directory (CSX)",
-   "commodities": [],
+   "commodities": [
+    "Minerals",
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "http://www.rivermaterialsinc.com/",
    "lat": 40.341877,
-   "lng": -79.845007
+   "lng": -79.845007,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "River Point LLC",
@@ -35007,12 +36013,15 @@
    "tier": "listed",
    "source": "rebulk-directory (River Ridge Railroad CSX)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.riverridgecc.com/companies/river-ridge-railroad/",
    "lat": 38.453676,
-   "lng": -85.670241
+   "lng": -85.670241,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "River's Edge Terminals",
@@ -35023,13 +36032,22 @@
    "state": "IL",
    "tier": "listed",
    "source": "rebulk-directory",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)"
+   ],
+   "capabilities": [
+    "Air Compressor",
+    "Liquid Storage Tanks",
+    "Sampling Services",
+    "Scale",
+    "Steam Heating"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.riversedgeterminals.com/",
    "lat": 38.701436,
-   "lng": -90.14872
+   "lng": -90.14872,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "RiverLift Industries",
@@ -35665,13 +36683,16 @@
    "state": "TX",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
+   "commodities": [
+    "Chemicals (Liq)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://robertsonbonded.com/",
    "lat": 33.5779,
-   "lng": -101.8552
+   "lng": -101.8552,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Robinson Terminal Warehouse Coroporation",
@@ -35932,12 +36953,15 @@
    "tier": "listed",
    "source": "rebulk-directory (CSX)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.dconstruction.com/rrr-tank",
    "lat": 41.525031,
-   "lng": -88.081725
+   "lng": -88.081725,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "RRVW Breckenridge Crossdock and Transload Tracks",
@@ -36490,13 +37514,19 @@
    "state": "CA",
    "tier": "listed",
    "source": "rebulk-directory (PHL BNSF UP)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)",
+    "Foods (Liq)"
+   ],
+   "capabilities": [
+    "Sampling Services"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://spflogistics.com/",
    "lat": 33.785794,
-   "lng": -118.263015
+   "lng": -118.263015,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Sandersville Railroad Bulk Transfer Facility",
@@ -36558,13 +37588,16 @@
    "state": "CA",
    "tier": "listed",
    "source": "rebulk-directory (UP)",
-   "commodities": [],
+   "commodities": [
+    "Foods (Liq)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.yandellcompanies.com/",
    "lat": 38.072733,
-   "lng": -122.155169
+   "lng": -122.155169,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Santa Maria Valley Railroad Osburn Railyard",
@@ -38096,13 +39129,23 @@
    "state": "RI",
    "tier": "listed",
    "source": "rebulk-directory (SVTX PW)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Liq)",
+    "Lumber",
+    "Minerals",
+    "Petroleum Products",
+    "Plastics (Dry)",
+    "Steel"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://seaviewrr.com/",
    "lat": 41.571527,
-   "lng": -71.449907
+   "lng": -71.449907,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Seaway Bulk Services",
@@ -38138,13 +39181,19 @@
    "state": "NC",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)",
+    "Lumber"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://securitybonded.com/",
    "lat": 35.7796,
-   "lng": -78.6382
+   "lng": -78.6382,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Seminole Gulf Railway Arcadia Transload",
@@ -38231,13 +39280,18 @@
    "state": "SD",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Liquid Pumps"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://senergyterminal.co/",
    "lat": 43.30313,
-   "lng": -96.585577
+   "lng": -96.585577,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Separation and Recovery Systems - SRS@SMS Rail Depot",
@@ -38248,13 +39302,16 @@
    "state": "NJ",
    "tier": "listed",
    "source": "rebulk-directory (SMS Rail Lines (SLRS))",
-   "commodities": [],
+   "commodities": [
+    "Petroleum Products"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.sarexusa.com/",
    "lat": 39.7946,
-   "lng": -75.3535
+   "lng": -75.3535,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Sequatchie Valley Switching Company",
@@ -38282,13 +39339,17 @@
    "state": "WI",
    "tier": "listed",
    "source": "rebulk-directory (WSOR)",
-   "commodities": [],
+   "commodities": [
+    "Minerals",
+    "Plastics (Dry)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.serviceonetransportation.com/bulk-truck-transloading/",
    "lat": 43.745274,
-   "lng": -87.965322
+   "lng": -87.965322,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Session Peanuts",
@@ -38390,13 +39451,19 @@
    "state": "NC",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Lumber",
+    "Steel"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://shaverreload.com/",
    "lat": 35.785493,
-   "lng": -80.872962
+   "lng": -80.872962,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Shelburne Transload Facility",
@@ -38475,13 +39542,22 @@
    "state": "CA",
    "tier": "listed",
    "source": "rebulk-directory",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Foods (Dry)",
+    "Lumber",
+    "Plastics (Dry)",
+    "Steel"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.shipit.com/transloading-warehouse",
    "lat": 34.019394,
-   "lng": -118.410825
+   "lng": -118.410825,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Shippers Warehouse of Georgia",
@@ -38594,13 +39670,19 @@
    "state": "CA",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)",
+    "Foods (Liq)"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://spwg.com/",
    "lat": 37.639097,
-   "lng": -120.996878
+   "lng": -120.996878,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Silver Spring Shores Lumber Transload",
@@ -38852,13 +39934,19 @@
    "state": "GA",
    "tier": "listed",
    "source": "rebulk-directory (CSX NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Minerals"
+   ],
+   "capabilities": [
+    "Bulk Conveyor",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.smtbulk.com/",
    "lat": 32.124998,
-   "lng": -81.308387
+   "lng": -81.308387,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "So-Pak-Co",
@@ -38996,13 +40084,17 @@
    "state": "MD",
    "tier": "listed",
    "source": "rebulk-directory (CSX)",
-   "commodities": [],
+   "commodities": [
+    "Lumber",
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://mpa.maryland.gov/Pages/south-locust-point.aspx",
    "lat": 39.2904,
-   "lng": -76.6122
+   "lng": -76.6122,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "South Point Terminal / South Point & Ohio Railroad",
@@ -39268,13 +40360,20 @@
    "state": "ME",
    "tier": "listed",
    "source": "rebulk-directory (CPKC)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Lumber",
+    "Minerals"
+   ],
+   "capabilities": [
+    "Liquid Storage Tanks",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.spragueenergy.com/materials-handling/",
    "lat": 44.474953,
-   "lng": -68.915604
+   "lng": -68.915604,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Springfield Underground Inc",
@@ -39458,13 +40557,16 @@
    "state": "MO",
    "tier": "listed",
    "source": "rebulk-directory (G&W MNA)",
-   "commodities": [],
+   "commodities": [
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://standardironusa.com/",
    "lat": 37.141276,
-   "lng": -94.467627
+   "lng": -94.467627,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Standlee",
@@ -39808,13 +40910,23 @@
    "state": "SC",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Chemicals (Liq)"
+   ],
+   "capabilities": [
+    "Blending Meters",
+    "Hot Water Heating",
+    "Liquid Storage Tanks",
+    "Sampling Services",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://sunlandlogisticssolutions.com/locations/north-charleston-sc/",
    "lat": 32.85462,
-   "lng": -79.97481
+   "lng": -79.97481,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Sunoco LP Baltimore Terminal",
@@ -39893,13 +41005,19 @@
    "state": "AZ",
    "tier": "listed",
    "source": "rebulk-directory (UP)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)",
+    "Steel"
+   ],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://sunsetroutetransload.com/",
    "lat": 32.906895,
-   "lng": -111.763503
+   "lng": -111.763503,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Superior Carrier",
@@ -40585,13 +41703,18 @@
    "state": "PA",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)"
+   ],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://agsourceusa.com",
    "lat": 40.86147,
-   "lng": -76.786695
+   "lng": -76.786695,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Sweetener Supply",
@@ -40626,13 +41749,18 @@
    "state": "NY",
    "tier": "listed",
    "source": "rebulk-directory (LAL NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Liq)"
+   ],
+   "capabilities": [
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.ingredientsplus.com/",
    "lat": 42.836761,
-   "lng": -77.703154
+   "lng": -77.703154,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Sweetwater Logistics Center",
@@ -40677,13 +41805,19 @@
    "state": "OH",
    "tier": "listed",
    "source": "rebulk-directory (CSX NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Dry)"
+   ],
+   "capabilities": [
+    "Blending Meters",
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://sylvite.ca/agriculture/retail-locations/akron-ohio/",
    "lat": 41.080456,
-   "lng": -81.521429
+   "lng": -81.521429,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "T & J Marketing",
@@ -40694,13 +41828,16 @@
    "state": "OK",
    "tier": "listed",
    "source": "rebulk-directory (SLWC BNSF UP CPKC)",
-   "commodities": [],
+   "commodities": [
+    "Petroleum Products"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.tjmarketingok.com/",
    "lat": 35.712784,
-   "lng": -96.836198
+   "lng": -96.836198,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Tacoma Transload",
@@ -40749,13 +41886,22 @@
    "state": "IN",
    "tier": "listed",
    "source": "rebulk-directory (LIRC)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Foods (Liq)",
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Blending Meters",
+    "Liquid Storage Tanks",
+    "Sampling Services"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.wolflakeinc.com/",
    "lat": 38.27757,
-   "lng": -85.737184
+   "lng": -85.737184,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Tank Truck Transport Inc",
@@ -40784,12 +41930,16 @@
    "tier": "listed",
    "source": "rebulk-directory (CPKC)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Scale",
+    "Steam Heating"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.tantara.us/about/tantara-bulk-transload-storage-co/",
    "lat": 41.419058,
-   "lng": -91.067946
+   "lng": -91.067946,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "TCI (Transportation Consultants, Inc.)",
@@ -40817,13 +41967,16 @@
    "state": "LA",
    "tier": "listed",
    "source": "rebulk-directory (NOPB NS)",
-   "commodities": [],
+   "commodities": [
+    "Plastics (Dry)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.tcipackaging.com/",
    "lat": 29.9511,
-   "lng": -90.0715
+   "lng": -90.0715,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "TCWR Montevideo Transload",
@@ -41026,13 +42179,19 @@
    "state": "TX",
    "tier": "listed",
    "source": "rebulk-directory (G&W TNER)",
-   "commodities": [],
+   "commodities": [
+    "Lumber",
+    "Minerals",
+    "Plastics (Dry)",
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.texamericascenter.com/logistics-services/transload-services/",
    "lat": 33.46111,
-   "lng": -94.419096
+   "lng": -94.419096,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Texas and Eastern Railroad",
@@ -41103,13 +42262,17 @@
    "state": "GA",
    "tier": "listed",
    "source": "rebulk-directory (G&W GSWR)",
-   "commodities": [],
+   "commodities": [
+    "Asphalt",
+    "Petroleum Products"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://texpar.com/",
    "lat": 30.9038,
-   "lng": -84.5755
+   "lng": -84.5755,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "TGS Cedar Port Railroad Transload Terminal",
@@ -41121,12 +42284,15 @@
    "tier": "listed",
    "source": "rebulk-directory (TGS Cedar Port Railroad BNSF UP)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Liquid Pumps"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.tgscedarportrailroad.com/",
    "lat": 29.76478,
-   "lng": -94.967457
+   "lng": -94.967457,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Thatcher Company Inc",
@@ -41383,13 +42549,22 @@
    "state": "WA",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Chemicals (Liq)",
+    "Foods (Dry)",
+    "Lumber",
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Blending Meters"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.tidewater.com/",
    "lat": 46.23958,
-   "lng": -119.10057
+   "lng": -119.10057,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Tidewater Transit Co",
@@ -43811,13 +44986,18 @@
    "state": "WV",
    "tier": "listed",
    "source": "rebulk-directory (CSX Transportation (CSXT))",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Minerals"
+   ],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://transloadsolutionsllc.com/",
    "lat": 40.004606,
-   "lng": -80.730567
+   "lng": -80.730567,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Transload Solutions LLC",
@@ -43859,13 +45039,16 @@
    "state": "MA",
    "tier": "listed",
    "source": "rebulk-directory (CSX)",
-   "commodities": [],
+   "commodities": [
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://transloadx.com/",
    "lat": 42.307905,
-   "lng": -71.436196
+   "lng": -71.436196,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "TransMontaigne Greensboro-SET Terminal",
@@ -43997,13 +45180,19 @@
    "state": "MO",
    "tier": "listed",
    "source": "rebulk-directory (UP)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Minerals"
+   ],
+   "capabilities": [
+    "Blending Meters",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.transport360.org/blank",
    "lat": 39.75946,
-   "lng": -94.821143
+   "lng": -94.821143,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Transportation Partners & Logistic LLC",
@@ -44192,13 +45381,17 @@
    "state": "CA",
    "tier": "listed",
    "source": "rebulk-directory (G&W SJVR)",
-   "commodities": [],
+   "commodities": [
+    "Asphalt",
+    "Petroleum Products"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.tricorrefining.com/",
    "lat": 35.42926,
-   "lng": -119.030576
+   "lng": -119.030576,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Trimac Inc",
@@ -44622,12 +45815,15 @@
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.trtransload.com/",
    "lat": 36.13981,
-   "lng": -96.10889
+   "lng": -96.10889,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Tunkhannock Transload",
@@ -44638,13 +45834,16 @@
    "state": "PA",
    "tier": "listed",
    "source": "rebulk-directory (RBMN NS CPKC)",
-   "commodities": [],
+   "commodities": [
+    "Frac Sand"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.rbmnrr.com/tunk-transload",
    "lat": 41.541084,
-   "lng": -75.949058
+   "lng": -75.949058,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Tuscarora Grain Company Transload",
@@ -44655,13 +45854,19 @@
    "state": "PA",
    "tier": "listed",
    "source": "rebulk-directory (NSHR NS CPKC)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)",
+    "Minerals"
+   ],
+   "capabilities": [
+    "Bulk Conveyor"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.tgcgrain.com/",
    "lat": 41.002717,
-   "lng": -76.45658
+   "lng": -76.45658,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Twin Cities & Western Railroad",
@@ -44859,13 +46064,16 @@
    "state": "WI",
    "tier": "listed",
    "source": "rebulk-directory (BNSF CPKC UP)",
-   "commodities": [],
+   "commodities": [
+    "Minerals"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.twinportswarehouse.com/",
    "lat": 46.7208,
-   "lng": -92.1041
+   "lng": -92.1041,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Twin State Sand and Gravel",
@@ -45063,13 +46271,19 @@
    "state": "IL",
    "tier": "listed",
    "source": "rebulk-directory (UP)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Foods (Dry)"
+   ],
+   "capabilities": [
+    "Sampling Services",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.up.com/customers/premium/global4-transload/",
    "lat": 41.525031,
-   "lng": -88.081725
+   "lng": -88.081725,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Union Railroad Duquesne Wharf",
@@ -45114,13 +46328,16 @@
    "state": "OH",
    "tier": "listed",
    "source": "rebulk-directory (NS YARR)",
-   "commodities": [],
+   "commodities": [
+    "Foods (Liq)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://unitedfreezer.com",
    "lat": 41.099095,
-   "lng": -80.645902
+   "lng": -80.645902,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "United Motor Freight",
@@ -45349,13 +46566,21 @@
    "state": "SC",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Lumber",
+    "Minerals",
+    "Steel"
+   ],
+   "capabilities": [
+    "Bulk Conveyor",
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.universaltradesolutions.com/",
    "lat": 33.493596,
-   "lng": -80.86688
+   "lng": -80.86688,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Upper Cape Regional Transfer Station",
@@ -45536,13 +46761,22 @@
    "state": "VA",
    "tier": "listed",
    "source": "rebulk-directory (CSX)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)",
+    "Minerals",
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Blending Meters",
+    "Liquid Pumps",
+    "Steam Heating"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://usdg.com/",
    "lat": 37.5407,
-   "lng": -77.436
+   "lng": -77.436,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Utility Supply",
@@ -45570,13 +46804,16 @@
    "state": "WA",
    "tier": "listed",
    "source": "rebulk-directory (Meeker Southern Railroad BNSF UP)",
-   "commodities": [],
+   "commodities": [
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://vvandyke.com/",
    "lat": 47.179046,
-   "lng": -122.291523
+   "lng": -122.291523,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Valley Distributing & Storage Co",
@@ -47899,13 +49136,16 @@
    "state": "MA",
    "tier": "listed",
    "source": "rebulk-directory (Massachusetts Coastal Railroad (MC))",
-   "commodities": [],
+   "commodities": [
+    "Foods (Liq)"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.waterfrontcoldstore.com/",
    "lat": 41.903324,
-   "lng": -71.094987
+   "lng": -71.094987,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Waterfront Petroleum Dearborn Terminal",
@@ -47916,13 +49156,20 @@
    "state": "MI",
    "tier": "listed",
    "source": "rebulk-directory (CN CSX NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Asphalt",
+    "Petroleum Products"
+   ],
+   "capabilities": [
+    "Blending Meters",
+    "Steam Heating"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://waterfrontpetroleum.com/",
    "lat": 42.313057,
-   "lng": -83.211488
+   "lng": -83.211488,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Waterloo Railroad, LLC",
@@ -47950,13 +49197,16 @@
    "state": "RI",
    "tier": "listed",
    "source": "rebulk-directory (G&W PW)",
-   "commodities": [],
+   "commodities": [
+    "Minerals"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://watersonllc.com/",
    "lat": 41.823056,
-   "lng": -71.418784
+   "lng": -71.418784,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Wayne Industries Incorporated",
@@ -48054,13 +49304,18 @@
    "state": "MI",
    "tier": "listed",
    "source": "rebulk-directory (Michigan Shore Railroad (MS))",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Liq)"
+   ],
+   "capabilities": [
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://webbchemical.com/",
    "lat": 43.201921,
-   "lng": -86.240963
+   "lng": -86.240963,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Weber Distribution Warehouses",
@@ -48088,13 +49343,17 @@
    "state": "MT",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
+   "commodities": [
+    "Frac Sand",
+    "Lumber"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.weitransload.com/",
    "lat": 48.110482,
-   "lng": -105.196887
+   "lng": -105.196887,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Weirton Frontier Crossing",
@@ -48156,13 +49415,17 @@
    "state": "OH",
    "tier": "listed",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
+   "commodities": [
+    "Minerals",
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.wellsvilleterminals.com/",
    "lat": 40.603924,
-   "lng": -80.655745
+   "lng": -80.655745,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "West Coast Pipe Inspection",
@@ -48190,13 +49453,17 @@
    "state": "PA",
    "tier": "listed",
    "source": "rebulk-directory (WESL NS)",
-   "commodities": [],
+   "commodities": [
+    "Plastics (Dry)",
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://resourcefulrail.com/west-erie-short-line-1",
    "lat": 42.116594,
-   "lng": -80.073503
+   "lng": -80.073503,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "West Inman NS TBT",
@@ -48327,12 +49594,15 @@
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "Scale"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.westernnevadatransload.com/",
    "lat": 39.56477,
-   "lng": -119.189433
+   "lng": -119.189433,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Western New York & Pennsylvania Railroad",
@@ -49091,13 +50361,16 @@
    "state": "KY",
    "tier": "listed",
    "source": "rebulk-directory (PAL)",
-   "commodities": [],
+   "commodities": [
+    "Lumber"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.wyattbell.com/",
    "lat": 37.070892,
-   "lng": -88.644477
+   "lng": -88.644477,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Wymore Transfer Co",
@@ -49142,13 +50415,16 @@
    "state": "WY",
    "tier": "listed",
    "source": "rebulk-directory (Wyoming Connect Railroad UP)",
-   "commodities": [],
+   "commodities": [
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.wyconrr.com/",
    "lat": 41.916978,
-   "lng": -104.295389
+   "lng": -104.295389,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Wyoming Millwork",
@@ -49210,13 +50486,17 @@
    "state": "MS",
    "tier": "listed",
    "source": "rebulk-directory (Yellow Creek Railroad (YCRK) CPKC)",
-   "commodities": [],
+   "commodities": [
+    "Petroleum Products",
+    "Steel"
+   ],
    "capabilities": [],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.yellowcreekport.com/",
    "lat": 34.807384,
-   "lng": -88.19692
+   "lng": -88.19692,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Yellowstone Industrial Development",
@@ -49360,13 +50640,20 @@
    "state": "MO",
    "tier": "listed",
    "source": "rebulk-directory (BNSF)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Chemicals (Dry)",
+    "Plastics (Dry)"
+   ],
+   "capabilities": [
+    "Bulk Conveyor",
+    "Liquid Storage Tanks"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.umlauttransloading.com/",
    "lat": 37.208957,
-   "lng": -93.292299
+   "lng": -93.292299,
+   "commodities_source": "web-extracted 2026-08-20"
   },
   {
    "name": "Houston Rail Park (Jaguar Transport)",

@@ -265,7 +265,7 @@
       <div class="tl-filter-row">
         <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
         <select id="tlCity" aria-label="Filter by city"><option value="">All cities (9)</option><option value="charlestown">Charlestown</option><option value="nashua">Nashua</option><option value="newington">Newington</option><option value="north stratford">North Stratford</option><option value="north walpole">North Walpole</option><option value="ossipee">Ossipee</option><option value="portsmouth">Portsmouth</option><option value="west lebanon">West Lebanon</option><option value="whitefield">Whitefield</option></select>
-        
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="minerals">Minerals</option></select>
         
       </div>
       <div class="tl-filter-row tl-filter-toggles">
@@ -273,7 +273,7 @@
         <label><input type="checkbox" id="tlPhone"> Has phone (2)</label>
         <button type="button" id="tlReset">Reset</button>
         <span id="tlCount" class="tl-count"></span>
-      </div><p class="tl-sparse">Commodity detail is confirmed for 0 of 11 sites and capability detail for 0. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 1 of 11 sites and capability detail for 0. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
     </div>
       <div class="railroads-grid">
       <div class="railroad-item tl-card" data-city="charlestown" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="upper valley transfer charlestown   " style="margin-bottom:14px">
@@ -312,9 +312,10 @@
         <div style="color:#555;font-size:0.9em">North Walpole, NH</div>
         <div><a href="https://vrs.us.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="ossipee" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="new hampshire northcoast ossipee transload ossipee   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ossipee" data-tier="listed" data-phone="1" data-comm="minerals" data-cap="" data-text="new hampshire northcoast ossipee transload ossipee  minerals " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">New Hampshire Northcoast Ossipee Transload</h3>
         <div style="color:#555;font-size:0.9em">Ossipee, NH</div>
+        <div><strong>Commodities:</strong> Minerals</div>
         <div><strong>Phone:</strong> (603) 539-2789</div>
         <div><a href="https://www.nhnorthcoast.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>

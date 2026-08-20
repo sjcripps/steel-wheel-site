@@ -631,14 +631,14 @@
         <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
         <select id="tlCity" aria-label="Filter by city"><option value="">All cities (25)</option><option value="bardstown">Bardstown</option><option value="beaver dam">Beaver Dam</option><option value="bowling green">Bowling Green</option><option value="calvert city">Calvert City</option><option value="eddyville">Eddyville</option><option value="elizabethtown">Elizabethtown</option><option value="florence">Florence</option><option value="ghent">Ghent</option><option value="hawesville">Hawesville</option><option value="henderson">Henderson</option><option value="hickman">Hickman</option><option value="holliwood">Holliwood</option><option value="hopkinsville">Hopkinsville</option><option value="lexington">Lexington</option><option value="louisville">Louisville</option><option value="maysville">Maysville</option><option value="owensboro">Owensboro</option><option value="paducah">Paducah</option><option value="paris">Paris</option><option value="princeton">Princeton</option><option value="somerset">Somerset</option><option value="vine grove">Vine Grove</option><option value="west paducah">West Paducah</option><option value="woodburn">Woodburn</option><option value="wurtland">Wurtland</option></select>
         <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="asphalt">Asphalt</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
-        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="hot water heating">Hot Water Heating</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="blending meters">Blending Meters</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="gravity (trestle)">Gravity (Trestle)</option><option value="hot water heating">Hot Water Heating</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
       </div>
       <div class="tl-filter-row tl-filter-toggles">
         <label><input type="checkbox" id="tlVerified"> Verified only (6)</label>
         <label><input type="checkbox" id="tlPhone"> Has phone (16)</label>
         <button type="button" id="tlReset">Reset</button>
         <span id="tlCount" class="tl-count"></span>
-      </div><p class="tl-sparse">Commodity detail is confirmed for 6 of 36 sites and capability detail for 6. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 9 of 36 sites and capability detail for 10. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
     </div>
       <div class="railroads-grid">
       <div class="railroad-item tl-card" data-city="bardstown" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="r.j. corman bardstown line (rjcr) bardstown r.j. corman short line — transload service available  " style="margin-bottom:14px">
@@ -732,9 +732,11 @@
         <div><strong>Phone:</strong> (800) 421-0124</div>
         <div><a href="https://ee-jay.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="louisville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="louisville seventh 3pl louisville   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="louisville" data-tier="listed" data-phone="1" data-comm="foods (liq)|lumber|minerals|steel" data-cap="bulk conveyor" data-text="louisville seventh 3pl louisville  foods (liq) lumber minerals steel bulk conveyor" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Louisville Seventh 3PL</h3>
         <div style="color:#555;font-size:0.9em">Louisville, KY</div>
+        <div><strong>Commodities:</strong> Foods (Liq), Lumber, Minerals, Steel</div>
+        <div><strong>Capabilities:</strong> Bulk Conveyor</div>
         <div><strong>Phone:</strong> (502) 636-5817</div>
         <div><a href="https://www.louisvilleseventh.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
@@ -754,9 +756,11 @@
         <div><strong>Phone:</strong> (502) 774-9040</div>
         <div><a href="http://www.nscorp.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="louisville" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="port of louisville bulk commodity terminal louisville   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="louisville" data-tier="listed" data-phone="1" data-comm="chemicals (dry)|foods (dry)|lumber|minerals|steel" data-cap="blending meters|bulk conveyor|sampling services" data-text="port of louisville bulk commodity terminal louisville  chemicals (dry) foods (dry) lumber minerals steel blending meters bulk conveyor sampling services" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Port of Louisville Bulk Commodity Terminal</h3>
         <div style="color:#555;font-size:0.9em">Louisville, KY</div>
+        <div><strong>Commodities:</strong> Chemicals (Dry), Foods (Dry), Lumber, Minerals, Steel</div>
+        <div><strong>Capabilities:</strong> Blending Meters, Bulk Conveyor, Sampling Services</div>
         <div><strong>Phone:</strong> (502) 937-9995</div>
         <div><a href="https://www.portoflouisville.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
@@ -784,9 +788,10 @@
         <div><strong>Phone:</strong> (800) 736-0412</div>
         <div><a href="https://mbrail.com/mb-rail-to-open-multimodal-port/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="owensboro" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="castlen steel transloading facility owensboro   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="owensboro" data-tier="listed" data-phone="1" data-comm="" data-cap="scale" data-text="castlen steel transloading facility owensboro   scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Castlen Steel Transloading Facility</h3>
         <div style="color:#555;font-size:0.9em">Owensboro, KY</div>
+        <div><strong>Capabilities:</strong> Scale</div>
         <div><strong>Phone:</strong> (270) 264-2734</div>
         <div><a href="https://www.castlensteel.com/transloading-facility/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
@@ -802,9 +807,10 @@
         <div><strong>Phone:</strong> (270) 448-5033</div>
         <div><a href="https://wagnerwarehousing.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="paducah" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="wyatt bell &amp; company paducah   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="paducah" data-tier="listed" data-phone="1" data-comm="lumber" data-cap="" data-text="wyatt bell &amp; company paducah  lumber " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Wyatt Bell &amp; Company</h3>
         <div style="color:#555;font-size:0.9em">Paducah, KY</div>
+        <div><strong>Commodities:</strong> Lumber</div>
         <div><strong>Phone:</strong> (270) 442-5484</div>
         <div><a href="https://www.wyattbell.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
@@ -837,9 +843,10 @@
         <div style="color:#555;font-size:0.9em">Vine Grove, KY</div>
         <div><a href="https://ckdistribution.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="west paducah" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="four rivers terminal llc west paducah   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="west paducah" data-tier="listed" data-phone="1" data-comm="" data-cap="bulk conveyor|gravity (trestle)|liquid pumps" data-text="four rivers terminal llc west paducah   bulk conveyor gravity (trestle) liquid pumps" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Four Rivers Terminal LLC</h3>
         <div style="color:#555;font-size:0.9em">West Paducah, KY</div>
+        <div><strong>Capabilities:</strong> Bulk Conveyor, Gravity (Trestle), Liquid Pumps</div>
         <div><strong>Phone:</strong> (615) 721-6197</div>
         <div><a href="https://sch.services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>

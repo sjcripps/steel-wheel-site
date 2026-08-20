@@ -744,20 +744,22 @@
       <div class="tl-filter-row">
         <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
         <select id="tlCity" aria-label="Filter by city"><option value="">All cities (25)</option><option value="ardmore">Ardmore</option><option value="blackwell">Blackwell</option><option value="catoosa">Catoosa</option><option value="chandler">Chandler</option><option value="del city">Del City</option><option value="el reno">El Reno</option><option value="elk city">Elk City</option><option value="enid">Enid</option><option value="howe">Howe</option><option value="hugo">Hugo</option><option value="mcalester">Mcalester</option><option value="minco">Minco</option><option value="muskogee">Muskogee</option><option value="oklahoma city">Oklahoma City</option><option value="pocasset">Pocasset</option><option value="pond creek">Pond Creek</option><option value="sand springs">Sand Springs</option><option value="shattuck">Shattuck</option><option value="shawnee">Shawnee</option><option value="stroud">Stroud</option><option value="thomas">Thomas</option><option value="tulsa">Tulsa</option><option value="westhom">Westhom</option><option value="woodward">Woodward</option><option value="wright city">Wright City</option></select>
-        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
-        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="bulk conveyor">Bulk Conveyor</option><option value="liquid pumps">Liquid Pumps</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="bulk conveyor">Bulk Conveyor</option><option value="hot water heating">Hot Water Heating</option><option value="liquid pumps">Liquid Pumps</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option></select>
       </div>
       <div class="tl-filter-row tl-filter-toggles">
         <label><input type="checkbox" id="tlVerified"> Verified only (13)</label>
         <label><input type="checkbox" id="tlPhone"> Has phone (17)</label>
         <button type="button" id="tlReset">Reset</button>
         <span id="tlCount" class="tl-count"></span>
-      </div><p class="tl-sparse">Commodity detail is confirmed for 10 of 44 sites and capability detail for 10. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 13 of 44 sites and capability detail for 13. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
     </div>
       <div class="railroads-grid">
-      <div class="railroad-item tl-card" data-city="ardmore" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="asphalt express enterprises rail terminal ardmore   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="ardmore" data-tier="listed" data-phone="1" data-comm="foods (dry)|frac sand|lumber|minerals|petroleum products|plastics (dry)" data-cap="hot water heating" data-text="asphalt express enterprises rail terminal ardmore  foods (dry) frac sand lumber minerals petroleum products plastics (dry) hot water heating" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Asphalt Express Enterprises Rail Terminal</h3>
         <div style="color:#555;font-size:0.9em">Ardmore, OK</div>
+        <div><strong>Commodities:</strong> Foods (Dry), Frac Sand, Lumber, Minerals, Petroleum Products, Plastics (Dry)</div>
+        <div><strong>Capabilities:</strong> Hot Water Heating</div>
         <div><strong>Phone:</strong> (800) 651-4971</div>
         <div><a href="https://www.asphaltexpress.net/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
@@ -794,9 +796,10 @@
         <div style="color:#555;font-size:0.9em">Catoosa, OK</div>
         <div><a href="https://www.watcocompanies.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="chandler" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="t &amp; j marketing chandler rail and storage facility  " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="chandler" data-tier="listed" data-phone="0" data-comm="petroleum products" data-cap="" data-text="t &amp; j marketing chandler rail and storage facility petroleum products " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">T &amp; J Marketing</h3>
         <div style="color:#555;font-size:0.9em">Chandler, OK</div>
+        <div><strong>Commodities:</strong> Petroleum Products</div>
         <div><a href="https://www.tjmarketingok.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Rail and Storage Facility</div>
       </div>
@@ -884,9 +887,11 @@
         <div><a href="https://aokrr.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Transload</div>
       </div>
-      <div class="railroad-item tl-card" data-city="minco" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="fitzgerald transloading minco siding  " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="minco" data-tier="listed" data-phone="1" data-comm="minerals" data-cap="bulk conveyor|scale" data-text="fitzgerald transloading minco siding minerals bulk conveyor scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Fitzgerald Transloading</h3>
         <div style="color:#555;font-size:0.9em">Minco, OK</div>
+        <div><strong>Commodities:</strong> Minerals</div>
+        <div><strong>Capabilities:</strong> Bulk Conveyor, Scale</div>
         <div><strong>Phone:</strong> (405) 352-4902</div>
         <div><a href="https://www.fitzgeraldtruck.com/transloading" target="_blank" rel="noopener nofollow">Operator website</a></div>
         <div>Siding</div>
@@ -950,9 +955,10 @@
         <div><strong>Phone:</strong> (918) 241-1515 ext. 19</div>
         <div><a href="https://www.parker-plastics.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="sand springs" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="tulsa rail transload sand springs   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="sand springs" data-tier="listed" data-phone="1" data-comm="" data-cap="scale" data-text="tulsa rail transload sand springs   scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Tulsa Rail Transload</h3>
         <div style="color:#555;font-size:0.9em">Sand Springs, OK</div>
+        <div><strong>Capabilities:</strong> Scale</div>
         <div><strong>Phone:</strong> (918) 256-7883</div>
         <div><a href="https://www.trtransload.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>

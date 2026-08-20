@@ -369,14 +369,14 @@
         <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
         <select id="tlCity" aria-label="Filter by city"><option value="">All cities (11)</option><option value="auburn">Auburn</option><option value="bangor">Bangor</option><option value="fairfield">Fairfield</option><option value="hermon">Hermon</option><option value="mechanic falls">Mechanic Falls</option><option value="portland">Portland</option><option value="scarborough">Scarborough</option><option value="searsport">Searsport</option><option value="south paris">South Paris</option><option value="south portland">South Portland</option><option value="van buren">Van Buren</option></select>
         <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option></select>
-        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="bulk conveyor">Bulk Conveyor</option><option value="liquid pumps">Liquid Pumps</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="bulk conveyor">Bulk Conveyor</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
       </div>
       <div class="tl-filter-row tl-filter-toggles">
         <label><input type="checkbox" id="tlVerified"> Verified only (2)</label>
         <label><input type="checkbox" id="tlPhone"> Has phone (7)</label>
         <button type="button" id="tlReset">Reset</button>
         <span id="tlCount" class="tl-count"></span>
-      </div><p class="tl-sparse">Commodity detail is confirmed for 2 of 18 sites and capability detail for 1. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 6 of 18 sites and capability detail for 5. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
     </div>
       <div class="railroads-grid">
       <div class="railroad-item tl-card" data-city="auburn" data-tier="verified" data-phone="1" data-comm="lumber" data-cap="" data-text="dirigo transfer auburn 1924 hotel rd — casco bay rail holdings trade name; handling and storage rates on request lumber " style="margin-bottom:14px">
@@ -438,9 +438,11 @@
         <div style="color:#555;font-size:0.9em">Mechanic Falls, ME</div>
         <div><a href="https://www.nepw.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="portland" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="maine international cold storage facility portland   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="portland" data-tier="listed" data-phone="1" data-comm="foods (dry)|foods (liq)" data-cap="liquid storage tanks|scale" data-text="maine international cold storage facility portland  foods (dry) foods (liq) liquid storage tanks scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Maine International Cold Storage Facility</h3>
         <div style="color:#555;font-size:0.9em">Portland, ME</div>
+        <div><strong>Commodities:</strong> Foods (Dry), Foods (Liq)</div>
+        <div><strong>Capabilities:</strong> Liquid Storage Tanks, Scale</div>
         <div><strong>Phone:</strong> (207) 464-7648</div>
         <div><a href="https://coldstoragemaine.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
@@ -454,15 +456,19 @@
         <div style="color:#555;font-size:0.9em">Scarborough, ME</div>
         <div><a href="https://www.nepw.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="searsport" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="gac chemical searsport logistics facility searsport   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="searsport" data-tier="listed" data-phone="1" data-comm="acids|chemicals (liq)" data-cap="liquid pumps|liquid storage tanks" data-text="gac chemical searsport logistics facility searsport  acids chemicals (liq) liquid pumps liquid storage tanks" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">GAC Chemical Searsport Logistics Facility</h3>
         <div style="color:#555;font-size:0.9em">Searsport, ME</div>
+        <div><strong>Commodities:</strong> Acids, Chemicals (Liq)</div>
+        <div><strong>Capabilities:</strong> Liquid Pumps, Liquid Storage Tanks</div>
         <div><strong>Phone:</strong> (800) 266-5155</div>
         <div><a href="https://www.gacchemical.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="searsport" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="sprague terminals searsport   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="searsport" data-tier="listed" data-phone="0" data-comm="lumber|minerals" data-cap="liquid storage tanks|scale" data-text="sprague terminals searsport  lumber minerals liquid storage tanks scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Sprague Terminals</h3>
         <div style="color:#555;font-size:0.9em">Searsport, ME</div>
+        <div><strong>Commodities:</strong> Lumber, Minerals</div>
+        <div><strong>Capabilities:</strong> Liquid Storage Tanks, Scale</div>
         <div><a href="https://www.spragueenergy.com/materials-handling/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
       <div class="railroad-item tl-card" data-city="south paris" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="nepw logistics south paris   " style="margin-bottom:14px">
@@ -475,9 +481,11 @@
         <div style="color:#555;font-size:0.9em">South Portland, ME</div>
         <div><a href="https://www.transflo.net/locations/maine-portland/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="van buren" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="nbm railways van buren reload van buren   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="van buren" data-tier="listed" data-phone="1" data-comm="lumber" data-cap="liquid pumps" data-text="nbm railways van buren reload van buren  lumber liquid pumps" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">NBM Railways Van Buren Reload</h3>
         <div style="color:#555;font-size:0.9em">Van Buren, ME</div>
+        <div><strong>Commodities:</strong> Lumber</div>
+        <div><strong>Capabilities:</strong> Liquid Pumps</div>
         <div><strong>Phone:</strong> (506) 635-3952</div>
         <div><a href="https://www.nbmrailways.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>

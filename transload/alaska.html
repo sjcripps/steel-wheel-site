@@ -267,15 +267,15 @@
       <div class="tl-filter-row">
         <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
         <select id="tlCity" aria-label="Filter by city"><option value="">All cities (5)</option><option value="anchorage">Anchorage</option><option value="fairbanks">Fairbanks</option><option value="nenana">Nenana</option><option value="seward">Seward</option><option value="whittier">Whittier</option></select>
-        
-        
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="liquid pumps">Liquid Pumps</option><option value="liquid storage tanks">Liquid Storage Tanks</option><option value="scale">Scale</option></select>
       </div>
       <div class="tl-filter-row tl-filter-toggles">
         
         <label><input type="checkbox" id="tlPhone"> Has phone (6)</label>
         <button type="button" id="tlReset">Reset</button>
         <span id="tlCount" class="tl-count"></span>
-      </div><p class="tl-sparse">Commodity detail is confirmed for 0 of 11 sites and capability detail for 0. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 2 of 11 sites and capability detail for 1. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
     </div>
       <div class="railroads-grid">
       <div class="railroad-item tl-card" data-city="anchorage" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="anchorage commercial carriers auto ramp anchorage   " style="margin-bottom:14px">
@@ -283,15 +283,18 @@
         <div style="color:#555;font-size:0.9em">Anchorage, AK</div>
 
       </div>
-      <div class="railroad-item tl-card" data-city="anchorage" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="don young port of alaska railcar loading and unloading terminal anchorage   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="anchorage" data-tier="listed" data-phone="1" data-comm="minerals|petroleum products" data-cap="liquid pumps|liquid storage tanks|scale" data-text="don young port of alaska railcar loading and unloading terminal anchorage  minerals petroleum products liquid pumps liquid storage tanks scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Don Young Port of Alaska Railcar Loading and Unloading Terminal</h3>
         <div style="color:#555;font-size:0.9em">Anchorage, AK</div>
+        <div><strong>Commodities:</strong> Minerals, Petroleum Products</div>
+        <div><strong>Capabilities:</strong> Liquid Pumps, Liquid Storage Tanks, Scale</div>
         <div><strong>Phone:</strong> (907) 343-6200</div>
         <div><a href="https://www.portofalaska.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="anchorage" data-tier="listed" data-phone="1" data-comm="" data-cap="" data-text="north star anderson terminal anchorage   " style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="anchorage" data-tier="listed" data-phone="1" data-comm="lumber|steel" data-cap="" data-text="north star anderson terminal anchorage  lumber steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">North Star Anderson Terminal</h3>
         <div style="color:#555;font-size:0.9em">Anchorage, AK</div>
+        <div><strong>Commodities:</strong> Lumber, Steel</div>
         <div><strong>Phone:</strong> (907) 272-7537</div>
         <div><a href="https://northstarak.com/terminal-stevedoring-services/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
