@@ -895,3 +895,453 @@
 {"name": "Norfolk Southern TBT", "city": "Binghamton", "state": "NY", "website": "http://www.nscorp.com/", "ok": true, "address": null}
 {"name": "Norfolk Southern TBT", "city": "Buffalo", "state": "NY", "website": "http://www.nscorp.com/", "ok": true, "address": null}
 {"name": "Omnitrax Logistics Services", "city": "Lackawanna", "state": "NY", "website": "http://omnitrax.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Plastic Express", "city": "Guilderland Center", "state": "NY", "website": "http://www.plasticexpress.com/operations/", "ok": true, "address": null}
+{"name": "Port of Buffalo", "city": "Lackawanna", "state": "NY", "website": "https://www.portofbuffalo.com/", "ok": true, "address": null}
+{"name": "Precision Terminal Logistics", "city": "Long Island City", "state": "NY", "website": "https://www.precisiontl.com/", "ok": true, "address": null}
+{"name": "RSI Logistics", "city": "Buffalo", "state": "NY", "website": "https://www.rsilogistics.com/rail-solutions/rail-terminal-services/buffalo-ny-transload/", "ok": false, "stage": "fetch", "error": "HTTP Error 429: Too Many Requests"}
+{"name": "Richmond Hill Team Track", "city": "Jamaica", "state": "NY", "website": "https://www.anacostia.com/our-companies/nya/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Rochester & Southern Railroad (RSR)", "city": "West Henrietta", "state": "NY", "website": "https://www.gwrr.com/railroads/rochester-and-southern-railroad", "ok": true, "address": "4545 East, West Henrietta, NY 14586", "coords": null}
+{"name": "Rsi Leasing", "city": "Lackawanna", "state": "NY", "website": "https://www.rsilogistics.com/rail-solutions/terminal-operations/buffalo-ny-reload/", "ok": false, "stage": "fetch", "error": "HTTP Error 429: Too Many Requests"}
+{"name": "Susquehanna Bulk Systems", "city": "Binghamton", "state": "NY", "website": "https://www.nysw.com", "ok": true, "address": null}
+{"name": "Sweeteners Plus Incorporated", "city": "Lakeville", "state": "NY", "website": "https://www.ingredientsplus.com/", "ok": true, "address": null}
+{"name": "TRANSFLO New York-Buffalo Terminal", "city": "Buffalo", "state": "NY", "website": "https://www.transflo.net/locations/new-york-buffalo/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Transflo CSXT", "city": "Albany", "state": "NY", "website": "https://www.transflo.net/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Transflo CSXT", "city": "Buffalo", "state": "NY", "website": "https://www.transflo.net/locations/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Watco", "city": "Bronx", "state": "NY", "website": "https://www.watco.com/service/terminal-services/dedicated", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Wellsboro & Corning Railroad (WCOR)", "city": "West Henrietta", "state": "NY", "website": "https://www.gwrr.com/railroads/wellsboro-and-corning-railroad", "ok": true, "address": "4545 East, West Henrietta, NY 14586", "coords": null}
+{"name": "AC&J Carson Transload", "city": "Carson", "state": "OH", "website": "https://wp.acjrailroad.com/", "ok": true, "address": null}
+{"name": "Adams Brothers", "city": "Zanesville", "state": "OH", "website": "https://www.adamsbrosconcrete.com/", "ok": true, "address": null}
+{"name": "American Rail Center", "city": "Toledo", "state": "OH", "website": "https://www.americanrailcenter.com/", "ok": true, "address": null}
+{"name": "Americold", "city": "Napoleon", "state": "OH", "website": "https://www.americold.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Americold Logistics", "city": "Columbus", "state": "OH", "website": "https://www.americold.com/facilities/columbus/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Ann Arbor Railroad", "city": "Toledo", "state": "OH", "website": "https://www.watco.com/service/rail/ann-arbor-railroad-aa/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Ashtabula Industrial Park Transload", "city": "Ashtabula", "state": "OH", "website": "https://ashtabulaindustrialpark.com/", "ok": true, "address": "2133 Lake Road, Ashtabula, OH 44004", "coords": {"lat": 41.882245650012, "lon": -80.798713088278, "matched": "2133 LAKE AVE, ASHTABULA, OH, 44004"}, "moved_mi": 0.19}
+{"name": "Benchmark River & Rail Terminals LLC", "city": "Cincinnati", "state": "OH", "website": "https://www.benchmarkterminals.com/", "ok": true, "address": "4820 RIVER RD, Cincinnati, OH 45233", "coords": {"lat": 39.082801983567, "lon": -84.636746033631, "matched": "4820 RIVER RD, CINCINNATI, OH, 45204"}, "moved_mi": 6.83}
+{"name": "Bulkmatic Transport Co", "city": "Belpre", "state": "OH", "website": "https://www.bulkmatic.com/", "ok": true, "address": null}
+{"name": "Camp Chase Railway", "city": "Lilly Chapel", "state": "OH", "website": "https://pinsly.com/railroads/camp-chase-railroad/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Capital City Reload", "city": "Columbus", "state": "OH", "website": "https://capitalcityreload.com/", "ok": true, "address": null}
+{"name": "Cincinnati Barge & Rail Terminal LLC", "city": "Cincinnati", "state": "OH", "website": "https://www.barge2rail.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Clare NS TBT", "city": "Clare", "state": "OH", "website": "https://www.nscorp.com", "ok": true, "address": null}
+{"name": "Cleveland Industrial Warehouse Corp.", "city": "Cleveland", "state": "OH", "website": "http://www.clevelandindustrial.com", "ok": true, "address": null}
+{"name": "Columbus Frebis TBT", "city": "Columbus", "state": "OH", "website": "https://www.nscorp.com", "ok": true, "address": null}
+{"name": "Dover Yard", "city": "Dover", "state": "OH", "website": "https://www.rsilogistics.com/rail-solutions/rail-terminal-services/dover-oh/", "ok": false, "stage": "fetch", "error": "HTTP Error 429: Too Many Requests"}
+{"name": "Eastpointe Business Park Rail Transfer Station", "city": "Zanesville", "state": "OH", "website": "https://zmcport.com/", "ok": true, "address": "205 N. 5th Street, Zanesville, OH 43701", "coords": {"lat": 39.943591652027, "lon": -82.006357241749, "matched": "205 N 5TH ST, ZANESVILLE, OH, 43701"}, "moved_mi": 0.43}
+{"name": "Euclid NS TBT", "city": "Euclid", "state": "OH", "website": "https://www.nscorp.com", "ok": true, "address": null}
+{"name": "Heniff Food Grade", "city": "Cincinnati", "state": "OH", "website": "https://www.heniff.com/about-heniff/locations/locations-detail/cincinnati-oh3", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Heniff Transportation Systems LLC", "city": "Cleveland", "state": "OH", "website": "https://www.heniff.com/about-heniff/locations/locations-detail/cleveland-oh", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Interstate Cold Storage", "city": "Napoleon", "state": "OH", "website": "https://interstatecoldstorage.com/", "ok": true, "address": "46804 Napoleon 1 Interstate Dr., Napoleon, OH 43545", "coords": {"lat": 41.413653946441, "lon": -84.095767524227, "matched": "1 INTERSTATE DR, NAPOLEON, OH, 43545"}, "moved_mi": 1.86}
+{"name": "Luckey Trucking Inc", "city": "Lima", "state": "OH", "website": "http://www.luckeytanklines.com/", "ok": true, "address": null}
+{"name": "MPR Supply Chain", "city": "Bellaire", "state": "OH", "website": "https://www.mprsupplychain.com/", "ok": true, "address": "5310 Guernsey St, Bellaire, OH 43906", "coords": {"lat": 40.042030499289, "lon": -80.733225287718, "matched": "5310 GUERNSEY ST, BELLAIRE, OH, 43906"}, "moved_mi": 1.91}
+{"name": "MPR Supply Chain", "city": "Bellaire", "state": "OH", "website": "https://www.mprsupplychain.com/", "ok": true, "address": "5310 Guernsey St, Bellaire, OH 43906", "coords": {"lat": 40.042030499289, "lon": -80.733225287718, "matched": "5310 GUERNSEY ST, BELLAIRE, OH, 43906"}, "moved_mi": 1.91}
+{"name": "Mahoning Valley Railway (MVRY)", "city": "Youngstown", "state": "OH", "website": "https://www.gwrr.com/railroads/mahoning-valley-railway", "ok": true, "address": "123 Division Street, Youngstown, OH 44510", "coords": {"lat": 41.12153203859, "lon": -80.684403256424, "matched": "123 DIVISION ST, YOUNGSTOWN, OH, 44510"}, "moved_mi": 2.09}
+{"name": "Midwest Terminals", "city": "Toledo", "state": "OH", "website": "https://www.midwestterminals.com", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Midwest Terminals - Ironville", "city": "Toledo", "state": "OH", "website": "https://www.midwestterminals.com", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Napoleon, Defiance & Western Transload Station", "city": "Napoleon", "state": "OH", "website": "https://patriotrail.com/rail/napoleon-defiance-western-railway-co-ndw/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Nelson Packaging", "city": "Lima", "state": "OH", "website": "https://www.nelsonpackagingco.com/", "ok": true, "address": "1801 Reservoir Rd, Lima, OH 45804", "coords": {"lat": 40.742516030237, "lon": -84.074234955591, "matched": "1801 RESERVOIR RD, LIMA, OH, 45804"}, "moved_mi": 1.62}
+{"name": "Newburgh & South Shore Railroad Transload", "city": "Cleveland", "state": "OH", "website": "https://omnitrax.com/newburgh-south-shore-railroad/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Norfolk Southern TBT", "city": "Cincinnati", "state": "OH", "website": "http://www.nscorp.com/", "ok": true, "address": null}
+{"name": "Norfolk Southern TBT", "city": "Columbus", "state": "OH", "website": "http://www.nscorp.com/content/nscorp/en/shipping-options/intermodal/terminals-and-schedules/columbus-ohio.html", "ok": true, "address": null}
+{"name": "Norfolk Southern TBT", "city": "Euclid", "state": "OH", "website": "http://www.nscorp.com/", "ok": true, "address": null}
+{"name": "Norfolk Southern TBT", "city": "Sandusky", "state": "OH", "website": "https://www.norfolksouthern.com/", "ok": true, "address": null}
+{"name": "Peoples Cartage", "city": "Massillon", "state": "OH", "website": "https://totaldistribution.com/", "ok": true, "address": null}
+{"name": "Pinney Dock Terminal", "city": "Ashtabula", "state": "OH", "website": "https://www.kindermorgan.com/", "ok": true, "address": null}
+{"name": "Port of Cleveland", "city": "Cleveland", "state": "OH", "website": "https://www.portofcleveland.com/transloading/", "ok": true, "address": "1100 W 9th St, Cleveland, OH 44113", "coords": {"lat": 41.501585230957, "lon": -81.702929238744, "matched": "1100 W 9TH ST, CLEVELAND, OH, 44113"}, "moved_mi": 0.47}
+{"name": "Port of Ohio at Pier 48", "city": "Wellsville", "state": "OH", "website": "https://www.portofohio.com/", "ok": true, "address": "2400 Clark Ave, Wellsville, OH 43968", "coords": {"lat": 40.59127257695, "lon": -80.667838283453, "matched": "2400 CLARK AVE, WELLSVILLE, OH, 43968"}, "moved_mi": 1.08}
+{"name": "R.J. Corman", "city": "Massillon", "state": "OH", "website": "https://www.rjcorman.com/companies/transload-connect/locations", "ok": true, "address": null}
+{"name": "Rj Corman (RSI Logistics)", "city": "Dover", "state": "OH", "website": "http://www.rjcorman.com/", "ok": true, "address": null}
+{"name": "Rsl Railroad LLC", "city": "Massillon", "state": "OH", "website": "https://www.massillonlogistics.com/companies/republic-short-line/", "ok": true, "address": "411 Oberlin Ave, Massillon, OH 44647", "coords": {"lat": 40.78046203499, "lon": -81.52307195121, "matched": "411 OBERLIN AVE SW, MASSILLON, OH, 44647"}, "moved_mi": 1.12}
+{"name": "Savage", "city": "Brook Park", "state": "OH", "website": "https://savageco.com/locations/", "ok": true, "address": null}
+{"name": "Savage Service Corp", "city": "Lordstown", "state": "OH", "website": "https://www.savageservices.com/services/terminal-transload/", "ok": true, "address": null}
+{"name": "Savage Service Corp", "city": "Zanesville", "state": "OH", "website": "https://www.savageservices.com/services/terminal-transload/", "ok": true, "address": null}
+{"name": "Spartan Logistics", "city": "Columbus", "state": "OH", "website": "https://www.spartanlogistics.com/columbus-ohio-3-south-0-1-0", "ok": true, "address": "4051 Lockbourne Industrial, Columbus, OH 43207", "coords": {"lat": 39.883869697154, "lon": -82.964042197392, "matched": "4051 LOCKBOURNE INDUSTRL PKWY, COLUMBUS, OH, 43207"}, "moved_mi": 5.65}
+{"name": "Spartan Logistics", "city": "Toledo", "state": "OH", "website": "https://www.spartanlogistics.com/toledo-ohio-nebraskaavenue-0", "ok": true, "address": "1802 Nebraska Avenue, Toledo, OH 43607", "coords": {"lat": 41.645558876377, "lon": -83.587104999408, "matched": "1802 NEBRASKA AVE, TOLEDO, OH, 43607"}, "moved_mi": 2.59}
+{"name": "TRANSFLO Ohio-Cleveland-Central Terminal", "city": "Cleveland", "state": "OH", "website": "https://www.transflo.net/locations/ohio-cleveland-central/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "TRANSFLO Ohio-Toledo Terminal", "city": "Toledo", "state": "OH", "website": "https://www.transflo.net/locations/ohio-toledo/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Tidewater Logistics", "city": "Derwent", "state": "OH", "website": "https://www.tidewater-logistics.com/", "ok": true, "address": null}
+{"name": "Total Distribution", "city": "Akron", "state": "OH", "website": "https://totaldistribution.com/", "ok": true, "address": null}
+{"name": "Transflo CSXT", "city": "Cincinnati", "state": "OH", "website": "https://www.transflo.net/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Transflo CSXT", "city": "Cleveland", "state": "OH", "website": "https://www.transflo.net/locations/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Transflo CSXT", "city": "Columbus", "state": "OH", "website": "https://www.transflo.net/locations/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Vogt Warehouse", "city": "Cincinnati", "state": "OH", "website": "https://www.vogtwarehouse.com/", "ok": true, "address": "1440 W 8th St, Cincinnati, OH 45203", "coords": {"lat": 39.104538238291, "lon": -84.542914710815, "matched": "1440 W 8TH ST, CINCINNATI, OH, 45203"}, "moved_mi": 1.66}
+{"name": "Vogt Warehouse / Specialty Logistics", "city": "Cincinnati", "state": "OH", "website": "https://www.vogtwarehouse.com/", "ok": true, "address": "1440 W 8th St, Cincinnati, OH 45203", "coords": {"lat": 39.104538238291, "lon": -84.542914710815, "matched": "1440 W 8TH ST, CINCINNATI, OH, 45203"}, "moved_mi": 1.66}
+{"name": "Warren & Trumbull Railroad (WTRM)", "city": "Youngstown", "state": "OH", "website": "https://www.gwrr.com/railroads/warren-and-trumbull-railroad", "ok": true, "address": "123 Division Street, Youngstown, OH 44510", "coords": {"lat": 41.12153203859, "lon": -80.684403256424, "matched": "123 DIVISION ST, YOUNGSTOWN, OH, 44510"}, "moved_mi": 2.09}
+{"name": "Watco Terminal & Port Services", "city": "Cincinnati", "state": "OH", "website": "https://www.watco.com/service/terminals/cincinnati-oh-river-t/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Yenkin-majestic", "city": "Columbus", "state": "OH", "website": "https://www.yenkin-majestic.com/", "ok": true, "address": null}
+{"name": "Youngstown & Austintown Railroad (YARR)", "city": "Youngstown", "state": "OH", "website": "https://www.gwrr.com/railroads/youngstown-and-austintown-railroad", "ok": true, "address": "123 Division Street, Youngstown, OH 44510", "coords": {"lat": 41.12153203859, "lon": -80.684403256424, "matched": "123 DIVISION ST, YOUNGSTOWN, OH, 44510"}, "moved_mi": 2.09}
+{"name": "Youngstown Belt Railroad (YB)", "city": "Youngstown", "state": "OH", "website": "https://www.gwrr.com/railroads/youngstown-belt-railroad", "ok": true, "address": "123 Division Street, Youngstown, OH 44510", "coords": {"lat": 41.12153203859, "lon": -80.684403256424, "matched": "123 DIVISION ST, YOUNGSTOWN, OH, 44510"}, "moved_mi": 2.09}
+{"name": "Base Inc", "city": "Tulsa", "state": "OK", "website": "https://www.linkedin.com/company/base-transportation/about/", "ok": true, "address": null}
+{"name": "CIG Logistics", "city": "Ardmore", "state": "OK", "website": "https://www.ciglogistics.com/", "ok": true, "address": null}
+{"name": "Cgb Enterprises", "city": "Enid", "state": "OK", "website": "https://www.cgb.com/", "ok": true, "address": null}
+{"name": "Cgb Enterprises", "city": "Shattuck", "state": "OK", "website": "https://www.cgb.com/", "ok": true, "address": null}
+{"name": "Consolidated Terminals and Logistics", "city": "Enid", "state": "OK", "website": "https://ctlconline.com/enid-ok/", "ok": true, "address": "1725 N. 10th St., Enid, OK 73701", "coords": {"lat": 36.414739981497, "lon": -97.863694520786, "matched": "1725 N 10TH ST, ENID, OK, 73701"}, "moved_mi": 1.55}
+{"name": "Consolidated Terminals and Logistics", "city": "Shattuck", "state": "OK", "website": "https://ctlconline.com/shattuck/", "ok": true, "address": null}
+{"name": "Farmrail", "city": "Westhom", "state": "OK", "website": "https://www.farmrail.com/", "ok": true, "address": null}
+{"name": "Northern White Sands", "city": "El Reno", "state": "OK", "website": "https://www.coviacorp.com/", "ok": true, "address": null}
+{"name": "Oklahoma Central Rail Park", "city": "El Reno", "state": "OK", "website": "https://jag-transport.com/oklahoma-central-rail-park/", "ok": true, "address": "2105 Evans Rd., El Reno, OK 73036", "coords": null}
+{"name": "Omnitrax Logistics Services", "city": "Sand Springs", "state": "OK", "website": "http://omnitrax.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Omnitrax Logistics Services", "city": "Tulsa", "state": "OK", "website": "http://omnitrax.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Plastic Express", "city": "Sand Springs", "state": "OK", "website": "https://www.parker-plastics.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Plastic Express", "city": "Tulsa", "state": "OK", "website": "https://www.plasticexpress.com/", "ok": true, "address": null}
+{"name": "Ponderosa Solutions", "city": "Catoosa", "state": "OK", "website": "https://theponderosasolution.com/", "ok": true, "address": null}
+{"name": "Precision Terminal Logistics LLC", "city": "El Reno", "state": "OK", "website": "https://www.precisiontl.com/#", "ok": true, "address": null}
+{"name": "Rjr Trans Loading", "city": "El Reno", "state": "OK", "website": "http://jrtransportinc.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 404: Not Found"}
+{"name": "Titan Lansing Transloading", "city": "Oklahoma City", "state": "OK", "website": "https://www.titanlansing.com/", "ok": true, "address": null}
+{"name": "Transportation Partners & Logistic LLC", "city": "Enid", "state": "OK", "website": "https://tpandl.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Tulsa Rail Transload", "city": "Sand Springs", "state": "OK", "website": "https://www.trtransload.com/", "ok": true, "address": null}
+{"name": "US Rail & Logistics", "city": "Oklahoma City", "state": "OK", "website": "https://usrailandlogistics.com/oklahoma-city/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Watco", "city": "Ardmore", "state": "OK", "website": "https://www.watco.com/service/terminals/ardmore-transload-terminal/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Watco Terminal & Port Services", "city": "Catoosa", "state": "OK", "website": "https://www.watcocompanies.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Watco Terminal & Port Services", "city": "Oklahoma City", "state": "OK", "website": "https://www.watcocompanies.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "CN Cargoflo", "city": "Concord", "state": "ON", "website": "https://www.cn.ca/", "ok": true, "address": null}
+{"name": "CN Cargoflo", "city": "Hamilton", "state": "ON", "website": "https://www.cn.ca/", "ok": true, "address": null}
+{"name": "CN Cargoflo Warehouse", "city": "Concord", "state": "ON", "website": "https://www.cn.ca/", "ok": true, "address": null}
+{"name": "CN Forest Distribution Center", "city": "Concord", "state": "ON", "website": "https://www.cn.ca/", "ok": true, "address": null}
+{"name": "CN Metal Distribution Center", "city": "Hamilton", "state": "ON", "website": "https://www.cn.ca/", "ok": true, "address": null}
+{"name": "Cargoflo (Euro Asia)", "city": "Concord", "state": "ON", "website": "https://www.cn.ca/", "ok": true, "address": null}
+{"name": "Kinsdale Carriers Ltd", "city": "Hamilton", "state": "ON", "website": "http://www.kinsdale.com/locations.html", "ok": true, "address": null}
+{"name": "Arrow Reload Systems Inc", "city": "Portland", "state": "OR", "website": "https://reload.arrow.ca/location/portland-tfr/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Carson Oil Company", "city": "Eugene", "state": "OR", "website": "https://carsonteam.com/locations/eugene/", "ok": true, "address": "2690 Prairie Road, Eugene, OR 97402", "coords": {"lat": 44.10308512966, "lon": -123.162608142872, "matched": "2690 PRAIRIE RD, EUGENE, OR, 97402"}, "moved_mi": 3.86}
+{"name": "Carson Oil Company", "city": "Portland", "state": "OR", "website": "https://carsonteam.com/locations/portland/", "ok": true, "address": "3125 NW 35th Ave., Portland, OR 97210", "coords": {"lat": 45.544492301307, "lon": -122.719034843248, "matched": "3125 NW 35TH AVE, PORTLAND, OR, 97210"}, "moved_mi": 2.82}
+{"name": "Cascade Warehouse", "city": "Salem", "state": "OR", "website": "http://www.cascadewarehouse.com/", "ok": true, "address": null}
+{"name": "Fulcrum Logistics", "city": "Portland", "state": "OR", "website": "http://www.wagnerlogistics.com/", "ok": true, "address": null}
+{"name": "Junction City Reload", "city": "Junction City", "state": "OR", "website": "https://www.junctioncityreload.com/", "ok": true, "address": null}
+{"name": "Nustar", "city": "Portland", "state": "OR", "website": "https://www.sunocolp.com/segments/fuel-terminals/view/portland", "ok": true, "address": "9420 NW St, Portland, OR 97231", "coords": null}
+{"name": "Peninsula Terminal Co", "city": "North Portland", "state": "OR", "website": "https://peninsulaterminal.com/", "ok": true, "address": null}
+{"name": "Plastic Express", "city": "Portland", "state": "OR", "website": "http://www.plasticexpress.com/", "ok": true, "address": null}
+{"name": "Plastic Express", "city": "Salem", "state": "OR", "website": "http://www.plasticexpress.com/operations/", "ok": true, "address": null}
+{"name": "Pronto Distribution", "city": "Portland", "state": "OR", "website": "http://prontodist.com/", "ok": true, "address": null}
+{"name": "Roseburg Forest", "city": "Junction City", "state": "OR", "website": "https://www.junctioncityreload.com/", "ok": true, "address": null}
+{"name": "Tyree", "city": "Eugene", "state": "OR", "website": "https://www.tyreeoil.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Warehouse Specialists LLC", "city": "Portland", "state": "OR", "website": "https://www.wsinc.com/locations/portland-warehouse/", "ok": true, "address": "5915 N Marine Dr, Portland, OR 97203", "coords": {"lat": 45.621369042594, "lon": -122.728872135224, "matched": "5915 N MARINE DR, PORTLAND, OR, 97203"}, "moved_mi": 7.73}
+{"name": "A&R Transport Inc", "city": "Philadelphia", "state": "PA", "website": "http://www.ardoingitright.com/", "ok": true, "address": null}
+{"name": "Ace Warehouse & Logistics", "city": "Chester", "state": "PA", "website": "http://www.acewlt.com/", "ok": true, "address": null}
+{"name": "Allegheny Petroleum Products", "city": "Ambridge", "state": "PA", "website": "https://www.oils.com", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Ambridge Regional Distribution", "city": "Ambridge", "state": "PA", "website": "https://ambridgeregional.com/", "ok": true, "address": "2301 Duss Avenue, Ambridge, PA 15003", "coords": {"lat": 40.604466011905, "lon": -80.226339231823, "matched": "2301 DUSS AVE, AMBRIDGE, PA, 15003"}, "moved_mi": 1.05}
+{"name": "Avr", "city": "Pittsburgh", "state": "PA", "website": "https://www.carloadexpress.com/", "ok": true, "address": null}
+{"name": "B&J Group Inc", "city": "Morrisville", "state": "PA", "website": "http://www.bandjgroup.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Bulkmatic Transport Co", "city": "Bethlehem", "state": "PA", "website": "https://www.bulkmatic.com/", "ok": true, "address": null}
+{"name": "Bulkmatic Transport Co", "city": "Morrisville", "state": "PA", "website": "https://www.bulkmatic.com/", "ok": true, "address": null}
+{"name": "Bulkmatic Transport Co", "city": "Philadelphia", "state": "PA", "website": "https://www.bulkmatic.com/", "ok": true, "address": null}
+{"name": "Bulkmatic Transport Co", "city": "Williamsport", "state": "PA", "website": "https://www.bulkmatic.com/", "ok": true, "address": null}
+{"name": "Central Trans Load", "city": "Chambersburg", "state": "PA", "website": "https://everettrailroad.com/freight-services/transload-sites/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "G.W.S.I. INC, Chester, PA", "city": "Chester", "state": "PA", "website": "https://www.Mgeraceinc.com", "ok": true, "address": null}
+{"name": "Kinard Trucking", "city": "York", "state": "PA", "website": "https://www.gwrr.com/transload/kinard-trucking/", "ok": true, "address": null}
+{"name": "LA&L (B&H Rail)", "city": "Turtlepoint", "state": "PA", "website": "https://lalrr.com/transload-locations/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "MHF Inc.", "city": "Butler", "state": "PA", "website": "https://www.mhf.com", "ok": true, "address": null}
+{"name": "Monteverdes", "city": "Pittsburgh", "state": "PA", "website": "https://monteverdes.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "N/A", "city": "DuBois", "state": "PA", "website": "N/A", "ok": false, "stage": "fetch", "error": "unknown url type: 'N/A'"}
+{"name": "NS TBTArrow Material", "city": "Pittsburgh", "state": "PA", "website": "https://www.watco.com/service/terminals/crafton-pa-tbt/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Newberry Sand Terminal", "city": "Williamsport", "state": "PA", "website": "https://www.nshr.com/transload", "ok": true, "address": "25 W 3rd, Williamsport, PA 17701", "coords": {"lat": 41.24078986873, "lon": -77.001558810914, "matched": "25 W 3RD ST, WILLIAMSPORT, PA, 17701"}, "moved_mi": 0.04}
+{"name": "Nicholas Enterprise", "city": "DuBois", "state": "PA", "website": "https://www.nicholasinc.com/dubois.html", "ok": true, "address": "220 Rail Terminal Road, DuBois, PA 15801", "coords": {"lat": 41.137112771315, "lon": -78.787293806796, "matched": "220 RAIL TERMINAL RD, DUBOIS, PA, 15801"}, "moved_mi": 1.85}
+{"name": "Nicholas Enterprises", "city": "DuBois", "state": "PA", "website": "https://www.nicholasinc.com/", "ok": true, "address": null}
+{"name": "Norfolk Southern TBT", "city": "Crafton", "state": "PA", "website": "http://www.nscorp.com/", "ok": true, "address": null}
+{"name": "Norfolk Southern TBT (RSI Logistics)", "city": "Pottstown", "state": "PA", "website": "https://www.rsilogistics.com/rail-solutions/rail-terminal-services/pottstown-pa/", "ok": false, "stage": "fetch", "error": "HTTP Error 429: Too Many Requests"}
+{"name": "NuWeld, Inc.", "city": "Williamsport", "state": "PA", "website": "https://www.nuweldinc.com", "ok": true, "address": "2600 Reach Road, Williamsport, PA 17701", "coords": {"lat": 41.226604956753, "lon": -77.060293470117, "matched": "2600 REACH RD, WILLIAMSPORT, PA, 17701"}, "moved_mi": 3.24}
+{"name": "Pennsylvania & Southern Railway Bulk Products Transload", "city": "Chambersburg", "state": "PA", "website": "https://railenterprisegroup.com/", "ok": true, "address": null}
+{"name": "Pittsburgh Intermodal Terminals", "city": "Ambridge", "state": "PA", "website": "https://www.nicholasinc.com", "ok": true, "address": null}
+{"name": "Pottstown NS TBT", "city": "Pottstown", "state": "PA", "website": "https://www.nscorp.com", "ok": true, "address": null}
+{"name": "Prairie Transportation", "city": "New Kensington", "state": "PA", "website": "https://prairietrans.com/", "ok": true, "address": null}
+{"name": "SWP S Greensburg", "city": "S. Greensburg", "state": "PA", "website": "https://www.carloadexpress.com", "ok": true, "address": null}
+{"name": "Savage Service Corp", "city": "Philadelphia", "state": "PA", "website": "https://www.tsavageconstruction.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Smith Transportation", "city": "Roaring Springs", "state": "PA", "website": "https://smithtransport.com/", "ok": true, "address": null}
+{"name": "Superior Carriers", "city": "Crafton", "state": "PA", "website": "https://carrytransit.com/services#transloading", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "TRANSFLO Pennsylvania-Butler Terminal", "city": "Butler", "state": "PA", "website": "https://www.transflo.net/locations/pennsylvania-butler/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "TRANSFLO Pennsylvania-Pittsburgh Terminal", "city": "Pittsburgh", "state": "PA", "website": "https://www.transflo.net/locations/pennsylvania-pittsburgh/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Transflo CSXT", "city": "Butler", "state": "PA", "website": "https://www.transflo.net/locations/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Transflo CSXT", "city": "Chester", "state": "PA", "website": "http://transflo.net/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Transflo CSXT", "city": "Philadelphia", "state": "PA", "website": "https://transflo.azurewebsites.net/locations/pennsylvania-philadelphia/", "ok": true, "address": "3600 Moore Street, Philadelphia, PA 19145", "coords": {"lat": 39.932467253502, "lon": -75.202484566933, "matched": "3600 MOORE ST, PHILADELPHIA, PA, 19145"}, "moved_mi": 2.42}
+{"name": "Transflo CSXT", "city": "Pittsburgh", "state": "PA", "website": "https://www.transflo.net/locations/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Tyburn Railroad LLC", "city": "Morrisville", "state": "PA", "website": "https://www.regional-rail.com", "ok": true, "address": null}
+{"name": "Venezia Transport", "city": "Bethlehem", "state": "PA", "website": "https://www.veneziainc.com/", "ok": true, "address": null}
+{"name": "WSI (Warehouse Specialists, LLC)", "city": "Allentown", "state": "PA", "website": "https://www.wsinc.com/locations/allentown-warehouse/", "ok": true, "address": "7144 Daniels Dr, Allentown, PA 18106", "coords": {"lat": 40.592448941129, "lon": -75.615882955198, "matched": "7144 DANIELS DR, ALLENTOWN, PA, 18106"}, "moved_mi": 6.68}
+{"name": "York Rail Logistics", "city": "York", "state": "PA", "website": "https://www.gwrr.com/transload/york-rail-logistic/", "ok": true, "address": null}
+{"name": "Zartman Contruction Inc.", "city": "Northhumberland", "state": "PA", "website": "https://www.zartman.com", "ok": true, "address": null}
+{"name": "CN Cargoflo", "city": "Montreal Tasch Yard", "state": "PQ", "website": "https://www.cn.ca/", "ok": true, "address": null}
+{"name": "CN Cargoflo", "city": "Saint-Laurent", "state": "PQ", "website": "https://www.cn.ca/", "ok": true, "address": null}
+{"name": "CN Cargoflo (Cogema Rail Barge)", "city": "Matane", "state": "PQ", "website": "https://www.cn.ca/", "ok": true, "address": null}
+{"name": "CN Cargoflo (Ray-Mont Logistics)", "city": "Montreal", "state": "PQ", "website": "https://www.cn.ca/", "ok": true, "address": null}
+{"name": "CN Cargoflo (Services Nolitrex)", "city": "Quebec", "state": "PQ", "website": "https://www.cn.ca/", "ok": true, "address": null}
+{"name": "CN Cargoflo (Transx)", "city": "Vaudreuil-Dorion", "state": "PQ", "website": "https://www.cn.ca/", "ok": true, "address": null}
+{"name": "CN Distribution Center", "city": "Ste-Foy", "state": "PQ", "website": "https://www.cn.ca/", "ok": true, "address": null}
+{"name": "Kinsdale Carriers Ltd", "city": "Farnham", "state": "PQ", "website": "http://www.kinsdale.com/locations.html", "ok": true, "address": null}
+{"name": "Cold-Link Logistics Providence", "city": "North Kingstown", "state": "RI", "website": "https://cold-linklogistics.com/providence", "ok": true, "address": null}
+{"name": "Energy Transfer North Kingstown Propane Terminal", "city": "North Kingstown", "state": "RI", "website": "https://www.energytransfer.com/", "ok": true, "address": null}
+{"name": "North Atlantic Distribution", "city": "North Kingstown", "state": "RI", "website": "https://www.noradinc.com/", "ok": true, "address": null}
+{"name": "Seaview Transportation Company Transload", "city": "North Kingstown", "state": "RI", "website": "https://seaviewrr.com/", "ok": true, "address": null}
+{"name": "Bulkmatic", "city": "Chester", "state": "SC", "website": "https://www.bulkmatic.com/service/transloading", "ok": true, "address": null}
+{"name": "Carolina Gypsum LLC", "city": "Chester", "state": "SC", "website": "https://Carolinagypsum.com", "ok": true, "address": null}
+{"name": "Cellmark", "city": "Orangeburg", "state": "SC", "website": "https://www.cellmark.com", "ok": true, "address": null}
+{"name": "Chempak International Inc", "city": "Greenville", "state": "SC", "website": "http://www.chempakinternational.net/", "ok": true, "address": "10421 Mula Rd., Greenville, SC", "coords": null}
+{"name": "Chester Rock Transload Track", "city": "Chester", "state": "SC", "website": "https://gulfandohio.com/l-c", "ok": true, "address": "9 and Nebo Rd, Chester, SC 29706", "coords": null}
+{"name": "Columbia NS TBT", "city": "Kinsler", "state": "SC", "website": "https://www.nscorp.com", "ok": true, "address": null}
+{"name": "East Chester Transload Track", "city": "Chester", "state": "SC", "website": "https://gulfandohio.com/l-c", "ok": true, "address": "9 and Nebo Rd, Chester, SC 29706", "coords": null}
+{"name": "Lineage", "city": "North Charleston", "state": "SC", "website": "https://www.onelineage.com/", "ok": true, "address": null}
+{"name": "Norfolk Southern TBT (RSI Logistics)", "city": "Spartanburg", "state": "SC", "website": "https://www.rsilogistics.com/rail-solutions/rail-terminal-services/spartanburg-sc/", "ok": false, "stage": "fetch", "error": "HTTP Error 429: Too Many Requests"}
+{"name": "Odfjell Terminals", "city": "North Charleston", "state": "SC", "website": "https://scspa.com/sc-ports-locations/north-charleston-terminal/", "ok": true, "address": "1000 Remount Rd, North Charleston, SC 29406", "coords": {"lat": 32.903587469377, "lon": -79.974402272564, "matched": "1000 REMOUNT RD, NORTH CHARLESTON, SC, 29406"}, "moved_mi": 3.38}
+{"name": "Palmetto Railways", "city": "Charleston", "state": "SC", "website": "https://palmettorailways.com", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Palmetto Railways", "city": "North Charleston", "state": "SC", "website": "https://palmettorailways.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Palmetto Railways", "city": "North Charleston", "state": "SC", "website": "https://palmettorailways.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Palmetto Railways - Charity Church", "city": "Huger", "state": "SC", "website": "https://palmettorailways.com/customers-and-services/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Ray-Mont Logistics - Charleston", "city": "North Charleston", "state": "SC", "website": "https://www.ray-mont.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Shipyard River Terminal-Kinder Morgan", "city": "Charleston", "state": "SC", "website": "https://www.kindermorgan.com/business/terminals/", "ok": true, "address": null}
+{"name": "Spartanburg NS TBT", "city": "Spartanburg", "state": "SC", "website": "https://www.nscorp.com", "ok": true, "address": null}
+{"name": "TRANSFLO - Charleston, SC", "city": "North Charleston", "state": "SC", "website": "https://www.transflo.net/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Transflo CSXT", "city": "Charleston", "state": "SC", "website": "https://www.transflo.net/locations/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Transflo CSXT", "city": "Greenville", "state": "SC", "website": "https://www.transflo.net/locations/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Upstate Logistics & Distribution", "city": "Spartanburg", "state": "SC", "website": "https://www.upstatelogistics.com", "ok": false, "stage": "fetch", "error": "HTTP Error 500: Internal Server Error"}
+{"name": "Belle Fourche Transload", "city": "Belle Fourche", "state": "SD", "website": "https://bfdcsd.com/industrial/", "ok": true, "address": "608 5th Ave., Belle Fourche, SD 57717", "coords": {"lat": 44.672333887818, "lon": -103.853648548175, "matched": "608 5TH AVE, BELLE FOURCHE, SD, 57717"}, "moved_mi": 0.65}
+{"name": "Nordica Warehouse", "city": "Sioux Falls", "state": "SD", "website": "https://www.nordicawarehouses.com/", "ok": true, "address": "5100 Foundation Ct, Sioux Falls, SD 57107", "coords": {"lat": 43.625046775931, "lon": -96.78364568337, "matched": "5100 W FOUNDATION CT, SIOUX FALLS, SD, 57107"}, "moved_mi": 6.66}
+{"name": "Ponderosa Solutions", "city": "Belle Fourche", "state": "SD", "website": "https://theponderosasolution.com/", "ok": true, "address": null}
+{"name": "Rail To Road Transloading", "city": "Sioux Falls", "state": "SD", "website": "https://railtoroad.com/", "ok": true, "address": "3520 East, Sioux Falls, SD 57103", "coords": null}
+{"name": "CN Cargoflo", "city": "Saskatoon", "state": "SK", "website": "http://www.cn.ca/", "ok": true, "address": null}
+{"name": "CN Cargoflo (Transx)", "city": "Saskatoon", "state": "SK", "website": "https://www.cn.ca/", "ok": true, "address": null}
+{"name": "CN Metal Distribution Center", "city": "Saskatoon", "state": "SK", "website": "https://www.cn.ca/", "ok": true, "address": null}
+{"name": "Bulkmatic De Mexico", "city": "San Luis Potos\u00ed", "state": "SL", "website": "https://www.bulkmatic.com/", "ok": true, "address": null}
+{"name": "Controladora De Terminales Mexico", "city": "San Luis Potos\u00ed", "state": "SL", "website": "https://www.puertadelnorte.com.mx/about-us/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Networks & Logistics Sa De Cv", "city": "San Luis Potos\u00ed", "state": "SL", "website": "https://networkslogistics.com.mx/", "ok": true, "address": null}
+{"name": "Suministros Industriales Potosinos Sa De Cv", "city": "San Luis Potos\u00ed", "state": "SL", "website": "http://terminalsip.com/ubicacion/", "ok": true, "address": null}
+{"name": "Watco Terminal & Port Services", "city": "San Luis Potos\u00ed", "state": "SL", "website": "https://www.watcocompanies.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "A&R Transport Inc", "city": "Jackson", "state": "TN", "website": "https://ardoingitright.com/", "ok": true, "address": null}
+{"name": "ADM Riverport Memphis", "city": "Memphis", "state": "TN", "website": "https://www.adm.com/", "ok": true, "address": null}
+{"name": "Burkhart Enterprises Inc.", "city": "Knoxville", "state": "TN", "website": "https://www.burkhartenterprises.com", "ok": true, "address": "2435 Asbury Rd., Knoxville, TN 37914", "coords": {"lat": 35.959665188661, "lon": -83.846574866327, "matched": "2435 ASBURY RD, KNOXVILLE, TN, 37914"}, "moved_mi": 4.15}
+{"name": "CN Cargoflo", "city": "Memphis", "state": "TN", "website": "https://www.cn.ca/", "ok": true, "address": null}
+{"name": "CN Distribution Center", "city": "Memphis", "state": "TN", "website": "https://www.cn.ca/", "ok": true, "address": null}
+{"name": "CSX TDSI Nashville North Automotive Distribution Center", "city": "Nashville", "state": "TN", "website": "https://www.csx.com/index.cfm/customers/value-added-services/product-transloading-and-distribution/total-distribution-services-inc-tdsi/maps-locations/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Carry Transit", "city": "Memphis", "state": "TN", "website": "https://www.carrytransit.com/services/carry-locations/detail/memphis-tn", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Chattanooga NS TBT", "city": "C. T. Tower", "state": "TN", "website": "https://www.nscorp.com", "ok": true, "address": null}
+{"name": "Foodliner Inc.", "city": "Chattanooga", "state": "TN", "website": "https://foodliner.com/", "ok": true, "address": null}
+{"name": "Fullen Dock & Warehouse", "city": "Memphis", "state": "TN", "website": "https://www.fullendock.com", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "G&D Trucking Inc (Hoffman Transportation)", "city": "Old Hickory", "state": "TN", "website": "https://www.hoffmantransportation.com/old-hickory-tn-facility", "ok": true, "address": null}
+{"name": "Hailey's Harbor Intermodal River Terminal", "city": "Nashville", "state": "TN", "website": "https://www.haileysharbor.com/", "ok": true, "address": "3730 Amy Lynn Drive, Nashville, TN 37209", "coords": {"lat": 36.207873127649, "lon": -86.883712037787, "matched": "3730 AMY LYNN DR, NASHVILLE, TN, 37218"}, "moved_mi": 6.49}
+{"name": "Henderson Transloading Services", "city": "Memphis", "state": "TN", "website": "https://www.google.com/maps/place/5261+E+Raines+Rd,+Memphis,+TN+38118/@35.0310288,-89.8928976,2177m/data=!3m1!1e3!4m5!3m4!1s0x887f8f7f68ae4a9b:0xa5acab1a5a1fee6c!8m2!3d35.0349476!4d-89.8885467", "ok": true, "address": null}
+{"name": "Heniff Food Grade", "city": "Memphis", "state": "TN", "website": "https://www.heniff.com/about-heniff/locations/locations-detail/memphis-tn", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Jersey NS TBT", "city": "Jersey", "state": "TN", "website": "https://www.nscorp.com", "ok": true, "address": null}
+{"name": "Kinder Morgan Memphis Terminal", "city": "Memphis", "state": "TN", "website": "https://www.kindermorgan.com", "ok": true, "address": null}
+{"name": "Knoxville NS TBT", "city": "Knox Sevier Yard", "state": "TN", "website": "https://www.nscorp.com", "ok": true, "address": null}
+{"name": "Mid-South Terminals", "city": "Chattanooga", "state": "TN", "website": "https://serodinoinc.com/mid-south-terminals/", "ok": true, "address": "100 Hamm Road, Chattanooga, TN 37405", "coords": {"lat": 35.052755501144, "lon": -85.331583696086, "matched": "100 HAMM RD, CHATTANOOGA, TN, 37405"}, "moved_mi": 1.33}
+{"name": "Norfolk Southern TBT", "city": "Chattanooga", "state": "TN", "website": "http://www.nscorp.com/", "ok": true, "address": null}
+{"name": "Norfolk Southern TBT (RSI Logistics)", "city": "Knoxville", "state": "TN", "website": "https://www.rsilogistics.com/rail-solutions/rail-terminal-services/knoxville-tn/", "ok": false, "stage": "fetch", "error": "HTTP Error 429: Too Many Requests"}
+{"name": "Quality Transload Inc", "city": "Memphis", "state": "TN", "website": "https://www.qualitydistribution.com/About-QDI/Our-Companies/Quality-Transload-Terminals.aspx", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Rj Corman", "city": "Old Hickory", "state": "TN", "website": "RJ Corman Transload Location Guide.pdf", "ok": false, "stage": "fetch", "error": "unknown url type: 'RJ Corman Transload Location Guide.pdf'"}
+{"name": "Runyon Industries Inc", "city": "Memphis", "state": "TN", "website": "https://www.runyonind.com/", "ok": true, "address": "4334 Millington Road, Memphis, TN 38127", "coords": {"lat": 35.244914909148, "lon": -90.003267659376, "matched": "4334 MILLINGTON RD, MEMPHIS, TN, 38127"}, "moved_mi": 7.08}
+{"name": "So-Pak-Co", "city": "Greeneville", "state": "TN", "website": "https://www.sopakco.com", "ok": true, "address": null}
+{"name": "Steel Warehouse", "city": "Chattanooga", "state": "TN", "website": "https://www.steelwarehouse.com/chattanooga-tn/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Superior Carriers", "city": "Memphis", "state": "TN", "website": "https://carrytransit.com/services#transloading", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "TRANSFLO Tennessee-Knoxville Terminal", "city": "Knoxville", "state": "TN", "website": "https://www.transflo.net/locations/tennessee-knoxville/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Thorngrove Pike Transload", "city": "Knoxville", "state": "TN", "website": "https://gulfandohio.com/kxhr", "ok": true, "address": "422 West, Knoxville, TN 37902", "coords": null}
+{"name": "Trans Load Of Tennessee Inc", "city": "Memphis", "state": "TN", "website": "https://www.google.com/maps/place/Trans+Load+of+Tn-Memphis/@35.0348041,-89.9037954,1719m/data=!3m1!1e3!4m5!3m4!1s0x0:0x9b084f3d0d469b50!8m2!3d35.0340859!4d-89.9036009", "ok": true, "address": null}
+{"name": "Transflo CSXT", "city": "Chattanooga", "state": "TN", "website": "https://transflo.net/locations/tennessee-chattanooga/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Transflo CSXT", "city": "Knoxville", "state": "TN", "website": "https://www.transflo.net/locations/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Transflo CSXT", "city": "Nashville", "state": "TN", "website": "https://www.transflo.net/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Trimac Inc", "city": "Memphis", "state": "TN", "website": "https://www.trimac.com/", "ok": true, "address": null}
+{"name": "West Tennessee Railroad", "city": "Jackson", "state": "TN", "website": "https://www.wtnnrr.com", "ok": true, "address": null}
+{"name": "225 Rail Terminal", "city": "Pasadena", "state": "TX", "website": "https://225rail.com/", "ok": true, "address": "225 Rail. Located just, Pasadena, TX", "coords": null}
+{"name": "A&R Transport Inc", "city": "Fort Worth", "state": "TX", "website": "http://www.artransport.com/", "ok": true, "address": null}
+{"name": "Agridyne LLC", "city": "Hereford", "state": "TX", "website": "https://www.mix30.com/", "ok": true, "address": null}
+{"name": "Alltrans Terminal Companies LLC", "city": "Galena Park", "state": "TX", "website": "http://www.alltranstc.com/", "ok": true, "address": "701 Philpot Dr., Galena Park, TX 77547", "coords": {"lat": 29.737683507763, "lon": -95.248787014294, "matched": "701 PHILPOT DR, GALENA PARK, TX, 77547"}, "moved_mi": 0.94}
+{"name": "Alpha Technical Services", "city": "Pasadena", "state": "TX", "website": "http://alpha-tech-service.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 429: Too Many Requests"}
+{"name": "Black Gold Terminals", "city": "Odessa", "state": "TX", "website": "https://www.blacklandsrailroad.com/transloading", "ok": true, "address": null}
+{"name": "Brokers Logistics Ltd", "city": "Anthony", "state": "TX", "website": "https://brokerslogistics.com/", "ok": true, "address": null}
+{"name": "Bulkmatic Transport Co", "city": "Fort Worth", "state": "TX", "website": "https://www.bulkmatic.com/", "ok": true, "address": null}
+{"name": "Bulkmatic Transport Co \u2014 Houston", "city": "Houston", "state": "TX", "website": "https://www.bulkmatic.com/service/transloading", "ok": true, "address": null}
+{"name": "CPKC Zacha", "city": "Dallas", "state": "TX", "website": "https://www.wsinc.com/locations/dallas-rail-terminal/", "ok": true, "address": "11931 Shiloh Rd, Dallas, TX 75228", "coords": {"lat": 32.858480344449, "lon": -96.665907660792, "matched": "11931 SHILOH RD, DALLAS, TX, 75228"}, "moved_mi": 9.48}
+{"name": "Cape And Son", "city": "Sweetwater", "state": "TX", "website": "https://www.capeandson.com/", "ok": false, "stage": "fetch", "error": "<urlopen error [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000)>"}
+{"name": "Carry Transit", "city": "Cleburne", "state": "TX", "website": "https://www.carrytransit.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Cig Logistics Services", "city": "Lubbock", "state": "TX", "website": "https://ciglogistics.com/wp-content/uploads/2020/01/Lubbock.pdf", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Cig Logistics Services", "city": "San Antonio", "state": "TX", "website": "https://ciglogistics.com/wp-content/uploads/2020/01/San-Antonio.pdf", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Comanche Transload & Cold Storage", "city": "Comanche", "state": "TX", "website": "https://comanchetransloading.com/", "ok": true, "address": null}
+{"name": "County Line Rail", "city": "Baytown", "state": "TX", "website": "https://www.clrail.com/county-line-industrial-park", "ok": true, "address": "14600 Hatcherville Rd., Baytown, TX 77521", "coords": {"lat": 29.882339510149, "lon": -94.932788326957, "matched": "14600 HATCHERVILLE RD, BAYTOWN, TX, 77521"}, "moved_mi": 8.38}
+{"name": "Cresson Transmodal Distribution", "city": "Cresson", "state": "TX", "website": "https://www.fwwr.net/transload-team-track", "ok": true, "address": "2400 N. Cresson Hwy, Cresson, TX 76035", "coords": {"lat": 32.549567679774, "lon": -97.652652033059, "matched": "2400 N CRESSON HWY, CRESSON, TX, 76035"}, "moved_mi": 2.41}
+{"name": "Crossroads 3pl Solutions", "city": "Temple", "state": "TX", "website": "https://crossroads3pl.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Dallas, Garland & Northeastern Railroad (DGNO)", "city": "Garland", "state": "TX", "website": "https://www.gwrr.com/railroads/dallas-garland-and-northeastern-railroad", "ok": true, "address": "475 Gautney Street, Garland, TX 75040", "coords": {"lat": 32.914706526206, "lon": -96.626339818815, "matched": "475 GAUTNEY ST, GARLAND, TX, 75040"}, "moved_mi": 0.74}
+{"name": "Dci", "city": "Pasadena", "state": "TX", "website": "https://depotconnect.com/faq/transloading/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Enstructure Houston Terminals", "city": "Galena Park", "state": "TX", "website": "https://enstructure.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "GHMR Operations", "city": "Big Lake", "state": "TX", "website": "https://www.ghmroperations.com", "ok": true, "address": null}
+{"name": "GT OmniPort", "city": "Port Arthur", "state": "TX", "website": "https://gtomniport.com/", "ok": true, "address": null}
+{"name": "Gravity Rail", "city": "Garland", "state": "TX", "website": "https://www.gravity-rail.com/", "ok": true, "address": null}
+{"name": "Heniff Food Grade", "city": "Arlington", "state": "TX", "website": "https://www.heniff.com/about-heniff/locations/locations-detail/arlington-tx", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Intercontinental Terminals Company Deer Park Terminal", "city": "La Porte", "state": "TX", "website": "https://www.iterm.com/locations/deer-park/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Intercontinental Terminals Company Pasadena Terminal", "city": "Pasadena", "state": "TX", "website": "https://www.iterm.com/locations/pasadena/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Iron Horse Rail Beaumont Terminal", "city": "Beaumont", "state": "TX", "website": "https://www.ihrail.com/beaumont", "ok": true, "address": "11800 U.S. Highway, Beaumont, TX", "coords": null}
+{"name": "Jobe Materials Dyer Railyard", "city": "El Paso", "state": "TX", "website": "https://jobematerials.com/", "ok": true, "address": "1150 Southview Dr., El Paso, TX 79928", "coords": {"lat": 31.70671528918, "lon": -106.27461290051, "matched": "1150 SOUTHVIEW DR, EL PASO, TX, 79928"}, "moved_mi": 12.94}
+{"name": "Kinder Morgan Deer Park Rail Terminal", "city": "Pasadena", "state": "TX", "website": "https://www.kindermorgan.com/", "ok": true, "address": null}
+{"name": "Loup RailPort", "city": "Dallas", "state": "TX", "website": "https://www.louplogistics.com/resource-center/what-is-a-railport.html", "ok": true, "address": null}
+{"name": "Loup RailPort", "city": "Galena Park", "state": "TX", "website": "https://www.louplogistics.com/resource-center/what-is-a-railport.html", "ok": true, "address": null}
+{"name": "Loup RailPort", "city": "Odessa", "state": "TX", "website": "https://www.louplogistics.com/resource-center/what-is-a-railport.html", "ok": true, "address": null}
+{"name": "Material Transport Trucking & Storage", "city": "Fort Worth", "state": "TX", "website": "https://materialtransport.com/", "ok": true, "address": "10354 Hicks Field Road, Fort Worth, TX 76179", "coords": {"lat": 32.918183283332, "lon": -97.397383635326, "matched": "10354 HICKS FIELD RD, FORT WORTH, TX, 76179"}, "moved_mi": 11.89}
+{"name": "Metro West Transload", "city": "Cresson", "state": "TX", "website": "http://www.metrowesttransload.com/", "ok": false, "stage": "fetch", "error": "<urlopen error [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1000)>"}
+{"name": "Midstream Texas South Corpus Rail Terminal", "city": "Corpus Christi", "state": "TX", "website": "https://www.midstreamtx.com/midstream-texas-south-corpus-rail-terminal/", "ok": true, "address": null}
+{"name": "Motus Energy T1/T2 Terminals", "city": "Brownsville", "state": "TX", "website": "https://motus.energy/", "ok": true, "address": null}
+{"name": "Mountain View Reload USA Inc", "city": "Irving", "state": "TX", "website": "https://www.arrow.ca/reload/location/irving-reload/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "NORAG Hereford Transload", "city": "Hereford", "state": "TX", "website": "https://www.norag-us.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "NSG Logistics Cleburne Transload", "city": "Cleburne", "state": "TX", "website": "https://nsgco.com/", "ok": true, "address": "3120 Sabre Dr, Cleburne, TX", "coords": null}
+{"name": "New Orleans Cold Storage", "city": "La Porte", "state": "TX", "website": "https://www.onelineage.com/facilities/houston-la-porte", "ok": true, "address": "10060 Porter Road, La Porte, TX 77571", "coords": {"lat": 29.698199457251, "lon": -95.086696595147, "matched": "10060 PORTER RD, LA PORTE, TX, 77571"}, "moved_mi": 3.1}
+{"name": "Omnitrax Energy Services", "city": "Big Lake", "state": "TX", "website": "http://omnitrax.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Omnitrax Logistics Services", "city": "Borger", "state": "TX", "website": "http://omnitrax.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Omnitrax Logistics Services", "city": "Brownsville", "state": "TX", "website": "http://omnitrax.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Panhandle Northern Railroad", "city": "Borger", "state": "TX", "website": "https://omnitrax.com/panhandle-northern-railroad/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Pinnacle Machine Works", "city": "Houston", "state": "TX", "website": "https://pinnaclemw.com/", "ok": true, "address": "10521 Sheldon Rd., Houston, TX 77044", "coords": {"lat": 29.868492879846, "lon": -95.128262168026, "matched": "10521 SHELDON RD, HOUSTON, TX, 77044"}, "moved_mi": 16.29}
+{"name": "Plastic Express", "city": "Pasadena", "state": "TX", "website": "http://www.plasticexpress.com/", "ok": true, "address": null}
+{"name": "Port of Beaumont", "city": "Beaumont", "state": "TX", "website": "https://www.pobtx.com/", "ok": true, "address": "1225 Main Street, Beaumont, TX 77701", "coords": {"lat": 30.079367058359, "lon": -94.09260895823, "matched": "1225 MAIN ST, BEAUMONT, TX, 77701"}, "moved_mi": 3.18}
+{"name": "Precision Terminal Logistics LLC", "city": "Elmendorf", "state": "TX", "website": "https://www.precisiontl.com/#", "ok": true, "address": null}
+{"name": "Precision Terminal Logistics LLC", "city": "San Antonio", "state": "TX", "website": "https://www.precisiontl.com/#", "ok": true, "address": null}
+{"name": "Quality Transload Inc", "city": "Pasadena", "state": "TX", "website": "https://www.qualitycarriersinc.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "RSI Logistics", "city": "Etter", "state": "TX", "website": "https://www.rsilogistics.com/rail-solutions/rail-terminal-services/etter-tx/", "ok": false, "stage": "fetch", "error": "HTTP Error 429: Too Many Requests"}
+{"name": "Rail Logix Alamo Junction", "city": "Elmendorf", "state": "TX", "website": "https://rail-logix.com/locations/rail-logix-alamo-junction/", "ok": true, "address": "16456 Old Corpus Christi Rd., Elmendorf, TX 78112", "coords": {"lat": 29.258997927879, "lon": -98.344950573189, "matched": "16456 OLD CORPUS CHRISTI RD, ELMENDORF, TX, 78112"}, "moved_mi": 0.86}
+{"name": "Rail Logix AmeriPort Industrial Park", "city": "Baytown", "state": "TX", "website": "https://rail-logix.com/locations/", "ok": true, "address": "16456 Old Corpus Christi Rd., Baytown, TX 77523", "coords": null}
+{"name": "Rail Logix Port Crossing Commerce Center", "city": "La Porte", "state": "TX", "website": "https://rail-logix.com/locations/", "ok": true, "address": "1920 S. 16th Street, La Porte, TX 77571", "coords": {"lat": 29.635461303578, "lon": -95.035438855212, "matched": "1920 S 16TH ST, LA PORTE, TX, 77571"}, "moved_mi": 2.36}
+{"name": "Savage Brownsville Transload Terminal", "city": "Brownsville", "state": "TX", "website": "https://www.savageservices.com/", "ok": true, "address": null}
+{"name": "Savage Service Corp", "city": "Big Spring", "state": "TX", "website": "https://www.savageservices.com/services/terminal-transload/", "ok": true, "address": null}
+{"name": "Savage Services \u2014 Houston, TX", "city": "Houston", "state": "TX", "website": "https://savageco.com/locations/", "ok": true, "address": null}
+{"name": "Stagecoach Cartage & Distribution", "city": "Anthony", "state": "TX", "website": "http://www.stagecoachcartage.com/", "ok": true, "address": null}
+{"name": "Stolt-Nielsen Rail Services", "city": "Houston", "state": "TX", "website": "http://www.stolt-nielsen.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Superior Carriers", "city": "Arlington", "state": "TX", "website": "https://carrytransit.com/services#transloading", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Sweetwater Logistics Center", "city": "Sweetwater", "state": "TX", "website": "https://pycoindustriesinc.com/", "ok": true, "address": null}
+{"name": "TGS Cedar Port Railroad Transload Terminal", "city": "Baytown", "state": "TX", "website": "https://www.tgscedarportrailroad.com/", "ok": true, "address": "1033 Industrial Road, Baytown, TX 77523", "coords": null}
+{"name": "Temple & Central Railroad", "city": "Temple", "state": "TX", "website": "https://patriotrail.com/rail/temple-central-texas-railway-tc/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Texas Blending & Warehousing Corp", "city": "Houston", "state": "TX", "website": "https://www.tbwc.net/", "ok": true, "address": "2505 Collingsworth Street, Houston, TX 77026", "coords": {"lat": 29.793769483529, "lon": -95.344591669845, "matched": "2505 COLLINGSWORTH ST, HOUSTON, TX, 77026"}, "moved_mi": 2.76}
+{"name": "Texas Northeastern Railroad (TNER)", "city": "Garland", "state": "TX", "website": "https://www.gwrr.com/railroads/texas-northeastern-railroad", "ok": true, "address": "475 Gautney Road, Garland, TX 75040", "coords": {"lat": 32.914706526206, "lon": -96.626339818815, "matched": "475 GAUTNEY ST, GARLAND, TX, 75040"}, "moved_mi": 0.74}
+{"name": "Tidewater Transit Co", "city": "Big Lake", "state": "TX", "website": "https://www.tidewater-transit.com/", "ok": true, "address": null}
+{"name": "Tidewater Transit Co", "city": "San Angelo", "state": "TX", "website": "http://www.tidewater-logistics.com/", "ok": true, "address": null}
+{"name": "Titan Lansing Transloading", "city": "Lubbock", "state": "TX", "website": "http://www.titanlansing.com/", "ok": true, "address": "3802 MLK Jr. Blvd., Lubbock, TX 79452", "coords": {"lat": 33.559583436819, "lon": -101.818455373039, "matched": "3802 MARTIN L KING BLVD, LUBBOCK, TX, 79404"}, "moved_mi": 2.47}
+{"name": "Totalchem LLC", "city": "Houston", "state": "TX", "website": "http://www.totalchem.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Truck-Rail Handling Inc", "city": "El Paso", "state": "TX", "website": "https://qatp-trh.com/services/", "ok": true, "address": null}
+{"name": "Truck-Rail Handling Inc", "city": "Lubbock", "state": "TX", "website": "https://qatp-trh.com/services/", "ok": true, "address": null}
+{"name": "Twin Eagle Terminals & Logistics", "city": "Big Spring", "state": "TX", "website": "https://teterminals.com/terminals-logistics/big-spring/", "ok": true, "address": null}
+{"name": "USA Rail Port Arthur", "city": "Port Arthur", "state": "TX", "website": "https://usarailterminals.com/rail-facilities/port-arthur-tx-rail-storage-facility/", "ok": true, "address": null}
+{"name": "United States Cold Storage Inc.", "city": "Fort Worth", "state": "TX", "website": "https://www.uscold.com/", "ok": true, "address": null}
+{"name": "Vista Proppants And Logistics", "city": "Barnhart", "state": "TX", "website": "https://www.vmsand.com/locations", "ok": true, "address": null}
+{"name": "Vista Proppants and Logistics", "city": "Barnhart", "state": "TX", "website": "https://www.vmsand.com/", "ok": true, "address": null}
+{"name": "W M Dewey & Son Inc.", "city": "Houston", "state": "TX", "website": "https://wmdewey.com/", "ok": true, "address": "7511 1101 McCarty St, Houston, TX", "coords": {"lat": 29.769347233563, "lon": -95.283782241952, "matched": "1101 S MCCARTY ST, HOUSTON, TX, 77029"}, "moved_mi": 5.2}
+{"name": "Warehouse Specialists", "city": "Dallas", "state": "TX", "website": "https://www.wsinc.com/locations/dallas-distribution-center/", "ok": true, "address": "11115 Petal St, Dallas, TX 75238", "coords": {"lat": 32.884658419236, "lon": -96.69334889241, "matched": "11115 PETAL ST, DALLAS, TX, 75238"}, "moved_mi": 9.59}
+{"name": "Warehouse Specialists", "city": "Garland", "state": "TX", "website": "https://www.wsinc.com/locations/dallas-fulfillment/", "ok": true, "address": "2722 S Jupiter Rd, Garland, TX 75041", "coords": null}
+{"name": "Watco", "city": "Coady", "state": "TX", "website": "https://www.watco.com/service/terminals/coady-transload-terminal/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Watco", "city": "Port Arthur", "state": "TX", "website": "https://www.watco.com/service/terminal-services/dedicated", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Watco Terminal & Port Services", "city": "Dallas", "state": "TX", "website": "https://www.watcocompanies.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Watco Terminal & Port Services", "city": "Galena Park", "state": "TX", "website": "https://www.watcocompanies.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Watco Terminal & Port Services", "city": "Houston", "state": "TX", "website": "https://www.watcocompanies.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Watco Terminal & Port Services", "city": "Pecos", "state": "TX", "website": "https://www.watcocompanies.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Food Express Inc", "city": "Ogden", "state": "UT", "website": "https://www.foodexp.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "HYDRA Distribution & Rail Services", "city": "Salt Lake City", "state": "UT", "website": "https://hydralg.com/rail-services/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "KAG Logistics", "city": "Ogden", "state": "UT", "website": "https://www.kaglogistics.com/", "ok": true, "address": null}
+{"name": "Metro Group", "city": "Salt Lake City", "state": "UT", "website": "http://metrogroup.com/", "ok": true, "address": null}
+{"name": "Plastic Express", "city": "Salt Lake City", "state": "UT", "website": "https://www.plasticexpress.com/", "ok": true, "address": null}
+{"name": "Plastic Express - 2932 W 500 S", "city": "Salt Lake City", "state": "UT", "website": "https://www.plasticexpress.com/", "ok": true, "address": null}
+{"name": "RailSync Transload Facility", "city": "Cedar City", "state": "UT", "website": "https://railsync.io/", "ok": true, "address": "1790 North Rail Way, Cedar City, UT 84721", "coords": null}
+{"name": "Salt Lake Transloading Services", "city": "Salt Lake City", "state": "UT", "website": "https://patriotrail.com/salt-lake-transloading-services/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Savage Cedar City, UT Transload", "city": "Cedar City", "state": "UT", "website": "https://savageco.com/", "ok": true, "address": null}
+{"name": "Savage Service Corp", "city": "Price", "state": "UT", "website": "https://savageco.com/transload/price-utah/", "ok": true, "address": null}
+{"name": "Thatcher Company Inc", "city": "Salt Lake City", "state": "UT", "website": "http://www.tchem.com/", "ok": true, "address": "1905 Fortune Road, Salt Lake City, UT 84104", "coords": {"lat": 40.741528793799, "lon": -111.943940614335, "matched": "1905 FORTUNE RD, SALT LAKE CITY, UT, 84104"}, "moved_mi": 3.07}
+{"name": "Truck-Rail Handling Inc", "city": "Salt Lake City", "state": "UT", "website": "https://qatp-trh.com/services/", "ok": true, "address": null}
+{"name": "USA Rail Salt Lake City Automotive Terminal", "city": "Salt Lake City", "state": "UT", "website": "https://www.usarail.us/", "ok": true, "address": null}
+{"name": "A&R Transport Inc", "city": "Chesapeake", "state": "VA", "website": "https://ardoingitright.com/", "ok": true, "address": null}
+{"name": "A&R Transport Inc", "city": "Portsmouth", "state": "VA", "website": "https://ardoingitright.com/", "ok": true, "address": null}
+{"name": "Alexandria NS TBT", "city": "Cameron", "state": "VA", "website": "https://www.nscorp.com", "ok": true, "address": null}
+{"name": "Arreff Terminals Inc", "city": "Portsmouth", "state": "VA", "website": "http://www.arreff.com/", "ok": true, "address": null}
+{"name": "Buckingham Branch Alpha Yard Transload Site", "city": "Dillwyn", "state": "VA", "website": "https://buckinghambranch.com/site-location/alpha-yard-transload-site-buckingham-county-bb-buckingham-division/", "ok": true, "address": "1063 Main Street, Dillwyn, VA 23936", "coords": {"lat": 37.542497399627, "lon": -78.456602334205, "matched": "1063 MAIN ST, DILLWYN, VA, 23936"}, "moved_mi": 0.29}
+{"name": "Buckingham Branch Buckingham Yard Transload Site", "city": "Dillwyn", "state": "VA", "website": "https://buckinghambranch.com/site-location/buckingham-yard-transload-site-buckingham-county-bb-buckingham-division/", "ok": true, "address": "238 N. James Madison Highway, Dillwyn, VA 23936", "coords": null}
+{"name": "Buckingham Branch Railroad", "city": "Doswell", "state": "VA", "website": "https://www.buckinghambranch.com", "ok": true, "address": null}
+{"name": "Chesapeake NS TBT", "city": "Chesapeake", "state": "VA", "website": "https://www.nscorp.com", "ok": true, "address": null}
+{"name": "Genesis Rail Services LLC", "city": "Roanoke", "state": "VA", "website": "https://genesisrail.com/", "ok": true, "address": "9214 830 Campbell Ave, Roanoke, VA 24013", "coords": {"lat": 37.27319625355, "lon": -79.930380842928, "matched": "830 CAMPBELL AVE SE, ROANOKE, VA, 24013"}, "moved_mi": 0.63}
+{"name": "Hh Omps Inc", "city": "Winchester", "state": "VA", "website": "http://www.hhomps.com/", "ok": true, "address": "234 Ezra Lane, Winchester, VA 22603", "coords": null}
+{"name": "IMTT Chesapeake Terminal", "city": "Chesapeake", "state": "VA", "website": "https://imtt.com/terminals/chesapeake-va/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Katoen Natie Norfolk", "city": "Norfolk", "state": "VA", "website": "https://www.katoennatie.com/", "ok": true, "address": null}
+{"name": "Kinder Morgan Elizabeth River Terminal", "city": "Chesapeake", "state": "VA", "website": "https://www.kindermorgan.com/Operations/Terminals/Index", "ok": true, "address": null}
+{"name": "Kinder Morgan Norfolk Terminal", "city": "Norfolk", "state": "VA", "website": "https://www.kindermorgan.com/Operations/Terminals/Index", "ok": true, "address": null}
+{"name": "Kinder Morgan Pier IX and X Terminals", "city": "Newport News", "state": "VA", "website": "https://www.kindermorgan.com/Operations/Terminals/Index", "ok": true, "address": null}
+{"name": "Kinder Morgan South Hill Terminal", "city": "Chesapeake", "state": "VA", "website": "https://www.kindermorgan.com/Operations/Terminals/Index", "ok": true, "address": null}
+{"name": "Lambert's Point Docks Inc.", "city": "Norfolk", "state": "VA", "website": "http://www.nscorp.com/content/nscorp/en/get-to-kn*", "ok": true, "address": null}
+{"name": "NGL Energy Partners Chesapeake Terminal", "city": "Chesapeake", "state": "VA", "website": "https://www.nglenergypartners.com/", "ok": true, "address": null}
+{"name": "Newport News Marine Terminal", "city": "Newport News", "state": "VA", "website": "https://www.portofvirginia.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Norfolk Southern TBT", "city": "Roanoke", "state": "VA", "website": "https://www.watco.com/service/terminals/roanoke-va-tbt-2/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Norfolk Southern TBT (RSI Logistics)", "city": "Petersburg", "state": "VA", "website": "https://www.rsilogistics.com/rail-solutions/rail-terminal-services/petersburg-va/", "ok": false, "stage": "fetch", "error": "HTTP Error 429: Too Many Requests"}
+{"name": "Petersburg NS TBT", "city": "Petersburg", "state": "VA", "website": "https://www.nscorp.com", "ok": true, "address": null}
+{"name": "Quality Transload Inc", "city": "Roanoke", "state": "VA", "website": "https://www.qualitydistribution.com/About-QDI/Our-Companies/Quality-Transload-Terminals.aspx", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "R&G Reload Center", "city": "Winchester", "state": "VA", "website": "https://www.rgreload.com/", "ok": true, "address": "206 Frogale Court, Winchester, VA 22602", "coords": null}
+{"name": "Ray-Mont Logistics", "city": "Portsmouth", "state": "VA", "website": "https://www.ray-mont.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Recycling Management Resources", "city": "Richmond", "state": "VA", "website": "https://www.recyclingmr.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Richmond Marine Terminal", "city": "Richmond", "state": "VA", "website": "https://www.portofvirginia.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "TRANSFLO Virginia-Petersburg Terminal", "city": "Petersburg", "state": "VA", "website": "https://www.transflo.net/locations/virginia-petersburg/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Transflo CSXT", "city": "Richmond", "state": "VA", "website": "https://www.transflo.net/locations/virginia-richmond/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "US Rail & Logistics (USRL)", "city": "Portsmouth", "state": "VA", "website": "https://usrailandlogistics.com/portsmouth-va/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "USD Group Richmond Terminal", "city": "Richmond", "state": "VA", "website": "https://usdg.com/", "ok": true, "address": null}
+{"name": "Winchester & Western Railroad (OmniTRAX)", "city": "Clear Brook", "state": "VA", "website": "https://omnitrax.com/winchester-and-western-railroad-company-west-virginia/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Barrett Trucking", "city": "Burlington", "state": "VT", "website": "http://www.barretttruckingco.com/", "ok": true, "address": "1311 16 Austin Dr, Burlington, VT 05401", "coords": {"lat": 44.45147163857, "lon": -73.219236166729, "matched": "16 AUSTIN DR, BURLINGTON, VT, 05401"}, "moved_mi": 1.72}
+{"name": "Global Burlington Terminal", "city": "Burlington", "state": "VT", "website": "https://www.globalp.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Shelburne Transload Facility", "city": "Shelburne", "state": "VT", "website": "https://vrs.us.com/services/vrs-connect/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Slc Transfer", "city": "Burlington", "state": "VT", "website": "http://www.vrs.us.com/vrs_connect/SLCtransfer.html", "ok": false, "stage": "fetch", "error": "HTTP Error 500: Internal Server Error"}
+{"name": "Vermont Railway", "city": "Shelburne", "state": "VT", "website": "http://www.vrs.us.com/vrs_connect/vrs_conn_shelburne.html", "ok": false, "stage": "fetch", "error": "HTTP Error 500: Internal Server Error"}
+{"name": "Auto Warehousing Company", "city": "Tacoma", "state": "WA", "website": "https://www.autowc.com/", "ok": true, "address": null}
+{"name": "Carlile Transportation Systems", "city": "Tacoma", "state": "WA", "website": "https://www.carlile.biz/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Cascade Warehouse", "city": "Chehalis", "state": "WA", "website": "http://www.cascadewarehouse.com/", "ok": true, "address": null}
+{"name": "Central Washington Corn Processors Richland Grain Transload", "city": "Richland", "state": "WA", "website": "https://www.cw-cp.com/", "ok": true, "address": "3334 Logston Blvd., Richland, WA 99354", "coords": {"lat": 46.34318859403, "lon": -119.299806284432, "matched": "3334 LOGSTON BL, RICHLAND, WA, 99354"}, "moved_mi": 3.89}
+{"name": "Commodities Plus, Inc.", "city": "Vancouver", "state": "WA", "website": "https://commoditiesplus.net/", "ok": true, "address": "2707 NW Lower River Road, Vancouver, WA 98660", "coords": {"lat": 45.669453681979, "lon": -122.744007422247, "matched": "2707 NW LOWER RIVER RD, VANCOUVER, WA, 98660"}, "moved_mi": 4.39}
+{"name": "DelHur Industries Richland Transload", "city": "Richland", "state": "WA", "website": "https://delhur.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Food Express Inc", "city": "Seattle", "state": "WA", "website": "https://www.foodexp.com/html/locations.htm", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Food Express Inc", "city": "Tacoma", "state": "WA", "website": "https://www.foodexp.com/html/locations.htm", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Food Express Inc", "city": "Vancouver", "state": "WA", "website": "http://www.foodexp.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Harms Pacific Transport Inc", "city": "Pasco", "state": "WA", "website": "https://www.harmspacific.com/", "ok": true, "address": "3220 N Glade Rd, Pasco, WA 99301", "coords": {"lat": 46.304591414156, "lon": -119.121320501142, "matched": "3220 N GLADE RD, PASCO, WA, 99301"}, "moved_mi": 4.6}
+{"name": "Holroyd Recycle South", "city": "Tacoma", "state": "WA", "website": "https://holroyd.co/", "ok": true, "address": null}
+{"name": "Inland Empire Distribution Systems Inc", "city": "Pasco", "state": "WA", "website": "http://ieds.net/locations/contract-services/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Lineage Logistics", "city": "Tacoma", "state": "WA", "website": "https://www.onelineage.com/", "ok": true, "address": null}
+{"name": "Loup Logistics Tacoma Railport", "city": "Tacoma", "state": "WA", "website": "https://www.louplogistics.com/", "ok": true, "address": null}
+{"name": "Macmillan-Piper Inc", "city": "Seattle", "state": "WA", "website": "http://www.macpiper.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Macmillan-Piper Inc", "city": "Tacoma", "state": "WA", "website": "http://www.macpiper.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Martin\u2019s Feed Inc.", "city": "Sumas", "state": "WA", "website": "https://martinsfeedinc.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 429: Too Many Requests"}
+{"name": "Mid Columbia Warehouses Inc", "city": "Pasco", "state": "WA", "website": "https://www.google.com/maps/place/Mid+Columbia+Warehouse+Inc/@46.2168758,-119.0742485,3094m/data=!3m1!1e3!4m5!3m4!1s0x0:0xf5b169e490f904d2!8m2!3d46.2168461!4d-119.0742914", "ok": true, "address": null}
+{"name": "Mountain View Reload USA Inc", "city": "Sumas", "state": "WA", "website": "https://arrow.ca/reload", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "PCC Logistics", "city": "Tacoma", "state": "WA", "website": "https://pcclogistics.com/port-of-tacoma-rd-facility/", "ok": true, "address": "2602 Port of Tacoma Road, Tacoma, WA 98421", "coords": {"lat": 47.257478687135, "lon": -122.389047495051, "matched": "2602 PORT OF TACOMA RD, TACOMA, WA, 98421"}, "moved_mi": 2.61}
+{"name": "Pacific Coast Container Inc", "city": "Seattle", "state": "WA", "website": "https://pcclogistics.com/locations/", "ok": true, "address": "17 3629 Duwamish Ave., Seattle, WA 98134", "coords": {"lat": 47.570229024509, "lon": -122.341295448056, "matched": "3629 DUWAMISH AVE S, SEATTLE, WA, 98134"}, "moved_mi": 2.52}
+{"name": "Pacific Coast Container Inc", "city": "Tacoma", "state": "WA", "website": "https://pcclogistics.com/locations/", "ok": true, "address": "26 2602 Port of Tacoma Road, Tacoma, WA 98421", "coords": {"lat": 47.257478687135, "lon": -122.389047495051, "matched": "2602 PORT OF TACOMA RD, TACOMA, WA, 98421"}, "moved_mi": 2.61}
+{"name": "Pacific Terminals Ltd", "city": "Seattle", "state": "WA", "website": "http://www.pacificterminals.com/", "ok": true, "address": "3480 West, Seattle, WA 98106", "coords": null}
+{"name": "Plastic Express", "city": "Kent", "state": "WA", "website": "http://www.plasticexpress.com/operations/", "ok": true, "address": null}
+{"name": "Plastic Express", "city": "Tacoma", "state": "WA", "website": "http://www.plasticexpress.com/operations/", "ok": true, "address": null}
+{"name": "Plastic Express", "city": "Vancouver", "state": "WA", "website": "http://www.plasticexpress.com/operations/", "ok": true, "address": null}
+{"name": "Port of Chehalis Grain Terminal & Transload Facility", "city": "Chehalis", "state": "WA", "website": "https://portofchehalis.com/swwagp-faqs/", "ok": true, "address": "321 Maurin Rd, Chehalis, WA 98532", "coords": {"lat": 46.626949066401, "lon": -122.909842385181, "matched": "321 MAURIN RD, CHEHALIS, WA, 98532"}, "moved_mi": 3.56}
+{"name": "Quality Transload Inc", "city": "Kent", "state": "WA", "website": "https://www.qualitycarriersinc.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Ray-Mont Logistics Seattle", "city": "Seattle", "state": "WA", "website": "https://www.ray-mont.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Sunoco LP Vancouver Main Terminal", "city": "Vancouver", "state": "WA", "website": "https://www.sunocolp.com/segments/fuel-terminals/view/vancouver-main", "ok": true, "address": "2562 Harborside Drive, Vancouver, WA 98666", "coords": null}
+{"name": "Tacoma Transload", "city": "Tacoma", "state": "WA", "website": "https://www.portoftacoma.com/", "ok": true, "address": null}
+{"name": "Tidewater Snake River Terminal", "city": "Pasco", "state": "WA", "website": "https://www.tidewater.com/", "ok": true, "address": "671 Tank Farm Road, Pasco, WA 99301", "coords": {"lat": 46.22301346211, "lon": -119.024480279645, "matched": "671 TANK FARM RD, PASCO, WA, 99301"}, "moved_mi": 3.81}
+{"name": "Tripak Inc", "city": "Tacoma", "state": "WA", "website": "https://ttsi.com/services/intermodal-drayage-warehousing/warehousing/", "ok": false, "stage": "fetch", "error": "<urlopen error timed out>"}
+{"name": "Tristar Flc Inc", "city": "Vancouver", "state": "WA", "website": "http://www.tristarpnw.com/", "ok": true, "address": null}
+{"name": "Truck-Rail Handling Inc", "city": "Tacoma", "state": "WA", "website": "https://qatp-trh.com/services/", "ok": true, "address": null}
+{"name": "Wallenius Wilhelmsen Solutions", "city": "Tacoma", "state": "WA", "website": "https://www.walleniuswilhelmsen.com/", "ok": true, "address": null}
+{"name": "Bulk Logistics Inc.", "city": "Milwaukee", "state": "WI", "website": "https://www.tankstar.com/history/bulk-logistics/", "ok": true, "address": "611 S 28th St., Milwaukee, WI 53215", "coords": {"lat": 43.025539224028, "lon": -87.949179411587, "matched": "611 S 28TH ST, MILWAUKEE, WI, 53215"}, "moved_mi": 2.76}
+{"name": "Capitol Warehousing", "city": "Menasha", "state": "WI", "website": "https://capitolwhse.com/midway/", "ok": true, "address": "800 Midway, Menasha, WI", "coords": {"lat": 44.229972760249, "lon": -88.436761822186, "matched": "800 MIDWAY RD, MENASHA, WI, 54952"}, "moved_mi": 1.3}
+{"name": "FJ Robers Company Inc.", "city": "La Crosse", "state": "WI", "website": "https://www.fjrobers.com/", "ok": true, "address": "816 Bainbridge Street, La Crosse, WI 54603", "coords": {"lat": 43.834333027816, "lon": -91.26226812121, "matched": "816 BAINBRIDGE ST, LA CROSSE, WI, 54603"}, "moved_mi": 1.99}
+{"name": "Federal Marine Terminals Inc.", "city": "Milwaukee", "state": "WI", "website": "https://www.logistecterminals.com/network/milwaukee-wisconsin/", "ok": true, "address": "1200 South Lincoln, Milwaukee, WI 53207", "coords": {"lat": 43.005901136576, "lon": -87.89147250902, "matched": "1200 S LINCOLN MEMORIAL DR, MILWAUKEE, WI, 53207"}, "moved_mi": 5.49}
+{"name": "Flash Trucking", "city": "Green Bay", "state": "WI", "website": "https://flashtrucking.com/services/", "ok": true, "address": null}
+{"name": "Foodliner Inc", "city": "Stevens Point", "state": "WI", "website": "http://foodliner.com/", "ok": true, "address": null}
+{"name": "Fox River Terminal", "city": "Green Bay", "state": "WI", "website": "https://robindale.energy/companies/frt/", "ok": true, "address": "1400 Bylsby Avenue, Green Bay, WI 54303", "coords": {"lat": 44.537277864554, "lon": -88.015401716126, "matched": "1400 BYLSBY AVE, GREEN BAY, WI, 54303"}, "moved_mi": 1.27}
+{"name": "GLC Integrated Services / GLC Minerals Transload", "city": "Green Bay", "state": "WI", "website": "https://glcminerals.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Hanke Trucking & Terminals", "city": "La Crosse", "state": "WI", "website": "https://hanketrucking.com/", "ok": true, "address": null}
+{"name": "KK Integrated Logistics Green Bay Marine Terminal", "city": "Green Bay", "state": "WI", "website": "https://www.kkil.net/locations/marine-terminals/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "LOGISTEC Green Bay Terminal", "city": "Green Bay", "state": "WI", "website": "https://www.logistecterminals.com/network/green-bay/", "ok": true, "address": "700 Bay Beach Rd, Green Bay, WI 54302", "coords": {"lat": 44.534840175629, "lon": -87.992970101849, "matched": "700 BAY BEACH RD, GREEN BAY, WI, 54302"}, "moved_mi": 1.71}
+{"name": "Madison Transload Terminal", "city": "Madison", "state": "WI", "website": "https://www.watco.com/service/terminals/madison-wi/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Milwaukee Bulk Terminal", "city": "Milwaukee", "state": "WI", "website": "https://www.kindermorgan.com/WWWKM/media/Terminals-Bulk/Midwest-Milwaukee-Bulk.pdf", "ok": true, "address": null}
+{"name": "Pattison Railcar Solutions", "city": "Prairie Du Chien", "state": "WI", "website": "https://pattisoncompany.com/", "ok": true, "address": null}
+{"name": "Quality Transload Inc", "city": "Appleton", "state": "WI", "website": "https://www.qualitycarriersinc.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "US Oil", "city": "Milwaukee", "state": "WI", "website": "https://www.us-energy.com/terminal-locator/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "WSI Appleton Warehouse Road", "city": "Appleton", "state": "WI", "website": "https://www.wsinc.com/locations/appleton-warehouse/", "ok": true, "address": "5651 Address 3000 Warehouse Road, Appleton, WI 54915", "coords": {"lat": 44.260636091532, "lon": -88.364892770766, "matched": "3000 WAREHOUSE RD, APPLETON, WI, 54915"}, "moved_mi": 2.5}
+{"name": "WSI Menasha Warehouse", "city": "Menasha", "state": "WI", "website": "https://www.wsinc.com/locations/menasha-warehouse/", "ok": true, "address": "5000 Address 655 Brighton Beach Rd, Menasha, WI 54952", "coords": {"lat": 44.208370314884, "lon": -88.414267996279, "matched": "655 BRIGHTON BEACH RD, MENASHA, WI, 54952"}, "moved_mi": 0.7}
+{"name": "WSI Stevens Point Warehouse", "city": "Stevens Point", "state": "WI", "website": "https://www.wsinc.com/locations/stevens-point-warehouse/", "ok": true, "address": "2557 Leahy Ave, Stevens Point, WI 54481", "coords": {"lat": 44.511311306707, "lon": -89.53373424037, "matched": "2557 LEAHY AVE, STEVENS POINT, WI, 54481"}, "moved_mi": 2.19}
+{"name": "WSI Wisconsin Rapids 2nd Street Warehouse", "city": "Wisconsin Rapids", "state": "WI", "website": "https://www.wsinc.com/locations/wisconsin-rapids/", "ok": true, "address": "3578 Address 1430 2nd St, Wisconsin Rapids, WI 54494", "coords": null}
+{"name": "WSI Wisconsin Rapids Wolosek Avenue Warehouse", "city": "Wisconsin Rapids", "state": "WI", "website": "https://www.wsinc.com/locations/wisconsin-rapids-fda-warehouse/", "ok": true, "address": "3578 Address 3500 Wolosek Ave, Wisconsin Rapids, WI 54494", "coords": {"lat": 44.405529481954, "lon": -89.785646752404, "matched": "3500 WOLOSEK AVE, WISCONSIN RAPIDS, WI, 54494"}, "moved_mi": 2.21}
+{"name": "Watco Terminal & Port Services", "city": "Madison", "state": "WI", "website": "https://www.watcocompanies.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "A&R Transport Inc", "city": "Parkersburg", "state": "WV", "website": "https://ardoingitright.com/", "ok": true, "address": null}
+{"name": "CSX Transflo", "city": "Fairmont", "state": "WV", "website": "https://transflo.net/locations/west-virginia-fairmont/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Industrial Cleaners Inc.", "city": "Parkersburg", "state": "WV", "website": "https://industrialcleanersinc.com/", "ok": true, "address": "701 Depot Street, Parkersburg, WV 26101", "coords": {"lat": 39.261863519533, "lon": -81.553037515658, "matched": "701 DEPOT ST, PARKERSBURG, WV, 26101"}, "moved_mi": 0.56}
+{"name": "Kanawha River Terminal", "city": "Quincy", "state": "WV", "website": "https://www.suncoke.com/en/our-business/industrial-services/logistics", "ok": true, "address": null}
+{"name": "Little Kanawha River Rail Parkersburg Transload Facility", "city": "Parkersburg", "state": "WV", "website": "https://lkrail.com/", "ok": true, "address": "400 Buckeye St., Parkersburg, WV 26101", "coords": {"lat": 39.256225958353, "lon": -81.540871465538, "matched": "400 BUCKEYE ST, PARKERSBURG, WV, 26101"}, "moved_mi": 1.32}
+{"name": "Maidsville NS TBT", "city": "Maidsville", "state": "WV", "website": "https://www.nscorp.com", "ok": true, "address": null}
+{"name": "Norfolk Southern TBT", "city": "Maidsville", "state": "WV", "website": "http://www.nscorp.com/", "ok": true, "address": null}
+{"name": "TRANSFLO Fairmont Terminal", "city": "Fairmont", "state": "WV", "website": "https://transflo.net/locations/west-virginia-fairmont/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Twin Eagle Bridgeport Terminal", "city": "Bridgeport", "state": "WV", "website": "https://teterminals.com/terminals-logistics/bridgeport/", "ok": true, "address": null}
+{"name": "Twin Eagle Terminals & Logistics", "city": "Bridgeport", "state": "WV", "website": "https://teterminals.com/terminals-logistics/bridgeport/", "ok": true, "address": null}
+{"name": "Ctran Rail Yard", "city": "Casper", "state": "WY", "website": "https://bdwrail.com/locations/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Granite Peak Midstream", "city": "Cheyenne", "state": "WY", "website": "https://www.thegranitepeakgroup.com/midstream", "ok": true, "address": null}
+{"name": "Granite Peak Transloading", "city": "Cheyenne", "state": "WY", "website": "https://www.thegranitepeakgroup.com/", "ok": true, "address": null}
+{"name": "Transportation Partners & Logisticsllc", "city": "Casper", "state": "WY", "website": "https://takkion.com/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}
+{"name": "Twin Eagle Bill Terminal", "city": "Bill", "state": "WY", "website": "https://teterminals.com/terminals-logistics/bill/", "ok": true, "address": null}
+{"name": "Watco", "city": "Cheyenne", "state": "WY", "website": "https://www.watco.com/service/terminals/cheyenne-logistics-hub/", "ok": false, "stage": "fetch", "error": "HTTP Error 403: Forbidden"}

@@ -43,6 +43,8 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--max-spend", type=float, default=0.50)
 ap.add_argument("--warehouses", action="store_true", help="unverified third-party warehouses first")
 ap.add_argument("--no-coords", action="store_true", help="records with no coordinate at all")
+ap.add_argument("--ambiguous-first", action="store_true",
+                help="only records whose rail verdict a real address would change")
 ap.add_argument("--limit", type=int, default=0)
 ap.add_argument("--refetch", default=None,
                 help="re-read a finished run's dataset and re-join (costs nothing)")
@@ -97,6 +99,7 @@ for r in recs:
     if a.warehouses and r.get("facility_type") != "third-party-warehouse": continue
     if a.no_coords and r.get("lat"): continue
     if not a.no_coords and not (centroid(r) or not r.get("lat")): continue
+    if a.ambiguous_first and r.get("rail_confidence") not in ("possible", "unlikely", None): continue
     if not r.get("name") or not r.get("city") or not r.get("state"): continue
     pool.append(r)
 

@@ -1,0 +1,228 @@
+{"domain": "bwcterminals.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 8}
+{"domain": "gulfandohio.com", "ok": true, "records": 8, "pages_checked": 1, "cities": ["chester", "fort lawn", "knoxville", "lancaster", "laurinburg", "rural hall", "siloam"], "rail_served_cities": {}}
+{"domain": "logistecterminals.com", "ok": true, "records": 8, "pages_checked": 6, "cities": ["fulton", "green bay", "milwaukee", "new bedford", "palmetto", "pascagoula", "pensacola", "tampa"], "rail_served_cities": {}}
+{"domain": "precisiontl.com", "ok": true, "records": 8, "pages_checked": 3, "cities": ["el reno", "elmendorf", "jackson", "jeffersonville", "long island city", "loving", "pearl", "san antonio"], "rail_served_cities": {}}
+{"domain": "teterminals.com", "ok": true, "records": 8, "pages_checked": 6, "cities": ["big spring", "bill", "bridgeport", "douglas", "eaton", "evans", "floresville"], "rail_served_cities": {}}
+{"domain": "imtt.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 7}
+{"domain": "pinsly.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 7}
+{"domain": "reload.arrow.ca", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 7}
+{"domain": "rmtcompanies.com", "ok": true, "records": 7, "pages_checked": 1, "cities": ["brighton", "commerce city", "denver", "golden", "lucerne", "windsor"], "rail_served_cities": {}}
+{"domain": "theponderosasolution.com", "ok": true, "records": 7, "pages_checked": 5, "cities": ["belle fourche", "buckeye", "carmi", "catoosa", "great falls", "greeley", "st paul"], "rail_served_cities": {}}
+{"domain": "titanlansing.com", "ok": true, "records": 7, "pages_checked": 3, "cities": ["carlsbad", "ft stockton", "levelland", "lubbock", "north branch", "oklahoma city", "sulphur jct"], "rail_served_cities": {"north branch": {"url": "https://www.titanlansing.com/north-branch", "evidence": "Served by the BNSF Railway On the St. Croix Valley Railroad (SCXY)"}}}
+{"domain": "buckinghambranch.com", "ok": true, "records": 6, "pages_checked": 6, "cities": ["dillwyn", "doswell", "fishersville", "keysville", "orange"], "rail_served_cities": {}}
+{"domain": "carloadexpress.com", "ok": true, "records": 6, "pages_checked": 1, "cities": ["georgetown", "harrington", "pittsburgh", "s greensburg", "seaford"], "rail_served_cities": {}}
+{"domain": "ctlconline.com", "ok": true, "records": 6, "pages_checked": 2, "cities": ["enid", "mound city", "mount vernon", "naples", "north bend", "shattuck"], "rail_served_cities": {}}
+{"domain": "hydralg.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 6}
+{"domain": "matco-industries.com", "ok": true, "records": 6, "pages_checked": 1, "cities": ["cocoa", "hastings", "live oak", "pompano beach", "riviera beach"], "rail_served_cities": {}}
+{"domain": "nepw.com", "ok": true, "records": 6, "pages_checked": 2, "cities": ["auburn", "fairfield", "mechanic falls", "portland", "scarborough", "south paris"], "rail_served_cities": {}}
+{"domain": "qsl.com", "ok": true, "records": 6, "pages_checked": 4, "cities": ["chicago", "new orleans", "pascagoula"], "rail_served_cities": {}}
+{"domain": "spartanlogistics.com", "ok": true, "records": 6, "pages_checked": 6, "cities": ["anderson", "columbus", "laurens", "marion", "starr", "toledo"], "rail_served_cities": {}}
+{"domain": "totaldistribution.com", "ok": true, "records": 6, "pages_checked": 6, "cities": ["akron", "huntington", "massillon", "midland", "saginaw", "winston salem"], "rail_served_cities": {}}
+{"domain": "uscold.com", "ok": true, "records": 6, "pages_checked": 3, "cities": ["bakersfield", "fort worth", "fresno", "lumberton", "sacramento", "warsaw"], "rail_served_cities": {}}
+{"domain": "adm.com", "ok": true, "records": 5, "pages_checked": 4, "cities": ["camanche", "clinton", "marseilles", "memphis", "peoria"], "rail_served_cities": {}}
+{"domain": "bjryrail.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 5}
+{"domain": "candorail.com", "ok": true, "records": 5, "pages_checked": 5, "cities": ["brandon", "channelview", "henderson", "hornby", "rifle"], "rail_served_cities": {"channelview": {"url": "https://www.candorail.com/channelviewterminal", "evidence": "Cando Channelview Multi-Purpose Terminal (MPT) is the premier rail services terminal on the Houston Ship Channel, connecting shippers to key domestic and international supply chains. Cando Channelview Terminal is a first"}}}
+{"domain": "cgb.com", "ok": true, "records": 5, "pages_checked": 1, "cities": ["clayton", "enid", "jeffersonville", "shattuck", "van buren"], "rail_served_cities": {}}
+{"domain": "gvtrail.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 5}
+{"domain": "iaisrr.com", "ok": true, "records": 5, "pages_checked": 1, "cities": ["blue island", "bureau junction", "council bluffs", "iowa city", "newton"], "rail_served_cities": {}}
+{"domain": "inerailroad.com", "ok": true, "records": 5, "pages_checked": 2, "cities": ["ashley", "coldwater", "fremont", "hudson", "jonesville"], "rail_served_cities": {"coldwater": {"url": "https://inerailroad.com/2022/04/branch-county-rail-improvements/", "evidence": "Andersons were trucking corn oil from its Albion biofuel processing plat to Coldwater to load into rail cars for shipment to Louisiana."}}}
+{"domain": "lgeverist.com", "ok": true, "records": 5, "pages_checked": 6, "cities": ["carr", "hawarden", "henderson", "ortonville", "sioux city"], "rail_served_cities": {}}
+{"domain": "lsrc.com", "ok": true, "records": 5, "pages_checked": 0, "cities": ["alpena", "gaylord", "greenbush", "saginaw", "standish"], "rail_served_cities": {}}
+{"domain": "nysw.com", "ok": true, "records": 5, "pages_checked": 2, "cities": ["apulia station", "binghamton", "cortland", "north bergen", "sparta"], "rail_served_cities": {}}
+{"domain": "palmettorailways.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 5}
+{"domain": "pcclogistics.com", "ok": true, "records": 5, "pages_checked": 6, "cities": ["carson", "oakland", "seattle", "tacoma"], "rail_served_cities": {"seattle": {"url": "https://pcclogistics.com/duwamish-3pl-facility/", "evidence": "The Duwamish Facility is rail served and can accommodate most car types."}, "tacoma": {"url": "https://pcclogistics.com/port-of-tacoma-rd-facility/", "evidence": "The Port of Tacoma Road facility serves the Tacoma market with joint UP and BN rail service."}, "carson": {"url": "https://pcclogistics.com/watson-center-rd-facility/", "evidence": "Serving Railroad: UPRR Rail Spur: 753 Watson Center Rd."}}}
+{"domain": "qatp-trh.com", "ok": true, "records": 5, "pages_checked": 3, "cities": ["el paso", "fremont", "lubbock", "salt lake city", "tacoma"], "rail_served_cities": {}}
+{"domain": "sunocolp.com", "ok": true, "records": 5, "pages_checked": 3, "cities": ["baltimore", "jacksonville", "portland", "st james", "vancouver"], "rail_served_cities": {}}
+{"domain": "venturatransfercompany.com", "ok": true, "records": 5, "pages_checked": 0, "cities": ["commerce", "el centro", "long beach", "phoenix", "wilmington"], "rail_served_cities": {}}
+{"domain": "acwr.com", "ok": true, "records": 4, "pages_checked": 3, "cities": ["candor", "midland", "mt gilead", "oakboro"], "rail_served_cities": {}}
+{"domain": "americanrailcenter.com", "ok": true, "records": 4, "pages_checked": 0, "cities": ["kenton", "stony ridge", "toledo", "walbridge"], "rail_served_cities": {}}
+{"domain": "buckeye.com", "ok": true, "records": 4, "pages_checked": 6, "cities": ["east chicago", "hammond", "perth amboy", "port reading"], "rail_served_cities": {}}
+{"domain": "cadrailroads.com", "ok": true, "records": 4, "pages_checked": 1, "cities": ["flemington", "port murray", "totowa", "washington"], "rail_served_cities": {}}
+{"domain": "drybulktrucking.com", "ok": true, "records": 4, "pages_checked": 3, "cities": ["asheville", "bostic", "lattimore", "spruce pine"], "rail_served_cities": {}}
+{"domain": "dunningexpress.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 4}
+{"domain": "farmrail.com", "ok": true, "records": 4, "pages_checked": 0, "cities": ["blackwell", "elk city", "thomas", "westhom"], "rail_served_cities": {}}
+{"domain": "genesisenergy.com", "ok": true, "records": 4, "pages_checked": 4, "cities": ["baton rouge", "natchez", "raceland", "shreveport"], "rail_served_cities": {}}
+{"domain": "harcros.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 4}
+{"domain": "hoffmantransportation.com", "ok": true, "records": 4, "pages_checked": 6, "cities": ["channahon", "coal city", "fort smith", "old hickory"], "rail_served_cities": {}}
+{"domain": "ironhorseresources.com", "ok": true, "records": 4, "pages_checked": 0, "cities": ["bridgeport", "mcminnville", "santa teresa", "shelbyville"], "rail_served_cities": {}}
+{"domain": "lalrr.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 4}
+{"domain": "luckeytanklines.com", "ok": true, "records": 4, "pages_checked": 0, "cities": ["conover", "lima", "newton", "streator"], "rail_served_cities": {}}
+{"domain": "merail.com", "ok": true, "records": 4, "pages_checked": 5, "cities": ["cedar knolls", "morristown", "whippany"], "rail_served_cities": {"cedar knolls": {"url": "https://www.merail.com/east-frederick-transload-facility", "evidence": "The Morristown & Erie Railway is proud to announce the construction of a brand-new train-to-truck bulk transloading facility on East Frederick Transload Facility in Cedar Knolls, NJ."}, "whippany": {"url": "https://www.merail.com/troyhills", "evidence": "The Morristown & Erie Railway is proud to announce the construction of a brand-new train-to-truck bulk transloading facility on Troy Hills Road in Whippany, NJ."}}}
+{"domain": "mix30.com", "ok": true, "records": 4, "pages_checked": 1, "cities": ["hereford", "holcomb", "nebraska city", "pekin"], "rail_served_cities": {}}
+{"domain": "mserr.com", "ok": true, "records": 4, "pages_checked": 6, "cities": ["lucedale", "mobile", "moss point"], "rail_served_cities": {"moss point": {"url": "https://mserr.com/industrial-sites/moss-point-river-terminal/", "evidence": "Rail Served: Daily by MSE"}}}
+{"domain": "palumbotruckingct.com", "ok": true, "records": 4, "pages_checked": 2, "cities": ["branford", "middletown", "new haven", "wallingford"], "rail_served_cities": {}}
+{"domain": "puertadelnorte.com.mx", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 4}
+{"domain": "quantixscs.com", "ok": true, "records": 4, "pages_checked": 2, "cities": ["auburn", "moncks corner", "palmer", "ware"], "rail_served_cities": {}}
+{"domain": "rail-logix.com", "ok": true, "records": 4, "pages_checked": 6, "cities": ["baytown", "carville", "elmendorf", "la porte"], "rail_served_cities": {"baytown": {"url": "https://rail-logix.com/locations/rail-logix-ameriport/", "evidence": "Dual-served by the BNSF and UP"}}}
+{"domain": "ramseyxpress.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 4}
+{"domain": "tidewater-logistics.com", "ok": true, "records": 4, "pages_checked": 3, "cities": ["derwent", "navarre", "san angelo", "steubenville"], "rail_served_cities": {}}
+{"domain": "tpandl.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 4}
+{"domain": "transtarrail.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 4}
+{"domain": "tubulartransport.com", "ok": true, "records": 4, "pages_checked": 6, "cities": ["bakersfield", "bismarck", "hobbs", "rifle"], "rail_served_cities": {"bakersfield": {"url": "http://tubulartransport.com/locations/bakersfield-ca/", "evidence": "Forty acres with a rail spur dual-served by Union Pacific (UP) and BNSF with 8 rail-car spaces."}, "bismarck": {"url": "http://tubulartransport.com/locations/bismarck-nd/", "evidence": "Twenty-five acres with a rail spur dual-served by Canadian Pacific (CP) and BNSF with 23 rail-car spaces."}, "hobbs": {"url": "http://tubulartransport.com/locations/hobbs-nm/", "evidence": "Forty-five acres with a rail spur served by Union Pacific (UP) with 20 rail-car spaces."}}}
+{"domain": "wepack.com", "ok": true, "records": 4, "pages_checked": 0, "cities": ["malvern", "monticello", "north little rock", "paris"], "rail_served_cities": {}}
+{"domain": "aberdeen-rockfish.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 3}
+{"domain": "acewlt.com", "ok": true, "records": 3, "pages_checked": 1, "cities": ["chester", "cornwells heights", "miami"], "rail_served_cities": {}}
+{"domain": "alterlogistics.com", "ok": true, "records": 3, "pages_checked": 5, "cities": ["davenport", "rock island", "saint paul"], "rail_served_cities": {"rock island": {"url": "https://www.alterlogistics.com/rock-island-intermodal-terminal/", "evidence": "Rail served by the Iowa Interstate Railroad with reciprocal connection to the BN-SF, CP."}}}
+{"domain": "aokrr.com", "ok": true, "records": 3, "pages_checked": 1, "cities": ["howe", "mcalester", "shawnee"], "rail_served_cities": {}}
+{"domain": "arreff.com", "ok": true, "records": 3, "pages_checked": 2, "cities": ["pembroke", "portsmouth"], "rail_served_cities": {"portsmouth": {"url": "http://www.arreff.com/our-services/organic-transloading/", "evidence": "Arreff Terminals can receive containers, unload and then efficiently ship by railcar or hopper trucks."}}}
+{"domain": "blacklandsrailroad.com", "ok": true, "records": 3, "pages_checked": 1, "cities": ["henderson", "odessa", "shreveport"], "rail_served_cities": {"henderson": {"url": "https://www.blacklandsrailroad.com/henderson-overton-branch", "evidence": "The Henderson Overton Branch Railroad (HOB) interchanges with Union Pacific in Overton, TX and runs 13.71 miles to Henderson, TX."}}}
+{"domain": "brinkcompanies.com", "ok": true, "records": 3, "pages_checked": 4, "cities": ["bridgman", "grand rapids", "muskegon"], "rail_served_cities": {"bridgman": {"url": "https://brinkcompanies.com/bridgman-terminal/", "evidence": "the former Technisand terminal has been revitalized and provides rail and truck access, dry bulk tank storage and shop capabilities"}}}
+{"domain": "bruceoakley.com", "ok": true, "records": 3, "pages_checked": 0, "cities": ["muskogee", "north little rock", "ottawa"], "rail_served_cities": {}}
+{"domain": "cascadewarehouse.com", "ok": true, "records": 3, "pages_checked": 0, "cities": ["chehalis", "junction city", "salem"], "rail_served_cities": {}}
+{"domain": "chempak.net", "ok": true, "records": 3, "pages_checked": 0, "cities": ["essington", "la porte", "spence"], "rail_served_cities": {}}
+{"domain": "cleanharbors.com", "ok": true, "records": 3, "pages_checked": 6, "cities": ["burton", "north flint", "redwood city"], "rail_served_cities": {}}
+{"domain": "coopertsmith.com", "ok": true, "records": 3, "pages_checked": 1, "cities": ["altamira", "mobile", "squamish"], "rail_served_cities": {}}
+{"domain": "cv-ag.com", "ok": true, "records": 3, "pages_checked": 2, "cities": ["east modesto", "modesto", "oakland"], "rail_served_cities": {}}
+{"domain": "ee-jay.com", "ok": true, "records": 3, "pages_checked": 0, "cities": ["east st louis", "louisville", "minneapolis"], "rail_served_cities": {}}
+{"domain": "everettrailroad.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 3}
+{"domain": "flashtrucking.com", "ok": true, "records": 3, "pages_checked": 2, "cities": ["green bay", "ripon", "troy"], "rail_served_cities": {}}
+{"domain": "flashtrucking.net", "ok": true, "records": 3, "pages_checked": 1, "cities": ["oxford", "ripon"], "rail_served_cities": {}}
+{"domain": "floridarail.com", "ok": true, "records": 3, "pages_checked": 3, "cities": ["arcadia", "north fort myers", "sarasota"], "rail_served_cities": {"sarasota": {"url": "https://www.floridarail.com/transload-sites/sarasota-mainline/", "evidence": "Sarasota Mainline Transload Sites"}}}
+{"domain": "gmhr.com", "ok": true, "records": 3, "pages_checked": 0, "cities": ["dickinson", "fargo", "gascoyne"], "rail_served_cities": {}}
+{"domain": "hanketrucking.com", "ok": true, "records": 3, "pages_checked": 1, "cities": ["la crosse", "reedsburg", "slinger"], "rail_served_cities": {"slinger": {"url": "https://hanketrucking.com/locations/", "evidence": "Slinger \u2013 Aggregate production, warehouse, rail"}}}
+{"domain": "inrd.com", "ok": true, "records": 3, "pages_checked": 2, "cities": ["indianapolis", "odon", "sullivan"], "rail_served_cities": {}}
+{"domain": "jpnoonan.com", "ok": true, "records": 3, "pages_checked": 1, "cities": ["danielson", "west springfield", "westfield"], "rail_served_cities": {}}
+{"domain": "kaskaskiaport.com", "ok": true, "records": 3, "pages_checked": 6, "cities": ["baldwin", "modoc", "new athens"], "rail_served_cities": {"new athens": {"url": "https://www.kaskaskiaport.com/terminals/krpd-1", "evidence": "Rail-served by Canadian National Railroad; loop track handles 125-car unit trains"}, "baldwin": {"url": "https://www.kaskaskiaport.com/terminals/krpd-2", "evidence": "Facility Type: Multimodal river, rail, and roadway terminal"}}}
+{"domain": "katoennatie.com", "ok": true, "records": 3, "pages_checked": 3, "cities": ["eddyville", "edison", "norfolk"], "rail_served_cities": {}}
+{"domain": "kinsdale.com", "ok": true, "records": 3, "pages_checked": 0, "cities": ["farnham", "hamilton", "woodstock"], "rail_served_cities": {}}
+{"domain": "lansberrytrucking.com", "ok": true, "records": 3, "pages_checked": 0, "cities": ["cresson", "penfield", "port allegany"], "rail_served_cities": {}}
+{"domain": "mbrail.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 3}
+{"domain": "moranlogistics.com", "ok": true, "records": 3, "pages_checked": 6, "cities": ["mechanicsburg", "sunbury", "watsontown"], "rail_served_cities": {"watsontown": {"url": "https://www.moranlogistics.com/about/watsontown-pa-warehouses/", "evidence": "5 rail sidings connected to the Norfolk Southern Main Line"}}}
+{"domain": "murphylogistics.com", "ok": true, "records": 3, "pages_checked": 3, "cities": ["eagan", "kansas city", "minneapolis"], "rail_served_cities": {}}
+{"domain": "neillcartage.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 3}
+{"domain": "nicholasinc.com", "ok": true, "records": 3, "pages_checked": 1, "cities": ["ambridge", "dubois"], "rail_served_cities": {}}
+{"domain": "nprail.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 3}
+{"domain": "nshr.com", "ok": true, "records": 3, "pages_checked": 1, "cities": ["coal township", "williamsport", "winfield"], "rail_served_cities": {}}
+{"domain": "qualitycarriersinc.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 3}
+{"domain": "qualitydistribution.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 3}
+{"domain": "railtoroad.com", "ok": true, "records": 3, "pages_checked": 1, "cities": ["saint joseph", "sioux falls", "worthington"], "rail_served_cities": {}}
+{"domain": "ray-mont.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 3}
+{"domain": "shbellco.com", "ok": true, "records": 3, "pages_checked": 6, "cities": ["baltimore", "chicago", "east liverpool"], "rail_served_cities": {"baltimore": {"url": "https://shbellco.com/facilities/baltimore-patapsco-avenue-terminal/", "evidence": "Railroad: This terminal uses a 10-car siding for handling boxcars with a CSX connection."}, "east liverpool": {"url": "https://shbellco.com/facilities/east-liverpool-terminal/", "evidence": "Railroad: This terminal uses a 50-car siding for handling hopper-cars, boxcars, gondolas and flatcars with a Norfolk Southern connection."}}}
+{"domain": "smsrail.com", "ok": true, "records": 3, "pages_checked": 2, "cities": ["bridgeport", "hudson falls", "logan township"], "rail_served_cities": {}}
+{"domain": "superior-carriers.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 3}
+{"domain": "tcwr.net", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 3}
+{"domain": "transmontaignepartners.com", "ok": true, "records": 3, "pages_checked": 0, "cities": ["greensboro", "jacksonville", "selma"], "rail_served_cities": {}}
+{"domain": "tristarpnw.com", "ok": true, "records": 3, "pages_checked": 0, "cities": ["fontana", "mead", "vancouver"], "rail_served_cities": {}}
+{"domain": "usarailterminals.com", "ok": true, "records": 3, "pages_checked": 6, "cities": ["orange", "port allen", "port arthur"], "rail_served_cities": {"orange": {"url": "https://usarailterminals.com/rail-facilities/usa-rail-orange/", "evidence": "This newly constructed state-of-the-art terminal comprises 130 acres and is dual-served by the Union Pacific and BNSF Railroads."}}}
+{"domain": "vanglogistics.com", "ok": true, "records": 3, "pages_checked": 1, "cities": ["fowler", "lathrop", "selma"], "rail_served_cities": {}}
+{"domain": "veneziainc.com", "ok": true, "records": 3, "pages_checked": 3, "cities": ["bethlehem", "doraville", "south plainfield"], "rail_served_cities": {}}
+{"domain": "vmsand.com", "ok": true, "records": 3, "pages_checked": 1, "cities": ["barnhart", "gonzales"], "rail_served_cities": {}}
+{"domain": "vopak.com", "ok": true, "records": 3, "pages_checked": 2, "cities": ["hahnville", "plaquemine", "wilmington"], "rail_served_cities": {}}
+{"domain": "win-waste.com", "ok": true, "records": 3, "pages_checked": 2, "cities": ["brockton", "leominster", "taunton"], "rail_served_cities": {}}
+{"domain": "wnyprr.com", "ok": true, "records": 3, "pages_checked": 0, "cities": ["cuba", "emporium", "meadville"], "rail_served_cities": {}}
+{"domain": "aduiepyle.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "advancedlogistics.com", "ok": true, "records": 2, "pages_checked": 1, "cities": ["mcclellan park", "rogers"], "rail_served_cities": {}}
+{"domain": "afftontrucking.com", "ok": true, "records": 2, "pages_checked": 1, "cities": ["kansas city", "st louis"], "rail_served_cities": {}}
+{"domain": "albanyeastern.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["corvallis", "lebanon"], "rail_served_cities": {}}
+{"domain": "alliancec3.com", "ok": true, "records": 2, "pages_checked": 1, "cities": ["berlin", "westfield"], "rail_served_cities": {}}
+{"domain": "amrailroad.com", "ok": true, "records": 2, "pages_checked": 2, "cities": ["gateway", "springdale"], "rail_served_cities": {"springdale": {"url": "https://www.amrailroad.com/component/content/article/our-train-rides", "evidence": "The excursion train operates on a working freight railroad."}}}
+{"domain": "andersonsinc.com", "ok": true, "records": 2, "pages_checked": 2, "cities": ["joplin", "winona"], "rail_served_cities": {}}
+{"domain": "artransport.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["east morris", "fort worth"], "rail_served_cities": {}}
+{"domain": "associatedterminals.com", "ok": true, "records": 2, "pages_checked": 6, "cities": ["arabi", "new orleans"], "rail_served_cities": {"new orleans": {"url": "https://www.associatedterminals.com/locations/new-orleans-bulk-terminal/", "evidence": "Whether our customers need open pad storage or are transferring barge-to-rail, rail-to-barge, barge-to-truck, barge-to-container or bagging services, we have got it handled. Located on the Michoud Canal, New Orleans Bulk"}}}
+{"domain": "b-b.ca", "ok": true, "records": 2, "pages_checked": 1, "cities": ["saint hyacinthe", "val joli"], "rail_served_cities": {}}
+{"domain": "b-htransfer.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["sandersville", "sylacauga"], "rail_served_cities": {}}
+{"domain": "bakersfieldqdc.com", "ok": true, "records": 2, "pages_checked": 2, "cities": ["bakersfield"], "rail_served_cities": {"bakersfield": {"url": "https://www.bakersfieldqdc.com/3OurFacilityServicesNews.html", "evidence": "We provide warehousing of dry and liquid commodities brought into Bakersfield QDC Premier Transload ( BSNF Railway ) by hopper car, box cars and tank cars."}}}
+{"domain": "bdwrail.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "blackhillstrucking.com", "ok": true, "records": 2, "pages_checked": 5, "cities": ["evansville", "gillette"], "rail_served_cities": {"gillette": {"url": "https://blackhillstrucking.com/terminal-detail/gillette/", "evidence": "With direct rail access and a team that knows the terrain, we're equipped to move materials efficiently and safely across northeast Wyoming."}}}
+{"domain": "bluelinxco.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["kansas city", "yulee"], "rail_served_cities": {}}
+{"domain": "brokerslogistics.com", "ok": true, "records": 2, "pages_checked": 4, "cities": ["anthony", "ashley"], "rail_served_cities": {"anthony": {"url": "https://brokerslogistics.com/facilities/anthony/", "evidence": "BNSF Rail Access with twelve (12) rail car capacity"}}}
+{"domain": "brunkus.com", "ok": false, "error": "<urlopen error timed out>", "records": 2}
+{"domain": "btcbulk.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["lincoln", "little rock"], "rail_served_cities": {}}
+{"domain": "bulktransfertx.com", "ok": true, "records": 2, "pages_checked": 1, "cities": ["monahans", "seagraves"], "rail_served_cities": {}}
+{"domain": "caljet.com", "ok": true, "records": 2, "pages_checked": 1, "cities": ["phoenix"], "rail_served_cities": {}}
+{"domain": "capitolwhse.com", "ok": true, "records": 2, "pages_checked": 1, "cities": ["menasha", "windsor"], "rail_served_cities": {}}
+{"domain": "carsonteam.com", "ok": true, "records": 2, "pages_checked": 6, "cities": ["eugene", "portland"], "rail_served_cities": {}}
+{"domain": "clrail.com", "ok": true, "records": 2, "pages_checked": 2, "cities": ["baytown", "silsbee"], "rail_served_cities": {"silsbee": {"url": "https://www.clrail.com/warehousing", "evidence": "Silsbee facility: 351,529 sq ft with direct BNSF rail access."}}}
+{"domain": "cold-linklogistics.com", "ok": true, "records": 2, "pages_checked": 1, "cities": ["north kingstown", "sioux city"], "rail_served_cities": {}}
+{"domain": "colonialterminals.com", "ok": true, "records": 2, "pages_checked": 6, "cities": ["savannah", "wilmington"], "rail_served_cities": {"savannah": {"url": "https://colonialterminals.com/wahlstrom/", "evidence": "Terminal Rail Operation Class I Rail through the SAPT Short Line Tracks \u2013 3,000 ft (1,000 m)"}}}
+{"domain": "couturetrucking.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["barton", "lyndonville"], "rail_served_cities": {}}
+{"domain": "crmsrail.com", "ok": true, "records": 2, "pages_checked": 6, "cities": ["anderson", "kansas city"], "rail_served_cities": {}}
+{"domain": "cvacoop.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["north bend", "saint edward"], "rail_served_cities": {}}
+{"domain": "danacompanies.com", "ok": true, "records": 2, "pages_checked": 1, "cities": ["bridgewater", "kansas city"], "rail_served_cities": {}}
+{"domain": "decks-docks.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "delawareexpress.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["binghamton", "edgemoor"], "rail_served_cities": {}}
+{"domain": "depotconnect.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "dreisbach.com", "ok": true, "records": 2, "pages_checked": 6, "cities": ["oakland", "richmond"], "rail_served_cities": {"oakland": {"url": "https://www.dreisbach.com/logistics/facilities/coolport-oakland", "evidence": "Cool Port is 275,000 square feet with 18 rail and 90 truck doors to complement 20,000 pallet positions for both frozen and refrigerated commodities; it has an annual capacity of up to 9000 railcars and 50,000+ TEUs."}, "richmond": {"url": "https://www.dreisbach.com/logistics/facilities/richmond", "evidence": "Adjacent to and served by Union Pacific /BNSF Railroads"}}}
+{"domain": "dsicompanies.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "energytransfer.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["north kingstown", "westville"], "rail_served_cities": {}}
+{"domain": "errclean.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["mounds"], "rail_served_cities": {}}
+{"domain": "frontierlogistics.com", "ok": true, "records": 2, "pages_checked": 1, "cities": ["la porte", "pasadena"], "rail_served_cities": {}}
+{"domain": "gaports.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "ghmroperations.com", "ok": true, "records": 2, "pages_checked": 2, "cities": ["big lake", "dilley"], "rail_served_cities": {}}
+{"domain": "gilmer1.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "globalp.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "gmsbr.com", "ok": true, "records": 2, "pages_checked": 2, "cities": ["ashland city", "pickensville"], "rail_served_cities": {}}
+{"domain": "graftonuptonrr.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["hopedale", "west upton"], "rail_served_cities": {}}
+{"domain": "harborlogistics.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "holtlogistics.com", "ok": true, "records": 2, "pages_checked": 6, "cities": ["gloucester city", "paulsboro"], "rail_served_cities": {"gloucester city": {"url": "https://www.holtlogistics.com/facilities/gloucester-marine-terminal/", "evidence": "has direct access to highways as well as three rail lines that transit across the United States and Canada"}, "paulsboro": {"url": "https://www.holtlogistics.com/facilities/paulsboro-marine-terminal/", "evidence": "has direct access to Interstate 295 and three Class I Freight Railroads: Norfolk Southern, CSX, and CP Rail"}}}
+{"domain": "houffcorp.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "hrrc.com", "ok": true, "records": 2, "pages_checked": 1, "cities": ["canaan", "newtown"], "rail_served_cities": {}}
+{"domain": "ieds.net", "ok": true, "records": 2, "pages_checked": 0, "cities": ["pasco", "velox"], "rail_served_cities": {}}
+{"domain": "indianariverandrail.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "iterm.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["la porte", "pasadena"], "rail_served_cities": {}}
+{"domain": "jeitransload.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["fort smith"], "rail_served_cities": {}}
+{"domain": "jerich.com", "ok": true, "records": 2, "pages_checked": 4, "cities": ["avenel", "dayton"], "rail_served_cities": {}}
+{"domain": "jobematerials.com", "ok": true, "records": 2, "pages_checked": 1, "cities": ["anthony", "el paso"], "rail_served_cities": {}}
+{"domain": "junctioncityreload.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["junction city"], "rail_served_cities": {}}
+{"domain": "kearneycompanies.com", "ok": true, "records": 2, "pages_checked": 2, "cities": ["new orleans"], "rail_served_cities": {"new orleans": {"url": "https://www.kearneycompanies.com/commodity-warehousing-and-transloading", "evidence": "As a subsidiary company of Precision Terminal Logistics, The Kearney Companies Inc. operates 7 rail-served warehouse terminals in New Orleans and 1 rail-served warehouse terminal in Savannah, GA."}}}
+{"domain": "kkil.net", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "lincolnenergysolutions.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "linkedin.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["iowa", "tulsa"], "rail_served_cities": {}}
+{"domain": "liquidtransfer.us", "ok": true, "records": 2, "pages_checked": 0, "cities": ["bainbridge", "baltimore"], "rail_served_cities": {}}
+{"domain": "luckeylogistics.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["des moines", "newton"], "rail_served_cities": {}}
+{"domain": "lynden.com", "ok": true, "records": 2, "pages_checked": 6, "cities": ["fairbanks", "whittier"], "rail_served_cities": {}}
+{"domain": "macpiper.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "merchantsdsm.com", "ok": true, "records": 2, "pages_checked": 3, "cities": ["altoona", "des moines"], "rail_served_cities": {"des moines": {"url": "http://www.merchantsdsm.com/des-moines-location", "evidence": "Rail Siding Private - Served Union Pacific Railroad - dock high doors - flat car and centerbeam car unloading capability"}, "altoona": {"url": "http://www.merchantsdsm.com/altoona-location", "evidence": "Public Warehouse 134,000 Square Feet, single story steel and masonry structure with rail siding, fire and burglar protection, ESFR sprinkler system, and easy access from major interstate highways."}}}
+{"domain": "metroparkwarehouses.com", "ok": true, "records": 2, "pages_checked": 6, "cities": ["kansas city", "north kansas city"], "rail_served_cities": {"kansas city": {"url": "https://metroparkwarehouses.com/kansas-city-3pl-warehouse/", "evidence": "Yes. Our Kansas City warehouses have direct access to both CPKC and BNSF rail lines, making MetroPark an ideal distribution hub for high-volume freight moving throughout the central U.S."}}}
+{"domain": "midwestterminals.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "mprsupplychain.com", "ok": true, "records": 2, "pages_checked": 3, "cities": ["bellaire"], "rail_served_cities": {}}
+{"domain": "newhoperailroad.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "nexxtlogistics.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["lakeview", "sparks"], "rail_served_cities": {}}
+{"domain": "nicholson-terminal.com", "ok": true, "records": 2, "pages_checked": 6, "cities": ["detroit", "ecorse"], "rail_served_cities": {}}
+{"domain": "norag-us.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "northerndrybulk.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["clare", "grand rapids"], "rail_served_cities": {}}
+{"domain": "nsgco.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["cleburne", "gothenburg"], "rail_served_cities": {}}
+{"domain": "obelogistics.com", "ok": true, "records": 2, "pages_checked": 1, "cities": ["elkin", "rural hall"], "rail_served_cities": {}}
+{"domain": "omahatrack.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "omnitransloading.com", "ok": true, "records": 2, "pages_checked": 1, "cities": ["hialeah", "miami"], "rail_served_cities": {}}
+{"domain": "ontariomidland.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["newark", "webster"], "rail_served_cities": {}}
+{"domain": "pantherindustriesinc.com", "ok": true, "records": 2, "pages_checked": 2, "cities": ["davidson", "sturgeon county"], "rail_served_cities": {}}
+{"domain": "partnerswarehouse.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "pavlichinc.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["kansas city"], "rail_served_cities": {}}
+{"domain": "paxind.com", "ok": true, "records": 2, "pages_checked": 3, "cities": ["blacksburg", "duluth"], "rail_served_cities": {}}
+{"domain": "porter-logistics.com", "ok": true, "records": 2, "pages_checked": 6, "cities": ["atlanta", "tampa"], "rail_served_cities": {}}
+{"domain": "portofbuffalo.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["buffalo", "lackawanna"], "rail_served_cities": {}}
+{"domain": "portofvirginia.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "questliner.com", "ok": true, "records": 2, "pages_checked": 6, "cities": ["de graff", "souix city"], "rail_served_cities": {}}
+{"domain": "redriversupply.us", "ok": true, "records": 2, "pages_checked": 2, "cities": ["williston"], "rail_served_cities": {"williston": {"url": "https://www.redriversupply.us/TransloadFacilities", "evidence": "The 180 acre Stony Creek Rail Yard is the only rail transloading facility of its kind in Williston, ND with over 4 miles of dedicated track."}}}
+{"domain": "riverliftindustries.com", "ok": true, "records": 2, "pages_checked": 2, "cities": ["jefferson hills", "west elizabeth"], "rail_served_cities": {}}
+{"domain": "rockymountainrailandstorage.com", "ok": true, "records": 2, "pages_checked": 2, "cities": ["de beque", "grand junction"], "rail_served_cities": {}}
+{"domain": "rrvw.net", "ok": true, "records": 2, "pages_checked": 0, "cities": ["breckenridge", "casselton"], "rail_served_cities": {}}
+{"domain": "rtcltd.com", "ok": true, "records": 2, "pages_checked": 6, "cities": ["kenova", "marmet"], "rail_served_cities": {}}
+{"domain": "sandersvillerailroad.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["sandersville"], "rail_served_cities": {}}
+{"domain": "scoular.com", "ok": true, "records": 2, "pages_checked": 6, "cities": ["adrian", "goodland"], "rail_served_cities": {}}
+{"domain": "sierranorthern.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "siterminals.com", "ok": true, "records": 2, "pages_checked": 1, "cities": ["demopolis", "montgomery"], "rail_served_cities": {}}
+{"domain": "sonomamarintrain.org", "ok": true, "records": 2, "pages_checked": 0, "cities": ["petaluma", "schellville"], "rail_served_cities": {}}
+{"domain": "ssamarine.com", "ok": true, "records": 2, "pages_checked": 1, "cities": ["jacksonville", "long beach"], "rail_served_cities": {}}
+{"domain": "stagecoachcartage.com", "ok": true, "records": 2, "pages_checked": 1, "cities": ["anthony", "vado"], "rail_served_cities": {}}
+{"domain": "steelpro.us", "ok": true, "records": 2, "pages_checked": 1, "cities": ["macedonia", "wayne"], "rail_served_cities": {}}
+{"domain": "stolt-nielsen.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "stonearchcom.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["minneapolis"], "rail_served_cities": {}}
+{"domain": "strasburgrailroad.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["gordonville", "ronks"], "rail_served_cities": {}}
+{"domain": "suncoke.com", "ok": true, "records": 2, "pages_checked": 6, "cities": ["ceredo", "quincy"], "rail_served_cities": {}}
+{"domain": "thehtg.com", "ok": true, "records": 2, "pages_checked": 2, "cities": ["gallatin", "hainesport"], "rail_served_cities": {"hainesport": {"url": "https://thehtg.com/our-services", "evidence": "Hainesport Secondary Railroad is a federally chartered short line serving the Hainesport Industrial Park providing car loading and unloading, and container storage services."}}}
+{"domain": "tidewater-transit.com", "ok": true, "records": 2, "pages_checked": 1, "cities": ["big lake", "fayetteville"], "rail_served_cities": {}}
+{"domain": "tldramp.com", "ok": true, "records": 2, "pages_checked": 1, "cities": ["bellville", "denver"], "rail_served_cities": {}}
+{"domain": "tradepointatlantic.com", "ok": true, "records": 2, "pages_checked": 6, "cities": ["baltimore", "sparrows pt"], "rail_served_cities": {"baltimore": {"url": "https://www.tradepointatlantic.com/why-tradepoint/", "evidence": "Onsite rail with direct connections to CSX & Norfolk Southern"}}}
+{"domain": "travero.com", "ok": true, "records": 2, "pages_checked": 4, "cities": ["cedar rapids", "fairfax"], "rail_served_cities": {"cedar rapids": {"url": "https://www.travero.com/ourservices/transloading", "evidence": "At Logistics Park Cedar Rapids (LPCR), our spacious transloading facility with three rail tracks allows for efficient transfers between railcars and trucks."}}}
+{"domain": "trimac.com", "ok": true, "records": 2, "pages_checked": 4, "cities": ["fairburn", "memphis"], "rail_served_cities": {}}
+{"domain": "trmrt.com", "ok": true, "records": 2, "pages_checked": 1, "cities": ["belle vernon", "glassport"], "rail_served_cities": {}}
+{"domain": "univarsolutions.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "us-energy.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "usrailandlogistics.com", "ok": false, "error": "HTTP Error 403: Forbidden", "records": 2}
+{"domain": "vogelsbergtrucking.com", "ok": true, "records": 2, "pages_checked": 2, "cities": ["faribault", "mason city"], "rail_served_cities": {"faribault": {"url": "https://vogelsbergtrucking.com/warehouse", "evidence": "Rail Car Loading/Unloading"}}}
+{"domain": "vogtwarehouse.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["cincinnati"], "rail_served_cities": {}}
+{"domain": "walleniuswilhelmsen.com", "ok": true, "records": 2, "pages_checked": 5, "cities": ["tacoma", "wilmington"], "rail_served_cities": {}}
+{"domain": "wp.acjrailroad.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["carson", "jefferson"], "rail_served_cities": {}}
+{"domain": "wtnnrr.com", "ok": true, "records": 2, "pages_checked": 0, "cities": ["dyersburg", "jackson"], "rail_served_cities": {}}
