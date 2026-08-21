@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="4 rail transload facilities in Miami, FL — bulk carload transfer, storage and rail-to-truck handoff. Directory from Steel Wheel Logistics.">
+  <meta name="description" content="8 rail transload facilities in Miami, FL — bulk carload transfer, storage and rail-to-truck handoff. Directory from Steel Wheel Logistics.">
   <link rel="canonical" href="https://steelwheellogistics.com/transload/miami-fl">
   <meta property="og:title" content="Transload Facilities in Miami, FL | Steel Wheel Logistics">
-  <meta property="og:description" content="4 rail transload facilities in Miami, FL — bulk carload transfer, storage and rail-to-truck handoff. Directory from Steel Wheel Logistics.">
+  <meta property="og:description" content="8 rail transload facilities in Miami, FL — bulk carload transfer, storage and rail-to-truck handoff. Directory from Steel Wheel Logistics.">
   <meta property="og:url" content="https://steelwheellogistics.com/transload/miami-fl">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Steel Wheel Logistics">
   <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Transload Facilities in Miami, FL | Steel Wheel Logistics">
-  <meta name="twitter:description" content="4 rail transload facilities in Miami, FL — bulk carload transfer, storage and rail-to-truck handoff. Directory from Steel Wheel Logistics.">
+  <meta name="twitter:description" content="8 rail transload facilities in Miami, FL — bulk carload transfer, storage and rail-to-truck handoff. Directory from Steel Wheel Logistics.">
   <title>Transload Facilities in Miami, FL | Steel Wheel Logistics</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
@@ -34,7 +34,7 @@
   "about": "Rail transload facilities",
   "mainEntity": {
     "@type": "ItemList",
-    "numberOfItems": 4,
+    "numberOfItems": 8,
     "itemListElement": [
       {
         "@type": "ListItem",
@@ -92,6 +92,62 @@
           "telephone": "(786) 616-8456",
           "url": "https://www.omnitransloading.com"
         }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "LocalBusiness",
+          "name": "Alpinos Logistics and Dist",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Miami",
+            "addressRegion": "FL"
+          },
+          "telephone": "(305) 871-7082"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "LocalBusiness",
+          "name": "Dependable Warehouse and Distribution",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Miami",
+            "addressRegion": "FL"
+          },
+          "telephone": "(645) 231-5550",
+          "url": "https://www.dwdi.net"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "item": {
+          "@type": "LocalBusiness",
+          "name": "SFF Warehouse",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Miami",
+            "addressRegion": "FL"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "item": {
+          "@type": "LocalBusiness",
+          "name": "Southern Warehouse",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Miami",
+            "addressRegion": "FL"
+          },
+          "url": "https://www.southerncompanies.net"
+        }
       }
     ]
   }
@@ -125,11 +181,29 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Miami, FL</h1>
       <p>
-        4 transload facilities
+        8 transload facilities
         in Miami. Each one transfers bulk freight between railcar and
         truck &mdash; the practical way to serve a consignee without a private
         siding.
@@ -138,12 +212,39 @@
 
     <section>
       <h2>Facilities in Miami</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (1)</option><option value="miami">Miami</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="blower">Blower</option><option value="hot water heating">Hot Water Heating</option><option value="liquid pumps">Liquid Pumps</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (2)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (3)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 6 of 8 sites and capability detail for 1. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
       <div class="railroad-item tl-card" data-city="miami" data-tier="verified" data-phone="0" data-comm="" data-cap="" data-text="ace warehouse &amp; logistics miami   " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Ace Warehouse &amp; Logistics</h3>
         <div style="color:#555;font-size:0.9em">Miami, FL</div>
         <div style="color:#777;font-size:0.92em"><em>No published commodity list &mdash; many transloads handle more than they advertise. Worth a call.</em></div>
         <div><a href="http://www.acewlt.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
+      </div>
+      <div class="railroad-item tl-card" data-city="miami" data-tier="listed" data-phone="1" data-comm="lumber|steel" data-cap="" data-text="alpinos logistics and dist miami  lumber steel " style="margin-bottom:14px">
+        <h3 style="margin:0 0 4px;font-size:1.05em">Alpinos Logistics and Dist</h3>
+        <div style="color:#555;font-size:0.9em">Miami, FL</div>
+        <div><strong>Commodities:</strong> Lumber, Steel <span style="color:#777;font-size:0.85em">(listed by a railroad directory &mdash; may not be their full range)</span></div>
+        <div><strong>Phone:</strong> (305) 871-7082</div>
+      </div>
+      <div class="railroad-item tl-card" data-city="miami" data-tier="listed" data-phone="1" data-comm="lumber|steel" data-cap="" data-text="dependable warehouse and distribution miami  lumber steel " style="margin-bottom:14px">
+        <h3 style="margin:0 0 4px;font-size:1.05em">Dependable Warehouse and Distribution</h3>
+        <div style="color:#555;font-size:0.9em">Miami, FL</div>
+        <div><strong>Commodities:</strong> Lumber, Steel <span style="color:#777;font-size:0.85em">(listed by a railroad directory &mdash; may not be their full range)</span></div>
+        <div><strong>Phone:</strong> (645) 231-5550</div>
+        <div><a href="https://www.dwdi.net" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
       <div class="railroad-item tl-card" data-city="miami" data-tier="listed" data-phone="0" data-comm="minerals" data-cap="" data-text="miami ns tbt miami  minerals " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Miami NS TBT</h3>
@@ -164,6 +265,17 @@
         <div><strong>Commodities:</strong> Lumber, Steel <span style="color:#777;font-size:0.85em">(listed by a railroad directory &mdash; may not be their full range)</span></div>
         <div><strong>Phone:</strong> (786) 616-8456</div>
         <div><a href="https://www.omnitransloading.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
+      </div>
+      <div class="railroad-item tl-card" data-city="miami" data-tier="listed" data-phone="0" data-comm="" data-cap="" data-text="sff warehouse miami   " style="margin-bottom:14px">
+        <h3 style="margin:0 0 4px;font-size:1.05em">SFF Warehouse</h3>
+        <div style="color:#555;font-size:0.9em">Miami, FL</div>
+        <div style="color:#777;font-size:0.92em"><em>No published commodity list &mdash; many transloads handle more than they advertise. Worth a call.</em></div>
+      </div>
+      <div class="railroad-item tl-card" data-city="miami" data-tier="listed" data-phone="0" data-comm="lumber" data-cap="" data-text="southern warehouse miami  lumber " style="margin-bottom:14px">
+        <h3 style="margin:0 0 4px;font-size:1.05em">Southern Warehouse</h3>
+        <div style="color:#555;font-size:0.9em">Miami, FL</div>
+        <div><strong>Commodities:</strong> Lumber <span style="color:#777;font-size:0.85em">(listed by a railroad directory &mdash; may not be their full range)</span></div>
+        <div><a href="https://www.southerncompanies.net" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
       </div>
     <p style="font-size:0.85em;color:#666;margin-top:28px">
@@ -203,11 +315,63 @@
     <section>
       <h2>Nearby</h2>
       <p>
-        <a href="/transload/florida">All Florida facilities</a> &middot; <a href="/transload/jacksonville-fl">Jacksonville</a> &middot; <a href="/transload/orlando-fl">Orlando</a> &middot; <a href="/transload/palmetto-fl">Palmetto</a> &middot; <a href="/transload/tampa-fl">Tampa</a> &middot; <a href="/transload/panama-city-fl">Panama City</a> &middot; <a href="/transload/riviera-beach-fl">Riviera Beach</a>
+        <a href="/transload/florida">All Florida facilities</a> &middot; <a href="/transload/jacksonville-fl">Jacksonville</a> &middot; <a href="/transload/tampa-fl">Tampa</a> &middot; <a href="/transload/orlando-fl">Orlando</a> &middot; <a href="/transload/palmetto-fl">Palmetto</a> &middot; <a href="/transload/panama-city-fl">Panama City</a> &middot; <a href="/transload/riviera-beach-fl">Riviera Beach</a>
       </p>
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

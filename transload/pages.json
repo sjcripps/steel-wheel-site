@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20",
+  "generated_at": "2026-08-21",
   "pages": [
     {
       "loc": "/transload",
@@ -314,6 +314,10 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/chickasaw-al",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/enterprise-al",
       "priority": "0.5"
     },
@@ -358,15 +362,19 @@
       "priority": "0.5"
     },
     {
-      "loc": "/transload/wilmington-ca",
-      "priority": "0.5"
-    },
-    {
       "loc": "/transload/san-diego-ca",
       "priority": "0.5"
     },
     {
+      "loc": "/transload/wilmington-ca",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/long-beach-ca",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/oakland-ca",
       "priority": "0.5"
     },
     {
@@ -378,7 +386,7 @@
       "priority": "0.5"
     },
     {
-      "loc": "/transload/oakland-ca",
+      "loc": "/transload/city-of-industry-ca",
       "priority": "0.5"
     },
     {
@@ -402,11 +410,11 @@
       "priority": "0.5"
     },
     {
-      "loc": "/transload/rifle-co",
+      "loc": "/transload/windsor-co",
       "priority": "0.5"
     },
     {
-      "loc": "/transload/windsor-co",
+      "loc": "/transload/rifle-co",
       "priority": "0.5"
     },
     {
@@ -430,15 +438,15 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/tampa-fl",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/orlando-fl",
       "priority": "0.5"
     },
     {
       "loc": "/transload/palmetto-fl",
-      "priority": "0.5"
-    },
-    {
-      "loc": "/transload/tampa-fl",
       "priority": "0.5"
     },
     {
@@ -458,11 +466,15 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/dalton-ga",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/garden-city-ga",
       "priority": "0.5"
     },
     {
-      "loc": "/transload/dalton-ga",
+      "loc": "/transload/savannah-ga",
       "priority": "0.5"
     },
     {
@@ -487,10 +499,6 @@
     },
     {
       "loc": "/transload/east-point-ga",
-      "priority": "0.5"
-    },
-    {
-      "loc": "/transload/savannah-ga",
       "priority": "0.5"
     },
     {
@@ -526,15 +534,19 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/joliet-il",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/channahon-il",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/elk-grove-village-il",
       "priority": "0.5"
     },
     {
       "loc": "/transload/granite-city-il",
-      "priority": "0.5"
-    },
-    {
-      "loc": "/transload/joliet-il",
       "priority": "0.5"
     },
     {
@@ -550,11 +562,19 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/hammond-in",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/la-porte-in",
       "priority": "0.5"
     },
     {
-      "loc": "/transload/hammond-in",
+      "loc": "/transload/evansville-in",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/elkhart-in",
       "priority": "0.5"
     },
     {
@@ -598,6 +618,10 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/raceland-la",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/westfield-ma",
       "priority": "0.5"
     },
@@ -622,11 +646,11 @@
       "priority": "0.5"
     },
     {
-      "loc": "/transload/bay-city-mi",
+      "loc": "/transload/detroit-mi",
       "priority": "0.5"
     },
     {
-      "loc": "/transload/detroit-mi",
+      "loc": "/transload/bay-city-mi",
       "priority": "0.5"
     },
     {
@@ -646,7 +670,15 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/winona-mn",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/bloomington-mn",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/lakeville-mn",
       "priority": "0.5"
     },
     {
@@ -659,6 +691,10 @@
     },
     {
       "loc": "/transload/st-louis-mo",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/saint-joseph-mo",
       "priority": "0.5"
     },
     {
@@ -702,11 +738,19 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/sanford-nc",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/grand-forks-nd",
       "priority": "0.5"
     },
     {
       "loc": "/transload/omaha-ne",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/hastings-ne",
       "priority": "0.5"
     },
     {
@@ -731,6 +775,10 @@
     },
     {
       "loc": "/transload/santa-teresa-nm",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/carlsbad-nm",
       "priority": "0.5"
     },
     {
@@ -806,11 +854,15 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/oklahoma-city-ok",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/el-reno-ok",
       "priority": "0.5"
     },
     {
-      "loc": "/transload/oklahoma-city-ok",
+      "loc": "/transload/tulsa-ok",
       "priority": "0.5"
     },
     {
@@ -831,10 +883,6 @@
     },
     {
       "loc": "/transload/shattuck-ok",
-      "priority": "0.5"
-    },
-    {
-      "loc": "/transload/tulsa-ok",
       "priority": "0.5"
     },
     {
@@ -866,11 +914,15 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/philadelphia-pa",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/dubois-pa",
       "priority": "0.5"
     },
     {
-      "loc": "/transload/philadelphia-pa",
+      "loc": "/transload/york-pa",
       "priority": "0.5"
     },
     {
@@ -882,7 +934,15 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/chambersburg-pa",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/chester-pa",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/mckees-rocks-pa",
       "priority": "0.5"
     },
     {
@@ -911,6 +971,10 @@
     },
     {
       "loc": "/transload/charleston-sc",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/greenville-sc",
       "priority": "0.5"
     },
     {
@@ -950,6 +1014,10 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/dallas-tx",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/brownsville-tx",
       "priority": "0.5"
     },
@@ -958,15 +1026,15 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/la-porte-tx",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/lubbock-tx",
       "priority": "0.5"
     },
     {
       "loc": "/transload/baytown-tx",
-      "priority": "0.5"
-    },
-    {
-      "loc": "/transload/dallas-tx",
       "priority": "0.5"
     },
     {
@@ -982,11 +1050,23 @@
       "priority": "0.5"
     },
     {
-      "loc": "/transload/la-porte-tx",
+      "loc": "/transload/cleburne-tx",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/cresson-tx",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/el-paso-tx",
       "priority": "0.5"
     },
     {
       "loc": "/transload/port-arthur-tx",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/san-antonio-tx",
       "priority": "0.5"
     },
     {
@@ -1047,6 +1127,14 @@
     },
     {
       "loc": "/transload/milwaukee-wi",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/ripon-wi",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/superior-wi",
       "priority": "0.5"
     },
     {

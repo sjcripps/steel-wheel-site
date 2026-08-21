@@ -56,8 +56,24 @@ cd = sorted(dist_mi(x["lat"], x["lon"]) for x in ctrl)
 def pct(p): return cd[min(len(cd) - 1, int(len(cd) * p))]
 print(f"\nPOSITIVE CONTROLS (n={len(cd)}, OSM-spur-derived, on rail by construction)")
 print(f"  median {pct(0.50):.2f} mi | p75 {pct(0.75):.2f} | p90 {pct(0.90):.2f} | p95 {pct(0.95):.2f} | max {cd[-1]:.2f}")
-THRESH = round(max(1.0, pct(0.95)), 1)
-print(f"  -> threshold set at p95 of the controls: {THRESH} mi")
+# A single cutoff was wrong. Calibrated against facilities that ARE rail-served,
+# p95 sits at 1.17 mi - so a 1 mi threshold passed R&S's Knoxville HEAD OFFICE
+# (0.31 mi) which has no siding, while their actual rail-served LD1 warehouse
+# measures 0.08 mi. Rail runs through cities, so in a built-up area almost any
+# address scores well against a loose cutoff. Grade it instead:
+#   high     <= p50  - closer than the median true rail-served facility
+#   probable <= p75
+#   possible <= p95  - the real distribution has a long tail; a genuine siding
+#                      CAN read far out where NARN nodes are sparse
+#   unlikely  > p95
+BANDS = [("high", pct(0.50)), ("probable", pct(0.75)), ("possible", pct(0.95))]
+THRESH = round(pct(0.75), 2)          # what we are willing to CALL rail-served
+def band(d):
+    for name, lim in BANDS:
+        if d <= lim: return name
+    return "unlikely"
+print(f"  -> bands: high<={BANDS[0][1]:.2f}  probable<={BANDS[1][1]:.2f}  "
+      f"possible<={BANDS[2][1]:.2f}  (claim rail-served only at <= {THRESH})")
 
 # ── Screen the transload directory ──────────────────────────────────────────
 doc = json.loads(TL.read_text()); recs = doc["facilities"]
@@ -77,6 +93,7 @@ for r in recs:
         nocoord += 1; r["rail_proximity"] = "no-coordinates"; continue
     d = dist_mi(r["lat"], r["lng"])
     r["rail_distance_mi"] = round(d, 2)
+    r["rail_confidence"] = band(d)
     if d <= THRESH:
         r["rail_proximity"] = "on-network"; near += 1
     else:
