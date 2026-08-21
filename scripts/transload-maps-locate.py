@@ -126,10 +126,24 @@ def start(inp):
     with urllib.request.urlopen(req, timeout=60) as r:
         return json.loads(r.read().decode())["data"]
 
-def poll(rid):
-    req = urllib.request.Request(f"https://api.apify.com/v2/actor-runs/{rid}", headers=AUTH)
-    with urllib.request.urlopen(req, timeout=60) as r:
-        return json.loads(r.read().decode())["data"]
+def poll(rid, tries=5):
+    """Retry transient 5xx. A single 502 once crashed a run that had already
+    completed on Apify's side — the data was recoverable via --refetch, but the
+    client should not fall over on a blip it can simply wait out."""
+    last = None
+    for i in range(tries):
+        try:
+            req = urllib.request.Request(f"https://api.apify.com/v2/actor-runs/{rid}", headers=AUTH)
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return json.loads(r.read().decode())["data"]
+        except Exception as e:
+            last = e
+            code = getattr(e, "code", None)
+            if code and code < 500 and code != 429:
+                raise
+            print(f"  poll retry {i+1}/{tries} after {type(e).__name__} {code or ''}")
+            time.sleep(10 * (i + 1))
+    raise last
 
 def items(ds):
     req = urllib.request.Request(
