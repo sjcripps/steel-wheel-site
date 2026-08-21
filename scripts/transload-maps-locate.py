@@ -46,6 +46,8 @@ ap.add_argument("--no-coords", action="store_true", help="records with no coordi
 ap.add_argument("--ambiguous-first", action="store_true",
                 help="only records whose rail verdict a real address would change")
 ap.add_argument("--limit", type=int, default=0)
+ap.add_argument("--memory", type=int, default=4096,
+                help="actor memory MB — Apify reserves against this at run start, so a\n                      smaller box can start on a smaller balance")
 ap.add_argument("--refetch", default=None,
                 help="re-read a finished run's dataset and re-join (costs nothing)")
 a = ap.parse_args()
@@ -121,7 +123,7 @@ if not queries: sys.exit("nothing to do")
 
 def start(inp):
     body = json.dumps(inp).encode()
-    req = urllib.request.Request(f"https://api.apify.com/v2/acts/{ACTOR}/runs?memory=4096",
+    req = urllib.request.Request(f"https://api.apify.com/v2/acts/{ACTOR}/runs?memory={a.memory}",
                                  data=body, headers={**AUTH, "Content-Type": "application/json"})
     with urllib.request.urlopen(req, timeout=60) as r:
         return json.loads(r.read().decode())["data"]
