@@ -42,6 +42,8 @@ COST_PER_PLACE = 0.0040          # measured: 719 places / $2.87 in the August ru
 ap = argparse.ArgumentParser()
 ap.add_argument("--max-spend", type=float, default=0.50)
 ap.add_argument("--warehouses", action="store_true", help="unverified third-party warehouses first")
+ap.add_argument("--unproven-coords", action="store_true",
+                help="excluded warehouses whose coordinate is NOT Maps-sourced — a bad\n                      address, not absent rail, may be why they fail")
 ap.add_argument("--no-coords", action="store_true", help="records with no coordinate at all")
 ap.add_argument("--ambiguous-first", action="store_true",
                 help="only records whose rail verdict a real address would change")
@@ -98,6 +100,15 @@ def centroid(r): return r.get("lat") and coords[(r["lat"], r["lng"])] > 1
 
 pool = []
 for r in recs:
+    if a.unproven_coords:
+        # The decisive group: classified warehouses that FAIL the rail test while
+        # sitting on a coordinate we never verified. 120 of them are within a mile
+        # of track, so coordinate quality — not rail — is deciding the verdict.
+        if r.get("facility_type") != "third-party-warehouse": continue
+        if r.get("rail_confidence") in ("high", "probable"): continue
+        if str(r.get("location_source") or "").startswith("google-maps"): continue
+        if not r.get("name") or not r.get("city") or not r.get("state"): continue
+        pool.append(r); continue
     if a.warehouses and r.get("facility_type") != "third-party-warehouse": continue
     if a.no_coords and r.get("lat"): continue
     if not a.no_coords and not (centroid(r) or not r.get("lat")): continue

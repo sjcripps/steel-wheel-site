@@ -26,6 +26,10 @@
       "priority": "0.6"
     },
     {
+      "loc": "/rail-served-warehouses/connecticut",
+      "priority": "0.6"
+    },
+    {
       "loc": "/rail-served-warehouses/florida",
       "priority": "0.6"
     },
@@ -35,6 +39,10 @@
     },
     {
       "loc": "/rail-served-warehouses/iowa",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/idaho",
       "priority": "0.6"
     },
     {

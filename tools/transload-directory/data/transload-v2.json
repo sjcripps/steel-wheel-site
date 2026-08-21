@@ -1074,15 +1074,17 @@
    "caps_known": true,
    "storage": "unknown",
    "website": "https://ardoingitright.com/",
-   "lat": 36.768209,
-   "lng": -76.287493,
-   "rail_distance_mi": 0.53,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "lat": 36.7562999,
+   "lng": -76.290813,
+   "rail_distance_mi": 0.12,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "5100 Bainbridge Blvd, Chesapeake, VA 23320",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "A&R Transport Inc",
@@ -2435,7 +2437,9 @@
     "Building Materials",
     "Machinery & Dimensional"
    ],
-   "rail_proximity": "not-checked-no-network-coverage"
+   "rail_proximity": "not-checked-no-network-coverage",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (AK); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Alaska Railroad Seward Freight Dock",
@@ -2463,7 +2467,9 @@
     "Machinery & Dimensional"
    ],
    "commodities_source": "rebulk-category 2026-08-20",
-   "rail_proximity": "not-checked-no-network-coverage"
+   "rail_proximity": "not-checked-no-network-coverage",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (AK); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Alaska West Express Fairbanks Rail Transfer Facility",
@@ -2490,13 +2496,14 @@
     "Machinery & Dimensional"
    ],
    "commodities_source": "rebulk-category 2026-08-20",
-   "rail_proximity": "unverified",
+   "rail_proximity": "not-checked-no-network-coverage",
    "address": "1095 Sanduri St Suite 2, Fairbanks, AK 99701",
    "maps_category": "Trucking company",
    "location_source": "google-maps 2026-08-21",
    "rail_distance_mi": 727.37,
-   "rail_confidence": "unlikely",
-   "rail_proximity_checked": "2026-08-21"
+   "rail_confidence": null,
+   "rail_proximity_checked": "2026-08-21",
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (AK); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Albany & Eastern Railroad",
@@ -2964,7 +2971,7 @@
    "name": "Alpine Food Distributing, Inc.",
    "note": "",
    "email": "",
-   "phone": "",
+   "phone": "(503) 905-5201",
    "city": "Milwaukie",
    "state": "OR",
    "tier": "listed",
@@ -2976,15 +2983,17 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.alpinefoods.com/",
-   "lat": 45.444835,
-   "lng": -122.620848,
+   "lat": 45.4544241,
+   "lng": -122.6386864,
    "commodities_source": "web-extracted 2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.38,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_distance_mi": 0.07,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
+   "address": "2400 SE Mailwell Dr, Milwaukie, OR 97222",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Alter River Terminal",
@@ -3294,7 +3303,7 @@
    "name": "American Rail Center",
    "note": "website repointed to homepage 2026-08-15 (old page removed)",
    "email": "info@americanrailcenter.com",
-   "phone": "",
+   "phone": "(419) 661-9360",
    "city": "Walbridge",
    "state": "OH",
    "tier": "verified",
@@ -3304,15 +3313,17 @@
    "caps_known": true,
    "storage": "unknown",
    "website": "https://www.americanrailcenter.com/",
-   "lat": 41.58894,
-   "lng": -83.48882,
-   "rail_distance_mi": 0.4,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "lat": 41.567833,
+   "lng": -83.52225,
+   "rail_distance_mi": 0.11,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "6722 Commodore Dr, Walbridge, OH 43465",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "American Steel Processing",
@@ -3700,13 +3711,14 @@
    "commodity_categories": [
     "Machinery & Dimensional"
    ],
-   "rail_proximity": "unverified",
+   "rail_proximity": "not-checked-no-network-coverage",
    "address": "4600 Gambell St, Anchorage, AK 99503",
    "maps_category": "Vehicle shipping agent",
    "location_source": "google-maps 2026-08-21",
    "rail_distance_mi": 713.9,
-   "rail_confidence": "unlikely",
-   "rail_proximity_checked": "2026-08-21"
+   "rail_confidence": null,
+   "rail_proximity_checked": "2026-08-21",
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (AK); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Ancos Polymer Handling Specialist",
@@ -6081,14 +6093,16 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.trsrail.com/",
-   "lat": 31.342926,
-   "lng": -92.40893,
+   "lat": 31.3168515,
+   "lng": -92.3919272,
    "facility_type": "third-party-warehouse",
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 1.59,
+   "rail_distance_mi": 1.69,
    "rail_confidence": "unlikely",
    "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-21",
+   "address": "Pineville, LA 71360",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Becker Warehouse and Reload",
@@ -8537,7 +8551,9 @@
    "rail_proximity": "not-checked-no-network-coverage",
    "facility_type": "transload-terminal",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (BJ); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Bulkmatic De Mexico",
@@ -8575,7 +8591,9 @@
    "rail_proximity": "not-checked-no-network-coverage",
    "facility_type": "transload-terminal",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (EM); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Bulkmatic De Mexico",
@@ -8613,7 +8631,9 @@
    "rail_proximity": "not-checked-no-network-coverage",
    "facility_type": "transload-terminal",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (EM); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Bulkmatic De Mexico",
@@ -8651,7 +8671,9 @@
    "rail_proximity": "not-checked-no-network-coverage",
    "facility_type": "transload-terminal",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (EM); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Bulkmatic De Mexico",
@@ -8689,7 +8711,9 @@
    "rail_proximity": "not-checked-no-network-coverage",
    "facility_type": "transload-terminal",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (HG); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Bulkmatic De Mexico",
@@ -8727,7 +8751,9 @@
    "rail_proximity": "not-checked-no-network-coverage",
    "facility_type": "transload-terminal",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (HG); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Bulkmatic De Mexico",
@@ -8765,7 +8791,9 @@
    "rail_proximity": "not-checked-no-network-coverage",
    "facility_type": "transload-terminal",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (JA); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Bulkmatic De Mexico",
@@ -8801,12 +8829,13 @@
    "lat": 25.95,
    "lng": -100.283333,
    "rail_distance_mi": 0.35,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
+   "rail_confidence": null,
+   "rail_proximity": "not-checked-no-network-coverage",
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "transload-terminal",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (NL); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Bulkmatic De Mexico",
@@ -8842,12 +8871,13 @@
    "lat": 25.666667,
    "lng": -100.4,
    "rail_distance_mi": 2.36,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
+   "rail_confidence": null,
+   "rail_proximity": "not-checked-no-network-coverage",
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "transload-terminal",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (NL); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Bulkmatic De Mexico",
@@ -8926,7 +8956,9 @@
    "rail_proximity": "not-checked-no-network-coverage",
    "facility_type": "transload-terminal",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (QA); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Bulkmatic De Mexico",
@@ -8964,7 +8996,9 @@
    "rail_proximity": "not-checked-no-network-coverage",
    "facility_type": "transload-terminal",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (QA); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Bulkmatic De Mexico",
@@ -9002,7 +9036,9 @@
    "rail_proximity": "not-checked-no-network-coverage",
    "facility_type": "transload-terminal",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (SL); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Bulkmatic De Mexico",
@@ -9040,7 +9076,9 @@
    "rail_proximity": "not-checked-no-network-coverage",
    "facility_type": "transload-terminal",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (SO); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Bulkmatic LLC",
@@ -10230,16 +10268,18 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://Cajoseph.com",
-   "lat": 40.57215,
-   "lng": -80.725708,
+   "lat": 40.569916,
+   "lng": -80.721628,
    "commodities_source": "web-extracted 2026-08-20",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.93,
+   "rail_distance_mi": 1.15,
    "rail_confidence": "unlikely",
    "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-21",
+   "address": "170 Broadway St, Irondale, OH 43932",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "CA Perry and Son",
@@ -10655,7 +10695,7 @@
    "name": "Caney Fork & Western Railroad Transload",
    "note": "",
    "email": "",
-   "phone": "",
+   "phone": "(931) 473-4910",
    "city": "Mcminnville",
    "state": "TN",
    "tier": "listed",
@@ -10670,8 +10710,8 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://ironhorseresources.com/caney-fork-western-railroad/",
-   "lat": 35.686302,
-   "lng": -85.781219,
+   "lat": 35.6771666,
+   "lng": -85.7739155,
    "commodity_categories": [
     "Dry Bulk",
     "Liquid Bulk",
@@ -10683,13 +10723,15 @@
     "Machinery & Dimensional"
    ],
    "commodities_source": "rebulk-category 2026-08-20",
-   "rail_distance_mi": 0.76,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "rail_distance_mi": 0.12,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "132 Bridge St, McMinnville, TN 37110",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Cannon Falls Transload",
@@ -12746,7 +12788,7 @@
    "name": "Central Warehouse Operations",
    "note": "",
    "email": "",
-   "phone": "",
+   "phone": "(989) 496-0880",
    "city": "Midland",
    "state": "MI",
    "tier": "listed",
@@ -12756,15 +12798,17 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://totaldistribution.com/michigan-warehouse-locations/",
-   "lat": 43.624796,
-   "lng": -84.231984,
-   "rail_distance_mi": 1.1,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "lat": 43.5988584,
+   "lng": -84.195339,
+   "rail_distance_mi": 0.1,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "2520 Schuette Rd, Midland, MI 48642",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Central Washington Corn Processors Richland Grain Transload",
@@ -16505,15 +16549,16 @@
     "Agriculture"
    ],
    "rail_distance_mi": 15.16,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
+   "rail_confidence": null,
+   "rail_proximity": "not-checked-no-network-coverage",
    "rail_proximity_checked": "2026-08-21",
    "address": "1 All American Way, North Kingstown, RI 02852",
    "maps_category": "Warehouse",
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (RI); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Cold-Link Logistics Sioux City",
@@ -17213,16 +17258,18 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.comptontransfer.com/rail-transloading/",
-   "lat": 43.599335,
-   "lng": -116.229817,
+   "lat": 43.5632235,
+   "lng": -116.2030281,
    "commodities_source": "web-extracted 2026-08-20",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.62,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_distance_mi": 0.05,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
+   "address": "4302 S Industrial St, Boise, ID 83705",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Conesville Industrial Park",
@@ -17638,7 +17685,9 @@
    "website": "https://www.puertadelnorte.com.mx/about-us/",
    "lat": 20.523889,
    "lng": -100.815,
-   "rail_proximity": "not-checked-no-network-coverage"
+   "rail_proximity": "not-checked-no-network-coverage",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (GJ); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Controladora De Terminales Mexico",
@@ -17668,7 +17717,9 @@
    "website": "https://www.puertadelnorte.com.mx/about-us/",
    "lat": 20.383333,
    "lng": -101.0,
-   "rail_proximity": "not-checked-no-network-coverage"
+   "rail_proximity": "not-checked-no-network-coverage",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (GJ); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Controladora De Terminales Mexico",
@@ -17699,9 +17750,10 @@
    "lat": 25.7951,
    "lng": -100.317,
    "rail_distance_mi": 0.69,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_confidence": null,
+   "rail_proximity": "not-checked-no-network-coverage",
+   "rail_proximity_checked": "2026-08-20",
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (NL); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Controladora De Terminales Mexico",
@@ -17731,7 +17783,9 @@
    "website": "https://www.puertadelnorte.com.mx/about-us/",
    "lat": 22.156469,
    "lng": -100.98554,
-   "rail_proximity": "not-checked-no-network-coverage"
+   "rail_proximity": "not-checked-no-network-coverage",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (SL); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Convent Marine Terminal",
@@ -17813,7 +17867,9 @@
    "website": "https://www.coopertsmith.com/international",
    "lat": 22.3929,
    "lng": -97.9236,
-   "rail_proximity": "not-checked-no-network-coverage"
+   "rail_proximity": "not-checked-no-network-coverage",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (TM); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Cooper/T. Smith",
@@ -18283,18 +18339,20 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://crmsrail.com/locations/anderson",
-   "lat": 40.089766,
-   "lng": -85.689449,
+   "lat": 40.0829391,
+   "lng": -85.689317,
    "commodity_categories": [
     "Agriculture"
    ],
-   "rail_distance_mi": 0.43,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "rail_distance_mi": 0.06,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "516 Andover Rd, Anderson, IN 46013",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Cronimet Terminals",
@@ -20312,13 +20370,14 @@
    "commodities_source": "web-extracted 2026-08-20",
    "facility_type": "private-plant",
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_proximity": "unverified",
+   "rail_proximity": "not-checked-no-network-coverage",
    "address": "2000 Anchorage Port Rd, Anchorage, AK 99501",
    "maps_category": "Seaport",
    "location_source": "google-maps 2026-08-21",
    "rail_distance_mi": 714.95,
-   "rail_confidence": "unlikely",
-   "rail_proximity_checked": "2026-08-21"
+   "rail_confidence": null,
+   "rail_proximity_checked": "2026-08-21",
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (AK); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Doraville NS TBT",
@@ -20364,18 +20423,20 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://dothanwarehouse.com/",
-   "lat": 31.233698,
-   "lng": -85.406823,
+   "lat": 31.257741,
+   "lng": -85.406465,
    "commodity_categories": [
     "Agriculture"
    ],
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.76,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_distance_mi": 0.24,
+   "rail_confidence": "probable",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
+   "address": "980 Murray Rd, Dothan, AL 36303",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Double Mountain Transload",
@@ -20890,15 +20951,17 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://ec-mm.com/",
-   "lat": 41.693613,
-   "lng": -71.900776,
+   "lat": 41.6690262,
+   "lng": -71.9199789,
    "commodities_source": "web-extracted 2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.63,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_distance_mi": 0.08,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
+   "address": "46 Lathrop Rd Ext, Plainfield, CT 06374",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "East Coast Warehouse & Distribution Corp",
@@ -21059,7 +21122,7 @@
    "name": "Eastern Consolidation & Distribution Services Inc.",
    "note": "",
    "email": "",
-   "phone": "",
+   "phone": "(800) 323-7827",
    "city": "Camp Hill",
    "state": "PA",
    "tier": "listed",
@@ -21071,8 +21134,8 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://ecdservices.com/",
-   "lat": 40.242192,
-   "lng": -76.9274,
+   "lat": 40.229427,
+   "lng": -76.941269,
    "commodity_categories": [
     "Forest Products"
    ],
@@ -21080,10 +21143,12 @@
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.73,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_distance_mi": 0.09,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
+   "address": "405 Sterling St, Camp Hill, PA 17011",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Eastpointe Business Park Rail Transfer Station",
@@ -21427,15 +21492,17 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.elmlogistics.com/",
-   "lat": 40.783918,
-   "lng": -73.252235,
+   "lat": 40.7768962,
+   "lng": -73.275484,
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.41,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_distance_mi": 0.23,
+   "rail_confidence": "probable",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
+   "address": "50 Emjay Blvd, Brentwood, NY 11717",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Empire Stevedoring Co.",
@@ -21587,12 +21654,13 @@
     "Liquid Bulk"
    ],
    "rail_distance_mi": 17.1,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
+   "rail_confidence": null,
+   "rail_proximity": "not-checked-no-network-coverage",
    "rail_proximity_checked": "2026-08-21",
    "address": "4145 Quaker Ln, North Kingstown, RI 02852",
    "maps_category": "Electric utility company",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (RI); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Enstructure Houston Terminals",
@@ -21995,15 +22063,17 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.evansdist.com/warehousing-services/",
-   "lat": 42.223649,
-   "lng": -83.366036,
+   "lat": 42.2585685,
+   "lng": -83.3973323,
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.64,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_distance_mi": 0.15,
+   "rail_confidence": "probable",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
+   "address": "36501 Van Born Rd Ste 160, Romulus, MI 48174",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Fairbanks Materials Rail to Road",
@@ -22029,13 +22099,14 @@
    ],
    "facility_type": "transload-terminal",
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_proximity": "unverified",
+   "rail_proximity": "not-checked-no-network-coverage",
    "address": "855 Old Richardson Hwy, Fairbanks, AK 99701",
    "maps_category": "Building materials store",
    "location_source": "google-maps 2026-08-21",
    "rail_distance_mi": 726.34,
-   "rail_confidence": "unlikely",
-   "rail_proximity_checked": "2026-08-21"
+   "rail_confidence": null,
+   "rail_proximity_checked": "2026-08-21",
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (AK); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Fairview Mills / J-Six Enterprises",
@@ -22244,7 +22315,9 @@
    "lng": -100.9317,
    "rail_proximity": "not-checked-no-network-coverage",
    "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (SL); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "FGA Chattahoochee Rail Yard",
@@ -23795,7 +23868,9 @@
    "rail_proximity": "not-checked-no-network-coverage",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (EM); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Fr Terminales Sa De Cv",
@@ -23830,7 +23905,9 @@
    "rail_proximity": "not-checked-no-network-coverage",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (GJ); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Fr Terminales Sa De Cv",
@@ -23865,7 +23942,9 @@
    "rail_proximity": "not-checked-no-network-coverage",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (HG); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Fr Terminales Sa De Cv",
@@ -23900,7 +23979,9 @@
    "rail_proximity": "not-checked-no-network-coverage",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (HG); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Fr Terminales Sa De Cv",
@@ -23935,7 +24016,9 @@
    "rail_proximity": "not-checked-no-network-coverage",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (JA); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Fr Terminales Sa De Cv",
@@ -23968,12 +24051,13 @@
    "lat": 25.78,
    "lng": -100.1889,
    "rail_distance_mi": 1.25,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
+   "rail_confidence": null,
+   "rail_proximity": "not-checked-no-network-coverage",
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (NL); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Fr Terminales Sa De Cv",
@@ -24006,12 +24090,13 @@
    "lat": 25.6866,
    "lng": -100.3161,
    "rail_distance_mi": 1.37,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
+   "rail_confidence": null,
+   "rail_proximity": "not-checked-no-network-coverage",
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (NL); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Fr Terminales Sa De Cv",
@@ -24122,7 +24207,9 @@
    "rail_proximity": "not-checked-no-network-coverage",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (VL); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Franklin Avenue Transload",
@@ -25667,19 +25754,21 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.holtlogistics.com/facilities/gloucester-marine-terminal/",
-   "lat": 39.891694,
-   "lng": -75.116692,
+   "lat": 39.9025998,
+   "lng": -75.1228369,
    "commodity_categories": [
     "Agriculture",
     "Machinery & Dimensional"
    ],
-   "rail_distance_mi": 0.55,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "rail_distance_mi": 0.09,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "160 Essex St, Gloucester City, NJ 08030",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Glycerin Traders",
@@ -28009,7 +28098,7 @@
    "name": "Henningsen Cold Storage",
    "note": "",
    "email": "",
-   "phone": "",
+   "phone": "(503) 359-1100",
    "city": "Forest Grove",
    "state": "OR",
    "tier": "listed",
@@ -28019,15 +28108,17 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.onelineage.com/facilities/forest-grove",
-   "lat": 45.524781,
-   "lng": -123.10991,
-   "rail_distance_mi": 0.27,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "lat": 45.5247389,
+   "lng": -123.0748275,
+   "rail_distance_mi": 0.05,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "4124 24th Ave, Forest Grove, OR 97116",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Heritage Freight Warehouse & Logistics",
@@ -29285,15 +29376,17 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://iwslogistics.com/",
-   "lat": 33.234404,
-   "lng": -87.5283,
+   "lat": 33.1471564,
+   "lng": -87.5324044,
    "commodities_source": "web-extracted 2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 1.15,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_distance_mi": 0.07,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
+   "address": "502 Bear Creek Cutoff Rd, Tuscaloosa, AL 35405",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Ingram Tyler Street Terminal",
@@ -29566,11 +29659,12 @@
    "lat": 25.78,
    "lng": -100.1889,
    "rail_distance_mi": 1.25,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
+   "rail_confidence": null,
+   "rail_proximity": "not-checked-no-network-coverage",
    "rail_proximity_checked": "2026-08-20",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (NL); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "International Distribution Services Inc.",
@@ -30291,8 +30385,8 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.jillamy.com",
-   "lat": 40.090348,
-   "lng": -74.896679,
+   "lat": 40.0951199,
+   "lng": -74.8823264,
    "commodity_categories": [
     "Forest Products",
     "Metals",
@@ -30302,10 +30396,12 @@
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.59,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_distance_mi": 0.08,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
+   "address": "2955 State Rd., Croydon, PA 19021",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Jimco Limestone Mills, LLC",
@@ -30637,16 +30733,18 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.kakllc.com/",
-   "lat": 41.676643,
-   "lng": -86.268809,
+   "lat": 41.6580772,
+   "lng": -86.2875823,
    "commodities_source": "web-extracted 2026-08-20",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.32,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_distance_mi": 0.06,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
+   "address": "2501 Indiana Ct, South Bend, IN 46619",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Kanawha River Terminal",
@@ -33513,16 +33611,18 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://linnwest.com/rail-transloading-services/",
-   "lat": 44.547613,
-   "lng": -123.110798,
+   "lat": 44.5613046,
+   "lng": -123.1091825,
    "commodities_source": "web-extracted 2026-08-20",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.46,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_distance_mi": 0.17,
+   "rail_confidence": "probable",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
+   "address": "33731 OR-99E, Tangent, OR 97389",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Liquid Titan LLC",
@@ -34193,15 +34293,17 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://logisticsoneny.com/",
-   "lat": 43.067704,
-   "lng": -73.778142,
+   "lat": 43.0640452,
+   "lng": -73.8245444,
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 1.5,
-   "rail_confidence": "unlikely",
+   "rail_distance_mi": 0.37,
+   "rail_confidence": "possible",
    "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-21",
+   "address": "33 Cady Hill Blvd, Saratoga Springs, NY 12866",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Logistics Park Cedar Rapids",
@@ -35300,16 +35402,18 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.americascentralport.com/",
-   "lat": 38.686272,
-   "lng": -90.101796,
+   "lat": 38.6814793,
+   "lng": -90.1824545,
    "commodities_source": "web-extracted 2026-08-20",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 1.06,
-   "rail_confidence": "unlikely",
+   "rail_distance_mi": 0.4,
+   "rail_confidence": "possible",
    "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-21",
+   "address": "Madison, IL",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Madison Railroad (RSI Logistics)",
@@ -36427,15 +36531,17 @@
    "caps_known": true,
    "storage": "unknown",
    "website": "http://www.merchantsdsm.com/",
-   "lat": 41.64471,
-   "lng": -93.46466,
-   "rail_distance_mi": 0.39,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "lat": 41.6629245,
+   "lng": -93.4532677,
+   "rail_distance_mi": 0.17,
+   "rail_confidence": "probable",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "1420 11th Ave NE, Altoona, IA 50009",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Merchants Transloading, Warehoue, Distribution Services",
@@ -37140,15 +37246,17 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.quantixscs.com/locations/",
-   "lat": 42.198867,
-   "lng": -71.845722,
-   "rail_distance_mi": 1.02,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "lat": 42.1962528,
+   "lng": -71.8236339,
+   "rail_distance_mi": 0.13,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "28 Millbury St, Auburn, MA 01501",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Mid-Atlantic Rail Services Williamsburg Station",
@@ -37846,8 +37954,8 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.millerwarehousing.com/",
-   "lat": 42.243441,
-   "lng": -84.404858,
+   "lat": 42.2389953,
+   "lng": -84.3803296,
    "commodity_categories": [
     "Aggregates",
     "Forest Products",
@@ -37858,10 +37966,12 @@
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.38,
-   "rail_confidence": "possible",
+   "rail_distance_mi": 1.36,
+   "rail_confidence": "unlikely",
    "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-21",
+   "address": "1800 Mitchell St, Jackson, MI 49203",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Milwaukee Bulk Terminal",
@@ -39473,7 +39583,7 @@
    "name": "NEPW Logistics",
    "note": "",
    "email": "",
-   "phone": "",
+   "phone": "(207) 883-2261",
    "city": "Scarborough",
    "state": "ME",
    "tier": "listed",
@@ -39485,20 +39595,22 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.nepw.com",
-   "lat": 43.571203,
-   "lng": -70.33417,
+   "lat": 43.5953636,
+   "lng": -70.3025741,
    "commodity_categories": [
     "Dry Bulk",
     "Forest Products"
    ],
    "commodities_source": "rebulk-category 2026-08-20",
-   "rail_distance_mi": 0.75,
+   "rail_distance_mi": 0.54,
    "rail_confidence": "possible",
    "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "10 Parkway Dr Bldg 16, Scarborough, ME 04074",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "NEPW Logistics",
@@ -39535,7 +39647,7 @@
    "name": "NEPW Logistics Fairfield",
    "note": "",
    "email": "",
-   "phone": "",
+   "phone": "(207) 453-7362",
    "city": "Fairfield",
    "state": "ME",
    "tier": "listed",
@@ -39547,19 +39659,21 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.nepw.com/",
-   "lat": 44.590339,
-   "lng": -69.605215,
+   "lat": 44.5961313,
+   "lng": -69.59745,
    "commodity_categories": [
     "Forest Products"
    ],
    "commodities_source": "rebulk-category 2026-08-20",
-   "rail_distance_mi": 0.47,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "rail_distance_mi": 0.01,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "29 Skowhegan Rd, Fairfield, ME 04937",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Network Logistics Irving Transload",
@@ -39607,7 +39721,9 @@
    "website": "https://networkslogistics.com.mx/",
    "lat": 22.156469,
    "lng": -100.98554,
-   "rail_proximity": "not-checked-no-network-coverage"
+   "rail_proximity": "not-checked-no-network-coverage",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (SL); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "New England Automotive Gateway",
@@ -42285,14 +42401,15 @@
    "lat": 41.617966,
    "lng": -71.4118107,
    "rail_distance_mi": 11.9,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
+   "rail_confidence": null,
+   "rail_proximity": "not-checked-no-network-coverage",
    "rail_proximity_checked": "2026-08-21",
    "address": "100 Tidal Dr, North Kingstown, RI 02852",
    "maps_category": "Importer",
    "location_source": "google-maps 2026-08-21",
    "facility_type": "private-plant",
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (RI); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "North Coast Logistics",
@@ -42376,14 +42493,15 @@
    "lat": 61.2365264,
    "lng": -149.8856354,
    "commodities_source": "web-extracted 2026-08-20",
-   "rail_proximity": "unverified",
+   "rail_proximity": "not-checked-no-network-coverage",
    "address": "1980 Anchorage Port Rd, Anchorage, AK 99501",
    "location_source": "google-maps 2026-08-21",
    "rail_distance_mi": 714.84,
-   "rail_confidence": "unlikely",
+   "rail_confidence": null,
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (AK); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "North Stratford Transload",
@@ -43116,15 +43234,17 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://obelogistics.com/",
-   "lat": 36.263365,
-   "lng": -80.847106,
-   "rail_distance_mi": 1.18,
+   "lat": 36.2796134,
+   "lng": -80.8535385,
+   "rail_distance_mi": 2.35,
    "rail_confidence": "unlikely",
    "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "1785 N Bridge St, Elkin, NC 28621",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Odfjell Terminals",
@@ -43188,14 +43308,16 @@
    "caps_known": true,
    "storage": "unknown",
    "website": "http://odfjell.com/",
-   "lat": 29.56301,
-   "lng": -95.02549,
-   "rail_distance_mi": 0.94,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "lat": 29.6052193,
+   "lng": -95.0218708,
+   "rail_distance_mi": 0.1,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "address": "12211 Port Rd, Seabrook, TX 77586",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Odyssey Railcar",
@@ -44390,7 +44512,7 @@
    "name": "Pacific Coast Container Inc",
    "note": "",
    "email": "info@pcclogistics.com",
-   "phone": "",
+   "phone": "(310) 900-1800",
    "city": "Carson",
    "state": "CA",
    "tier": "verified",
@@ -44400,15 +44522,17 @@
    "caps_known": true,
    "storage": "unknown",
    "website": "https://pcclogistics.com/locations/",
-   "lat": 33.83141,
-   "lng": -118.28202,
-   "rail_distance_mi": 1.43,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "lat": 33.8209902,
+   "lng": -118.2507426,
+   "rail_distance_mi": 0.16,
+   "rail_confidence": "probable",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "1245 E Watson Center Rd, Carson, CA 90745",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Pacific Coast Container Inc",
@@ -45025,17 +45149,19 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.parkewarehouses.com/",
-   "lat": 39.855983,
-   "lng": -88.933746,
+   "lat": 39.862847,
+   "lng": -88.9327972,
    "commodity_categories": [
     "Liquid Bulk"
    ],
    "facility_type": "third-party-warehouse",
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.37,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_distance_mi": 0.1,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
+   "address": "1800 E Garfield Ave, Decatur, IL 62526",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Parker Towing",
@@ -45344,8 +45470,8 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.pattonwarehousing.com",
-   "lat": 41.002297,
-   "lng": -76.851007,
+   "lat": 40.9741356,
+   "lng": -76.852882,
    "commodity_categories": [
     "Dry Bulk",
     "Liquid Bulk",
@@ -45358,10 +45484,12 @@
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.39,
+   "rail_distance_mi": 0.56,
    "rail_confidence": "possible",
    "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-21",
+   "address": "28 Patton Dr, Milton, PA 17847",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Paulsboro Marine Terminal",
@@ -45543,18 +45671,20 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://paxtonbondedstorages.com/",
-   "lat": 35.731488,
-   "lng": -77.93075,
+   "lat": 35.7249852,
+   "lng": -77.9216711,
    "commodity_categories": [
     "Agriculture"
    ],
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.62,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_distance_mi": 0.06,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
+   "address": "225 Walnut St W, Wilson, NC 27893",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "PCC Logistics",
@@ -45625,16 +45755,18 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://pdmcompany.com/warehousing/railcar_cross_dock_services/",
-   "lat": 42.049257,
-   "lng": -93.872526,
+   "lat": 42.0658111,
+   "lng": -93.8585739,
    "commodities_source": "web-extracted 2026-08-20",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.96,
-   "rail_confidence": "unlikely",
+   "rail_distance_mi": 0.36,
+   "rail_confidence": "possible",
    "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-21",
+   "address": "2117 Industrial Park Rd, Boone, IA 50036",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Peachey Rail Works",
@@ -46456,14 +46588,16 @@
    "caps_known": true,
    "storage": "unknown",
    "website": "https://plasticconversion.com/",
-   "lat": 28.02224,
-   "lng": -81.73286,
-   "rail_distance_mi": 1.13,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "lat": 28.0056795,
+   "lng": -81.7354629,
+   "rail_distance_mi": 0.17,
+   "rail_confidence": "probable",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "address": "1635 7th St SW, Winter Haven, FL 33880",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Plastic Express",
@@ -47685,8 +47819,8 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.portfisher.com/",
-   "lat": 43.590062,
-   "lng": -83.888421,
+   "lat": 43.6187973,
+   "lng": -83.8550796,
    "commodity_categories": [
     "Dry Bulk",
     "Aggregates",
@@ -47696,10 +47830,12 @@
    "commodities_source": "rebulk-category 2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.92,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_distance_mi": 0.14,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
+   "address": "99 Tiernan Rd, Bay City, MI 48706",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Port Freeport Railyard",
@@ -48574,18 +48710,20 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://portofmorrow.com/warehousing",
-   "lat": 45.836507,
-   "lng": -119.692793,
+   "lat": 45.8489423,
+   "lng": -119.636445,
    "commodity_categories": [
     "Agriculture"
    ],
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.71,
+   "rail_distance_mi": 0.42,
    "rail_confidence": "possible",
    "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-21",
+   "address": "73336 Lewis and Clark Dr, Boardman, OR 97818",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Port of Nenana",
@@ -48608,7 +48746,9 @@
     "Building Materials",
     "Machinery & Dimensional"
    ],
-   "rail_proximity": "not-checked-no-network-coverage"
+   "rail_proximity": "not-checked-no-network-coverage",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (AK); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Port Of Ogdensburg",
@@ -48781,15 +48921,17 @@
    "caps_known": true,
    "storage": "unknown",
    "website": "http://www.portofwestvirginia.com/",
-   "lat": 40.33452,
-   "lng": -80.58841,
-   "rail_distance_mi": 0.54,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "lat": 40.3325957,
+   "lng": -80.6003866,
+   "rail_distance_mi": 0.1,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "address": "600 Veterans Dr, Follansbee, WV 26037",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Port of Wilmington Cold Storage",
@@ -50151,20 +50293,22 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.quantixscs.com/",
-   "lat": 33.199763,
-   "lng": -79.986603,
+   "lat": 33.1569478,
+   "lng": -80.0248607,
    "commodity_categories": [
     "Liquid Bulk",
     "Plastics"
    ],
    "commodities_source": "rebulk-category 2026-08-20",
-   "rail_distance_mi": 1.16,
+   "rail_distance_mi": 0.95,
    "rail_confidence": "unlikely",
    "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "1156 W Branch Way, Moncks Corner, SC 29461",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Quantix Ware Facility",
@@ -52583,7 +52727,7 @@
    "name": "RMT Companies",
    "note": "",
    "email": "",
-   "phone": "",
+   "phone": "(877) 295-1694",
    "city": "Golden",
    "state": "CO",
    "tier": "listed",
@@ -52593,15 +52737,17 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.rmtcompanies.com/locations",
-   "lat": 39.75554,
-   "lng": -105.2211,
-   "rail_distance_mi": 0.27,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "lat": 39.7773006,
+   "lng": -105.1743271,
+   "rail_distance_mi": 0.05,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "4430 McIntyre St, Golden, CO 80403",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "RMT Companies",
@@ -53590,21 +53736,23 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://SHBELLCO.COM",
-   "lat": 40.632996,
-   "lng": -80.567393,
+   "lat": 40.6402664,
+   "lng": -80.5230029,
    "commodity_categories": [
     "Aggregates",
     "Forest Products",
     "Metals"
    ],
    "commodities_source": "rebulk-category 2026-08-20",
-   "rail_distance_mi": 0.89,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "rail_distance_mi": 0.04,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "2217 Michigan Ave, East Liverpool, OH 43920",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "S.H. Bell Patapsco Avenue Terminal",
@@ -53622,20 +53770,20 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://shbellco.com/facilities/baltimore-patapsco-avenue-terminal/",
-   "lat": 39.349000163181,
-   "lng": -76.629556791833,
+   "lat": 39.2343619,
+   "lng": -76.5917068,
    "commodity_categories": [
     "Dry Bulk",
     "Metals",
     "Building Materials"
    ],
    "commodities_source": "rebulk-category 2026-08-20",
-   "rail_distance_mi": 2.17,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
+   "rail_distance_mi": 0.21,
+   "rail_confidence": "probable",
+   "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
-   "address": "1200 East, Baltimore, MD 21225",
-   "location_source": "operator-site+census 2026-08-21",
+   "address": "1200 E Patapsco Ave, Baltimore, MD 21225",
+   "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide"
@@ -53896,16 +54044,18 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.yandellcompanies.com/",
-   "lat": 38.072733,
-   "lng": -122.155169,
+   "lat": 38.077098,
+   "lng": -122.131039,
    "commodities_source": "web-extracted 2026-08-20",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.66,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_distance_mi": 0.21,
+   "rail_confidence": "probable",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
+   "address": "360 Industrial Ct Ste a, Benicia, CA 94510",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Santa Maria Valley Railroad Osburn Railyard",
@@ -55971,9 +56121,10 @@
    "facility_type": "transload-terminal",
    "facility_type_source": "web-extracted 2026-08-20",
    "rail_distance_mi": 15.01,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_confidence": null,
+   "rail_proximity": "not-checked-no-network-coverage",
+   "rail_proximity_checked": "2026-08-20",
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (RI); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Seaway Bulk Services",
@@ -56230,15 +56381,17 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://ironhorseresources.com/sequatchie-valley-switching-company-llc/",
-   "lat": 34.949312,
-   "lng": -85.723765,
-   "rail_distance_mi": 0.48,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "lat": 34.9610633,
+   "lng": -85.7156906,
+   "rail_distance_mi": 0.08,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "Bridgeport, AL 35740",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Service One Transportation Bulk Transload",
@@ -56541,12 +56694,13 @@
     "Metals"
    ],
    "commodities_source": "rebulk-category 2026-08-20",
-   "rail_proximity": "unverified",
+   "rail_proximity": "not-checked-no-network-coverage",
    "address": "2400 Railroad, Anchorage, AK 99501",
    "location_source": "operator-site+census 2026-08-21",
    "rail_distance_mi": 713.18,
-   "rail_confidence": "unlikely",
-   "rail_proximity_checked": "2026-08-21"
+   "rail_confidence": null,
+   "rail_proximity_checked": "2026-08-21",
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (AK); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "SHIPIT Logistics",
@@ -56989,7 +57143,7 @@
    "name": "Smart Warehousing",
    "note": "",
    "email": "",
-   "phone": "",
+   "phone": "(800) 591-2097",
    "city": "Jacksonville",
    "state": "AR",
    "tier": "listed",
@@ -56999,15 +57153,17 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.smartwarehousing.com/warehouses-contacts",
-   "lat": 34.880512,
-   "lng": -92.13059,
+   "lat": 34.8731201,
+   "lng": -92.1383787,
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.3,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_distance_mi": 0.19,
+   "rail_confidence": "probable",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
+   "address": "1031 N Redmond Rd, Jacksonville, AR 72076",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Smith Transportation",
@@ -57472,8 +57628,8 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.southerncoilsolutions.com/",
-   "lat": 36.976832,
-   "lng": -86.433661,
+   "lat": 37.0420562,
+   "lng": -86.3137928,
    "commodity_categories": [
     "Metals"
    ],
@@ -57481,10 +57637,12 @@
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 1.53,
+   "rail_distance_mi": 0.95,
    "rail_confidence": "unlikely",
    "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-21",
+   "address": "454 Technology Way, Bowling Green, KY 42101",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Southwestern Railroad, LLC",
@@ -57514,7 +57672,7 @@
    "name": "Spartan Logistics",
    "note": "",
    "email": "",
-   "phone": "",
+   "phone": "(765) 662-8971",
    "city": "Marion",
    "state": "IN",
    "tier": "listed",
@@ -57524,21 +57682,23 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.spartanlogistics.com/marion-indiana",
-   "lat": 40.549986,
-   "lng": -85.66042,
-   "rail_distance_mi": 0.26,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "lat": 40.5718257,
+   "lng": -85.6563166,
+   "rail_distance_mi": 0.14,
+   "rail_confidence": "probable",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "910 N Meridian St, Marion, IN 46952",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Spartan Logistics",
    "note": "OH 3",
    "email": "",
-   "phone": "",
+   "phone": "(614) 497-1777",
    "city": "Columbus",
    "state": "OH",
    "tier": "listed",
@@ -57548,14 +57708,14 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.spartanlogistics.com/columbus-ohio-3-south-0-1-0",
-   "lat": 39.883869697154,
-   "lng": -82.964042197392,
-   "rail_distance_mi": 0.49,
+   "lat": 39.8805977,
+   "lng": -82.9680741,
+   "rail_distance_mi": 0.54,
    "rail_confidence": "possible",
    "rail_proximity": "unverified",
    "rail_proximity_checked": "2026-08-21",
-   "address": "4051 Lockbourne Industrial, Columbus, OH 43207",
-   "location_source": "operator-site+census 2026-08-21",
+   "address": "4140 Lockbourne Rd, Columbus, OH 43207",
+   "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide"
@@ -57564,7 +57724,7 @@
    "name": "Spartan Logistics",
    "note": "Nebraska Avenue",
    "email": "",
-   "phone": "",
+   "phone": "(419) 255-1510",
    "city": "Toledo",
    "state": "OH",
    "tier": "listed",
@@ -57574,14 +57734,14 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.spartanlogistics.com/toledo-ohio-nebraskaavenue-0",
-   "lat": 41.645558876377,
-   "lng": -83.587104999408,
-   "rail_distance_mi": 0.33,
+   "lat": 41.6328785,
+   "lng": -83.6297647,
+   "rail_distance_mi": 0.42,
    "rail_confidence": "possible",
    "rail_proximity": "unverified",
    "rail_proximity_checked": "2026-08-21",
-   "address": "1802 Nebraska Avenue, Toledo, OH 43607",
-   "location_source": "operator-site+census 2026-08-21",
+   "address": "3730 South Ave, Toledo, OH 43615",
+   "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide"
@@ -57590,7 +57750,7 @@
    "name": "Spartan Logistics",
    "note": "North SC",
    "email": "",
-   "phone": "",
+   "phone": "(864) 225-0565",
    "city": "Anderson",
    "state": "SC",
    "tier": "listed",
@@ -57600,21 +57760,23 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.spartanlogistics.com/north-anderson-sc-",
-   "lat": 34.521487,
-   "lng": -82.643517,
-   "rail_distance_mi": 1.27,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "lat": 34.5486598,
+   "lng": -82.7136379,
+   "rail_distance_mi": 0.08,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "5301 Old Pearman Dairy Rd., Anderson, SC 29625",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Spartan Logistics",
    "note": "SC Warehouse",
    "email": "",
-   "phone": "",
+   "phone": "(864) 715-1114",
    "city": "Laurens",
    "state": "SC",
    "tier": "listed",
@@ -57624,21 +57786,23 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.spartanlogistics.com/laurens-sc-0",
-   "lat": 34.502686,
-   "lng": -82.021413,
-   "rail_distance_mi": 0.58,
+   "lat": 34.5014336,
+   "lng": -82.0210024,
+   "rail_distance_mi": 0.51,
    "rail_confidence": "possible",
    "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "301 Church St, Laurens, SC 29360",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Spartan Logistics",
    "note": "",
    "email": "",
-   "phone": "",
+   "phone": "(864) 296-4545",
    "city": "Starr",
    "state": "SC",
    "tier": "listed",
@@ -57648,15 +57812,17 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.spartanlogistics.com/locations",
-   "lat": 34.37789,
-   "lng": -82.695327,
-   "rail_distance_mi": 3.37,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "lat": 34.4294915,
+   "lng": -82.6616239,
+   "rail_distance_mi": 0.08,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "5201 SC-81, Starr, SC 29684",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Spartanburg NS TBT",
@@ -58624,7 +58790,9 @@
    "website": "http://terminalsip.com/ubicacion/",
    "lat": 22.156469,
    "lng": -100.98554,
-   "rail_proximity": "not-checked-no-network-coverage"
+   "rail_proximity": "not-checked-no-network-coverage",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (SL); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Sunland Logistics Solutions",
@@ -60086,7 +60254,7 @@
    "name": "Tell City River Port",
    "note": "",
    "email": "",
-   "phone": "",
+   "phone": "(812) 547-3586",
    "city": "Tell City",
    "state": "IN",
    "tier": "listed",
@@ -60099,8 +60267,8 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://pcrailport.net/",
-   "lat": 37.953015,
-   "lng": -86.759257,
+   "lat": 37.9401304,
+   "lng": -86.7675979,
    "commodity_categories": [
     "Dry Bulk",
     "Forest Products",
@@ -60110,10 +60278,12 @@
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.78,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_distance_mi": 0.22,
+   "rail_confidence": "probable",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
+   "address": "926 Boundary Wy Rd, Tell City, IN 47586",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Temple & Central Railroad",
@@ -60230,7 +60400,9 @@
    "website": "",
    "lat": 19.4326,
    "lng": -99.1332,
-   "rail_proximity": "not-checked-no-network-coverage"
+   "rail_proximity": "not-checked-no-network-coverage",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (DF); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Terminales Portuarias Del Pacifico",
@@ -60254,7 +60426,9 @@
    "website": "https://www.tpp.com.mx/infraestructura/",
    "lat": 17.9587,
    "lng": -102.1945,
-   "rail_proximity": "not-checked-no-network-coverage"
+   "rail_proximity": "not-checked-no-network-coverage",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (MH); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "TES Logistics Rail Transload",
@@ -61602,18 +61776,20 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://TOMAHAWKWAREHOUSING.COM",
-   "lat": 37.399016,
-   "lng": -79.195458,
+   "lat": 37.3670955,
+   "lng": -79.2313245,
    "commodity_categories": [
     "Forest Products"
    ],
    "commodities_source": "rebulk-category 2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.94,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_distance_mi": 0.12,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
+   "address": "231 Tomahawk Industrial Park, Lynchburg, VA 24502",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Top Notch Service Fairbanks Auto Terminal",
@@ -61634,7 +61810,9 @@
    "commodity_categories": [
     "Machinery & Dimensional"
    ],
-   "rail_proximity": "not-checked-no-network-coverage"
+   "rail_proximity": "not-checked-no-network-coverage",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (AK); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Total Distribution",
@@ -61666,7 +61844,7 @@
    "name": "Total Distribution",
    "note": "",
    "email": "",
-   "phone": "",
+   "phone": "(330) 773-8207",
    "city": "Akron",
    "state": "OH",
    "tier": "listed",
@@ -61676,15 +61854,17 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://totaldistribution.com/",
-   "lat": 41.080456,
-   "lng": -81.521429,
-   "rail_distance_mi": 0.71,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "lat": 41.0174113,
+   "lng": -81.4793674,
+   "rail_distance_mi": 0.08,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "1779 Marvo Dr, Akron, OH 44306",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Total Distribution Huntington",
@@ -64513,8 +64693,8 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://trianglewarehouse.net/",
-   "lat": 36.033223,
-   "lng": -80.386699,
+   "lat": 36.0059511,
+   "lng": -80.3661064,
    "commodity_categories": [
     "Forest Products"
    ],
@@ -64522,10 +64702,12 @@
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 2.14,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_distance_mi": 0.07,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
+   "address": "6211 Clementine Dr, Clemmons, NC 27012",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Tricor Refining",
@@ -65975,7 +66157,7 @@
    "name": "United States Cold Storage",
    "note": "",
    "email": "",
-   "phone": "",
+   "phone": "(910) 739-1992",
    "city": "Lumberton",
    "state": "NC",
    "tier": "listed",
@@ -65985,15 +66167,17 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.uscold.com/",
-   "lat": 34.630608,
-   "lng": -79.018601,
-   "rail_distance_mi": 0.95,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "lat": 34.6077975,
+   "lng": -79.0422133,
+   "rail_distance_mi": 0.11,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "2901 Kenny Biggs Rd, Lumberton, NC 28358",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "United States Cold Storage",
@@ -66074,7 +66258,7 @@
    "name": "United States Cold Storage Of California",
    "note": "",
    "email": "",
-   "phone": "",
+   "phone": "(559) 237-6145",
    "city": "Fresno",
    "state": "CA",
    "tier": "listed",
@@ -66084,15 +66268,17 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.uscold.com/",
-   "lat": 36.782684,
-   "lng": -119.793359,
-   "rail_distance_mi": 1.34,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "lat": 36.6903877,
+   "lng": -119.7425613,
+   "rail_distance_mi": 0.13,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "2525 E North Ave, Fresno, CA 93725",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "United Warehouse Co.",
@@ -67608,18 +67794,20 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.vopak.com/terminals/viia-plaquemine-louisiana",
-   "lat": 30.283156,
-   "lng": -91.243812,
+   "lat": 30.3414185,
+   "lng": -91.2399895,
    "commodity_categories": [
     "Liquid Bulk"
    ],
-   "rail_distance_mi": 0.64,
+   "rail_distance_mi": 0.61,
    "rail_confidence": "possible",
    "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "LA-988, Plaquemine, LA 70764",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Vopak VIIA St. Charles",
@@ -67635,18 +67823,20 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.vopak.com/terminals/viia-st-charles-louisiana",
-   "lat": 29.961289,
-   "lng": -90.423964,
+   "lat": 29.9765931,
+   "lng": -90.4089708,
    "commodity_categories": [
     "Liquid Bulk"
    ],
-   "rail_distance_mi": 0.48,
-   "rail_confidence": "possible",
+   "rail_distance_mi": 1.12,
+   "rail_confidence": "unlikely",
    "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "Louisiana 70057",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Vulcan Materials Lucedale Rail Facility",
@@ -67799,8 +67989,8 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://ironhorseresources.com/walking-horse-railroad/",
-   "lat": 35.501473,
-   "lng": -86.451662,
+   "lat": 35.4944926,
+   "lng": -86.4105073,
    "commodity_categories": [
     "Liquid Bulk",
     "Plastics",
@@ -67808,13 +67998,15 @@
     "Forest Products"
    ],
    "commodities_source": "rebulk-category 2026-08-20",
-   "rail_distance_mi": 1.29,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "rail_distance_mi": 0.13,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "Shelbyville, TN 37160",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Wallenius Wilhelmsen Solutions",
@@ -67991,7 +68183,7 @@
    "name": "Warehouse Specialists LLC",
    "note": "Wsi",
    "email": "",
-   "phone": "",
+   "phone": "(708) 734-2537",
    "city": "Sauk Village",
    "state": "IL",
    "tier": "listed",
@@ -68001,15 +68193,17 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.wsinc.com/rail-warehouses/",
-   "lat": 41.490094,
-   "lng": -87.570624,
-   "rail_distance_mi": 0.98,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "lat": 41.4942583,
+   "lng": -87.5891111,
+   "rail_distance_mi": 0.06,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "21700 Mark Collins Dr, Sauk Village, IL 60411",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Warehouse Specialists LLC",
@@ -69545,7 +69739,9 @@
    "website": "https://www.watcocompanies.com/",
    "lat": 22.156469,
    "lng": -100.98554,
-   "rail_proximity": "not-checked-no-network-coverage"
+   "rail_proximity": "not-checked-no-network-coverage",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (SL); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Watco Terminal & Port Services",
@@ -69848,9 +70044,10 @@
    "facility_type": "transload-terminal",
    "facility_type_source": "web-extracted 2026-08-20",
    "rail_distance_mi": 2.44,
-   "rail_confidence": "unlikely",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_confidence": null,
+   "rail_proximity": "not-checked-no-network-coverage",
+   "rail_proximity_checked": "2026-08-20",
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (RI); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "Wayne Industries Incorporated",
@@ -71248,7 +71445,9 @@
    "commodity_categories": [
     "Machinery & Dimensional"
    ],
-   "rail_proximity": "not-checked-no-network-coverage"
+   "rail_proximity": "not-checked-no-network-coverage",
+   "rail_confidence": null,
+   "rail_coverage_note": "NARN extract lacks track coverage for this region (AK); absence of a nearby line here is not evidence the facility lacks rail. Checked 2026-08-21."
   },
   {
    "name": "WSI (Warehouse Specialists, LLC)",
@@ -71340,7 +71539,7 @@
    "name": "WSI Combined Locks Warehouse",
    "note": "",
    "email": "",
-   "phone": "",
+   "phone": "(920) 830-5000",
    "city": "Combined Locks",
    "state": "WI",
    "tier": "listed",
@@ -71352,25 +71551,27 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.wsinc.com/locations/north-wisconsin-warehouse/",
-   "lat": 44.261995,
-   "lng": -88.309534,
+   "lat": 44.273162,
+   "lng": -88.3189249,
    "commodity_categories": [
     "Forest Products"
    ],
    "commodities_source": "rebulk-category 2026-08-20",
-   "rail_distance_mi": 0.61,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "rail_distance_mi": 0.04,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "100 Prospect St, Combined Locks, WI 54113",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "WSI Fond du Lac Larsen Drive Warehouse",
    "note": "",
    "email": "",
-   "phone": "",
+   "phone": "(920) 830-5000",
    "city": "Fond Du Lac",
    "state": "WI",
    "tier": "listed",
@@ -71382,21 +71583,23 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.wsinc.com/locations/fond-du-lac-fda-warehouse/",
-   "lat": 43.772182,
-   "lng": -88.440264,
+   "lat": 43.742474,
+   "lng": -88.474052,
    "commodity_categories": [
     "Forest Products",
     "Building Materials",
     "Agriculture"
    ],
    "commodities_source": "rebulk-category 2026-08-20",
-   "rail_distance_mi": 0.84,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "rail_distance_mi": 0.24,
+   "rail_confidence": "probable",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "240 Larsen Dr, Fond du Lac, WI 54937",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "WSI Menasha Warehouse",
@@ -71468,7 +71671,7 @@
    "name": "WSI Plover Warehouse",
    "note": "",
    "email": "",
-   "phone": "",
+   "phone": "(920) 830-5000",
    "city": "Plover",
    "state": "WI",
    "tier": "listed",
@@ -71480,20 +71683,22 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.wsinc.com/locations/plover-wi/",
-   "lat": 44.46202,
-   "lng": -89.537971,
+   "lat": 44.4582317,
+   "lng": -89.5298704,
    "commodity_categories": [
     "Forest Products",
     "Building Materials"
    ],
    "commodities_source": "rebulk-category 2026-08-20",
-   "rail_distance_mi": 0.39,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
+   "rail_distance_mi": 0.06,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "address": "2601 Hoover Ave S, Plover, WI 54467",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "WSI Pomona Transload",
@@ -71864,16 +72069,18 @@
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.yellowcreekport.com/",
-   "lat": 34.807384,
-   "lng": -88.19692,
+   "lat": 34.9771751,
+   "lng": -88.2373247,
    "commodities_source": "web-extracted 2026-08-20",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-20",
-   "rail_distance_mi": 0.39,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_distance_mi": 0.09,
+   "rail_confidence": "high",
+   "rail_proximity": "on-network",
+   "rail_proximity_checked": "2026-08-21",
+   "address": "43 Co Rd 370, Iuka, MS 38852",
+   "location_source": "google-maps 2026-08-21"
   },
   {
    "name": "Yellowstone Industrial Development",
