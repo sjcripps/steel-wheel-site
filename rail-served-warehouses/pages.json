@@ -2,6 +2,10 @@
   "generated_at": "2026-08-21",
   "pages": [
     {
+      "loc": "/rail-served-warehouses/alberta",
+      "priority": "0.6"
+    },
+    {
       "loc": "/rail-served-warehouses/alabama",
       "priority": "0.6"
     },
@@ -10,7 +14,19 @@
       "priority": "0.6"
     },
     {
+      "loc": "/rail-served-warehouses/arizona",
+      "priority": "0.6"
+    },
+    {
       "loc": "/rail-served-warehouses/california",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/colorado",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/florida",
       "priority": "0.6"
     },
     {
@@ -31,6 +47,10 @@
     },
     {
       "loc": "/rail-served-warehouses/kansas",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/kentucky",
       "priority": "0.6"
     },
     {
@@ -67,6 +87,10 @@
     },
     {
       "loc": "/rail-served-warehouses/north-carolina",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/nebraska",
       "priority": "0.6"
     },
     {
@@ -107,6 +131,10 @@
     },
     {
       "loc": "/rail-served-warehouses/texas",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/utah",
       "priority": "0.6"
     },
     {

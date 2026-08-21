@@ -63,7 +63,7 @@ for r in recs:
 
 pool = []
 for r in recs:
-    if r.get("tier") != "listed" or not r.get("website"): continue
+    if r.get("facility_type") or not r.get("website"): continue
     d = domain(r["website"])
     if not d or dom_count[d] > 1: continue          # shared-domain guard
     if re.search(r"website unreachable|dead domain link removed",
