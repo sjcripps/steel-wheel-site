@@ -1,0 +1,133 @@
+{
+  "generated_at": "2026-08-21",
+  "pages": [
+    {
+      "loc": "/rail-served-warehouses/alabama",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/arkansas",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/california",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/georgia",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/iowa",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/illinois",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/indiana",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/kansas",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/louisiana",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/massachusetts",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/maryland",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/maine",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/michigan",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/minnesota",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/missouri",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/mississippi",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/north-carolina",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/new-jersey",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/nevada",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/new-york",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/ohio",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/oklahoma",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/oregon",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/pennsylvania",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/south-carolina",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/tennessee",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/texas",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/virginia",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/washington",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/wisconsin",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/west-virginia",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/",
+      "priority": "0.7"
+    }
+  ]
+}

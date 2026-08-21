@@ -29,6 +29,16 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
     } catch {
       console.warn('sitemap: commodities/pages.json missing — run scripts/build-commodity-pages.js');
     }
+    // Rail-served WAREHOUSE pages. Separate from /transload/ on purpose: GSC shows
+    // 40 warehouse-intent queries with 200 impressions and zero clicks, ranking
+    // 11-87, because nothing targets them. Same degrade-to-empty contract.
+    let warehousePages: Array<{ loc: string; priority: string }> = [];
+    try {
+      const wp = join(process.cwd(), 'rail-served-warehouses', 'pages.json');
+      warehousePages = JSON.parse(readFileSync(wp, 'utf-8')).pages || [];
+    } catch {
+      console.warn('sitemap: rail-served-warehouses/pages.json missing — run scripts/build-warehouse-pages.js');
+    }
     // Rail-served business pages (crawlable layer for the confidence-tiered
     // rail-served dataset). Same degrade-to-empty contract as the manifests above.
     let railServedPages: Array<{ loc: string; priority: string }> = [];
@@ -113,6 +123,10 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     for (const page of railServedPages) {
+      xml += `  <url>\n    <loc>https://steelwheellogistics.com${page.loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>${page.priority}</priority>\n  </url>\n`;
+    }
+
+    for (const page of warehousePages) {
       xml += `  <url>\n    <loc>https://steelwheellogistics.com${page.loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>${page.priority}</priority>\n  </url>\n`;
     }
 
