@@ -821,6 +821,40 @@
     ]
   }
   </script>
+  <!-- ── SWL acquisition attribution ─────────────────────────────────
+       A lead POST is a same-origin XHR, so its HTTP Referer is always this
+       page and can never identify an acquisition channel. Capture the real
+       entry point here instead, once per session, and send it in the body.
+       Internal referrers are kept on purpose: which of OUR pages feeds the
+       rate tool is the actual question. Mirrors the other 7 tool gates. -->
+  <script>
+  (function () {
+    var KEY = 'swl_attribution';
+    window.swlAttr = function () {
+      try {
+        var cached = sessionStorage.getItem(KEY);
+        if (cached) return JSON.parse(cached);
+      } catch (_) { /* private mode */ }
+      var ref = document.referrer || '';
+      var kind = 'direct';
+      if (ref) {
+        var host = '';
+        try { host = new URL(ref).hostname; } catch (_) {}
+        kind = /(^|\.)steelwheellogistics\.com$/.test(host) ? 'internal' : 'external';
+      }
+      var attr = {
+        landing_referrer: ref.slice(0, 500),
+        referrer_kind: kind,
+        entry_query: (location.search || '').slice(0, 300)
+      };
+      try { sessionStorage.setItem(KEY, JSON.stringify(attr)); } catch (_) {}
+      return attr;
+    };
+    // Freeze it at first load so later internal navigation cannot overwrite
+    // the original entry point.
+    window.swlAttr();
+  })();
+  </script>
 </head>
 <body>
 
@@ -1610,7 +1644,8 @@
       // Smoothly scroll the loading panel into view so the user sees it.
       try { loadingPanel.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (_) {}
 
-      const payload = buildPayload({ email });
+      // Attribution rides along on the lead-capturing /quote call.
+      const payload = buildPayload(Object.assign({ email }, swlAttr()));
       currentLeadEmail = email;
       try {
         const res = await fetch(QUOTE_URL, {
