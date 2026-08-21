@@ -90,11 +90,19 @@
       "priority": "0.6"
     },
     {
+      "loc": "/rail-served-warehouses/north-dakota",
+      "priority": "0.6"
+    },
+    {
       "loc": "/rail-served-warehouses/nebraska",
       "priority": "0.6"
     },
     {
       "loc": "/rail-served-warehouses/new-jersey",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/new-mexico",
       "priority": "0.6"
     },
     {
