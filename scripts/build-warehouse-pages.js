@@ -116,8 +116,12 @@ const METHOD = `
       <strong>How &ldquo;rail-served&rdquo; is determined here.</strong> Each facility's street
       address is geocoded and measured against the federal North American Rail Network &mdash;
       the same network our rate estimator routes on. Only facilities within a quarter mile of
-      track are listed. That threshold is calibrated against facilities known to be rail-served,
-      whose median distance is 0.14 miles.
+      track are listed, and they are shown in two groups.
+      <strong>Operator-confirmed</strong> means the operator's own website states rail service
+      (a siding, a spur, a serving railroad, railcar spots) and we quote it verbatim.
+      <strong>Near rail &mdash; unverified</strong> means the building sits close to track but
+      the operator does not say it is served; a mainline passing a facility is not the same
+      thing as a siding into it, so treat proximity alone as a lead, not a fact.
       <strong>This list is not exhaustive.</strong> A rail-served warehouse missing from it has
       not been ruled out &mdash; it means we have not yet confirmed the siding. Our rail map has
       known gaps (it lacks some industrial trackage, and does not cover Alaska or Mexico), and a
@@ -132,9 +136,13 @@ const METHOD = `
 function card(f) {
   const bits = [];
   if (f.address) bits.push(`<div style="color:#555;font-size:0.9em">${esc(f.address)}</div>`);
+  // Two tiers, two claims. Operator-confirmed cards quote the operator; the
+  // rest say plainly that proximity is all we have. Roane (Rockwood TN, 0.13 mi,
+  // no siding) is why the distinction exists — track passing nearby is not service.
   const dist = f.rail_distance_mi != null
-    ? `<div><strong>Rail:</strong> ${f.rail_distance_mi} mi from the network${
-        f.rail_evidence ? ` &mdash; operator states: &ldquo;${esc(String(f.rail_evidence).slice(0, 120))}&rdquo;` : ""}</div>`
+    ? (f.rail_claim === "operator-confirmed" && f.rail_evidence
+        ? `<div><strong>Rail:</strong> operator-confirmed &mdash; &ldquo;${esc(String(f.rail_evidence).slice(0, 120))}&rdquo; (${f.rail_distance_mi} mi from the network)</div>`
+        : `<div><strong>Rail:</strong> ${f.rail_distance_mi} mi from the network &mdash; <span style="color:#8a6d3b">rail service not yet confirmed by the operator; verify the siding before planning a move</span></div>`)
     : "";
   if (dist) bits.push(dist);
   if (f.indoor_storage) bits.push(`<div><strong>Indoor storage:</strong> yes${
@@ -215,7 +223,9 @@ for (const [code, list] of [...byState.entries()].sort()) {
       <h1>Rail-Served Warehouses in ${esc(name)}</h1>
       <p>
         ${list.length} third-party ${list.length === 1 ? "warehouse" : "warehouses"} in
-        ${esc(name)} that take other companies' freight and sit on rail${
+        ${esc(name)} that take other companies' freight and sit on rail &mdash;
+        ${list.filter((f) => f.rail_claim === "operator-confirmed").length} with rail service
+        confirmed in the operator's own words${
           indoor ? `, ${indoor} with indoor storage confirmed` : ""}. These are
         <strong>public and contract warehouses</strong> &mdash; bulk commodity storage,
         3PL and distribution space you can rent &mdash; not private plants or
@@ -229,11 +239,32 @@ for (const [code, list] of [...byState.entries()].sort()) {
       </p>
     </section>
 
-    <section>
-      <h2>Warehouses</h2>
+${(() => {
+      const confirmed = sorted.filter((f) => f.rail_claim === "operator-confirmed");
+      const unverified = sorted.filter((f) => f.rail_claim !== "operator-confirmed");
+      const parts = [];
+      if (confirmed.length) {
+        parts.push(`    <section>
+      <h2>Operator-confirmed rail service (${confirmed.length})</h2>
+      <p style="font-size:0.92em;color:#555">The operator's own website states rail service &mdash; quoted verbatim on each card.</p>
       <div class="railroads-grid">
-${sorted.map(card).join("\n")}
-      </div>${METHOD}
+${confirmed.map(card).join("\n")}
+      </div>
+    </section>`);
+      }
+      if (unverified.length) {
+        parts.push(`    <section>
+      <h2>Near rail &mdash; service unverified (${unverified.length})</h2>
+      <p style="font-size:0.92em;color:#555">Within a quarter mile of track, but the operator does not state rail service.
+      Track passing a building is not proof of a siding into it &mdash; confirm before planning a move.</p>
+      <div class="railroads-grid">
+${unverified.map(card).join("\n")}
+      </div>
+    </section>`);
+      }
+      return parts.join("\n");
+    })()}
+    <section>${METHOD}
     </section>
 ${cta(`in ${name}`)}
   </main>

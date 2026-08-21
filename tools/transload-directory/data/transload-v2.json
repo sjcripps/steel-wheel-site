@@ -229,7 +229,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "4600 Coliseum Wy, Oakland, CA 94601",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "A&R Bulk Pak Incorporated",
@@ -321,7 +322,8 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "A&R Transport Inc",
@@ -800,7 +802,8 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "A&R Transport Inc",
@@ -863,7 +866,8 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "A&R Transport Inc",
@@ -956,7 +960,8 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "A&R Transport Inc",
@@ -1019,7 +1024,8 @@
    "facility_type_scope": "company-wide",
    "address": "1094 Flex Dr, Jackson, TN 38301",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "A&R Transport Inc",
@@ -1052,7 +1058,8 @@
    "facility_type_scope": "company-wide",
    "address": "1381 Meacham Blvd, Fort Worth, TX 76106",
    "maps_category": "Trucking company",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "A&R Transport Inc",
@@ -1084,7 +1091,8 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "5100 Bainbridge Blvd, Chesapeake, VA 23320",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "A&R Transport Inc",
@@ -1144,7 +1152,8 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "A-1 Inventory Management",
@@ -1173,7 +1182,10 @@
    "rail_distance_mi": 0.11,
    "rail_confidence": "high",
    "rail_proximity": "on-network",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-20",
+   "rail_evidence": "la, OR top of page HOME SERVICES ABOUT CONTACT DIRECTIONS Warehouse Storage, Cross-Dock & Rail Access in Umatilla, OR CALL TODAY SERVICES ABOUT At A-1 Inventory Management, we provide reliabl",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "A. Anastasio & Sons Trucking Rail Reload",
@@ -1367,7 +1379,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "2200 Broening Hwy #200, Baltimore, MD 21224",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "Capacity to handle drayage of legal weight and heavy weight containers at all locations. Rail-served facilities connected to all Class 1 railroad carriers, capable of loading and unloading m",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Access World Usa LLC",
@@ -1647,7 +1662,10 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "ENT Shovel-ready industrial land for lease or development. Prime sites featuring existing rail spurs, highway access, and full logistics support for manufacturing and distribution. Read mor",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Addington Properties",
@@ -2370,7 +2388,10 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "izer, Urea, Plastics, Corrosives, Petroleums, Vegetable Oils, AG Products, Glycols Tank & Rail Car Storage Jacketed tanks with steam heater, and track available for chemical car inventory with wee",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Alabama & Tennessee River Railway, LLC (OmniTRAX)",
@@ -2693,7 +2714,10 @@
    "rail_distance_mi": 0.21,
    "rail_confidence": "probable",
    "rail_proximity": "on-network",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-20",
+   "rail_evidence": "dustry. Choose All South and become a member of the family! Rail Service Norfolk Southern rail access simplifies logistics for speedy deliveries. AIB Certified In compliance with the highest",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Allegheny Petroleum Products",
@@ -2796,7 +2820,10 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "ver fast, flexible service across North America. Leduc, Calgary and San Angelo features a rail spur for transloading bulk chemicals, and storage facilities. All Services With more than 30 y",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Alliance Energy Services Berlin Terminal",
@@ -2993,7 +3020,8 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "2400 SE Mailwell Dr, Milwaukie, OR 97222",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Alter River Terminal",
@@ -3087,7 +3115,8 @@
    "rail_distance_mi": 0.17,
    "rail_confidence": "probable",
    "rail_proximity": "on-network",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-20",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Ambassador Services Cocoa Reload Yard",
@@ -3137,7 +3166,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "5201 Boylan St, Bakersfield, CA 93308",
    "maps_category": "Chemical plant",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Ambridge Regional Distribution",
@@ -3166,7 +3196,10 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "t Us Site History Industries AI &#038; Data Centers Light Manufacturing Plastics Industry Rail-Served Space Steel and Coil Storage Temperature Controlled Our Location Space Available Select P",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "American Milling",
@@ -3225,7 +3258,8 @@
    "rail_proximity": "unverified",
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "American Rail Center",
@@ -3249,7 +3283,10 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "es looking to streamline their distribution operations. Get a Free Quote Explore Services Rail-Served Facilities Flexible Solutions 24/7 Operations Our Comprehensive Services End-to-end logis",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "American Rail Center",
@@ -3273,7 +3310,10 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "es looking to streamline their distribution operations. Get a Free Quote Explore Services Rail-Served Facilities Flexible Solutions 24/7 Operations Our Comprehensive Services End-to-end logis",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "American Rail Center",
@@ -3323,7 +3363,10 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "6722 Commodore Dr, Walbridge, OH 43465",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "es looking to streamline their distribution operations. Get a Free Quote Explore Services Rail-Served Facilities Flexible Solutions 24/7 Operations Our Comprehensive Services End-to-end logis",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "American Steel Processing",
@@ -3384,7 +3427,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "2101 Burr Oak Ave, Blue Island, IL 60406",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "American Warehouse, LLC",
@@ -4018,7 +4062,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "24 N C St, Fort Smith, AR 72901",
    "maps_category": "Cold storage facility",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "in 1996, 1999, and 2004, to keep our quality and capacity ahead of your needs. Fullscale Rail Access To leverage rail\u2019s strengths for our clients\u2019 advantage, we feature two private rail sidi",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Arkansas Transload",
@@ -5084,7 +5131,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "415 N Plainview Rd, Ardmore, OK 73401",
    "maps_category": "Trucking company",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Asphalt Operating Services of Chicago",
@@ -5113,7 +5161,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "2835 E 106th St, Chicago, IL 60617",
    "maps_category": "Asphalt contractor",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Associated Asphalt",
@@ -5236,7 +5285,10 @@
    "rail_distance_mi": 0.2,
    "rail_confidence": "probable",
    "rail_proximity": "on-network",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-20",
+   "rail_evidence": "1-day 179 1M years in operation drive to roughly 60% of the U.S. and Canadian population railcar capacity for industrial and polymer sectors square feet of warehousing space, including an FTZ-des",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Atlanta Metro Lumber & Reload",
@@ -5535,7 +5587,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "2148 Badgerland Dr, Green Bay, WI 54303",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "and distribution, with features like 24/7 monitored security, heated environment options, direct rail access, and flexible public or contract warehousing services. We provide scalable solutions that",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "B&E Storage and Transfer",
@@ -5571,7 +5626,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "2500 Broening Hwy Ste D, Baltimore, MD 21224",
    "maps_category": "Self-storage facility",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "&E offers some of the best rail service in the area. We are both Norfolk southern and CSX rail served with an extensive history In unloading and loading railcars loaded with paper, pulp, tile",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "B&J Group Inc",
@@ -6227,7 +6285,10 @@
    "location_source": "google-maps 2026-08-21",
    "rail_distance_mi": 0.16,
    "rail_confidence": "probable",
-   "rail_proximity_checked": "2026-08-21"
+   "rail_proximity_checked": "2026-08-21",
+   "rail_evidence": "rboard sheeting, rewinding and slitting, warehousing, cross-docking, SAP/EDI integration, rail access, and Northeast port proximity into one execution story. View Industry Intelligence Browse",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Benlin Warehouse",
@@ -6358,7 +6419,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "4500 N Dorgenois St, New Orleans, LA 70117",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Bi-State Storage",
@@ -6384,7 +6446,8 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Big Soo Terminal",
@@ -6422,7 +6485,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "4101 Harbor Dr, Sioux City, IA 51111",
    "maps_category": "Storage facility",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "small options, complete with access to railcar and truck loading stations. Our extensive rail sidings provide unit train capability, which brings substantial time and cost savings to our cus",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Bighorn Divide & Wyoming Railroad",
@@ -7140,7 +7206,10 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "capacity upon request \u2013 daily switching available Laredo facility has a total of five (5) rail car spots Ground Level Services: Plastic / Powder Transloading Lumber (Center Beam / Flatcar / Boxc",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Brokers Logistics Ltd",
@@ -7164,7 +7233,10 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "capacity upon request \u2013 daily switching available Laredo facility has a total of five (5) rail car spots Ground Level Services: Plastic / Powder Transloading Lumber (Center Beam / Flatcar / Boxc",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Bronco Road Rail Terminal",
@@ -10307,7 +10379,8 @@
    "rail_distance_mi": 0.23,
    "rail_confidence": "probable",
    "rail_proximity": "on-network",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-20",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Caine Warehousing Ltd",
@@ -10385,7 +10458,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "4200 Finch Rd, Modesto, CA 95357",
    "maps_category": "Distribution service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "ies LOCATIONS Modesto, CA Capability to load box car freight with the UP or BNSF railways Rail spurs on site-capability to load 10 cars at once Secured property \u2013 FISMA Compliant Over 400,0",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "CalJet 53rd Avenue Terminal",
@@ -10472,7 +10548,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "6110 49th St S, Muscatine, IA 52761",
    "maps_category": "Corporate office",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Camden & Southern Railroad / South Arkansas Intermodal Park",
@@ -10731,7 +10808,10 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "132 Bridge St, McMinnville, TN 37110",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "pment Storage Contact Us Caney Fork & Western Railroad McMinnville, TN Freight Rate Quote Railcar Storage Quote Weight Restriction 286k Tullahoma to McMinnville, TN 263k McMinnville to Sparta, TN",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Cannon Falls Transload",
@@ -10793,7 +10873,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "17065 Hess St, Melvindale, MI 48122",
    "maps_category": "Moving and storage service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Cape And Son",
@@ -10851,7 +10932,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "810 Sunnyvale Dr, Wilmington, NC 28412",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "th a capacity up to 10,000 lbs. We also have a 10-ton overhead rail mounted crane, with a rail siding that comes into our building. There are a total of 44 loading docks and we can unload 4 r",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Capital Area Rail Terminal",
@@ -11702,7 +11786,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "3609 Glenn Ave NE, Winston-Salem, NC 27105",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "customer needs. Our in-house trucking fleet ensures dependable transportation, while our direct rail access allows us to seamlessly handle rail shipments alongside truckload and container freight.",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Carolinas Reload",
@@ -12133,7 +12220,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "1400 Pierside St, North Charleston, SC 29405",
    "maps_category": "Shipping service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Cascade Warehouse",
@@ -12368,7 +12456,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "1701 Rockingham Rd, Davenport, IA 52802",
    "maps_category": "Logistics service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "ted, and Dry Storage Customs Bonded Davenport, Iowa Frozen, Refrigerated, and Dry Storage Rail served - Canadian Pacific delivering carrier Greensburg, Pennsylvania Frozen, Refrigerated, and",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Cellmark",
@@ -12467,7 +12558,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "200 Viaduct Rd, Mobile, AL 36611",
    "maps_category": "Storage facility",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Central Kentucky Distribution",
@@ -12521,7 +12613,10 @@
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "tral Logistic Services, Inc. is a BNSF Premiere Transloading Facility. CLS has two indoor rail docks and one additional outdoor dock. We use pneumatic forklifts that can transfer up to 21,0",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Central Ohio Logistics Center",
@@ -12782,7 +12877,10 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "edding Paper roll stock Cross docking and transloading Quality inspection and containment Rail serviced via Huron & Eastern Railway RC14001:2023 Provision of Third-party logistics and warehousi",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Central Warehouse Operations",
@@ -12808,7 +12906,10 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "2520 Schuette Rd, Midland, MI 48642",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "edding Paper roll stock Cross docking and transloading Quality inspection and containment Rail serviced via Huron & Eastern Railway RC14001:2023 Provision of Third-party logistics and warehousi",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Central Washington Corn Processors Richland Grain Transload",
@@ -13405,7 +13506,8 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Chempak International Inc",
@@ -13469,7 +13571,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "Wilmington, NC 28412",
    "maps_category": "Fertilizer supplier",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Chesapeake & Delaware",
@@ -14263,7 +14366,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "2220 S 21st St, Clinton, IA 52732",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "ties Dry Freight Delivery 48\u2019 & 53\u2019 Air Ride Dry Vans Flatbeds Rail Car Loading/Unloading Rail Car Storage At Clausen Trucking, we believe that fostering good customer relations is the foundation",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Claysburg Transload Facility",
@@ -14674,7 +14780,10 @@
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "s from Hartford, CT, 90 minutes from Boston and Albany. The property also has a dedicated rail spur on the mainline of CSX between Springfield and Boston. Palmer, MA location \u2013 Conveniently",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "CN Cargloflo (Transx)",
@@ -15754,7 +15863,10 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "ervice levels and an unmatched client experience, Active operates several warehouses with rail sidings for boxcar loading and unloading and is one of only 50 companies nationwide to be awarde",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "CN Cargoflo (Cogema Rail Barge)",
@@ -15869,7 +15981,10 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "ng and Barge, Rail & Truck Transloading Services We operate over 1,000,000 square feet of rail served warehouse capacity and over 45 acres of yard capacity in the Port of New Orleans, LA area",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "CN Cargoflo (Ray-Mont Logistics)",
@@ -16723,7 +16838,8 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Colonial Terminals Inc",
@@ -16764,7 +16880,8 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Colorado Pacific Rio Grande Railroad",
@@ -17269,7 +17386,8 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "4302 S Industrial St, Boise, ID 83705",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Conesville Industrial Park",
@@ -17655,7 +17773,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "1032 Cavalier Blvd, Chesapeake, VA 23323",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "Reconditioning Bulk Handling Sampling Weighing LTL Shipments Organic Handler / Processor Rail Served (NJ and VA) Overweight Permits Consolidation / Deconsolidation Hot Room / Thawing Re-coop",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Controladora De Terminales Mexico",
@@ -18026,7 +18147,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "1564 Firestone Pkwy, Akron, OH 44301",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "WLE & CSX direct, and NS, CFE & CN via WLE Temperature controlled storage available 200+ Railcar Capacity Certified truck scale on site State-of-the-art 4 Tier Warehouse Management System & RF Sc",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Cotton Press Warehouse, LLC",
@@ -18056,7 +18180,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "208 Old 29th Ave, Meridian, MS 39301",
    "maps_category": "Self-storage facility",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "so that you can establish a distribution center in the southeast area for your customers Rail Access With 3 locations across East Mississippi and West Alabama, we are directly serviced by tw",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "County Line Rail",
@@ -18218,7 +18345,10 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "nd Warehousing Expand Contract Warehousing Chemical Warehousing Manufacturing Warehousing Rail Served Warehouses Transportation Expand Small Parcel FTL/LTL Drayage Fulfillment Capabilities Ex",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "CPT Chicago",
@@ -18323,7 +18453,10 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "Kansas Railcar Cleaning Kosher Cleaning Flaring Services HAZMAT Cleaning Scrap Processing Railcar Storage (300-car capacity) Dismantling on-site High-Pressure Flaring Nitrogen Services Request Fr",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "CRMS Anderson Transload",
@@ -18352,7 +18485,10 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "516 Andover Rd, Anderson, IN 46013",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "repair, storage, scrap, and transloading across the region&#039;s most active corridors \u2014 served by BNSF, CSX, UP, CN, and CIWR. Request Free Quote Facility Highlights CSX and CIWR served MRU ca",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Cronimet Terminals",
@@ -18864,7 +19000,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "1820 N Mosley St, Wichita, KS 67214",
    "maps_category": "Trucking company",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "About CTS Services Provided \u2022 Dry Bulk \u2022 Brokerage \u2022 Transloading \u2022 Blending \u2022 Storage \u2022 Rail Access We offer regional (8-10 states) and long haul trucking services to the lower 48 states. W",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "CTW Logistics (Consolidated Transfer & Warehouse)",
@@ -18895,7 +19034,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "1251 Taney St, North Kansas City, MO 64116",
    "location_source": "operator-site+census 2026-08-21",
-   "facility_type": "third-party-warehouse"
+   "facility_type": "third-party-warehouse",
+   "rail_evidence": ": AIB Certified FDA Registered 24 hour video surveillance Premier BNSF transload facility Rail-served open to send and receive cars on the BNSF Contact us for a free Consultation! Get my free",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Cuba Food-Grade Transload Site",
@@ -18967,7 +19109,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "1036 S International Rd, Garland, TX 75042",
    "maps_category": "Logistics service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "D & M Distribution Service",
@@ -19004,7 +19147,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "5011 W Reno Ave, Oklahoma City, OK 73127",
    "maps_category": "Distribution service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "D&D Ingredients",
@@ -19059,7 +19203,8 @@
    "location_source": "google-maps 2026-08-21",
    "rail_distance_mi": 0.19,
    "rail_confidence": "probable",
-   "rail_proximity_checked": "2026-08-21"
+   "rail_proximity_checked": "2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "D&S Warehousing Inc.",
@@ -20248,7 +20393,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "1701 Continental Blvd, Charlotte, NC 28273",
    "maps_category": "Logistics service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "-5587 Client Login COMPANY AFFILIATIONS EXECUTIVE TEAM HISTORY VALUES INDUSTRIES SERVICES DIRECT RAIL ACCESS ECOMMERCE FULFILLMENT IMPORTS / EXPORTS MANUFACTURING SUPPORT TRANSPORTATION MANAGEMENT W",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Distribution Unlimited - Northeast Industrial Park",
@@ -20283,7 +20431,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "2 Van Buren Blvd # 3, GUILDRLND CTR, NY 12085",
    "maps_category": "Distribution service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "y direct connects with CP/NS at Delanson, New York. 24/7 on demand rail switching service Railcar storage 15 miles of internal rail- 361 acres of warehouses, bulk transload and open space Unlimit",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Diversified Minerals Rail Services",
@@ -20436,7 +20587,8 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "980 Murray Rd, Dothan, AL 36303",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Double Mountain Transload",
@@ -20541,7 +20693,8 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Dreisbach Enterprises",
@@ -20568,7 +20721,8 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Dubois Construction Inc.",
@@ -20649,7 +20803,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "1220 W Railroad St, Duluth, MN 55802",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "est, busiest, and furthest inland port in the Great Lakes St. Lawrence Seaway. Rail Three rail spurs service our warehouse building with enough clearance to accommodate double stack or high",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Dupuy Storage & Forwarding",
@@ -20719,7 +20876,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "85 E 2nd St, Bayonne, NJ 07002",
    "maps_category": "Marine supply store",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "11; New rail and truck logistics facility. &#8211; 6 Interior Loading Docks. &#8211; 6 Conrail Served Rail Loading Docks Go to the website \u2192 NEW BUILDING AVAILABLE 70,000 SF Additional 100,00",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Dutch Lane Yard",
@@ -20961,7 +21121,10 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "46 Lathrop Rd Ext, Plainfield, CT 06374",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": ". We offer an efficient workflow for all stages of our material handling. Utilizing our 2 rail sidings, warehouse, or various packaging and handling equipment. East Coast Material Management",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "East Coast Warehouse & Distribution Corp",
@@ -20994,7 +21157,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "202 Port Jersey Blvd #2, Jersey City, NJ 07305",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "ding co-packing, labeling, cross-dock/transloading, multi-vendor consolidation and indoor rail siding. Safe Quality Food certified East Coast Warehouse continues to operate at the forefront o",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "East Ohio Valley Railway",
@@ -21148,7 +21314,10 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "405 Sterling St, Camp Hill, PA 17011",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "SSIONALS Over 50 years of public warehousing, transportation and distribution experience! DIRECT RAIL SERVICE Our 12 rail car spots located adjacent to Norfolk Southerns busy Shiremanstown, PA. switc",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Eastpointe Business Park Rail Transfer Station",
@@ -21230,7 +21399,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "4816 Lumber Ln, Knoxville, TN 37921",
    "maps_category": "Petroleum products company",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "ch allows Eco-Energy to make real-time decisions regarding inventory needs, trucking, and inbound rail without delay. Our experienced operators ensure that your products are handled with the u",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Eddyville Riverport",
@@ -21502,7 +21674,10 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "50 Emjay Blvd, Brentwood, NY 11717",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "l-ready prep. Rail Freight Lower landed freight costs with Long Island\u2019s largest in-house rail siding. Direct rail-to-warehouse transfer with less handling and fewer delays. Alcohol, Wine & S",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Empire Stevedoring Co.",
@@ -21539,7 +21714,8 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Empire Transload",
@@ -21838,7 +22014,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "510 Manufacturers Rd, Chattanooga, TN 37405",
    "maps_category": "Association / Organization",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "ted on the Tennessee River allows for easy access for discharging and cleaning of barges. Rail Serviced by Norfolk Southern Railroad we provide daily switches for our customers rail car needs.",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Environmental Remediation & Recovery",
@@ -22073,7 +22252,10 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "36501 Van Born Rd Ste 160, Romulus, MI 48174",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "& U.S. Customs Bonded HazMat Warehousing Transloading & Crossdocking Facility Management Rail-Served Food Grade Warehousing Liquor Licensed Technology Services ISO 9001:2015 Certified Locati",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Fairbanks Materials Rail to Road",
@@ -22160,7 +22342,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "1 Water St, Fall River, MA 02721",
    "maps_category": "Non-profit organization",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Farmrail",
@@ -24383,7 +24566,8 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Fullen Dock & Warehouse",
@@ -24732,7 +24916,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "6510 W 73rd St, Bedford Park, IL 60638",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "GAC Chemical Searsport Logistics Facility",
@@ -24885,7 +25070,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "5755 S Hoover Rd #5, Wichita, KS 67215",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Gary Team Track",
@@ -25275,7 +25461,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "4110 Empire Rd, Kansas City, MO 64120",
    "maps_category": "Logistics service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Georgetown Materials",
@@ -25480,7 +25667,8 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Gilmer Warehouse & Logistics LLC",
@@ -25768,7 +25956,8 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "160 Essex St, Gloucester City, NJ 08030",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Glycerin Traders",
@@ -25828,7 +26017,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "2620 13th Street Ensley, Birmingham, AL 35208",
    "maps_category": "Logistics service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Golden Barrel Leola",
@@ -26919,7 +27109,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "807 Hollins Rd NE, Roanoke, VA 24012",
    "maps_category": "Logistics service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Hailey's Harbor Intermodal River Terminal",
@@ -27153,7 +27344,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "2880 N 112th St, Milwaukee, WI 53222",
    "maps_category": "Self-storage facility",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Happy Valley Blended Products",
@@ -28118,7 +28310,10 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "4124 24th Ave, Forest Grove, OR 97116",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "d railcar fleet helps provide dedicated temperature-controlled capacity. Approximately 80 rail-served facilities help connect rail transportation with warehousing and distribution. Rail logis",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Heritage Freight Warehouse & Logistics",
@@ -28147,7 +28342,10 @@
    "facility_type_source": "web-extracted 2026-08-21",
    "address": "1215 Sylacauga Fayetteville Hwy, Sylacauga, AL 35151",
    "maps_category": "Trucking company",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "s Complete rail container rental Storage Equipment Rental Towing Truck and Trailer repair Rail spur access from Corporate Office to CSX and NS Read More Heritage Logistics Truckload brokera",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Hermann Warehouse Corp",
@@ -28512,7 +28710,8 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Houff Corporation",
@@ -28627,7 +28826,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "12619 Port Rd, Seabrook, TX 77586",
    "maps_category": "Logistics service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "ilities Logistics support Multi Modal Material Handling Multi Modal Rail : 11 spurs, 125+ rail car capacity, 6 loading racks, UP and BNSF 11,432 Linear Feet of Rail Track Accommodates Multi-Unit Tr",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Hudson Terminal Rail Services",
@@ -28882,7 +29084,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "5410 276 Macarthur Drive, New Bedford, MA",
    "location_source": "operator-site+census 2026-08-21",
-   "facility_type": "third-party-warehouse"
+   "facility_type": "third-party-warehouse",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "IceCap Cold Storage",
@@ -28912,7 +29115,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "1720 16th Ave, Council Bluffs, IA 51501",
    "maps_category": "Cold storage facility",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "and FDA guidelines, our technology ensures your product\u2019s integrity is never compromised. Rail Served Multi-Temp Warehouse Space Blast Freezing Our rail service gives your business a strategi",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "IHR Transload",
@@ -28939,7 +29145,10 @@
    "facility_type_scope": "company-wide",
    "address": "5001 Avenida Creel, Santa Teresa, NM 88008",
    "maps_category": "Railroad company",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "pment Storage Contact Us Caney Fork & Western Railroad McMinnville, TN Freight Rate Quote Railcar Storage Quote Weight Restriction 286k Tullahoma to McMinnville, TN 263k McMinnville to Sparta, TN",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Imperial Valley Rail Terminal",
@@ -29386,7 +29595,8 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "502 Bear Creek Cutoff Rd, Tuscaloosa, AL 35405",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Ingram Tyler Street Terminal",
@@ -29902,7 +30112,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "250 Lake Ave, Blasdell, NY 14219",
    "maps_category": "Steel distributor",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "ree 35-ton cranes , we can handle even the heaviest coils\u2014up to 65,000 lbs and 80\" wide . Rail Access : Ironclad is served by the B & P Railroad (BPRR) , with local switching to all major rai",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Ironhorse Permian Basin, LLC",
@@ -30072,7 +30285,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "16398 Jacintoport Blvd, Houston, TX 77015",
    "maps_category": "Port",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "General Cargo) \u2022 Grain & Rice Bagging Facility \u2022 On-Site Certified Truck Scale \u2022 Covered Rail Unloading \u2022 On-Site, In-House Rail Switching \u2022 150 Rail Car Capacity \u2022 24 Hour Secure Surveillance",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Jacksonville NS TBT",
@@ -30401,7 +30617,8 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "2955 State Rd., Croydon, PA 19021",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Jimco Limestone Mills, LLC",
@@ -30744,7 +30961,10 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "2501 Indiana Ct, South Bend, IN 46619",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "rage available What We Offer 355,000 sq. ft. in one connected and secure building Conrail rail siding/Norfolk Southern Rail doors up to 20 ft. wide 25 truck dock doors Heavy lifts up to 15,00",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Kanawha River Terminal",
@@ -30879,7 +31099,8 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Katoen Natie Norfolk",
@@ -30947,7 +31168,8 @@
    "facility_type_scope": "company-wide",
    "address": "8 Greek Ln, Edison, NJ 08817",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Kcbx Terminal",
@@ -30999,7 +31221,10 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "ng and Barge, Rail & Truck Transloading Services We operate over 1,000,000 square feet of rail served warehouse capacity and over 45 acres of yard capacity in the Port of New Orleans, LA area",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Keeney Truck Lines Inc",
@@ -32835,7 +33060,10 @@
    "rail_confidence": "probable",
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-20",
-   "facility_type": "third-party-warehouse"
+   "facility_type": "third-party-warehouse",
+   "rail_evidence": "ropolitan area. Our warehouses provide easy truck access to major interstate highways and rail access via CSX. Our Lansdale facility 1330 N Broad St Lansdale, PA Call us This facility is rail",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "LaSalle County Transfer LLC",
@@ -32899,7 +33127,10 @@
    "rail_distance_mi": 0.19,
    "rail_confidence": "probable",
    "rail_proximity": "on-network",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-20",
+   "rail_evidence": "ugh the menu items. Capabilities Here at Laser Transit, we operate 225,000 square feet of rail-served warehousing in Lacona N.Y. with diverse capabilities including case picking, full pallet,",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Laub International Inc.",
@@ -32934,7 +33165,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "1051 Clinton St, Buffalo, NY 14206",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Laufer Kansas City Transload and Fumigation Facility",
@@ -33208,7 +33440,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "4501 Mitchell St Ste C, North Las Vegas, NV 89081",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Limon, CO Spur Track",
@@ -33393,7 +33626,10 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "d railcar fleet helps provide dedicated temperature-controlled capacity. Approximately 80 rail-served facilities help connect rail transportation with warehousing and distribution. Rail logis",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Lineage Logistics",
@@ -33423,7 +33659,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "3440 Concord Rd, Lafayette, IN 47909",
    "maps_category": "Cold storage facility",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Lineage Logistics",
@@ -33453,7 +33690,10 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "d railcar fleet helps provide dedicated temperature-controlled capacity. Approximately 80 rail-served facilities help connect rail transportation with warehousing and distribution. Rail logis",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Lineage Logistics",
@@ -33514,7 +33754,10 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "d railcar fleet helps provide dedicated temperature-controlled capacity. Approximately 80 rail-served facilities help connect rail transportation with warehousing and distribution. Rail logis",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Lineage Logistics LLC",
@@ -33589,7 +33832,10 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "d railcar fleet helps provide dedicated temperature-controlled capacity. Approximately 80 rail-served facilities help connect rail transportation with warehousing and distribution. Rail logis",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Linn West Tangent Transload Facility",
@@ -33622,7 +33868,10 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "33731 OR-99E, Tangent, OR 97389",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "Contact Us Contact Us Rail Transloading in the Heart of the Willamette Valley Utilizing 3 rail spurs across our warehouse network, our own transloading equipment, and our own trucks to take",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Liquid Titan LLC",
@@ -33657,7 +33906,10 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "Terminal / Rail Services - LiquidTitan.com THE best industrial truck and rail access to Southern California THE best industrial truck and rail access to Southern California H",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Liquid Transfer Terminal",
@@ -35007,7 +35259,8 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Luckey Logistics LLC",
@@ -35037,7 +35290,8 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Luckey Logistics Newton Yard",
@@ -35276,7 +35530,8 @@
    "rail_distance_mi": 0.18,
    "rail_confidence": "probable",
    "rail_proximity": "on-network",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-20",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "M & M Lime Railroad Transload",
@@ -35333,7 +35588,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "15 N Garfield St, Eugene, OR 97402",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Macmillan-Piper Inc",
@@ -35599,7 +35855,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "20 W Commercial St, Portland, ME 04102",
    "maps_category": "Cold storage facility",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "&mdash; Eimskip's North-Atlantic terminus. Direct access to the Port of Portland, on-site rail siding via Pan Am / CSX, and Interstate 295 / I-95 within 1.2 miles. How much capacity is availa",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Mallory Alexander International",
@@ -35666,7 +35925,10 @@
    "rail_distance_mi": 0.1,
    "rail_confidence": "high",
    "rail_proximity": "on-network",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-20",
+   "rail_evidence": "heights up to 100\u201d on 40\u201d by 48\u201d pallets Completely wireless RF Network Bonded warehouse Rail served by East Penn Railroad Efficient Truck Loading for Carriers with Truck Builder Stopping by",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Manly Terminal",
@@ -36334,7 +36596,10 @@
    "rail_distance_mi": 0.22,
    "rail_confidence": "probable",
    "rail_proximity": "on-network",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-20",
+   "rail_evidence": "ons Locations Ambridge PA We have a 30 plus acre facility located on the Ohio River, with direct rail access from Norfolk Southern, and ample warehousing. We are located 5 miles from Interstate 79.",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "McLendon Enterprises",
@@ -36426,7 +36691,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "209 Callahan Dr, Mobile, AL 36610",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "us Materials Storage space in and around Mobile, Alabama. We have over 5 acres of fenced, rail-served area for lumber, steel, and bulk commodity transloading. We provide public warehouse spac",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Medford Team Track",
@@ -36541,7 +36809,10 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "1420 11th Ave NE, Altoona, IA 50009",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "times uncomfortable, change unlocks worlds of opportunity. In 1988, Merchants purchased a rail-served facility at 1850 East Euclid Avenue in Des Moines. This facility has expanded twice since",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Merchants Transloading, Warehoue, Distribution Services",
@@ -36585,7 +36856,10 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "times uncomfortable, change unlocks worlds of opportunity. In 1988, Merchants purchased a rail-served facility at 1850 East Euclid Avenue in Des Moines. This facility has expanded twice since",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Metro Group",
@@ -36688,7 +36962,10 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "specific-locations"
+   "facility_type_scope": "specific-locations",
+   "rail_evidence": "sas City, MO 816-231-0777 409,172 Sq Ft Trailer Drop Lot Food Grade Bonded Wine & Spirits Rail Served 6900 Stillwell Ave 6900 Stillwell Ave. Kansas City, MO 816-231-0777 360,914 Sq Ft Separat",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Metro Park Warehouses",
@@ -36712,7 +36989,10 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "specific-locations"
+   "facility_type_scope": "specific-locations",
+   "rail_evidence": "sas City, MO 816-231-0777 409,172 Sq Ft Trailer Drop Lot Food Grade Bonded Wine & Spirits Rail Served 6900 Stillwell Ave 6900 Stillwell Ave. Kansas City, MO 816-231-0777 360,914 Sq Ft Separat",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Metro Ports Pier G Bulk Terminal",
@@ -37071,7 +37351,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "225 Marion Ave, River Rouge, MI 48218",
    "maps_category": "Gas station",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "About Services --> Contact Blog --> Your 1-stop storage solution Get in touch Dock access Rail Access My link 2 --> Pipeline access Get in touch --> Transloading Get in touch --> --> --> -->",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Michigan Rail and Storage",
@@ -37256,7 +37539,8 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "28 Millbury St, Auburn, MA 01501",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Mid-Atlantic Rail Services Williamsburg Station",
@@ -37792,7 +38076,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "2885 W Diehl Rd, Naperville, IL 60563",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Midwest Warehousing LLC",
@@ -37818,7 +38103,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "East, 3999 Hupp Rd, La Porte, IN 46350",
    "maps_category": "Storage facility",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Milano Railway Logistics Services",
@@ -38072,7 +38358,10 @@
    "location_source": "google-maps 2026-08-21",
    "rail_distance_mi": 0.03,
    "rail_confidence": "high",
-   "rail_proximity_checked": "2026-08-21"
+   "rail_proximity_checked": "2026-08-21",
+   "rail_evidence": "Home Pricing Contact Us! More Home Pricing Contact Us! Home Pricing Contact Us! Efficient Rail Car Storage Solutions Efficient Rail Car Storage Solutions Efficient Rail Car Storage Solutions Effic",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Mississippi Export Railroad",
@@ -38197,7 +38486,10 @@
    "rail_distance_mi": 0.26,
    "rail_confidence": "probable",
    "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-20",
+   "rail_evidence": "ovides rail to truck bulk transloading services at our Bluffton, Indiana facility. We are served by Norfolk Southern Railway, and we are able to receive railcars on a daily basis. Our rail siding allows MEC",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Mobilex, LLC",
@@ -38918,7 +39210,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "718 McCloy Ave, Stockton, CA 95203",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Murphy Logistics Company",
@@ -38956,7 +39249,10 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "Our Solutions With over 5+ million sq. ft. of certified public and contract warehousing, rail-served facilities, and a dedicated fleet of 160+ trucks & trailers, Murphy delivers end-to-end 3",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Murphy Logistics Eagan Distribution Center",
@@ -38990,7 +39286,10 @@
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": ",550 Sq. Ft. Services Rack storage, Bulk storage, Retail distribution, Food grade, Indoor rail siding, Custom distribution, Outdoor storage Industries Served Building materials, Retail distri",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Murphy Warehouse Company",
@@ -39058,7 +39357,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "915 Floral Ln, Davenport, IA 52802",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "MVT Warehousing",
@@ -39514,7 +39814,10 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "offer over 1.6 million square feet of high-bay, modern storage space. Eight of these are rail-served by the two major short-line operations in the region: St. Lawrence & Atlantic (CN Connect",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "NEPW Logistics",
@@ -39545,7 +39848,10 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "offer over 1.6 million square feet of high-bay, modern storage space. Eight of these are rail-served by the two major short-line operations in the region: St. Lawrence & Atlantic (CN Connect",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "NEPW Logistics",
@@ -39577,7 +39883,10 @@
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "offer over 1.6 million square feet of high-bay, modern storage space. Eight of these are rail-served by the two major short-line operations in the region: St. Lawrence & Atlantic (CN Connect",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "NEPW Logistics",
@@ -39641,7 +39950,10 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "offer over 1.6 million square feet of high-bay, modern storage space. Eight of these are rail-served by the two major short-line operations in the region: St. Lawrence & Atlantic (CN Connect",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "NEPW Logistics Fairfield",
@@ -39673,7 +39985,10 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "29 Skowhegan Rd, Fairfield, ME 04937",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "offer over 1.6 million square feet of high-bay, modern storage space. Eight of these are rail-served by the two major short-line operations in the region: St. Lawrence & Atlantic (CN Connect",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Network Logistics Irving Transload",
@@ -39978,7 +40293,10 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "d railcar fleet helps provide dedicated temperature-controlled capacity. Approximately 80 rail-served facilities help connect rail transportation with warehousing and distribution. Rail logis",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "New Orleans Terminal, LLC",
@@ -40569,7 +40887,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "3401 Stockyards Expy, St Joseph, MO 64501",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "NORAG Hereford Transload",
@@ -42382,7 +42701,10 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": ".com/our-network/chicago-lake-calumet/ - Lake Calumet Terminal Chicago Chicago - Port and Rail Dock https://qsl.com/our-network/chicago-port-and-rail/ - Port and Rail Dock Louisiana New Orl",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "North Atlantic Distribution",
@@ -42444,7 +42766,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "18901 Snow Rd, Brook Park, OH 44142",
    "maps_category": "Trucking company",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "to-truck services. Rail service is provided by Norfolk & Southern in Cleveland with ample rail siding to service most customers needs. 48 to 72 hours free storage is built into our cross-dock",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "North Mason Fiber",
@@ -43317,7 +43642,8 @@
    "facility_type": "third-party-warehouse",
    "facility_type_source": "web-extracted 2026-08-21",
    "address": "12211 Port Rd, Seabrook, TX 77586",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Odyssey Railcar",
@@ -43376,7 +43702,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "5232 Tod Ave SW, Warren, OH 44481",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "can be tailored to tenants\u2019 specific needs. Intermodal features include on-site truck and rail access and convenient access to air transportation and waterways. The complex is comprised of ni",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Oklahoma Central Rail Park",
@@ -43901,7 +44230,8 @@
    "address": "6150 Lagrange Blvd, Atlanta, GA 30336",
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Omnitrax Logistics Services",
@@ -44532,7 +44862,10 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "1245 E Watson Center Rd, Carson, CA 90745",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "se space. The combination of 10 business units located in heavy haul corridors, truck and rail served, allow us the unique ability to serve you in one location or several. Our California and",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Pacific Coast Container Inc",
@@ -44559,7 +44892,10 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "se space. The combination of 10 business units located in heavy haul corridors, truck and rail served, allow us the unique ability to serve you in one location or several. Our California and",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Pacific Coast Container Inc",
@@ -44585,7 +44921,10 @@
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "se space. The combination of 10 business units located in heavy haul corridors, truck and rail served, allow us the unique ability to serve you in one location or several. Our California and",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Pacific Coast Container Inc",
@@ -44611,7 +44950,10 @@
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "se space. The combination of 10 business units located in heavy haul corridors, truck and rail served, allow us the unique ability to serve you in one location or several. Our California and",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Pacific Steel & Recycling",
@@ -44664,7 +45006,10 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "olume cargo Three barge berths with 600 total linear feet 19-foot draft for marine access Rail-served facility with 10+ railcar spots Direct access to major Seattle freeways U.S. Customs bond",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Pacorini Metals",
@@ -45083,7 +45428,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "8800 NE Underground Dr, Kansas City, MO 64161",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "Compliance Standards SQF USDA Organic Certified Fair Trade USA AIB GMP Compliant Covered Rail Access Efficient transfers between rail, truck, and storage. FTZ-Approved Warehousing Duty-savin",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Paris Foods Corporation",
@@ -45161,7 +45509,8 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "1800 E Garfield Ave, Decatur, IL 62526",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Parker Towing",
@@ -45519,7 +45868,8 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Pavlich Rail Car Unloading",
@@ -45684,7 +46034,8 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "225 Walnut St W, Wilson, NC 27893",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "PCC Logistics",
@@ -45711,7 +46062,10 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "rage capabilities with a state of the art security system protecting high value products. Rail Spur: 237, 238 Port of Tacoma Rd. Services Offered: Warehousing & Distribution Consolidation (",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Pcp",
@@ -46078,7 +46432,10 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "Production Real-Time Inventory Pull Inbound Inspection Process Heavy Lift Cranes & Lifts Rail Serviced Facilities Secure Warehouse & Yard Space Learn More Lorem ipsum dolor sit amet, consectet",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Petersburg NS TBT",
@@ -46597,7 +46954,8 @@
    "facility_type": "third-party-warehouse",
    "facility_type_source": "web-extracted 2026-08-21",
    "address": "1635 7th St SW, Winter Haven, FL 33880",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Plastic Express",
@@ -47800,7 +48158,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "201 Bay Ave, Elizabeth, NJ 07201",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "& East Rutherford, NJ 1.1 Million square feet and 90 Truck Doors among six warehouses 60 Railcar spots among our six warehouses Heavy Container Transloading 150 Industrial Dr. Jersey City, NJ",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Port Fisher Terminals",
@@ -47835,7 +48196,8 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "99 Tiernan Rd, Bay City, MI 48706",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Port Freeport Railyard",
@@ -48868,7 +49230,10 @@
    "facility_type_source": "web-extracted 2026-08-21",
    "address": "6964 E Century Park Dr, Tucson, AZ 85756",
    "maps_category": "Train yard",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "Skip to content Home Intermodal Domestic Intermodal International Intermodal Transload & Rail Access Commercial Real Estate Warehousing Public Warehousing Temperature Controlled Warehousing",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Port of West St. Mary",
@@ -48931,7 +49296,10 @@
    "indoor_storage": true,
    "facility_type_source": "web-extracted 2026-08-21",
    "address": "600 Veterans Dr, Follansbee, WV 26037",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "View Services Storage We have the space to meet your needs for warehousing, tank storage, rail car storage, and laydown at The Port of West Virginia. Transloading Our team will work with you to mo",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Port of Wilmington Cold Storage",
@@ -48961,7 +49329,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "1 Shipyard Blvd, Wilmington, NC 28412",
    "maps_category": "Cold storage facility",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Port Priority Express (The Triangle Group)",
@@ -49268,7 +49637,8 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Precision Terminal Logistics LLC",
@@ -49301,7 +49671,8 @@
    "facility_type_scope": "company-wide",
    "address": "5130 Port Rd, Jeffersonville, IN 47130",
    "maps_category": "Shipping service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Precision Terminal Logistics LLC",
@@ -49411,7 +49782,8 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Precision Terminal Logistics LLC",
@@ -49437,7 +49809,8 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Precision Terminal Logistics LLC",
@@ -49857,7 +50230,8 @@
    "facility_type_scope": "company-wide",
    "address": "3600 E 95th St, Chicago, IL 60617",
    "maps_category": "Logistics service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "QSL New Orleans",
@@ -49897,7 +50271,10 @@
    "facility_type_scope": "company-wide",
    "address": "24 Clarence Henry Truckway #20, New Orleans, LA 70115",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": ".com/our-network/chicago-lake-calumet/ - Lake Calumet Terminal Chicago Chicago - Port and Rail Dock https://qsl.com/our-network/chicago-port-and-rail/ - Port and Rail Dock Louisiana New Orl",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "QSL New Orleans (QSL America / Quebec Stevedoring) - NOPB",
@@ -49963,7 +50340,10 @@
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "for total cargo tonnage, the Port of Pascagoula stands out for its deep-water access and direct rail and highway connections to major industrial and energy hubs across the southeastern Unite",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Quality Distribution",
@@ -50342,7 +50722,8 @@
    "facility_type_scope": "company-wide",
    "address": "60 East St, Ware, MA 01082",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Queen City Warehouse",
@@ -51569,7 +51950,10 @@
    "facility_type_scope": "company-wide",
    "address": "1202 E Broadway, Williston, ND 58801",
    "maps_category": "Trucking company",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "r Supply Red River Supply and Red River Oilfield Services are your preferred partners for rail access, transloading, trucking, warehousing, oilfield supplies and logistics for all your oilfie",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Red River Valley & Western Railroad",
@@ -51823,7 +52207,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "1401 State St, Green Bay, WI 54304",
    "maps_category": "Logistics service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Richmond Hill Team Track",
@@ -52747,7 +53132,10 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "4430 McIntyre St, Golden, CO 80403",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "n can help you get moving. View Services +(303) 287-3291 Contact Us Contact Us Don\u2019t have direct rail access at your facility? RMT Companies offers state-of-the-art transloading services to seamless",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "RMT Companies",
@@ -52774,7 +53162,10 @@
    "facility_type_scope": "company-wide",
    "address": "31535 Great Western Dr, Windsor, CO 80550",
    "maps_category": "Transportation service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "n can help you get moving. View Services +(303) 287-3291 Contact Us Contact Us Don\u2019t have direct rail access at your facility? RMT Companies offers state-of-the-art transloading services to seamless",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Robertson Bonded Warehouse",
@@ -52804,7 +53195,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "833 E 40th St, Lubbock, TX 79404",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Robinson Terminal Warehouse Coroporation",
@@ -52961,7 +53353,10 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "n can help you get moving. View Services +(303) 287-3291 Contact Us Contact Us Don\u2019t have direct rail access at your facility? RMT Companies offers state-of-the-art transloading services to seamless",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Rocky Mountain Transload Inc",
@@ -52993,7 +53388,10 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "n can help you get moving. View Services +(303) 287-3291 Contact Us Contact Us Don\u2019t have direct rail access at your facility? RMT Companies offers state-of-the-art transloading services to seamless",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Rocky Mountain Transload Inc",
@@ -53092,7 +53490,10 @@
    "facility_type_scope": "company-wide",
    "address": "Windsor, CO 80550",
    "maps_category": "Transportation service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "n can help you get moving. View Services +(303) 287-3291 Contact Us Contact Us Don\u2019t have direct rail access at your facility? RMT Companies offers state-of-the-art transloading services to seamless",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Roemer Construction Co",
@@ -53566,7 +53967,10 @@
    "address": "4334 Millington Road, Memphis, TN 38127",
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "I-55, adjacent to the Mississippi River, and north of downtown Memphis, Tennessee. We are served by the CN Railroad, allowing access to all major US railroads. Learn More &gt; RAILCAR TANK CLEANIN",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Russell Contracting",
@@ -53752,7 +54156,8 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "2217 Michigan Ave, East Liverpool, OH 43920",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "S.H. Bell Patapsco Avenue Terminal",
@@ -53786,7 +54191,8 @@
    "location_source": "google-maps 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "S.H. Bell South Avenue O Terminal",
@@ -53820,7 +54226,8 @@
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Salt Lake Transloading Services",
@@ -54055,7 +54462,10 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "360 Industrial Ct Ste a, Benicia, CA 94510",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "speed and accuracy. And the proximity of our warehouse network to major freeways, ports, rail spurs and airports makes it ideal for moving inventory efficiently. Contact Us Yandell At a Gl",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Santa Maria Valley Railroad Osburn Railyard",
@@ -55915,7 +56325,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "35 Brunswick Ave, Edison, NJ 08817",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Sea Pac Transport Services, LLC",
@@ -56186,7 +56597,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "1525 S Blount St, Raleigh, NC 27603",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "y types Computerized Warehouse Management System, 24 Hour Security, Sprinkler Protection, Rail Siding for Boxcar Deliveries & Shipments Whatever your industry, we can help! Roll Stock, Lumber",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Seminole Gulf Railway Arcadia Transload",
@@ -56391,7 +56805,10 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "Bridgeport, AL 35740",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "Storage Contact Us Sequatchie Valley Switching Company Bridgeport, AL Freight Rate Quote Railcar Storage Quote Weight Restriction 286k Interchanges Bridgeport, AL (CSX) Unit Train or Manifest Tr",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Service One Transportation Bulk Transload",
@@ -56476,7 +56893,8 @@
    "facility_type_source": "web-extracted 2026-08-21",
    "address": "850 W 3rd St, Winona, MN 55987",
    "maps_category": "Transportation service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Seville Material Transfer",
@@ -56935,7 +57353,10 @@
    "facility_type": "third-party-warehouse",
    "address": "4300 Finch Rd, Modesto, CA 95357",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "etails www.spwg.com 209-572-2882 contact@spwg.com Modesto MODESTO, CA 95357 800,000 sq ft Rail Served: UP & BNSF, M&ET Temperatures: Refrigerated: 34 to 38\u00b0F High Chill: 50 to 60\u00b0F Ambient 20",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Silver Spring Shores Lumber Transload",
@@ -57163,7 +57584,8 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "1031 N Redmond Rd, Jacksonville, AR 72076",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Smith Transportation",
@@ -57692,7 +58114,8 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "910 N Meridian St, Marion, IN 46952",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Spartan Logistics",
@@ -57770,7 +58193,8 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "5301 Old Pearman Dairy Rd., Anderson, SC 29625",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Spartan Logistics",
@@ -57822,7 +58246,8 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "5201 SC-81, Starr, SC 29684",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Spartanburg NS TBT",
@@ -58033,7 +58458,10 @@
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "dings ranging from -20F to 55F 224 dock doors Over 3 miles of lit roadway Over 3 miles of rail siding Clear ceiling height of up to 30 feet Immediate accessibility to I-44 and US-65 Rail serv",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "SPS Boston Harbor Marine Facility",
@@ -58206,7 +58634,10 @@
    "rail_distance_mi": 0.1,
    "rail_confidence": "high",
    "rail_proximity": "on-network",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-20",
+   "rail_evidence": "--> St. Mary's Railway West, LLC | Rail Car Storage | 4310 Albany Avenue, Waresboro, GA, United States top of page INFO@SMWRAIL.COM (912) 490",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Stagecoach Cartage & Distribution",
@@ -58403,7 +58834,10 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "106 Seneca Dr, Lackawanna, NY 14218",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "ut Location Site Gallery Site Progress Site Map Opportunities &#8211; Land &#038; Acreage Rail Spur &#038; Siding &#8211; Lake Access Road &#038; Truck Access &#8211; Warehousing &#038; Sto",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Sterling Equipment Quincy Marine Yard",
@@ -58828,7 +59262,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "4401 Piggly Wiggly Dr, North Charleston, SC 29405",
    "maps_category": "Distribution service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Sunoco LP Baltimore Terminal",
@@ -59943,7 +60378,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "1355 E Archwood Ave, Akron, OH 44306",
    "maps_category": "Transportation service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "dry storage, 8,000MT liquid storage 13,400 sq ft AWSA-certified crop protection warehouse Rail-serviced location with siding access Equipped with automated state-of-the-art fertilizer blending",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "T & J Marketing",
@@ -60066,7 +60504,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "5144 Utica Pike, Jeffersonville, IN 47130",
    "maps_category": "Professional services",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "Packaged Storage Climate Control Inventory Management Learn More Terminal Facilities with Rail Access & Food- and Non-Food-Grade Warehousing Strategically located off the Indiana Toll Road (I",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Tank Truck Transport Inc",
@@ -60283,7 +60724,10 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "926 Boundary Wy Rd, Tell City, IN 47586",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "S at Lincoln City. We have team tracks in Tell City, Troy, and Lamar Indiana should a non-rail served customer require rail facilities for the loading or unloading of products. Safety and Cus",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Temple & Central Railroad",
@@ -60455,7 +60899,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "405 Industrial Blvd, Greenville, NC 27834",
    "maps_category": "Logistics service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "nternational freight services. We offer local, final mile delivery. RAIL SERVICE Inbound, outbound rail and cross docking provides our customers with flexibility and economy. We can receive, st",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "TexAmericas - Spring Creek Enterprises",
@@ -60543,7 +60990,10 @@
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "ng and distribution. We have full service bulk liquid capabilities that include a truck & rail served liquid terminal and tank farm. We offer full trans-loading capabilities in any combinatio",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Texas Central Business Lines",
@@ -61789,7 +62239,8 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "231 Tomahawk Industrial Park, Lynchburg, VA 24502",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Top Notch Service Fairbanks Auto Terminal",
@@ -61838,7 +62289,10 @@
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "ack to box, etc. Temperature-controlled storage available On-site transportation services Rail access via CSX Chemical warehouse RC14001:2023 Provision of Third-party logistics and warehousin",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Total Distribution",
@@ -61864,7 +62318,10 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "1779 Marvo Dr, Akron, OH 44306",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "Production Real-Time Inventory Pull Inbound Inspection Process Heavy Lift Cranes & Lifts Rail Serviced Facilities Secure Warehouse & Yard Space Learn More Lorem ipsum dolor sit amet, consectet",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Total Distribution Huntington",
@@ -64707,7 +65164,8 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "6211 Clementine Dr, Clemmons, NC 27012",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Tricor Refining",
@@ -64942,7 +65400,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "2500 West State Boulevard Suite A 3610 Independence, 2500 W State Blvd Drive, Fort Wayne, IN 46808",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "major transportation routes and most cities. We also maintain an on-site Norfolk Southern rail spur to handle train shipments. Cut your shipping times and costs. Location. Location. Locatio",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Trojan Recycling Rail Transfer Station",
@@ -65797,7 +66258,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "4 S Middlesex Ave, Monroe Township, NJ 08831",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Tyree",
@@ -65929,7 +66391,8 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "specific-locations"
+   "facility_type_scope": "specific-locations",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Union City Terminal Railroad (Indiana Business Railroad d/b/a UCT) Transload",
@@ -66097,7 +66560,8 @@
    "rail_distance_mi": 0.26,
    "rail_confidence": "probable",
    "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-20",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "United Motor Freight",
@@ -66124,7 +66588,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "3800 W Marginal Wy SW, Seattle, WA 98106",
    "maps_category": "Trucking company",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "United States Cold Storage",
@@ -66151,7 +66616,8 @@
    "facility_type_scope": "company-wide",
    "address": "6501 District Blvd, Bakersfield, CA 93313",
    "maps_category": "Cold storage facility",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "United States Cold Storage",
@@ -66177,7 +66643,8 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "2901 Kenny Biggs Rd, Lumberton, NC 28358",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "United States Cold Storage",
@@ -66201,7 +66668,8 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "United States Cold Storage Inc.",
@@ -66252,7 +66720,8 @@
    "facility_type_scope": "company-wide",
    "address": "2554 Downing Dr, Fort Worth, TX 76106",
    "maps_category": "Cold storage facility",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "United States Cold Storage Of California",
@@ -66278,7 +66747,8 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "2525 E North Ave, Fresno, CA 93725",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "United Warehouse Co.",
@@ -66315,7 +66785,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "901 E 45th St N, Wichita, KS 67219",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Univar Canada",
@@ -66811,7 +67282,10 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "13505 Pioneer Wy E, Puyallup, WA 98372",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "l three of our services for a Specialty Trucking In-Transit Warehousing Outdoor Storage & Rail Siding Join Our Team! V. Van Dyke is a great place to work, given our competitive compensation,",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Valley Distributing & Storage Co",
@@ -66919,7 +67393,8 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Van-G Logistics",
@@ -66960,7 +67435,8 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Van-G Logistics",
@@ -67038,7 +67514,8 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "600 SE Assembly Ave #185, Vancouver, WA 98661",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Veal Farms Transload",
@@ -67411,7 +67888,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "1102 W Hanna Ave, Indianapolis, IN 46217",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "on Our 406,000 sq. ft. Food Grade Certified facilities are built for serious volume, with direct rail access and truck capabilities to receive, store, and distribute your freight anywhere in the U.S",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Vermilion Valley Railroad",
@@ -67723,7 +68203,8 @@
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
-   "maps_category": "Warehouse"
+   "maps_category": "Warehouse",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Vogt Warehouse / Specialty Logistics",
@@ -67749,7 +68230,8 @@
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Vopak Terminal Los Angeles",
@@ -67778,7 +68260,8 @@
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Vopak VIIA Plaquemine",
@@ -68006,7 +68489,10 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "Shelbyville, TN 37160",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "Development Storage Contact Us Walking Horse Railroad Shelbyville, TN Freight Rate Quote Railcar Storage Quote Weight Restriction 286k Interchanges Wartrace, TN (CSX) Unit Train or Manifest Trac",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Wallenius Wilhelmsen Solutions",
@@ -68108,7 +68594,10 @@
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "nd Warehousing Expand Contract Warehousing Chemical Warehousing Manufacturing Warehousing Rail Served Warehouses Transportation Expand Small Parcel FTL/LTL Drayage Fulfillment Capabilities Ex",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Warehouse Specialists",
@@ -68135,7 +68624,10 @@
    "facility_type_scope": "company-wide",
    "address": "2722 S Jupiter Rd, Garland, TX 75041",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "nd Warehousing Expand Contract Warehousing Chemical Warehousing Manufacturing Warehousing Rail Served Warehouses Transportation Expand Small Parcel FTL/LTL Drayage Fulfillment Capabilities Ex",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Warehouse Specialists LLC",
@@ -68203,7 +68695,10 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "21700 Mark Collins Dr, Sauk Village, IL 60411",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "Rail Served Warehouse Network | WSI Skip to content About WSI 3PL Services Expand Warehousing Expand",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Warehouse Specialists LLC",
@@ -68229,7 +68724,10 @@
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "nd Warehousing Expand Contract Warehousing Chemical Warehousing Manufacturing Warehousing Rail Served Warehouses Transportation Expand Small Parcel FTL/LTL Drayage Fulfillment Capabilities Ex",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Warehouse Specialists LLC",
@@ -68253,7 +68751,10 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "Rail Served Warehouse Network | WSI Skip to content About WSI 3PL Services Expand Warehousing Expand",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Washington Eastern Railroad, LLC",
@@ -69962,7 +70463,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "81 Ingell St, Taunton, MA 02780",
    "maps_category": "Cold storage facility",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "storage and handling in the south coast market. Over 200,000 Square Feet 18 Dock Doors 9 Rail Sidings Waterfront Cold Store focuses specifically on the storage of frozen products, with wareh",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Waterfront Petroleum Dearborn Terminal",
@@ -70229,7 +70733,8 @@
    "facility_type_source": "web-extracted 2026-08-21",
    "address": "1366 30th St, San Diego, CA 92154",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "WEI Transload / Bison Rail Facility",
@@ -70298,7 +70803,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "1806 Main St, Weirton, WV 26062",
    "maps_category": "Business park",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "n Quality of Life Site Gallery Site History Site Map Opportunities &#8211; Land Available Rail Access &#8211; River Access Road &#038; Truck Access Utility Infrastructure &#8211; Buildings Av",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Weirton Ice and Coal Supply Company",
@@ -70389,7 +70897,10 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "108 16th St, Wellsville, OH 43968",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "e About Sustainability Services Transload Services Warehousing & Storage Products Managed Rail Car Storage Sustainability Site Development Contact Welcome Strategically located in the heart of the",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "West Coast Pipe Inspection",
@@ -71500,7 +72011,10 @@
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "nd Warehousing Expand Contract Warehousing Chemical Warehousing Manufacturing Warehousing Rail Served Warehouses Transportation Expand Small Parcel FTL/LTL Drayage Fulfillment Capabilities Ex",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "WSI Appleton Warehouse Road",
@@ -71533,7 +72047,10 @@
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "nd Warehousing Expand Contract Warehousing Chemical Warehousing Manufacturing Warehousing Rail Served Warehouses Transportation Expand Small Parcel FTL/LTL Drayage Fulfillment Capabilities Ex",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "WSI Combined Locks Warehouse",
@@ -71565,7 +72082,10 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "100 Prospect St, Combined Locks, WI 54113",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "nd Warehousing Expand Contract Warehousing Chemical Warehousing Manufacturing Warehousing Rail Served Warehouses Transportation Expand Small Parcel FTL/LTL Drayage Fulfillment Capabilities Ex",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "WSI Fond du Lac Larsen Drive Warehouse",
@@ -71599,7 +72119,10 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "240 Larsen Dr, Fond du Lac, WI 54937",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "nd Warehousing Expand Contract Warehousing Chemical Warehousing Manufacturing Warehousing Rail Served Warehouses Transportation Expand Small Parcel FTL/LTL Drayage Fulfillment Capabilities Ex",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "WSI Menasha Warehouse",
@@ -71632,7 +72155,10 @@
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "Menasha Warehouse with Rail Access | WSI Wisconsin Skip to content About WSI 3PL Services Expand Warehousing Expand Contract",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "WSI Phoenix Warehouse",
@@ -71665,7 +72191,10 @@
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "nd Warehousing Expand Contract Warehousing Chemical Warehousing Manufacturing Warehousing Rail Served Warehouses Transportation Expand Small Parcel FTL/LTL Drayage Fulfillment Capabilities Ex",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "WSI Plover Warehouse",
@@ -71698,7 +72227,10 @@
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide",
    "address": "2601 Hoover Ave S, Plover, WI 54467",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "nd Warehousing Expand Contract Warehousing Chemical Warehousing Manufacturing Warehousing Rail Served Warehouses Transportation Expand Small Parcel FTL/LTL Drayage Fulfillment Capabilities Ex",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "WSI Pomona Transload",
@@ -71764,7 +72296,10 @@
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "nd Warehousing Expand Contract Warehousing Chemical Warehousing Manufacturing Warehousing Rail Served Warehouses Transportation Expand Small Parcel FTL/LTL Drayage Fulfillment Capabilities Ex",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "WSI Wisconsin Rapids 2nd Street Warehouse",
@@ -71795,7 +72330,10 @@
    "rail_proximity_checked": "2026-08-20",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "Wisconsin Rapids Warehouse with Rail Access | WSI Midwest Skip to content About WSI 3PL Services Expand Warehousing Expand Contract W",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "WSI Wisconsin Rapids Wolosek Avenue Warehouse",
@@ -71829,7 +72367,10 @@
    "location_source": "operator-site+census 2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "nd Warehousing Expand Contract Warehousing Chemical Warehousing Manufacturing Warehousing Rail Served Warehouses Transportation Expand Small Parcel FTL/LTL Drayage Fulfillment Capabilities Ex",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "WSOR Janesville Transload Facility",
@@ -72080,7 +72621,10 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "43 Co Rd 370, Iuka, MS 38852",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "rail_evidence": "NTS PROSPECTIVE TENANTS NEWS CONTACT US FACILITIES/SERVICES Services provided Barge-truck-rail unloading & loading & transfer of steel coils & muliti modal service of general commodities, rail m",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Yellowstone Industrial Development",
@@ -75149,7 +75693,10 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "CATIONS REQUEST A QUOTE CAREERS RAIL Impact Transportation\u2019s Port of Oakland site is also rail served by a short line railway called OGRE. OGRE is on our site and allows us a rare opportunity",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Tenth Avenue Marine Terminal",
@@ -75461,7 +76008,8 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "SFF Warehouse",
@@ -75753,7 +76301,8 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Partners Dimensional Services LLC",
@@ -75795,7 +76344,10 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": ", convenience and cost-effectiveness than having to set up your own facility. Road Access Rail Access Air Access Seaport Access Western region Providing a logistical advantage on the west coa",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Canal Terminal Company",
@@ -75825,7 +76377,10 @@
    "rail_confidence": "high",
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "er Three barge docks located at mile 281.3 on the Illinois River Learn More By Rail Seven rail sidings served by CSX Learn More By Road Conveniently located near I-55 and I-80 Learn More Cana",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Reserve Marine Terminals",
@@ -75895,7 +76450,10 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "with direct access to I-270. Our facility sits adjacent to a railroad spur that is dually served by Union Pacific (UP) and the newly combined Canadian Pacific Kansas City (CPKC) railroads. Direct access",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Three Rivers Terminal",
@@ -75926,7 +76484,8 @@
    "rail_confidence": "probable",
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Peoria Barge Terminal",
@@ -75965,7 +76524,10 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "t unloading dock gives us the ability to handle up to 4 barges at a time, and our on-site rail spur can accommodate up to 24 standard-size rail cars. Heavy equipment at the terminal include",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Agridyne - Perkin, IL",
@@ -76019,7 +76581,8 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "American Terminals",
@@ -76516,7 +77079,8 @@
    "rail_confidence": "high",
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Bishop Transload Terminal",
@@ -76610,7 +77174,10 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "res site, completely paved in 24\u201d concrete with clay base for environmental safety. Three Rail Spurs from which we can ship and receive material and equipment. The Transloading Facility off",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Vans Logistics",
@@ -76673,7 +77240,10 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "LC ) Hamtramck Distribution Center Romulus, Michigan 36555 Ecorse Road Romulus, MI 48174 (Served by CSX Railroad ) Romulus Distribution Center Spring Lake / Norton Shores, Michigan 1202 Pontalu",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "General Transport Inc.",
@@ -76890,7 +77460,10 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "termodal rail terminals, container yards, and highways. Our services include: Facility is served by the Union Pacific Railroad and is open to reciprocal switching. Experts in bulk material handling, transfer",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Midwest Warehousing",
@@ -77028,7 +77601,8 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Equalizer Hastings Terminal",
@@ -77059,7 +77633,10 @@
    "rail_confidence": "high",
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "est liquid fertilizer storage capacity in the nation, anhydrous ammonia storage, and full rail access. With expert leadership and strategic infrastructure, Hastings plays a vital role in our",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Geo Transload LLC",
@@ -77180,7 +77757,10 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "NY/NJ ports with company-owned fleet Explore Container Transport 03 Rail Freight Flexible rail access via Raritan Central Railway short line Explore Rail Freight 04 Intermodal Drayage Full-se",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Cetane Energy Carlsbad Transload Facility",
@@ -77456,7 +78036,10 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "Production Real-Time Inventory Pull Inbound Inspection Process Heavy Lift Cranes & Lifts Rail Serviced Facilities Secure Warehouse & Yard Space Learn More Lorem ipsum dolor sit amet, consectet",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Cincinnati Bulk Terminals",
@@ -77526,7 +78109,8 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Ohio Logistics - Fostoria 1",
@@ -77822,7 +78406,10 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "Operations Premier Logistics operates one of the few privately owned, commercial service rail spurs in Tulsa, Oklahoma. Premier Logistics receives rail cars through a short line provider T",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "R & S Bag",
@@ -77967,7 +78554,8 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Aliquippa Terminal",
@@ -78165,7 +78753,8 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Penn Terminals Incorporated",
@@ -78235,7 +78824,10 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "king capabilities allows for a highly adaptable and integrated approach to logistics. Our direct rail access is a game-changer for supply chain management. It offers clients a streamlined transition",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Karchner Warehousing & Logistics Services LLC",
@@ -78607,7 +79199,10 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type_scope": "company-wide",
+   "rail_evidence": "er Portal Join Our Team Home Services Menu Toggle Warehousing Distribution Transportation Rail-Served Warehousing and Indoor Rail Transloading Cold Storage Warehousing Bonded Warehousing Valu",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "York Transfer",
@@ -78699,7 +79294,10 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "About Us Service Service Air Conditioned Warehousing Food Grade Storage Inventory Control Rail Access Contact Quick Quote Privacy Sitemap Back Exceeding Expectations for Over Fifty Years For",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "DSV Global Transport and Logistics",
@@ -78790,7 +79388,8 @@
    "rail_distance_mi": 0.08,
    "rail_proximity_checked": "2026-08-20",
    "rail_evidence": "LD1 is a rail-served warehousing facility in Loudon, Tennessee",
-   "rail_confidence": "high"
+   "rail_confidence": "high",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Transload LLC - Martin",
@@ -78917,7 +79516,8 @@
    "location_source": "google-maps 2026-08-21",
    "rail_distance_mi": 0.07,
    "rail_confidence": "high",
-   "rail_proximity_checked": "2026-08-21"
+   "rail_proximity_checked": "2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Memphis Distribution Services",
@@ -78953,7 +79553,10 @@
    "location_source": "google-maps 2026-08-21",
    "rail_distance_mi": 0.04,
    "rail_confidence": "high",
-   "rail_proximity_checked": "2026-08-21"
+   "rail_proximity_checked": "2026-08-21",
+   "rail_evidence": "ffing & transloading Relabeling projects Repackaging Projects Lot & Batch Code Management Rail-served Facilities Quality Inspections Full Pallet & Case Picking Order Fulfillment Warehousing l",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Transload Of Tennessee",
@@ -79029,7 +79632,7 @@
    "note": "",
    "lat": 35.890904419044,
    "lng": -84.650334774867,
-   "rail_proximity": "on-network",
+   "rail_proximity": "not-rail-served",
    "recovery_kind": "new",
    "commodity_categories": [
     "Metals",
@@ -79039,11 +79642,12 @@
    "address": "229 Cardiff Valley Road, Rockwood, TN 37854",
    "location_source": "operator-site+census 2026-08-21",
    "rail_distance_mi": 0.13,
-   "rail_confidence": "high",
+   "rail_confidence": null,
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_override": "Confirmed NOT rail-served by Jacob 2026-08-21 (local knowledge). Measured 0.13 mi from the network \u2014 track passes near the site but does not serve it. Proximity alone is not proof of a siding."
   },
   {
    "name": "Tyr Logistics",
@@ -79399,7 +80003,8 @@
    "rail_confidence": "probable",
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Walton Barge Terminal",
@@ -79457,7 +80062,8 @@
    "location_source": "google-maps 2026-08-21",
    "rail_distance_mi": 0.06,
    "rail_confidence": "high",
-   "rail_proximity_checked": "2026-08-21"
+   "rail_proximity_checked": "2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Gulf Winds International",
@@ -79578,7 +80184,8 @@
    "location_source": "google-maps 2026-08-21",
    "rail_distance_mi": 0.23,
    "rail_confidence": "probable",
-   "rail_proximity_checked": "2026-08-21"
+   "rail_proximity_checked": "2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Southern Warehousing & Distribution",
@@ -79699,7 +80306,10 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "mile delivery to ensure flexible and reliable freight movement. --> Rail Services On-site rail-served facilities for cost-effective, large-volume shipping and receiving. --> Industries Served",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "Port of Everett Pacific Terminal",
@@ -79765,7 +80375,10 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_evidence": "y Key Features 5.25 Acres 100,000 SF Warehouse Customs Bonded Warehouse 24 Truck Doors 12 Railcar Spots USDA Approved BNSF Railway Served WSDA Food Storage Warehouse license FDA Registered Serv",
+   "rail_evidence_source": "operator-website 2026-08-21",
+   "rail_claim": "operator-confirmed"
   },
   {
    "name": "SeaTac Marine Services Fox Avenue Terminal",
@@ -79803,7 +80416,8 @@
    "location_source": "google-maps 2026-08-21",
    "rail_distance_mi": 0.14,
    "rail_confidence": "probable",
-   "rail_proximity_checked": "2026-08-21"
+   "rail_proximity_checked": "2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Afar Logistics LLC",
@@ -79833,7 +80447,8 @@
    "rail_proximity_checked": "2026-08-21",
    "facility_type": "third-party-warehouse",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "web-extracted 2026-08-21",
+   "rail_claim": "proximity-only"
   },
   {
    "name": "Atlas Columbia Warehouse",
