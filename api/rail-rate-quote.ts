@@ -37,6 +37,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   // capped here defensively, also enforced server-side in Flask.
   const leadName = String(body.name ?? '').trim().slice(0, 200);
   const leadPhone = String(body.phone ?? '').trim().slice(0, 60);
+  // Acquisition attribution (server half 2026-08-20, client capture 2026-08-21).
+  // Captured client-side at first page load and frozen in sessionStorage: a
+  // same-origin XHR's Referer is always the tool page itself, so these are the
+  // only fields that can name the real acquisition channel. This proxy rebuilds
+  // the upstream body from a whitelist, so a field the client sends but that is
+  // not listed below is silently dropped before Flask ever sees it -- which is
+  // exactly what happened between 08-21 and 08-22. Caps mirror Flask's.
+  const landingReferrer = String(body.landing_referrer ?? '').trim().slice(0, 500);
+  const referrerKind = String(body.referrer_kind ?? '').trim().slice(0, 20);
+  const entryQuery = String(body.entry_query ?? '').trim().slice(0, 300);
   // Optional shipment size (added 2026-07-22). Omitted when the shipper
   // didn't pick one — Flask then prices single-car, the conservative tier.
   // Range is enforced authoritatively server-side; this is just an edge
@@ -113,6 +123,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         email,
         name: leadName,
         phone: leadPhone,
+        landing_referrer: landingReferrer,
+        referrer_kind: referrerKind,
+        entry_query: entryQuery,
         ...(numCars !== undefined ? { num_cars: numCars } : {}),
         // Forward client metadata so the Python service can record it on the
         // lead. (CF-Connecting-IP is set by Cloudflare; X-Forwarded-For is the
