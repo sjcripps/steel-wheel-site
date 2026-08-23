@@ -944,14 +944,15 @@
           </div>
 
           <div class="form-group">
-            <label for="num_cars">Cars in Shipment <span class="hint">(optional — changes the rate tier)</span></label>
-            <select id="num_cars">
-              <option value="">Not sure yet</option>
-              <option value="1">1 car</option>
-              <option value="10">2–24 cars</option>
-              <option value="35">25–89 cars</option>
-              <option value="110">90+ cars (shuttle / unit train)</option>
-            </select>
+            <label for="num_cars">Cars in Shipment <span class="hint">(optional — leave blank if you're not sure yet)</span></label>
+            <input type="number" id="num_cars" min="1" max="200" step="1" placeholder="e.g. 20" list="numCarsPicks">
+            <datalist id="numCarsPicks">
+              <option value="1">
+              <option value="10">
+              <option value="20">
+              <option value="35">
+              <option value="110">
+            </datalist>
           </div>
 
         </div>
