@@ -246,7 +246,7 @@ export async function syncWorkmateCrm(opts: {
   email: string;
   name?: string;
   phone?: string;
-  source: 'swl-rate-quote' | 'swl-demurrage' | 'swl-transload' | 'swl-rail-vs-truck' | 'swl-rail-served-businesses' | 'swl-commodity-flow';
+  source: 'swl-rate-quote' | 'swl-demurrage' | 'swl-transload' | 'swl-rail-vs-truck' | 'swl-rail-served-businesses' | 'swl-commodity-flow' | 'swl-course-signup';
   tags?: string[];
   noteHeader: string;     // e.g. "swl-demurrage 12:34PM CST 4/30"
   noteLines: string[];    // bullet lines, blank ones get filtered
@@ -262,7 +262,7 @@ export async function syncWorkmateCrm(opts: {
   if (!opts.email) return false;
 
   const email = opts.email.toLowerCase().trim();
-  const contactName = (opts.name || '').trim() || `Prospect — ${email}`;
+  const contactName = (opts.name || '').trim() || nameFromEmail(email) || email;
   const phone = (opts.phone || '').trim() || null;
   const company = inferCompany(email);
   const baseTags = ['rate-quote', 'demurrage', 'transload', 'rail-vs-truck', 'rail-served-businesses']
@@ -364,20 +364,43 @@ export async function syncWorkmateCrm(opts: {
   }
 }
 
-/** Helper: best-effort company name from an email domain. */
+/** Best-effort name from the local part of an email — "matt.jameson@..." ->
+ *  "Matt Jameson". Only fires on the reliable pattern (2+ alphabetic
+ *  segments joined by ./_/-); a single glued token ("ppotluri") is NOT
+ *  split further, since guessing a first/last boundary inside an unbroken
+ *  string is a coin flip and a wrong-looking invented name is worse than
+ *  none. Mirrors _name_from_email in lead_capture.py — kept in sync,
+ *  fixed here 2026-08-23 (was "Prospect — email", Jacob flagged it as
+ *  "no reason to say prospect... we have the person's name"). */
+function nameFromEmail(email: string): string | null {
+  if (!email || !email.includes('@')) return null;
+  const local = email.split('@')[0];
+  const parts = local.split(/[._-]+/).filter((p) => /^[a-zA-Z]+$/.test(p));
+  if (parts.length >= 2) {
+    return parts.map((p) => p[0].toUpperCase() + p.slice(1).toLowerCase()).join(' ');
+  }
+  return null;
+}
+
+/** Helper: best-effort company name from an email domain. Mirrors
+ *  _company_from_email in lead_capture.py — fixed here 2026-08-23 (was
+ *  guessing wrong-looking names like "Auroramaterialsolutions" for any
+ *  domain regardless of length). */
 function inferCompany(email: string): string | null {
   if (!email || !email.includes('@')) return null;
   const domain = email.split('@')[1].toLowerCase().trim();
   const freeMail = new Set([
     'gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com',
     'aol.com', 'icloud.com', 'me.com', 'msn.com', 'live.com',
-    'proton.me', 'protonmail.com',
+    'proton.me', 'protonmail.com', 'mailfence.com',
   ]);
   if (freeMail.has(domain) || !domain) return null;
   const parts = domain.split('.');
-  if (parts.length < 2) return capitalize(parts[0]);
-  // "acme.com" → "acme"; "shipping.acme.co.uk" → "acme".
-  return capitalize(parts[parts.length - 2].replace(/-/g, ' '));
+  const sld = parts.length >= 2 ? parts[parts.length - 2] : parts[0];
+  if (sld.includes('-')) return capitalize(sld.replace(/-/g, ' '));
+  if (sld.length <= 4) return sld.toUpperCase();
+  if (sld.length <= 10) return capitalize(sld);
+  return null;
 }
 
 function capitalize(s: string): string {
