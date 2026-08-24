@@ -247,7 +247,7 @@
       </ol>
 
       <div class="blog-highlight">
-        <strong>Watch for this:</strong> some routing tools snap an unrecognized city to the nearest rail node they can find, which may be a passenger station or a yard nowhere near your facility. If a calculator returns a mileage that looks too clean or a serving carrier you have never heard of at that location, check what point it actually resolved your entry to before you trust the rest of the output.
+        <strong>Watch for this &mdash; we caught it in our own tool:</strong> our rate engine once resolved an Oakland-to-New-York lane to a BART maintenance yard on one end and a New York City subway line on the other. The total mileage looked completely ordinary &mdash; a little over 3,100 miles is a believable number for that lane &mdash; so nothing about the output looked wrong at a glance. When we went back and audited endpoint resolution across the dozen largest U.S. metro areas, eight of them snapped to a transit agency instead of a freight yard, including Los Angeles, San Francisco, Seattle, Denver, Newark, Philadelphia, and New York. We've since fixed our own engine to exclude passenger-only track from anywhere a city can resolve to. If you're using a calculator you didn't build yourself, you don't get to check its internals the way we could check ours &mdash; so if a tool returns a mileage that looks too clean, or names a serving carrier you have never heard of at that location, ask what point your city actually resolved to before you trust the rest of the number.
       </div>
 
       <h2 id="route">Route: Miles, and Who Owns Them</h2>
