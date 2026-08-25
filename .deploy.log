@@ -1,0 +1,73 @@
+<claude-code-hint v="1" type="plugin" value="vercel@claude-plugins-official" />
+Vercel CLI 59.1.4 (Node.js 22.22.0)
+Deploying steel-wheel-site
+Uploading [--------------------] (0.0B/127.7KB)
+Uploading [=====---------------] (32.0KB/127.7KB)
+Uploading [===========---------] (71.2KB/127.7KB)
+Uploading [================----] (102.6KB/127.7KB)
+Uploading [====================] (127.7KB/127.7KB)
+  Inspect         https://vercel.com/jacob-cripps-projects/steel-wheel-site/5npHqsi4M5BWcsUpMMTS8Y1Z5Y6J
+  Production      https://steel-wheel-site-3oquym5k4-jacob-cripps-projects.vercel.app
+Building…
+Building…
+Running build in Washington, D.C., USA (East) – iad1
+Build machine configuration: 2 cores, 8 GB
+Retrieving list of deployment files...
+Downloading 1770 deployment files...
+Restored build cache from previous deployment (9RtMihwukAUVBs69sBFRDCZ3J9Sj)
+Running "vercel build"
+Vercel CLI 59.3.0
+Installing dependencies...
+up to date in 784ms
+11 packages are looking for funding
+run `npm fund` for details
+npm warn allow-scripts 1 package has install scripts not yet covered by allowScripts:
+npm warn allow-scripts   esbuild@0.14.47 (postinstall: node install.js)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+Using TypeScript 4.9.5 (local user-provided)
+api/_lead-email.ts(153,53): error TS2835: Relative import paths need explicit file extensions in EcmaScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean './_lead-reply-draft.js'?
+api/_lead-email.ts(160,49): error TS2835: Relative import paths need explicit file extensions in EcmaScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean './_draft-notify.js'?
+Using TypeScript 4.9.5 (local user-provided)
+Using TypeScript 4.9.5 (local user-provided)
+Using TypeScript 4.9.5 (local user-provided)
+Using TypeScript 4.9.5 (local user-provided)
+Using TypeScript 4.9.5 (local user-provided)
+Using TypeScript 4.9.5 (local user-provided)
+Using TypeScript 4.9.5 (local user-provided)
+Using TypeScript 4.9.5 (local user-provided)
+Using TypeScript 4.9.5 (local user-provided)
+Using TypeScript 4.9.5 (local user-provided)
+api/_shipper-dashboard.ts(220,51): error TS2835: Relative import paths need explicit file extensions in EcmaScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean './_playbook-data.js'?
+Using TypeScript 4.9.5 (local user-provided)
+Build Completed in /vercel/output [18s]
+Deploying outputs...
+[2K[1A[2K[G  Production      https://steel-wheel-site-3oquym5k4-jacob-cripps-projects.vercel.app
+Completing…
+▲ Aliased         https://steelwheellogistics.com
+{
+  "status": "ok",
+  "deployment": {
+    "id": "dpl_5npHqsi4M5BWcsUpMMTS8Y1Z5Y6J",
+    "url": "https://steel-wheel-site-3oquym5k4-jacob-cripps-projects.vercel.app",
+    "inspectorUrl": "https://vercel.com/jacob-cripps-projects/steel-wheel-site/5npHqsi4M5BWcsUpMMTS8Y1Z5Y6J",
+    "readyState": "READY",
+    "target": "production",
+    "deploymentApiUrl": "https://api.vercel.com/v13/deployments/dpl_5npHqsi4M5BWcsUpMMTS8Y1Z5Y6J"
+  },
+  "message": "Deployment steel-wheel-site-3oquym5k4-jacob-cripps-projects.vercel.app ready.",
+  "next": [
+    {
+      "command": "vercel curl https://steel-wheel-site-3oquym5k4-jacob-cripps-projects.vercel.app",
+      "when": "Verify deployment, including when Deployment Protection is enabled"
+    },
+    {
+      "command": "vercel inspect steel-wheel-site-3oquym5k4-jacob-cripps-projects.vercel.app",
+      "when": "Inspect deployment"
+    },
+    {
+      "command": "vercel deploy --prod",
+      "when": "Promote to production"
+    }
+  ]
+}
