@@ -1,3 +1,6 @@
+import { generateLeadReplyDraft } from './_lead-reply-draft';
+import { notifyDraftReady } from './_draft-notify';
+
 // Shared email-notification helpers for SWL lead-capture endpoints.
 //
 // 4th sink (info@swl):     sendLeadEmail()       — formatted lead summary
@@ -150,14 +153,12 @@ export async function sendLeadEmail(opts: {
   // here, so a drafting or notification failure must never surface as a failed
   // lead submission.
   try {
-    const { generateLeadReplyDraft } = await import('./_lead-reply-draft');
     const draft = await generateLeadReplyDraft({
       customerEmail: opts.customerEmail,
       leadSource: opts.toolName,
       leadDetails: opts.rows.map(r => `${r.label}: ${r.value}`).join('\n'),
     });
     if (draft) {
-      const { notifyDraftReady } = await import('./_draft-notify');
       await notifyDraftReady({ draft, toolName: opts.toolName });
     }
   } catch (e) {
