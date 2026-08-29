@@ -74,11 +74,17 @@ if (existsSync(HUNT_DIR)) {
         phone: c.phone || null, website: c.website || null,
         lat: c.lat, lng: c.lng,
         facility_type: "third-party-warehouse",
-        rail_confidence: "probable",
+        // Port-authority entries arrive operator-confirmed (specs from the
+        // authority's own published materials); scraped entries stay
+        // proximity-screened/unverified.
+        rail_confidence: c.rail_claim === "operator-confirmed" ? "high" : "probable",
         rail_distance_mi: c.rail_distance_mi,
-        rail_claim: "proximity-screened",
+        rail_claim: c.rail_claim || "proximity-screened",
+        rail_evidence: c.rail_evidence || null,
         source: c.source,
-        note: c.classification === "unclear"
+        note: c.rail_claim === "operator-confirmed"
+          ? null
+          : c.classification === "unclear"
           ? "Listing sourced from public business data; third-party status and rail service unverified — confirm with operator."
           : "Listing sourced from public business data; rail service unverified — confirm siding with operator.",
       });
@@ -95,6 +101,10 @@ for (const f of wh) {
   const c = String(f.state).toUpperCase();
   if (!byState.has(c)) byState.set(c, []);
   byState.get(c).push(f);
+}
+for (const list of byState.values()) {
+  list.sort((a, b) =>
+    (a.rail_claim === "operator-confirmed" ? 0 : 1) - (b.rail_claim === "operator-confirmed" ? 0 : 1));
 }
 
 function head({ title, description, canonical, jsonLd }) {
