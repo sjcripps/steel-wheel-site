@@ -69,6 +69,11 @@ if (existsSync(HUNT_DIR)) {
   for (const fn of readdirSync(HUNT_DIR).filter((f) => f.endsWith("-approved.json"))) {
     for (const c of JSON.parse(readFileSync(join(HUNT_DIR, fn), "utf-8"))) {
       if (!c.name || !c.city) continue;
+      // "unclear" classifications stay in the data files for review but do
+      // NOT publish — in thin markets that bucket is mostly retail/civic
+      // noise (Gulfport City Hall made the MS page, 8/30). Confident 3PLs
+      // and operator-confirmed port entries only.
+      if (c.classification && c.classification !== "3pl") continue;
       hunt.push({
         name: c.name, city: c.city, state: c.state,
         phone: c.phone || null, website: c.website || null,
