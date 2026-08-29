@@ -1,5 +1,23 @@
 [
   {
+    "slug": "rail-waybill-explained",
+    "title": "The Rail Waybill: What It Is and How It Differs From a BOL",
+    "description": "A rail way bill is the carrier's moving order for your car: what is on a waybill, how it differs from a BOL, and the fields that misroute and misbill freight.",
+    "date": "2026-08-29",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail way bill",
+      "waybill",
+      "rail freight documentation",
+      "rail waybill",
+      "EDI 417",
+      "rate authority",
+      "documentation"
+    ],
+    "category": "Documentation",
+    "read_minutes": 12
+  },
+  {
     "slug": "aar-blocking-and-bracing",
     "title": "AAR-Approved Blocking and Bracing: Securing Freight for Rail",
     "description": "AAR approved blocking and bracing explained: which loading rule governs your car, how a securement method gets approved, and who certifies a rail consignment.",
