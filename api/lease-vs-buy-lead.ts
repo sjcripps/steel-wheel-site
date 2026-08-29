@@ -24,6 +24,12 @@ const DISPOSABLE_DOMAINS = new Set([
 
 const EMAIL_RE = /^[A-Za-z0-9._%+\-]+@[A-Za-z0-9](?:[A-Za-z0-9\-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9\-]{0,61}[A-Za-z0-9])?)+$/;
 
+// Board display vocabulary (tools/sublease-board filters on these).
+const BOARD_CAR_TYPE: Record<string, string> = {
+  covered_hopper: 'hopper', tank_car: 'tank', boxcar: 'boxcar',
+  gondola: 'gondola', open_hopper: 'hopper', flat_car: 'flatcar',
+};
+
 const CAR_LABELS: Record<string, string> = {
   covered_hopper: 'Covered Hopper (grain service)',
   tank_car: 'Tank Car',
@@ -273,16 +279,61 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     ],
   });
 
-  const [s3Ok, tgOk, emailOk, customerOk, crmOk] = await Promise.all([
+  const boardOptIn = !!body.board_listing;
+  let boardPromise: Promise<boolean> = Promise.resolve(false);
+  if (boardOptIn) {
+    const laneRaw = String(body.board_lane ?? '').trim().slice(0, 80);
+    // "TX -> IL" / "TX → IL" / "TX - IL" split into origin/destination;
+    // a bare region becomes the origin with a flexible destination.
+    const parts = laneRaw.split(/\s*(?:->|→|—|–|\bto\b)\s*/i).map(s => s.trim()).filter(Boolean);
+    const boardRecord = {
+      ts: nowIsoUtc(),
+      tool: 'sublease-board',
+      source: 'calculator-optin',
+      anonymous: true,
+      email, // kept for OUR follow-up only; publisher strips it from the public file
+      listing_type: 'seeking',
+      car_type: BOARD_CAR_TYPE[carType] || 'other',
+      quantity: numCars,
+      origin: parts[0] || 'Flexible',
+      destination: parts[1] || 'Flexible',
+      posted_date: nowIsoUtc(),
+    };
+    boardPromise = (async () => {
+      try {
+        const s3 = new S3Client({ region: AWS_REGION });
+        const key = 'jakecbot/swl-leads/sublease-board.jsonl';
+        let existing = '';
+        try {
+          const obj = await s3.send(new GetObjectCommand({ Bucket: S3_BUCKET, Key: key }));
+          existing = (await obj.Body?.transformToString()) || '';
+        } catch (err: any) {
+          if (err?.name !== 'NoSuchKey' && err?.$metadata?.httpStatusCode !== 404) throw err;
+        }
+        await s3.send(new PutObjectCommand({
+          Bucket: S3_BUCKET, Key: key,
+          Body: existing + JSON.stringify(boardRecord) + '\n',
+          ContentType: 'application/x-ndjson',
+        }));
+        return true;
+      } catch (err) {
+        console.error('board opt-in S3 write failed:', err);
+        return false;
+      }
+    })();
+  }
+
+  const [s3Ok, tgOk, emailOk, customerOk, crmOk, boardOk] = await Promise.all([
     appendS3(record),
     sendTelegram(message),
     emailPromise,
     customerEmailPromise,
     crmPromise,
+    boardPromise,
   ]);
 
   return res.status(200).json({
     ok: true,
-    sinks: { s3: s3Ok, telegram: tgOk, email: emailOk, customer_email: customerOk, crm: crmOk },
+    sinks: { s3: s3Ok, telegram: tgOk, email: emailOk, customer_email: customerOk, crm: crmOk, board: boardOk },
   });
 }

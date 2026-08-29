@@ -998,6 +998,14 @@
           <input type="checkbox" id="leadConsent" checked>
           <span>I agree to receive my breakdown by email and follow-up.</span>
         </label>
+        <label class="consent-row">
+          <input type="checkbox" id="boardListing">
+          <span>Also list my need anonymously on the free <a href="/tools/sublease-board" target="_blank" rel="noopener">railcar sublease board</a> &mdash; equipment, quantity, and region only; never your name, company, or email.</span>
+        </label>
+        <div id="boardLaneWrap" style="display:none; margin-top:8px;">
+          <label for="boardLane">Region or lane for the listing (optional)</label>
+          <input type="text" id="boardLane" placeholder='e.g. "Midwest" or "TX &rarr; IL"' maxlength="80">
+        </div>
         <div class="gate-actions">
           <button type="button" class="gate-cancel" id="leadCancel">Cancel</button>
           <button type="submit" class="gate-submit" id="leadSubmit">Get My Breakdown</button>
@@ -1347,6 +1355,8 @@
       // Best-effort — if it fails for non-email reasons, we still show the
       // result. Skip the API call if we already fired for this tool this
       // session (prevents API spam when a user runs multiple calcs).
+      const boardOptIn = !!document.getElementById('boardListing')?.checked;
+      const boardLane = (document.getElementById('boardLane')?.value || '').trim().slice(0, 80);
       if (swlIsLeadFired(TOOL_SLUG)) return { ok: true, emailed: false };
       swlMarkLeadFired(TOOL_SLUG);
       try {
@@ -1374,6 +1384,8 @@
             lease_monthly_equiv: Math.round(calc.leaseMonthlyEquiv),
             buy_monthly_equiv: Math.round(calc.buyMonthlyEquiv),
             verdict: calc.verdict,
+            board_listing: boardOptIn,
+            board_lane: boardLane,
           }),
         });
         if (!res.ok) {
@@ -1488,7 +1500,12 @@
     // ── through the form. Keeps the function pure + testable.
     window.__leaseVsBuyCompute = computeComparison;
     window.__leaseVsBuyDefaults = DEFAULTS;
-  </script>
+  
+    document.getElementById('boardListing')?.addEventListener('change', (e) => {
+      const w = document.getElementById('boardLaneWrap');
+      if (w) w.style.display = e.target.checked ? '' : 'none';
+    });
+</script>
 
 </body>
 </html>
