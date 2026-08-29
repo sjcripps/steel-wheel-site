@@ -29,7 +29,7 @@
  * "rail-served" is the entire value proposition of this page. A shipper driving
  * to a building with no track is the one failure this directory cannot afford.
  */
-import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from "fs";
+import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync, readdirSync } from "fs";
 import { join, dirname } from "path";
 import { siteHeader } from "./lib/site-nav.js";
 
@@ -53,10 +53,42 @@ const slug = (s) => String(s ?? "").toLowerCase().normalize("NFKD")
   .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 
 const all = JSON.parse(readFileSync(DATA, "utf-8")).facilities;
-const wh = all.filter((f) =>
+const whBase = all.filter((f) =>
   f.facility_type === "third-party-warehouse" &&
   ["high", "probable"].includes(f.rail_confidence) &&
   f.name && f.city && REGIONS[String(f.state || "").toUpperCase()]);
+
+// Warehouse-hunt augment layer (8/29): Google-business-listing candidates
+// screened to <=0.5mi of the NARN network and LLM-classified as third-party
+// (see bots/assistant/businesses/steel-wheel/scripts/warehouse_hunt.py).
+// Every record self-labels rail service as UNVERIFIED — same honesty rule
+// as everything else on the site.
+const HUNT_DIR = "/home/ubuntu/bots/assistant/businesses/steel-wheel/data/warehouse-hunt";
+let hunt = [];
+if (existsSync(HUNT_DIR)) {
+  for (const fn of readdirSync(HUNT_DIR).filter((f) => f.endsWith("-approved.json"))) {
+    for (const c of JSON.parse(readFileSync(join(HUNT_DIR, fn), "utf-8"))) {
+      if (!c.name || !c.city) continue;
+      hunt.push({
+        name: c.name, city: c.city, state: c.state,
+        phone: c.phone || null, website: c.website || null,
+        lat: c.lat, lng: c.lng,
+        facility_type: "third-party-warehouse",
+        rail_confidence: "probable",
+        rail_distance_mi: c.rail_distance_mi,
+        rail_claim: "proximity-screened",
+        source: c.source,
+        note: c.classification === "unclear"
+          ? "Listing sourced from public business data; third-party status and rail service unverified — confirm with operator."
+          : "Listing sourced from public business data; rail service unverified — confirm siding with operator.",
+      });
+    }
+  }
+}
+// Dedupe augment vs base on normalized name+city.
+const key = (f) => (String(f.name) + String(f.city)).toLowerCase().replace(/[^a-z0-9]/g, "");
+const seenKeys = new Set(whBase.map(key));
+const wh = whBase.concat(hunt.filter((f) => !seenKeys.has(key(f))));
 
 const byState = new Map();
 for (const f of wh) {
