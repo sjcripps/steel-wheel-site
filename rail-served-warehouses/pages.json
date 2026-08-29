@@ -30,6 +30,10 @@
       "priority": "0.6"
     },
     {
+      "loc": "/rail-served-warehouses/delaware",
+      "priority": "0.6"
+    },
+    {
       "loc": "/rail-served-warehouses/florida",
       "priority": "0.6"
     },
@@ -94,6 +98,10 @@
       "priority": "0.6"
     },
     {
+      "loc": "/rail-served-warehouses/montana",
+      "priority": "0.6"
+    },
+    {
       "loc": "/rail-served-warehouses/north-carolina",
       "priority": "0.6"
     },
@@ -103,6 +111,10 @@
     },
     {
       "loc": "/rail-served-warehouses/nebraska",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/new-hampshire",
       "priority": "0.6"
     },
     {
@@ -138,7 +150,15 @@
       "priority": "0.6"
     },
     {
+      "loc": "/rail-served-warehouses/rhode-island",
+      "priority": "0.6"
+    },
+    {
       "loc": "/rail-served-warehouses/south-carolina",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/south-dakota",
       "priority": "0.6"
     },
     {
@@ -158,6 +178,10 @@
       "priority": "0.6"
     },
     {
+      "loc": "/rail-served-warehouses/vermont",
+      "priority": "0.6"
+    },
+    {
       "loc": "/rail-served-warehouses/washington",
       "priority": "0.6"
     },
@@ -167,6 +191,10 @@
     },
     {
       "loc": "/rail-served-warehouses/west-virginia",
+      "priority": "0.6"
+    },
+    {
+      "loc": "/rail-served-warehouses/wyoming",
       "priority": "0.6"
     },
     {
