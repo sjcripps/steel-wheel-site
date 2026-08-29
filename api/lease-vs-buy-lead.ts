@@ -252,7 +252,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       `Indicative planning analysis only — not an offer, quote, or financial advice. ` +
       `Steel Wheel Logistics runs rail operations for shippers without a rail department: ` +
       `car sourcing, lease negotiation support, routing, and rate work. ` +
-      `Reply to this email or call (601) 821-2199 to talk through your acquisition.`,
+      `Reply to this email or call (601) 821-2199 to talk through your acquisition. ` +
+      `Have idle cars today, or need cars before a lease can start? Our free ` +
+      `railcar sublease board (steelwheellogistics.com/tools/sublease-board) matches both sides.`,
   });
 
   const crmPromise = syncWorkmateCrm({
