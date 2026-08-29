@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free railcar lease vs. buy calculator — model total cost of ownership for covered hoppers, tank cars, boxcars and more, and find your break-even lease rate. Steel Wheel Logistics.">
+  <title>Railcar Lease vs. Buy Calculator | Steel Wheel Logistics</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <link rel="canonical" href="https://steelwheellogistics.com/tools/lease-vs-buy-calculator">
+  <meta property="og:title" content="Railcar Lease vs. Buy Calculator | Steel Wheel Logistics">
+  <meta property="og:description" content="Model total cost of ownership for a railcar fleet — lease vs. buy line items and your break-even lease rate. Indicative planning tool.">
+  <meta property="og:url" content="https://steelwheellogistics.com/tools/lease-vs-buy-calculator">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+  <style>
+    /* Tool styles intentionally mirror /tools/demurrage-calculator/index.html so
+       both calculators feel like one product family. If you change brand
+       colors or button radii here, change them there too. */
+    .tool-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 48px 20px;
+      text-align: center;
+    }
+    .tool-hero h1 {
+      color: var(--white);
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .tool-hero p {
+      color: var(--steel-grey);
+      font-size: 1.05rem;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .tool-hero .badge {
+      display: inline-block;
+      background: rgba(74, 144, 217, 0.15);
+      color: var(--steel-blue);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tool-layout {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    .intro-copy {
+      margin-bottom: 28px;
+      font-size: 0.97rem;
+      color: var(--text-body);
+      line-height: 1.65;
+    }
+    .intro-copy p { margin-bottom: 12px; }
+
+    .quote-form {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .quote-form h2 {
+      font-size: 1.3rem;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--light-grey);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 640px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+    .form-group { display: flex; flex-direction: column; }
+    .form-group.full-width { grid-column: 1 / -1; }
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .form-group label .hint {
+      font-weight: 400;
+      color: var(--text-light);
+      font-size: 0.8rem;
+    }
+    .form-group select,
+    .form-group input[type="text"],
+    .form-group input[type="number"] {
+      padding: 10px 12px;
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      background: var(--white);
+      transition: border-color 0.2s;
+    }
+    .form-group select:focus,
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--steel-blue);
+      box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.1);
+    }
+    .field-note {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-top: 5px;
+      line-height: 1.45;
+    }
+
+    /* Collapsible assumptions panel */
+    .assumptions {
+      grid-column: 1 / -1;
+      border: 1px solid var(--border-grey);
+      border-radius: 10px;
+      background: var(--light-grey);
+      margin-top: 4px;
+    }
+    .assumptions summary {
+      cursor: pointer;
+      padding: 14px 16px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--navy);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .assumptions summary::-webkit-details-marker { display: none; }
+    .assumptions summary::before {
+      content: '▸';
+      color: var(--steel-blue);
+      transition: transform 0.15s;
+    }
+    .assumptions[open] summary::before { transform: rotate(90deg); }
+    .assumptions .assumptions-body {
+      padding: 4px 16px 18px;
+    }
+    .assumptions .form-grid { gap: 16px; }
+    .assumptions .panel-note {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      line-height: 1.5;
+      margin: 0 0 14px;
+    }
+
+    .submit-row {
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .submit-btn {
+      background: var(--steel-blue);
+      color: var(--white);
+      border: none;
+      padding: 12px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .submit-btn:hover { background: var(--steel-blue-dark); }
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .submit-btn .spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: var(--white);
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .error-msg {
+      color: var(--error-red);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .results-section {
+      margin-top: 40px;
+      display: none;
+    }
+    .results-section.visible { display: block; }
+    .result-card {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .result-card h2 {
+      font-size: 1.25rem;
+      margin-bottom: 4px;
+    }
+    .result-summary {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+
+    .verdict-line {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.5;
+      background: rgba(74, 144, 217, 0.06);
+      border-left: 3px solid var(--steel-blue);
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+    }
+
+    .estimate-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 640px) {
+      .estimate-block { grid-template-columns: 1fr; }
+    }
+    .estimate-cell {
+      background: var(--light-grey);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+    .estimate-cell.primary {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: var(--white);
+    }
+    .estimate-cell .label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+    .estimate-cell.primary .label { color: rgba(255,255,255,0.7); }
+    .estimate-cell .value {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.1;
+    }
+    .estimate-cell.primary .value { color: var(--white); }
+    .estimate-cell .sub {
+      font-size: 0.82rem;
+      margin-top: 4px;
+      color: var(--text-light);
+    }
+    .estimate-cell.primary .sub { color: rgba(255,255,255,0.75); }
+
+    /* Gated full-breakdown block: blurred + locked until the email gate
+       succeeds. Mirrors the demurrage gate UX — teaser visible, detail gated. */
+    .gated-wrap { position: relative; }
+    .gated-wrap.locked .gated-content {
+      filter: blur(6px);
+      pointer-events: none;
+      user-select: none;
+    }
+    .gated-lock {
+      display: none;
+      position: absolute;
+      inset: 0;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+    }
+    .gated-wrap.locked .gated-lock { display: flex; }
+    .gated-lock .lock-card {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.14);
+      padding: 22px 26px;
+      text-align: center;
+      max-width: 360px;
+    }
+    .gated-lock .lock-card p {
+      font-size: 0.92rem;
+      color: var(--text-body);
+      line-height: 1.5;
+      margin: 0 0 14px;
+    }
+    .gated-lock .lock-card button {
+      background: var(--steel-blue);
+      color: var(--white);
+      border: none;
+      padding: 10px 24px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .gated-lock .lock-card button:hover { background: var(--steel-blue-dark); }
+
+    .emailed-note {
+      display: none;
+      background: rgba(74, 144, 217, 0.08);
+      border-left: 3px solid var(--steel-blue);
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-size: 0.9rem;
+      color: var(--text-body);
+      margin-bottom: 18px;
+    }
+    .emailed-note.visible { display: block; }
+
+    .legs-table {
+      margin: 0 0 20px;
+      font-size: 0.92rem;
+    }
+    .legs-table h3 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+    .legs-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .legs-table th, .legs-table td {
+      padding: 8px 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--light-grey);
+    }
+    .legs-table th {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: var(--text-light);
+      font-weight: 600;
+      background: var(--light-grey);
+    }
+    .legs-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .legs-table tr.subtotal-row td {
+      font-weight: 700;
+      background: rgba(74, 144, 217, 0.06);
+      border-top: 2px solid var(--steel-blue);
+    }
+    .legs-table tr.section-row td {
+      background: var(--light-grey);
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .legs-table tr.breakeven-row td {
+      background: rgba(74, 144, 217, 0.04);
+      font-weight: 600;
+    }
+    .table-footnote {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      line-height: 1.5;
+      margin-top: -8px;
+      margin-bottom: 20px;
+    }
+
+    .disclaimer {
+      background: var(--light-grey);
+      border-left: 3px solid var(--steel-blue);
+      padding: 16px 20px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-top: 8px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--steel-blue);
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .cta-btn:hover { background: var(--steel-blue-dark); color: var(--white); }
+    .cta-btn-secondary {
+      background: var(--white);
+      color: var(--navy);
+      border: 1px solid var(--border-grey);
+    }
+    .cta-btn-secondary:hover {
+      background: var(--light-grey);
+      color: var(--navy);
+    }
+
+    .below-form-help {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    .info-callout {
+      margin-top: 20px;
+      padding: 14px 16px;
+      background: rgba(74, 144, 217, 0.06);
+      border-left: 3px solid var(--steel-blue);
+      border-radius: 6px;
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+
+    /* FAQ */
+    .faq { margin-top: 52px; }
+    .faq h2 { font-size: 1.5rem; color: var(--navy); margin-bottom: 18px; }
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 22px 24px;
+      margin-bottom: 14px;
+    }
+    .faq-item h3 { font-size: 1.05rem; color: var(--navy); margin-bottom: 8px; }
+    .faq-item p {
+      font-size: 0.93rem;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    .faq-item p:last-child { margin-bottom: 0; }
+
+    /* CTA band */
+    .cta-band {
+      margin-top: 52px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      border-radius: 14px;
+      padding: 36px 32px;
+    }
+    .cta-band h2 {
+      color: var(--white);
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+    .cta-band p {
+      color: var(--steel-grey);
+      font-size: 0.98rem;
+      line-height: 1.6;
+      max-width: 760px;
+      margin-bottom: 22px;
+    }
+
+    /* Email-gate modal — copy/pasted styling from demurrage-calculator so the
+       UX reads identical to the customer. */
+    .email-gate-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+    .email-gate-overlay.visible { display: flex; }
+    .email-gate-modal {
+      background: var(--white);
+      border-radius: 12px;
+      max-width: 460px;
+      width: 100%;
+      padding: 28px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+    }
+    .email-gate-modal h3 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+      color: var(--text-dark);
+    }
+    .email-gate-modal p.lead {
+      margin: 0 0 18px;
+      font-size: 0.92rem;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+    .email-gate-modal label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .email-gate-modal input[type="email"],
+    .email-gate-modal input[type="text"],
+    .email-gate-modal input[type="tel"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border-grey);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    .email-gate-modal input[type="email"]:focus,
+    .email-gate-modal input[type="text"]:focus,
+    .email-gate-modal input[type="tel"]:focus {
+      outline: none;
+      border-color: var(--steel-blue);
+      box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.1);
+    }
+    .email-gate-modal .field-spacer { height: 10px; }
+    .email-gate-modal .gate-help {
+      margin: 6px 0 14px;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+    .email-gate-modal .consent-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin: 12px 0 18px;
+      font-size: 0.85rem;
+      color: var(--text-body);
+      line-height: 1.4;
+    }
+    .email-gate-modal .consent-row input { margin-top: 3px; }
+    .email-gate-modal .gate-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+    .email-gate-modal .gate-cancel {
+      background: var(--white);
+      color: var(--text-dark);
+      border: 1px solid var(--border-grey);
+      padding: 10px 18px;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .email-gate-modal .gate-submit {
+      background: var(--steel-blue);
+      color: var(--white);
+      border: none;
+      padding: 10px 22px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .email-gate-modal .gate-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .email-gate-modal .gate-error {
+      color: var(--error-red);
+      font-size: 0.88rem;
+      margin: 6px 0 12px;
+      min-height: 1.1em;
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RSWDYHVY7Z');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Railcar Lease vs. Buy Calculator",
+    "url": "https://steelwheellogistics.com/tools/lease-vs-buy-calculator",
+    "description": "Free railcar lease vs. buy calculator — model total cost of ownership for covered hoppers, tank cars, boxcars and more, and find your break-even lease rate. Steel Wheel Logistics.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any (web browser)",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Steel Wheel Logistics",
+      "url": "https://steelwheellogistics.com/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between a full-service and a net railcar lease?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In a full-service lease, the lessor covers maintenance, regulatory compliance work, and usually ad valorem taxes — you pay a higher monthly rate for a predictable cost. In a net lease, you take the car and little else: maintenance, compliance, and taxes land on you in exchange for a lower monthly rate. This calculator compares a full-service lease against outright ownership, which is why maintenance, compliance, and taxes appear only on the buy side of the ledger."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What drives railcar lease rates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Car type and age, lease structure (full-service vs. net), term length, mileage allowance, commodity, and market timing. Fleet utilization at the big lessors has been running near 99%, and published lease price indices show renewals repricing 25–33% above expiring rates — so where you are in the cycle matters as much as what car you need. Always confirm which structure a published number reflects before comparing it to a quote."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long do railcars last, and what are they worth at the end?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Interchange rules generally allow railcars to run 50 years from build date, and many work their full term. That long service life is why residual value matters so much in a buy analysis: a well-maintained car in an active market can retain most of its value over a 5-year hold, while an off-spec or wrong-type car can be hard to remarket at any price. This calculator defaults to 70% residual on a new car and 55% on a mid-life used car over the term you set — both editable, and both worth pressure-testing against real secondary-market activity for your car type."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When does buying a railcar win over leasing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Buying tends to win when you have long-horizon, stable volume in a car type with a healthy resale market, access to cheap capital, and the ability to manage maintenance and compliance efficiently — or when lease rates are at a cyclical high and you can hold through the cycle. Leasing tends to win when volumes are uncertain, capital is expensive or better deployed in your core business, or the car type carries residual-value risk you don't want on your balance sheet. The break-even lease rate this tool computes is the cleanest way to frame it: if you can lease below your all-in monthly cost of owning, leasing wins on those assumptions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need my own maintenance operation to own railcars?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You don't need your own shop, but you do need someone accountable for maintenance and regulatory compliance — running repairs, program work, tank-car requalification where applicable, and interchange-rule recordkeeping. Owners typically contract this to repair networks or third-party fleet managers, which is a real annual cost this calculator carries on the buy side. In a full-service lease the lessor handles all of it, which is exactly what you're paying for in the higher monthly rate."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://steelwheellogistics.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://steelwheellogistics.com/tools"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Railcar Lease vs. Buy Calculator",
+        "item": "https://steelwheellogistics.com/tools/lease-vs-buy-calculator"
+      }
+    ]
+  }
+  </script>
+<script>
+  // ── SWL acquisition attribution ──────────────────────────────────────────
+  // A lead POST's HTTP Referer is always this tool page (same-origin XHR), so
+  // the server can never tell how the visitor ARRIVED. We capture the entry
+  // point here instead, once per session, and send it in the request body.
+  // Internal referrers are kept too: knowing WHICH of our pages feeds a tool
+  // is the whole question for the transload directory.
+  (function () {
+    var KEY = 'swl_attribution';
+    window.swlAttr = function () {
+      try {
+        var cached = sessionStorage.getItem(KEY);
+        if (cached) return JSON.parse(cached);
+      } catch (_) { /* private mode */ }
+      var ref = document.referrer || '';
+      var kind = 'direct';
+      if (ref) {
+        var host = '';
+        try { host = new URL(ref).hostname; } catch (_) {}
+        kind = /(^|\.)steelwheellogistics\.com$/.test(host) ? 'internal' : 'external';
+      }
+      var attr = {
+        landing_referrer: ref.slice(0, 500),
+        referrer_kind: kind,
+        entry_query: (location.search || '').slice(0, 300)
+      };
+      try { sessionStorage.setItem(KEY, JSON.stringify(attr)); } catch (_) {}
+      return attr;
+    };
+    // Freeze it at first load so later internal navigation cannot overwrite
+    // the original entry point.
+    window.swlAttr();
+  })();
+</script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog">Blog</a>
+        <a href="/courses">Courses</a>
+        <a href="/tools" class="active">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="tool-hero">
+    <span class="badge">Free Tool · Fleet Planning</span>
+    <h1>Railcar Lease vs. Buy Calculator</h1>
+    <p>Model the total cost of leasing versus owning a railcar fleet over your planning horizon &mdash; depreciation, financing, maintenance, and taxes on one ledger &mdash; and find the break-even lease rate for your equipment. Indicative planning tool, not a rate offer.</p>
+  </section>
+
+  <!-- Main content -->
+  <div class="tool-layout">
+
+    <div class="intro-copy">
+      <p>Lease or buy is the biggest equipment decision a rail shipper makes, and the honest answer is rarely obvious. A full-service lease looks expensive next to a purchase price divided by sixty months &mdash; until you add the owner's maintenance and compliance bill, property taxes, the cost of the capital tied up in steel, and the risk that the car is worth less than you hoped when you're done with it. This calculator puts both options on the same monthly-equivalent footing so you can compare them like-for-like, then hands you the number that actually settles the argument: the break-even lease rate for your assumptions.</p>
+      <p><strong>How to read this:</strong> every input in the assumptions panel is a planning default &mdash; edit each one to match the quotes and terms in front of you. The output is an indicative comparison on YOUR assumptions, not a market rate, a lease offer, or a purchase price. Use it to decide which conversation to have next, and with whom.</p>
+    </div>
+
+    <!-- Form -->
+    <div class="quote-form">
+      <h2>Fleet Inputs</h2>
+      <form id="calcForm" autocomplete="off">
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="car_type">Car Type</label>
+            <select id="car_type" required>
+              <option value="covered-hopper" selected>Covered Hopper (grain service)</option>
+              <option value="tank-car">Tank Car</option>
+              <option value="boxcar">Boxcar</option>
+              <option value="gondola">Gondola</option>
+              <option value="open-top-hopper">Open-Top Hopper</option>
+              <option value="flat-car">Flat Car</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="condition">Condition</label>
+            <select id="condition" required>
+              <option value="new" selected>New</option>
+              <option value="used">Used (mid-life)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="num_cars">Number of Cars</label>
+            <input type="number" id="num_cars" min="1" max="500" step="1" value="10" required>
+          </div>
+
+          <div class="form-group">
+            <label for="term_years">Term <span class="hint">(years, 1&ndash;10)</span></label>
+            <input type="number" id="term_years" min="1" max="10" step="1" value="5" required>
+          </div>
+
+          <details class="assumptions" id="assumptionsPanel">
+            <summary>Planning assumptions &mdash; edit to match your quotes</summary>
+            <div class="assumptions-body">
+              <p class="panel-note">Prefilled from the car type and condition above &mdash; every field is editable. Purchase prices are indicative planning figures, not offers &mdash; verify with builders/dealers. Lease figures are published or industry-reported planning figures &mdash; replace with your actual quote.</p>
+              <div class="form-grid">
+
+                <div class="form-group">
+                  <label for="lease_monthly">Full-Service Lease Rate <span class="hint">($/car/month)</span></label>
+                  <input type="number" id="lease_monthly" min="1" step="1" value="585" required>
+                  <div class="field-note" id="leaseSourceNote"></div>
+                </div>
+
+                <div class="form-group">
+                  <label for="purchase_price">Purchase Price <span class="hint">($/car)</span></label>
+                  <input type="number" id="purchase_price" min="1" step="1000" value="140000" required>
+                  <div class="field-note">Indicative planning figure, not an offer &mdash; verify with builders/dealers. Used = 45% of new as a default.</div>
+                </div>
+
+                <div class="form-group">
+                  <label for="resale_pct">Expected Resale Value at End of Term <span class="hint">(% of purchase price)</span></label>
+                  <input type="number" id="resale_pct" min="0" max="100" step="1" value="70" required>
+                  <div class="field-note">Default: 70% for a new car, 55% for used. Residual value is the riskiest number on this page &mdash; pressure-test it.</div>
+                </div>
+
+                <div class="form-group">
+                  <label for="capital_rate_pct">Cost of Capital <span class="hint">(%/yr)</span></label>
+                  <input type="number" id="capital_rate_pct" min="0" max="30" step="0.1" value="8" required>
+                  <div class="field-note">What the money tied up in cars would otherwise earn (or costs to borrow).</div>
+                </div>
+
+                <div class="form-group">
+                  <label for="maintenance_yr">Owner's Maintenance + Compliance <span class="hint">($/car/yr)</span></label>
+                  <input type="number" id="maintenance_yr" min="0" step="100" value="5500" required>
+                  <div class="field-note">Buy side only &mdash; in a full-service lease the lessor covers maintenance and compliance.</div>
+                </div>
+
+                <div class="form-group">
+                  <label for="tax_yr">Property Tax + Registration <span class="hint">($/car/yr)</span></label>
+                  <input type="number" id="tax_yr" min="0" step="100" value="1200" required>
+                  <div class="field-note">Buy side only &mdash; in a full-service lease the lessor typically covers ad valorem taxes.</div>
+                </div>
+
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <div class="submit-row">
+          <button type="submit" class="submit-btn" id="submitBtn">Compare Lease vs. Buy</button>
+          <span class="error-msg" id="errorMsg"></span>
+        </div>
+        <p class="below-form-help">
+          Both sides are reduced to a <strong>monthly-equivalent cost per car</strong> over your term so
+          they compare like-for-like. The buy side counts depreciation to your expected resale value,
+          financing cost on the purchase price, and the owner's annual operating bill.
+        </p>
+
+        <div class="info-callout">
+          <strong>Tip:</strong> the assumptions panel is the whole game. Run it once on defaults to see
+          the shape of the answer, then re-run it with the actual lease quote and purchase price in front
+          of you. Small changes to residual value and cost of capital swing the verdict.
+        </div>
+      </form>
+    </div>
+
+    <!-- Results -->
+    <div class="results-section" id="resultsSection">
+      <div class="result-card">
+
+        <h2 id="rTitle">Lease vs. Buy Comparison</h2>
+        <div class="result-summary" id="rSummary"></div>
+
+        <div class="verdict-line" id="rVerdict"></div>
+
+        <div class="estimate-block">
+          <div class="estimate-cell" id="leaseCell">
+            <div class="label">Lease &mdash; Monthly Equivalent</div>
+            <div class="value" id="rLeaseMonthly"></div>
+            <div class="sub">per car, full-service lease</div>
+          </div>
+          <div class="estimate-cell" id="buyCell">
+            <div class="label">Buy &mdash; Monthly Equivalent</div>
+            <div class="value" id="rBuyMonthly"></div>
+            <div class="sub" id="rBuyMonthlySub">per car, all-in cost of ownership</div>
+          </div>
+        </div>
+
+        <div class="emailed-note" id="emailedNote">
+          Full breakdown emailed to you &mdash; check your inbox.
+        </div>
+
+        <div class="gated-wrap locked" id="gatedWrap">
+          <div class="gated-lock">
+            <div class="lock-card">
+              <p>Unlock the full line-item breakdown &mdash; depreciation, financing, operating costs, fleet totals, and your break-even lease rate.</p>
+              <button type="button" id="unlockBtn">Unlock Full Breakdown</button>
+            </div>
+          </div>
+          <div class="gated-content">
+            <div class="legs-table">
+              <h3>Full Line-Item Breakdown</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Line Item</th>
+                    <th class="num">Per Car</th>
+                    <th class="num" id="fleetColHead">Fleet Total</th>
+                  </tr>
+                </thead>
+                <tbody id="breakdownBody"></tbody>
+              </table>
+            </div>
+            <p class="table-footnote" id="tableFootnote">
+              Financing cost is modeled as simple interest on the full purchase price for the whole term
+              (price &times; rate &times; years) &mdash; a deliberate simplification that slightly overstates the cost
+              of an amortizing loan and ignores tax treatment of depreciation. Model your actual financing
+              structure before deciding.
+            </p>
+          </div>
+        </div>
+
+        <div class="disclaimer" id="disclaimer">
+          This is an indicative planning comparison only &mdash; not a lease rate, purchase price, rate
+          offer, or financial advice, and nothing here is binding. All defaults are planning figures:
+          verify purchase prices with builders and dealers, lease rates with lessors, and financing terms
+          with your lender. The emailed copy of this breakdown carries the same disclaimer. For help
+          working the real numbers, call (601) 821-2199.
+        </div>
+
+        <div class="cta-row">
+          <a href="/contact?subject=Lease+vs+buy+question" class="cta-btn">Contact Us</a>
+          <a href="tel:+16018212199" class="cta-btn cta-btn-secondary">Call (601) 821-2199</a>
+          <a href="/tools/railcar-lease-rates" class="cta-btn cta-btn-secondary">Current Lease-Rate Ranges</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <h2>Frequently asked questions</h2>
+
+      <div class="faq-item">
+        <h3>What is the difference between a full-service and a net railcar lease?</h3>
+        <p>In a full-service lease, the lessor covers maintenance, regulatory compliance work, and usually ad valorem taxes &mdash; you pay a higher monthly rate for a predictable cost. In a net lease, you take the car and little else: maintenance, compliance, and taxes land on you in exchange for a lower monthly rate. This calculator compares a <strong>full-service lease</strong> against outright ownership, which is why maintenance, compliance, and taxes appear only on the buy side of the ledger. If you're comparing against a net-lease quote, add those costs back to the lease side before deciding.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What drives railcar lease rates?</h3>
+        <p>Car type and age, lease structure (full-service vs. net), term length, mileage allowance, commodity, and market timing. Fleet utilization at the big lessors has been running near 99%, and published lease price indices show renewals repricing 25&ndash;33% above expiring rates &mdash; so where you are in the cycle matters as much as what car you need. See our <a href="/tools/railcar-lease-rates">current published lease-rate ranges</a> for sourced, dated figures by car type.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How long do railcars last, and what are they worth at the end?</h3>
+        <p>Interchange rules generally allow railcars to run 50 years from build date, and many work their full term. That long service life is why residual value matters so much in a buy analysis: a well-maintained car in an active market can retain most of its value over a 5-year hold, while an off-spec or wrong-type car can be hard to remarket at any price. This calculator defaults to 70% residual on a new car and 55% on a mid-life used car &mdash; both editable, and both worth pressure-testing against real secondary-market activity for your car type before you commit capital.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>When does buying win over leasing?</h3>
+        <p>Buying tends to win when you have long-horizon, stable volume in a car type with a healthy resale market, access to cheap capital, and a plan for maintenance and compliance &mdash; or when lease rates are at a cyclical high and you can hold through the cycle. Leasing tends to win when volumes are uncertain, capital is better deployed in your core business, or the residual-value risk isn't one you want on your balance sheet. The <strong>break-even lease rate</strong> this tool computes is the cleanest framing: if you can lease below your all-in monthly cost of owning, leasing wins on those assumptions.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Do I need my own maintenance operation to own railcars?</h3>
+        <p>You don't need your own shop, but you do need someone accountable for maintenance and regulatory compliance &mdash; running repairs, program work, tank-car requalification where applicable, and interchange-rule recordkeeping. Owners typically contract this to repair networks or third-party fleet managers, which is a real annual cost this calculator carries on the buy side. In a full-service lease the lessor handles all of it &mdash; that's exactly what the higher monthly rate is buying.</p>
+      </div>
+    </section>
+
+    <!-- CTA band -->
+    <section class="cta-band">
+      <h2>Acquiring cars is step one &mdash; moving them profitably is the job.</h2>
+      <p>Steel Wheel runs rail for shippers without a rail department &mdash; lane pricing, carrier management, fleet decisions, and the day-to-day of keeping cars loaded and moving. Before you sign a lease or wire a builder, <a href="/tools/rail-rate-quote" style="color: var(--steel-blue);">estimate freight for your lane</a> and make sure the economics of the move support the economics of the equipment. Call (601) 821-2199.</p>
+      <a href="/contact?subject=Fleet+decision+help" class="cta-btn">Talk to Steel Wheel &rarr;</a>
+    </section>
+
+  </div>
+
+  <!-- Email-gate modal -->
+  <div class="email-gate-overlay" id="emailGateOverlay" role="dialog" aria-modal="true" aria-labelledby="emailGateTitle">
+    <div class="email-gate-modal">
+      <h3 id="emailGateTitle">One step before your full breakdown</h3>
+      <p class="lead">Where should we send your lease-vs-buy breakdown? We use it to follow up if you'd like help working the real numbers on your fleet.</p>
+      <form id="emailGateForm" novalidate>
+        <label for="leadEmail">Work email</label>
+        <input type="email" id="leadEmail" name="email" required autocomplete="email" placeholder="you@company.com">
+        <div class="field-spacer"></div>
+        <label for="leadName">Name</label>
+        <input type="text" id="leadName" name="name" autocomplete="name" placeholder="Your name" maxlength="200">
+        <div class="field-spacer"></div>
+        <label for="leadPhone">Phone <span style="font-weight:400;color:#888">(optional)</span></label>
+        <input type="tel" id="leadPhone" name="phone" autocomplete="tel" placeholder="(555) 555-5555" maxlength="60">
+        <div class="gate-help">We'll only contact you about your fleet question.</div>
+        <div class="gate-error" id="leadEmailError"></div>
+        <label class="consent-row">
+          <input type="checkbox" id="leadConsent" checked>
+          <span>I agree to receive my breakdown by email and follow-up.</span>
+        </label>
+        <div class="gate-actions">
+          <button type="button" class="gate-cancel" id="leadCancel">Cancel</button>
+          <button type="submit" class="gate-submit" id="leadSubmit">Get My Breakdown</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Planning defaults are the single source of truth for the assumptions
+    // ── panel. The covered-hopper lease figure is sourced (Grain Journal
+    // ── 2025: $530–635/mo for grain-service covered hoppers); every other
+    // ── lease default is an industry-reported planning figure the user is
+    // ── expected to replace with an actual quote. Purchase prices are
+    // ── indicative planning figures, not offers.
+    const DEFAULTS = {
+      'covered-hopper': {
+        label: 'Covered Hopper (grain service)',
+        lease_monthly: 585,
+        price_new: 140000,
+        lease_note: 'Sourced: Grain Journal 2025 reported $530–635/mo for grain-service covered hoppers. Default uses the mid-range.',
+      },
+      'tank-car': {
+        label: 'Tank Car',
+        lease_monthly: 800,
+        price_new: 165000,
+        lease_note: 'Industry-reported planning figure — replace with your actual quote.',
+      },
+      'boxcar': {
+        label: 'Boxcar',
+        lease_monthly: 700,
+        price_new: 140000,
+        lease_note: 'Industry-reported planning figure — replace with your actual quote.',
+      },
+      'gondola': {
+        label: 'Gondola',
+        lease_monthly: 550,
+        price_new: 120000,
+        lease_note: 'Industry-reported planning figure — replace with your actual quote.',
+      },
+      'open-top-hopper': {
+        label: 'Open-Top Hopper',
+        lease_monthly: 550,
+        price_new: 115000,
+        lease_note: 'Industry-reported planning figure — replace with your actual quote.',
+      },
+      'flat-car': {
+        label: 'Flat Car',
+        lease_monthly: 600,
+        price_new: 125000,
+        lease_note: 'Industry-reported planning figure — replace with your actual quote.',
+      },
+    };
+
+    const USED_PRICE_FACTOR = 0.45;   // used (mid-life) price = 45% of new
+    const RESALE_PCT_NEW    = 70;     // expected residual % of purchase, new car
+    const RESALE_PCT_USED   = 55;     // expected residual % of purchase, used car
+
+    // ── Prefill the assumptions panel from car type + condition. Every
+    // ── field stays editable; changing type/condition re-fills the three
+    // ── equipment-driven fields (lease, price, resale %). Capital rate,
+    // ── maintenance, and tax are equipment-agnostic and left alone.
+    function prefillAssumptions() {
+      const slug = document.getElementById('car_type').value;
+      const cond = document.getElementById('condition').value;
+      const d = DEFAULTS[slug];
+      if (!d) return;
+      const isUsed = cond === 'used';
+      document.getElementById('lease_monthly').value = d.lease_monthly;
+      document.getElementById('purchase_price').value = Math.round(d.price_new * (isUsed ? USED_PRICE_FACTOR : 1));
+      document.getElementById('resale_pct').value = isUsed ? RESALE_PCT_USED : RESALE_PCT_NEW;
+      document.getElementById('leaseSourceNote').textContent = d.lease_note;
+    }
+    document.getElementById('car_type').addEventListener('change', prefillAssumptions);
+    document.getElementById('condition').addEventListener('change', prefillAssumptions);
+    prefillAssumptions();
+
+    // ── Compute the comparison. Implements exactly:
+    //   LEASE total per car = lease_monthly × 12 × years
+    //   BUY per car:
+    //     depreciation = price × (1 − resale%)
+    //     financing    = price × capital_rate × years  (simple interest on
+    //                    the full price — stated in the on-page footnote)
+    //     opex         = (maintenance + tax) × years
+    //   Monthly equivalents = total ÷ (12 × years). Fleet totals = × cars.
+    function computeComparison(input) {
+      const months = 12 * input.termYears;
+
+      const leasePerCar = input.leaseMonthly * months;
+      const leaseMonthlyEquiv = input.leaseMonthly;
+
+      const depreciation = input.purchasePrice * (1 - input.resalePct / 100);
+      const financing = input.purchasePrice * (input.capitalRatePct / 100) * input.termYears;
+      const opexMaint = input.maintenanceYr * input.termYears;
+      const opexTax = input.taxYr * input.termYears;
+      const buyPerCar = depreciation + financing + opexMaint + opexTax;
+      const buyMonthlyEquiv = buyPerCar / months;
+
+      const leaseTotal = leasePerCar * input.numCars;
+      const buyTotal = buyPerCar * input.numCars;
+
+      let verdict, pctDiff;
+      if (Math.abs(leaseMonthlyEquiv - buyMonthlyEquiv) < 0.005) {
+        verdict = 'tie';
+        pctDiff = 0;
+      } else if (leaseMonthlyEquiv < buyMonthlyEquiv) {
+        verdict = 'lease';
+        pctDiff = (buyMonthlyEquiv - leaseMonthlyEquiv) / buyMonthlyEquiv * 100;
+      } else {
+        verdict = 'buy';
+        pctDiff = (leaseMonthlyEquiv - buyMonthlyEquiv) / leaseMonthlyEquiv * 100;
+      }
+
+      // If you can lease below the buy-side monthly equivalent, leasing wins
+      // on these assumptions — that's the number worth taking to a lessor.
+      const breakEvenLease = buyMonthlyEquiv;
+
+      return {
+        leasePerCar, leaseMonthlyEquiv, leaseTotal,
+        depreciation, financing, opexMaint, opexTax,
+        buyPerCar, buyMonthlyEquiv, buyTotal,
+        verdict, pctDiff, breakEvenLease,
+      };
+    }
+
+    function fmtMoney(n) {
+      if (n == null || isNaN(n)) return '—';
+      return '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    }
+    function fmtMoneyMo(n) {
+      if (n == null || isNaN(n)) return '—';
+      return '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + '/mo';
+    }
+
+    // ── Email-gate state. Cross-tool: a shared SWL unlock (90-day TTL in
+    // ── localStorage) lets a user who unlocked any other SWL tool skip the
+    // ── modal here. Per-session contact (name/phone) still lives in
+    // ── sessionStorage since those are tool-form fields, not unlock state.
+    const EMAIL_KEY = 'swl_leasebuy_lead_email';
+    const NAME_KEY  = 'swl_leasebuy_lead_name';
+    const PHONE_KEY = 'swl_leasebuy_lead_phone';
+    const TOOL_SLUG = 'lease-vs-buy-calculator';
+    const FORMAT_RE = /^[A-Za-z0-9._%+\-]+@[A-Za-z0-9](?:[A-Za-z0-9\-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9\-]{0,61}[A-Za-z0-9])?)+$/;
+
+    // ── Shared SWL email-unlock (cross-tool, 90-day TTL) ──
+    const SWL_EMAIL_KEY = 'swl_email';
+    const SWL_TS_KEY = 'swl_email_unlocked_at';
+    const SWL_TTL_MS = 90 * 86400 * 1000;
+    function swlReadSharedEmail() {
+      try {
+        const e = localStorage.getItem(SWL_EMAIL_KEY) || '';
+        const ts = localStorage.getItem(SWL_TS_KEY) || '';
+        if (!e || !ts) return '';
+        const t = Date.parse(ts);
+        if (!isFinite(t)) return '';
+        if (Date.now() - t > SWL_TTL_MS) return '';
+        return e;
+      } catch (_) { return ''; }
+    }
+    function swlWriteSharedEmail(email) {
+      try {
+        localStorage.setItem(SWL_EMAIL_KEY, email);
+        localStorage.setItem(SWL_TS_KEY, new Date().toISOString());
+      } catch (_) {}
+    }
+    function swlLeadFiredKey(slug) { return 'swl_lead_fired_' + slug; }
+    function swlIsLeadFired(slug) {
+      try { return sessionStorage.getItem(swlLeadFiredKey(slug)) === '1'; } catch (_) { return false; }
+    }
+    function swlMarkLeadFired(slug) {
+      try { sessionStorage.setItem(swlLeadFiredKey(slug), '1'); } catch (_) {}
+    }
+
+    function cachedEmail() {
+      const shared = swlReadSharedEmail();
+      if (shared) return shared;
+      try { return sessionStorage.getItem(EMAIL_KEY) || ''; } catch (_) { return ''; }
+    }
+    function cacheEmail(email) {
+      swlWriteSharedEmail(email);
+      try { sessionStorage.setItem(EMAIL_KEY, email); } catch (_) {}
+    }
+    function cachedName() {
+      try { return sessionStorage.getItem(NAME_KEY) || ''; } catch (_) { return ''; }
+    }
+    function cachedPhone() {
+      try { return sessionStorage.getItem(PHONE_KEY) || ''; } catch (_) { return ''; }
+    }
+    function cacheContact(name, phone) {
+      try {
+        if (name) sessionStorage.setItem(NAME_KEY, name);
+        if (phone) sessionStorage.setItem(PHONE_KEY, phone);
+      } catch (_) {}
+    }
+
+    function showGate() {
+      const overlay = document.getElementById('emailGateOverlay');
+      overlay.classList.add('visible');
+      const input = document.getElementById('leadEmail');
+      input.value = cachedEmail();
+      const nameInput = document.getElementById('leadName');
+      const phoneInput = document.getElementById('leadPhone');
+      if (nameInput && !nameInput.value) nameInput.value = cachedName();
+      if (phoneInput && !phoneInput.value) phoneInput.value = cachedPhone();
+      document.getElementById('leadEmailError').textContent = '';
+      setTimeout(() => input.focus(), 50);
+    }
+    function hideGate() {
+      document.getElementById('emailGateOverlay').classList.remove('visible');
+    }
+
+    document.getElementById('leadCancel').addEventListener('click', hideGate);
+    document.getElementById('emailGateOverlay').addEventListener('click', (e) => {
+      if (e.target.id === 'emailGateOverlay') hideGate();
+    });
+    document.getElementById('unlockBtn').addEventListener('click', () => {
+      const stored = cachedEmail();
+      if (stored && FORMAT_RE.test(stored)) {
+        unlockWith(stored);
+      } else {
+        showGate();
+      }
+    });
+
+    function readForm() {
+      const carType = document.getElementById('car_type').value;
+      const carLabel = (DEFAULTS[carType] || {}).label || carType;
+      const condition = document.getElementById('condition').value;
+      const numCars = Math.min(500, Math.max(1, Math.floor(Number(document.getElementById('num_cars').value) || 1)));
+      const termYears = Math.min(10, Math.max(1, Math.floor(Number(document.getElementById('term_years').value) || 5)));
+      const leaseMonthly = Math.max(0, Number(document.getElementById('lease_monthly').value) || 0);
+      const purchasePrice = Math.max(0, Number(document.getElementById('purchase_price').value) || 0);
+      const resalePct = Math.min(100, Math.max(0, Number(document.getElementById('resale_pct').value) || 0));
+      const capitalRatePct = Math.max(0, Number(document.getElementById('capital_rate_pct').value) || 0);
+      const maintenanceYr = Math.max(0, Number(document.getElementById('maintenance_yr').value) || 0);
+      const taxYr = Math.max(0, Number(document.getElementById('tax_yr').value) || 0);
+      return { carType, carLabel, condition, numCars, termYears, leaseMonthly, purchasePrice, resalePct, capitalRatePct, maintenanceYr, taxYr };
+    }
+
+    // Track the last successful calc so the gate/unlock path can send the
+    // exact numbers the user is looking at.
+    let lastInput = null;
+    let lastCalc = null;
+
+    function verdictSentence(input, calc) {
+      const pct = calc.pctDiff.toFixed(1);
+      if (calc.verdict === 'lease') {
+        return `On these assumptions, LEASING is cheaper — ${fmtMoneyMo(calc.leaseMonthlyEquiv)} vs ${fmtMoneyMo(calc.buyMonthlyEquiv)} per car, a ${pct}% saving over buying across your ${input.termYears}-year term.`;
+      }
+      if (calc.verdict === 'buy') {
+        return `On these assumptions, BUYING is cheaper — ${fmtMoneyMo(calc.buyMonthlyEquiv)} vs ${fmtMoneyMo(calc.leaseMonthlyEquiv)} per car, a ${pct}% saving over leasing across your ${input.termYears}-year term.`;
+      }
+      return `On these assumptions, leasing and buying come out even at ${fmtMoneyMo(calc.leaseMonthlyEquiv)} per car — the decision comes down to risk, flexibility, and balance sheet, not price.`;
+    }
+
+    function renderResults(input, calc) {
+      lastInput = input;
+      lastCalc = calc;
+      const condLabel = input.condition === 'used' ? 'Used (mid-life)' : 'New';
+      document.getElementById('rTitle').textContent =
+        `Lease vs. Buy — ${input.numCars} ${condLabel.toLowerCase()} ${input.carLabel.toLowerCase()}${input.numCars === 1 ? '' : 's'}, ${input.termYears}-year term`;
+      document.getElementById('rSummary').textContent =
+        `${input.carLabel} · ${condLabel} · ${input.numCars} car${input.numCars === 1 ? '' : 's'} · ${input.termYears} year${input.termYears === 1 ? '' : 's'} · indicative planning comparison on your editable assumptions`;
+
+      document.getElementById('rVerdict').textContent = verdictSentence(input, calc);
+      document.getElementById('rLeaseMonthly').textContent = fmtMoneyMo(calc.leaseMonthlyEquiv);
+      document.getElementById('rBuyMonthly').textContent = fmtMoneyMo(calc.buyMonthlyEquiv);
+
+      // Highlight the winner cell.
+      const leaseCell = document.getElementById('leaseCell');
+      const buyCell = document.getElementById('buyCell');
+      leaseCell.classList.toggle('primary', calc.verdict === 'lease');
+      buyCell.classList.toggle('primary', calc.verdict === 'buy');
+
+      // Full line-item table (gated).
+      document.getElementById('fleetColHead').textContent =
+        `Fleet Total (${input.numCars} car${input.numCars === 1 ? '' : 's'})`;
+      const rows = [];
+      rows.push(`<tr class="section-row"><td colspan="3">Lease — full-service</td></tr>`);
+      rows.push(`<tr>
+        <td>Lease payments (${fmtMoney(input.leaseMonthly)}/mo × ${12 * input.termYears} months)</td>
+        <td class="num">${fmtMoney(calc.leasePerCar)}</td>
+        <td class="num">${fmtMoney(calc.leaseTotal)}</td>
+      </tr>`);
+      rows.push(`<tr class="subtotal-row">
+        <td>Lease total · ${fmtMoneyMo(calc.leaseMonthlyEquiv)} per car equivalent</td>
+        <td class="num">${fmtMoney(calc.leasePerCar)}</td>
+        <td class="num">${fmtMoney(calc.leaseTotal)}</td>
+      </tr>`);
+      rows.push(`<tr class="section-row"><td colspan="3">Buy — own and operate</td></tr>`);
+      rows.push(`<tr>
+        <td>Depreciation (${fmtMoney(input.purchasePrice)} − ${input.resalePct}% resale)</td>
+        <td class="num">${fmtMoney(calc.depreciation)}</td>
+        <td class="num">${fmtMoney(calc.depreciation * input.numCars)}</td>
+      </tr>`);
+      rows.push(`<tr>
+        <td>Financing cost (${input.capitalRatePct}%/yr × ${input.termYears} yr, simple interest)*</td>
+        <td class="num">${fmtMoney(calc.financing)}</td>
+        <td class="num">${fmtMoney(calc.financing * input.numCars)}</td>
+      </tr>`);
+      rows.push(`<tr>
+        <td>Maintenance + compliance (${fmtMoney(input.maintenanceYr)}/yr × ${input.termYears} yr)</td>
+        <td class="num">${fmtMoney(calc.opexMaint)}</td>
+        <td class="num">${fmtMoney(calc.opexMaint * input.numCars)}</td>
+      </tr>`);
+      rows.push(`<tr>
+        <td>Property tax + registration (${fmtMoney(input.taxYr)}/yr × ${input.termYears} yr)</td>
+        <td class="num">${fmtMoney(calc.opexTax)}</td>
+        <td class="num">${fmtMoney(calc.opexTax * input.numCars)}</td>
+      </tr>`);
+      rows.push(`<tr class="subtotal-row">
+        <td>Buy total · ${fmtMoneyMo(calc.buyMonthlyEquiv)} per car equivalent</td>
+        <td class="num">${fmtMoney(calc.buyPerCar)}</td>
+        <td class="num">${fmtMoney(calc.buyTotal)}</td>
+      </tr>`);
+      rows.push(`<tr class="breakeven-row">
+        <td colspan="2">Break-even lease rate — if you can lease below this, leasing wins on these assumptions</td>
+        <td class="num">${fmtMoneyMo(calc.breakEvenLease)} per car</td>
+      </tr>`);
+      document.getElementById('breakdownBody').innerHTML = rows.join('');
+
+      const section = document.getElementById('resultsSection');
+      section.classList.add('visible');
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function revealBreakdown(emailed) {
+      document.getElementById('gatedWrap').classList.remove('locked');
+      if (emailed) {
+        document.getElementById('emailedNote').classList.add('visible');
+      }
+    }
+
+    async function captureLead(email, input, calc) {
+      // Best-effort — if it fails for non-email reasons, we still show the
+      // result. Skip the API call if we already fired for this tool this
+      // session (prevents API spam when a user runs multiple calcs).
+      if (swlIsLeadFired(TOOL_SLUG)) return { ok: true, emailed: false };
+      swlMarkLeadFired(TOOL_SLUG);
+      try {
+        const res = await fetch('/api/lease-vs-buy-lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            ...swlAttr(),
+            email,
+            name: cachedName(),
+            phone: cachedPhone(),
+            car_type: input.carType,
+            car_label: input.carLabel,
+            condition: input.condition,
+            num_cars: input.numCars,
+            term_years: input.termYears,
+            lease_monthly: input.leaseMonthly,
+            purchase_price: input.purchasePrice,
+            resale_pct: input.resalePct,
+            capital_rate_pct: input.capitalRatePct,
+            maintenance_yr: input.maintenanceYr,
+            tax_yr: input.taxYr,
+            lease_total: Math.round(calc.leaseTotal),
+            buy_total: Math.round(calc.buyTotal),
+            lease_monthly_equiv: Math.round(calc.leaseMonthlyEquiv),
+            buy_monthly_equiv: Math.round(calc.buyMonthlyEquiv),
+            verdict: calc.verdict,
+          }),
+        });
+        if (!res.ok) {
+          const data = await res.json().catch(() => ({}));
+          // Email validation problems pop the gate back open.
+          if (data.code && String(data.code).startsWith('email_')) {
+            try { sessionStorage.removeItem(EMAIL_KEY); } catch (_) {}
+            try { sessionStorage.removeItem(swlLeadFiredKey(TOOL_SLUG)); } catch (_) {}
+            showGate();
+            document.getElementById('leadEmailError').textContent = data.error || 'Please enter a valid email address.';
+            return { ok: false, emailed: false };
+          }
+          // Non-email errors: don't block the customer experience. Log + go.
+          console.warn('lease-vs-buy-lead non-email error:', data);
+          return { ok: true, emailed: false };
+        }
+        return { ok: true, emailed: true };
+      } catch (e) {
+        console.warn('lease-vs-buy-lead fetch failed:', e);
+        return { ok: true, emailed: false };
+      }
+    }
+
+    async function unlockWith(email) {
+      if (!lastInput || !lastCalc) return;
+      const result = await captureLead(email, lastInput, lastCalc);
+      if (!result.ok) return;
+      revealBreakdown(result.emailed);
+      if (typeof gtag === 'function') {
+        gtag('event', 'lease_vs_buy_lead_capture', {
+          event_category: 'tools',
+          event_label: lastInput.carType,
+        });
+      }
+    }
+
+    document.getElementById('calcForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      const errEl = document.getElementById('errorMsg');
+      errEl.textContent = '';
+
+      const input = readForm();
+      if (input.leaseMonthly <= 0 || input.purchasePrice <= 0) {
+        errEl.textContent = 'Lease rate and purchase price must be greater than zero — check the assumptions panel.';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner"></span>Comparing...';
+
+      const calc = computeComparison(input);
+      renderResults(input, calc);
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'lease_vs_buy_calc', {
+          event_category: 'tools',
+          event_label: input.carType,
+          value: Math.round(calc.buyMonthlyEquiv),
+        });
+      }
+
+      // Teaser (verdict + monthly equivalents) is visible; the full
+      // line-item table stays blurred/locked. If the user already unlocked
+      // an SWL tool, fire the lead and reveal immediately; otherwise open
+      // the email gate over the locked table.
+      const stored = cachedEmail();
+      if (stored && FORMAT_RE.test(stored)) {
+        unlockWith(stored);
+      } else {
+        document.getElementById('gatedWrap').classList.add('locked');
+        document.getElementById('emailedNote').classList.remove('visible');
+        showGate();
+      }
+
+      btn.disabled = false;
+      btn.innerHTML = 'Compare Lease vs. Buy';
+    });
+
+    document.getElementById('emailGateForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input  = document.getElementById('leadEmail');
+      const errEl  = document.getElementById('leadEmailError');
+      const consent = document.getElementById('leadConsent');
+
+      const email = (input.value || '').trim().toLowerCase();
+      const name  = (document.getElementById('leadName').value || '').trim().slice(0, 200);
+      const phone = (document.getElementById('leadPhone').value || '').trim().slice(0, 60);
+      errEl.textContent = '';
+
+      if (!email) {
+        errEl.textContent = 'Email is required.';
+        return;
+      }
+      if (!FORMAT_RE.test(email)) {
+        errEl.textContent = 'Please enter a valid email address.';
+        return;
+      }
+      if (!consent.checked) {
+        errEl.textContent = 'Please agree to receive your breakdown by email.';
+        return;
+      }
+
+      cacheEmail(email);
+      cacheContact(name, phone);
+      hideGate();
+      unlockWith(email);
+    });
+
+    // ── Smoke-test hook: window.__leaseVsBuyCompute lets us run the math
+    // ── from the browser console (or a headless test harness) without going
+    // ── through the form. Keeps the function pure + testable.
+    window.__leaseVsBuyCompute = computeComparison;
+    window.__leaseVsBuyDefaults = DEFAULTS;
+  </script>
+
+</body>
+</html>
