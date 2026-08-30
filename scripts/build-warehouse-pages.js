@@ -323,7 +323,10 @@ ${cta(`in ${name}`)}
 
 // Hub
 {
-  const url = `${BASE}/rail-served-warehouses/`;
+  // No trailing slash: Vercel cleanUrls 308s "/x/" -> "/x", so a
+  // slashed canonical creates a canonical<->redirect loop Google
+  // refuses to index (the /tools bug, caught 8/30).
+  const url = `${BASE}/rail-served-warehouses`;
   const title = "Rail-Served Warehouse Directory | Bulk Commodity Storage by State";
   const description =
     `${wh.length} rail-served third-party warehouses across ${byState.size} states — public and ` +
@@ -357,7 +360,7 @@ ${cta("on your lane")}
 `;
   writeFileSync(join(OUT, "index.html"),
     head({ title, description, canonical: url, jsonLd: ld(wh, title, url) }) + body + FOOTER);
-  written.push({ loc: "/rail-served-warehouses/", priority: "0.7" });
+  written.push({ loc: "/rail-served-warehouses", priority: "0.7" });
 }
 
 // Same {generated_at, pages} contract the other manifests use, so api/sitemap.ts
