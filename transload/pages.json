@@ -422,11 +422,11 @@
       "priority": "0.5"
     },
     {
-      "loc": "/transload/georgetown-de",
+      "loc": "/transload/wilmington-de",
       "priority": "0.5"
     },
     {
-      "loc": "/transload/wilmington-de",
+      "loc": "/transload/georgetown-de",
       "priority": "0.5"
     },
     {
@@ -534,6 +534,10 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/granite-city-il",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/joliet-il",
       "priority": "0.5"
     },
@@ -543,10 +547,6 @@
     },
     {
       "loc": "/transload/elk-grove-village-il",
-      "priority": "0.5"
-    },
-    {
-      "loc": "/transload/granite-city-il",
       "priority": "0.5"
     },
     {
@@ -822,11 +822,11 @@
       "priority": "0.5"
     },
     {
-      "loc": "/transload/columbus-oh",
+      "loc": "/transload/cleveland-oh",
       "priority": "0.5"
     },
     {
-      "loc": "/transload/cleveland-oh",
+      "loc": "/transload/columbus-oh",
       "priority": "0.5"
     },
     {
@@ -914,11 +914,11 @@
       "priority": "0.5"
     },
     {
-      "loc": "/transload/pittsburgh-pa",
+      "loc": "/transload/philadelphia-pa",
       "priority": "0.5"
     },
     {
-      "loc": "/transload/philadelphia-pa",
+      "loc": "/transload/pittsburgh-pa",
       "priority": "0.5"
     },
     {
@@ -1102,6 +1102,10 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/newport-news-va",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/norfolk-va",
       "priority": "0.5"
     },
@@ -1127,6 +1131,10 @@
     },
     {
       "loc": "/transload/pasco-wa",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/longview-wa",
       "priority": "0.5"
     },
     {
