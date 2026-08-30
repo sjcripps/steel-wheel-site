@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29",
+  "generated_at": "2026-08-30",
   "pages": [
     {
       "loc": "/transload",
@@ -478,6 +478,10 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/brunswick-ga",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/sandersville-ga",
       "priority": "0.5"
     },
@@ -487,10 +491,6 @@
     },
     {
       "loc": "/transload/bainbridge-ga",
-      "priority": "0.5"
-    },
-    {
-      "loc": "/transload/brunswick-ga",
       "priority": "0.5"
     },
     {
@@ -715,6 +715,10 @@
     },
     {
       "loc": "/transload/meridian-ms",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/pascagoula-ms",
       "priority": "0.5"
     },
     {
@@ -966,11 +970,11 @@
       "priority": "0.5"
     },
     {
-      "loc": "/transload/chester-sc",
+      "loc": "/transload/charleston-sc",
       "priority": "0.5"
     },
     {
-      "loc": "/transload/charleston-sc",
+      "loc": "/transload/chester-sc",
       "priority": "0.5"
     },
     {
@@ -1043,6 +1047,10 @@
     },
     {
       "loc": "/transload/galena-park-tx",
+      "priority": "0.5"
+    },
+    {
+      "loc": "/transload/beaumont-tx",
       "priority": "0.5"
     },
     {
