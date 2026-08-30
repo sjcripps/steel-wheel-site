@@ -217,7 +217,7 @@ async function playbook(req: VercelRequest, res: VercelResponse) {
     return bad(res, 403, 'The carrier playbook is limited to Steel Wheel staff.', 'not_internal');
   }
 
-  const { PLAYBOOK, DRAFT_CONFIG } = await import('./_playbook-data');
+  const { PLAYBOOK, DRAFT_CONFIG } = await import('./_playbook-data.js');
   return ok(res, { playbook: PLAYBOOK, draftConfig: DRAFT_CONFIG });
 }
 
