@@ -247,7 +247,7 @@ export async function syncWorkmateCrm(opts: {
   email: string;
   name?: string;
   phone?: string;
-  source: 'swl-rate-quote' | 'swl-demurrage' | 'swl-transload' | 'swl-rail-vs-truck' | 'swl-rail-served-businesses' | 'swl-commodity-flow' | 'swl-course-signup';
+  source: 'swl-rate-quote' | 'swl-demurrage' | 'swl-transload' | 'swl-rail-vs-truck' | 'swl-rail-served-businesses' | 'swl-commodity-flow' | 'swl-course-signup' | 'swl-lease-vs-buy' | 'swl-sublease';
   tags?: string[];
   noteHeader: string;     // e.g. "swl-demurrage 12:34PM CST 4/30"
   noteLines: string[];    // bullet lines, blank ones get filtered
