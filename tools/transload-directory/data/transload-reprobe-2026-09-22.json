@@ -1,0 +1,20 @@
+[
+ {
+  "url": "https://www.facebook.com/armdatincorporated/",
+  "name": "Arm-Dat Inc",
+  "records": null,
+  "strikes": 1,
+  "source": "sweep",
+  "last_probe": "400",
+  "last_run": "2026-09-01"
+ },
+ {
+  "url": "-",
+  "name": "Bakken Transload, LLC",
+  "records": null,
+  "strikes": 1,
+  "source": "sweep",
+  "last_probe": "error",
+  "last_run": "2026-09-01"
+ }
+]
