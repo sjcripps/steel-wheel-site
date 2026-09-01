@@ -711,6 +711,13 @@
           <input type="tel" id="phone" placeholder="(555) 555-5555" autocomplete="tel" maxlength="60">
         </div>
 
+        <div class="form-field field-full">
+          <label class="consent-row" style="align-items:flex-start">
+            <input type="checkbox" id="manageForMe">
+            <span><strong>Let Steel Wheel manage this for me.</strong> Instead of publishing your contact for others to reach you directly, we handle it — source or place the cars, negotiate, and coordinate the move as a managed service. Your listing shows as "Managed by Steel Wheel" and inquiries come to us.</span>
+          </label>
+        </div>
+
         <div class="gate-error" id="leadError"></div>
 
         <label class="consent-row">
@@ -842,7 +849,9 @@
             <td>${listing.origin}</td>
             <td>${listing.destination}</td>
             <td>${new Date(listing.posted_date).toLocaleDateString()}</td>
-            <td><a href="mailto:${listing.email}" style="color: var(--steel-blue); text-decoration: none;">Contact</a></td>
+            <td>${listing.managed
+              ? '<a href="/contact?subject=Railcar%20board%20inquiry" style="color: var(--steel-blue); text-decoration: none;" title="Steel Wheel manages this listing">Managed by Steel Wheel →</a>'
+              : `<a href="mailto:${listing.email}" style="color: var(--steel-blue); text-decoration: none;">Contact</a>`}</td>
           </tr>
         `).join('');
       }
@@ -957,6 +966,7 @@
       const timeline = document.getElementById('timeline').value.trim();
       const name = document.getElementById('name').value.trim();
       const phone = document.getElementById('phone').value.trim();
+      const manageForMe = document.getElementById('manageForMe').checked;
 
       const submitBtn = document.getElementById('submitBtn');
       submitBtn.disabled = true;
@@ -969,7 +979,8 @@
           body: JSON.stringify({
             ...swlAttr(),
             email, listing_type: listingType, car_type: carType,
-            quantity, origin, destination, pricing, timeline, name, phone
+            quantity, origin, destination, pricing, timeline, name, phone,
+            managed: manageForMe
           })
         });
 
@@ -993,13 +1004,16 @@
           posted_date: new Date().toISOString(),
           expires_date: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
           contact_method: 'email',
-          email: email
+          managed: manageForMe,
+          email: manageForMe ? 'jacob@steelwheellogistics.com' : email
         };
         listings.push(newListing);
 
         closeListingForm();
         applyFilters();
-        alert('Listing published successfully! Other shippers will contact you at ' + email);
+        alert(manageForMe
+          ? 'Listing published — Steel Wheel will manage it. We'll reach out to you and handle inquiries.'
+          : 'Listing published successfully! Other shippers will contact you at ' + email);
       } catch (err) {
         errorEl.textContent = 'Network error: ' + err.message;
       } finally {

@@ -174,6 +174,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const timeline = String(body.timeline ?? '').trim();
   const leadName = String(body.name ?? '').trim().slice(0, 200);
   const leadPhone = String(body.phone ?? '').trim().slice(0, 60);
+  const managed = body.managed === true || body.managed === 'true';
 
   // Email validation
   if (!email) {
@@ -238,6 +239,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     destination,
     pricing: pricing || null,
     timeline: timeline || null,
+    managed,
+    anonymous: managed,
     ip: clientIp,
     user_agent: userAgent,
     landing_referrer: landingReferrer || null,
@@ -248,7 +251,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const message =
     `🚂 SWL sublease-board lead: ${email} — ` +
     `${listingType === 'offering' ? 'Offering' : 'Seeking'} ${quantity} ${carType} car${quantity === 1 ? '' : 's'} ` +
-    `${origin} → ${destination}. ${nowCstShort()}`;
+    `${origin} → ${destination}.${managed ? ' [MANAGE-FOR-ME — work this]' : ''} ${nowCstShort()}`;
 
   const summaryRows = [
     { label: 'Email', value: email },
