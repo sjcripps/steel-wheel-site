@@ -1,47 +1,77 @@
 [
-  {
-    "listing_type": "seeking",
-    "car_type": "tank",
-    "quantity": 2,
-    "origin": "Knoxville, TN",
-    "destination": "Phoenix, AZ",
-    "posted_date": "2026-08-29",
-    "email": "jacob@steelwheellogistics.com"
-  },
-  {
-    "listing_type": "seeking",
-    "car_type": "flatcar",
-    "quantity": 74,
-    "origin": "Columbus, GA",
-    "destination": "Louisville, KY",
-    "posted_date": "2026-08-29",
-    "email": "jacob@steelwheellogistics.com"
-  },
-  {
-    "listing_type": "seeking",
-    "car_type": "tank",
-    "quantity": 1,
-    "origin": "Houston, TX",
-    "destination": "Saskatoon, SK",
-    "posted_date": "2026-08-29",
-    "email": "jacob@steelwheellogistics.com"
-  },
-  {
-    "listing_type": "seeking",
-    "car_type": "flatcar",
-    "quantity": 50,
-    "origin": "Fayetteville, NC",
-    "destination": "Rockford, IL",
-    "posted_date": "2026-08-29",
-    "email": "jacob@steelwheellogistics.com"
-  },
-  {
-    "listing_type": "seeking",
-    "car_type": "hopper",
-    "quantity": 10,
-    "origin": "Detroit, MI",
-    "destination": "Madison, WI",
-    "posted_date": "2026-08-29",
-    "email": "jacob@steelwheellogistics.com"
-  }
+ {
+  "listing_type": "seeking",
+  "car_type": "tank",
+  "quantity": 2,
+  "origin": "Knoxville, TN",
+  "destination": "Phoenix, AZ",
+  "posted_date": "2026-08-29",
+  "email": "jacob@steelwheellogistics.com"
+ },
+ {
+  "listing_type": "seeking",
+  "car_type": "flatcar",
+  "quantity": 74,
+  "origin": "Columbus, GA",
+  "destination": "Louisville, KY",
+  "posted_date": "2026-08-29",
+  "email": "jacob@steelwheellogistics.com"
+ },
+ {
+  "listing_type": "seeking",
+  "car_type": "tank",
+  "quantity": 1,
+  "origin": "Houston, TX",
+  "destination": "Saskatoon, SK",
+  "posted_date": "2026-08-29",
+  "email": "jacob@steelwheellogistics.com"
+ },
+ {
+  "listing_type": "seeking",
+  "car_type": "flatcar",
+  "quantity": 50,
+  "origin": "Fayetteville, NC",
+  "destination": "Rockford, IL",
+  "posted_date": "2026-08-29",
+  "email": "jacob@steelwheellogistics.com"
+ },
+ {
+  "listing_type": "seeking",
+  "car_type": "hopper",
+  "quantity": 10,
+  "origin": "Detroit, MI",
+  "destination": "Madison, WI",
+  "posted_date": "2026-08-29",
+  "email": "jacob@steelwheellogistics.com"
+ },
+ {
+  "listing_type": "seeking",
+  "car_type": "tank",
+  "quantity": 2,
+  "origin": "Vonore, TN",
+  "destination": "Globe, AZ",
+  "posted_date": "2026-09-01",
+  "email": "jacob@steelwheellogistics.com",
+  "note": "coiled/insulated or lined, ~23.5k gal, non-haz"
+ },
+ {
+  "listing_type": "available",
+  "car_type": "tank",
+  "quantity": 6,
+  "origin": "Gulf Coast, TX",
+  "destination": "",
+  "posted_date": "2026-09-01",
+  "email": "jacob@steelwheellogistics.com",
+  "note": "coiled & insulated, general service \u2014 inquire"
+ },
+ {
+  "listing_type": "available",
+  "car_type": "covered_hopper",
+  "quantity": 10,
+  "origin": "Midwest",
+  "destination": "",
+  "posted_date": "2026-09-01",
+  "email": "jacob@steelwheellogistics.com",
+  "note": "food-grade capable \u2014 inquire"
+ }
 ]
