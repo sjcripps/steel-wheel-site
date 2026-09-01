@@ -779,9 +779,17 @@
       }
     }
 
-    function getCoords(city) {
-      const normalized = city.split(',').map(s => s.trim()).join(', ');
-      return cityCoords[normalized] || [38.5, -95.5]; // Default to center US
+    function getCoords(listing) {
+      // Prefer server-geocoded coords baked into the listing (sublease_publish.py
+      // resolves City,ST against the 26k-city rate DB + state centroids). Fall
+      // back to the small static dict, then null — a listing we can't place is
+      // LEFT OFF the map rather than piled onto a false center-US default
+      // (Jacob, 9/1: 7 listings stacked in Kansas).
+      if (typeof listing.lat === 'number' && typeof listing.lng === 'number') {
+        return [listing.lat, listing.lng];
+      }
+      const normalized = (listing.origin || '').split(',').map(s => s.trim()).join(', ');
+      return cityCoords[normalized] || null;
     }
 
     function initMap() {
@@ -799,7 +807,8 @@
       if (!map) initMap();
       markerCluster.clearLayers();
       filteredListings.forEach(listing => {
-        const coords = getCoords(listing.origin);
+        const coords = getCoords(listing);
+        if (!coords) return; // unplaceable origin — keep it in the table, off the map
         const marker = L.marker(coords);
         const popupText = `
           <strong>${listing.listing_type === 'offering' ? 'Offering' : 'Seeking'}</strong><br>
