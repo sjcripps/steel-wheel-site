@@ -7,7 +7,9 @@
     "destination": "Globe, AZ",
     "posted_date": "2026-09-01",
     "email": "jacob@steelwheellogistics.com",
-    "note": "coiled/insulated or lined, ~23.5k gal, non-haz"
+    "note": "coiled/insulated or lined, ~23.5k gal, non-haz",
+    "lat": 35.5901,
+    "lng": -84.2419
   },
   {
     "listing_type": "available",
@@ -17,7 +19,9 @@
     "destination": "",
     "posted_date": "2026-09-01",
     "email": "jacob@steelwheellogistics.com",
-    "note": "coiled & insulated, general service \u2014 inquire"
+    "note": "coiled & insulated, general service \u2014 inquire",
+    "lat": 31.5,
+    "lng": -99.3
   },
   {
     "listing_type": "available",
@@ -36,7 +40,9 @@
     "origin": "Knoxville, TN",
     "destination": "Phoenix, AZ",
     "posted_date": "2026-08-29",
-    "email": "jacob@steelwheellogistics.com"
+    "email": "jacob@steelwheellogistics.com",
+    "lat": 35.9606,
+    "lng": -83.9207
   },
   {
     "listing_type": "seeking",
@@ -45,7 +51,9 @@
     "origin": "Columbus, GA",
     "destination": "Louisville, KY",
     "posted_date": "2026-08-29",
-    "email": "jacob@steelwheellogistics.com"
+    "email": "jacob@steelwheellogistics.com",
+    "lat": 32.461,
+    "lng": -84.9877
   },
   {
     "listing_type": "seeking",
@@ -54,7 +62,9 @@
     "origin": "Houston, TX",
     "destination": "Saskatoon, SK",
     "posted_date": "2026-08-29",
-    "email": "jacob@steelwheellogistics.com"
+    "email": "jacob@steelwheellogistics.com",
+    "lat": 29.7633,
+    "lng": -95.3633
   },
   {
     "listing_type": "seeking",
@@ -63,7 +73,9 @@
     "origin": "Fayetteville, NC",
     "destination": "Rockford, IL",
     "posted_date": "2026-08-29",
-    "email": "jacob@steelwheellogistics.com"
+    "email": "jacob@steelwheellogistics.com",
+    "lat": 35.0527,
+    "lng": -78.8784
   },
   {
     "listing_type": "seeking",
@@ -72,6 +84,8 @@
     "origin": "Detroit, MI",
     "destination": "Madison, WI",
     "posted_date": "2026-08-29",
-    "email": "jacob@steelwheellogistics.com"
+    "email": "jacob@steelwheellogistics.com",
+    "lat": 42.3314,
+    "lng": -83.0457
   }
 ]
