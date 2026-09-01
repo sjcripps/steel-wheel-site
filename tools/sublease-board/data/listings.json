@@ -3,6 +3,36 @@
     "listing_type": "seeking",
     "car_type": "tank",
     "quantity": 2,
+    "origin": "Vonore, TN",
+    "destination": "Globe, AZ",
+    "posted_date": "2026-09-01",
+    "email": "jacob@steelwheellogistics.com",
+    "note": "coiled/insulated or lined, ~23.5k gal, non-haz"
+  },
+  {
+    "listing_type": "available",
+    "car_type": "tank",
+    "quantity": 6,
+    "origin": "Gulf Coast, TX",
+    "destination": "",
+    "posted_date": "2026-09-01",
+    "email": "jacob@steelwheellogistics.com",
+    "note": "coiled & insulated, general service \u2014 inquire"
+  },
+  {
+    "listing_type": "available",
+    "car_type": "covered_hopper",
+    "quantity": 10,
+    "origin": "Midwest",
+    "destination": "",
+    "posted_date": "2026-09-01",
+    "email": "jacob@steelwheellogistics.com",
+    "note": "food-grade capable \u2014 inquire"
+  },
+  {
+    "listing_type": "seeking",
+    "car_type": "tank",
+    "quantity": 2,
     "origin": "Knoxville, TN",
     "destination": "Phoenix, AZ",
     "posted_date": "2026-08-29",
