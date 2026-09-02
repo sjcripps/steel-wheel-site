@@ -40,6 +40,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     ? Number(body.drayage_origin_miles) : null;
   const drayageDestMiles = body.drayage_dest_miles != null && body.drayage_dest_miles !== ''
     ? Number(body.drayage_dest_miles) : null;
+  const truckMaxTons = body.truck_max_tons != null && body.truck_max_tons !== ''
+    ? Number(body.truck_max_tons) : null;
 
   if (!origin || !destination) {
     return res.status(400).json({ error: 'origin and destination are required' });
@@ -102,6 +104,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         truck_rate_per_mile: truckRatePerMile,
         drayage_origin_miles: drayageOriginMiles,
         drayage_dest_miles: drayageDestMiles,
+        truck_max_tons: truckMaxTons,
       }),
       signal: ctl.signal,
     });
