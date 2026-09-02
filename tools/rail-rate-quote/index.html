@@ -2132,24 +2132,36 @@
       // recorded it (avoids double-logging on the initial render).
       if (choice !== 'primary' && currentLeadEmail) {
         try {
+          // Attribution + shipment size ride along exactly as they do on the
+          // /quote call. Without them this follow-up row landed with null
+          // landing_referrer/referrer_kind/entry_query/num_cars, which reads
+          // identically to the proxy-drop bug and has already caused repeated
+          // misdiagnosis. num_cars is read from the form (not the engine's
+          // resolved value) so num_cars_assumed means the same thing on both
+          // rows: "did the shipper actually tell us?".
+          const rcCars = (document.getElementById('num_cars') || {}).value;
+          const rcBody = Object.assign({
+            email: currentLeadEmail,
+            name: cachedName(),
+            phone: cachedPhone(),
+            origin: currentQuote.origin
+              ? `${currentQuote.origin.name}, ${currentQuote.origin.state}`
+              : '',
+            destination: currentQuote.destination
+              ? `${currentQuote.destination.name}, ${currentQuote.destination.state}`
+              : '',
+            commodity: currentQuote.commodity ? currentQuote.commodity.name : '',
+            car_type: currentQuote.car_type ? currentQuote.car_type.name : '',
+            weight_tons: currentQuote.weight_tons,
+            route_choice: choice,
+            tariff_total: view.tariff_total,
+            miles: view.miles,
+          }, swlAttr());
+          if (rcCars) rcBody.num_cars = Number(rcCars);
           fetch('/api/rail-rate-lead-route-choice', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              email: currentLeadEmail,
-              origin: currentQuote.origin
-                ? `${currentQuote.origin.name}, ${currentQuote.origin.state}`
-                : '',
-              destination: currentQuote.destination
-                ? `${currentQuote.destination.name}, ${currentQuote.destination.state}`
-                : '',
-              commodity: currentQuote.commodity ? currentQuote.commodity.name : '',
-              car_type: currentQuote.car_type ? currentQuote.car_type.name : '',
-              weight_tons: currentQuote.weight_tons,
-              route_choice: choice,
-              tariff_total: view.tariff_total,
-              miles: view.miles,
-            }),
+            body: JSON.stringify(rcBody),
           }).catch(() => {});
         } catch (_) { /* never block UI on lead capture */ }
 
