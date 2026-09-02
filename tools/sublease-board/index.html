@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Connect directly with shippers — list excess railcars or find cars you need. Steel Wheel Logistics.">
-  <title>Railcar Sublease Board | Steel Wheel Logistics</title>
+  <meta name="description" content="Connect directly with shippers — lease, sublease, buy, or sell railcars — connect directly with shippers. Steel Wheel Logistics.">
+  <title>Railcar Marketplace — Lease, Sublease & Sale | Steel Wheel Logistics</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
   <link rel="stylesheet" href="/style.css?v=5">
   <link rel="canonical" href="https://steelwheellogistics.com/tools/sublease-board">
-  <meta property="og:title" content="Railcar Sublease Board | Steel Wheel Logistics">
+  <meta property="og:title" content="Railcar Marketplace — Lease, Sublease & Sale | Steel Wheel Logistics">
   <meta property="og:description" content="List excess railcars or find cars you need — connect directly with shippers.">
   <meta property="og:url" content="https://steelwheellogistics.com/tools/sublease-board">
   <meta property="og:type" content="website">
@@ -267,6 +267,16 @@
       background: rgba(31, 138, 76, 0.12);
       color: var(--success);
     }
+    .deal-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 1px 6px;
+      border-radius: 4px;
+      background: var(--light-grey);
+      color: var(--text-dark);
+      margin-left: 4px;
+    }
     .listing-type-badge.seeking {
       background: rgba(248, 180, 0, 0.12);
       color: var(--warning);
@@ -433,9 +443,9 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Railcar Sublease Board",
+    "name": "Railcar Marketplace",
     "url": "https://steelwheellogistics.com/tools/sublease-board",
-    "description": "Connect directly with shippers \u2014 list excess railcars or find cars you need. Steel Wheel Logistics.",
+    "description": "Connect directly with shippers \u2014 lease, sublease, buy, or sell railcars — connect directly with shippers. Steel Wheel Logistics.",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Any (web browser)",
     "browserRequirements": "Requires JavaScript",
@@ -472,7 +482,7 @@
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Railcar Sublease Board",
+        "name": "Railcar Marketplace",
         "item": "https://steelwheellogistics.com/tools/sublease-board"
       }
     ]
@@ -544,8 +554,8 @@
   <!-- Hero -->
   <section class="tool-hero">
     <span class="badge">Community Board</span>
-    <h1>Railcar Sublease Board</h1>
-    <p>Connect directly with other shippers — list excess railcars you need to move or find cars available for sublease. No broker fees.</p>
+    <h1>Railcar Marketplace</h1>
+    <p>Connect directly with other shippers — list cars to lease, sublease, or sell — or find the cars you need. No broker fees.</p>
   </section>
 
   <!-- Main content -->
@@ -649,8 +659,11 @@
           <label for="listingType">Type *</label>
           <select id="listingType" required>
             <option value="">Select one...</option>
-            <option value="offering">Offering cars for sublease</option>
-            <option value="seeking">Seeking cars to sublease</option>
+            <option value="offering:lease">Have cars — available to LEASE</option>
+            <option value="offering:sublease">Have cars — available to SUBLEASE</option>
+            <option value="offering:sale">Have cars — for SALE</option>
+            <option value="seeking:lease">Want cars — to LEASE or sublease</option>
+            <option value="seeking:sale">Want cars — to BUY</option>
           </select>
         </div>
 
@@ -818,7 +831,7 @@
         if (!coords) return; // unplaceable origin — keep it in the table, off the map
         const marker = L.marker(coords);
         const popupText = `
-          <strong>${listing.listing_type === 'offering' ? 'Offering' : 'Seeking'}</strong><br>
+          <strong>${listing.listing_type === 'offering' ? 'Offering' : 'Seeking'}${listing.deal_type ? ' · ' + ({lease:'Lease',sublease:'Sublease',sale:'For Sale'}[listing.deal_type] || '') : ''}</strong><br>
           ${listing.quantity} ${listing.car_type} car${listing.quantity !== 1 ? 's' : ''}<br>
           ${listing.origin} → ${listing.destination}<br>
           ${listing.email}
@@ -841,9 +854,10 @@
       } else {
         tbody.style.display = '';
         empty.style.display = 'none';
+        const dealLabel = l => ({lease:'Lease', sublease:'Sublease', sale:'For Sale'}[l] || '');
         tbody.innerHTML = page.map(listing => `
           <tr>
-            <td><span class="listing-type-badge ${listing.listing_type}">${listing.listing_type === 'offering' ? 'Offering' : 'Seeking'}</span></td>
+            <td><span class="listing-type-badge ${listing.listing_type}">${listing.listing_type === 'offering' ? 'Offering' : 'Seeking'}</span>${listing.deal_type ? ` <span class="deal-tag">${dealLabel(listing.deal_type)}</span>` : ''}</td>
             <td>${listing.car_type}</td>
             <td>${listing.quantity}</td>
             <td>${listing.origin}</td>
@@ -957,7 +971,8 @@
       errorEl.textContent = '';
 
       const email = document.getElementById('email').value.trim().toLowerCase();
-      const listingType = document.getElementById('listingType').value;
+      const listingTypeRaw = document.getElementById('listingType').value;
+      const [listingType, dealType] = listingTypeRaw.includes(':') ? listingTypeRaw.split(':') : [listingTypeRaw, 'sublease'];
       const carType = document.getElementById('carType').value;
       const quantity = parseInt(document.getElementById('quantity').value);
       const origin = document.getElementById('origin').value.trim();
@@ -978,7 +993,7 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             ...swlAttr(),
-            email, listing_type: listingType, car_type: carType,
+            email, listing_type: listingType, deal_type: dealType, car_type: carType,
             quantity, origin, destination, pricing, timeline, name, phone,
             managed: manageForMe
           })
@@ -995,6 +1010,7 @@
           listing_id: Date.now().toString(),
           shipper_email: email,
           listing_type: listingType,
+          deal_type: dealType,
           car_type: carType,
           quantity,
           origin,

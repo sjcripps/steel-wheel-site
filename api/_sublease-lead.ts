@@ -166,6 +166,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const body = (req.body && typeof req.body === 'object') ? req.body : {};
   const email = String(body.email ?? '').trim().toLowerCase();
   const listingType = String(body.listing_type ?? '').trim();
+  const dealType = String(body.deal_type ?? '').trim();
   const carType = String(body.car_type ?? '').trim();
   const quantity = Number(body.quantity);
   const origin = String(body.origin ?? '').trim();
@@ -233,6 +234,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     name: leadName || null,
     phone: leadPhone || null,
     listing_type: listingType,
+    deal_type: dealType || null,
     car_type: carType,
     quantity,
     origin,
