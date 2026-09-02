@@ -8,6 +8,7 @@
     "posted_date": "2026-09-01",
     "email": "jacob@steelwheellogistics.com",
     "note": "coiled/insulated or lined, ~23.5k gal, non-haz",
+    "deal_type": "lease",
     "lat": 35.5901,
     "lng": -84.2419
   },
@@ -20,6 +21,7 @@
     "posted_date": "2026-09-01",
     "email": "jacob@steelwheellogistics.com",
     "note": "coiled & insulated, general service \u2014 inquire",
+    "deal_type": "sublease",
     "lat": 31.5,
     "lng": -99.3
   },
@@ -31,7 +33,8 @@
     "destination": "",
     "posted_date": "2026-09-01",
     "email": "jacob@steelwheellogistics.com",
-    "note": "food-grade capable \u2014 inquire"
+    "note": "food-grade capable \u2014 inquire",
+    "deal_type": "sublease"
   },
   {
     "listing_type": "seeking",
@@ -41,6 +44,7 @@
     "destination": "Phoenix, AZ",
     "posted_date": "2026-08-29",
     "email": "jacob@steelwheellogistics.com",
+    "deal_type": "lease",
     "lat": 35.9606,
     "lng": -83.9207
   },
@@ -52,6 +56,7 @@
     "destination": "Louisville, KY",
     "posted_date": "2026-08-29",
     "email": "jacob@steelwheellogistics.com",
+    "deal_type": "lease",
     "lat": 32.461,
     "lng": -84.9877
   },
@@ -63,6 +68,7 @@
     "destination": "Saskatoon, SK",
     "posted_date": "2026-08-29",
     "email": "jacob@steelwheellogistics.com",
+    "deal_type": "lease",
     "lat": 29.7633,
     "lng": -95.3633
   },
@@ -74,6 +80,7 @@
     "destination": "Rockford, IL",
     "posted_date": "2026-08-29",
     "email": "jacob@steelwheellogistics.com",
+    "deal_type": "lease",
     "lat": 35.0527,
     "lng": -78.8784
   },
@@ -85,6 +92,7 @@
     "destination": "Madison, WI",
     "posted_date": "2026-08-29",
     "email": "jacob@steelwheellogistics.com",
+    "deal_type": "lease",
     "lat": 42.3314,
     "lng": -83.0457
   }
