@@ -33,8 +33,8 @@
   "Tank Trailer Cleaning"
  ],
  "tier_counts": {
-  "listed": 1787,
-  "verified": 710,
+  "listed": 1953,
+  "verified": 732,
   "review": 88
  },
  "facilities": [
@@ -12224,8 +12224,8 @@
    "rail_claim": "proximity-only"
   },
   {
-   "name": "Cascade Warehouse",
-   "note": "",
+   "name": "Cascade Warehouse (Loup West Colton Railport)",
+   "note": "Independent operator (4th-gen, est. 1958) that runs the Loup West Colton Railport at 1280 Jefferson Ln \u2014 UP-served. 'Loup' = UP's railport network; Cascade is the on-site operator. Steel + lumber transload. Ask about contracting Cascade directly vs. via the Loup program.",
    "email": "swc@cascadewarehouse.com",
    "phone": "(909) 825-5760",
    "city": "Colton",
@@ -34846,30 +34846,6 @@
    "location_source": "google-maps 2026-08-21"
   },
   {
-   "name": "Loup Logistics",
-   "note": "",
-   "email": "",
-   "phone": "",
-   "city": "Colton",
-   "state": "CA",
-   "tier": "listed",
-   "source": "commtrex-public",
-   "commodities": [],
-   "capabilities": [],
-   "caps_known": false,
-   "storage": "unknown",
-   "website": "",
-   "lat": 34.0344549,
-   "lng": -117.3306133,
-   "rail_distance_mi": 0.28,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-21",
-   "address": "door 146, 21700 Barton Rd, Colton, CA 92324",
-   "maps_category": "Logistics service",
-   "location_source": "google-maps 2026-08-21"
-  },
-  {
    "name": "Loup Logistics Tacoma Railport",
    "note": "operated by MHX",
    "email": "",
@@ -34916,30 +34892,6 @@
    "address": "631 S 7th St, Phoenix, AZ 85034",
    "maps_category": "Transportation service",
    "location_source": "google-maps 2026-08-21",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
-  },
-  {
-   "name": "Loup RailPort",
-   "note": "",
-   "email": "",
-   "phone": "",
-   "city": "Colton",
-   "state": "CA",
-   "tier": "listed",
-   "source": "rebulk-directory (UP)",
-   "commodities": [],
-   "capabilities": [],
-   "caps_known": false,
-   "storage": "unknown",
-   "website": "https://www.louplogistics.com/",
-   "lat": 34.0739,
-   "lng": -117.3137,
-   "rail_distance_mi": 0.69,
-   "rail_confidence": "possible",
-   "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20",
    "facility_type": "transload-terminal",
    "facility_type_source": "operator-site company-level 2026-08-21",
    "facility_type_scope": "company-wide"
@@ -38893,36 +38845,6 @@
    "email": "cjm@greatlakesreload.com",
    "phone": "",
    "city": "Bloomington",
-   "state": "CA",
-   "tier": "verified",
-   "source": "swl-internal",
-   "commodities": [
-    "Frac Sand",
-    "Lumber",
-    "Minerals",
-    "Steel"
-   ],
-   "capabilities": [
-    "Bulk Conveyor",
-    "Sampling Services",
-    "Scale"
-   ],
-   "caps_known": true,
-   "storage": "unknown",
-   "website": "https://www.transloadgroup.com/",
-   "lat": 34.07001,
-   "lng": -117.3956,
-   "rail_distance_mi": 0.17,
-   "rail_confidence": "probable",
-   "rail_proximity": "on-network",
-   "rail_proximity_checked": "2026-08-20"
-  },
-  {
-   "name": "Mountain Reload LLC",
-   "note": "",
-   "email": "cjm@greatlakesreload.com",
-   "phone": "",
-   "city": "West Colton",
    "state": "CA",
    "tier": "verified",
    "source": "swl-internal",
@@ -81298,7 +81220,58 @@
    "rail_claim": "operator-confirmed",
    "rail_evidence": "Rail-served warehouses incl. Warehouse 5 (129,600 sq ft, flush rail-dock); barge-rail-truck campus with access to all six Class I's via TRRA. Rail: Port Harbor Railroad (24/7 switching) -> all six Cla",
    "facility_type": "transload-terminal"
+  },
+  {
+   "name": "Crescent Warehouse Ltd",
+   "note": "Berth D, 50 W Pier D St. Overweight-corridor heavy transload; industrial metals incl coils; trucks to/from all 14 LA/LB terminals. NOT a breakbulk vessel berth and rail service unconfirmed \u2014 treat as truck-fed. Added 9/3.",
+   "email": "",
+   "phone": "(562) 256-2524",
+   "city": "Long Beach",
+   "state": "CA",
+   "tier": "listed",
+   "source": "manual-swl-2026-09-03",
+   "commodities": [
+    "Steel"
+   ],
+   "capabilities": [],
+   "caps_known": true,
+   "storage": "unknown",
+   "website": "http://www.crescentwarehouse.com/",
+   "lat": 33.7626,
+   "lng": -118.2019,
+   "rail_distance_mi": null,
+   "rail_confidence": "unlikely",
+   "rail_proximity": "unverified",
+   "rail_proximity_checked": "2026-09-03",
+   "facility_type": "transload-terminal"
+  },
+  {
+   "name": "Waterfront Logistics",
+   "note": "600k sqft on 85 acres, <5 mi from LA/LB ports. Operator states rail-served; handles industrial metals incl coils/ingots/rods, break-bulk. Coords APPROXIMATE (Wilmington) \u2014 verify address. Added 9/3.",
+   "email": "",
+   "phone": "",
+   "city": "Wilmington",
+   "state": "CA",
+   "tier": "listed",
+   "source": "manual-swl-2026-09-03",
+   "commodities": [
+    "Steel",
+    "Aluminum",
+    "Pipe"
+   ],
+   "capabilities": [],
+   "caps_known": true,
+   "storage": "unknown",
+   "website": "https://www.waterfrontlogistics.com/",
+   "lat": 33.789,
+   "lng": -118.262,
+   "rail_distance_mi": null,
+   "rail_confidence": "probable",
+   "rail_proximity": "unverified",
+   "rail_proximity_checked": "2026-09-03",
+   "facility_type": "transload-terminal"
   }
  ],
- "unmapped_count": 95
+ "unmapped_count": 95,
+ "last_manual_edit": "2026-09-03 (dedupe Colton+Mountain Reload; +Crescent,+Waterfront; enrich Cascade/Loup)"
 }
