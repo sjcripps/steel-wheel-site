@@ -20,6 +20,19 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
     } catch {
       console.warn('sitemap: transload/pages.json missing — run scripts/build-transload-pages.js');
     }
+    // Thinnest transload region stubs — EXCLUDED FROM SITEMAP ONLY (2026-09-06).
+    // Each has <=2 facilities and ~370 words (mostly boilerplate), below the
+    // generator's own MIN_CITY_FACILITIES=3 bar ("a page worse than no page").
+    // GSC flagged the transload family "Duplicate without user-selected canonical";
+    // these are the clearest offenders. The PAGES STILL SERVE — we're only removing
+    // them from the crawl manifest so Google stops trying to index near-duplicates.
+    // Fully reversible: delete this set to restore. Pages, routes, links untouched.
+    const THIN_TRANSLOAD_EXCLUDE = new Set([
+      '/transload/michoacan', '/transload/tamaulipas', '/transload/veracruz',
+      '/transload/sonora', '/transload/baja-california', '/transload/mexico-city',
+      '/transload/nova-scotia', '/transload/jalisco', '/transload/queretaro',
+    ]);
+    transloadPages = transloadPages.filter((p) => !THIN_TRANSLOAD_EXCLUDE.has(p.loc));
     // Commodity + rail-hub pages (crawlable layer for the commodity-flow map).
     // Same degrade-to-empty contract as the transload manifest.
     let commodityPages: Array<{ loc: string; priority: string }> = [];
