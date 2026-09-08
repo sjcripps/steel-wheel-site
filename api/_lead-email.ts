@@ -31,6 +31,51 @@ const SYNTHETIC_PREFIXES = ['qa-', 'smoke-', 'test-', 'monitor-', 'probe-', 'hea
 // are caught.
 const SYNTHETIC_TAG_WORDS = ['test', 'smoke', 'qa', 'probe', 'monitor', 'healthcheck'];
 
+// The tag-word list above is leaky BY CONSTRUCTION — it enumerates the words we
+// happened to have used, so every new probe name is a fresh hole. 2026-09-08:
+// Jacob unlocked the transload gate with his BARE address and it fired a
+// fake-lead DM about himself plus a junk CRM contact. Auditing the sinks turned
+// up 19 leaked addresses, 17 of them his: `+modeshifthot`, `+s3verify6`,
+// `+swl-final-verify`, `+think-debug2`, `+map-verify-think-1700` — none contain
+// a tag word. So match the ACCOUNT, not the label. Gmail ignores dots and
+// everything after `+`, so all of those normalise to one address; this rule is
+// exact and cannot drift as we invent new probe names.
+const SELF_EMAILS = new Set(['jacobcripps@gmail.com']);
+
+// Domains that can never belong to a customer: our own sending domain (a real
+// shipper never emails us from steelwheellogistics.com) and the RFC 2606 /
+// 6761 reserved-for-testing names, where mail is guaranteed to hard-bounce
+// against the Resend sending domain. Mirrors `_SYNTHETIC_EMAIL_DOMAINS` in
+// businesses/steel-wheel/scripts/lead_capture.py — the Flask path has filtered
+// these since 2026-08-18, but that list was never ported here, which is why
+// this endpoint stayed open for three weeks after the Python side was fixed.
+const SYNTHETIC_EMAIL_DOMAINS = [
+  '@steelwheellogistics.com',
+  '@example.com',
+  '@example.net',
+  '@example.org',
+  '@test',
+  '@invalid',
+  '@localhost',
+  '.test',
+  '.invalid',
+  '.localhost',
+  '.example',
+];
+
+// Canonical form of an address for identity comparison. Only Gmail/Googlemail
+// get dot- and plus-stripping, because only they define those as insignificant
+// — doing it to an arbitrary domain would collide two genuinely different
+// customers onto one address and silently bin a real lead.
+function normalizeEmail(addr: string): string {
+  const at = addr.lastIndexOf('@');
+  if (at < 0) return addr;
+  const domain = addr.slice(at + 1);
+  if (domain !== 'gmail.com' && domain !== 'googlemail.com') return addr;
+  const local = addr.slice(0, at).split('+')[0].replace(/\./g, '');
+  return `${local}@gmail.com`;
+}
+
 // Our own automation box. A submission whose origin IP is this host is by
 // definition ours — no customer's browser ever egresses from our EC2 server.
 // This is the only rule that survives an attacker-shaped probe: on 2026-07-22
@@ -71,6 +116,11 @@ export function clientIpFrom(req: { headers: Record<string, unknown> }): string 
 export function isSyntheticLead(email: string, userAgent = '', ip = ''): boolean {
   const addr = email.trim().toLowerCase();
   if (addr.endsWith('@anthropic.com')) return true;
+
+  // Identity/domain rules first: they depend only on the address itself, so
+  // they hold no matter what user-agent or IP the submission carries.
+  if (SELF_EMAILS.has(normalizeEmail(addr))) return true;
+  if (SYNTHETIC_EMAIL_DOMAINS.some((suffix) => addr.endsWith(suffix))) return true;
 
   // Checked first: independent of anything the caller controls, so it holds
   // even when the email and user-agent are dressed up to look human.
