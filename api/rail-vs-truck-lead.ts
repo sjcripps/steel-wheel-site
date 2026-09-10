@@ -215,6 +215,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const carTypeName = String(body.car_type_name ?? '').trim();
   const weightPerCarTons = Number(body.weight_per_car_tons);
   const annualCarloads = Number(body.annual_carloads);
+  // Which tariff curve the customer was actually shown. Without it the lead
+  // record can't reproduce their number -- annual_carloads alone doesn't say
+  // whether they were quoted the single-car rate or a block rate.
+  const numCarsRaw = body.num_cars != null && body.num_cars !== ''
+    ? Number(body.num_cars) : null;
+  const numCars = Number.isFinite(numCarsRaw as number) && (numCarsRaw as number) >= 1
+    ? (numCarsRaw as number) : null;
   const truckRateRaw = body.truck_rate_per_mile;
   const truckRateUserEntered =
     truckRateRaw != null && truckRateRaw !== '' && Number.isFinite(Number(truckRateRaw)) && Number(truckRateRaw) > 0;
@@ -306,6 +313,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     car_type_name: carTypeName || carType || null,
     weight_per_car_tons: Number.isFinite(weightPerCarTons) ? weightPerCarTons : null,
     annual_carloads: annualCarloads,
+    num_cars: numCars,
+    rail_rate_basis: numCars ? 'block' : 'single_car_assumed',
     truck_rate_per_mile: truckRatePerMile,
     truck_rate_source: truckRateUserEntered ? 'user_entered' : 'market_dynamic',
     drayage_origin_miles: Number.isFinite(drayageOriginMiles) ? drayageOriginMiles : 25,
