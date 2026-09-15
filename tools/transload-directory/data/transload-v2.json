@@ -12679,7 +12679,7 @@
   },
   {
    "name": "Central Trans Load",
-   "note": "",
+   "note": "website repointed to homepage 2026-09-15 (old page removed)",
    "email": "info@everettrailroad.com",
    "phone": "",
    "city": "Chambersburg",
@@ -12705,7 +12705,7 @@
    ],
    "caps_known": true,
    "storage": "unknown",
-   "website": "https://everettrailroad.com/freight-services/transload-sites/",
+   "website": "https://everettrailroad.com/",
    "lat": 39.937592,
    "lng": -77.661103,
    "rail_distance_mi": 0.15,

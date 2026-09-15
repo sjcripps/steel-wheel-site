@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01",
+  "generated_at": "2026-09-15",
   "pages": [
     {
       "loc": "/transload",
@@ -362,11 +362,11 @@
       "priority": "0.5"
     },
     {
-      "loc": "/transload/san-diego-ca",
+      "loc": "/transload/wilmington-ca",
       "priority": "0.5"
     },
     {
-      "loc": "/transload/wilmington-ca",
+      "loc": "/transload/san-diego-ca",
       "priority": "0.5"
     },
     {
@@ -387,10 +387,6 @@
     },
     {
       "loc": "/transload/city-of-industry-ca",
-      "priority": "0.5"
-    },
-    {
-      "loc": "/transload/colton-ca",
       "priority": "0.5"
     },
     {

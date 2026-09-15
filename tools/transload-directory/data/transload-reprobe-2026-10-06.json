@@ -1,0 +1,29 @@
+[
+ {
+  "url": "http://www.brookhavenrailterminal.com/",
+  "name": "Brookhaven Rail Terminal",
+  "records": null,
+  "strikes": 1,
+  "source": "sweep",
+  "last_probe": "404",
+  "last_run": "2026-09-15"
+ },
+ {
+  "url": "https://buckeye-transfer.business.site/",
+  "name": "Buckeye Transfer",
+  "records": null,
+  "strikes": 1,
+  "source": "sweep",
+  "last_probe": "404",
+  "last_run": "2026-09-15"
+ },
+ {
+  "url": "https://www.cargowayslogistics.com",
+  "name": "Cargoways Logistics",
+  "records": null,
+  "strikes": 1,
+  "source": "sweep",
+  "last_probe": "error",
+  "last_run": "2026-09-15"
+ }
+]
