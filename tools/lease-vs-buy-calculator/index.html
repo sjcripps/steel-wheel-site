@@ -815,6 +815,7 @@
                 <div class="form-group">
                   <label for="purchase_price">Purchase Price <span class="hint">($/car)</span></label>
                   <input type="number" id="purchase_price" min="1" step="1000" value="140000" required>
+                  <div class="field-note" id="priceSourceNote"></div>
                   <div class="field-note">Indicative planning figure, not an offer &mdash; verify with builders/dealers. Used = 45% of new as a default.</div>
                 </div>
 
@@ -1038,37 +1039,43 @@
         label: 'Covered Hopper (grain service)',
         lease_monthly: 585,
         price_new: 140000,
-        lease_note: 'Sourced: Grain Journal 2025 reported $530–635/mo for grain-service covered hoppers. Default uses the mid-range.',
+        sourced: true,
+        lease_note: 'SOURCED — Grain Journal 2025 reported $530–635/mo for grain-service covered hoppers; default uses the mid-range.',
       },
       'tank-car': {
         label: 'Tank Car',
         lease_monthly: 800,
         price_new: 165000,
-        lease_note: 'Industry-reported planning figure — replace with your actual quote.',
+        sourced: false,
+        lease_note: 'NOT SOURCED — placeholder only. We hold no market quote for this car type. Replace it with your own quote before relying on the answer.',
       },
       'boxcar': {
         label: 'Boxcar',
         lease_monthly: 700,
         price_new: 140000,
-        lease_note: 'Industry-reported planning figure — replace with your actual quote.',
+        sourced: false,
+        lease_note: 'NOT SOURCED — placeholder only. We hold no market quote for this car type. Replace it with your own quote before relying on the answer.',
       },
       'gondola': {
         label: 'Gondola',
         lease_monthly: 550,
         price_new: 120000,
-        lease_note: 'Industry-reported planning figure — replace with your actual quote.',
+        sourced: false,
+        lease_note: 'NOT SOURCED — placeholder only. We hold no market quote for this car type. Replace it with your own quote before relying on the answer.',
       },
       'open-top-hopper': {
         label: 'Open-Top Hopper',
         lease_monthly: 550,
         price_new: 115000,
-        lease_note: 'Industry-reported planning figure — replace with your actual quote.',
+        sourced: false,
+        lease_note: 'NOT SOURCED — placeholder only. We hold no market quote for this car type. Replace it with your own quote before relying on the answer.',
       },
       'flat-car': {
         label: 'Flat Car',
         lease_monthly: 600,
         price_new: 125000,
-        lease_note: 'Industry-reported planning figure — replace with your actual quote.',
+        sourced: false,
+        lease_note: 'NOT SOURCED — placeholder only. We hold no market quote for this car type. Replace it with your own quote before relying on the answer.',
       },
     };
 
@@ -1089,7 +1096,18 @@
       document.getElementById('lease_monthly').value = d.lease_monthly;
       document.getElementById('purchase_price').value = Math.round(d.price_new * (isUsed ? USED_PRICE_FACTOR : 1));
       document.getElementById('resale_pct').value = isUsed ? RESALE_PCT_USED : RESALE_PCT_NEW;
-      document.getElementById('leaseSourceNote').textContent = d.lease_note;
+      const note = document.getElementById('leaseSourceNote');
+      note.textContent = d.lease_note;
+      // Sourced and unsourced defaults used to look identical, so an invented
+      // figure read exactly like a market rate. Colour the difference.
+      note.style.color = d.sourced ? '' : '#9A3412';
+      note.style.fontWeight = d.sourced ? '' : '600';
+      const pn = document.getElementById('priceSourceNote');
+      if (pn) {
+        pn.textContent = 'Planning band — a standard new freight car runs about '
+          + '$100,000–150,000 (FreightWaves / industry cost analyses, via IntelliTrans 2025). '
+          + 'Per-car-type figures below are placed inside that band, not individually quoted.';
+      }
     }
     document.getElementById('car_type').addEventListener('change', prefillAssumptions);
     document.getElementById('condition').addEventListener('change', prefillAssumptions);
