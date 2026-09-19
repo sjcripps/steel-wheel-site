@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Port warehousing for breakbulk cargo: what on-dock, near-dock and off-dock storage cost, how free time works, and how cargo gets from the shed to a railcar.">
+  <meta name="keywords" content="port warehousing, on-dock warehousing, breakbulk warehousing, transit shed, port storage charges, free time at port, rail-served warehouse, port to rail, breakbulk rail loading, laydown yard">
+  <link rel="canonical" href="https://steelwheellogistics.com/blog/breakbulk-port-warehousing-rail">
+  <meta property="og:title" content="Port Warehousing for Breakbulk: How On-Dock Storage and Rail Connect">
+  <meta property="og:description" content="Port warehousing for breakbulk cargo: what on-dock, near-dock and off-dock storage cost, how free time works, and how cargo gets from the shed to a railcar.">
+  <meta property="og:url" content="https://steelwheellogistics.com/blog/breakbulk-port-warehousing-rail">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Port Warehousing for Breakbulk: How On-Dock Storage and Rail Connect">
+  <meta name="twitter:description" content="Port warehousing for breakbulk cargo: what on-dock, near-dock and off-dock storage cost, how free time works, and how cargo gets from the shed to a railcar.">
+  <meta name="twitter:image" content="https://steelwheellogistics.com/images/logo-192.png">
+  <title>Port Warehousing for Breakbulk: How On-Dock Storage and Rail Connect | Steel Wheel Logistics</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Port Warehousing for Breakbulk: How On-Dock Storage and Rail Connect", "description": "Port warehousing for breakbulk cargo: what on-dock, near-dock and off-dock storage cost, how free time works, and how cargo gets from the shed to a railcar.", "datePublished": "2026-09-19", "dateModified": "2026-09-19", "author": {"@type": "Organization", "name": "Steel Wheel Logistics"}, "publisher": {"@type": "Organization", "name": "Steel Wheel Logistics", "logo": {"@type": "ImageObject", "url": "https://steelwheellogistics.com/images/logo-192.png"}}, "url": "https://steelwheellogistics.com/blog/breakbulk-port-warehousing-rail", "image": ["https://steelwheellogistics.com/images/logo-192.png"], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://steelwheellogistics.com/blog/breakbulk-port-warehousing-rail"}}</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is port warehousing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Port warehousing is covered or open storage inside or adjacent to a marine terminal where cargo sits between vessel discharge and inland transportation. It covers transit sheds on the wharf apron, larger general cargo warehouses on or near the terminal, open laydown yards for cargo that does not need a roof, and container freight stations for stuffing and de-stuffing. Space is rented under the port's published tariff or through a terminal operator."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long can breakbulk cargo sit in a port warehouse for free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Free time is set by the port's published tariff, not negotiated shipment by shipment, and it varies widely between terminals. Read the tariff for three things: how many days you get, what event starts the count, and whether the days are calendar or working days. Those three details change the real number more than the headline free-time figure does."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between on-dock, near-dock and off-dock warehousing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On-dock warehousing sits inside the terminal fence, so cargo moves from vessel to storage to railcar without ever touching a public road. Near-dock is within a short drive of the terminal and requires a dray. Off-dock is an inland warehouse or transload facility, usually the cheapest space per square foot and the most expensive per handling. Each additional handling adds cost and damage exposure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is port storage the same thing as railcar demurrage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. They are two separate clocks billed by two different parties. Port storage is charged by the terminal for occupying space after free time expires. Demurrage is charged by the railroad for holding a railcar beyond its allowed free time. A breakbulk move that stalls at the port often runs both meters at once, which is why the inland leg should be arranged before the vessel berths."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find a rail-served port warehouse?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with a directory that lists which terminals actually have track serving the warehouse rather than just track somewhere on the property. The distinction that matters is whether rail runs inside or flush to the building, because that is what allows cargo to go from the stack to a railcar in a single handling instead of being drayed to a separate transload facility."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who loads breakbulk cargo from the warehouse into a railcar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually the terminal operator or a stevedoring contractor working under the port, using forklifts, reach stackers or overhead cranes depending on the piece. The securement arrangement is the part that trips up first-time shippers: loading to an open-top railcar requires a blocking and bracing arrangement that complies with AAR loading rules, and an approved arrangement should be in hand before the car is spotted."
+      }
+    }
+  ]
+}</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RSWDYHVY7Z');
+  </script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://steelwheellogistics.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://steelwheellogistics.com/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Port Warehousing for Breakbulk: How On-Dock Storage and Rail Connect",
+      "item": "https://steelwheellogistics.com/blog/breakbulk-port-warehousing-rail"
+    }
+  ]
+}</script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/blog" class="active">Blog</a>
+        <a href="/courses">Courses</a>
+        <a href="/tools">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Blog Hero -->
+  <section class="blog-hero">
+    <div class="blog-breadcrumb">
+      <a href="/blog">Blog</a><span class="separator">/</span><span>Operations</span>
+    </div>
+    <h1>Port Warehousing for Breakbulk: How On-Dock Storage and Rail Connect</h1>
+    <div class="blog-hero-meta">
+      <span>September 19, 2026</span>
+      <span class="dot">&middot;</span>
+      <span>10 min read</span>
+      <span class="dot">&middot;</span>
+      <span class="blog-tag">Operations</span>
+    </div>
+  </section>
+
+  <article class="blog-post">
+    <div class="blog-post-content">
+
+      <div data-quote-funnel style="margin:0 0 22px;padding:14px 18px;background:#0F2942;border-radius:8px;color:#fff;font-size:15px;line-height:1.5"><strong>Cargo landing at a port and moving inland by rail?</strong> <a href="/tools/rail-rate-quote" style="color:#8ecaf0;font-weight:600;text-decoration:underline">Get an indicative rail freight quote</a> for your lane in seconds &mdash; free, no signup.</div>
+
+      <div class="blog-highlight">
+        <strong>The short version:</strong> Port warehousing is where breakbulk cargo waits between the ship and the railcar, and it is the most expensive place in the chain to be caught unprepared. Free time is short, storage is billed off a published tariff you can read before you book, and whether the building has track inside it decides whether your cargo is handled once or three times.
+      </div>
+
+      <p class="blog-lead">A vessel discharges on its own schedule and railcars arrive on theirs, and those two schedules almost never line up. Port warehousing is the buffer between them. It is also where most of the avoidable money on a breakbulk move gets spent &mdash; not on the ocean leg, not on the line-haul, but on storage charges, extra drays and rehandling that a few questions asked two weeks earlier would have eliminated.</p>
+
+      <nav class="blog-toc">
+        <div class="blog-toc-title">In This Guide</div>
+        <ol>
+          <li><a href="#what-it-is">What Port Warehousing Actually Is</a></li>
+          <li><a href="#on-dock">On-Dock, Near-Dock, and Off-Dock</a></li>
+          <li><a href="#free-time">How the Free Time Clock Works</a></li>
+          <li><a href="#rail-served">Why Track Inside the Building Is the Whole Game</a></li>
+          <li><a href="#loadout">From Warehouse Floor to Railcar</a></li>
+          <li><a href="#questions">What to Ask Before You Book Space</a></li>
+          <li><a href="#pricing">Price the Inland Leg Before the Vessel Berths</a></li>
+          <li><a href="#mistakes">Where Port Warehousing Plans Go Wrong</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="what-it-is">What Port Warehousing Actually Is</h2>
+
+      <p><strong>Port warehousing is covered or open storage inside or next to a marine terminal, used to hold cargo between vessel discharge and inland transportation.</strong> It is not one product. It comes in four forms, and terminal people use the names precisely even when shippers do not.</p>
+
+      <ul>
+        <li><strong>Transit shed.</strong> A covered building on the wharf apron, sometimes only a few dozen feet from the ship's side. Built for short dwell and fast movement, with wide bays for forklift and crane access. Usually no climate control. The economics assume cargo passes through, not that it lives there.</li>
+        <li><strong>General cargo warehouse.</strong> A larger covered building on or near the terminal, built for longer dwell &mdash; staging an import lot while releases trickle in, or accumulating an export lot until the vessel arrives. More likely to offer bonded space, inventory reporting and sprinklered protection.</li>
+        <li><strong>Open laydown yard.</strong> Paved or compacted acreage for cargo that does not need a roof: structural steel, pipe, project modules, machinery crates, wind components. Priced by area occupied rather than by square foot of building, and the practical constraints are ground bearing capacity and crane reach, not walls.</li>
+        <li><strong>Container freight station (CFS).</strong> Where cargo gets stuffed into or stripped out of containers. Relevant on breakbulk moves more often than you would think, because parcels frequently split &mdash; the oversized pieces move as <a href="/blog/what-is-breakbulk-cargo">breakbulk cargo</a> and the small parts containerize.</li>
+      </ul>
+
+      <p>Cutting across all four is customs status. Bonded space lets cargo sit before duty is paid; non-bonded space does not. If a release is going to be slow or the entry is complicated, that distinction determines where the cargo can legally wait, and it needs to be settled before the ship arrives rather than during discharge.</p>
+
+      <h2 id="on-dock">On-Dock, Near-Dock, and Off-Dock</h2>
+
+      <p><strong>The single most useful thing to know about any storage option is how many times cargo gets handled to reach a railcar.</strong> That number, not the rate per square foot, drives the total cost of the port segment.</p>
+
+      <table style="width:100%;border-collapse:collapse;margin:24px 0 32px;font-size:15px">
+        <thead>
+          <tr style="background:#0F2942;color:#fff;text-align:left">
+            <th style="padding:10px 12px;border:1px solid #d5dbe2">Option</th>
+            <th style="padding:10px 12px;border:1px solid #d5dbe2">Where it sits</th>
+            <th style="padding:10px 12px;border:1px solid #d5dbe2">Handlings to railcar</th>
+            <th style="padding:10px 12px;border:1px solid #d5dbe2">Best for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:10px 12px;border:1px solid #d5dbe2"><strong>On-dock</strong></td>
+            <td style="padding:10px 12px;border:1px solid #d5dbe2">Inside the terminal fence; cargo never touches a public road</td>
+            <td style="padding:10px 12px;border:1px solid #d5dbe2">Vessel to shed, shed to car &mdash; two</td>
+            <td style="padding:10px 12px;border:1px solid #d5dbe2">Heavy, oversized or damage-sensitive cargo; anything on a tight clock</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;border:1px solid #d5dbe2"><strong>Near-dock</strong></td>
+            <td style="padding:10px 12px;border:1px solid #d5dbe2">A short drive from the terminal, outside the gate</td>
+            <td style="padding:10px 12px;border:1px solid #d5dbe2">Adds a dray and usually a set-down &mdash; three or four</td>
+            <td style="padding:10px 12px;border:1px solid #d5dbe2">Longer dwell, cheaper space, cargo that is easy to handle</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;border:1px solid #d5dbe2"><strong>Off-dock</strong></td>
+            <td style="padding:10px 12px;border:1px solid #d5dbe2">Inland warehouse or transload facility</td>
+            <td style="padding:10px 12px;border:1px solid #d5dbe2">Four or more, plus a longer road move</td>
+            <td style="padding:10px 12px;border:1px solid #d5dbe2">Lots being broken down, staged or held for months</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Off-dock space is cheapest per square foot and most expensive per touch. That trade is fine for a lot that will sit for months while it is drawn down, and terrible for a project cargo parcel that is going to move inland as a unit. The rule of thumb worth internalizing: every additional handling is a cost line <em>and</em> a claim exposure, because damage on breakbulk cargo happens during lifts, not during transit. Our guide to <a href="/blog/what-is-transloading">how transloading connects rail to your door</a> walks through the same trade on the inland side.</p>
+
+      <h2 id="free-time">How the Free Time Clock Works</h2>
+
+      <p><strong>Free time is the number of days cargo may occupy port space without a storage charge, and it is set by the terminal's published tariff rather than negotiated per shipment.</strong> After it expires, storage accrues daily &mdash; commonly on an escalating scale, so the second week costs more per day than the first.</p>
+
+      <p>Three details in the tariff change the real number more than the headline free-time figure does:</p>
+
+      <div class="blog-steps">
+        <ol>
+          <li><strong>What event starts the count.</strong> Some tariffs start free time when the cargo is discharged; others start it when the vessel completes discharge of the entire lot. On a parcel that comes off over several days, that difference is worth real money.</li>
+          <li><strong>Calendar days or working days.</strong> A free-time allowance counted in working days is meaningfully longer than the same number counted in calendar days, and terminals do not all count the same way.</li>
+          <li><strong>What does not stop the clock.</strong> Customs holds, inspections and consignee payment disputes generally do not pause storage accrual. Neither does a railcar shortage. The clock is about space occupied, not about whose fault the delay is.</li>
+        </ol>
+      </div>
+
+      <div class="blog-highlight">
+        <strong>Two clocks, two bills.</strong> Port storage is charged by the terminal for occupying space. <a href="/blog/rail-demurrage-fees-guide">Demurrage</a> is charged by the railroad for holding a railcar past its allowed free time. A breakbulk move that stalls at the port can run both meters at the same time &mdash; cars sitting on the terminal track waiting for cargo that is still waiting on a customs release.
+      </div>
+
+      <p>Storage itself is usually billed per revenue ton or per square foot occupied, per day, against a minimum. Expect it to be quoted separately from the handling charges &mdash; wharfage, stevedoring, and the in-and-out moves on the warehouse floor are their own line items, and a "storage rate" quoted without them is not a budget. Ask for the full tariff schedule, not just the storage page. Port tariffs are public documents; there is no reason to be surprised by any of these numbers after the fact.</p>
+
+      <h2 id="rail-served">Why Track Inside the Building Is the Whole Game</h2>
+
+      <p><strong>A warehouse with track running inside it, or flush to a rail dock, lets cargo go from the stack to a railcar in one handling, under roof, with no road move.</strong> A warehouse without rail turns every single railcar load into a truck trip. That is the difference between a clean port-to-plant rail move and a chain of drays.</p>
+
+      <p>"Rail-served" is used loosely, so pin it down. Track somewhere on the terminal property is not the same as track that serves your building. The questions that separate the two are how many cars the track holds, how close the track is to the door, and whether loading happens under cover or in the weather. For paper, steel with surface specifications, and bagged product, loading under roof is not a convenience &mdash; it is the difference between a clean delivery and a claim.</p>
+
+      <p>There is also a routing wrinkle worth knowing. Most ports operate their own switching railroad inside the terminal, which interchanges with the line-haul carriers serving the port. Your car routing therefore has a short segment nobody quotes you at first, and the terminal railway's switching schedule &mdash; how many times a day it pulls and spots &mdash; sets the real pace of loadout. A building with a long track and a once-daily switch behaves very differently from one with a short track and frequent service.</p>
+
+      <p>Our <a href="/rail-served-warehouses/ports">directory of rail-served port warehouses and breakbulk terminals</a> lists U.S. facilities by the thing that matters here: covered square footage, laydown acreage, whether track runs inside the building, and which carriers serve the terminal. It is the fastest way to answer "can this cargo load to rail where it lands, or am I paying for a dray?" before you commit to a discharge port.</p>
+
+      <h2 id="loadout">From Warehouse Floor to Railcar</h2>
+
+      <p>Loadout is a sequence, and it stalls at whichever step nobody owns. Six steps, in order:</p>
+
+      <div class="blog-steps">
+        <ol>
+          <li><strong>Order and spot the cars.</strong> Car orders go to the serving carrier, and placement on the warehouse track is coordinated with the terminal railway. This step has the longest lead time of the six and gets started last more often than any other.</li>
+          <li><strong>Inspect before loading.</strong> Open-top equipment for breakbulk gets inspected for deck condition, stake pockets, tie-down anchors and debris. Our <a href="/blog/railcar-inspection-checklist">railcar inspection checklist</a> covers what to look at and what to reject.</li>
+          <li><strong>Build the securement arrangement.</strong> Loading breakbulk to a flat, bulkhead flat, centerbeam or gondola requires an engineered blocking and bracing arrangement under the <a href="/blog/aar-blocking-and-bracing">AAR loading rules</a>. Approval should be in hand before the car is spotted, not while it is sitting there accruing demurrage.</li>
+          <li><strong>Tally at loading.</strong> Every piece is counted off the floor and any exception is noted. This record, paired with the discharge tally, is what a cargo claim lives or dies on. Somebody on your side should read it the day it is written.</li>
+          <li><strong>Bill and release.</strong> Bill of lading, commodity code, routing instructions, and any hazmat or dimensional paperwork. Getting the STCC and the routing right here prevents the car from being misrouted at the first interchange.</li>
+          <li><strong>Release to the line-haul.</strong> The terminal railway pulls the loaded car and interchanges it to the serving carrier. From there it is a normal rail move, with normal rail timing &mdash; which for a cross-country lane is a matter of weeks, not days.</li>
+        </ol>
+      </div>
+
+      <h2 id="questions">What to Ask Before You Book Space</h2>
+
+      <p>Ten questions, and the answers should come back in writing. If a terminal cannot answer these quickly, that itself is information.</p>
+
+      <ul>
+        <li>Is the building rail-served, and is the track <em>inside</em> the building or outside it?</li>
+        <li>How many railcars does the track hold per spot, and how often does the terminal railway switch?</li>
+        <li>Which line-haul carriers serve the terminal, and does the port's switching railroad add a separate charge?</li>
+        <li>How much free time, counted from what event, in calendar or working days?</li>
+        <li>What is the storage rate after free time, on what unit, and what is the monthly minimum?</li>
+        <li>Is handling in and out included in the space rate, or billed separately per ton?</li>
+        <li>What is the floor load rating, and what crane or lift capacity is available on site?</li>
+        <li>Is the space bonded, and can it hold cargo pending customs release?</li>
+        <li>Who is liable for damage while the cargo is in the building, and up to what limit?</li>
+        <li>What is the terminal's procedure for exception tallies, and who gets a copy?</li>
+      </ul>
+
+      <h2 id="pricing">Price the Inland Leg Before the Vessel Berths</h2>
+
+      <p><strong>The inland rail cost should be known before the discharge port is chosen, because it frequently changes which port is the right answer.</strong> Two ports with similar ocean freight and similar handling charges can sit hundreds of miles apart from the inland destination, and on a multi-car move that gap is larger than every port charge combined.</p>
+
+      <p>Both of our public tools accept port locations directly &mdash; type the port name into the origin field rather than substituting the nearest city, and the lookup will find it:</p>
+
+      <ul>
+        <li><a href="/tools/rail-rate-quote">Rail rate quote</a> &mdash; an indicative per-car and per-block rate for the port-to-destination lane, by commodity and car type. Indicative, not a binding quote, but close enough to compare two discharge ports against each other.</li>
+        <li><a href="/tools/rail-transit-time">Rail transit time</a> &mdash; an estimate of how long the inland leg runs, which is what you actually need to size free time and decide how early cars have to be ordered.</li>
+      </ul>
+
+      <p>Run the same commodity and car count from each candidate port. When one port wins by a wide margin on the inland leg, that is usually the decision, and it is worth knowing before the booking is made rather than after the cargo is on the water.</p>
+
+      <h2 id="mistakes">Where Port Warehousing Plans Go Wrong</h2>
+
+      <div class="blog-steps">
+        <ol>
+          <li><strong>Booking space without asking whether it is rail-served.</strong> The cheapest square footage at the port is frequently in the building with no track. The dray costs are discovered at loadout, when there are no alternatives left.</li>
+          <li><strong>Ordering railcars after discharge.</strong> Car orders have lead time. Cargo does not stop accruing storage while you wait for equipment, and the free-time allowance was never long enough to absorb a car order started from zero.</li>
+          <li><strong>Treating storage and handling as one number.</strong> They are separate line items from separate tariff sections. Budgets built on the storage rate alone come in low by a wide margin every time.</li>
+          <li><strong>Assuming a customs hold pauses the clock.</strong> It generally does not. If the entry is complicated, bonded space is the answer, arranged in advance.</li>
+          <li><strong>Nobody reads the exception tally.</strong> Damage noted at discharge and never acted on becomes damage that cannot be proven at destination. The tally is a legal document, not a formality.</li>
+        </ol>
+      </div>
+
+      <p>None of this is difficult once it has been done a few times &mdash; it is just unforgiving the first time, because every mistake has a daily rate attached. If you want to build the judgment in-house, our free <a href="/courses/transloading">transloading course module</a> covers the handoff mechanics between modes, including the port end. If you would rather hand it off, coordinating port loadout, car supply, securement and the inland move is <a href="/services">part of what we do for shippers</a> &mdash; without you adding a rail department to do it.</p>
+
+      <section class="blog-faq" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <h3>What is port warehousing?</h3>
+          <p>Port warehousing is covered or open storage inside or adjacent to a marine terminal where cargo sits between vessel discharge and inland transportation. It covers transit sheds on the wharf apron, larger general cargo warehouses on or near the terminal, open laydown yards for cargo that does not need a roof, and container freight stations for stuffing and de-stuffing. Space is rented under the port's published tariff or through a terminal operator.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How long can breakbulk cargo sit in a port warehouse for free?</h3>
+          <p>Free time is set by the port's published tariff, not negotiated shipment by shipment, and it varies widely between terminals. Read the tariff for three things: how many days you get, what event starts the count, and whether the days are calendar or working days. Those three details change the real number more than the headline free-time figure does.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What is the difference between on-dock, near-dock and off-dock warehousing?</h3>
+          <p>On-dock warehousing sits inside the terminal fence, so cargo moves from vessel to storage to railcar without ever touching a public road. Near-dock is within a short drive of the terminal and requires a dray. Off-dock is an inland warehouse or transload facility, usually the cheapest space per square foot and the most expensive per handling. Each additional handling adds cost and damage exposure.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is port storage the same thing as railcar demurrage?</h3>
+          <p>No. They are two separate clocks billed by two different parties. Port storage is charged by the terminal for occupying space after free time expires. Demurrage is charged by the railroad for holding a railcar beyond its allowed free time. A breakbulk move that stalls at the port often runs both meters at once, which is why the inland leg should be arranged before the vessel berths.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do I find a rail-served port warehouse?</h3>
+          <p>Start with a directory that lists which terminals actually have track serving the warehouse rather than just track somewhere on the property. The distinction that matters is whether rail runs inside or flush to the building, because that is what allows cargo to go from the stack to a railcar in a single handling instead of being drayed to a separate transload facility.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Who loads breakbulk cargo from the warehouse into a railcar?</h3>
+          <p>Usually the terminal operator or a stevedoring contractor working under the port, using forklifts, reach stackers or overhead cranes depending on the piece. The securement arrangement is the part that trips up first-time shippers: loading to an open-top railcar requires a blocking and bracing arrangement that complies with AAR loading rules, and an approved arrangement should be in hand before the car is spotted.</p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Author -->
+    <div class="blog-author">
+      <div class="blog-author-icon">
+        <img src="/images/logo.png" alt="Steel Wheel Logistics" width="48" height="48">
+      </div>
+      <div class="blog-author-info">
+        <div class="blog-author-name">Steel Wheel Logistics</div>
+        <div class="blog-author-bio">We coordinate bulk rail freight across North America &mdash; from rate negotiation and car sourcing to transload coordination and tracking. Based in Mississippi, serving shippers nationwide.</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="blog-cta">
+      <h3>Cargo Landing at a Port and Moving Inland?</h3>
+      <p>Send us the commodity, the piece dimensions, the discharge port and the inland destination. We will tell you whether the cargo can load to rail where it lands and what the inland leg realistically costs.</p>
+      <a href="/contact" class="btn btn-primary">Get a Free Quote</a>
+    </div>
+
+    <div class="blog-back">
+      <a href="/blog">&larr; Back to All Posts</a>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/tools">Tools</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
