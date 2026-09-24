@@ -127,6 +127,10 @@
     {
       "source": "/api/shipper-dashboard",
       "destination": "/api/tool-lead?tool=shipper-dashboard"
+    },
+    {
+      "source": "/api/railcar-renewal-lead",
+      "destination": "/api/tool-lead?tool=railcar-renewal"
     }
   ],
   "headers": [

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Railcar lease renewal coming up? Get the renewal benchmarked against market lease rates and alternative supply before you sign. Renewal defense, sublease placement for idle railcars, and sourcing.">
+  <title>Railcar Lease Renewal: Benchmark Before You Sign | Steel Wheel</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <link rel="canonical" href="https://steelwheellogistics.com/tools/railcar-lease-renewal">
+  <meta property="og:title" content="Railcar Lease Renewal: Benchmark Before You Sign | Steel Wheel Logistics">
+  <meta property="og:description" content="Lessors are repricing railcar lease renewals 17-27% above expiring rates. Before you sign, get the renewal benchmarked against the market and alternative supply.">
+  <meta property="og:url" content="https://steelwheellogistics.com/tools/railcar-lease-renewal">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+  <style>
+    .tool-hero { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); padding: 48px 20px; text-align: center; }
+    .tool-hero h1 { color: var(--white); font-size: 2rem; margin-bottom: 8px; }
+    .tool-hero p { color: var(--steel-grey); font-size: 1.05rem; max-width: 760px; margin: 0 auto; }
+    .tool-hero .badge { display: inline-block; background: rgba(74,144,217,0.15); color: var(--steel-blue); font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .tool-layout { max-width: 980px; margin: 0 auto; padding: 32px 20px 56px; }
+    .section-heading { font-size: 1.5rem; margin-bottom: 6px; }
+    .section-sub { color: var(--steel-grey); margin-bottom: 20px; }
+    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 28px; }
+    .stat-card { background: var(--white); border: 1px solid var(--border-grey); border-radius: 10px; padding: 18px; }
+    .stat-value { font-size: 1.8rem; font-weight: 700; color: var(--navy); }
+    .stat-label { font-weight: 600; margin: 4px 0 6px; }
+    .stat-detail { font-size: 0.92rem; color: #444; }
+    .stat-source { font-size: 0.8rem; color: var(--steel-grey); margin-top: 8px; }
+    .desk-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 28px; align-items: start; }
+    @media (max-width: 860px) { .desk-grid { grid-template-columns: 1fr; } }
+    .desk-copy h2 { font-size: 1.35rem; margin-bottom: 8px; }
+    .desk-copy h3 { font-size: 1.05rem; margin: 18px 0 6px; }
+    .desk-copy ul { padding-left: 20px; }
+    .desk-copy li { margin-bottom: 8px; }
+    .desk-form { background: var(--white); border: 2px solid var(--steel-blue); border-radius: 12px; padding: 22px; position: sticky; top: 16px; }
+    .desk-form h2 { font-size: 1.2rem; margin-bottom: 4px; }
+    .desk-form p.lead { font-size: 0.9rem; color: var(--steel-grey); margin-bottom: 14px; }
+    .desk-form label { display: block; font-size: 0.85rem; font-weight: 600; margin: 10px 0 4px; }
+    .desk-form input, .desk-form select, .desk-form textarea { width: 100%; padding: 9px 10px; border: 1px solid var(--border-grey); border-radius: 6px; font: inherit; }
+    .desk-form textarea { min-height: 70px; }
+    .desk-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .desk-form button { width: 100%; margin-top: 16px; padding: 12px; background: var(--navy); color: var(--white); border: none; border-radius: 6px; font-weight: 700; font-size: 1rem; cursor: pointer; }
+    .desk-form button:disabled { opacity: 0.6; cursor: wait; }
+    .desk-form .fine { font-size: 0.78rem; color: var(--steel-grey); margin-top: 10px; }
+    .desk-form .ok { background: #e8f5e9; border: 1px solid #9ccc9f; border-radius: 8px; padding: 14px; }
+    .desk-form .err { color: #b00020; font-size: 0.85rem; margin-top: 8px; }
+    .faq { margin-top: 40px; }
+    .faq h2 { font-size: 1.5rem; margin-bottom: 14px; }
+    .faq-item { border-top: 1px solid var(--border-grey); padding: 14px 0; }
+    .faq-item h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    .range-note { font-size: 0.85rem; color: var(--steel-grey); border-left: 3px solid var(--steel-blue); padding-left: 12px; margin: 18px 0 30px; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Railcar Lease Renewal Desk",
+    "serviceType": "Railcar lease renewal benchmarking, sublease placement and railcar sourcing",
+    "provider": { "@type": "Organization", "name": "Steel Wheel Logistics", "url": "https://steelwheellogistics.com" },
+    "areaServed": "North America",
+    "url": "https://steelwheellogistics.com/tools/railcar-lease-renewal",
+    "description": "Before you sign a railcar lease renewal, Steel Wheel Logistics benchmarks the proposed rate and terms against published market indices and alternative supply, places idle railcars on sublease, and sources cars for shippers who need them."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How far ahead of my railcar lease expiry should I start?", "acceptedAnswer": { "@type": "Answer", "text": "Nine to twelve months. Most master leases require notice of non-renewal 90 to 180 days before expiry, and sourcing replacement cars or negotiating a competing lease takes time. Starting at twelve months gives you a real alternative on the table when the renewal offer arrives." } },
+      { "@type": "Question", "name": "How much are railcar lease renewals going up in 2026?", "acceptedAnswer": { "@type": "Answer", "text": "GATX's Lease Price Index showed renewals repricing 16.8% above expiring rates in Q2 2026, down from 22.3% in Q1 2026 and 24.2% a year earlier. Trinity reported renewals 27% above expiring rates in Q4 2025. Leases signed in the soft 2019 to 2021 market are the ones taking the largest step-ups." } },
+      { "@type": "Question", "name": "Can I sublease railcars I am not using?", "acceptedAnswer": { "@type": "Answer", "text": "Usually yes, with the lessor's prior written consent, which almost every master lease requires. The sublessee typically has to carry the same insurance naming the lessor, and the original lessee stays liable for the head lease. Getting that consent quickly is most of the work in a sublease placement." } },
+      { "@type": "Question", "name": "What does the renewal desk cost?", "acceptedAnswer": { "@type": "Answer", "text": "The initial review is free. If we place cars, source cars, or negotiate a renewal on your behalf, fees are agreed in writing before any work starts and are typically paid by the supplying side or as a flat per-car fee. We never quote a rate as a guaranteed or binding number." } },
+      { "@type": "Question", "name": "Do you own or lease railcars yourselves?", "acceptedAnswer": { "@type": "Answer", "text": "Steel Wheel Logistics acts as a neutral intermediary. Our partner Iron Horse Logistics Group sells and leases gondolas, tank cars and covered hoppers, and we source across lessors, dealers and private fleets so the recommendation is not tied to one lessor's inventory." } }
+    ]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-RSWDYHVY7Z');</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <nav class="main-nav">
+        <a href="/">Home</a><a href="/services">Services</a><a href="/blog">Blog</a><a href="/courses">Courses</a><a href="/tools" class="active">Tools</a><a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="tool-hero">
+    <span class="badge">Railcar Desk</span>
+    <h1>Railcar Lease Renewal: Benchmark It Before You Sign</h1>
+    <p>Lessors are repricing renewals 17&ndash;27% above expiring rates, on 54-month terms. If your railcar lease expires in 2026 or 2027, the renewal offer is the biggest freight cost increase you will see this year. Get it benchmarked first. Same desk handles idle-car subleases and sourcing for shippers who need cars.</p>
+  </section>
+
+  <div class="tool-layout">
+
+    <section>
+      <h2 class="section-heading">Why the renewal offer looks the way it does</h2>
+      <p class="section-sub">Published indices, not quotes. Full detail and sources on our <a href="/tools/railcar-lease-rates">railcar lease rates tracker</a>.</p>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-value">+16.8%</div>
+          <div class="stat-label">Renewal rate vs. expiring rate</div>
+          <div class="stat-detail">GATX Lease Price Index, Q2 2026. Down from +22.3% in Q1 and +24.2% a year earlier: still rising, but decelerating.</div>
+          <div class="stat-source">Source: GATX Q2 2026 Form 10-Q</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">54 months</div>
+          <div class="stat-label">Average renewal term</div>
+          <div class="stat-detail">Lessors lock shippers into four to five years at today's rates. Term is the lever most shippers give away without noticing.</div>
+          <div class="stat-source">Source: GATX Q2 2026 Form 10-Q</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">98.0%</div>
+          <div class="stat-label">Lessor fleet utilization</div>
+          <div class="stat-detail">GATX 98.0%, Trinity 97.3%. The good cars are out working, which is why the incumbent lessor assumes you have nowhere else to go.</div>
+          <div class="stat-source">Source: GATX and Trinity Q2 2026 releases</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">21.8%</div>
+          <div class="stat-label">Fleet in storage</div>
+          <div class="stat-detail">About 356,000 cars sat idle on February 1 2026. Most are old or off-spec, but the right older car on a sublease is often the alternative that resets a renewal conversation.</div>
+          <div class="stat-source">Source: AAR Rail Industry Overview, Feb 2026</div>
+        </div>
+      </div>
+      <p class="range-note">Every figure is a published range or index from the named source. Lease rates vary by car type, age, spec, term, mileage allowance and lease structure. These are planning ranges, never a rate for your equipment, and we do not guarantee rates.</p>
+    </section>
+
+    <section class="desk-grid">
+      <div class="desk-copy">
+        <h2>What the desk does</h2>
+        <h3>1. Renewal defense</h3>
+        <p>Send us the expiring lease and the renewal offer nine to twelve months out. We benchmark the proposed rate against the lease price indices and published ranges for your car type, then price the alternatives: a competing lease from other lessors, a sublease of comparable cars from a private fleet, or a used-car purchase where the math works. You go back to the lessor with a number, not a feeling.</p>
+        <h3>2. Sublease placement for idle cars</h3>
+        <p>Cars sitting in storage cost you daily storage, switching, and in some cases private-empty-car charges from the serving railroad, while they age toward their interchange limit. We get the lessor's consent, find a sublessee among shippers who need that car type, and handle the paperwork. You keep the head lease; the cars earn.</p>
+        <h3>3. Sourcing for shippers who need cars</h3>
+        <p>New plant, new lane, or a fleet that no longer covers the volume. Tell us the car type, count, spec and term. We search lessors, dealers, private fleets and the two public boards, and bring back real options with their trade-offs, including the older "good enough" car that ships next month instead of the new build that ships next year.</p>
+        <h3>What we are not</h3>
+        <ul>
+          <li>Not a lessor. We do not push one fleet's inventory.</li>
+          <li>Not a marketplace. A board shows you listings; we get you to a signed placement, including the lessor consent that boards leave to you.</li>
+          <li>Not a source of binding quotes. Every number we give is an indicative range until a lessor or seller puts it in writing.</li>
+        </ul>
+        <p>Related reading: <a href="/blog/railcar-sublease-guide">how to sublease idle railcars</a>, <a href="/blog/full-service-vs-net-railcar-lease">full-service vs. net leases</a>, <a href="/blog/buying-a-used-railcar">buying a used railcar</a>, and the <a href="/tools/lease-vs-buy-calculator">lease vs. buy calculator</a>.</p>
+      </div>
+
+      <form class="desk-form" id="deskForm" novalidate>
+        <h2>Start a free review</h2>
+        <p class="lead">Ten minutes on your car list is all we need. No obligation.</p>
+        <label for="request_type">What do you need?</label>
+        <select id="request_type" name="request_type" required>
+          <option value="renewal">My lease is expiring: benchmark the renewal</option>
+          <option value="sublease">I have idle railcars to sublease</option>
+          <option value="sell">I have railcars to sell</option>
+          <option value="sourcing">I need railcars</option>
+        </select>
+        <div class="row">
+          <div><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+          <div><label for="company">Company</label><input id="company" name="company" autocomplete="organization" required></div>
+        </div>
+        <div class="row">
+          <div><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+        </div>
+        <div class="row">
+          <div><label for="car_type">Car type</label>
+            <select id="car_type" name="car_type">
+              <option value="">Select</option>
+              <option>Covered hopper</option><option>Tank car</option><option>Gondola</option><option>Open-top hopper</option><option>Boxcar</option><option>Flatcar / centerbeam</option><option>Other</option>
+            </select>
+          </div>
+          <div><label for="car_count">Number of cars</label><input id="car_count" name="car_count" inputmode="numeric" placeholder="e.g. 25"></div>
+        </div>
+        <div class="row">
+          <div><label for="marks">Reporting marks (optional)</label><input id="marks" name="marks" placeholder="e.g. AOKX, CPCX"></div>
+          <div><label for="lessor">Current lessor (optional)</label><input id="lessor" name="lessor" placeholder="e.g. GATX, Greenbrier"></div>
+        </div>
+        <div class="row">
+          <div><label for="lease_expiry">Lease expiry (if any)</label><input id="lease_expiry" name="lease_expiry" placeholder="e.g. March 2027"></div>
+          <div><label for="lane">Lane or car location</label><input id="lane" name="lane" placeholder="e.g. Baton Rouge LA, or stored at Moss Point"></div>
+        </div>
+        <label for="notes">Anything else</label>
+        <textarea id="notes" name="notes" placeholder="Spec, commodity, term, what the renewal offer says"></textarea>
+        <button type="submit" id="deskSubmit">Send to the desk &rarr;</button>
+        <div class="err" id="deskErr" hidden></div>
+        <p class="fine">We reply within one business day. Your car list stays confidential and is never posted to a public board without your written OK.</p>
+      </form>
+    </section>
+
+    <section class="faq">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item"><h3>How far ahead of my railcar lease expiry should I start?</h3><p>Nine to twelve months. Most master leases require notice of non-renewal 90 to 180 days before expiry, and sourcing replacement cars or negotiating a competing lease takes time. Starting at twelve months gives you a real alternative on the table when the renewal offer arrives.</p></div>
+      <div class="faq-item"><h3>How much are railcar lease renewals going up in 2026?</h3><p>GATX's Lease Price Index showed renewals repricing 16.8% above expiring rates in Q2 2026, down from 22.3% in Q1 2026 and 24.2% a year earlier. Trinity reported renewals 27% above expiring rates in Q4 2025. Leases signed in the soft 2019 to 2021 market are the ones taking the largest step-ups.</p></div>
+      <div class="faq-item"><h3>Can I sublease railcars I am not using?</h3><p>Usually yes, with the lessor's prior written consent, which almost every master lease requires. The sublessee typically has to carry the same insurance naming the lessor, and the original lessee stays liable for the head lease. Getting that consent quickly is most of the work in a sublease placement.</p></div>
+      <div class="faq-item"><h3>What does the renewal desk cost?</h3><p>The initial review is free. If we place cars, source cars, or negotiate a renewal on your behalf, fees are agreed in writing before any work starts and are typically paid by the supplying side or as a flat per-car fee. We never quote a rate as a guaranteed or binding number.</p></div>
+      <div class="faq-item"><h3>Do you own or lease railcars yourselves?</h3><p>Steel Wheel Logistics acts as a neutral intermediary. Our partner Iron Horse Logistics Group sells and leases gondolas, tank cars and covered hoppers, and we source across lessors, dealers and private fleets so the recommendation is not tied to one lessor's inventory.</p></div>
+    </section>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links"><a href="/privacy-policy">Privacy Policy</a><a href="/terms-of-service">Terms of Service</a><a href="/contact">Contact Us</a></div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById('deskForm');
+      var btn = document.getElementById('deskSubmit');
+      var err = document.getElementById('deskErr');
+      var ref = document.referrer || '';
+      var kind = !ref ? 'direct' : (ref.indexOf(location.host) !== -1 ? 'internal' : 'external');
+      var q = '';
+      try { q = new URLSearchParams(location.search).get('q') || ''; } catch (e) {}
+      form.addEventListener('submit', async function (ev) {
+        ev.preventDefault();
+        err.hidden = true;
+        if (!form.email.value || !form.name.value || !form.company.value) { err.textContent = 'Name, company and work email are required.'; err.hidden = false; return; }
+        btn.disabled = true; btn.textContent = 'Sending…';
+        var payload = {};
+        new FormData(form).forEach(function (v, k) { payload[k] = v; });
+        payload.landing_referrer = ref; payload.referrer_kind = kind; payload.entry_query = q;
+        try {
+          var res = await fetch('/api/railcar-renewal-lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+          var data = await res.json().catch(function () { return {}; });
+          if (!res.ok || !data.ok) {
+            var map = { email_format: 'That email address does not look right.', email_disposable: 'Please use a work email address.', email_no_mx: 'That email domain does not accept mail.' };
+            err.textContent = map[data.error] || 'Something went wrong. Call (601) 821-2199 or email steelwheellogistics@gmail.com.'; err.hidden = false;
+            btn.disabled = false; btn.textContent = 'Send to the desk →'; return;
+          }
+          if (typeof gtag === 'function') gtag('event', 'railcar_desk_lead', { event_category: 'tools', event_label: payload.request_type });
+          form.innerHTML = '<div class="ok"><strong>Received.</strong> We will come back within one business day with a first read on your cars. If it is urgent, call (601) 821-2199.</div>';
+        } catch (e) {
+          err.textContent = 'Network error. Call (601) 821-2199 or email steelwheellogistics@gmail.com.'; err.hidden = false;
+          btn.disabled = false; btn.textContent = 'Send to the desk →';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

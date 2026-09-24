@@ -3,6 +3,7 @@ import commodityFlow from './_commodity-flow-lead';
 import fleetCalculator from './_fleet-calculator-lead';
 import storageLocator from './_storage-locator-lead';
 import sublease from './_sublease-lead';
+import railcarRenewal from './_railcar-renewal-lead';
 import transitTime from './_rail-transit-time';
 import shipperDashboard from './_shipper-dashboard';
 
@@ -23,6 +24,7 @@ const ROUTES: Record<string, Handler> = {
   'fleet-calculator': fleetCalculator,
   'storage-locator': storageLocator,
   'sublease': sublease,
+  'railcar-renewal': railcarRenewal,
   // Not a lead route — a public, ungated transit lookup. It rides this
   // dispatcher purely to stay under the 12-function Hobby cap.
   'transit-time': transitTime,
