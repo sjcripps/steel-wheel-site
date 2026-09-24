@@ -1,0 +1,460 @@
+{
+ "generated_at": "2026-09-24T12:25:45.380447Z",
+ "week_start": "2026-08-28",
+ "week_end": "2026-09-24",
+ "totals": {
+  "leases": 8,
+  "assignments": 9,
+  "terminations": 16,
+  "cars_leased": 482,
+  "cars_terminated": 698
+ },
+ "by_car_type": {
+  "other": {
+   "filings": 3,
+   "cars": 398
+  },
+  "tank": {
+   "filings": 1,
+   "cars": 1
+  },
+  "open hopper": {
+   "filings": 1,
+   "cars": 0
+  },
+  "gondola": {
+   "filings": 3,
+   "cars": 83
+  }
+ },
+ "top_lessors": [
+  {
+   "name": "First-Citizens Bank and Trust Company",
+   "filings": 2
+  },
+  {
+   "name": "BFLX Leasing LLC",
+   "filings": 1
+  },
+  {
+   "name": "U.S. Bank Equipment Finance, a Division of U.S. Bank National Association",
+   "filings": 1
+  },
+  {
+   "name": "Regions Commercial Equipment Finance, LLC",
+   "filings": 1
+  },
+  {
+   "name": "Atlantic Union Equipment Finance, Inc.",
+   "filings": 1
+  },
+  {
+   "name": "TD Equipment Finance, Inc.",
+   "filings": 1
+  },
+  {
+   "name": "CIT Equipment Financing, LLC",
+   "filings": 1
+  },
+  {
+   "name": "BAL Global Finance Canada Corporation",
+   "filings": 1
+  }
+ ],
+ "top_lessees": [
+  {
+   "name": "Reworld Sustainable Solutions, LLC (f/k/a Covanta Sustainable Solutions, LLC)",
+   "filings": 1,
+   "cars": 138
+  },
+  {
+   "name": "American Iron & Metal Company Inc./La Compagnie Americaine De Fer & Metaux Inc.",
+   "filings": 1,
+   "cars": 83
+  },
+  {
+   "name": "AIM (U.S.A.) Holdings Inc./ Gestion AIM (U.S.A.) Inc.",
+   "filings": 1,
+   "cars": 83
+  },
+  {
+   "name": "Occidental Chemical Corporation",
+   "filings": 1,
+   "cars": 1
+  },
+  {
+   "name": "ALF P-I Inc.",
+   "filings": 1,
+   "cars": 0
+  },
+  {
+   "name": "Tennessee Valley Authority",
+   "filings": 1,
+   "cars": 0
+  },
+  {
+   "name": "ArcelorMittal Mexico, S.A. de C.V.",
+   "filings": 1,
+   "cars": 0
+  },
+  {
+   "name": "AMG Resources Corporation",
+   "filings": 1,
+   "cars": 0
+  }
+ ],
+ "biggest_filings": [
+  {
+   "lessee": "",
+   "lessor": "Regions Commercial Equipment Finance, LLC; Atlantic Union Equipment Finance, Inc.",
+   "cars": 260,
+   "car_type": "other",
+   "marks": [
+    "MWAX"
+   ],
+   "filing_date": "9/3/2026",
+   "rec_no": "40874",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1788518996145/40874_A.pdf"
+  },
+  {
+   "lessee": "Reworld Sustainable Solutions, LLC (f/k/a Covanta Sustainable Solutions, LLC)",
+   "lessor": "TD Equipment Finance, Inc.",
+   "cars": 138,
+   "car_type": "other",
+   "marks": [
+    "COVX",
+    "COYX"
+   ],
+   "filing_date": "9/2/2026",
+   "rec_no": "31347",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1788370259332/31347-B.pdf"
+  },
+  {
+   "lessee": "American Iron & Metal Company Inc./La Compagnie Americaine De Fer & Metaux Inc.; AIM (U.S.",
+   "lessor": "BAL Global Finance Canada Corporation",
+   "cars": 83,
+   "car_type": "gondola",
+   "marks": [
+    "AIMX"
+   ],
+   "filing_date": "9/1/2026",
+   "rec_no": "40498",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1788293626382/40498-B.pdf"
+  },
+  {
+   "lessee": "Occidental Chemical Corporation",
+   "lessor": "U.S. Bank Equipment Finance, a Division of U.S. Bank National Association",
+   "cars": 1,
+   "car_type": "tank",
+   "marks": [
+    "HOKX"
+   ],
+   "filing_date": "9/10/2026",
+   "rec_no": "41732",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1789049592723/41732.pdf"
+  }
+ ],
+ "terminations": [
+  {
+   "party": "Wells Fargo Bank, National Association; BFLX Leasing LLC",
+   "cars": 445,
+   "car_type": "other",
+   "filing_date": "9/22/2026",
+   "rec_no": "41448",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1790103377366/41448_K.pdf"
+  },
+  {
+   "party": "Greenbrier Leasing Company LLC",
+   "cars": 150,
+   "car_type": "other",
+   "filing_date": "9/18/2026",
+   "rec_no": "23966",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1789755284637/23966-QQ.pdf"
+  },
+  {
+   "party": "JPMorgan Chase Bank, N.A.",
+   "cars": 100,
+   "car_type": "flatcar",
+   "filing_date": "9/18/2026",
+   "rec_no": "30825",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1789757538541/30825_A.pdf"
+  },
+  {
+   "party": "Enkay Leasing Canada LP",
+   "cars": 1,
+   "car_type": "other",
+   "filing_date": "8/28/2026",
+   "rec_no": "40350",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1787928832195/40350-H.pdf"
+  },
+  {
+   "party": "Enkay US Term I LLC",
+   "cars": 1,
+   "car_type": "other",
+   "filing_date": "8/28/2026",
+   "rec_no": "40633",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1787928592388/40633-F.pdf"
+  },
+  {
+   "party": "Enkay US Term I LLC",
+   "cars": 1,
+   "car_type": "other",
+   "filing_date": "8/28/2026",
+   "rec_no": "40673",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1787927064025/40673_C.pdf"
+  },
+  {
+   "party": "PNW Railcars, LLC (f/k/a MUL Railcars, Inc., as ultimate successor in interest to Greenbri",
+   "cars": null,
+   "car_type": "other",
+   "filing_date": "9/22/2026",
+   "rec_no": "33338",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1790109614714/33338_B.pdf"
+  },
+  {
+   "party": "PNW Railcars, LLC (f/k/a MUL Railcars, Inc., as successor by assignment to Greenbrier Leas",
+   "cars": null,
+   "car_type": "other",
+   "filing_date": "9/18/2026",
+   "rec_no": "32581",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1789763655161/32581_B.pdf"
+  },
+  {
+   "party": "BFLX Leasing LLC",
+   "cars": null,
+   "car_type": "other",
+   "filing_date": "9/11/2026",
+   "rec_no": "41458",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1789383319933/41458-A.pdf"
+  },
+  {
+   "party": "Modern Rail Capital LLC (f/k/a Mitsui Rail Capital, LLC)",
+   "cars": null,
+   "car_type": "other",
+   "filing_date": "9/10/2026",
+   "rec_no": "40162",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1789064105431/40162_A.pdf"
+  },
+  {
+   "party": "Modern Rail Capital LLC (f/k/a Mitsui Rail Capital, LLC)",
+   "cars": null,
+   "car_type": "other",
+   "filing_date": "9/10/2026",
+   "rec_no": "40161",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1789063894479/40161_A.pdf"
+  },
+  {
+   "party": "Wells Fargo Bank, National Association; BFLX Leasing LLC",
+   "cars": null,
+   "car_type": "other",
+   "filing_date": "9/11/2026",
+   "rec_no": "41448",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1789383026727/41448-J.pdf"
+  },
+  {
+   "party": "Everest Railcar Services INC",
+   "cars": null,
+   "car_type": "other",
+   "filing_date": "9/10/2026",
+   "rec_no": "40836",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1789066472097/40836-A.pdf"
+  },
+  {
+   "party": "Everest Railcar Services INC",
+   "cars": null,
+   "car_type": "other",
+   "filing_date": "9/10/2026",
+   "rec_no": "40761",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1789066126719/40761-A.pdf"
+  },
+  {
+   "party": "GABX Leasing LLC c/o GATX Corporation",
+   "cars": null,
+   "car_type": "other",
+   "filing_date": "9/3/2026",
+   "rec_no": "22225",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1788461999099/22225-X.pdf"
+  }
+ ],
+ "assignments": [
+  {
+   "parties": "Regions Commercial Equipment Finance, LLC; Atlantic Union Equipment Finance, Inc.",
+   "cars": 260,
+   "car_type": "other",
+   "filing_date": "9/3/2026",
+   "rec_no": "40874",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1788518996145/40874_A.pdf"
+  },
+  {
+   "parties": "SCF Revolver 2018-1 LLC; Stonebriar Commercial Finance LLC",
+   "cars": 15,
+   "car_type": "other",
+   "filing_date": "9/23/2026",
+   "rec_no": "40559",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1790246855939/40559-LL.pdf"
+  },
+  {
+   "parties": "Spur Rail I LLC; Trinity Industries Leasing Company",
+   "cars": 9,
+   "car_type": "other",
+   "filing_date": "9/22/2026",
+   "rec_no": "41627",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1790180146625/41627_G.pdf"
+  },
+  {
+   "parties": "Fifth Third Bank, National Association; U.S. Bank Equipment Finance, a Division of U.S. Bank National Associat",
+   "cars": 1,
+   "car_type": "tank",
+   "filing_date": "9/14/2026",
+   "rec_no": "41732",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1789467658413/41732-A.pdf"
+  },
+  {
+   "parties": "ALF P-I Inc.; BFLX Leasing LLC",
+   "cars": null,
+   "car_type": "other",
+   "filing_date": "9/22/2026",
+   "rec_no": "21423",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1790103890212/21423_D.pdf"
+  },
+  {
+   "parties": "Triumph Rail LLC (f/k/a TRIP Rail Master Funding LLC); Trinity Industries Leasing Company",
+   "cars": null,
+   "car_type": "other",
+   "filing_date": "9/22/2026",
+   "rec_no": "40243",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1790097518905/40243-L.pdf"
+  },
+  {
+   "parties": "NP SPE IX LP; Trinity Industries Leasing Company",
+   "cars": null,
+   "car_type": "other",
+   "filing_date": "9/22/2026",
+   "rec_no": "33450",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1790096966539/33450_F.pdf"
+  },
+  {
+   "parties": "NP SPE X LLC; NP RIII Borrower LLC",
+   "cars": null,
+   "car_type": "other",
+   "filing_date": "9/21/2026",
+   "rec_no": "41735",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1790091218233/41735-D.pdf"
+  },
+  {
+   "parties": "REF Borrower I LLC; NP SPE X",
+   "cars": null,
+   "car_type": "other",
+   "filing_date": "9/21/2026",
+   "rec_no": "33534",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1790102804838/33534-CC.pdf"
+  }
+ ],
+ "history": [
+  {
+   "week_end": "2026-07-02",
+   "leases": 8,
+   "assignments": 4,
+   "terminations": 17,
+   "cars_leased": 1719,
+   "cars_terminated": 398
+  },
+  {
+   "week_end": "2026-07-09",
+   "leases": 0,
+   "assignments": 3,
+   "terminations": 5,
+   "cars_leased": 0,
+   "cars_terminated": 170
+  },
+  {
+   "week_end": "2026-07-16",
+   "leases": 14,
+   "assignments": 1,
+   "terminations": 2,
+   "cars_leased": 2579,
+   "cars_terminated": 0
+  },
+  {
+   "week_end": "2026-07-23",
+   "leases": 0,
+   "assignments": 2,
+   "terminations": 1,
+   "cars_leased": 0,
+   "cars_terminated": 0
+  },
+  {
+   "week_end": "2026-07-30",
+   "leases": 2,
+   "assignments": 2,
+   "terminations": 2,
+   "cars_leased": 1,
+   "cars_terminated": 6
+  },
+  {
+   "week_end": "2026-08-06",
+   "leases": 5,
+   "assignments": 2,
+   "terminations": 5,
+   "cars_leased": 1429,
+   "cars_terminated": 52
+  },
+  {
+   "week_end": "2026-08-13",
+   "leases": 3,
+   "assignments": 8,
+   "terminations": 2,
+   "cars_leased": 331,
+   "cars_terminated": 181
+  },
+  {
+   "week_end": "2026-08-20",
+   "leases": 2,
+   "assignments": 13,
+   "terminations": 7,
+   "cars_leased": 0,
+   "cars_terminated": 97
+  },
+  {
+   "week_end": "2026-08-27",
+   "leases": 23,
+   "assignments": 4,
+   "terminations": 2,
+   "cars_leased": 68,
+   "cars_terminated": 0
+  },
+  {
+   "week_end": "2026-09-03",
+   "leases": 6,
+   "assignments": 1,
+   "terminations": 5,
+   "cars_leased": 481,
+   "cars_terminated": 3
+  },
+  {
+   "week_end": "2026-09-10",
+   "leases": 1,
+   "assignments": 0,
+   "terminations": 4,
+   "cars_leased": 1,
+   "cars_terminated": 0
+  },
+  {
+   "week_end": "2026-09-17",
+   "leases": 0,
+   "assignments": 1,
+   "terminations": 2,
+   "cars_leased": 0,
+   "cars_terminated": 0
+  },
+  {
+   "week_end": "2026-09-24",
+   "leases": 1,
+   "assignments": 7,
+   "terminations": 5,
+   "cars_leased": 0,
+   "cars_terminated": 695
+  }
+ ],
+ "window_days": 28
+}

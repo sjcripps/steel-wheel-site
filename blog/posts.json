@@ -1,5 +1,33 @@
 [
   {
+    "slug": "how-rail-freight-shipping-works",
+    "title": "Rail Freight Shipping: How It Works, Step by Step (2026)",
+    "description": "Rail freight shipping explained end to end: who the players are, carload vs unit train vs multimodal, the eight steps from quote to empty release, and what it costs.",
+    "date": "2026-09-24",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail freight",
+      "fundamentals",
+      "shipping guide",
+      "logistics"
+    ]
+  },
+  {
+    "slug": "rail-pulse-2026-09-24",
+    "title": "Rail Pulse — Week Ending September 19, 2026",
+    "description": "Steel Wheel Logistics' weekly rail freight intelligence brief for the week ending September 19, 2026. Verified AAR carload + intermodal volume, per-carrier service metrics, EIA diesel + fuel surcharges, USDA grain transport indicators, and a live indicative lane quote.",
+    "date": "2026-09-24",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail pulse newsletter",
+      "weekly rail traffic",
+      "AAR carloads",
+      "Class I rail performance",
+      "rail fuel surcharge",
+      "grain transportation report"
+    ]
+  },
+  {
     "slug": "heavy-lift-project-cargo-shipping",
     "title": "Heavy-Lift and Project Cargo: How Oversized Freight Actually Moves",
     "description": "Heavy lift shipping explained: what counts as project cargo, who lifts it at the port, which railcars carry oversized pieces, and how to plan the move.",
@@ -55,6 +83,21 @@
     ]
   },
   {
+    "slug": "rail-pulse-2026-09-15",
+    "title": "Rail Pulse — Week Ending September 5, 2026",
+    "description": "Steel Wheel Logistics' weekly rail freight intelligence brief for the week ending September 5, 2026. Verified AAR carload + intermodal volume, per-carrier service metrics, EIA diesel + fuel surcharges, USDA grain transport indicators, and a live indicative lane quote.",
+    "date": "2026-09-15",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail pulse newsletter",
+      "weekly rail traffic",
+      "AAR carloads",
+      "Class I rail performance",
+      "rail fuel surcharge",
+      "grain transportation report"
+    ]
+  },
+  {
     "slug": "full-service-vs-net-railcar-lease",
     "title": "Full-Service vs Net Railcar Lease: What's Included and What Each Really Costs",
     "description": "Full-service vs net railcar lease: what each covers, who pays for repairs, taxes and requalification, and how to compare the two rates without getting burned.",
@@ -98,6 +141,21 @@
     ],
     "category": "Cost & Strategy",
     "read_minutes": 12
+  },
+  {
+    "slug": "rail-pulse-2026-09-08",
+    "title": "Rail Pulse — Week Ending August 29, 2026",
+    "description": "Steel Wheel Logistics' weekly rail freight intelligence brief for the week ending August 29, 2026. Verified AAR carload + intermodal volume, per-carrier service metrics, EIA diesel + fuel surcharges, USDA grain transport indicators, and a live indicative lane quote.",
+    "date": "2026-09-08",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail pulse newsletter",
+      "weekly rail traffic",
+      "AAR carloads",
+      "Class I rail performance",
+      "rail fuel surcharge",
+      "grain transportation report"
+    ]
   },
   {
     "slug": "tank-cars-for-lease-how-to-find",
@@ -147,6 +205,21 @@
     "read_minutes": 12
   },
   {
+    "slug": "rail-pulse-2026-09-01",
+    "title": "Rail Pulse — Week Ending August 22, 2026",
+    "description": "Steel Wheel Logistics' weekly rail freight intelligence brief for the week ending August 22, 2026. Verified AAR carload + intermodal volume, per-carrier service metrics, EIA diesel + fuel surcharges, USDA grain transport indicators, and a live indicative lane quote.",
+    "date": "2026-09-01",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail pulse newsletter",
+      "weekly rail traffic",
+      "AAR carloads",
+      "Class I rail performance",
+      "rail fuel surcharge",
+      "grain transportation report"
+    ]
+  },
+  {
     "slug": "rail-waybill-explained",
     "title": "The Rail Waybill: What It Is and How It Differs From a BOL",
     "description": "A rail way bill is the carrier's moving order for your car: what is on a waybill, how it differs from a BOL, and the fields that misroute and misbill freight.",
@@ -180,6 +253,21 @@
     ],
     "category": "Compliance",
     "read_minutes": 11
+  },
+  {
+    "slug": "rail-pulse-2026-08-25",
+    "title": "Rail Pulse — Week Ending August 15, 2026",
+    "description": "Steel Wheel Logistics' weekly rail freight intelligence brief for the week ending August 15, 2026. Verified AAR carload + intermodal volume, per-carrier service metrics, EIA diesel + fuel surcharges, USDA grain transport indicators, and a live indicative lane quote.",
+    "date": "2026-08-25",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail pulse newsletter",
+      "weekly rail traffic",
+      "AAR carloads",
+      "Class I rail performance",
+      "rail fuel surcharge",
+      "grain transportation report"
+    ]
   },
   {
     "slug": "rail-freight-cost-calculator-inputs",
@@ -218,6 +306,21 @@
     "read_minutes": 11
   },
   {
+    "slug": "rail-pulse-2026-08-18",
+    "title": "Rail Pulse — Week Ending August 8, 2026",
+    "description": "Steel Wheel Logistics' weekly rail freight intelligence brief for the week ending August 8, 2026. Verified AAR carload + intermodal volume, per-carrier service metrics, EIA diesel + fuel surcharges, USDA grain transport indicators, and a live indicative lane quote.",
+    "date": "2026-08-18",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail pulse newsletter",
+      "weekly rail traffic",
+      "AAR carloads",
+      "Class I rail performance",
+      "rail fuel surcharge",
+      "grain transportation report"
+    ]
+  },
+  {
     "slug": "railroad-classification-system",
     "title": "Railroad Classifications: Class I, II, and III by Size and Revenue",
     "description": "Railroad classifications explained: the STB revenue thresholds behind Class I, II, and III railroads, how the tiers rank by size, and why there is no Class A.",
@@ -235,6 +338,36 @@
     ],
     "category": "Fundamentals",
     "read_minutes": 10
+  },
+  {
+    "slug": "rail-pulse-2026-08-11",
+    "title": "Rail Pulse — Week Ending August 1, 2026",
+    "description": "Steel Wheel Logistics' weekly rail freight intelligence brief for the week ending August 1, 2026. Verified AAR carload + intermodal volume, per-carrier service metrics, EIA diesel + fuel surcharges, USDA grain transport indicators, and a live indicative lane quote.",
+    "date": "2026-08-11",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail pulse newsletter",
+      "weekly rail traffic",
+      "AAR carloads",
+      "Class I rail performance",
+      "rail fuel surcharge",
+      "grain transportation report"
+    ]
+  },
+  {
+    "slug": "rail-pulse-2026-07-28",
+    "title": "Rail Pulse — Week Ending July 18, 2026",
+    "description": "Steel Wheel Logistics' weekly rail freight intelligence brief for the week ending July 18, 2026. Verified AAR carload + multimodal volume, per-carrier service metrics, EIA diesel + fuel surcharges, USDA grain transport indicators, and a live indicative lane quote.",
+    "date": "2026-07-28",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail pulse newsletter",
+      "weekly rail traffic",
+      "AAR carloads",
+      "Class I rail performance",
+      "rail fuel surcharge",
+      "grain transportation report"
+    ]
   },
   {
     "slug": "rail-pulse-2026-07-21",
@@ -315,6 +448,36 @@
     ]
   },
   {
+    "slug": "rail-pulse-2026-06-30",
+    "title": "Rail Pulse — Week Ending June 20, 2026",
+    "description": "Steel Wheel Logistics' weekly rail freight intelligence brief for the week ending June 20, 2026. Verified AAR carload + multimodal volume, per-carrier service metrics, EIA diesel + fuel surcharges, USDA grain transport indicators, and a live indicative lane quote.",
+    "date": "2026-06-30",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail pulse newsletter",
+      "weekly rail traffic",
+      "AAR carloads",
+      "Class I rail performance",
+      "rail fuel surcharge",
+      "grain transportation report"
+    ]
+  },
+  {
+    "slug": "rail-pulse-2026-06-02",
+    "title": "Rail Pulse — Week Ending May 23, 2026",
+    "description": "Steel Wheel Logistics' weekly rail freight intelligence brief for the week ending May 23, 2026. Verified AAR carload + multimodal volume, per-carrier service metrics, EIA diesel + fuel surcharges, USDA grain transport indicators, and a live indicative lane quote.",
+    "date": "2026-06-02",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail pulse newsletter",
+      "weekly rail traffic",
+      "AAR carloads",
+      "Class I rail performance",
+      "rail fuel surcharge",
+      "grain transportation report"
+    ]
+  },
+  {
     "slug": "how-much-does-it-cost-to-ship-by-rail",
     "title": "Rail Freight Rates 2026: How Much It Costs to Ship by Rail",
     "date": "2026-06-01",
@@ -344,6 +507,21 @@
       "grain harvest rail rates",
       "rail peak season",
       "rail fuel surcharge seasonal"
+    ]
+  },
+  {
+    "slug": "rail-pulse-2026-05-26",
+    "title": "Rail Pulse — Week Ending May 16, 2026",
+    "description": "Steel Wheel Logistics' weekly rail freight intelligence brief for the week ending May 16, 2026. Verified AAR carload + multimodal volume, per-carrier service metrics, EIA diesel + fuel surcharges, USDA grain transport indicators, and a live indicative lane quote.",
+    "date": "2026-05-26",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail pulse newsletter",
+      "weekly rail traffic",
+      "AAR carloads",
+      "Class I rail performance",
+      "rail fuel surcharge",
+      "grain transportation report"
     ]
   },
   {
@@ -393,6 +571,21 @@
       "rail vs truck transit",
       "rail freight planning",
       "trip plan"
+    ]
+  },
+  {
+    "slug": "rail-pulse-2026-05-19",
+    "title": "Rail Pulse — Week Ending May 9, 2026",
+    "description": "Steel Wheel Logistics' weekly rail freight intelligence brief for the week ending May 9, 2026. Verified AAR carload + multimodal volume, per-carrier service metrics, EIA diesel + fuel surcharges, USDA grain transport indicators, and a live indicative lane quote.",
+    "date": "2026-05-19",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail pulse newsletter",
+      "weekly rail traffic",
+      "AAR carloads",
+      "Class I rail performance",
+      "rail fuel surcharge",
+      "grain transportation report"
     ]
   },
   {
@@ -744,6 +937,21 @@
     ]
   },
   {
+    "slug": "rail-pulse-2026-05-12",
+    "title": "Rail Pulse — Week Ending May 2, 2026",
+    "description": "Steel Wheel Logistics' weekly rail freight intelligence brief for the week ending May 2, 2026. Verified AAR carload + multimodal volume, per-carrier service metrics, EIA diesel + fuel surcharges, USDA grain transport indicators, and a live indicative lane quote.",
+    "date": "2026-05-12",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail pulse newsletter",
+      "weekly rail traffic",
+      "AAR carloads",
+      "Class I rail performance",
+      "rail fuel surcharge",
+      "grain transportation report"
+    ]
+  },
+  {
     "slug": "how-to-choose-rail-freight-partner",
     "title": "How to Choose a Rail Freight Logistics Partner: A Shipper's Guide",
     "description": "How to choose a rail freight logistics partner: the eight criteria that matter, the red flags to walk away from, and the questions to ask before signing.",
@@ -803,6 +1011,21 @@
       "CFO rail freight",
       "rail vs truck financial analysis",
       "modal shift business case"
+    ]
+  },
+  {
+    "slug": "rail-pulse-2026-05-05",
+    "title": "Rail Pulse — Week Ending April 25, 2026",
+    "description": "Steel Wheel Logistics' weekly rail freight intelligence brief for the week ending April 25, 2026. Verified AAR carload + multimodal volume, per-carrier service metrics, EIA diesel + fuel surcharges, USDA grain transport indicators, and a live indicative lane quote.",
+    "date": "2026-05-05",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "rail pulse newsletter",
+      "weekly rail traffic",
+      "AAR carloads",
+      "Class I rail performance",
+      "rail fuel surcharge",
+      "grain transportation report"
     ]
   },
   {
@@ -1171,19 +1394,6 @@
       "freight cost",
       "cost comparison",
       "shipping"
-    ]
-  },
-  {
-    "slug": "how-rail-freight-shipping-works",
-    "title": "Rail Freight Shipping: How It Works, Step by Step (2026)",
-    "description": "Rail freight shipping explained end to end: who the players are, carload vs unit train vs multimodal, the eight steps from quote to empty release, and what it costs.",
-    "date": "2026-09-24",
-    "author": "Steel Wheel Logistics",
-    "tags": [
-      "rail freight",
-      "fundamentals",
-      "shipping guide",
-      "logistics"
     ]
   }
 ]
