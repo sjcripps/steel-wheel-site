@@ -105,6 +105,7 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
       { loc: "/tools/railcar-lease-rates", priority: "0.8", changefreq: "monthly" },
       { loc: "/tools/railcar-lease-renewal", priority: "0.8", changefreq: "monthly" },
       { loc: "/tools/storage-locator", priority: "0.8", changefreq: "monthly" },
+      { loc: "/tools/railcar-lease-activity", priority: "0.9", changefreq: "weekly" },
       { loc: "/privacy-policy", priority: "0.3", changefreq: "yearly" },
       { loc: "/terms-of-service", priority: "0.3", changefreq: "yearly" },
     ];

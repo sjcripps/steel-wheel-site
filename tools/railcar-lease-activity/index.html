@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Who leased, returned or reassigned railcars this week, from the public STB lease filings: counts by car type, the most active lessors and lessees, and the biggest filings. Updated every Monday.">
+  <title>Railcar Lease Activity Tracker: This Week's STB Filings</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <link rel="canonical" href="https://steelwheellogistics.com/tools/railcar-lease-activity">
+  <meta property="og:title" content="Railcar Lease Activity Tracker: This Week's STB Filings | Steel Wheel Logistics">
+  <meta property="og:description" content="Weekly read on railcar leases, terminations and assignments recorded with the Surface Transportation Board, by car type, lessor and lessee.">
+  <meta property="og:url" content="https://steelwheellogistics.com/tools/railcar-lease-activity">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+  <style>
+    .tool-hero { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); padding: 44px 20px; text-align: center; }
+    .tool-hero h1 { color: var(--white); font-size: 2rem; margin-bottom: 8px; }
+    .tool-hero p { color: var(--steel-grey); font-size: 1.02rem; max-width: 780px; margin: 0 auto; }
+    .tool-hero .badge { display: inline-block; background: rgba(74,144,217,0.15); color: var(--steel-blue); font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .tool-layout { max-width: 1040px; margin: 0 auto; padding: 28px 20px 56px; }
+    .section-heading { font-size: 1.4rem; margin: 26px 0 6px; }
+    .section-sub { color: var(--steel-grey); margin-bottom: 16px; font-size: 0.95rem; }
+    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; }
+    .stat-card { background: var(--white); border: 1px solid var(--border-grey); border-radius: 10px; padding: 16px; }
+    .stat-value { font-size: 1.7rem; font-weight: 700; color: var(--navy); }
+    .stat-label { font-weight: 600; font-size: 0.9rem; margin-top: 2px; }
+    .stat-detail { font-size: 0.82rem; color: var(--steel-grey); }
+    table.act { width: 100%; border-collapse: collapse; font-size: 0.9rem; background: var(--white); border: 1px solid var(--border-grey); border-radius: 10px; overflow: hidden; }
+    table.act th { background: var(--navy); color: var(--white); text-align: left; padding: 9px 12px; }
+    table.act td { padding: 9px 12px; border-bottom: 1px solid var(--border-grey); vertical-align: top; }
+    .pill { display: inline-block; background: rgba(74,144,217,0.12); color: var(--navy); border-radius: 10px; padding: 1px 8px; font-size: 0.75rem; }
+    .locked { filter: blur(4px); user-select: none; pointer-events: none; }
+    .gate-wrap { position: relative; }
+    .gate-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .gate-box { background: var(--white); border: 2px solid var(--steel-blue); border-radius: 12px; padding: 20px 22px; max-width: 460px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+    .gate-box h3 { margin: 0 0 4px; font-size: 1.1rem; }
+    .gate-box p { font-size: 0.88rem; color: var(--steel-grey); margin: 0 0 10px; }
+    .gate-box label { display: block; font-size: 0.82rem; font-weight: 600; margin: 8px 0 3px; }
+    .gate-box input, .gate-box select { width: 100%; padding: 8px 9px; border: 1px solid var(--border-grey); border-radius: 6px; font: inherit; }
+    .gate-box .row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .gate-box button { width: 100%; margin-top: 12px; padding: 11px; background: var(--navy); color: var(--white); border: 0; border-radius: 6px; font-weight: 700; cursor: pointer; }
+    .gate-box button:disabled { opacity: 0.6; }
+    .gate-box .fine { font-size: 0.75rem; color: var(--steel-grey); margin-top: 8px; }
+    .gate-box .err { color: #b00020; font-size: 0.82rem; margin-top: 6px; }
+    .hist { display: flex; gap: 6px; align-items: flex-end; height: 90px; margin: 10px 0 4px; }
+    .hist .bar { flex: 1; background: var(--steel-blue); border-radius: 3px 3px 0 0; position: relative; min-height: 2px; }
+    .hist .bar span { position: absolute; top: -18px; left: 0; right: 0; text-align: center; font-size: 0.7rem; color: var(--navy); }
+    .hist-labels { display: flex; gap: 6px; font-size: 0.7rem; color: var(--steel-grey); }
+    .hist-labels div { flex: 1; text-align: center; }
+    .range-note { font-size: 0.85rem; color: var(--steel-grey); border-left: 3px solid var(--steel-blue); padding-left: 12px; margin: 18px 0; }
+    .cta-btn { display: inline-block; background: var(--navy); color: var(--white); padding: 10px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+    .faq-item { border-top: 1px solid var(--border-grey); padding: 12px 0; }
+    .faq-item h3 { margin: 0 0 6px; font-size: 1.02rem; }
+    @media (max-width: 700px) { .gate-box .row { grid-template-columns: 1fr; } table.act { font-size: 0.82rem; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "Railcar Lease Activity Tracker",
+    "description": "Weekly aggregate of railcar lease, assignment and termination recordations filed with the U.S. Surface Transportation Board under 49 U.S.C. 11301, by car type, lessor and lessee.",
+    "url": "https://steelwheellogistics.com/tools/railcar-lease-activity",
+    "creator": { "@type": "Organization", "name": "Steel Wheel Logistics", "url": "https://steelwheellogistics.com" },
+    "isBasedOn": "https://www.stb.gov/proceedings-actions/recordations/rail-recordations/",
+    "license": "https://www.stb.gov/",
+    "temporalCoverage": "2026/..",
+    "isAccessibleForFree": true
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Where does railcar lease activity data come from?", "acceptedAnswer": { "@type": "Answer", "text": "From the Surface Transportation Board's Section of Recordations. Under 49 U.S.C. 11301, railcar leases, subleases, assignments and security agreements are recorded with the STB and the index is public. Each entry names the parties and the equipment, and links to the filed memorandum. This page aggregates that index every Monday." } },
+      { "@type": "Question", "name": "Does the STB index show lease rates or terms?", "acceptedAnswer": { "@type": "Answer", "text": "No. A memorandum of lease names the lessor, the lessee and the cars, but rent and term are almost never stated. For current lease-rate ranges see our railcar lease rates tracker; for a renewal benchmark, use the Railcar Lease Renewal Desk." } },
+      { "@type": "Question", "name": "Are all railcar leases recorded with the STB?", "acceptedAnswer": { "@type": "Answer", "text": "Most financed and large-lessor leases are, because recording perfects the lessor's or lender's interest. Short subleases and some direct deals are not. Treat the counts as a floor, and note that car counts are summed only where the filing states a number." } }
+    ]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-RSWDYHVY7Z');</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon"><img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40"></div>
+        <div class="logo-text"><span class="logo-name">Steel Wheel Logistics</span><span class="logo-tagline">Rail Freight Simplified</span></div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <nav class="main-nav">
+        <a href="/">Home</a><a href="/services">Services</a><a href="/blog">Blog</a><a href="/courses">Courses</a><a href="/tools" class="active">Tools</a><a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="tool-hero">
+    <span class="badge">Updated every Monday</span>
+    <h1>Railcar Lease Activity Tracker</h1>
+    <p>Who leased, returned or reassigned railcars this week, straight from the public lease filings at the Surface Transportation Board. Week ending <strong id="weekEnd">…</strong>.</p>
+  </section>
+
+  <div class="tool-layout">
+
+    <h2 class="section-heading">This week in one row</h2>
+    <p class="section-sub">Filings recorded <span id="weekRange">…</span>. Car counts are floors: only filings that state a count are summed.</p>
+    <div class="stat-grid" id="stats"></div>
+
+    <h2 class="section-heading">New leases by car type</h2>
+    <div id="byType"></div>
+
+    <h2 class="section-heading">Thirteen-week trend: leases recorded</h2>
+    <div class="hist" id="hist"></div>
+    <div class="hist-labels" id="histLabels"></div>
+
+    <h2 class="section-heading">Most active lessors this week</h2>
+    <div id="lessors"></div>
+
+    <h2 class="section-heading">Biggest filings, terminations and assignments</h2>
+    <p class="section-sub">Company names as filed, car counts, marks, and a link to each memorandum. Unlock with a work email; we ask four questions so the weekly brief is useful to you.</p>
+    <div class="gate-wrap">
+      <div id="detail" class="locked"></div>
+      <div class="gate-overlay" id="gateOverlay">
+        <form class="gate-box" id="gateForm" novalidate>
+          <h3>Unlock the full table</h3>
+          <p>Free. Includes the Monday brief with the week's filings.</p>
+          <label for="side">Which side are you on?</label>
+          <select id="side" name="side" required>
+            <option value="lease_expiring">My railcar lease is expiring</option>
+            <option value="have_cars">I have cars sitting idle</option>
+            <option value="need_cars">I need railcars</option>
+            <option value="lessor_dealer">I lease or sell railcars</option>
+            <option value="other">Just researching</option>
+          </select>
+          <div class="row">
+            <div><label for="car_type">Car type</label>
+              <select id="car_type" name="car_type"><option value="">Select</option><option>Covered hopper</option><option>Tank car</option><option>Gondola</option><option>Open-top hopper</option><option>Boxcar</option><option>Flatcar</option><option>Other</option></select></div>
+            <div><label for="car_count">How many cars</label><input id="car_count" name="car_count" inputmode="numeric" placeholder="e.g. 30"></div>
+          </div>
+          <div class="row">
+            <div><label for="lease_expiry">Lease expiry (if any)</label><input id="lease_expiry" name="lease_expiry" placeholder="e.g. Q2 2027"></div>
+            <div><label for="company">Company</label><input id="company" name="company" autocomplete="organization" required></div>
+          </div>
+          <div class="row">
+            <div><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+            <div><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          </div>
+          <label for="watch_marks">Alert me when a filing names these marks or companies (optional)</label>
+          <input id="watch_marks" name="watch_marks" placeholder="e.g. GATX, AOKX, Cargill">
+          <button type="submit" id="gateBtn">Unlock and send me the brief &rarr;</button>
+          <div class="err" id="gateErr" hidden></div>
+          <p class="fine">One email a week, Monday. Unsubscribe in one click. We never post your answers anywhere.</p>
+        </form>
+      </div>
+    </div>
+
+    <p class="range-note">Source: STB Section of Recordations index (49 U.S.C. 11301), pulled every Monday. This page states facts from filings and links to each one; it does not characterise any company. Rent and term are not in the filings; for lease-rate ranges see the <a href="/tools/railcar-lease-rates">railcar lease rates tracker</a>.</p>
+
+    <h2 class="section-heading">Lease expiring, cars idle, or need cars?</h2>
+    <p>The filings tell you who is moving. The <a href="/tools/railcar-lease-renewal">Railcar Lease Renewal Desk</a> benchmarks a renewal before you sign, places idle cars on sublease, and sources cars from lessors, dealers and private fleets.</p>
+    <a class="cta-btn" href="/tools/railcar-lease-renewal">Talk to the desk &rarr;</a>
+
+    <h2 class="section-heading">Frequently asked questions</h2>
+    <div class="faq-item"><h3>Where does railcar lease activity data come from?</h3><p>From the Surface Transportation Board's Section of Recordations. Under 49 U.S.C. 11301, railcar leases, subleases, assignments and security agreements are recorded with the STB and the index is public. Each entry names the parties and the equipment, and links to the filed memorandum. This page aggregates that index every Monday.</p></div>
+    <div class="faq-item"><h3>Does the STB index show lease rates or terms?</h3><p>No. A memorandum of lease names the lessor, the lessee and the cars, but rent and term are almost never stated. For current lease-rate ranges see our railcar lease rates tracker; for a renewal benchmark, use the Railcar Lease Renewal Desk.</p></div>
+    <div class="faq-item"><h3>Are all railcar leases recorded with the STB?</h3><p>Most financed and large-lessor leases are, because recording perfects the lessor's or lender's interest. Short subleases and some direct deals are not. Treat the counts as a floor, and note that car counts are summed only where the filing states a number.</p></div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links"><a href="/privacy-policy">Privacy Policy</a><a href="/terms-of-service">Terms of Service</a><a href="/contact">Contact Us</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const fmt = n => (Number(n) || 0).toLocaleString();
+    let D = null, unlocked = false;
+    try { unlocked = !!sessionStorage.getItem('lease-activity-email'); } catch (e) {}
+
+    function niceDate(iso) { try { return new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }); } catch (e) { return iso; } }
+
+    function renderPublic(d) {
+      document.getElementById('weekEnd').textContent = niceDate(d.week_end);
+      document.getElementById('weekRange').textContent = niceDate(d.week_start) + ' to ' + niceDate(d.week_end);
+      const t = d.totals || {};
+      document.getElementById('stats').innerHTML = [
+        ['Leases recorded', t.leases, fmt(t.cars_leased) + ' cars stated'],
+        ['Terminations', t.terminations, fmt(t.cars_terminated) + ' cars coming off lease'],
+        ['Assignments', t.assignments, 'leases moved to a new party'],
+        ['Cars leased, 13 weeks', fmt((d.history || []).reduce((a, h) => a + (h.cars_leased || 0), 0)), 'sum of stated counts']
+      ].map(([l, v, s]) => `<div class="stat-card"><div class="stat-value">${esc(v)}</div><div class="stat-label">${esc(l)}</div><div class="stat-detail">${esc(s)}</div></div>`).join('');
+      const bt = Object.entries(d.by_car_type || {}).sort((a, b) => b[1].cars - a[1].cars);
+      document.getElementById('byType').innerHTML = bt.length ? `<table class="act"><thead><tr><th>Car type</th><th>Filings</th><th>Cars stated</th></tr></thead><tbody>${bt.map(([k, v]) => `<tr><td>${esc(k)}</td><td>${v.filings}</td><td>${fmt(v.cars)}</td></tr>`).join('')}</tbody></table>` : '<p class="section-sub">No lease filings this week.</p>';
+      const h = d.history || []; const max = Math.max(1, ...h.map(x => x.leases || 0));
+      document.getElementById('hist').innerHTML = h.map(x => `<div class="bar" style="height:${Math.round(((x.leases || 0) / max) * 80)}px"><span>${x.leases || 0}</span></div>`).join('');
+      document.getElementById('histLabels').innerHTML = h.map(x => `<div>${esc((x.week_end || '').slice(5))}</div>`).join('');
+      const ls = d.top_lessors || [];
+      document.getElementById('lessors').innerHTML = ls.length ? `<table class="act"><thead><tr><th>Lessor / financing party</th><th>Filings</th></tr></thead><tbody>${ls.map(x => `<tr><td>${esc(x.name)}</td><td>${x.filings}</td></tr>`).join('')}</tbody></table>` : '<p class="section-sub">None this week.</p>';
+    }
+
+    function renderDetail(d) {
+      const row = (cells) => `<tr>${cells.map(c => `<td>${c}</td>`).join('')}</tr>`;
+      const link = x => x.pdf ? `<a href="${esc(x.pdf)}" rel="noopener" target="_blank">${esc(x.rec_no)}</a>` : esc(x.rec_no);
+      const big = (d.biggest_filings || []).map(x => row([esc(x.lessee || '(not named)'), esc(x.lessor || ''), fmt(x.cars), `<span class="pill">${esc(x.car_type)}</span>`, esc((x.marks || []).join(' ')), esc(x.filing_date), link(x)])).join('');
+      const term = (d.terminations || []).map(x => row([esc(x.party || '(not named)'), x.cars ? fmt(x.cars) : '', `<span class="pill">${esc(x.car_type)}</span>`, esc(x.filing_date), link(x)])).join('');
+      const asg = (d.assignments || []).map(x => row([esc(x.parties || ''), x.cars ? fmt(x.cars) : '', `<span class="pill">${esc(x.car_type)}</span>`, esc(x.filing_date), link(x)])).join('');
+      const lessees = (d.top_lessees || []).map(x => row([esc(x.name), x.filings, fmt(x.cars)])).join('');
+      document.getElementById('detail').innerHTML =
+        `<h3>Biggest new leases</h3><table class="act"><thead><tr><th>Lessee</th><th>Lessor</th><th>Cars</th><th>Type</th><th>Marks</th><th>Filed</th><th>Filing</th></tr></thead><tbody>${big || row(['No lease filings this week', '', '', '', '', '', ''])}</tbody></table>` +
+        `<h3 style="margin-top:22px">Lessees by cars this week</h3><table class="act"><thead><tr><th>Lessee</th><th>Filings</th><th>Cars</th></tr></thead><tbody>${lessees || row(['None', '', ''])}</tbody></table>` +
+        `<h3 style="margin-top:22px">Terminations</h3><table class="act"><thead><tr><th>Party</th><th>Cars</th><th>Type</th><th>Filed</th><th>Filing</th></tr></thead><tbody>${term || row(['None this week', '', '', '', ''])}</tbody></table>` +
+        `<h3 style="margin-top:22px">Assignments</h3><table class="act"><thead><tr><th>Parties</th><th>Cars</th><th>Type</th><th>Filed</th><th>Filing</th></tr></thead><tbody>${asg || row(['None this week', '', '', '', ''])}</tbody></table>`;
+      if (unlocked) { document.getElementById('detail').classList.remove('locked'); document.getElementById('gateOverlay').style.display = 'none'; }
+    }
+
+    async function load() {
+      try {
+        const r = await fetch('/tools/railcar-lease-activity/data/activity.json', { cache: 'no-store' });
+        D = await r.json(); renderPublic(D); renderDetail(D);
+      } catch (e) { console.error(e); document.getElementById('stats').innerHTML = '<p class="section-sub">Could not load this week\'s data. Please refresh.</p>'; }
+    }
+
+    document.getElementById('gateForm').addEventListener('submit', async function (ev) {
+      ev.preventDefault();
+      const f = ev.target, btn = document.getElementById('gateBtn'), err = document.getElementById('gateErr'); err.hidden = true;
+      if (!f.email.value || !f.name.value || !f.company.value) { err.textContent = 'Name, company and work email are required.'; err.hidden = false; return; }
+      btn.disabled = true; btn.textContent = 'Sending…';
+      const payload = {}; new FormData(f).forEach((v, k) => { payload[k] = v; });
+      payload.weekly_brief = true; payload.landing_referrer = document.referrer || ''; payload.referrer_kind = !document.referrer ? 'direct' : (document.referrer.indexOf(location.host) !== -1 ? 'internal' : 'external');
+      try { payload.entry_query = new URLSearchParams(location.search).get('q') || ''; } catch (e) {}
+      try {
+        const r = await fetch('/api/lease-activity-lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+        const d = await r.json().catch(() => ({}));
+        if (!r.ok || !d.ok) { const map = { email_format: 'That email does not look right.', email_disposable: 'Please use a work email.', email_no_mx: 'That email domain does not accept mail.' }; err.textContent = map[d.error] || 'Something went wrong. Email steelwheellogistics@gmail.com.'; err.hidden = false; btn.disabled = false; btn.textContent = 'Unlock and send me the brief →'; return; }
+        try { sessionStorage.setItem('lease-activity-email', f.email.value); } catch (e) {}
+        unlocked = true; if (D) renderDetail(D);
+        if (typeof gtag === 'function') gtag('event', 'lease_activity_unlock', { event_category: 'tools', event_label: payload.side });
+      } catch (e) { err.textContent = 'Network error. Please try again.'; err.hidden = false; btn.disabled = false; btn.textContent = 'Unlock and send me the brief →'; }
+    });
+    load();
+  </script>
+</body>
+</html>

@@ -4,6 +4,7 @@ import fleetCalculator from './_fleet-calculator-lead';
 import storageLocator from './_storage-locator-lead';
 import sublease from './_sublease-lead';
 import railcarRenewal from './_railcar-renewal-lead';
+import leaseActivity from './_lease-activity-lead';
 import transitTime from './_rail-transit-time';
 import shipperDashboard from './_shipper-dashboard';
 
@@ -25,6 +26,7 @@ const ROUTES: Record<string, Handler> = {
   'storage-locator': storageLocator,
   'sublease': sublease,
   'railcar-renewal': railcarRenewal,
+  'lease-activity': leaseActivity,
   // Not a lead route — a public, ungated transit lookup. It rides this
   // dispatcher purely to stay under the 12-function Hobby cap.
   'transit-time': transitTime,
