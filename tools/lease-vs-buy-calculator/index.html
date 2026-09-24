@@ -808,13 +808,13 @@
 
                 <div class="form-group">
                   <label for="lease_monthly">Full-Service Lease Rate <span class="hint">($/car/month)</span></label>
-                  <input type="number" id="lease_monthly" min="1" step="1" value="585" required>
+                  <input type="number" id="lease_monthly" min="1" step="any" value="585" required>
                   <div class="field-note" id="leaseSourceNote"></div>
                 </div>
 
                 <div class="form-group">
                   <label for="purchase_price">Purchase Price <span class="hint">($/car)</span></label>
-                  <input type="number" id="purchase_price" min="1" step="1000" value="140000" required>
+                  <input type="number" id="purchase_price" min="1" step="any" value="140000" required>
                   <div class="field-note" id="priceSourceNote"></div>
                   <div class="field-note">Indicative planning figure, not an offer &mdash; verify with builders/dealers. Used = 45% of new as a default.</div>
                 </div>
@@ -833,14 +833,26 @@
 
                 <div class="form-group">
                   <label for="maintenance_yr">Owner's Maintenance + Compliance <span class="hint">($/car/yr)</span></label>
-                  <input type="number" id="maintenance_yr" min="0" step="100" value="5500" required>
+                  <input type="number" id="maintenance_yr" min="0" step="any" value="5500" required>
                   <div class="field-note">Buy side only &mdash; in a full-service lease the lessor covers maintenance and compliance.</div>
                 </div>
 
                 <div class="form-group">
                   <label for="tax_yr">Property Tax + Registration <span class="hint">($/car/yr)</span></label>
-                  <input type="number" id="tax_yr" min="0" step="100" value="1200" required>
+                  <input type="number" id="tax_yr" min="0" step="any" value="1200" required>
                   <div class="field-note">Buy side only &mdash; in a full-service lease the lessor typically covers ad valorem taxes.</div>
+                </div>
+
+                <div class="form-group">
+                  <label for="loaded_miles_yr">Loaded Miles per Car per Year <span class="hint">(optional)</span></label>
+                  <input type="number" id="loaded_miles_yr" min="0" step="1000" value="0">
+                  <div class="field-note">Only loaded miles earn an allowance. Leave at 0 if you do not know it or your rate is a private-car (mileage-free) rate.</div>
+                </div>
+
+                <div class="form-group">
+                  <label for="mileage_allowance_cents">Mileage Allowance <span class="hint">(&cent;/loaded mile, owner-collected)</span></label>
+                  <input type="number" id="mileage_allowance_cents" min="0" max="150" step="0.1" value="0">
+                  <div class="field-note">From the RIC 6007-O tables: tank cars ~39&cent; to $1.08 by registered value and age; other car types 10&cent; to 54.6&cent;. Credited to the buy side. <a href="/blog/railcar-mileage-allowance">How the allowance works</a>.</div>
                 </div>
 
               </div>
@@ -1131,7 +1143,9 @@
       const financing = input.purchasePrice * (input.capitalRatePct / 100) * input.termYears;
       const opexMaint = input.maintenanceYr * input.termYears;
       const opexTax = input.taxYr * input.termYears;
-      const buyPerCar = depreciation + financing + opexMaint + opexTax;
+      // Owner-collected mileage allowance (RIC 6007-O): loaded miles × cents/100 × years. Reduces the cost of owning.
+      const mileageCredit = (input.loadedMilesYr || 0) * ((input.allowanceCents || 0) / 100) * input.termYears;
+      const buyPerCar = depreciation + financing + opexMaint + opexTax - mileageCredit;
       const buyMonthlyEquiv = buyPerCar / months;
 
       const leaseTotal = leasePerCar * input.numCars;
@@ -1155,7 +1169,7 @@
 
       return {
         leasePerCar, leaseMonthlyEquiv, leaseTotal,
-        depreciation, financing, opexMaint, opexTax,
+        depreciation, financing, opexMaint, opexTax, mileageCredit,
         buyPerCar, buyMonthlyEquiv, buyTotal,
         verdict, pctDiff, breakEvenLease,
       };
@@ -1272,7 +1286,9 @@
       const capitalRatePct = Math.max(0, Number(document.getElementById('capital_rate_pct').value) || 0);
       const maintenanceYr = Math.max(0, Number(document.getElementById('maintenance_yr').value) || 0);
       const taxYr = Math.max(0, Number(document.getElementById('tax_yr').value) || 0);
-      return { carType, carLabel, condition, numCars, termYears, leaseMonthly, purchasePrice, resalePct, capitalRatePct, maintenanceYr, taxYr };
+      const loadedMilesYr = Math.max(0, Number(document.getElementById('loaded_miles_yr').value) || 0);
+      const allowanceCents = Math.min(150, Math.max(0, Number(document.getElementById('mileage_allowance_cents').value) || 0));
+      return { carType, carLabel, condition, numCars, termYears, leaseMonthly, purchasePrice, resalePct, capitalRatePct, maintenanceYr, taxYr, loadedMilesYr, allowanceCents };
     }
 
     // Track the last successful calc so the gate/unlock path can send the
@@ -1346,6 +1362,13 @@
         <td class="num">${fmtMoney(calc.opexTax)}</td>
         <td class="num">${fmtMoney(calc.opexTax * input.numCars)}</td>
       </tr>`);
+      if (calc.mileageCredit > 0) {
+        rows.push(`<tr>
+          <td>Mileage allowance credit (${input.loadedMilesYr.toLocaleString()} loaded mi/yr × ${input.allowanceCents}¢ × ${input.termYears} yr, owner-collected)</td>
+          <td class="num">−${fmtMoney(calc.mileageCredit)}</td>
+          <td class="num">−${fmtMoney(calc.mileageCredit * input.numCars)}</td>
+        </tr>`);
+      }
       rows.push(`<tr class="subtotal-row">
         <td>Buy total · ${fmtMoneyMo(calc.buyMonthlyEquiv)} per car equivalent</td>
         <td class="num">${fmtMoney(calc.buyPerCar)}</td>
@@ -1397,6 +1420,9 @@
             capital_rate_pct: input.capitalRatePct,
             maintenance_yr: input.maintenanceYr,
             tax_yr: input.taxYr,
+            loaded_miles_yr: input.loadedMilesYr,
+            mileage_allowance_cents: input.allowanceCents,
+            mileage_credit_per_car: Math.round(calc.mileageCredit || 0),
             lease_total: Math.round(calc.leaseTotal),
             buy_total: Math.round(calc.buyTotal),
             lease_monthly_equiv: Math.round(calc.leaseMonthlyEquiv),
