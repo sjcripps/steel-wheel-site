@@ -8,6 +8,36 @@
       "permanent": true
     },
     {
+      "source": "/blog/how-much-does-it-cost-to-ship-by-rail",
+      "destination": "/blog/how-much-does-it-cost-to-ship-by-rail",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-much-does-it-cost-to-ship-by-rail",
+      "destination": "/blog/how-much-does-it-cost-to-ship-by-rail",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-much-does-it-cost-to-ship-by-rail",
+      "destination": "/blog/how-much-does-it-cost-to-ship-by-rail",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-railroad-classification-yards-work",
+      "destination": "/blog/how-railroad-classification-yards-work",
+      "permanent": true
+    },
+    {
+      "source": "/blog/short-line-vs-class-i-railroads",
+      "destination": "/blog/short-line-vs-class-i-railroads",
+      "permanent": true
+    },
+    {
+      "source": "/blog/short-line-vs-class-i-railroads",
+      "destination": "/blog/short-line-vs-class-i-railroads",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {

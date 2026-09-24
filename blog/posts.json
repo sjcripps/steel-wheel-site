@@ -182,20 +182,6 @@
     "read_minutes": 11
   },
   {
-    "slug": "hump-yards-and-classification",
-    "title": "How Hump Yards and Classification Yards Sort Your Freight",
-    "description": "A hump yard sorts your railcar by gravity, a flat yard by shoving. Learn what each yard touch costs in dwell hours and how to cut the touches on your lane.",
-    "date": "2026-08-25",
-    "author": "Steel Wheel Logistics",
-    "tags": [
-      "hump yard",
-      "classification yard",
-      "rail yard operations",
-      "switching and terminal railroad",
-      "terminal dwell"
-    ]
-  },
-  {
     "slug": "rail-freight-cost-calculator-inputs",
     "title": "Rail Freight Cost Calculator: The Inputs That Actually Matter",
     "description": "A rail freight cost calculator is only as good as what you feed it. Learn the six inputs that build an indicative estimate you can defend to your CFO.",
@@ -232,24 +218,6 @@
     "read_minutes": 11
   },
   {
-    "slug": "estimating-rail-shipping-rates",
-    "title": "How to Estimate Rail Shipping Rates: What Drives the Number",
-    "description": "Rail shipping rates are priced per car, not per ton. Learn the five inputs that drive the number and how to build an estimate you can actually defend.",
-    "date": "2026-08-18",
-    "author": "Steel Wheel Logistics",
-    "tags": [
-      "rail shipping rates",
-      "ship by rail rates",
-      "cost to ship by rail",
-      "rail freight rate estimate",
-      "rail carload rate",
-      "fuel surcharge",
-      "cost & strategy"
-    ],
-    "category": "Cost & Strategy",
-    "read_minutes": 11
-  },
-  {
     "slug": "railroad-classification-system",
     "title": "Railroad Classifications: Class I, II, and III by Size and Revenue",
     "description": "Railroad classifications explained: the STB revenue thresholds behind Class I, II, and III railroads, how the tiers rank by size, and why there is no Class A.",
@@ -264,42 +232,6 @@
       "class 1 railway",
       "STB revenue threshold",
       "FRA track classes"
-    ],
-    "category": "Fundamentals",
-    "read_minutes": 10
-  },
-  {
-    "slug": "class-i-railroads-explained",
-    "title": "Class I Railroads Explained: How Many There Are and Who They Serve",
-    "description": "Class I railroads explained: how many there are in 2026, the STB revenue threshold that defines them, each carrier's network, and what it means for shippers.",
-    "date": "2026-08-13",
-    "author": "Steel Wheel Logistics",
-    "tags": [
-      "class i railroads",
-      "fundamentals",
-      "class 1 railroad",
-      "class one railroads",
-      "how many class 1 railroads are there",
-      "STB revenue threshold",
-      "BNSF UP CSX NS CN CPKC"
-    ],
-    "category": "Fundamentals",
-    "read_minutes": 11
-  },
-  {
-    "slug": "what-is-a-short-line-railroad",
-    "title": "What Is a Short Line Railroad? Class III Carriers Explained (2026)",
-    "description": "What is a short line railroad? Class III carriers defined: how they connect shippers to the Class I network, how they price, and how to work with one.",
-    "date": "2026-08-11",
-    "author": "Steel Wheel Logistics",
-    "tags": [
-      "define short line",
-      "fundamentals",
-      "short line railroad",
-      "class 3 railroads",
-      "class III railroad",
-      "regional railroad",
-      "american short line and regional railroad association"
     ],
     "category": "Fundamentals",
     "read_minutes": 10
@@ -384,10 +316,10 @@
   },
   {
     "slug": "how-much-does-it-cost-to-ship-by-rail",
-    "title": "How Much Does It Cost to Ship by Rail? 2026 Rates Guide",
+    "title": "Rail Freight Rates 2026: How Much It Costs to Ship by Rail",
     "date": "2026-06-01",
     "author": "Steel Wheel Logistics",
-    "description": "How much does it cost to ship by rail in 2026? Rail line-haul runs about 2-4 cents per ton-mile, with carload moves often $2,000-$5,000+ depending on lane, commodity, and volume. What goes into a rail rate, cost by commodity, and how to estimate your own lane.",
+    "description": "Rail freight rates explained: what it costs to ship by rail in 2026, from cents per ton-mile to tariffs, fuel surcharge, accessorials and how to estimate your lane.",
     "tags": [
       "how much does it cost to ship by rail",
       "rail freight costs",
@@ -1053,8 +985,8 @@
   },
   {
     "slug": "short-line-vs-class-i-railroads",
-    "title": "Class I Railroads: 2026 List & How Short Lines Compare",
-    "description": "Short line vs Class I railroads explained for shippers: how they differ in service, pricing, and operations, and why both matter for your freight.",
+    "title": "Short Line vs Class I Railroads: 2026 List and Comparison",
+    "description": "All six Class I railroads (BNSF, UP, CSX, NS, CN, CPKC) listed, plus how short lines differ on pricing, service and interchange and which fits your lane.",
     "date": "2026-04-04",
     "author": "Steel Wheel Logistics",
     "tags": [
@@ -1064,21 +996,6 @@
       "Class I railroad",
       "railroad classification",
       "railroad interchange"
-    ]
-  },
-  {
-    "slug": "rail-freight-rates-how-pricing-works",
-    "title": "How Rail Freight Rates Work: Tariffs, Contracts, and Negotiation",
-    "description": "Rail freight rates explained: how tariffs and contracts work, what drives pricing, fuel surcharges, and how to negotiate better rates for your shipments.",
-    "date": "2026-03-31",
-    "author": "Steel Wheel Logistics",
-    "tags": [
-      "rail freight rates",
-      "railroad tariffs",
-      "rail contracts",
-      "fuel surcharge rail",
-      "negotiate rail rates",
-      "cost strategy"
     ]
   },
   {
@@ -1098,8 +1015,8 @@
   },
   {
     "slug": "rail-car-types-explained",
-    "title": "Rail Car Types Explained: Hoppers, Tank Cars, Gondolas, and More",
-    "description": "Rail car types explained — hoppers, tank cars, gondolas, flatcars, boxcars, and more. Which railcar fits your commodity and how to pick the right equipment.",
+    "title": "Types of Rail Cars: Boxcar, Hopper, Tank, Gondola, Flatcar",
+    "description": "Types of rail cars explained for shippers: covered hoppers, tank cars, gondolas, flatcars and boxcars, with 2026 capacity specs and how to pick the right one.",
     "date": "2026-03-24",
     "author": "Steel Wheel Logistics",
     "tags": [
@@ -1204,8 +1121,8 @@
   },
   {
     "slug": "how-railroad-classification-yards-work",
-    "title": "How Railroad Classification Yards Work: Sorting Freight Across America",
-    "description": "Learn how railroad classification yards sort and route freight cars across America. Hump yards, flat yards, automation, and what it means for your shipments.",
+    "title": "How Railroad Classification Yards Work: Hump vs Flat Yards",
+    "description": "How hump yards and flat yards sort freight cars, what each yard touch costs you in dwell, and how to cut the touches on your lane.",
     "date": "2026-03-11",
     "author": "Steel Wheel Logistics",
     "tags": [
@@ -1258,9 +1175,9 @@
   },
   {
     "slug": "how-rail-freight-shipping-works",
-    "title": "How Rail Freight Shipping Works: Step-by-Step for Shippers",
-    "description": "Learn how rail freight shipping works from booking to delivery. A practical guide for shippers covering the process, key players, service types, and what to expect.",
-    "date": "2026-02-26",
+    "title": "Rail Freight Shipping: How It Works, Step by Step (2026)",
+    "description": "Rail freight shipping explained end to end: who the players are, carload vs unit train vs multimodal, the eight steps from quote to empty release, and what it costs.",
+    "date": "2026-09-24",
     "author": "Steel Wheel Logistics",
     "tags": [
       "rail freight",
