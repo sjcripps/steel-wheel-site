@@ -104,6 +104,7 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
       // published sources (GATX LPI, Commtrex, Grain Journal, AAR) as they update.
       { loc: "/tools/railcar-lease-rates", priority: "0.8", changefreq: "monthly" },
       { loc: "/tools/railcar-lease-renewal", priority: "0.8", changefreq: "monthly" },
+      { loc: "/tools/storage-locator", priority: "0.8", changefreq: "monthly" },
       { loc: "/privacy-policy", priority: "0.3", changefreq: "yearly" },
       { loc: "/terms-of-service", priority: "0.3", changefreq: "yearly" },
     ];

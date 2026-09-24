@@ -2,16 +2,349 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="robots" content="noindex, nofollow">
-  <meta http-equiv="refresh" content="0; url=/tools/transload-directory">
-  <link rel="canonical" href="https://steelwheellogistics.com/tools/transload-directory">
-  <title>Redirecting | Steel Wheel Logistics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Railcar storage locator: verified North American railcar storage yards with capacity, railroads served, hazmat status and contacts, plus what railcar storage rates run per car per day. Every yard is sourced.">
+  <title>Railcar Storage Locator: Yards, Capacity and Storage Rates</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <link rel="canonical" href="https://steelwheellogistics.com/tools/storage-locator">
+  <meta property="og:title" content="Railcar Storage Locator: Yards, Capacity and Storage Rates | Steel Wheel Logistics">
+  <meta property="og:description" content="Verified railcar storage yards across North America with capacity, railroads served and contacts, plus current railcar storage rate ranges.">
+  <meta property="og:url" content="https://steelwheellogistics.com/tools/storage-locator">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+  <style>
+    .tool-hero { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); padding: 44px 20px; text-align: center; }
+    .tool-hero h1 { color: var(--white); font-size: 2rem; margin-bottom: 8px; }
+    .tool-hero p { color: var(--steel-grey); font-size: 1.02rem; max-width: 760px; margin: 0 auto; }
+    .tool-hero .badge { display: inline-block; background: rgba(74,144,217,0.15); color: var(--steel-blue); font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .directory-layout { max-width: 1200px; margin: 0 auto; padding: 24px 20px; display: grid; grid-template-columns: 260px 1fr; gap: 20px; width: 100%; }
+    @media (max-width: 900px) { .directory-layout { grid-template-columns: 1fr; } }
+    .filters-panel { background: var(--white); border: 1px solid var(--border-grey); border-radius: 12px; padding: 18px; align-self: start; }
+    .filters-panel h3 { margin: 0 0 12px; color: var(--navy); }
+    .filters-panel h4 { margin: 14px 0 8px; font-size: 0.82rem; text-transform: uppercase; color: var(--navy); }
+    .filters-panel label { display: block; font-size: 0.9rem; margin: 4px 0; }
+    .filters-panel input[type=checkbox] { margin-right: 6px; }
+    .search-box, .filters-panel select, .filters-panel input[type=number] { width: 100%; padding: 8px; border: 1px solid var(--border-grey); border-radius: 4px; font: inherit; }
+    .results-panel { min-width: 0; }
+    #map { height: 380px; border-radius: 12px; border: 1px solid var(--border-grey); margin-bottom: 18px; }
+    .results-card { background: var(--white); border: 1px solid var(--border-grey); border-radius: 12px; padding: 18px; overflow-x: auto; }
+    .facilities-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .facilities-table th { background: var(--navy); color: var(--white); text-align: left; padding: 10px 12px; cursor: pointer; white-space: nowrap; }
+    .facilities-table td { padding: 10px 12px; border-bottom: 1px solid var(--border-grey); vertical-align: top; }
+    .facilities-table tr:hover { background: rgba(74,144,217,0.05); }
+    .facility-name { font-weight: 600; color: var(--navy); }
+    .facility-operator { font-size: 0.82rem; color: var(--steel-grey); }
+    .badge-pill { display: inline-block; background: rgba(74,144,217,0.12); color: var(--navy); border-radius: 10px; padding: 1px 8px; font-size: 0.75rem; margin: 1px 2px 1px 0; }
+    .src { font-size: 0.75rem; color: var(--steel-grey); }
+    .src a { color: var(--steel-blue); }
+    .gate-btn { background: none; border: 1px solid var(--steel-blue); color: var(--steel-blue); border-radius: 4px; padding: 3px 8px; font-size: 0.8rem; cursor: pointer; }
+    .pagination { display: flex; gap: 6px; margin-top: 14px; flex-wrap: wrap; }
+    .pagination button { padding: 6px 10px; border: 1px solid var(--border-grey); background: var(--white); border-radius: 4px; cursor: pointer; }
+    .pagination button.active { background: var(--navy); color: var(--white); }
+    .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 2000; align-items: center; justify-content: center; padding: 16px; }
+    .modal.active { display: flex; }
+    .modal-content { background: var(--white); border-radius: 12px; padding: 24px; max-width: 420px; width: 100%; }
+    .modal-content h2 { margin-top: 0; font-size: 1.2rem; }
+    .modal-content input[type=email] { width: 100%; padding: 10px; border: 1px solid var(--border-grey); border-radius: 6px; margin: 10px 0; font: inherit; }
+    .modal-content button { width: 100%; padding: 12px; background: var(--navy); color: var(--white); border: 0; border-radius: 6px; cursor: pointer; font-weight: 600; }
+    .modal-content button:disabled { opacity: 0.6; }
+    .modal-content .fine { font-size: 0.78rem; color: var(--steel-grey); }
+    .no-results { text-align: center; padding: 40px 20px; color: var(--steel-grey); }
+    .explainer { max-width: 1200px; margin: 0 auto; padding: 8px 20px 48px; }
+    .explainer h2 { font-size: 1.4rem; margin: 26px 0 8px; }
+    .explainer h3 { font-size: 1.05rem; margin: 16px 0 6px; }
+    .explainer .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .explainer .card { background: var(--white); border: 1px solid var(--border-grey); border-radius: 10px; padding: 16px; }
+    .explainer .big { font-size: 1.6rem; font-weight: 700; color: var(--navy); }
+    .explainer .cta-btn { display: inline-block; background: var(--navy); color: var(--white); padding: 10px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 8px; }
+    .range-note { font-size: 0.85rem; color: var(--steel-grey); border-left: 3px solid var(--steel-blue); padding-left: 12px; margin: 14px 0; }
+    .faq-item { border-top: 1px solid var(--border-grey); padding: 12px 0; }
+    .faq-item h3 { margin: 0 0 6px; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Railcar Storage Locator",
+    "url": "https://steelwheellogistics.com/tools/storage-locator",
+    "description": "Searchable directory of verified North American railcar storage yards with capacity, railroads served, hazmat status and contacts, plus railcar storage rate ranges.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any (web browser)",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "provider": { "@type": "Organization", "name": "Steel Wheel Logistics", "url": "https://steelwheellogistics.com/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How much does railcar storage cost?", "acceptedAnswer": { "@type": "Answer", "text": "Published market ranges run about $4 to $16 per car per day at off-railroad yards, plus a switch fee of roughly $100 to $300 per car in and out. Class I railroads also bill private empty cars held on their track under their own storage tariffs, such as Union Pacific's Private Empty Car Storage program. Rates vary by yard, car type, hazmat status and term; treat these as planning ranges, not quotes." } },
+      { "@type": "Question", "name": "Where does this list of railcar storage yards come from?", "acceptedAnswer": { "@type": "Answer", "text": "Every yard on this page is taken from a named public source, mainly operator storage pages, the Commtrex storage marketplace and short-line railroad directories, and carries the source link and the date it was verified. Fields the source did not publish, such as capacity or a phone number, are left blank rather than estimated." } },
+      { "@type": "Question", "name": "Is it cheaper to sublease idle railcars than to store them?", "acceptedAnswer": { "@type": "Answer", "text": "Usually. A stored car costs daily storage plus switching while it ages toward its interchange limit; a subleased car earns rent. Most master leases allow subleasing with the lessor's written consent. Our Railcar Lease Renewal Desk handles the consent and the placement." } }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://steelwheellogistics.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://steelwheellogistics.com/tools" },
+    { "@type": "ListItem", "position": 3, "name": "Railcar Storage Locator", "item": "https://steelwheellogistics.com/tools/storage-locator" } ] }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-RSWDYHVY7Z');</script>
 </head>
 <body>
-  <!-- Storage locator UNLISTED 2026-08-16: dataset failed integrity audit
-       (~97% fabricated records — see brain.md 08-16 finding). Redirects to the
-       verified transload directory, which carries real storage capability data.
-       Do not relist without a rebuilt, audited dataset. -->
-  <p>This tool has been folded into the <a href="/tools/transload-directory">Transload Directory</a>. Redirecting…</p>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon"><img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40"></div>
+        <div class="logo-text"><span class="logo-name">Steel Wheel Logistics</span><span class="logo-tagline">Rail Freight Simplified</span></div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <nav class="main-nav">
+        <a href="/">Home</a><a href="/services">Services</a><a href="/blog">Blog</a><a href="/courses">Courses</a><a href="/tools" class="active">Tools</a><a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="tool-hero">
+    <div class="badge"><span id="yardCount">Verified</span> storage yards</div>
+    <h1>Railcar Storage Locator</h1>
+    <p>Verified railcar storage yards across North America: capacity, railroads served, hazmat status and who to call. Every yard carries its source and the date it was checked. Filter by state or railroad, then get the contact.</p>
+  </div>
+
+  <div class="directory-layout">
+    <aside class="filters-panel">
+      <h3>Filters</h3>
+      <input type="text" class="search-box" id="searchBox" placeholder="Search yard, operator or city">
+      <h4>State / province</h4>
+      <select id="stateFilter"><option value="">All</option></select>
+      <h4>Railroad served</h4>
+      <div id="railroadFilters"></div>
+      <h4>Minimum capacity (cars)</h4>
+      <input type="number" id="capFilter" min="0" placeholder="e.g. 200">
+      <h4>Hazmat</h4>
+      <label><input type="checkbox" id="hazmatFilter"> Hazmat accepted</label>
+      <p class="src" style="margin-top:14px;">Data: <span id="sourceSummary">loading</span>. Blank fields mean the source did not publish them.</p>
+    </aside>
+
+    <section class="results-panel">
+      <div id="map"></div>
+      <div class="results-card">
+        <h3 style="margin:0 0 14px; color: var(--navy);">Results (<span id="resultCount">0</span>)</h3>
+        <table class="facilities-table">
+          <thead><tr>
+            <th onclick="sortTable('name')">Yard ↕</th>
+            <th onclick="sortTable('state')">Location ↕</th>
+            <th onclick="sortTable('capacity_cars')">Capacity ↕</th>
+            <th>Railroads</th>
+            <th>Hazmat</th>
+            <th>Contact</th>
+          </tr></thead>
+          <tbody id="facilitiesTable"><tr><td colspan="6" class="no-results">Loading yards…</td></tr></tbody>
+        </table>
+        <div class="pagination" id="pagination"></div>
+      </div>
+    </section>
+  </div>
+
+  <section class="explainer">
+    <h2>Railcar storage rates: what to expect</h2>
+    <div class="grid">
+      <div class="card"><div class="big">$4&ndash;16</div><div>per car per day at off-railroad yards, plus $100&ndash;300 per car switch in and out.</div><div class="src">Source: RSI Logistics published ranges; individual yard tariffs vary.</div></div>
+      <div class="card"><div class="big">21.8%</div><div>of the North American fleet, about 356,000 cars, was in storage on February 1 2026.</div><div class="src">Source: AAR Rail Industry Overview, Feb 2026.</div></div>
+      <div class="card"><div class="big">Class I</div><div>railroads bill private empty cars held on their track under their own storage programs (UP's PECS, NS and CSX storage tariffs), which is usually the most expensive place to leave a car.</div><div class="src">Source: carrier tariffs.</div></div>
+    </div>
+    <p class="range-note">These are published ranges from the named sources, not quotes. A yard's actual rate depends on car type, hazmat status, term, switching and whether the cars are loaded. We do not guarantee rates.</p>
+
+    <h2>Storing cars, or getting them out of storage?</h2>
+    <p>Storage is the cost of not deciding. If the cars are yours or on your lease and you do not need them this season, a sublease usually beats paying storage through the term, and most master leases allow it with the lessor's written consent. If you need cars, the stored fleet is where the fastest, cheapest "good enough" equipment sits. Either way, the same desk handles it.</p>
+    <a class="cta-btn" href="/tools/railcar-lease-renewal">Talk to the Railcar Desk &rarr;</a>
+    <p style="margin-top:14px;">Related: <a href="/tools/railcar-lease-rates">railcar lease rates tracker</a>, <a href="/tools/sublease-board">railcar sublease board</a>, <a href="/blog/railcar-sublease-guide">how to sublease idle railcars</a>, <a href="/tools/transload-directory">transload directory</a>.</p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq-item"><h3>How much does railcar storage cost?</h3><p>Published market ranges run about $4 to $16 per car per day at off-railroad yards, plus a switch fee of roughly $100 to $300 per car in and out. Class I railroads also bill private empty cars held on their track under their own storage tariffs. Rates vary by yard, car type, hazmat status and term; treat these as planning ranges, not quotes.</p></div>
+    <div class="faq-item"><h3>Where does this list of railcar storage yards come from?</h3><p>Every yard is taken from a named public source, mainly operator storage pages, the Commtrex storage marketplace and short-line railroad directories, and carries the source link and the date it was verified. Fields the source did not publish, such as capacity or a phone number, are left blank rather than estimated.</p></div>
+    <div class="faq-item"><h3>Is it cheaper to sublease idle railcars than to store them?</h3><p>Usually. A stored car costs daily storage plus switching while it ages toward its interchange limit; a subleased car earns rent. Most master leases allow subleasing with the lessor's written consent. Our Railcar Lease Renewal Desk handles the consent and the placement.</p></div>
+    <p class="src" id="sourcesList"></p>
+  </section>
+
+  <div id="emailModal" class="modal">
+    <div class="modal-content">
+      <h2>Get yard contacts</h2>
+      <p>Enter your work email to unlock phone numbers, websites and source links for every yard in your results.</p>
+      <input type="email" id="modalEmail" placeholder="you@company.com" required>
+      <button id="submitEmailBtn" onclick="submitEmail()">Unlock contacts</button>
+      <p class="fine">One email, no drip. We may follow up once if your filters suggest you are placing or storing cars.</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links"><a href="/privacy-policy">Privacy Policy</a><a href="/terms-of-service">Terms of Service</a><a href="/contact">Contact Us</a></div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <script>
+    let allYards = [], filtered = [], sortColumn = 'name', sortAsc = true, currentPage = 1, unlocked = false;
+    const perPage = 25;
+    const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+    async function loadData() {
+      try {
+        const r = await fetch('/tools/storage-locator/data/storage-yards.json');
+        const d = await r.json();
+        allYards = (d.yards || []).filter(y => y && y.name);
+        document.getElementById('yardCount').textContent = allYards.length;
+        const srcs = d.sources || [];
+        document.getElementById('sourceSummary').textContent = allYards.length + ' yards from ' + (srcs.length || 'several') + ' public sources, checked ' + (d.generated_at || '').slice(0, 10);
+        document.getElementById('sourcesList').innerHTML = srcs.length ? 'Sources: ' + srcs.map(s => typeof s === 'string' ? esc(s) : (s.url ? '<a href="' + esc(s.url) + '" rel="noopener" target="_blank">' + esc(s.title || s.name || s.url) + '</a>' : esc(s.name || ''))).join(' · ') : '';
+        populateFilters();
+        try { unlocked = !!sessionStorage.getItem('storage-locator-email'); } catch (e) {}
+        applyFilters();
+        try { initMap(); } catch (e) { console.error('map init failed', e); }
+      } catch (e) {
+        console.error(e);
+        document.getElementById('facilitiesTable').innerHTML = '<tr><td colspan="6" class="no-results">Could not load the yard list. Please refresh.</td></tr>';
+      }
+    }
+
+    function populateFilters() {
+      const states = [...new Set(allYards.map(y => y.state).filter(Boolean))].sort();
+      const sel = document.getElementById('stateFilter');
+      states.forEach(s => { const o = document.createElement('option'); o.value = s; o.textContent = s; sel.appendChild(o); });
+      const rrCount = {};
+      allYards.forEach(y => (y.railroads_served || []).forEach(rr => { rrCount[rr] = (rrCount[rr] || 0) + 1; }));
+      const top = Object.entries(rrCount).sort((a, b) => b[1] - a[1]).slice(0, 14);
+      const div = document.getElementById('railroadFilters');
+      top.forEach(([rr, n]) => {
+        const label = document.createElement('label'); const cb = document.createElement('input');
+        cb.type = 'checkbox'; cb.value = rr; cb.onchange = applyFilters;
+        label.appendChild(cb); label.appendChild(document.createTextNode(rr + ' (' + n + ')')); div.appendChild(label);
+      });
+      document.getElementById('searchBox').addEventListener('input', applyFilters);
+      document.getElementById('stateFilter').addEventListener('change', applyFilters);
+      document.getElementById('capFilter').addEventListener('input', applyFilters);
+      document.getElementById('hazmatFilter').addEventListener('change', applyFilters);
+    }
+
+    function currentFilters() {
+      return {
+        search: document.getElementById('searchBox').value.trim().toLowerCase(),
+        state: document.getElementById('stateFilter').value,
+        railroads: Array.from(document.querySelectorAll('#railroadFilters input:checked')).map(c => c.value),
+        min_capacity: Number(document.getElementById('capFilter').value) || 0,
+        hazmat: document.getElementById('hazmatFilter').checked
+      };
+    }
+
+    function applyFilters() {
+      const f = currentFilters();
+      filtered = allYards.filter(y => {
+        const hay = [y.name, y.operator, y.parent_company, y.city].join(' ').toLowerCase();
+        if (f.search && !hay.includes(f.search)) return false;
+        if (f.state && y.state !== f.state) return false;
+        if (f.railroads.length && !f.railroads.some(rr => (y.railroads_served || []).includes(rr))) return false;
+        if (f.min_capacity && !(Number(y.capacity_cars) >= f.min_capacity)) return false;
+        if (f.hazmat && y.hazmat !== true && String(y.hazmat).toLowerCase() !== 'yes') return false;
+        return true;
+      });
+      currentPage = 1; sortRows(); renderTable(); updateMap();
+    }
+
+    function sortRows() {
+      filtered.sort((a, b) => {
+        let av = a[sortColumn], bv = b[sortColumn];
+        if (sortColumn === 'capacity_cars') { av = Number(av) || -1; bv = Number(bv) || -1; return sortAsc ? av - bv : bv - av; }
+        av = String(av || ''); bv = String(bv || '');
+        return sortAsc ? av.localeCompare(bv) : bv.localeCompare(av);
+      });
+    }
+    function sortTable(col) { if (sortColumn === col) sortAsc = !sortAsc; else { sortColumn = col; sortAsc = col !== 'capacity_cars'; } sortRows(); renderTable(); }
+
+    function contactCell(y) {
+      if (!unlocked) return '<button class="gate-btn" onclick="showModal()">Get contact</button>';
+      const bits = [];
+      if (y.contact_name) bits.push(esc(y.contact_name));
+      if (y.phone) bits.push('<a href="tel:' + esc(y.phone.replace(/[^0-9+]/g, '')) + '">' + esc(y.phone) + '</a>');
+      if (y.email) bits.push('<a href="mailto:' + esc(y.email) + '">' + esc(y.email) + '</a>');
+      if (y.website) bits.push('<a href="' + esc(y.website) + '" rel="noopener" target="_blank">website</a>');
+      if (y.source_url) bits.push('<span class="src"><a href="' + esc(y.source_url) + '" rel="noopener" target="_blank">source</a>' + (y.verified_at ? ' · ' + esc(String(y.verified_at).slice(0, 10)) : '') + '</span>');
+      return bits.length ? bits.join('<br>') : '<span class="src">Not published by source. <a href="/tools/railcar-lease-renewal">Ask the desk</a>.</span>';
+    }
+
+    function renderTable() {
+      const start = (currentPage - 1) * perPage, page = filtered.slice(start, start + perPage);
+      document.getElementById('resultCount').textContent = filtered.length;
+      const tbody = document.getElementById('facilitiesTable');
+      tbody.innerHTML = page.length ? page.map(y => `
+        <tr>
+          <td><div class="facility-name">${esc(y.name)}</div><div class="facility-operator">${esc(y.operator || y.parent_company || '')}</div></td>
+          <td>${esc(y.city || '')}${y.city && y.state ? ', ' : ''}${esc(y.state || '')}</td>
+          <td>${y.capacity_cars ? esc(Number(y.capacity_cars).toLocaleString()) : '<span class="src">n/p</span>'}</td>
+          <td>${(y.railroads_served || []).slice(0, 4).map(rr => '<span class="badge-pill">' + esc(rr) + '</span>').join('')}</td>
+          <td>${y.hazmat === true || String(y.hazmat).toLowerCase() === 'yes' ? 'Yes' : (y.hazmat === false ? 'No' : '<span class="src">n/p</span>')}</td>
+          <td>${contactCell(y)}</td>
+        </tr>`).join('') : '<tr><td colspan="6" class="no-results">No yards match your filters.</td></tr>';
+      renderPagination();
+    }
+
+    function renderPagination() {
+      const total = Math.ceil(filtered.length / perPage), p = document.getElementById('pagination'); p.innerHTML = '';
+      if (total <= 1) return;
+      const mk = (label, page, dis, act) => { const b = document.createElement('button'); b.textContent = label; b.disabled = !!dis; if (act) b.className = 'active'; b.onclick = () => { currentPage = page; renderTable(); window.scrollTo({ top: document.querySelector('.results-card').offsetTop - 20, behavior: 'smooth' }); }; p.appendChild(b); };
+      mk('Previous', currentPage - 1, currentPage === 1);
+      const lo = Math.max(1, currentPage - 2), hi = Math.min(total, lo + 4);
+      for (let i = lo; i <= hi; i++) mk(String(i), i, false, i === currentPage);
+      mk('Next', currentPage + 1, currentPage === total);
+    }
+
+    let map, cluster;
+    function initMap() {
+      map = L.map('map').setView([37.5, -92], 4);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors', maxZoom: 19 }).addTo(map);
+      cluster = L.markerClusterGroup(); updateMap();
+    }
+    function updateMap() {
+      if (!cluster) return; cluster.clearLayers();
+      filtered.forEach(y => {
+        if (typeof y.lat !== 'number' || typeof y.lng !== 'number') return;
+        const m = L.circleMarker([y.lat, y.lng], { radius: 6, fillColor: '#4A90D9', color: '#1a3a52', weight: 2, opacity: 0.8, fillOpacity: 0.6 });
+        m.bindPopup('<strong>' + esc(y.name) + '</strong><br>' + esc(y.city || '') + ', ' + esc(y.state || '') + '<br>' + esc(y.operator || '') + (y.capacity_cars ? '<br>Capacity: ' + esc(y.capacity_cars) + ' cars' : ''));
+        cluster.addLayer(m);
+      });
+      map.addLayer(cluster);
+    }
+
+    const emailModal = document.getElementById('emailModal'), modalEmail = document.getElementById('modalEmail');
+    function showModal() { emailModal.classList.add('active'); modalEmail.focus(); }
+    emailModal.addEventListener('click', e => { if (e.target === emailModal) emailModal.classList.remove('active'); });
+    async function submitEmail() {
+      const email = modalEmail.value.trim(); if (!email) { alert('Please enter your work email'); return; }
+      const btn = document.getElementById('submitEmailBtn'); btn.disabled = true;
+      try {
+        const r = await fetch('/api/storage-locator-lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, facility_count: filtered.length, filters_applied: currentFilters() }) });
+        if (r.ok) {
+          try { sessionStorage.setItem('storage-locator-email', email); } catch (e) {}
+          unlocked = true; emailModal.classList.remove('active'); renderTable();
+          if (typeof gtag === 'function') gtag('event', 'storage_locator_unlock', { event_category: 'tools' });
+        } else { const d = await r.json().catch(() => ({})); alert(d.error || 'Could not verify that email. Please try a work address.'); }
+      } catch (e) { alert('Network error. Please try again.'); }
+      btn.disabled = false;
+    }
+    loadData();
+  </script>
 </body>
 </html>
