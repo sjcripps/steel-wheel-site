@@ -200,6 +200,12 @@ img {
   background: rgba(74, 144, 217, 0.15);
 }
 
+.main-nav a.nav-phone {
+  color: var(--white);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 .main-nav a.nav-cta {
   background: var(--steel-blue);
   color: var(--white);

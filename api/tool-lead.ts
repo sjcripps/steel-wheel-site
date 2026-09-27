@@ -6,6 +6,7 @@ import sublease from './_sublease-lead';
 import railcarRenewal from './_railcar-renewal-lead';
 import leaseActivity from './_lease-activity-lead';
 import laneAudit from './_lane-audit-lead';
+import pressureReport from './_pressure-report-lead';
 import transitTime from './_rail-transit-time';
 import shipperDashboard from './_shipper-dashboard';
 
@@ -29,6 +30,7 @@ const ROUTES: Record<string, Handler> = {
   'railcar-renewal': railcarRenewal,
   'lease-activity': leaseActivity,
   'lane-audit': laneAudit,
+  'pressure-report': pressureReport,
   // Not a lead route — a public, ungated transit lookup. It rides this
   // dispatcher purely to stay under the 12-function Hobby cap.
   'transit-time': transitTime,

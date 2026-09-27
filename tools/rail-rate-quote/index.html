@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Get an indicative rail freight quote in seconds — enter origin, destination and commodity for an instant rate on any U.S. lane. Free, no signup.">
-  <title>Rail Freight Quote & Rate Estimate by Lane | Steel Wheel</title>
+  <meta name="description" content="Free rail freight quote calculator: enter origin, destination and commodity for an indicative carload rate on any U.S. lane. An estimate to plan against, not a firm rate. No signup.">
+  <title>Rail Freight Quote Calculator: Indicative Carload Rates by Lane | Steel Wheel Logistics</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
   <link rel="stylesheet" href="/style.css?v=5">
   <link rel="canonical" href="https://steelwheellogistics.com/tools/rail-rate-quote">
-  <meta property="og:title" content="Rail Freight Quote & Rate Estimate by Lane | Steel Wheel">
+  <meta property="og:title" content="Rail Freight Quote Calculator: Indicative Carload Rates by Lane | Steel Wheel Logistics">
   <meta property="og:description" content="Estimate rail freight cost on any U.S. lane in seconds. Indicative rate, free, no signup.">
   <meta property="og:url" content="https://steelwheellogistics.com/tools/rail-rate-quote">
   <meta property="og:type" content="website">
@@ -587,6 +587,57 @@
       background: var(--light-grey);
       color: var(--navy);
     }
+    /* Concierge hand-off directly under the price: the highest-intent moment
+       on the site (265 real quotes in 90 days) previously had no phone or
+       booking path on the results view. */
+    .concierge-block {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 10px;
+      padding: 20px 22px;
+      margin: 0 0 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .concierge-block .concierge-text { flex: 1 1 320px; }
+    .concierge-block .concierge-text strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+    .concierge-block .concierge-text span {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.5;
+    }
+    .concierge-block .concierge-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .concierge-block .concierge-actions a {
+      display: inline-block;
+      padding: 11px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .concierge-block .concierge-book {
+      background: var(--steel-blue);
+      color: var(--white);
+    }
+    .concierge-block .concierge-book:hover { background: var(--steel-blue-dark); color: var(--white); }
+    .concierge-block .concierge-call {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.45);
+    }
+    .concierge-block .concierge-call:hover { background: rgba(255,255,255,0.1); color: var(--white); }
 
     .below-form-help {
       margin-top: 16px;
@@ -776,7 +827,7 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Rail Freight Rates \u2014 Instant Estimate by Lane",
+    "name": "Rail Freight Quote Calculator \u2014 Indicative Carload Rates by Lane",
     "url": "https://steelwheellogistics.com/tools/rail-rate-quote",
     "description": "Estimate rail freight cost on any U.S. lane in seconds. Enter origin, destination and commodity for an indicative rate \u2014 free, no signup.",
     "applicationCategory": "BusinessApplication",
@@ -815,7 +866,7 @@
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Rail Freight Rates \u2014 Instant Estimate by Lane",
+        "name": "Rail Freight Quote Calculator \u2014 Indicative Carload Rates by Lane",
         "item": "https://steelwheellogistics.com/tools/rail-rate-quote"
       }
     ]
@@ -880,6 +931,8 @@
         <a href="/courses">Courses</a>
         <a href="/tools" class="active">Tools</a>
         <a href="/contact">Contact Us</a>
+        <a href="tel:+16018212199" class="nav-phone" aria-label="Call Steel Wheel Logistics">(601) 821-2199</a>
+        <a href="https://cal.com/sj-services/30min?utm_source=site&amp;utm_campaign=rail_concierge&amp;utm_content=header" class="nav-cta" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','rail_concierge_cta_click',{event_category:'cta',page:'header',action:'book'})">Book a call</a>
       </nav>
     </div>
   </header>
@@ -887,8 +940,8 @@
   <!-- Hero -->
   <section class="tool-hero">
     <span class="badge">Free Tool</span>
-    <h1>Indicative Rail Freight Quote &amp; Rate Estimator</h1>
-    <p>Get a ballpark rate on any U.S. rail lane in seconds. Use it to sanity-check a quote, scope a new lane, or model a project move.</p>
+    <h1>Rail Freight Quote Calculator: Indicative Carload Rates by Lane</h1>
+    <p>Get an indicative carload rate on any U.S. rail lane in seconds. Use it to sanity-check a carrier quote, scope a new lane, or model a project move. It is an estimate, not a firm rate.</p>
   </section>
 
   <!-- Main content -->
@@ -998,6 +1051,19 @@
             <div class="label">Estimated Tariff</div>
             <div class="value" id="rTariffTotal"></div>
             <div class="sub" id="rTariffPerCwt"></div>
+          </div>
+        </div>
+
+        <!-- Concierge hand-off: the number above is indicative. The next step
+             for a shipper who wants the move run is a call, not another form. -->
+        <div class="concierge-block" id="conciergeBlock">
+          <div class="concierge-text">
+            <strong>Want us to run this move?</strong>
+            <span>Book a 30-minute rail setup call or call (601) 821-2199. We source the real railroad rate, line up equipment, and coordinate the move as your outsourced rail department.</span>
+          </div>
+          <div class="concierge-actions">
+            <a class="concierge-book" href="https://cal.com/sj-services/30min?utm_source=site&amp;utm_campaign=rail_concierge&amp;utm_content=rail-rate-quote" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','rail_concierge_cta_click',{event_category:'cta',page:'rail-rate-quote',action:'book'})">Book a 30-Minute Rail Setup Call</a>
+            <a class="concierge-call" href="tel:+16018212199" onclick="if(typeof gtag==='function')gtag('event','rail_concierge_cta_click',{event_category:'cta',page:'rail-rate-quote',action:'call'})">Call (601) 821-2199</a>
           </div>
         </div>
 

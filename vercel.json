@@ -139,6 +139,10 @@
     {
       "source": "/api/lane-audit-lead",
       "destination": "/api/tool-lead?tool=lane-audit"
+    },
+    {
+      "source": "/api/pressure-report-lead",
+      "destination": "/api/tool-lead?tool=pressure-report"
     }
   ],
   "headers": [

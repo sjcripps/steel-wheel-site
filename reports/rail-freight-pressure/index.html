@@ -69,6 +69,56 @@
       <p>Send your top 10 truck lanes for a free audit and you are on the list.</p>
       <a href="/tools/lane-audit">Send your lanes &rarr;</a>
     </div>
+
+    <!-- Pressure Report signup -->
+    <div class="blog-course-cta" data-pressure-signup>
+      <h3>📈 Rail Freight Pressure Report</h3>
+      <p>Get the Rail Freight Pressure Report every week: diesel, fuel surcharges, rail volumes, one lane priced truck vs rail.</p>
+      <form class="pressure-signup-form" action="/api/pressure-report-lead" method="post" novalidate style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0">
+        <label for="pressure-report-email" style="position:absolute;left:-9999px">Work email</label>
+        <input type="email" name="email" id="pressure-report-email" placeholder="you@company.com" required autocomplete="email" style="flex:1 1 220px;min-width:0;padding:12px 16px;font-size:15px;border:1px solid #dde2e8;border-radius:8px;font-family:inherit;background:#fff;color:#2c3e50">
+        <button type="submit" class="btn btn-primary" style="padding:12px 22px">Send me the report</button>
+      </form>
+      <p class="pressure-signup-msg" role="status" aria-live="polite" style="display:none;margin:12px 0 0;font-size:14px;font-weight:600"></p>
+      <p style="margin:10px 0 0;font-size:12px;color:#718096">One email a week. Unsubscribe any time.</p>
+    </div>
+    <script>
+    (function () {
+      var forms = document.querySelectorAll('form.pressure-signup-form');
+      Array.prototype.forEach.call(forms, function (form) {
+        var input = form.querySelector('input[name="email"]');
+        var btn = form.querySelector('button');
+        var msg = form.parentNode.querySelector('.pressure-signup-msg');
+        var fallback = 'Could not reach the signup service. Email steelwheellogistics@gmail.com and we will add you by hand.';
+        function show(text, ok) { msg.textContent = text; msg.style.color = ok ? '#38a169' : '#e53e3e'; msg.style.display = 'block'; }
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var email = (input.value || '').trim();
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { show('Enter a valid work email address.', false); input.focus(); return; }
+          var label = btn.textContent; btn.disabled = true; btn.textContent = 'Sending…';
+          var body = { email: email, page: location.pathname, source_page: document.title };
+          if (typeof window.swlAttr === 'function') { try { var a = window.swlAttr(); for (var k in a) { if (Object.prototype.hasOwnProperty.call(a, k)) body[k] = a[k]; } } catch (_) {} }
+          fetch('/api/pressure-report-lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+            .then(function (r) { return r.json().then(function (j) { return { ok: r.ok && j && j.ok, j: j || {} }; }).catch(function () { return { ok: false, j: {} }; }); })
+            .then(function (res) {
+              if (res.ok) {
+                show('You are on the list. The next issue lands in your inbox this week.', true);
+                form.style.display = 'none';
+                if (typeof gtag === 'function') gtag('event', 'pressure_report_signup', { page: location.pathname });
+                return;
+              }
+              var err = res.j.error || '';
+              var text = err === 'email_disposable' ? 'Disposable email addresses are not accepted. Use your work email.'
+                : (err === 'email_no_mx' || err === 'email_format') ? 'That email address does not look deliverable. Check it and try again.'
+                : fallback;
+              show(text, false); btn.disabled = false; btn.textContent = label;
+            })
+            .catch(function () { show(fallback, false); btn.disabled = false; btn.textContent = label; });
+        });
+      });
+    })();
+    </script>
+
     <h2>All issues</h2>
     <ul class="archive">
       <li><a href="/reports/rail-freight-pressure/2026-09-26">Issue 1, week ending September 26, 2026</a>: Diesel at $6.53 just repriced every truck lane in the country, and every railroad&#x27;s October fuel surcharge with it.</li>

@@ -227,6 +227,8 @@
         <a href="/courses">Courses</a>
         <a href="/tools">Tools</a>
         <a href="/contact">Contact Us</a>
+        <a href="tel:+16018212199" class="nav-phone" aria-label="Call Steel Wheel Logistics">(601) 821-2199</a>
+        <a href="https://cal.com/sj-services/30min?utm_source=site&amp;utm_campaign=rail_concierge&amp;utm_content=header" class="nav-cta" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','rail_concierge_cta_click',{event_category:'cta',page:'header',action:'book'})">Book a call</a>
       </nav>
     </div>
   </header>
@@ -312,6 +314,8 @@
       <p>The most advanced classification yards are fully automated hump operations. Computers control the entire sorting process — measuring each car's weight and rolling resistance, calculating the optimal speed for safe coupling, and adjusting retarders in real time. Track-side sensors identify cars automatically, and the computer routes them to the correct track without human intervention on the ground.</p>
 
       <p>Automation reduces labor costs and improves accuracy, but it requires significant technology investment. Most of the largest yards operated by the six Class I railroads — BNSF, Union Pacific, CSX, Norfolk Southern, Canadian National, and CPKC — have some degree of automation in their hump operations.</p>
+
+      <p data-rate-quote-card style="margin-top: 1.5rem; padding: 1rem; background: #f5f7fa; border-left: 4px solid #1a3d6c;"><strong>Pricing a specific lane?</strong> <a href="/tools/rail-rate-quote">Get an indicative carload rate in 60 seconds</a> &mdash; origin, destination and commodity, no sign-up. It is an estimate to plan with, not a rate.</p>
 
       <h2 id="hump-process">How Hump Yard Sorting Works</h2>
 
@@ -596,11 +600,60 @@
     </div>
 
     <!-- CTA -->
-    <div class="blog-cta">
-      <h3>Need Help Navigating Rail Freight?</h3>
-      <p>We help shippers optimize routes, reduce transit times, and manage the complexity of rail logistics. No obligation.</p>
-      <a href="/contact" class="btn btn-primary">Get a Free Quote</a>
+    <div class="blog-cta" data-rail-concierge>
+      <h3>Reading this because you have to make rail work?</h3>
+      <p>Getting a first carload moving means a rate request, a car order, a bill of lading with the right STCC, a siding or a transload, and demurrage clocks that run whether or not anyone is watching. Most new-to-rail shippers lose weeks to that list. Jacob Cripps has 25 years running rail operations. We set it up and run it as your outsourced rail department: you ship, we handle the railroad.</p>
+      <a href="https://cal.com/sj-services/30min?utm_source=site&amp;utm_campaign=rail_concierge&amp;utm_content=how-railroad-classification-yards-work" class="btn btn-primary" onclick="if(typeof gtag==='function'){gtag('event','rail_concierge_cta_click',{page:'how-railroad-classification-yards-work'});}">Book a 30-Min Rail Setup Call</a>
+      <p style="margin: 14px 0 0; font-size: 14px;">Prefer the phone? <a href="tel:+16018212199" style="color: #fff;">(601) 821-2199</a></p>
     </div>
+    <!-- Pressure Report signup -->
+    <div class="blog-course-cta" data-pressure-signup>
+      <h3>📈 Rail Freight Pressure Report</h3>
+      <p>Get the Rail Freight Pressure Report every week: diesel, fuel surcharges, rail volumes, one lane priced truck vs rail.</p>
+      <form class="pressure-signup-form" action="/api/pressure-report-lead" method="post" novalidate style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0">
+        <label for="pressure-report-email" style="position:absolute;left:-9999px">Work email</label>
+        <input type="email" name="email" id="pressure-report-email" placeholder="you@company.com" required autocomplete="email" style="flex:1 1 220px;min-width:0;padding:12px 16px;font-size:15px;border:1px solid #dde2e8;border-radius:8px;font-family:inherit;background:#fff;color:#2c3e50">
+        <button type="submit" class="btn btn-primary" style="padding:12px 22px">Send me the report</button>
+      </form>
+      <p class="pressure-signup-msg" role="status" aria-live="polite" style="display:none;margin:12px 0 0;font-size:14px;font-weight:600"></p>
+      <p style="margin:10px 0 0;font-size:12px;color:#718096">One email a week. Unsubscribe any time.</p>
+    </div>
+    <script>
+    (function () {
+      var forms = document.querySelectorAll('form.pressure-signup-form');
+      Array.prototype.forEach.call(forms, function (form) {
+        var input = form.querySelector('input[name="email"]');
+        var btn = form.querySelector('button');
+        var msg = form.parentNode.querySelector('.pressure-signup-msg');
+        var fallback = 'Could not reach the signup service. Email steelwheellogistics@gmail.com and we will add you by hand.';
+        function show(text, ok) { msg.textContent = text; msg.style.color = ok ? '#38a169' : '#e53e3e'; msg.style.display = 'block'; }
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var email = (input.value || '').trim();
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { show('Enter a valid work email address.', false); input.focus(); return; }
+          var label = btn.textContent; btn.disabled = true; btn.textContent = 'Sending…';
+          var body = { email: email, page: location.pathname, source_page: document.title };
+          if (typeof window.swlAttr === 'function') { try { var a = window.swlAttr(); for (var k in a) { if (Object.prototype.hasOwnProperty.call(a, k)) body[k] = a[k]; } } catch (_) {} }
+          fetch('/api/pressure-report-lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+            .then(function (r) { return r.json().then(function (j) { return { ok: r.ok && j && j.ok, j: j || {} }; }).catch(function () { return { ok: false, j: {} }; }); })
+            .then(function (res) {
+              if (res.ok) {
+                show('You are on the list. The next issue lands in your inbox this week.', true);
+                form.style.display = 'none';
+                if (typeof gtag === 'function') gtag('event', 'pressure_report_signup', { page: location.pathname });
+                return;
+              }
+              var err = res.j.error || '';
+              var text = err === 'email_disposable' ? 'Disposable email addresses are not accepted. Use your work email.'
+                : (err === 'email_no_mx' || err === 'email_format') ? 'That email address does not look deliverable. Check it and try again.'
+                : fallback;
+              show(text, false); btn.disabled = false; btn.textContent = label;
+            })
+            .catch(function () { show(fallback, false); btn.disabled = false; btn.textContent = label; });
+        });
+      });
+    })();
+    </script>
 
     <!-- Free Course CTA -->
     <div class="blog-course-cta">
