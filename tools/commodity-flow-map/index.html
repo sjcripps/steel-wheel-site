@@ -781,7 +781,70 @@
       allHubs.forEach(h => hubsById.set(h.id, h));
       initMap();
       buildLayers();
+      await loadPorts();
       buildLegend();
+    }
+
+    // ─────────────────────── Port import layer (Census) ───────────────────────
+    // Bubbles at the top vessel-import ports, sized by US$ value of the selected
+    // HS chapter, year to date. Built monthly by build_port_imports.py from the
+    // Census International Trade API. Public data; no importer names.
+    let portData = null;
+    let portLayer = null;
+    let portChapter = '72';
+    const portColor = '#e07a1f';
+
+    async function loadPorts() {
+      try {
+        const r = await fetch('/tools/commodity-flow-map/data/port-imports.json');
+        if (!r.ok) return;
+        portData = await r.json();
+        portLayer = L.layerGroup();
+        layerGroups.set('port_imports', portLayer);
+        layerVisible.set('port_imports', true);
+        portLayer.addTo(map);
+        drawPorts();
+      } catch (e) { console.warn('port layer skipped', e); }
+    }
+
+    function drawPorts() {
+      if (!portData || !portLayer) return;
+      portLayer.clearLayers();
+      const vals = portData.ports.map(p => p.chapters[portChapter] || 0).filter(v => v > 0);
+      const max = Math.max(1, ...vals);
+      portData.ports.forEach(p => {
+        const v = p.chapters[portChapter] || 0;
+        if (v <= 0) return;
+        const r = 6 + 34 * Math.sqrt(v / max);
+        const m = L.circleMarker([p.lat, p.lon], { radius: r, color: portColor, weight: 1.5, fillColor: portColor, fillOpacity: 0.35 });
+        m.bindTooltip(`${p.name}: $${Math.round(v).toLocaleString()}M ${portData.chapters[portChapter].name.toLowerCase()} by vessel, YTD`, { direction: 'top' });
+        m.on('click', () => renderPortPanel(p));
+        portLayer.addLayer(m);
+      });
+    }
+
+    function renderPortPanel(p) {
+      const inner = document.getElementById('sidePanelInner');
+      const city = p.name.replace(/, [A-Za-z]{2}$/, '');
+      const rows = p.top.map(([hs, v]) => `<tr><td>${escapeHtml(portData.chapters[hs].name)}</td><td style="text-align:right">$${Math.round(v).toLocaleString()}M</td></tr>`).join('');
+      const rr = (p.railroads || []).map(x => `<span class="panel-pill cat">${escapeHtml(x)}</span>`).join('') || '<span class="panel-empty">Not rail-served</span>';
+      const rateQs = new URLSearchParams({ origin_city: city, origin_state: p.state });
+      inner.innerHTML = `
+        <h2>Port of ${escapeHtml(city)}</h2>
+        <p class="panel-sub">${escapeHtml(p.state)} · vessel imports, year to date through ${escapeHtml(portData.data_month)}</p>
+        <div><span class="panel-pill">Port of entry</span><span class="panel-pill cat">$${p.total_musd.toLocaleString()}M across tracked chapters</span></div>
+        <p class="panel-desc">${escapeHtml(p.note || 'What lands here by vessel, and the railroads that can take it inland.')}</p>
+        <div class="panel-meta"><strong>Top import chapters (US$ millions, vessel)</strong>
+          <table style="width:100%;font-size:0.9rem;margin-top:6px"><tbody>${rows}</tbody></table></div>
+        <div class="panel-meta"><strong>Class I railroads at the port</strong><div>${rr}</div></div>
+        <div class="panel-meta"><strong>Source</strong><div>U.S. Census Bureau, International Trade API, imports by port of entry.</div></div>
+        <div class="panel-actions">
+          <a href="/tools/lane-audit" class="panel-cta">Price the inland leg from this port &rarr;</a>
+          <a href="/tools/rail-rate-quote?${rateQs.toString()}" class="panel-cta panel-cta-secondary">Rail rate from ${escapeHtml(city)}</a>
+        </div>`;
+      map.setView([p.lat, p.lon], Math.max(map.getZoom(), 5), { animate: true });
+      if (window.innerWidth < 980) document.getElementById('sidePanel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      silentFireCommodityFlowLead();
     }
 
     function initMap() {
@@ -852,6 +915,24 @@
             <span class="layer-count">${count}</span>`;
           div.appendChild(row);
         });
+        if (portData) {
+          const row = document.createElement('label');
+          row.className = 'legend-row';
+          row.dataset.layer = 'port_imports';
+          const opts = portData.chapter_order.map(hs => `<option value="${hs}"${hs === portChapter ? ' selected' : ''}>${escapeHtml(portData.chapters[hs].name)}</option>`).join('');
+          row.innerHTML = `
+            <input type="checkbox" id="legend-port_imports" checked data-layer="port_imports">
+            <span class="swatch" style="background:${portColor};"></span>
+            <span class="layer-label">🛳 Port imports (Census, YTD)</span>
+            <span class="layer-count">${portData.ports.length}</span>`;
+          div.appendChild(row);
+          const sel = document.createElement('select');
+          sel.className = 'legend-select';
+          sel.style.cssText = 'width:100%;margin:2px 0 8px;font-size:0.8rem;padding:3px;';
+          sel.innerHTML = opts;
+          sel.addEventListener('change', () => { portChapter = sel.value; drawPorts(); });
+          div.appendChild(sel);
+        }
         const toggleAll = document.createElement('button');
         toggleAll.type = 'button';
         toggleAll.className = 'legend-toggle-all';
