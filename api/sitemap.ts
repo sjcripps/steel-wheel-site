@@ -96,6 +96,10 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
       { loc: "/tools/rail-served-businesses", priority: "0.8", changefreq: "monthly" },
       { loc: "/tools/commodity-flow-map", priority: "0.8", changefreq: "monthly" },
       { loc: "/tools/sublease-board", priority: "0.8", changefreq: "weekly" },
+      { loc: "/tools/lane-audit", priority: "0.9", changefreq: "monthly" },
+      { loc: "/services/up-ns-merger-exposure-review", priority: "0.8", changefreq: "weekly" },
+      { loc: "/reports/rail-freight-pressure", priority: "0.9", changefreq: "weekly" },
+      { loc: "/reports/rail-freight-pressure/2026-09-26", priority: "0.7", changefreq: "yearly" },
       // Regenerated from data/fsc/current.json on the 1st of each month, so
       // changefreq is monthly and genuinely accurate.
       { loc: "/tools/rail-fuel-surcharge", priority: "0.9", changefreq: "monthly" },

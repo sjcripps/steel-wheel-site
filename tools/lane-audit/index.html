@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Flatbed and bulk truck rates in the South are up 30% in a year and diesel is at a record. Send us your top 10 truck lanes and get a free rail-vs-truck lane audit: rail carload plus transload and dray against what you pay today, lane by lane.">
+  <title>Free Truck-to-Rail Lane Audit: Your Top 10 Lanes, Priced | Steel Wheel</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
+  <link rel="stylesheet" href="/style.css?v=5">
+  <link rel="canonical" href="https://steelwheellogistics.com/tools/lane-audit">
+  <meta property="og:title" content="Free Truck-to-Rail Lane Audit | Steel Wheel Logistics">
+  <meta property="og:description" content="Send us your top 10 truck lanes. We price each one on rail carload plus transload and dray against today's truck cost and tell you which ones to move.">
+  <meta property="og:url" content="https://steelwheellogistics.com/tools/lane-audit">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Steel Wheel Logistics">
+  <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
+  <style>
+    .tool-hero { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); padding: 48px 20px; text-align: center; }
+    .tool-hero h1 { color: var(--white); font-size: 2rem; margin-bottom: 8px; }
+    .tool-hero p { color: var(--steel-grey); font-size: 1.05rem; max-width: 760px; margin: 0 auto; }
+    .tool-hero .badge { display: inline-block; background: rgba(74,144,217,0.15); color: var(--steel-blue); font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 999px; margin-bottom: 14px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .tool-layout { max-width: 1080px; margin: 0 auto; padding: 32px 20px 56px; }
+    .section-heading { font-size: 1.5rem; margin-bottom: 6px; }
+    .section-sub { color: var(--steel-grey); margin-bottom: 20px; }
+    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 28px; }
+    .stat-card { background: var(--white); border: 1px solid var(--border-grey); border-radius: 10px; padding: 18px; }
+    .stat-value { font-size: 1.8rem; font-weight: 700; color: var(--navy); }
+    .stat-label { font-weight: 600; margin: 4px 0 6px; }
+    .stat-detail { font-size: 0.92rem; color: #444; }
+    .stat-source { font-size: 0.8rem; color: var(--steel-grey); margin-top: 8px; }
+    .desk-grid { display: grid; grid-template-columns: 0.9fr 1.3fr; gap: 28px; align-items: start; }
+    @media (max-width: 900px) { .desk-grid { grid-template-columns: 1fr; } }
+    .desk-copy h2 { font-size: 1.35rem; margin-bottom: 8px; }
+    .desk-copy h3 { font-size: 1.05rem; margin: 18px 0 6px; }
+    .desk-copy ul, .desk-copy ol { padding-left: 20px; }
+    .desk-copy li { margin-bottom: 8px; }
+    .desk-form { background: var(--white); border: 2px solid var(--steel-blue); border-radius: 12px; padding: 22px; }
+    .desk-form h2 { font-size: 1.2rem; margin-bottom: 4px; }
+    .desk-form p.lead { font-size: 0.9rem; color: var(--steel-grey); margin-bottom: 14px; }
+    .desk-form label { display: block; font-size: 0.85rem; font-weight: 600; margin: 10px 0 4px; }
+    .desk-form input, .desk-form select, .desk-form textarea { width: 100%; padding: 9px 10px; border: 1px solid var(--border-grey); border-radius: 6px; font: inherit; }
+    .desk-form textarea { min-height: 60px; }
+    .desk-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .desk-form button { padding: 12px; background: var(--navy); color: var(--white); border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font: inherit; }
+    .desk-form button.primary { width: 100%; margin-top: 16px; font-weight: 700; }
+    .desk-form button.ghost { background: transparent; color: var(--navy); border: 1px dashed var(--steel-blue); width: 100%; margin-top: 10px; padding: 8px; }
+    .desk-form button:disabled { opacity: 0.6; cursor: wait; }
+    .desk-form .fine { font-size: 0.78rem; color: var(--steel-grey); margin-top: 10px; }
+    .desk-form .ok { background: #e8f5e9; border: 1px solid #9ccc9f; border-radius: 8px; padding: 14px; }
+    .desk-form .err { color: #b00020; font-size: 0.85rem; margin-top: 8px; }
+    .lane-rows { margin-top: 8px; }
+    .lane-row { display: grid; grid-template-columns: 1.2fr 1.2fr 1fr 0.6fr 0.8fr 0.7fr 28px; gap: 6px; align-items: end; margin-bottom: 8px; }
+    .lane-row label { font-size: 0.72rem; margin: 0 0 2px; color: var(--steel-grey); }
+    .lane-row input, .lane-row select { padding: 7px 8px; font-size: 0.9rem; }
+    .lane-row .del { background: none; border: none; color: #b00020; font-size: 1.1rem; cursor: pointer; padding: 6px 0; }
+    @media (max-width: 720px) { .lane-row { grid-template-columns: 1fr 1fr; } .lane-row .del { grid-column: span 2; text-align: right; } }
+    .faq { margin-top: 40px; }
+    .faq h2 { font-size: 1.5rem; margin-bottom: 14px; }
+    .faq-item { border-top: 1px solid var(--border-grey); padding: 14px 0; }
+    .faq-item h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    .range-note { font-size: 0.85rem; color: var(--steel-grey); border-left: 3px solid var(--steel-blue); padding-left: 12px; margin: 18px 0 30px; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Truck-to-Rail Lane Audit",
+    "serviceType": "Freight lane analysis: rail carload versus truck cost comparison",
+    "provider": { "@type": "Organization", "name": "Steel Wheel Logistics", "url": "https://steelwheellogistics.com" },
+    "areaServed": "United States",
+    "url": "https://steelwheellogistics.com/tools/lane-audit",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free audit of up to 10 truck lanes against rail carload plus transload and drayage." },
+    "description": "Steel Wheel Logistics prices a shipper's truck lanes on rail carload plus transload and drayage against current truck cost, lane by lane, and identifies which lanes to convert."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What does the lane audit cost?", "acceptedAnswer": { "@type": "Answer", "text": "Nothing. The audit is free and there is no obligation. If you decide to move lanes to rail, we can run them as your rail desk on a per-car fee, and that is a separate conversation." } },
+      { "@type": "Question", "name": "How accurate are the rail numbers?", "acceptedAnswer": { "@type": "Answer", "text": "They are indicative estimates built from published tariff structures, current fuel surcharge factors for each railroad, and transload and drayage assumptions. They are not binding rates. When a lane looks good we request carrier pricing, and that is the number you decide on." } },
+      { "@type": "Question", "name": "What distance makes rail worth looking at?", "acceptedAnswer": { "@type": "Answer", "text": "With diesel at a record and Southern flatbed rates up about a third in a year, rail is winning lanes it lost two years ago. Bulk and heavy lanes above roughly 300 miles are worth pricing; 500 miles and up is where rail usually wins outright, even with a transload at one end." } },
+      { "@type": "Question", "name": "My plant does not have a rail siding. Does that matter?", "acceptedAnswer": { "@type": "Answer", "text": "No. Most conversions run through a transload near the plant, with a short dray at one or both ends. The audit includes that dray and names the transload options." } },
+      { "@type": "Question", "name": "What happens after the audit?", "acceptedAnswer": { "@type": "Answer", "text": "You get the lane table and a recommendation for each lane. For the lanes you want to move, we confirm the rail-side facilities, request carrier pricing, and can run the first cars as your outsourced rail desk." } }
+    ]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSWDYHVY7Z"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-RSWDYHVY7Z');</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">
+          <img src="/images/logo.png" alt="Steel Wheel Logistics" width="40" height="40">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Steel Wheel Logistics</span>
+          <span class="logo-tagline">Rail Freight Simplified</span>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <nav class="main-nav">
+        <a href="/">Home</a><a href="/services">Services</a><a href="/blog">Blog</a><a href="/courses">Courses</a><a href="/tools" class="active">Tools</a><a href="/contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="tool-hero">
+    <span class="badge">Free Lane Audit</span>
+    <h1>Your Top 10 Truck Lanes, Priced on Rail</h1>
+    <p>Diesel is at a record and Southern flatbed rates are up about a third in a year. Lanes that lost to truck in 2024 are winning on rail now. Send us your lanes; we price each one on rail carload plus transload and dray against what you pay today, and tell you which ones to move.</p>
+  </section>
+
+  <div class="tool-layout">
+
+    <section>
+      <h2 class="section-heading">Why the math changed this year</h2>
+      <p class="section-sub">Published figures, updated in our weekly <a href="/reports/rail-freight-pressure">Rail Freight Pressure Report</a>.</p>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-value">$6.53</div>
+          <div class="stat-label">Diesel, US on-highway, per gallon</div>
+          <div class="stat-detail">Week of September 21, 2026, up 3.9% in a week and about $2.50 in a year. Every truck lane reprices with it; rail fuel surcharges move too, but on a fraction of the fuel per ton.</div>
+          <div class="stat-source">Source: EIA weekly on-highway diesel</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">+32%</div>
+          <div class="stat-label">Flatbed spot rate, year over year</div>
+          <div class="stat-detail">National flatbed linehaul $2.67 a mile on September 1; Southeast outbound $3.27, the highest of the top ten origin regions. Load-to-truck ratio doubled in a year.</div>
+          <div class="stat-source">Source: DAT flatbed report, September 2026</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">3 to 4×</div>
+          <div class="stat-label">Rail fuel efficiency versus truck</div>
+          <div class="stat-detail">A carload moves a ton of freight three to four times farther on a gallon of fuel. At $6 diesel that gap is the whole argument, once transload and dray are counted honestly.</div>
+          <div class="stat-source">Source: AAR, EPA SmartWay factors</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">~200,000</div>
+          <div class="stat-label">Drivers expected to leave the pool</div>
+          <div class="stat-detail">The non-domiciled CDL rule effective March 2026 is expected to remove roughly 200,000 drivers over two years. Truckload carriers are modeling double-digit contract increases by December.</div>
+          <div class="stat-source">Source: FMCSA rule; carrier guidance reported by FreightWaves</div>
+        </div>
+      </div>
+      <p class="range-note">Every rail number in the audit is an indicative estimate, not a binding rate. Steel Wheel Logistics is a rail logistics intermediary, not a railroad. When a lane looks good, carrier pricing replaces the estimate.</p>
+    </section>
+
+    <section class="desk-grid">
+      <div class="desk-copy">
+        <h2>What you get back</h2>
+        <ol>
+          <li><strong>A lane table.</strong> For each lane: miles, the rail routing and carriers, rail cost per car and per ton including fuel surcharge and transload or dray, your truck cost per ton, the difference, and a verdict.</li>
+          <li><strong>Monthly dollars.</strong> The saving at your stated volume on the lanes that favor rail, so you can see whether this is worth a meeting.</li>
+          <li><strong>The next step per lane.</strong> Siding, team track or transload at each end, and what we would ask the carrier for.</li>
+        </ol>
+        <h3>Who this is for</h3>
+        <ul>
+          <li>Sawmills, treaters and OSB plants shipping 300 to 1,200 miles on flatbed.</li>
+          <li>Metals, scrap and machinery shippers on step-deck and flatbed.</li>
+          <li>Feed, fertilizer, resin, chemicals and aggregates moving in bulk trucks.</li>
+          <li>Any plant with no rail siding that assumes rail is not an option. Usually it is, through a transload.</li>
+        </ul>
+        <h3>What we are not</h3>
+        <ul>
+          <li>Not a railroad, and not a source of binding rates. The audit gives ranges from published structures; carriers put the real number in writing.</li>
+          <li>Not a truck broker. If a lane belongs on truck, the audit says so.</li>
+        </ul>
+        <p>Related: <a href="/tools/rail-vs-truck">rail vs. truck calculator</a>, <a href="/tools/transload-directory">transload directory</a>, <a href="/blog/how-much-does-it-cost-to-ship-by-rail">how rail freight is priced</a>.</p>
+      </div>
+
+      <form class="desk-form" id="deskForm" novalidate>
+        <h2>Send us your lanes</h2>
+        <p class="lead">Up to ten. Origin and destination as city and state; a rough current cost helps but is optional. We reply within one business day.</p>
+        <input type="hidden" name="request_type" value="lane_audit">
+        <div class="row">
+          <div><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+          <div><label for="company">Company</label><input id="company" name="company" autocomplete="organization" required></div>
+        </div>
+        <div class="row">
+          <div><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+        </div>
+        <label>Lanes</label>
+        <div class="lane-rows" id="laneRows"></div>
+        <button type="button" class="ghost" id="addLane">+ Add another lane</button>
+        <label for="notes">Anything else</label>
+        <textarea id="notes" name="notes" placeholder="Rail siding at either end? Current carrier or contract? Seasonality?"></textarea>
+        <button type="submit" class="primary" id="deskSubmit">Get my free lane audit &rarr;</button>
+        <div class="err" id="deskErr" hidden></div>
+        <p class="fine">Your lanes and rates stay confidential. We never share a shipper's information with a carrier without your OK.</p>
+      </form>
+    </section>
+
+    <section class="faq">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item"><h3>What does the lane audit cost?</h3><p>Nothing. The audit is free and there is no obligation. If you decide to move lanes to rail, we can run them as your rail desk on a per-car fee, and that is a separate conversation.</p></div>
+      <div class="faq-item"><h3>How accurate are the rail numbers?</h3><p>They are indicative estimates built from published tariff structures, current fuel surcharge factors for each railroad, and transload and drayage assumptions. They are not binding rates. When a lane looks good we request carrier pricing, and that is the number you decide on.</p></div>
+      <div class="faq-item"><h3>What distance makes rail worth looking at?</h3><p>With diesel at a record and Southern flatbed rates up about a third in a year, rail is winning lanes it lost two years ago. Bulk and heavy lanes above roughly 300 miles are worth pricing; 500 miles and up is where rail usually wins outright, even with a transload at one end.</p></div>
+      <div class="faq-item"><h3>My plant does not have a rail siding. Does that matter?</h3><p>No. Most conversions run through a transload near the plant, with a short dray at one or both ends. The audit includes that dray and names the transload options.</p></div>
+      <div class="faq-item"><h3>What happens after the audit?</h3><p>You get the lane table and a recommendation for each lane. For the lanes you want to move, we confirm the rail-side facilities, request carrier pricing, and can run the first cars as your outsourced rail desk.</p></div>
+    </section>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>
+      <div class="footer-links"><a href="/privacy-policy">Privacy Policy</a><a href="/terms-of-service">Terms of Service</a><a href="/contact">Contact Us</a></div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var COMMODITIES = ['Lumber / wood products','Steel coils / plate / bar','Steel beams / structural','Scrap metal','Machinery / equipment','Paper / pulp','Plastic pellets / resin','Chemicals','Fertilizer','Grain','Feed ingredients (SBM, DDGS)','Cement','Aggregates / stone','Sand','Other'];
+      var rows = document.getElementById('laneRows');
+      var count = 0;
+      function addRow(prefill) {
+        if (count >= 10) return;
+        count++;
+        var d = document.createElement('div'); d.className = 'lane-row';
+        d.innerHTML =
+          '<div><label>Origin (city, ST)</label><input name="origin" placeholder="Waynesboro, MS" required></div>' +
+          '<div><label>Destination (city, ST)</label><input name="destination" placeholder="Dallas, TX" required></div>' +
+          '<div><label>Commodity</label><select name="commodity">' + COMMODITIES.map(function (c) { return '<option>' + c + '</option>'; }).join('') + '</select></div>' +
+          '<div><label>Loads / mo</label><input name="loads_per_month" inputmode="numeric" placeholder="20"></div>' +
+          '<div><label>Current cost</label><input name="current_cost" inputmode="decimal" placeholder="1850"></div>' +
+          '<div><label>Basis</label><select name="cost_basis"><option value="per_load">per load</option><option value="per_mile">per mile</option></select></div>' +
+          '<button type="button" class="del" title="Remove lane">&times;</button>';
+        d.querySelector('.del').addEventListener('click', function () { d.remove(); count--; });
+        rows.appendChild(d);
+      }
+      addRow(); addRow(); addRow();
+      document.getElementById('addLane').addEventListener('click', function () { addRow(); });
+
+      var form = document.getElementById('deskForm');
+      var btn = document.getElementById('deskSubmit');
+      var err = document.getElementById('deskErr');
+      var ref = document.referrer || '';
+      var kind = !ref ? 'direct' : (ref.indexOf(location.host) !== -1 ? 'internal' : 'external');
+      var q = '';
+      try { q = new URLSearchParams(location.search).get('q') || ''; } catch (e) {}
+      form.addEventListener('submit', async function (ev) {
+        ev.preventDefault();
+        err.hidden = true;
+        if (!form.email.value || !form.name.value || !form.company.value) { err.textContent = 'Name, company and work email are required.'; err.hidden = false; return; }
+        var lanes = [];
+        rows.querySelectorAll('.lane-row').forEach(function (r) {
+          var o = r.querySelector('[name=origin]').value.trim(), dst = r.querySelector('[name=destination]').value.trim();
+          if (!o && !dst) return;
+          lanes.push({ origin: o, destination: dst, commodity: r.querySelector('[name=commodity]').value, loads_per_month: r.querySelector('[name=loads_per_month]').value.trim(), current_cost: r.querySelector('[name=current_cost]').value.trim(), cost_basis: r.querySelector('[name=cost_basis]').value });
+        });
+        if (!lanes.length) { err.textContent = 'Add at least one lane with an origin and destination.'; err.hidden = false; return; }
+        btn.disabled = true; btn.textContent = 'Sending…';
+        var payload = { request_type: 'lane_audit', name: form.name.value, company: form.company.value, email: form.email.value, phone: form.phone.value, notes: form.notes.value, lanes: lanes, landing_referrer: ref, referrer_kind: kind, entry_query: q };
+        try {
+          var res = await fetch('/api/lane-audit-lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+          var data = await res.json().catch(function () { return {}; });
+          if (!res.ok || !data.ok) {
+            var map = { email_format: 'That email address does not look right.', email_disposable: 'Please use a work email address.', email_no_mx: 'That email domain does not accept mail.', lanes_required: 'Add at least one lane.' };
+            err.textContent = map[data.error] || 'Something went wrong. Call (601) 821-2199 or email steelwheellogistics@gmail.com.'; err.hidden = false;
+            btn.disabled = false; btn.textContent = 'Get my free lane audit →'; return;
+          }
+          if (typeof gtag === 'function') gtag('event', 'lane_audit_lead', { event_category: 'tools', event_label: String(lanes.length) + ' lanes' });
+          form.innerHTML = '<div class="ok"><strong>Received ' + lanes.length + ' lane' + (lanes.length === 1 ? '' : 's') + '.</strong> Your audit comes back within one business day. If it is urgent, call (601) 821-2199.</div>';
+        } catch (e) {
+          err.textContent = 'Network error. Call (601) 821-2199 or email steelwheellogistics@gmail.com.'; err.hidden = false;
+          btn.disabled = false; btn.textContent = 'Get my free lane audit →';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

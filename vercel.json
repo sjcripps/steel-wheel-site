@@ -135,6 +135,10 @@
     {
       "source": "/api/lease-activity-lead",
       "destination": "/api/tool-lead?tool=lease-activity"
+    },
+    {
+      "source": "/api/lane-audit-lead",
+      "destination": "/api/tool-lead?tool=lane-audit"
     }
   ],
   "headers": [
