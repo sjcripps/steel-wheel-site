@@ -47,6 +47,22 @@ const FACILITIES = JSON.parse(
 const HUBS = JSON.parse(
   readFileSync(join(ROOT, "tools", "commodity-flow-map", "data", "hubs.json"), "utf-8")
 ).hubs;
+// Port-origin lane pages (generate_lane_pages.py --phase 3). Lane pages are
+// noindex by design (June 2026), so this table is how a visitor reaches them.
+let LANES = [];
+try {
+  LANES = JSON.parse(readFileSync(join(ROOT, "rates", "lanes.json"), "utf-8"))
+    .filter((l) => l.source === "port" && l.url && l.rate);
+} catch (e) { console.warn("build-port-pages: rates/lanes.json missing; no priced-lanes tables"); }
+// Census port name -> origin_city used in lanes.json
+const LANE_CITY_ALIAS = { "Norfolk-Newport News": "Norfolk", "New York": "New York City" };
+function portLanes(port) {
+  const city = port.name.split(",")[0].trim();
+  const oc = LANE_CITY_ALIAS[city] || city;
+  return LANES.filter((l) => l.origin_city === oc && l.origin_state === port.state)
+    .sort((a, b) => b.rate - a.rate);
+}
+const COMMODITY_LABEL = { steel: "Steel", plastic: "Plastic pellets", chemicals: "Chemicals", fertilizer: "Fertilizer", paper: "Paper", lumber: "Lumber", grain: "Grain", cement: "Cement", sugar: "Sugar" };
 
 /* ------------------------------------------------------------------ *
  * Selection: top 15 by total vessel value that have >=1 railroad, plus the
@@ -436,6 +452,16 @@ ${facilities.map(({ f, d }) => {
     <ul>
 ${laneBullets.map((b) => `      <li>${esc(scrub(b.text))} <a href="${esc(rateLink)}">Indicative rail rate from ${esc(city)}</a>.</li>`).join("\n")}
     </ul>
+
+${(() => { const ls = portLanes(port); if (!ls.length) return ""; return `
+    <h3>Priced lanes from ${esc(city)}</h3>
+    <p>Indicative single-car estimates from our rate model for lanes we have already priced out of this port. Not a quote; the serving railroad confirms the rate.</p>
+    <table class="data-table" style="width:100%">
+      <thead><tr><th>Destination</th><th>Commodity</th><th style="text-align:right">Rail miles</th><th style="text-align:right">Indicative rate / car</th></tr></thead>
+      <tbody>
+${ls.map((l) => `        <tr><td><a href="${esc(l.url.replace(/\/$/, ""))}">${esc(l.dest_city)}, ${esc(l.dest_state)}</a></td><td>${esc(COMMODITY_LABEL[l.commodity_id] || l.commodity_id)}</td><td style="text-align:right">${Math.round(l.miles).toLocaleString()}</td><td style="text-align:right">$${Math.round(l.rate).toLocaleString()}</td></tr>`).join("\n")}
+      </tbody>
+    </table>`; })()}
 
     <h2>Common questions</h2>
 ${faqs.map((f) => `    <h3 style="margin-bottom:4px">${esc(scrub(f.q))}</h3>\n    <p style="margin-top:0">${esc(scrub(f.a))}</p>`).join("\n")}
