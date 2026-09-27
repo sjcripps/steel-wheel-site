@@ -821,6 +821,8 @@
         m.on('click', () => renderPortPanel(p));
         portLayer.addLayer(m);
       });
+      const cnt = document.querySelector('.legend-row[data-layer="port_imports"] .layer-count');
+      if (cnt) cnt.textContent = portLayer.getLayers().length;
     }
 
     function renderPortPanel(p) {
@@ -932,6 +934,7 @@
           sel.innerHTML = opts;
           sel.addEventListener('change', () => { portChapter = sel.value; drawPorts(); });
           div.appendChild(sel);
+          drawPorts(); // refresh the legend count now that the row exists
         }
         const toggleAll = document.createElement('button');
         toggleAll.type = 'button';
