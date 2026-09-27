@@ -42,6 +42,15 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
     } catch {
       console.warn('sitemap: commodities/pages.json missing — run scripts/build-commodity-pages.js');
     }
+    // Port pages (crawlable layer for the Census port-import data behind the
+    // commodity-flow map's port layer). Same degrade-to-empty contract.
+    let portPages: Array<{ loc: string; priority: string }> = [];
+    try {
+      const pp = join(process.cwd(), 'ports', 'pages.json');
+      portPages = JSON.parse(readFileSync(pp, 'utf-8')).pages || [];
+    } catch {
+      console.warn('sitemap: ports/pages.json missing — run scripts/build-port-pages.js');
+    }
     // Rail-served WAREHOUSE pages. Separate from /transload/ on purpose: GSC shows
     // 40 warehouse-intent queries with 200 impressions and zero clicks, ranking
     // 11-87, because nothing targets them. Same degrade-to-empty contract.
@@ -152,6 +161,14 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
 
     for (const page of commodityPages) {
       // commodities/pages.json stores absolute URLs; tolerate either form.
+      const loc = page.loc.startsWith('http')
+        ? page.loc
+        : `https://steelwheellogistics.com${page.loc}`;
+      xml += `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>${page.priority}</priority>\n  </url>\n`;
+    }
+
+    for (const page of portPages) {
+      // ports/pages.json stores absolute URLs (same as commodities); tolerate either form.
       const loc = page.loc.startsWith('http')
         ? page.loc
         : `https://steelwheellogistics.com${page.loc}`;

@@ -40,6 +40,93 @@ const HUBS = JSON.parse(
 ).hubs;
 
 /* ------------------------------------------------------------------ *
+ * Census port-of-entry imports (vessel value) — feeds the "Where it
+ * enters the country by vessel" section + one FAQ per mapped commodity.
+ * File: tools/commodity-flow-map/data/port-imports.json (monthly cron).
+ * Shape: { data_month, chapters{hs:{name, commodity_id, total_ytd_usd,
+ * vessel_ytd_usd}}, ports[{name:"Mobile, Al", state, railroads[],
+ * chapters{hs: US$ millions}, total_musd}] }. Every number on the page
+ * comes from this file; nothing is estimated here. Missing file => warn
+ * and skip the section so old builds still work.
+ * ------------------------------------------------------------------ */
+let PORT_IMPORTS = null;
+try {
+  PORT_IMPORTS = JSON.parse(
+    readFileSync(join(ROOT, "tools", "commodity-flow-map", "data", "port-imports.json"), "utf-8")
+  );
+  if (!PORT_IMPORTS?.chapters || !Array.isArray(PORT_IMPORTS?.ports) || !PORT_IMPORTS?.data_month) {
+    throw new Error("unexpected shape");
+  }
+} catch (e) {
+  console.warn(`WARN: port-imports.json unavailable (${e.message}) — vessel-imports section skipped.`);
+  PORT_IMPORTS = null;
+}
+
+// HS chapter -> commodity page slug(s). Default rule: the chapter's
+// commodity_id IS a page slug. Overrides where the data's id names a family
+// rather than a page ("grain", "plastic") or where one chapter legitimately
+// backs two pages (HS 31 fertilizer covers urea/DAP/MAP AND potash, HS 3104).
+// Ethanol shares est:"grain" but is NOT a cereal import — deliberately absent.
+const CHAPTER_SLUGS = {
+  "10": ["corn", "wheat"],        // Cereals            (commodity_id "grain")
+  "12": ["soybeans"],             // Oilseeds           (commodity_id "grain")
+  "39": ["plastic-pellets"],      // Plastics and resin (commodity_id "plastic")
+  "31": ["fertilizer", "potash"], // Fertilizer
+};
+function chaptersForSlug(slug) {
+  if (!PORT_IMPORTS) return [];
+  return Object.entries(PORT_IMPORTS.chapters)
+    .filter(([hs, ch]) =>
+      (CHAPTER_SLUGS[hs] ?? (ch.commodity_id ? [ch.commodity_id] : [])).includes(slug))
+    .map(([hs, ch]) => ({ hs, ...ch }));
+}
+
+// Which ports get a link to /ports/<slug>: exactly the pages that
+// scripts/build-port-pages.js generated (ports/pages.json carries the Census
+// port name and slug per page). Run that generator first. If the manifest is
+// missing, fall back to the top 15 by total_musd so the build still works.
+let PORT_PAGE_SLUGS = new Map(); // "Wilmington, Nc" -> "wilmington"
+try {
+  const pj = JSON.parse(readFileSync(join(ROOT, "ports", "pages.json"), "utf-8"));
+  for (const pg of pj.pages || []) if (pg.port && pg.slug) PORT_PAGE_SLUGS.set(pg.port, pg.slug);
+} catch (e) {
+  console.warn("build-commodity-pages: ports/pages.json missing or old; run scripts/build-port-pages.js first");
+}
+const LINKED_PORTS = new Set(
+  PORT_PAGE_SLUGS.size
+    ? [...PORT_PAGE_SLUGS.keys()]
+    : PORT_IMPORTS
+      ? [...PORT_IMPORTS.ports].sort((a, b) => b.total_musd - a.total_musd).slice(0, 15).map((p) => p.name)
+      : []
+);
+
+// "New Orleans, La" -> "new-orleans"; "Norfolk-Newport News, Va" -> "norfolk-newport-news"
+function portSlug(name) {
+  if (PORT_PAGE_SLUGS.has(name)) return PORT_PAGE_SLUGS.get(name);
+  return name.split(",")[0].toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+}
+// "New Orleans, La" + state "LA" -> "New Orleans, LA"
+function portLabel(p) {
+  return `${p.name.split(",")[0].trim()}, ${p.state}`;
+}
+// "2026-07" -> "July 2026"
+function monthLabel(ym) {
+  const [y, m] = String(ym).split("-").map(Number);
+  return new Date(Date.UTC(y, m - 1, 1)).toLocaleString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
+}
+// 24_400_000_000 -> "$24.4 billion"; 684_000_000 -> "$684 million"
+function usdShort(n) {
+  return n >= 1e9
+    ? `$${(n / 1e9).toFixed(1)} billion`
+    : `$${Math.round(n / 1e6).toLocaleString("en-US")} million`;
+}
+function listWords(arr) {
+  if (arr.length <= 1) return arr.join("");
+  if (arr.length === 2) return `${arr[0]} and ${arr[1]}`;
+  return `${arr.slice(0, -1).join(", ")}, and ${arr[arr.length - 1]}`;
+}
+
+/* ------------------------------------------------------------------ *
  * Commodity dataset. Figures are standard AAR/industry practice —
  * typical net loads for 263k/286k GRL cars, engineering-handbook bulk
  * densities. Ranges, not guarantees.
@@ -468,6 +555,77 @@ ${blocks.join("\n")}
     </p>`;
 }
 
+/* Vessel-import figures for one commodity: its mapped HS chapters combined
+ * (72+73+76 -> steel), the top 6 ports of entry by summed US$ millions, and
+ * the vessel share of the chapter total. null when nothing is mapped. */
+function vesselImports(c) {
+  const chs = chaptersForSlug(c.slug);
+  if (!chs.length) return null;
+  const total = chs.reduce((s, ch) => s + (ch.total_ytd_usd || 0), 0);
+  const vessel = chs.reduce((s, ch) => s + (ch.vessel_ytd_usd || 0), 0);
+  const ports = PORT_IMPORTS.ports
+    .map((p) => ({ p, musd: chs.reduce((s, ch) => s + (Number(p.chapters?.[ch.hs]) || 0), 0) }))
+    .filter((x) => x.musd > 0)
+    .sort((a, b) => b.musd - a.musd)
+    .slice(0, 6);
+  if (!ports.length || !vessel) return null;
+  return {
+    chs, total, vessel, ports,
+    pct: total ? Math.round((vessel / total) * 100) : null,
+    month: monthLabel(PORT_IMPORTS.data_month),
+    names: listWords(chs.map((ch) => deIntermodal(ch.name).toLowerCase())),
+  };
+}
+
+function vesselSection(v) {
+  if (!v) return "";
+  const td = 'style="padding:6px 8px;border-bottom:1px solid #e5e7eb"';
+  const rows = v.ports.map(({ p, musd }) => {
+    const label = esc(deIntermodal(portLabel(p)));
+    const cell = LINKED_PORTS.has(p.name)
+      ? `<a href="/ports/${esc(portSlug(p.name))}">${label}</a>`
+      : label;
+    const rr = p.railroads?.length ? p.railroads.map((r) => esc(deIntermodal(r))).join(", ") : "&mdash;";
+    return `        <tr><td ${td}>${cell}</td><td ${td.replace('"', '"text-align:right;')}>${esc(musd.toLocaleString("en-US"))}</td><td ${td}>${rr}</td></tr>`;
+  }).join("\n");
+  const scope = v.chs.length > 1 ? "these chapters" : "the chapter";
+  const pctText = v.pct === null ? "" : `, ${v.pct}% of all imports in ${scope}`;
+  return `
+    <h2>Where it enters the country by vessel</h2>
+    <p>Vessel imports of ${esc(v.names)} totaled ${esc(usdShort(v.vessel))} year to date
+      through ${esc(v.month)}${pctText}. The leading U.S. ports of entry and the
+      railroads that serve them:</p>
+    <div class="railroad-item" style="margin:12px 0 16px;padding:12px 16px;background:#f9fafb;border-radius:6px;overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse">
+        <thead><tr>
+          <th style="text-align:left;padding:6px 8px">Port of entry</th>
+          <th style="text-align:right;padding:6px 8px">Vessel imports YTD (US$ millions)</th>
+          <th style="text-align:left;padding:6px 8px">Railroads</th>
+        </tr></thead>
+        <tbody>
+${rows}
+        </tbody>
+      </table>
+    </div>
+    <p><a href="/tools/commodity-flow-map">See every port on the commodity flow map</a>, then
+      <a href="/tools/lane-audit">price the inland leg</a> from the dock to your plant &mdash;
+      indicative figures, not a quote.</p>
+    <p style="font-size:0.85em;color:#666">Source: U.S. Census Bureau, International Trade API,
+      imports by port of entry, vessel value, YTD through ${esc(v.month)}.</p>`;
+}
+
+function vesselFaq(c, v) {
+  if (!v) return null;
+  const short = c.name.split("(")[0].trim().toLowerCase();
+  const [lead, ...rest] = v.ports;
+  let a = `${portLabel(lead.p)} led vessel imports of ${v.names} year to date through ` +
+    `${v.month} at $${lead.musd.toLocaleString("en-US")} million`;
+  const next = rest.slice(0, 2).map((x) => portLabel(x.p));
+  if (next.length) a += `, followed by ${next.join(" and ")}`;
+  a += ".";
+  return { q: `Which U.S. port imports the most ${short}?`, a };
+}
+
 function commodityPage(c) {
   const url = `${BASE}/commodities/${c.slug}`;
   const title = `${c.name} by Rail — Railcar Type, Tons per Car & How It Moves | Steel Wheel Logistics`;
@@ -475,7 +633,9 @@ function commodityPage(c) {
     `How ${c.name.toLowerCase()} ships by rail: ${c.cars.split("(")[0].trim()}, ` +
     `${c.tons} tons per car, STCC ${c.stcc}. Uses, flows and freight guidance from Steel Wheel Logistics.`
   );
-  const faqs = faq(c);
+  const vessel = vesselImports(c);
+  const vFaq = vesselFaq(c, vessel);
+  const faqs = [...faq(c), ...(vFaq ? [vFaq] : [])];
   const hubs = (HUBKEY_MATCH[c.hubkey] ? HUBS.filter(HUBKEY_MATCH[c.hubkey]) : []).slice(0, 8);
 
   const jsonLd = {
@@ -518,7 +678,7 @@ ${byTheNumbers(c)}
       <a href="/tools/commodity-flow-map">Commodity Flow Map</a>:</p>
     <ul>
 ${hubs.map((h) => `      <li><a href="/rail-hubs/${esc(h.slug.replace(/intermodal/g, "multimodal"))}">${esc(deIntermodal(h.name))}</a> &mdash; ${esc(h.city)}, ${esc(h.state)} (${esc(h.nearest_class_i)})</li>`).join("\n")}
-    </ul>` : ""}
+    </ul>` : ""}${vesselSection(vessel)}
 
     <h2>Common questions</h2>
 ${faqs.map((f) => `    <h3 style="margin-bottom:4px">${esc(f.q)}</h3>\n    <p style="margin-top:0">${esc(deIntermodal(f.a))}</p>`).join("\n")}
@@ -684,6 +844,12 @@ writeFileSync(
 
 console.log(`Built ${COMMODITIES.length} commodity pages + ${HUBS.length} hub pages + index.`);
 console.log(`pages.json: ${pages.length} URLs for the sitemap.`);
+{
+  const withVessel = COMMODITIES.filter((c) => vesselImports(c)).map((c) => c.slug);
+  console.log(PORT_IMPORTS
+    ? `Vessel-imports section (Census ${PORT_IMPORTS.data_month}) on ${withVessel.length} commodity pages: ${withVessel.join(", ")}`
+    : "Vessel-imports section: skipped (no port-imports.json).");
+}
 const banned = /intermodal|drayage/i;
 let bad = 0;
 for (const c of COMMODITIES) {

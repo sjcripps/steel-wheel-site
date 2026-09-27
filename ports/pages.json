@@ -1,0 +1,129 @@
+{
+  "generated": true,
+  "pages": [
+    {
+      "loc": "https://steelwheellogistics.com/ports",
+      "priority": "0.8"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/ports/newark",
+      "priority": "0.7",
+      "port": "Newark, Nj",
+      "slug": "newark"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/ports/los-angeles",
+      "priority": "0.7",
+      "port": "Los Angeles, Ca",
+      "slug": "los-angeles"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/ports/houston",
+      "priority": "0.7",
+      "port": "Houston, Tx",
+      "slug": "houston"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/ports/savannah",
+      "priority": "0.7",
+      "port": "Savannah, Ga",
+      "slug": "savannah"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/ports/new-orleans",
+      "priority": "0.7",
+      "port": "New Orleans, La",
+      "slug": "new-orleans"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/ports/long-beach",
+      "priority": "0.7",
+      "port": "Long Beach, Ca",
+      "slug": "long-beach"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/ports/philadelphia",
+      "priority": "0.7",
+      "port": "Philadelphia, Pa",
+      "slug": "philadelphia"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/ports/norfolk-newport-news",
+      "priority": "0.7",
+      "port": "Norfolk-Newport News, Va",
+      "slug": "norfolk-newport-news"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/ports/charleston",
+      "priority": "0.7",
+      "port": "Charleston, Sc",
+      "slug": "charleston"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/ports/baltimore",
+      "priority": "0.7",
+      "port": "Baltimore, Md",
+      "slug": "baltimore"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/ports/mobile",
+      "priority": "0.7",
+      "port": "Mobile, Al",
+      "slug": "mobile"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/ports/port-arthur",
+      "priority": "0.7",
+      "port": "Port Arthur, Tx",
+      "slug": "port-arthur"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/ports/richmond",
+      "priority": "0.7",
+      "port": "Richmond, Ca",
+      "slug": "richmond"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/ports/oakland",
+      "priority": "0.7",
+      "port": "Oakland, Ca",
+      "slug": "oakland"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/ports/corpus-christi",
+      "priority": "0.7",
+      "port": "Corpus Christi, Tx",
+      "slug": "corpus-christi"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/ports/gramercy",
+      "priority": "0.7",
+      "port": "Gramercy, La",
+      "slug": "gramercy"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/ports/tampa",
+      "priority": "0.7",
+      "port": "Tampa, Fl",
+      "slug": "tampa"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/ports/wilmington",
+      "priority": "0.7",
+      "port": "Wilmington, Nc",
+      "slug": "wilmington"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/ports/galveston",
+      "priority": "0.7",
+      "port": "Galveston, Tx",
+      "slug": "galveston"
+    },
+    {
+      "loc": "https://steelwheellogistics.com/ports/beaumont",
+      "priority": "0.7",
+      "port": "Beaumont, Tx",
+      "slug": "beaumont"
+    }
+  ]
+}

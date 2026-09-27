@@ -33,8 +33,8 @@
   "Tank Trailer Cleaning"
  ],
  "tier_counts": {
-  "listed": 1953,
-  "verified": 732,
+  "listed": 1927,
+  "verified": 770,
   "review": 88
  },
  "facilities": [
@@ -1353,26 +1353,31 @@
   },
   {
    "name": "Access World USA Baltimore",
-   "note": "phone from operator website 2026-08-14",
+   "note": "Port terminal \u2014 LME/CME exchange warehousing for aluminum \u2014 phone from operator website 2026-08-14 \u2014 rail: CSX, NS",
    "email": "",
    "phone": "(410) 327-2931",
    "city": "Baltimore",
    "state": "MD",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (Tradepoint Rail (TPR) CSX NS)",
    "commodities": [
-    "Steel"
+    "Steel",
+    "Aluminum"
    ],
-   "capabilities": [],
+   "capabilities": [
+    "warehousing",
+    "breakbulk",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.accessworld.com/locations/north-america/",
    "lat": 39.2648801,
    "lng": -76.5455718,
    "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
+   "facility_type": "port-terminal",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
    "rail_distance_mi": 0.1,
    "rail_confidence": "high",
    "rail_proximity": "on-network",
@@ -1382,27 +1387,41 @@
    "location_source": "google-maps 2026-08-21",
    "rail_evidence": "Capacity to handle drayage of legal weight and heavy weight containers at all locations. Rail-served facilities connected to all Class 1 railroad carriers, capable of loading and unloading m",
    "rail_evidence_source": "operator-website 2026-08-21",
-   "rail_claim": "operator-confirmed"
+   "rail_claim": "operator-confirmed",
+   "tier_source": "operator site fetched 2026-09-27",
+   "port": "Baltimore, Md",
+   "railroads": [
+    "CSX",
+    "NS"
+   ],
+   "operator": "Access World (Glencore)",
+   "source_url": "https://www.accessworld.com/services/commodity-exchange-warehousing/",
+   "web_verified": "2026-09-27"
   },
   {
-   "name": "Access World Usa LLC",
-   "note": "",
+   "name": "Access World New Orleans",
+   "note": "Port terminal \u2014 LME/CME exchange warehousing for aluminum \u2014 rail: NOPB, CN, CPKC, UP, BNSF, NS, CSX",
    "email": "",
    "phone": "",
    "city": "New Orleans",
    "state": "LA",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (BNSF)",
    "commodities": [
     "Lumber",
     "Minerals",
     "Plastics (Dry)",
-    "Steel"
+    "Steel",
+    "Aluminum"
    ],
-   "capabilities": [],
+   "capabilities": [
+    "warehousing",
+    "breakbulk",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
-   "website": "",
+   "website": "https://www.accessworld.com/locations/north-america/",
    "lat": 29.9144932,
    "lng": -90.1115421,
    "commodity_categories": [
@@ -1423,7 +1442,23 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "5200 Coffee Dr, New Orleans, LA 70115",
    "maps_category": "Warehouse",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier_source": "operator site fetched 2026-09-27",
+   "port": "New Orleans, La",
+   "railroads": [
+    "NOPB",
+    "CN",
+    "CPKC",
+    "UP",
+    "BNSF",
+    "NS",
+    "CSX"
+   ],
+   "operator": "Access World (Glencore)",
+   "source_url": "https://www.accessworld.com/services/commodity-exchange-warehousing/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Access World Usa LLC",
@@ -5194,15 +5229,18 @@
   },
   {
    "name": "Associated Terminals New Orleans Bulk Terminal",
-   "note": "",
+   "note": "Port terminal \u2014 Bulk rail-to-barge and barge-to-truck \u2014 rail: NOPB, CN, CPKC, UP, BNSF, NS, CSX",
    "email": "",
    "phone": "(504) 613-6419",
    "city": "New Orleans",
    "state": "LA",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (CSX)",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "dry bulk",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.associatedterminals.com/locations/new-orleans-bulk-terminal/",
@@ -5218,28 +5256,46 @@
    "address": "14900 Intracoastal Dr, New Orleans, LA 70129",
    "maps_category": "Chemical plant",
    "location_source": "google-maps 2026-08-21",
-   "facility_type": "private-plant",
-   "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "facility_type_scope": "company-wide",
+   "tier_source": "operator site fetched 2026-09-27",
+   "port": "New Orleans, La",
+   "railroads": [
+    "NOPB",
+    "CN",
+    "CPKC",
+    "UP",
+    "BNSF",
+    "NS",
+    "CSX"
+   ],
+   "operator": "Associated Terminals",
+   "source_url": "https://www.associatedterminals.com/locations/",
+   "web_verified": "2026-09-27"
   },
   {
-   "name": "Associated Terminals, LLC.",
-   "note": "",
+   "name": "Associated Terminals \u2014 St. Bernard Port",
+   "note": "Port terminal \u2014 rail: NOPB, CN, CPKC, UP, BNSF, NS, CSX",
    "email": "",
-   "phone": "",
+   "phone": "504-277-5101",
    "city": "Arabi",
    "state": "LA",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (NS)",
    "commodities": [
     "Lumber",
     "Minerals",
     "Steel"
    ],
-   "capabilities": [],
+   "capabilities": [
+    "dry bulk",
+    "breakbulk",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
-   "website": "https://www.associatedterminals.com/",
+   "website": "https://www.associatedterminals.com/locations/",
    "lat": 29.953037,
    "lng": -89.996264,
    "commodity_categories": [
@@ -5254,9 +5310,23 @@
    "rail_confidence": "high",
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-20",
-   "facility_type": "private-plant",
-   "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "facility_type_scope": "company-wide",
+   "tier_source": "operator site fetched 2026-09-27",
+   "port": "New Orleans, La",
+   "railroads": [
+    "NOPB",
+    "CN",
+    "CPKC",
+    "UP",
+    "BNSF",
+    "NS",
+    "CSX"
+   ],
+   "operator": "Associated Terminals",
+   "source_url": "https://www.associatedterminals.com/locations/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "ASW Global",
@@ -7120,22 +7190,26 @@
    "location_source": "google-maps 2026-08-21"
   },
   {
-   "name": "Broadway Marine Terminal",
-   "note": "",
+   "name": "Joseph A. Balzano Marine Terminal (South Jersey Port Corp)",
+   "note": "Port terminal \u2014 All types of steel cargo; on-berth rail \u2014 rail: CSX, NS",
    "email": "",
    "phone": "",
    "city": "Camden",
    "state": "NJ",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (Conrail Shared Assets Operations (CSAO) CSX NS)",
    "commodities": [
     "Lumber",
     "Steel"
    ],
-   "capabilities": [],
+   "capabilities": [
+    "breakbulk",
+    "warehousing",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
-   "website": "https://www.southjerseyport.com/facilities/broadway-terminal/",
+   "website": "https://southjerseyport.com/facilities/balzano/",
    "lat": 39.936787,
    "lng": -75.106644,
    "commodity_categories": [
@@ -7150,7 +7224,19 @@
    "rail_distance_mi": 0.26,
    "rail_confidence": "probable",
    "rail_proximity": "on-network",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-20",
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier_source": "operator site fetched 2026-09-27",
+   "address": "101 Joseph A Balzano Blvd, Camden, NJ",
+   "port": "Philadelphia, Pa",
+   "railroads": [
+    "CSX",
+    "NS"
+   ],
+   "operator": "South Jersey Port Corporation",
+   "source_url": "https://southjerseyport.com/facilities/balzano/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Broco Energy Haverhill Rail Terminals",
@@ -11728,18 +11814,22 @@
    "location_source": "google-maps 2026-08-21"
   },
   {
-   "name": "Carolina Marine Terminal (Relay Terminals) - operated by Savage",
-   "note": "",
+   "name": "Carolina Marine Terminal (Relay Terminals)",
+   "note": "Port terminal \u2014 Potash import terminal \u2014 rail: CSX",
    "email": "",
    "phone": "(310) 847-4080",
    "city": "Wilmington",
    "state": "NC",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory",
    "commodities": [
-    "Minerals"
+    "Minerals",
+    "Fertilizer"
    ],
-   "capabilities": [],
+   "capabilities": [
+    "dry bulk",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://carolinamarineterminal.com/",
@@ -11756,7 +11846,17 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "3330 River Rd, Wilmington, NC 28412",
    "maps_category": "Military base",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier_source": "operator site fetched 2026-09-27",
+   "port": "Wilmington, Nc",
+   "railroads": [
+    "CSX"
+   ],
+   "operator": "Relay Terminals",
+   "source_url": "https://meherrinfertilizer.com/terminals/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Carolina Public Warehouse Incorporated",
@@ -16561,30 +16661,51 @@
    "rail_proximity_checked": "2026-08-20"
   },
   {
-   "name": "Coastal Cargo",
-   "note": "Louisiana Ave Facility \u2014 phone from operator website 2026-08-14",
+   "name": "Coastal Cargo Company \u2014 Louisiana Avenue Complex",
+   "note": "Port terminal \u2014 Metals and steel breakbulk stevedore; coil to barge and rail \u2014 Louisiana Ave Facility \u2014 phone from operator website 2026-08-14 \u2014 rail: NOPB, CN, CPKC, UP, BNSF, NS, CSX",
    "email": "",
    "phone": "(504) 587-1100",
    "city": "New Orleans",
    "state": "LA",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (NOPB NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Steel"
+   ],
+   "capabilities": [
+    "breakbulk",
+    "vessel-rail transload",
+    "warehousing"
+   ],
    "caps_known": false,
    "storage": "unknown",
-   "website": "https://www.coastalcargogroup.com/",
+   "website": "https://www.coastalcargogroup.com/ccla/",
    "lat": 29.9160613,
    "lng": -90.0903803,
-   "facility_type": "transload-terminal",
-   "facility_type_source": "web-extracted 2026-08-20",
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
    "rail_distance_mi": 0.04,
    "rail_confidence": "high",
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "3500 Terminal Dr, New Orleans, LA 70115",
    "maps_category": "Shipping service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "tier_source": "operator site fetched 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "port": "New Orleans, La",
+   "railroads": [
+    "NOPB",
+    "CN",
+    "CPKC",
+    "UP",
+    "BNSF",
+    "NS",
+    "CSX"
+   ],
+   "operator": "Coastal Cargo Company",
+   "source_url": "https://www.coastalcargogroup.com/ccla/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Coastal Logistics Group, Inc.",
@@ -21871,18 +21992,23 @@
   },
   {
    "name": "Enstructure Jacksonville Terminal",
-   "note": "",
+   "note": "Port terminal \u2014 Talleyrand pulp, paper reels and lumber \u2014 rail: CSX, NS, FEC",
    "email": "",
    "phone": "",
    "city": "Jacksonville",
    "state": "FL",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (CSX NS)",
    "commodities": [
     "Lumber",
-    "Steel"
+    "Steel",
+    "Forest Products"
    ],
-   "capabilities": [],
+   "capabilities": [
+    "breakbulk",
+    "warehousing",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://enstructure.com/",
@@ -21900,7 +22026,19 @@
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
    "address": "1751 Talleyrand Ave, Jacksonville, FL 32206",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier_source": "operator site fetched 2026-09-27",
+   "port": "Jacksonville, Fl",
+   "railroads": [
+    "CSX",
+    "NS",
+    "FEC"
+   ],
+   "operator": "Enstructure",
+   "source_url": "https://www.jaxport.com/breakbulk-business-steady-at-jaxport/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Enstructure Montville Terminal",
@@ -30256,19 +30394,23 @@
   },
   {
    "name": "Jacintoport International Terminal",
-   "note": "phone from operator website 2026-08-14",
+   "note": "Port terminal \u2014 Paper in rolls receiving and handling \u2014 phone from operator website 2026-08-14 \u2014 rail: PTRA, UP, BNSF, CPKC",
    "email": "",
    "phone": "(713) 673-7000",
    "city": "Houston",
    "state": "TX",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (PTRA)",
    "commodities": [
-    "Foods (Dry)"
+    "Foods (Dry)",
+    "Forest Products"
    ],
    "capabilities": [
     "Bulk Conveyor",
-    "Scale"
+    "Scale",
+    "breakbulk",
+    "warehousing",
+    "vessel-rail transload"
    ],
    "caps_known": false,
    "storage": "unknown",
@@ -30276,9 +30418,9 @@
    "lat": 29.7500261,
    "lng": -95.1101499,
    "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "third-party-warehouse",
+   "facility_type": "port-terminal",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
    "rail_distance_mi": 0.1,
    "rail_confidence": "high",
    "rail_proximity": "on-network",
@@ -30288,7 +30430,18 @@
    "location_source": "google-maps 2026-08-21",
    "rail_evidence": "General Cargo) \u2022 Grain & Rice Bagging Facility \u2022 On-Site Certified Truck Scale \u2022 Covered Rail Unloading \u2022 On-Site, In-House Rail Switching \u2022 150 Rail Car Capacity \u2022 24 Hour Secure Surveillance",
    "rail_evidence_source": "operator-website 2026-08-21",
-   "rail_claim": "operator-confirmed"
+   "rail_claim": "operator-confirmed",
+   "tier_source": "operator site fetched 2026-09-27",
+   "port": "Houston, Tx",
+   "railroads": [
+    "PTRA",
+    "UP",
+    "BNSF",
+    "CPKC"
+   ],
+   "operator": "Seaboard Marine",
+   "source_url": "https://www.jacintoport.com/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Jacksonville NS TBT",
@@ -31513,18 +31666,22 @@
   },
   {
    "name": "Kinder Morgan Elizabeth River Terminal",
-   "note": "",
+   "note": "Port terminal \u2014 Import bulk: fertilizers, salt, aggregates, ores \u2014 rail: NPBL, NS, CSX",
    "email": "",
    "phone": "(757) 543-0335",
    "city": "Chesapeake",
    "state": "VA",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (Norfolk and Portsmouth Belt Line Railroad (NPB) CSX NS)",
    "commodities": [
     "Minerals",
-    "Steel"
+    "Steel",
+    "Fertilizer"
    ],
-   "capabilities": [],
+   "capabilities": [
+    "dry bulk",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.kindermorgan.com/Operations/Terminals/Index",
@@ -31543,7 +31700,19 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "4100 Buell St, Chesapeake, VA 23324",
    "maps_category": "Fuel supplier",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier_source": "operator site fetched 2026-09-27",
+   "port": "Norfolk-Newport News, Va",
+   "railroads": [
+    "NPBL",
+    "NS",
+    "CSX"
+   ],
+   "operator": "Kinder Morgan",
+   "source_url": "https://www.kindermorgan.com/WWWKM/media/Terminals-Bulk/Mid-Atlantic-Elizabeth-River-Terminal.pdf",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Kinder Morgan Geismar Logistics Terminal",
@@ -31622,18 +31791,26 @@
   },
   {
    "name": "Kinder Morgan Harvey Terminal",
-   "note": "",
+   "note": "Port terminal \u2014 Lower Mississippi bulk and liquid fertilizer terminaling \u2014 rail: NOPB, CN, CPKC, UP, BNSF, NS, CSX",
    "email": "",
    "phone": "(504) 340-4911",
    "city": "Harvey",
    "state": "LA",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (New Orleans & Gulf Coast Railway (NOGC))",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Fertilizer",
+    "Chemicals (Dry)",
+    "Chemicals (Liq)"
+   ],
+   "capabilities": [
+    "dry bulk",
+    "liquid bulk",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
-   "website": "https://www.kindermorgan.com/",
+   "website": "https://www.kindermorgan.com/Operations/Terminals/Index",
    "lat": 29.9086174,
    "lng": -90.0874012,
    "commodity_categories": [
@@ -31645,7 +31822,24 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "3540 River Rd, Harvey, LA 70058",
    "maps_category": "Gas company",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier_source": "operator site fetched 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "port": "New Orleans, La",
+   "railroads": [
+    "NOPB",
+    "CN",
+    "CPKC",
+    "UP",
+    "BNSF",
+    "NS",
+    "CSX"
+   ],
+   "operator": "Kinder Morgan",
+   "source_url": "https://www.kindermorgan.com/Operations/Terminals/Index",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Kinder Morgan Memphis Terminal",
@@ -31790,18 +31984,25 @@
   },
   {
    "name": "Kinder Morgan Port Manatee Terminal",
-   "note": "",
+   "note": "Port terminal \u2014 Phosphate rock, fertilizers, gypsum and other dry bulk \u2014 rail: CSX",
    "email": "",
    "phone": "(941) 722-7719",
    "city": "Palmetto",
    "state": "FL",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (Port Manatee Railroad (PMR) CSX)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Fertilizer",
+    "Minerals"
+   ],
+   "capabilities": [
+    "dry bulk",
+    "warehousing",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
-   "website": "https://www.kindermorgan.com/",
+   "website": "https://www.kindermorgan.com/Operations/Terminals/Index",
    "lat": 27.635569,
    "lng": -82.5591849,
    "commodity_categories": [
@@ -31814,19 +32015,36 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "500 National St, Palmetto, FL 34221",
    "maps_category": "Gas company",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier_source": "operator site fetched 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "port": "Port Manatee, Fl",
+   "railroads": [
+    "CSX"
+   ],
+   "operator": "Kinder Morgan",
+   "source_url": "https://www.kindermorgan.com/WWWKM/media/Terminals-Bulk/Lower-River-Port-Manatee.pdf",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Kinder Morgan River Road Terminal",
-   "note": "",
+   "note": "Port terminal \u2014 rail: CSX",
    "email": "",
    "phone": "",
    "city": "Wilmington",
    "state": "NC",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (WTRY CSX)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Fertilizer",
+    "Chemicals (Liq)"
+   ],
+   "capabilities": [
+    "liquid bulk",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.kindermorgan.com/Operations/Terminals/Index",
@@ -31838,7 +32056,18 @@
    "rail_distance_mi": 0.41,
    "rail_confidence": "possible",
    "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-20",
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier_source": "operator site fetched 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "port": "Wilmington, Nc",
+   "railroads": [
+    "CSX"
+   ],
+   "operator": "Kinder Morgan",
+   "source_url": "https://www.kindermorgan.com/Operations/Terminals/Index",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Kinder Morgan Seven Oaks Terminal",
@@ -31920,15 +32149,21 @@
   },
   {
    "name": "Kinder Morgan Woodbine Street Terminal",
-   "note": "",
+   "note": "Port terminal \u2014 rail: CSX",
    "email": "",
    "phone": "",
    "city": "Wilmington",
    "state": "NC",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (WTRY CSX)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Fertilizer",
+    "Chemicals (Liq)"
+   ],
+   "capabilities": [
+    "liquid bulk",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.kindermorgan.com/Operations/Terminals/Index",
@@ -31943,7 +32178,18 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "1710 Woodbine St, Wilmington, NC 28401",
    "maps_category": "Company",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier_source": "operator site fetched 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "port": "Wilmington, Nc",
+   "railroads": [
+    "CSX"
+   ],
+   "operator": "Kinder Morgan",
+   "source_url": "https://www.kindermorgan.com/Operations/Terminals/Index",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "King Steel Holly Warehouse Rail Yard",
@@ -34415,17 +34661,21 @@
   },
   {
    "name": "Logistec Port Manatee Terminal",
-   "note": "",
+   "note": "Port terminal \u2014 rail: CSX",
    "email": "",
    "phone": "(941) 729-6455",
    "city": "Palmetto",
    "state": "FL",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (Port Manatee Railroad (PMR) CSX)",
    "commodities": [
     "Steel"
    ],
-   "capabilities": [],
+   "capabilities": [
+    "breakbulk",
+    "dry bulk",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.logistecterminals.com/",
@@ -34444,24 +34694,36 @@
    "address": "300 S Dock St #2, Palmetto, FL 34221",
    "maps_category": "Trucking company",
    "location_source": "google-maps 2026-08-21",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "facility_type_scope": "company-wide",
+   "tier_source": "operator site fetched 2026-09-27",
+   "port": "Port Manatee, Fl",
+   "railroads": [
+    "CSX"
+   ],
+   "operator": "Logistec",
+   "source_url": "https://www.logistecterminals.com/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Logistec Tampa Terminal",
-   "note": "",
+   "note": "Port terminal \u2014 rail: CSX",
    "email": "",
    "phone": "",
    "city": "Tampa",
    "state": "FL",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (CSX)",
    "commodities": [
     "Lumber",
     "Steel"
    ],
-   "capabilities": [],
+   "capabilities": [
+    "breakbulk",
+    "dry bulk",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://www.logistecterminals.com/",
@@ -34479,9 +34741,17 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "7483 Tampa 1903 Eastport Dr, Tampa, FL 33605",
    "location_source": "operator-site+census 2026-08-21",
-   "facility_type": "transload-terminal",
-   "facility_type_source": "operator-site company-level 2026-08-21",
-   "facility_type_scope": "company-wide"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "facility_type_scope": "company-wide",
+   "tier_source": "operator site fetched 2026-09-27",
+   "port": "Tampa, Fl",
+   "railroads": [
+    "CSX"
+   ],
+   "operator": "Logistec",
+   "source_url": "https://www.logistecterminals.com/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Logistic Services Inc.",
@@ -37898,19 +38168,28 @@
    "rail_proximity_checked": "2026-08-20"
   },
   {
-   "name": "Midwest Terminals",
-   "note": "South End \u2014 phone from operator website (headless) 2026-08-15",
+   "name": "Midwest Terminals of Toledo",
+   "note": "Port terminal \u2014 Great Lakes general cargo and bulk \u2014 South End \u2014 phone from operator website (headless) 2026-08-15 \u2014 rail: NS, CSX, CN",
    "email": "",
    "phone": "(419) 897-6868",
    "city": "Toledo",
    "state": "OH",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (NS)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Minerals",
+    "Aluminum",
+    "Steel"
+   ],
+   "capabilities": [
+    "dry bulk",
+    "breakbulk",
+    "warehousing",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
-   "website": "https://www.midwestterminals.com",
+   "website": "https://www.midwestterminals.com/",
    "lat": 41.6867079,
    "lng": -83.4688444,
    "rail_distance_mi": 0.13,
@@ -37919,7 +38198,20 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "3518 St Lawrence Dr, Toledo, OH 43605",
    "maps_category": "Shipping service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier_source": "operator site fetched 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "port": "Toledo-Sandusky, Oh",
+   "railroads": [
+    "NS",
+    "CSX",
+    "CN"
+   ],
+   "operator": "Midwest Terminals",
+   "source_url": "https://www.midwestterminals.com/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Midwest Terminals - Ironville",
@@ -39413,22 +39705,43 @@
    "rail_proximity_checked": "2026-08-20"
   },
   {
-   "name": "Nassau Terminal - Kindermorgan",
-   "note": "Friendly Road Warehouse",
+   "name": "Nassau Terminal (Relay Terminals)",
+   "note": "Port terminal \u2014 Wood pulp, lumber, panels and kraft linerboard \u2014 Friendly Road Warehouse \u2014 rail: FCRD, CSX",
    "email": "",
    "phone": "",
-   "city": "Fernandiana Beach",
+   "city": "Fernandina Beach",
    "state": "FL",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (FCRD G&W)",
-   "commodities": [],
-   "capabilities": [],
+   "commodities": [
+    "Forest Products",
+    "Lumber"
+   ],
+   "capabilities": [
+    "breakbulk",
+    "warehousing",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
-   "website": "https://nassauterminal.com/",
-   "lat": null,
-   "lng": null,
-   "rail_proximity": "no-coordinates"
+   "website": "https://www.relayterminals.com/",
+   "lat": 30.6697,
+   "lng": -81.4626,
+   "rail_proximity": "no-coordinates",
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier_source": "operator site fetched 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "geocode_precision": "port",
+   "location_source": "census-port-centroid 2026-09-27",
+   "port": "Fernandina, Fl",
+   "railroads": [
+    "FCRD",
+    "CSX"
+   ],
+   "operator": "Relay Terminals",
+   "source_url": "https://flaports.org/ports/port-of-fernandina/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Natchez-Adams County Port",
@@ -48920,21 +49233,25 @@
   },
   {
    "name": "Port of Morehead City General Cargo Terminal",
-   "note": "phone from operator website 2026-08-14",
+   "note": "Port terminal \u2014 phone from operator website 2026-08-14 \u2014 rail: NS",
    "email": "",
    "phone": "(800) 334-0682",
    "city": "Morehead City",
    "state": "NC",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (Carolina Coastal Railway (CLNA) NS)",
    "commodities": [
     "Foods (Dry)",
     "Lumber",
     "Minerals",
-    "Steel"
+    "Steel",
+    "Fertilizer"
    ],
    "capabilities": [
-    "Scale"
+    "Scale",
+    "dry bulk",
+    "breakbulk",
+    "vessel-rail transload"
    ],
    "caps_known": false,
    "storage": "unknown",
@@ -48942,13 +49259,22 @@
    "lat": 34.727891,
    "lng": -76.739088,
    "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "transload-terminal",
+   "facility_type": "port-terminal",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
    "rail_distance_mi": 0.31,
    "rail_confidence": "possible",
    "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-20",
+   "tier_source": "operator site fetched 2026-09-27",
+   "address": "113 Arendell St, Morehead City, NC",
+   "port": "Beaufort-Morehead City, Nc",
+   "railroads": [
+    "NS"
+   ],
+   "operator": "North Carolina State Ports Authority",
+   "source_url": "https://meherrinfertilizer.com/terminals/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Port of Morgan City",
@@ -50157,22 +50483,26 @@
   },
   {
    "name": "QSL New Orleans",
-   "note": "",
+   "note": "Port terminal \u2014 Breakbulk and bulk at the First / Harmony / Seventh Street wharves \u2014 rail: NOPB, CN, CPKC, UP, BNSF, NS, CSX",
    "email": "",
    "phone": "",
    "city": "New Orleans",
    "state": "LA",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (NOPB NS)",
    "commodities": [
     "Lumber",
     "Minerals",
     "Steel"
    ],
-   "capabilities": [],
+   "capabilities": [
+    "breakbulk",
+    "dry bulk",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
-   "website": "https://qsl.com/network/",
+   "website": "https://qsl.com/our-network/new-orleans-first-street/",
    "lat": 29.9216973,
    "lng": -90.0734558,
    "commodity_categories": [
@@ -50188,15 +50518,29 @@
    "rail_confidence": "high",
    "rail_proximity": "on-network",
    "rail_proximity_checked": "2026-08-21",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "operator-site company-level 2026-08-21",
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
    "facility_type_scope": "company-wide",
    "address": "24 Clarence Henry Truckway #20, New Orleans, LA 70115",
    "maps_category": "Warehouse",
    "location_source": "google-maps 2026-08-21",
    "rail_evidence": ".com/our-network/chicago-lake-calumet/ - Lake Calumet Terminal Chicago Chicago - Port and Rail Dock https://qsl.com/our-network/chicago-port-and-rail/ - Port and Rail Dock Louisiana New Orl",
    "rail_evidence_source": "operator-website 2026-08-21",
-   "rail_claim": "operator-confirmed"
+   "rail_claim": "operator-confirmed",
+   "tier_source": "operator site fetched 2026-09-27",
+   "port": "New Orleans, La",
+   "railroads": [
+    "NOPB",
+    "CN",
+    "CPKC",
+    "UP",
+    "BNSF",
+    "NS",
+    "CSX"
+   ],
+   "operator": "QSL America",
+   "source_url": "https://railnola.com/business/industries",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "QSL New Orleans (QSL America / Quebec Stevedoring) - NOPB",
@@ -54083,17 +54427,22 @@
   },
   {
    "name": "S.H. Bell Patapsco Avenue Terminal",
-   "note": "phone from operator website 2026-08-14",
+   "note": "Port terminal \u2014 LME-approved aluminum warehousing \u2014 phone from operator website 2026-08-14 \u2014 rail: CSX, NS",
    "email": "",
    "phone": "(412) 963-6910",
    "city": "Baltimore",
    "state": "MD",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (CSX)",
    "commodities": [
-    "Steel"
+    "Steel",
+    "Aluminum"
    ],
-   "capabilities": [],
+   "capabilities": [
+    "warehousing",
+    "breakbulk",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "website": "https://shbellco.com/facilities/baltimore-patapsco-avenue-terminal/",
@@ -54111,10 +54460,19 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "1200 E Patapsco Ave, Baltimore, MD 21225",
    "location_source": "google-maps 2026-08-21",
-   "facility_type": "third-party-warehouse",
-   "facility_type_source": "operator-site company-level 2026-08-21",
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
    "facility_type_scope": "company-wide",
-   "rail_claim": "proximity-only"
+   "rail_claim": "proximity-only",
+   "tier_source": "operator site fetched 2026-09-27",
+   "port": "Baltimore, Md",
+   "railroads": [
+    "CSX",
+    "NS"
+   ],
+   "operator": "S.H. Bell Company",
+   "source_url": "https://shbellco.com/lme-warehousing/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "S.H. Bell South Avenue O Terminal",
@@ -57885,34 +58243,48 @@
    "facility_type_source": "web-extracted 2026-08-21"
   },
   {
-   "name": "South Locust Point Marine Terminal",
-   "note": "phone from operator website 2026-08-14",
+   "name": "Balterm \u2014 South Locust Point Marine Terminal (Logistec)",
+   "note": "Port terminal \u2014 Imported paper, pulp, lumber and plywood \u2014 phone from operator website 2026-08-14 \u2014 rail: CSX, NS",
    "email": "",
    "phone": "(800) 638-7519",
    "city": "Baltimore",
    "state": "MD",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (CSX)",
    "commodities": [
     "Lumber",
-    "Steel"
+    "Steel",
+    "Forest Products"
    ],
-   "capabilities": [],
+   "capabilities": [
+    "breakbulk",
+    "warehousing",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
-   "website": "https://mpa.maryland.gov/Pages/south-locust-point.aspx",
+   "website": "https://balterm.logistec.com/",
    "lat": 39.295837124309,
    "lng": -76.605416836604,
    "commodities_source": "web-extracted 2026-08-20",
-   "facility_type": "private-plant",
+   "facility_type": "port-terminal",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-20",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
    "rail_distance_mi": 0.75,
    "rail_confidence": "possible",
    "rail_proximity": "unverified",
    "rail_proximity_checked": "2026-08-21",
    "address": "401 East, Baltimore, MD 21202",
-   "location_source": "operator-site+census 2026-08-21"
+   "location_source": "operator-site+census 2026-08-21",
+   "tier_source": "operator site fetched 2026-09-27",
+   "port": "Baltimore, Md",
+   "railroads": [
+    "CSX",
+    "NS"
+   ],
+   "operator": "Logistec (Balterm)",
+   "source_url": "https://mpa.maryland.gov/pages/forest-products.aspx",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "South Point Terminal / South Point & Ohio Railroad",
@@ -62405,21 +62777,25 @@
    "rail_proximity_checked": "2026-08-20"
   },
   {
-   "name": "Tradepoint Atlantic Rail Transload",
-   "note": "phone from operator website 2026-08-14",
+   "name": "Tradepoint Atlantic \u2014 Tradepoint Terminals & Tradepoint Rail",
+   "note": "Port terminal \u2014 Bulk and breakbulk marine terminal at Sparrows Point with on-site rail yard \u2014 phone from operator website 2026-08-14 \u2014 rail: NS, CSX",
    "email": "",
    "phone": "(410) 709-1301",
    "city": "Baltimore",
    "state": "MD",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (Tradepoint Rail (TPR) CSX NS)",
    "commodities": [
     "Steel"
    ],
-   "capabilities": [],
+   "capabilities": [
+    "breakbulk",
+    "dry bulk",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
-   "website": "https://www.tradepointatlantic.com/rail/",
+   "website": "https://www.tradepointatlantic.com/tradepoint-terminals/",
    "lat": 39.2904,
    "lng": -76.6122,
    "commodity_categories": [
@@ -62434,7 +62810,19 @@
    "rail_distance_mi": 1.06,
    "rail_confidence": "unlikely",
    "rail_proximity": "unverified",
-   "rail_proximity_checked": "2026-08-20"
+   "rail_proximity_checked": "2026-08-20",
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier_source": "operator site fetched 2026-09-27",
+   "address": "1600 Sparrows Point Blvd, Baltimore, MD",
+   "port": "Baltimore, Md",
+   "railroads": [
+    "NS",
+    "CSX"
+   ],
+   "operator": "Tradepoint Atlantic",
+   "source_url": "https://www.tradepointatlantic.com/tradepoint-terminals/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Tran-Z (now R.J. Corman)",
@@ -70217,8 +70605,8 @@
    "rail_proximity_checked": "2026-08-20"
   },
   {
-   "name": "Watco Terminal & Port Services",
-   "note": "website repointed to homepage 2026-08-15 (old page removed)",
+   "name": "Watco Greens Port Industrial Terminal",
+   "note": "Port terminal \u2014 Deepwater metals and breakbulk terminal on the Houston Ship Channel \u2014 website repointed to homepage 2026-08-15 (old page removed) \u2014 rail: PTRA, UP, BNSF, CPKC",
    "email": "mmassoglia@watcocompanies.com",
    "phone": "(713) 455-1086",
    "city": "Houston",
@@ -70231,18 +70619,22 @@
     "Frac Sand",
     "Minerals",
     "Petroleum Products",
-    "Steel"
+    "Steel",
+    "Aluminum"
    ],
    "capabilities": [
     "Air Compressor",
     "Bulk Conveyor",
     "Liquid Pumps",
     "Sampling Services",
-    "Scale"
+    "Scale",
+    "breakbulk",
+    "warehousing",
+    "vessel-rail transload"
    ],
    "caps_known": true,
    "storage": "unknown",
-   "website": "https://www.watcocompanies.com/",
+   "website": "https://www.watco.com/service/terminals/greens-port-terminal/",
    "lat": 29.7488559,
    "lng": -95.1826856,
    "rail_distance_mi": 0.04,
@@ -70251,7 +70643,20 @@
    "rail_proximity_checked": "2026-08-21",
    "address": "13609 Industrial Rd, Houston, TX 77015",
    "maps_category": "Transportation service",
-   "location_source": "google-maps 2026-08-21"
+   "location_source": "google-maps 2026-08-21",
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "port": "Houston, Tx",
+   "railroads": [
+    "PTRA",
+    "UP",
+    "BNSF",
+    "CPKC"
+   ],
+   "operator": "Watco",
+   "source_url": "https://www.watco.com/service/terminals/greens-port-terminal/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Watco Terminal & Port Services",
@@ -76939,14 +77344,21 @@
    "commodities": [
     "Lumber",
     "Minerals",
-    "Steel"
+    "Steel",
+    "Aluminum",
+    "Fertilizer"
    ],
-   "capabilities": [],
+   "capabilities": [
+    "breakbulk",
+    "dry bulk",
+    "warehousing",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (recovered 2026-08-20)",
-   "note": "",
+   "note": "Port terminal \u2014 Coils, rebar, wire rod, plate, slabs, aluminum ingot, fertilizers and ores; private terminal \u2014 rail: Canton Railroad, CSX, NS",
    "lat": 39.2677256,
    "lng": -76.568438,
    "rail_proximity": "on-network",
@@ -76966,7 +77378,19 @@
    "location_source": "google-maps 2026-08-21",
    "rail_distance_mi": 0.12,
    "rail_confidence": "high",
-   "rail_proximity_checked": "2026-08-21"
+   "rail_proximity_checked": "2026-08-21",
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier_source": "operator site fetched 2026-09-27",
+   "port": "Baltimore, Md",
+   "railroads": [
+    "Canton Railroad",
+    "CSX",
+    "NS"
+   ],
+   "operator": "Rukert Terminals Corp",
+   "source_url": "https://rukert.com/cargo",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "The Terminal Corporation",
@@ -78679,21 +79103,27 @@
    "rail_claim": "proximity-only"
   },
   {
-   "name": "Penn Terminals Incorporated",
+   "name": "Penn Terminals",
    "city": "Eddystone",
    "state": "PA",
-   "website": "https://www.pennterminals.com",
+   "website": "https://www.pennterminals.com/",
    "phone": "(610) 499-3000",
    "email": "",
    "commodities": [
-    "Lumber"
+    "Lumber",
+    "Steel",
+    "Forest Products"
    ],
-   "capabilities": [],
+   "capabilities": [
+    "breakbulk",
+    "warehousing",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
    "tier": "listed",
    "source": "rebulk-directory (recovered 2026-08-20)",
-   "note": "",
+   "note": "Port terminal \u2014 rail: CSX, NS",
    "lat": 39.853983,
    "lng": -75.3391615,
    "rail_proximity": "on-network",
@@ -78707,7 +79137,16 @@
    "location_source": "google-maps 2026-08-21",
    "rail_distance_mi": 0.19,
    "rail_confidence": "probable",
-   "rail_proximity_checked": "2026-08-21"
+   "rail_proximity_checked": "2026-08-21",
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "port": "Chester, Pa",
+   "railroads": [
+    "CSX",
+    "NS"
+   ],
+   "operator": "Penn Terminals",
+   "source_url": "https://www.pennterminals.com/"
   },
   {
    "name": "Crowe Transportation",
@@ -78931,22 +79370,27 @@
    "rail_proximity_checked": "2026-08-21"
   },
   {
-   "name": "Tioga Marine Terminal",
+   "name": "Tioga Marine Terminal (Delaware River Stevedores)",
    "city": "Philadelphia",
    "state": "PA",
-   "website": "https://Www.D-r-s.com",
+   "website": "https://www.d-r-s.com/",
    "phone": "(215) 634-7433",
    "email": "",
    "commodities": [
     "Lumber",
-    "Steel"
+    "Steel",
+    "Forest Products"
    ],
-   "capabilities": [],
+   "capabilities": [
+    "breakbulk",
+    "warehousing",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (recovered 2026-08-20)",
-   "note": "",
+   "note": "Port terminal \u2014 Steel on six berths; eucalyptus pulp \u2014 rail: CSX, NS",
    "lat": 39.981322,
    "lng": -75.0848829,
    "rail_proximity": "on-network",
@@ -78964,9 +79408,18 @@
    "rail_distance_mi": 0.09,
    "rail_confidence": "high",
    "rail_proximity_checked": "2026-08-21",
-   "facility_type": "transload-terminal",
+   "facility_type": "port-terminal",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21"
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier_source": "operator site fetched 2026-09-27",
+   "port": "Philadelphia, Pa",
+   "railroads": [
+    "CSX",
+    "NS"
+   ],
+   "operator": "Delaware River Stevedores",
+   "source_url": "https://www.philaport.com/facilities/tioga-marine-terminal/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Armstrong Terminal",
@@ -79868,12 +80321,15 @@
    "phone": "(409) 762-5400",
    "email": "",
    "commodities": [],
-   "capabilities": [],
+   "capabilities": [
+    "dry bulk",
+    "vessel-rail transload"
+   ],
    "caps_known": false,
    "storage": "unknown",
-   "tier": "listed",
+   "tier": "verified",
    "source": "rebulk-directory (recovered 2026-08-20)",
-   "note": "",
+   "note": "Port terminal \u2014 rail: GVSR, BNSF, UP",
    "lat": 29.3002852,
    "lng": -94.8252201,
    "rail_proximity": "on-network",
@@ -79883,15 +80339,25 @@
     "Liquid Bulk",
     "Agriculture"
    ],
-   "facility_type": "transload-terminal",
+   "facility_type": "port-terminal",
    "indoor_storage": true,
-   "facility_type_source": "web-extracted 2026-08-21",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
    "address": "4800 Old Port Industrial Rd, Galveston, TX 77554",
    "maps_category": "Container terminal",
    "location_source": "google-maps 2026-08-21",
    "rail_distance_mi": 0.09,
    "rail_confidence": "high",
-   "rail_proximity_checked": "2026-08-21"
+   "rail_proximity_checked": "2026-08-21",
+   "tier_source": "operator site fetched 2026-09-27",
+   "port": "Galveston, Tx",
+   "railroads": [
+    "GVSR",
+    "BNSF",
+    "UP"
+   ],
+   "operator": "Texas International Terminals",
+   "source_url": "https://www.titerminals.com/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "ECI Logistics Terminal",
@@ -80625,14 +81091,17 @@
   },
   {
    "name": "Alabama Port Authority \u2014 Port of Mobile General Cargo Warehouses",
-   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer",
+   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer \u2014 rail: TASD, CSX, NS, CN, CPKC, BNSF",
    "email": "",
    "phone": "1-888-251-5755",
    "city": "Mobile",
    "state": "AL",
    "tier": "verified",
    "source": "port authority published materials (https://alports.com/warehousing-distribution/)",
-   "commodities": [],
+   "commodities": [
+    "Forest Products",
+    "Steel"
+   ],
    "capabilities": [
     "breakbulk",
     "warehousing",
@@ -80647,18 +81116,35 @@
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "2.4 million sq ft of rail-served covered warehouse space plus 2.4 million sq ft of open storage and 55+ acres of laydown across the general cargo complex. Rail: Terminal Railway TASD (port-owned, 75 m",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "port": "Mobile, Al",
+   "railroads": [
+    "TASD",
+    "CSX",
+    "NS",
+    "CN",
+    "CPKC",
+    "BNSF"
+   ],
+   "operator": "Alabama Port Authority",
+   "source_url": "https://alports.com/facilities/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Port of New Orleans \u2014 Breakbulk Terminals & Transit Sheds",
-   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer",
+   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer \u2014 rail: NOPB, CN, CPKC, UP, BNSF, NS, CSX",
    "email": "",
    "phone": "(504) 522-2551",
    "city": "New Orleans",
    "state": "LA",
    "tier": "verified",
    "source": "port authority published materials (https://portnola.com/business/cargo/capabilities)",
-   "commodities": [],
+   "commodities": [
+    "Steel",
+    "Aluminum"
+   ],
    "capabilities": [
     "breakbulk",
     "warehousing",
@@ -80666,25 +81152,43 @@
    ],
    "caps_known": true,
    "storage": "yes",
-   "website": "https://portnola.com/",
+   "website": "https://portnola.com/business/cargo/capabilities",
    "lat": 29.9382,
    "lng": -90.062,
    "rail_distance_mi": 0.0,
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "1.6 million sq ft of transit shed area across six breakbulk terminals with railroad spurs at the docks. Rail: New Orleans Public Belt (NOPB, port-owned; connects all 6 Class I's). Cargo: Steel, non-fe",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "address": "1350 Port of New Orleans Place, New Orleans, LA",
+   "port": "New Orleans, La",
+   "railroads": [
+    "NOPB",
+    "CN",
+    "CPKC",
+    "UP",
+    "BNSF",
+    "NS",
+    "CSX"
+   ],
+   "operator": "Port of New Orleans",
+   "source_url": "https://portnola.com/business/cargo/capabilities",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Port Houston \u2014 Turning Basin / City Docks General Cargo Complex",
-   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer",
+   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer \u2014 rail: PTRA, UP, BNSF, CPKC",
    "email": "",
    "phone": "(713) 670-2400",
    "city": "Houston",
    "state": "TX",
    "tier": "verified",
    "source": "port authority published materials (https://porthouston.com/infrastructure/facilities-capabilities/multi-purpose-breakbulk-project-cargo/)",
-   "commodities": [],
+   "commodities": [
+    "Steel"
+   ],
    "capabilities": [
     "breakbulk",
     "warehousing",
@@ -80692,25 +81196,39 @@
    ],
    "caps_known": true,
    "storage": "yes",
-   "website": "https://porthouston.com/",
+   "website": "https://porthouston.com/infrastructure/facilities-capabilities/multi-purpose-breakbulk-project-cargo/",
    "lat": 29.7355,
    "lng": -95.2891,
    "rail_distance_mi": 0.0,
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "Largest breakbulk/steel/project-cargo complex in North America: 20,000+ ft of berth, transit sheds and laydown, rail-served via PTRA switching. Rail: Port Terminal Railroad Association (PTRA; switches",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "port": "Houston, Tx",
+   "railroads": [
+    "PTRA",
+    "UP",
+    "BNSF",
+    "CPKC"
+   ],
+   "operator": "Port Houston",
+   "source_url": "https://porthouston.com/infrastructure/facilities-capabilities/multi-purpose-breakbulk-project-cargo/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "South Carolina Ports \u2014 Columbus Street Terminal",
-   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer",
+   "note": "Port terminal \u2014 Breakbulk steel: wire rod, coils, billets; on-dock rail warehouses \u2014 on-dock breakbulk warehousing and vessel/rail transfer \u2014 rail: CSX, NS",
    "email": "",
    "phone": "(843) 577-8786",
    "city": "Charleston",
    "state": "SC",
    "tier": "verified",
    "source": "port authority published materials (https://scspa.com/facilities/columbus-street-terminal/)",
-   "commodities": [],
+   "commodities": [
+    "Steel"
+   ],
    "capabilities": [
     "breakbulk",
     "warehousing",
@@ -80725,18 +81243,31 @@
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "Three on-dock rail-served warehouses: Bldg 105 (165,099 sq ft), Bldg 108 (94,050 sq ft), Bldg 186 (100,000 sq ft). Rail: CSX and Norfolk Southern (direct). Cargo: Breakbulk, Ro/Ro, project cargo (cran",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "address": "1 Immigration St, Charleston, SC",
+   "port": "Charleston, Sc",
+   "railroads": [
+    "CSX",
+    "NS"
+   ],
+   "operator": "South Carolina Ports Authority",
+   "source_url": "https://scspa.com/facilities/columbus-street-terminal/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "JAXPORT \u2014 Talleyrand & Blount Island On-Dock Warehousing",
-   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer",
+   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer \u2014 rail: CSX, NS, FEC",
    "email": "",
    "phone": "(904) 357-3000",
    "city": "Jacksonville",
    "state": "FL",
    "tier": "verified",
    "source": "port authority published materials (https://www.jaxport.com/cargo/cargo-types/breakbulk/)",
-   "commodities": [],
+   "commodities": [
+    "Forest Products"
+   ],
    "capabilities": [
     "breakbulk",
     "warehousing",
@@ -80751,11 +81282,23 @@
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "~1 million sq ft combined on-dock warehousing (Talleyrand 700,000+ sq ft; Blount Island 240,000 sq ft shed + 90,000 sq ft CFS). Rail: Jacksonville Port Terminal Railroad (switches to CSX and NS; FEC a",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "address": "2831 Talleyrand Ave, Jacksonville, FL",
+   "port": "Jacksonville, Fl",
+   "railroads": [
+    "CSX",
+    "NS",
+    "FEC"
+   ],
+   "operator": "JAXPORT",
+   "source_url": "https://www.jaxport.com/cargo/cargo-types/breakbulk/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Port Tampa Bay \u2014 On-Dock Breakbulk Warehousing",
-   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer",
+   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer \u2014 rail: CSX",
    "email": "",
    "phone": "(813) 905-7678",
    "city": "Tampa",
@@ -80777,7 +81320,16 @@
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "~500,000 sq ft of on-dock warehouse and laydown for breakbulk with dock-side rail and heavy-lift cranes. Rail: CSX. Cargo: Steel (Florida's largest steel port), forest products, construction materials",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "address": "1101 Channelside Dr, Tampa, FL",
+   "port": "Tampa, Fl",
+   "railroads": [
+    "CSX"
+   ],
+   "operator": "Port Tampa Bay",
+   "source_url": "https://www.porttb.com/about-the-port/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Mississippi State Port at Gulfport \u2014 East Pier Warehouses",
@@ -80803,7 +81355,8 @@
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "Shed 50 (230,000 sq ft) and Shed 53 (60,240 sq ft) with direct rail access, within ~400,000 sq ft total port warehousing. Rail: CPKC (formerly KCS). Cargo: Refrigerated containers, breakbulk, Ro/Ro",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27"
   },
   {
    "name": "Georgia Ports \u2014 Mayor's Point Terminal (Brunswick)",
@@ -80829,18 +81382,22 @@
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "405,000 sq ft covered storage with a warehouse-connected rail dock (32-railcar capacity); new 100,000 sq ft warehouse in progress. Rail: CSX and Norfolk Southern (direct). Cargo: Forest products, iron",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27"
   },
   {
    "name": "Port of Beaumont \u2014 Covered Storage & Dockside Rail",
-   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer",
+   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer \u2014 rail: CPKC, UP, BNSF",
    "email": "",
    "phone": "(409) 835-5367",
    "city": "Beaumont",
    "state": "TX",
    "tier": "verified",
    "source": "port authority published materials (https://www.pobtx.com/operations-and-facilities)",
-   "commodities": [],
+   "commodities": [
+    "Forest Products",
+    "Steel"
+   ],
    "capabilities": [
     "breakbulk",
     "warehousing",
@@ -80848,14 +81405,26 @@
    ],
    "caps_known": true,
    "storage": "yes",
-   "website": "https://www.pobtx.com/",
+   "website": "https://www.pobtx.com/operations-and-facilities",
    "lat": 30.077,
    "lng": -94.089,
    "rail_distance_mi": 0.0,
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "500,000+ sq ft of covered storage over 98 acres with on-dock rail access. Rail: 48 mi port-owned switching railroad; interchanges UP, BNSF, CPKC. Cargo: Breakbulk, military/project cargo, forest produ",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "address": "1225 Main Street, Beaumont, TX",
+   "port": "Beaumont, Tx",
+   "railroads": [
+    "CPKC",
+    "UP",
+    "BNSF"
+   ],
+   "operator": "Port of Beaumont",
+   "source_url": "https://www.pobtx.com/operations-and-facilities",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Port of Lake Charles \u2014 City Docks Warehousing",
@@ -80881,7 +81450,8 @@
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "1.6+ million sq ft of covered storage at the 200-acre City Docks (12 berths), most warehouses rail-serviced. Rail: Port Rail, Inc. (port short line; connects UP, BNSF, CPKC). Cargo: Bagged rice/ag pro",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27"
   },
   {
    "name": "Port of Pascagoula \u2014 Forest Products Transit Sheds",
@@ -80907,7 +81477,8 @@
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "Two 174,870 sq ft transit sheds with INSIDE rail spurs (CSA-operated), plus Terminal D (158,550 sq ft) and Terminal H (175,000 sq ft) warehouses. Rail: CSX direct; CN via Mississippi Export short line",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27"
   },
   {
    "name": "Port of Longview",
@@ -80933,7 +81504,8 @@
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "~196,700 sq ft of on-dock transit sheds plus ~512,300 sq ft off-dock warehousing, rail access at Berths 1-7 via the Industrial Rail Corridor. Rail: Longview Switching Co. (BNSF/UP joint venture) \u2014 dua",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27"
   },
   {
    "name": "Port of Vancouver USA",
@@ -80959,44 +81531,64 @@
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "500,000+ sq ft of covered storage plus 100+ acres laydown on 42 miles of internal port rail (~350,000 railcars/yr). Rail: BNSF and UP direct mainline; CN and CPKC connections",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27"
   },
   {
    "name": "Port of Stockton",
-   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer",
+   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer \u2014 rail: BNSF, UP",
    "email": "",
    "phone": "(209) 946-0246",
    "city": "Stockton",
    "state": "CA",
    "tier": "verified",
    "source": "port authority published materials (https://www.portofstockton.com/warehouse-facilities/)",
-   "commodities": [],
+   "commodities": [
+    "Fertilizer",
+    "Chemicals (Dry)",
+    "Minerals"
+   ],
    "capabilities": [
     "breakbulk",
     "warehousing",
-    "vessel-rail transload"
+    "vessel-rail transload",
+    "dry bulk",
+    "liquid bulk"
    ],
    "caps_known": true,
    "storage": "yes",
-   "website": "https://www.portofstockton.com",
+   "website": "https://www.portofstockton.com/",
    "lat": 37.951,
    "lng": -121.332,
    "rail_distance_mi": 0.0,
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "7.7 million sq ft of port-operated and leased warehousing served by two transcontinental railroads over internal port trackage. Rail: BNSF and UP on-port; Central California Traction + Stockton Termin",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "address": "315 Fyffe Avenue, Stockton, CA",
+   "port": "Stockton, Ca",
+   "railroads": [
+    "BNSF",
+    "UP"
+   ],
+   "operator": "Port of Stockton",
+   "source_url": "https://www.portofstockton.com/warehouse-facilities/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Port of Baltimore \u2014 Dundalk Marine Terminal (MPA)",
-   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer",
+   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer \u2014 rail: CSX, NS",
    "email": "",
    "phone": "(800) 638-7519",
    "city": "Baltimore",
    "state": "MD",
    "tier": "verified",
    "source": "port authority published materials (https://mpa.maryland.gov/pages/dundalk-marine-terminal.aspx)",
-   "commodities": [],
+   "commodities": [
+    "Forest Products"
+   ],
    "capabilities": [
     "breakbulk",
     "warehousing",
@@ -81004,25 +81596,39 @@
    ],
    "caps_known": true,
    "storage": "yes",
-   "website": "https://mpa.maryland.gov",
+   "website": "https://mpa.maryland.gov/pages/dundalk-marine-terminal.aspx",
    "lat": 39.257,
    "lng": -76.53,
    "rail_distance_mi": 0.0,
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "Ten storage sheds totaling 789,820 sq ft with 8+ miles of rail inside the secure terminal and a 24/7 rail gate. Rail: Norfolk Southern direct; CSX via interchange",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "address": "2700 Broening Hwy, Baltimore, MD",
+   "port": "Baltimore, Md",
+   "railroads": [
+    "CSX",
+    "NS"
+   ],
+   "operator": "Maryland Port Administration",
+   "source_url": "https://mpa.maryland.gov/pages/forest-products.aspx",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "PhilaPort \u2014 Tioga Marine Terminal",
-   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer",
+   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer \u2014 rail: CSX, NS",
    "email": "",
    "phone": "(215) 426-2600",
    "city": "Philadelphia",
    "state": "PA",
    "tier": "verified",
    "source": "port authority published materials (https://www.philaport.com/facilities/tioga-marine-terminal/)",
-   "commodities": [],
+   "commodities": [
+    "Steel",
+    "Forest Products"
+   ],
    "capabilities": [
     "breakbulk",
     "warehousing",
@@ -81030,18 +81636,29 @@
    ],
    "caps_known": true,
    "storage": "yes",
-   "website": "https://www.philaport.com",
+   "website": "https://www.philaport.com/facilities/tioga-marine-terminal/",
    "lat": 39.976,
    "lng": -75.087,
    "rail_distance_mi": 0.0,
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "800,000+ sq ft of on-dock warehousing incl. a new forest-products warehouse with INDOOR rail loading for ten railcars; 3,000 ft on-terminal siding. Rail: CSX and Norfolk Southern",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "address": "3601 N Delaware Ave, Philadelphia, PA",
+   "port": "Philadelphia, Pa",
+   "railroads": [
+    "CSX",
+    "NS"
+   ],
+   "operator": "PhilaPort",
+   "source_url": "https://www.philaport.com/facilities/tioga-marine-terminal/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Port of Wilmington (Enstructure)",
-   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer",
+   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer \u2014 rail: NS, CSX",
    "email": "",
    "phone": "(302) 472-7679",
    "city": "Wilmington",
@@ -81056,18 +81673,28 @@
    ],
    "caps_known": true,
    "storage": "yes",
-   "website": "https://portwilmington.com",
+   "website": "https://portwilmington.com/",
    "lat": 39.718,
    "lng": -75.528,
    "rail_distance_mi": 0.0,
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "1M+ sq ft of cold-storage and ambient warehousing incl. 20M cu ft cold storage, with in-port Class I rail service. Rail: Norfolk Southern in-port; CSX connections",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "address": "1 Hausel Rd, Wilmington, DE",
+   "port": "Wilmington, De",
+   "railroads": [
+    "NS",
+    "CSX"
+   ],
+   "operator": "Enstructure",
+   "source_url": "https://portwilmington.com/",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Port of Virginia \u2014 Newport News Marine Terminal",
-   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer",
+   "note": "Port terminal \u2014 on-dock breakbulk warehousing and vessel/rail transfer \u2014 rail: CSX, NS",
    "email": "",
    "phone": "",
    "city": "Newport News",
@@ -81082,14 +81709,24 @@
    ],
    "caps_known": true,
    "storage": "yes",
-   "website": "https://www.portofvirginia.com",
+   "website": "https://www.portofvirginia.com/",
    "lat": 36.979,
    "lng": -76.436,
    "rail_distance_mi": 0.0,
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "1M+ sq ft of covered storage, 60+ acres outside storage, 18,990 ft of on-dock rail with direct CSX service. Rail: CSX direct on-dock; NS transfer via Richmond",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "address": "450 Harbor Rd, Newport News, VA",
+   "port": "Norfolk-Newport News, Va",
+   "railroads": [
+    "CSX",
+    "NS"
+   ],
+   "operator": "Port of Virginia",
+   "source_url": "https://www.portofvirginia.com/wp-content/uploads/2024/03/2024-NNMT-1-Pager.pdf",
+   "web_verified": "2026-09-27"
   },
   {
    "name": "Port of Cleveland \u2014 General Cargo Terminal (Logistec)",
@@ -81115,7 +81752,8 @@
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "320,000 sq ft of indoor warehouse on the 80-acre General Cargo Facility with on-dock connection to two Class I railroads. Rail: CSX and Norfolk Southern on-dock",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27"
   },
   {
    "name": "Port Milwaukee",
@@ -81141,7 +81779,8 @@
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "330,000+ sq ft covered warehouse (incl. ~30,000 sq ft heated + insulated steel shed with overhead crane); UP/CPKC direct pier delivery over 14 mi of port trackage. Rail: Union Pacific and CPKC (direct",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27"
   },
   {
    "name": "Duluth Seaway Port Authority \u2014 Clure Public Marine Terminal",
@@ -81167,7 +81806,8 @@
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "650,000+ sq ft warehouse capacity on the 120-acre Clure terminal with direct access to FOUR Class I carriers (Duluth Cargo Connect). Rail: BNSF, CN, CPKC, UP (switching agreement)",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27"
   },
   {
    "name": "Ports of Indiana \u2014 Burns Harbor",
@@ -81193,7 +81833,8 @@
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "640,000 sq ft across five warehouses plus a new 84,000 sq ft warehouse opening 2026; 12-mi shortline switches the port. Rail: Burns Harbor Railroad -> NS, CSX, UP, BNSF, CN, CPKC, IHB",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27"
   },
   {
    "name": "America's Central Port",
@@ -81219,7 +81860,8 @@
    "rail_confidence": "high",
    "rail_claim": "operator-confirmed",
    "rail_evidence": "Rail-served warehouses incl. Warehouse 5 (129,600 sq ft, flush rail-dock); barge-rail-truck campus with access to all six Class I's via TRRA. Rail: Port Harbor Railroad (24/7 switching) -> all six Cla",
-   "facility_type": "transload-terminal"
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27"
   },
   {
    "name": "Crescent Warehouse Ltd",
@@ -81270,8 +81912,479 @@
    "rail_proximity": "unverified",
    "rail_proximity_checked": "2026-09-03",
    "facility_type": "transload-terminal"
+  },
+  {
+   "name": "Alabama Steel Terminals",
+   "note": "Port terminal \u2014 Steel coil terminal at Pier D2, Alabama State Docks; rail, barge and truck \u2014 rail: TASD, CSX, NS, CN, CPKC, BNSF",
+   "email": "",
+   "phone": "251-650-4468",
+   "city": "Mobile",
+   "state": "AL",
+   "source": "port-terminals-v2 (https://alabamasteelterminals.us/)",
+   "commodities": [
+    "Steel"
+   ],
+   "capabilities": [
+    "breakbulk",
+    "vessel-rail transload",
+    "warehousing"
+   ],
+   "caps_known": false,
+   "storage": "unknown",
+   "website": "https://alabamasteelterminals.us/",
+   "lat": 30.6954,
+   "lng": -88.0399,
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier": "verified",
+   "tier_source": "operator site fetched 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "geocode_precision": "port",
+   "location_source": "census-port-centroid 2026-09-27",
+   "port": "Mobile, Al",
+   "railroads": [
+    "TASD",
+    "CSX",
+    "NS",
+    "CN",
+    "CPKC",
+    "BNSF"
+   ],
+   "operator": "Alabama Steel Terminals",
+   "source_url": "https://alabamasteelterminals.us/",
+   "web_verified": "2026-09-27"
+  },
+  {
+   "name": "Pinto Island Steel Terminal (Alabama Port Authority)",
+   "note": "Port terminal \u2014 Slab terminal on Pinto Island; rail to Calvert mills \u2014 rail: TASD, CSX, NS, CN, CPKC, BNSF",
+   "email": "",
+   "phone": "",
+   "city": "Mobile",
+   "state": "AL",
+   "source": "port-terminals-v2 (https://alports.com/facilities/steel/)",
+   "commodities": [
+    "Steel"
+   ],
+   "capabilities": [
+    "breakbulk",
+    "vessel-rail transload"
+   ],
+   "caps_known": false,
+   "storage": "unknown",
+   "website": "https://alports.com/facilities/steel/",
+   "lat": 30.6954,
+   "lng": -88.0399,
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier": "verified",
+   "tier_source": "operator site fetched 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "geocode_precision": "port",
+   "location_source": "census-port-centroid 2026-09-27",
+   "port": "Mobile, Al",
+   "railroads": [
+    "TASD",
+    "CSX",
+    "NS",
+    "CN",
+    "CPKC",
+    "BNSF"
+   ],
+   "operator": "Alabama Port Authority",
+   "source_url": "https://alports.com/facilities/steel/",
+   "web_verified": "2026-09-27"
+  },
+  {
+   "name": "Ports America New Orleans \u2014 Napoleon / Nashville / Louisiana Avenue Wharves",
+   "note": "Port terminal \u2014 Breakbulk including steel at the uptown wharves \u2014 rail: NOPB, CN, CPKC, UP, BNSF, NS, CSX",
+   "email": "",
+   "phone": "",
+   "city": "New Orleans",
+   "state": "LA",
+   "source": "port-terminals-v2 (https://railnola.com/business/industries)",
+   "commodities": [
+    "Steel"
+   ],
+   "capabilities": [
+    "breakbulk",
+    "vessel-rail transload"
+   ],
+   "caps_known": false,
+   "storage": "unknown",
+   "website": "https://www.portsamerica.com/",
+   "lat": 29.9511,
+   "lng": -90.0715,
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier": "verified",
+   "tier_source": "operator site fetched 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "geocode_precision": "port",
+   "location_source": "census-port-centroid 2026-09-27",
+   "port": "New Orleans, La",
+   "railroads": [
+    "NOPB",
+    "CN",
+    "CPKC",
+    "UP",
+    "BNSF",
+    "NS",
+    "CSX"
+   ],
+   "operator": "Ports America",
+   "source_url": "https://railnola.com/business/industries",
+   "web_verified": "2026-09-27"
+  },
+  {
+   "name": "CHS Galveston Fertilizer Terminal",
+   "note": "Port terminal \u2014 Deep-water urea and phosphate import terminal; inland by unit train \u2014 rail: GVSR, BNSF, UP",
+   "email": "",
+   "phone": "",
+   "city": "Galveston",
+   "state": "TX",
+   "source": "port-terminals-v2 (https://www.chsinc.com/news-and-stories/2023/11/28/fertilizer-efficiency)",
+   "commodities": [
+    "Fertilizer",
+    "Chemicals (Dry)"
+   ],
+   "capabilities": [
+    "dry bulk",
+    "vessel-rail transload"
+   ],
+   "caps_known": false,
+   "storage": "unknown",
+   "website": "https://www.chsinc.com/",
+   "lat": 29.3013,
+   "lng": -94.7977,
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier": "verified",
+   "tier_source": "operator site fetched 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "geocode_precision": "port",
+   "location_source": "census-port-centroid 2026-09-27",
+   "port": "Galveston, Tx",
+   "railroads": [
+    "GVSR",
+    "BNSF",
+    "UP"
+   ],
+   "operator": "CHS Inc",
+   "source_url": "https://www.chsinc.com/news-and-stories/2023/11/28/fertilizer-efficiency",
+   "web_verified": "2026-09-27"
+  },
+  {
+   "name": "Logistec Houston Industrial Terminal",
+   "note": "Port terminal \u2014 Steel, metals, breakbulk and project cargo \u2014 rail: PTRA, UP, BNSF, CPKC",
+   "email": "",
+   "phone": "",
+   "city": "Houston",
+   "state": "TX",
+   "source": "port-terminals-v2 (https://www.logistecterminals.com/network/houston-industrial-terminal/)",
+   "commodities": [
+    "Steel"
+   ],
+   "capabilities": [
+    "breakbulk",
+    "vessel-rail transload"
+   ],
+   "caps_known": false,
+   "storage": "unknown",
+   "website": "https://www.logistecterminals.com/network/houston-industrial-terminal/",
+   "lat": 29.7355,
+   "lng": -95.25,
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier": "verified",
+   "tier_source": "operator site fetched 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "geocode_precision": "port",
+   "location_source": "census-port-centroid 2026-09-27",
+   "port": "Houston, Tx",
+   "railroads": [
+    "PTRA",
+    "UP",
+    "BNSF",
+    "CPKC"
+   ],
+   "operator": "Logistec",
+   "source_url": "https://www.logistecterminals.com/network/houston-industrial-terminal/",
+   "web_verified": "2026-09-27"
+  },
+  {
+   "name": "Port of Port Arthur \u2014 Forest Products Transit Sheds",
+   "note": "Port terminal \u2014 Covered storage for imported pulp; CPKC direct \u2014 rail: CPKC, UP, BNSF",
+   "email": "",
+   "phone": "",
+   "city": "Port Arthur",
+   "state": "TX",
+   "source": "port-terminals-v2 (https://portpa.com/)",
+   "commodities": [
+    "Forest Products"
+   ],
+   "capabilities": [
+    "breakbulk",
+    "warehousing",
+    "vessel-rail transload"
+   ],
+   "caps_known": false,
+   "storage": "unknown",
+   "website": "https://portpa.com/",
+   "lat": 29.866819,
+   "lng": -93.935898,
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier": "verified",
+   "tier_source": "operator site fetched 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "address": "221 Houston Ave, Port Arthur, TX",
+   "geocode_precision": "address",
+   "location_source": "operator-site+census 2026-09-27",
+   "port": "Port Arthur, Tx",
+   "railroads": [
+    "CPKC",
+    "UP",
+    "BNSF"
+   ],
+   "operator": "Port of Port Arthur",
+   "source_url": "https://portpa.com/",
+   "web_verified": "2026-09-27"
+  },
+  {
+   "name": "Kinder Morgan Tampaplex",
+   "note": "Port terminal \u2014 Imported fertilizer and aggregates receipt and storage \u2014 rail: CSX",
+   "email": "",
+   "phone": "",
+   "city": "Tampa",
+   "state": "FL",
+   "source": "port-terminals-v2 (https://www.sec.gov/Archives/edgar/data/0000054502/000005450207000010/kmi10k2006.htm)",
+   "commodities": [
+    "Fertilizer",
+    "Minerals"
+   ],
+   "capabilities": [
+    "dry bulk",
+    "vessel-rail transload"
+   ],
+   "caps_known": false,
+   "storage": "unknown",
+   "website": "https://www.kindermorgan.com/Operations/Terminals/Index",
+   "lat": 27.9506,
+   "lng": -82.4572,
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier": "verified",
+   "tier_source": "operator site fetched 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "geocode_precision": "port",
+   "location_source": "census-port-centroid 2026-09-27",
+   "port": "Tampa, Fl",
+   "railroads": [
+    "CSX"
+   ],
+   "operator": "Kinder Morgan",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0000054502/000005450207000010/kmi10k2006.htm",
+   "web_verified": "2026-09-27"
+  },
+  {
+   "name": "North Carolina State Ports Authority \u2014 Port of Wilmington",
+   "note": "Port terminal \u2014 UAN import tank field with rail spur; bulk and breakbulk berths \u2014 rail: CSX",
+   "email": "",
+   "phone": "",
+   "city": "Wilmington",
+   "state": "NC",
+   "source": "port-terminals-v2 (https://www.mckimcreed.com/portfolio-page/uan-tank-fields-at-nc-ports/)",
+   "commodities": [
+    "Fertilizer",
+    "Chemicals (Liq)",
+    "Forest Products"
+   ],
+   "capabilities": [
+    "liquid bulk",
+    "dry bulk",
+    "breakbulk",
+    "vessel-rail transload"
+   ],
+   "caps_known": false,
+   "storage": "unknown",
+   "website": "https://ncports.com/",
+   "lat": 34.196624,
+   "lng": -77.947978,
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier": "verified",
+   "tier_source": "operator site fetched 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "address": "2202 Burnett Blvd, Wilmington, NC",
+   "geocode_precision": "address",
+   "location_source": "operator-site+census 2026-09-27",
+   "port": "Wilmington, Nc",
+   "railroads": [
+    "CSX"
+   ],
+   "operator": "North Carolina State Ports Authority",
+   "source_url": "https://www.mckimcreed.com/portfolio-page/uan-tank-fields-at-nc-ports/",
+   "web_verified": "2026-09-27"
+  },
+  {
+   "name": "Holt Logistics \u2014 Packer Avenue Marine Terminal",
+   "note": "Port terminal \u2014 Steel products among the breakbulk cargoes \u2014 rail: CSX, NS",
+   "email": "",
+   "phone": "",
+   "city": "Philadelphia",
+   "state": "PA",
+   "source": "port-terminals-v2 (https://www.holtlogistics.com/facilities/packer-ave-marine-terminal/)",
+   "commodities": [
+    "Steel",
+    "Forest Products"
+   ],
+   "capabilities": [
+    "breakbulk",
+    "vessel-rail transload"
+   ],
+   "caps_known": false,
+   "storage": "unknown",
+   "website": "https://www.holtlogistics.com/facilities/packer-ave-marine-terminal/",
+   "lat": 39.9526,
+   "lng": -75.1652,
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier": "verified",
+   "tier_source": "operator site fetched 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "address": "3301 S Columbus Blvd, Philadelphia, PA",
+   "geocode_precision": "port",
+   "location_source": "census-port-centroid 2026-09-27",
+   "port": "Philadelphia, Pa",
+   "railroads": [
+    "CSX",
+    "NS"
+   ],
+   "operator": "Holt Logistics",
+   "source_url": "https://www.holtlogistics.com/facilities/packer-ave-marine-terminal/",
+   "web_verified": "2026-09-27"
+  },
+  {
+   "name": "Penn Warehousing & Distribution \u2014 Piers 78/80",
+   "note": "Port terminal \u2014 Lumber, paper rolls and wood pulp \u2014 rail: CSX, NS",
+   "email": "",
+   "phone": "",
+   "city": "Philadelphia",
+   "state": "PA",
+   "source": "port-terminals-v2 (https://www.inquirer.com/business/philadelphia-regional-port-authority-penn-city-rent-20241209.html)",
+   "commodities": [
+    "Forest Products"
+   ],
+   "capabilities": [
+    "breakbulk",
+    "warehousing",
+    "vessel-rail transload"
+   ],
+   "caps_known": false,
+   "storage": "unknown",
+   "website": "http://www.pennwarehousing.com/",
+   "lat": 39.9526,
+   "lng": -75.1652,
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier": "verified",
+   "tier_source": "operator site fetched 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "address": "2147 S Columbus Blvd, Philadelphia, PA",
+   "geocode_precision": "port",
+   "location_source": "census-port-centroid 2026-09-27",
+   "port": "Philadelphia, Pa",
+   "railroads": [
+    "CSX",
+    "NS"
+   ],
+   "operator": "Penn Warehousing & Distribution",
+   "source_url": "https://www.inquirer.com/business/philadelphia-regional-port-authority-penn-city-rent-20241209.html",
+   "web_verified": "2026-09-27"
+  },
+  {
+   "name": "Port of Portland \u2014 Terminal 4",
+   "note": "Port terminal \u2014 Bulk fertilizer at Berth 408 and mineral bulk \u2014 rail: BNSF, UP",
+   "email": "",
+   "phone": "",
+   "city": "Portland",
+   "state": "OR",
+   "source": "port-terminals-v2 (https://www.portofportland.com/Terminal4)",
+   "commodities": [
+    "Fertilizer",
+    "Minerals"
+   ],
+   "capabilities": [
+    "dry bulk",
+    "liquid bulk",
+    "vessel-rail transload"
+   ],
+   "caps_known": false,
+   "storage": "unknown",
+   "website": "https://www.portofportland.com/Terminal4",
+   "lat": 45.606954,
+   "lng": -122.766694,
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier": "verified",
+   "tier_source": "operator site fetched 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "address": "11040 N Lombard St, Portland, OR",
+   "geocode_precision": "address",
+   "location_source": "operator-site+census 2026-09-27",
+   "port": "Portland, Or",
+   "railroads": [
+    "BNSF",
+    "UP"
+   ],
+   "operator": "Port of Portland",
+   "source_url": "https://www.portofportland.com/Terminal4",
+   "web_verified": "2026-09-27"
+  },
+  {
+   "name": "Port of Portland \u2014 Terminal 5 (Portland Bulk Terminals)",
+   "note": "Port terminal \u2014 Potash unit-train receiving for export \u2014 rail: UP, BNSF",
+   "email": "",
+   "phone": "",
+   "city": "Portland",
+   "state": "OR",
+   "source": "port-terminals-v2 (https://www.portofportland.com/Terminal5)",
+   "commodities": [
+    "Fertilizer"
+   ],
+   "capabilities": [
+    "dry bulk",
+    "vessel-rail transload"
+   ],
+   "caps_known": false,
+   "storage": "unknown",
+   "website": "https://www.portofportland.com/Terminal5",
+   "lat": 45.5152,
+   "lng": -122.6784,
+   "facility_type": "port-terminal",
+   "facility_type_source": "port-terminals-v2 2026-09-27",
+   "tier": "verified",
+   "tier_source": "operator site fetched 2026-09-27",
+   "commodities_source": "operator site / port research 2026-09-27",
+   "geocode_precision": "port",
+   "location_source": "census-port-centroid 2026-09-27",
+   "port": "Portland, Or",
+   "railroads": [
+    "UP",
+    "BNSF"
+   ],
+   "operator": "Port of Portland",
+   "source_url": "https://www.portofportland.com/Terminal5",
+   "web_verified": "2026-09-27"
   }
  ],
- "unmapped_count": 95,
- "last_manual_edit": "2026-09-03 (dedupe Colton+Mountain Reload; +Crescent,+Waterfront; enrich Cascade/Loup)"
+ "unmapped_count": 88,
+ "last_manual_edit": "2026-09-27 (port terminals: +12 new, 40 upgraded, 11 retagged from source/port-terminals-v2.csv)",
+ "facility_type_counts": {
+  "unclassified": 1590,
+  "transload-terminal": 523,
+  "third-party-warehouse": 415,
+  "private-plant": 194,
+  "port-terminal": 63
+ }
 }

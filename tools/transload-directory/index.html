@@ -535,6 +535,22 @@
       color: var(--text-grey);
       border: 1px solid var(--border-grey);
     }
+    /* Facility-type badge — only port terminals carry one for now. Teal so it
+       reads as a different axis from the green/grey tier pills beside it. */
+    .pill-type {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 1px 8px;
+      border-radius: 10px;
+      margin-left: 6px;
+      vertical-align: middle;
+      white-space: nowrap;
+      background: rgba(23, 162, 184, 0.14);
+      color: #117a8b;
+      border: 1px solid rgba(23, 162, 184, 0.4);
+    }
+    .leaflet-marker-icon.marker-port { filter: hue-rotate(140deg) saturate(1.15); }
     .loc-note {
       display: block;
       color: var(--text-grey);
@@ -770,6 +786,14 @@
           </div>
 
           <div class="filter-group">
+            <h3>Facility Type</h3>
+            <select id="typeFilter">
+              <option value="">Any</option>
+              <option value="port-terminal">Port terminal (vessel / rail)</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
             <h3>Commodities <span style="font-weight:400;text-transform:none;font-size:0.78rem;color:var(--text-grey)">(any)</span></h3>
             <div class="filter-checkboxes" id="commodityFilters"></div>
           </div>
@@ -793,6 +817,8 @@
           <span class="tier-pill tier-verified">✓ Verified</span> Confirmed operating — corroborated against current business listings and railroad network directories.
           &nbsp;·&nbsp;
           <span class="tier-pill tier-listed">Listed</span> Compiled from the railroads' own public network directories; not yet contact-verified by us.
+          &nbsp;·&nbsp;
+          <span class="pill-type" style="margin-left:0">Port terminal</span> Marine terminal with vessel-to-rail transfer &mdash; the serving railroads are in the note.
           <div style="margin-top:8px;">
             <span class="pill pill-src">directory</span>
             Commodities carrying this marker come from a railroad network directory as a broad category, not from the operator.
@@ -1071,6 +1097,11 @@
       }
       const q = p.get('q');
       if (q) document.getElementById('searchBox').value = q;
+      const ftype = p.get('type');
+      if (ftype) {
+        const tsel = document.getElementById('typeFilter');
+        if (tsel.querySelector(`option[value="${CSS.escape(ftype)}"]`)) tsel.value = ftype;
+      }
       const dir = EST_TO_DIRECTORY_COMMODITY[p.get('commodity') || ''];
       if (dir) {
         const box = document.querySelector(`#commodityFilters input[data-commodity="${CSS.escape(dir)}"]`);
@@ -1113,6 +1144,7 @@
       document.getElementById('searchBox').addEventListener('input', debounce(applyFilters, 120));
       document.getElementById('stateFilter').addEventListener('change', applyFilters);
       document.getElementById('storageFilter').addEventListener('change', applyFilters);
+      document.getElementById('typeFilter').addEventListener('change', applyFilters);
       document.getElementById('tierVerified').addEventListener('change', applyFilters);
       document.getElementById('tierListed').addEventListener('change', applyFilters);
       // Lane search
@@ -1130,6 +1162,7 @@
         document.getElementById('searchBox').value = '';
         document.getElementById('stateFilter').value = '';
         document.getElementById('storageFilter').value = '';
+        document.getElementById('typeFilter').value = '';
         document.getElementById('tierVerified').checked = true;
         document.getElementById('tierListed').checked = true;
         laneOriginPt = null; laneDestPt = null;
@@ -1169,6 +1202,8 @@
     }
 
     function isVerified(f) { return f.tier === 'verified'; }
+    function isPort(f) { return f.facility_type === 'port-terminal'; }
+    const TYPE_BADGE = '<span class="pill-type" title="Marine terminal with vessel-to-rail transfer — serving railroads are in the note">Port terminal</span>';
 
     // ─────────────────────── Lane search ───────────────────────
     // Origin/destination each resolve to a point; facilities are kept when they
@@ -1284,13 +1319,14 @@
       const q = document.getElementById('searchBox').value.trim().toLowerCase();
       const state = document.getElementById('stateFilter').value;
       const storage = document.getElementById('storageFilter').value;
+      const ftype = document.getElementById('typeFilter').value;
       const showVerified = document.getElementById('tierVerified').checked;
       const showListed = document.getElementById('tierListed').checked;
       const cms = activeCommodities();
       const caps = activeCapabilities();
       // Fire cross-tool funnel signal once per session if user is engaging
       // (typed search, picked state, toggled commodity/capability/tier/storage).
-      if (q || state || storage || cms.length || caps.length || !showVerified || !showListed) silentFireTransloadLead();
+      if (q || state || storage || ftype || cms.length || caps.length || !showVerified || !showListed) silentFireTransloadLead();
 
       const laneActive = !!(laneOriginPt || laneDestPt);
       const radius = Number(document.getElementById('laneRadius').value) || 50;
@@ -1308,6 +1344,7 @@
         if (!isVerified(f) && !showListed) return false;
         if (state && f.state !== state) return false;
         if (storage && (f.storage || 'unknown') !== storage) return false;
+        if (ftype && f.facility_type !== ftype) return false;
         if (q) {
           const hay = (f.name + ' ' + f.city + ' ' + (f.note || '')).toLowerCase();
           if (!hay.includes(q)) return false;
@@ -1352,12 +1389,13 @@
       currentPage = 1;
       renderResults();
       renderMapMarkers();
-      renderFiltersSummary(state, cms, caps, q, storage, showVerified, showListed);
+      renderFiltersSummary(state, cms, caps, q, storage, showVerified, showListed, ftype);
     }
 
-    function renderFiltersSummary(state, cms, caps, q, storage, showVerified, showListed) {
+    function renderFiltersSummary(state, cms, caps, q, storage, showVerified, showListed, ftype) {
       const parts = [];
       if (q) parts.push(`"${q}"`);
+      if (ftype) parts.push('port terminals');
       if (showVerified && !showListed) parts.push('verified only');
       if (showListed && !showVerified) parts.push('listed only');
       if (state) parts.push(state);
@@ -1459,7 +1497,7 @@
           : '';
 
         tr.innerHTML = `
-          <td class="col-loc"><strong>${escape(f.name)}</strong>${tierBadge}${healthBadge}${note}</td>
+          <td class="col-loc"><strong>${escape(f.name)}</strong>${tierBadge}${isPort(f) ? TYPE_BADGE : ''}${healthBadge}${note}</td>
           <td class="col-loc">${escape(f.city)}<span class="city-state">${escape(f.state)}</span>${distBadge}</td>
           <td><div class="badge-list">${cms}</div></td>
           <td><div class="badge-list">${caps}</div></td>
@@ -1495,7 +1533,7 @@
           const wb = f.website ? `<a href="${escape(f.website)}" target="_blank" rel="noopener" class="act-web">Website</a>` : '';
           const tl = f.phone ? `<a href="tel:${escape(String(f.phone).replace(/[^+\d]/g, ''))}" class="act-tel">${escape(f.phone)}</a>` : '';
           tr.innerHTML = `
-            <td class="col-loc"><strong>${escape(f.name)}</strong>${tb}${hb}</td>
+            <td class="col-loc"><strong>${escape(f.name)}</strong>${tb}${isPort(f) ? TYPE_BADGE : ''}${hb}</td>
             <td class="col-loc">${escape(f.city)}<span class="city-state">${escape(f.state)}</span>${distancePills(f)}</td>
             <td colspan="2" style="color:var(--text-grey);font-size:0.82rem;">Commodity handling not on record</td>
             <td class="col-actions">${wb}${tl}</td>`;
@@ -1538,6 +1576,10 @@
       map.addLayer(markerCluster);
     }
 
+    // Port terminals get a tinted copy of the default pin so they stand out in a
+    // cluster of inland transloads without a second icon asset.
+    const PORT_ICON = new L.Icon.Default({ className: 'marker-port' });
+
     function renderMapMarkers() {
       if (!markerCluster) return;
       markerCluster.clearLayers();
@@ -1546,14 +1588,14 @@
       filtered.forEach(f => {
         if (typeof f.lat !== 'number' || typeof f.lng !== 'number') return;
         const realIdx = allFacilities.indexOf(f);
-        const marker = L.marker([f.lat, f.lng]);
+        const marker = L.marker([f.lat, f.lng], isPort(f) ? { icon: PORT_ICON } : {});
         const links = [
           f.website ? `<a href="${escapeAttr(f.website)}" target="_blank" rel="noopener">Website</a>` : '',
           f.phone ? `<a href="tel:${escapeAttr(String(f.phone).replace(/[^+\d]/g, ''))}">${escapeAttr(f.phone)}</a>` : '',
           f.email ? `<a href="mailto:${escapeAttr(f.email)}">Email</a>` : '',
         ].filter(Boolean).join(' · ');
         const popup = `
-          <strong>${escapeAttr(f.name)}</strong> ${isVerified(f) ? '✓' : ''}<br>
+          <strong>${escapeAttr(f.name)}</strong> ${isVerified(f) ? '✓' : ''}${isPort(f) ? ' <span class="pill-type" style="margin-left:2px">Port terminal</span>' : ''}<br>
           ${f.note ? escapeAttr(f.note) + '<br>' : ''}
           ${escapeAttr(f.city)}, ${escapeAttr(f.state)}<br>
           ${f.commodities.length ? '<em>' + escapeAttr(f.commodities.join(', ')) + '</em><br>' : ''}

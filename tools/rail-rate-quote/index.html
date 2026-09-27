@@ -1361,6 +1361,22 @@
         const opt = carSel.querySelector(`option[value="${CSS.escape(preCar)}"]`);
         if (opt && !opt.disabled) carSel.value = preCar;
       }
+      // ?origin_city=&origin_state= (port pages, commodity flow map) and the
+      // destination pair prefill the city fields as "City, ST" — the same
+      // string the autocomplete writes, so the engine resolves it normally.
+      // ?origin= / ?destination= accept the full string. Unknown cities just
+      // sit in the box for the shipper to correct.
+      const cityParam = (full, city, st) => {
+        const f = (deepLink.get(full) || '').trim().slice(0, 80);
+        if (f) return f;
+        const c = (deepLink.get(city) || '').trim().slice(0, 60);
+        const s = (deepLink.get(st) || '').trim().toUpperCase().slice(0, 2);
+        return c ? (s ? `${c}, ${s}` : c) : '';
+      };
+      const preOrigin = cityParam('origin', 'origin_city', 'origin_state');
+      const preDest = cityParam('destination', 'dest_city', 'dest_state');
+      if (preOrigin) document.getElementById('origin').value = preOrigin;
+      if (preDest) document.getElementById('destination').value = preDest;
 
       // Optional STCC-code entry. We don't price off the raw code — the engine
       // only knows ~20 fixed commodity buckets, each with one tariff_mult — so

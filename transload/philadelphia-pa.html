@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="7 rail transload facilities in Philadelphia, PA — bulk carload transfer, storage and rail-to-truck handoff. Directory from Steel Wheel Logistics.">
+  <meta name="description" content="9 rail transload facilities in Philadelphia, PA — bulk carload transfer, storage and rail-to-truck handoff. Directory from Steel Wheel Logistics.">
   <link rel="canonical" href="https://steelwheellogistics.com/transload/philadelphia-pa">
   <meta property="og:title" content="Transload Facilities in Philadelphia, PA | Steel Wheel Logistics">
-  <meta property="og:description" content="7 rail transload facilities in Philadelphia, PA — bulk carload transfer, storage and rail-to-truck handoff. Directory from Steel Wheel Logistics.">
+  <meta property="og:description" content="9 rail transload facilities in Philadelphia, PA — bulk carload transfer, storage and rail-to-truck handoff. Directory from Steel Wheel Logistics.">
   <meta property="og:url" content="https://steelwheellogistics.com/transload/philadelphia-pa">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Steel Wheel Logistics">
   <meta property="og:image" content="https://steelwheellogistics.com/images/logo-192.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Transload Facilities in Philadelphia, PA | Steel Wheel Logistics">
-  <meta name="twitter:description" content="7 rail transload facilities in Philadelphia, PA — bulk carload transfer, storage and rail-to-truck handoff. Directory from Steel Wheel Logistics.">
+  <meta name="twitter:description" content="9 rail transload facilities in Philadelphia, PA — bulk carload transfer, storage and rail-to-truck handoff. Directory from Steel Wheel Logistics.">
   <title>Transload Facilities in Philadelphia, PA | Steel Wheel Logistics</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
@@ -34,7 +34,7 @@
   "about": "Rail transload facilities",
   "mainEntity": {
     "@type": "ItemList",
-    "numberOfItems": 7,
+    "numberOfItems": 9,
     "itemListElement": [
       {
         "@type": "ListItem",
@@ -115,14 +115,14 @@
         "position": 6,
         "item": {
           "@type": "LocalBusiness",
-          "name": "Tioga Marine Terminal",
+          "name": "Tioga Marine Terminal (Delaware River Stevedores)",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Philadelphia",
             "addressRegion": "PA"
           },
           "telephone": "(215) 634-7433",
-          "url": "https://Www.D-r-s.com"
+          "url": "https://www.d-r-s.com/"
         }
       },
       {
@@ -137,7 +137,35 @@
             "addressRegion": "PA"
           },
           "telephone": "(215) 426-2600",
-          "url": "https://www.philaport.com"
+          "url": "https://www.philaport.com/facilities/tioga-marine-terminal/"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "item": {
+          "@type": "LocalBusiness",
+          "name": "Holt Logistics — Packer Avenue Marine Terminal",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Philadelphia",
+            "addressRegion": "PA"
+          },
+          "url": "https://www.holtlogistics.com/facilities/packer-ave-marine-terminal/"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "item": {
+          "@type": "LocalBusiness",
+          "name": "Penn Warehousing & Distribution — Piers 78/80",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Philadelphia",
+            "addressRegion": "PA"
+          },
+          "url": "http://www.pennwarehousing.com/"
         }
       }
     ]
@@ -172,11 +200,29 @@
     </div>
   </header>
 
+  <style>
+    .tl-filter{margin:14px 0 18px;padding:12px 14px;background:#f4f6f8;border:1px solid #dfe4e9;border-radius:6px}
+    .tl-filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .tl-filter-row+.tl-filter-row{margin-top:8px}
+    .tl-filter input[type=search],.tl-filter select{padding:8px 10px;border:1px solid #c9d2da;border-radius:5px;font-size:0.9rem;background:#fff;color:#222}
+    .tl-filter input[type=search]{flex:1 1 240px;min-width:0}
+    .tl-filter-toggles label{font-size:0.85rem;color:#333;display:inline-flex;align-items:center;gap:5px}
+    .tl-filter button{padding:7px 14px;border:1px solid #c9d2da;background:#fff;border-radius:5px;cursor:pointer;font-size:0.85rem}
+    .tl-filter button:hover{background:#eef1f4}
+    .tl-count{font-size:0.85rem;color:#555;margin-left:auto}
+    .tl-sparse{margin:8px 0 0;font-size:0.78rem;color:#666;line-height:1.45}
+    .tl-empty{padding:14px;color:#666;font-size:0.9rem}
+    /* .railroad-item may carry a display rule in style.css, which would beat
+       the [hidden] UA default and leave "hidden" cards visible. */
+    .tl-card[hidden]{display:none !important}
+    .tl-citylist.is-collapsed .tl-city-extra{display:none}
+    .tl-morecities{background:none;border:none;color:#1f4e8c;cursor:pointer;font-size:0.9rem;padding:4px 0;text-decoration:underline}
+  </style>
   <main class="city-page">
     <section>
       <h1>Transload Facilities in Philadelphia, PA</h1>
       <p>
-        7 transload facilities
+        9 transload facilities
         in Philadelphia. Each one transfers bulk freight between railcar and
         truck &mdash; the practical way to serve a consignee without a private
         siding.
@@ -185,6 +231,20 @@
 
     <section>
       <h2>Facilities in Philadelphia</h2>
+    <div class="tl-filter" id="tlFilter" hidden>
+      <div class="tl-filter-row">
+        <input type="search" id="tlSearch" placeholder="Search name, city or commodity&hellip;" aria-label="Search facilities">
+        <select id="tlCity" aria-label="Filter by city"><option value="">All cities (1)</option><option value="philadelphia">Philadelphia</option></select>
+        <select id="tlComm" aria-label="Filter by commodity"><option value="">Any commodity</option><option value="acids">Acids</option><option value="chemicals (dry)">Chemicals (Dry)</option><option value="chemicals (liq)">Chemicals (Liq)</option><option value="foods (dry)">Foods (Dry)</option><option value="foods (liq)">Foods (Liq)</option><option value="forest products">Forest Products</option><option value="frac sand">Frac Sand</option><option value="lumber">Lumber</option><option value="minerals">Minerals</option><option value="petroleum products">Petroleum Products</option><option value="plastics (dry)">Plastics (Dry)</option><option value="steel">Steel</option></select>
+        <select id="tlCap" aria-label="Filter by capability"><option value="">Any capability</option><option value="air compressor">Air Compressor</option><option value="blower">Blower</option><option value="bulk conveyor">Bulk Conveyor</option><option value="liquid pumps">Liquid Pumps</option><option value="portable vacuum">Portable Vacuum</option><option value="sampling services">Sampling Services</option><option value="scale">Scale</option><option value="steam heating">Steam Heating</option><option value="tank trailer cleaning">Tank Trailer Cleaning</option><option value="breakbulk">Breakbulk</option><option value="vessel-rail transload">Vessel-Rail Transload</option><option value="warehousing">Warehousing</option></select>
+      </div>
+      <div class="tl-filter-row tl-filter-toggles">
+        <label><input type="checkbox" id="tlVerified"> Verified only (8)</label>
+        <label><input type="checkbox" id="tlPhone"> Has phone (6)</label>
+        <button type="button" id="tlReset">Reset</button>
+        <span id="tlCount" class="tl-count"></span>
+      </div><p class="tl-sparse">Commodity detail is confirmed for 9 of 9 sites and capability detail for 8. Filtering by either hides sites we have not verified yet rather than sites that lack it &mdash; call us and we will confirm any of them.</p>
+    </div>
       <div class="railroads-grid">
       <div class="railroad-item tl-card" data-city="philadelphia" data-tier="verified" data-phone="1" data-comm="plastics (dry)" data-cap="blower|sampling services|scale" data-text="a&amp;r transport inc philadelphia  plastics (dry) blower sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">A&amp;R Transport Inc</h3>
@@ -201,6 +261,14 @@
         <div><strong>Capabilities:</strong> Air Compressor, Blower, Bulk Conveyor, Liquid Pumps, Portable Vacuum, Sampling Services, Scale</div>
         <div><a href="https://www.bulkmatic.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
+      <div class="railroad-item tl-card" data-city="philadelphia" data-tier="verified" data-phone="0" data-comm="steel|forest products" data-cap="breakbulk|vessel-rail transload" data-text="holt logistics — packer avenue marine terminal philadelphia port terminal — steel products among the breakbulk cargoes — rail: csx, ns steel forest products breakbulk vessel-rail transload" style="margin-bottom:14px">
+        <h3 style="margin:0 0 4px;font-size:1.05em">Holt Logistics — Packer Avenue Marine Terminal</h3>
+        <div style="color:#555;font-size:0.9em">Philadelphia, PA</div>
+        <div><strong>Commodities:</strong> Steel, Forest Products <span style="color:#777;font-size:0.85em">(may not be their full range)</span></div>
+        <div><strong>Capabilities:</strong> Breakbulk, Vessel-Rail Transload</div>
+        <div><a href="https://www.holtlogistics.com/facilities/packer-ave-marine-terminal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
+        <div>Port terminal — Steel products among the breakbulk cargoes — rail: CSX, NS</div>
+      </div>
       <div class="railroad-item tl-card" data-city="philadelphia" data-tier="listed" data-phone="1" data-comm="lumber|steel" data-cap="" data-text="marano truck line &amp; warehouse philadelphia  lumber steel " style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Marano Truck Line &amp; Warehouse</h3>
         <div style="color:#555;font-size:0.9em">Philadelphia, PA</div>
@@ -208,14 +276,22 @@
         <div><strong>Phone:</strong> (215) 516-1010</div>
         <div><a href="https://maranotrucklines.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="philadelphia" data-tier="verified" data-phone="1" data-comm="" data-cap="breakbulk|warehousing|vessel-rail transload" data-text="philaport — tioga marine terminal philadelphia port terminal — on-dock breakbulk warehousing and vessel/rail transfer  breakbulk warehousing vessel-rail transload" style="margin-bottom:14px">
+      <div class="railroad-item tl-card" data-city="philadelphia" data-tier="verified" data-phone="0" data-comm="forest products" data-cap="breakbulk|warehousing|vessel-rail transload" data-text="penn warehousing &amp; distribution — piers 78/80 philadelphia port terminal — lumber, paper rolls and wood pulp — rail: csx, ns forest products breakbulk warehousing vessel-rail transload" style="margin-bottom:14px">
+        <h3 style="margin:0 0 4px;font-size:1.05em">Penn Warehousing &amp; Distribution — Piers 78/80</h3>
+        <div style="color:#555;font-size:0.9em">Philadelphia, PA</div>
+        <div><strong>Commodities:</strong> Forest Products <span style="color:#777;font-size:0.85em">(may not be their full range)</span></div>
+        <div><strong>Capabilities:</strong> Breakbulk, Warehousing, Vessel-Rail Transload</div>
+        <div><a href="http://www.pennwarehousing.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
+        <div>Port terminal — Lumber, paper rolls and wood pulp — rail: CSX, NS</div>
+      </div>
+      <div class="railroad-item tl-card" data-city="philadelphia" data-tier="verified" data-phone="1" data-comm="steel|forest products" data-cap="breakbulk|warehousing|vessel-rail transload" data-text="philaport — tioga marine terminal philadelphia port terminal — on-dock breakbulk warehousing and vessel/rail transfer — rail: csx, ns steel forest products breakbulk warehousing vessel-rail transload" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">PhilaPort — Tioga Marine Terminal</h3>
         <div style="color:#555;font-size:0.9em">Philadelphia, PA</div>
-        <div style="color:#777;font-size:0.92em"><em>No published commodity list &mdash; many transloads handle more than they advertise. Worth a call.</em></div>
+        <div><strong>Commodities:</strong> Steel, Forest Products <span style="color:#777;font-size:0.85em">(may not be their full range)</span></div>
         <div><strong>Capabilities:</strong> Breakbulk, Warehousing, Vessel-Rail Transload</div>
         <div><strong>Phone:</strong> (215) 426-2600</div>
-        <div><a href="https://www.philaport.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
-        <div>Port terminal — on-dock breakbulk warehousing and vessel/rail transfer</div>
+        <div><a href="https://www.philaport.com/facilities/tioga-marine-terminal/" target="_blank" rel="noopener nofollow">Operator website</a></div>
+        <div>Port terminal — on-dock breakbulk warehousing and vessel/rail transfer — rail: CSX, NS</div>
       </div>
       <div class="railroad-item tl-card" data-city="philadelphia" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale|steam heating|tank trailer cleaning" data-text="savage service corp philadelphia  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor bulk conveyor liquid pumps portable vacuum sampling services scale steam heating tank trailer cleaning" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Savage Service Corp</h3>
@@ -225,12 +301,14 @@
         <div><strong>Phone:</strong> (267) 770-9649</div>
         <div><a href="https://www.tsavageconstruction.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
       </div>
-      <div class="railroad-item tl-card" data-city="philadelphia" data-tier="listed" data-phone="1" data-comm="lumber|steel" data-cap="" data-text="tioga marine terminal philadelphia  lumber steel " style="margin-bottom:14px">
-        <h3 style="margin:0 0 4px;font-size:1.05em">Tioga Marine Terminal</h3>
+      <div class="railroad-item tl-card" data-city="philadelphia" data-tier="verified" data-phone="1" data-comm="lumber|steel|forest products" data-cap="breakbulk|warehousing|vessel-rail transload" data-text="tioga marine terminal (delaware river stevedores) philadelphia port terminal — steel on six berths; eucalyptus pulp — rail: csx, ns lumber steel forest products breakbulk warehousing vessel-rail transload" style="margin-bottom:14px">
+        <h3 style="margin:0 0 4px;font-size:1.05em">Tioga Marine Terminal (Delaware River Stevedores)</h3>
         <div style="color:#555;font-size:0.9em">Philadelphia, PA</div>
-        <div><strong>Commodities:</strong> Lumber, Steel <span style="color:#777;font-size:0.85em">(listed by a railroad directory &mdash; may not be their full range)</span></div>
+        <div><strong>Commodities:</strong> Lumber, Steel, Forest Products <span style="color:#777;font-size:0.85em">(listed by a railroad directory &mdash; may not be their full range)</span></div>
+        <div><strong>Capabilities:</strong> Breakbulk, Warehousing, Vessel-Rail Transload</div>
         <div><strong>Phone:</strong> (215) 634-7433</div>
-        <div><a href="https://Www.D-r-s.com" target="_blank" rel="noopener nofollow">Operator website</a></div>
+        <div><a href="https://www.d-r-s.com/" target="_blank" rel="noopener nofollow">Operator website</a></div>
+        <div>Port terminal — Steel on six berths; eucalyptus pulp — rail: CSX, NS</div>
       </div>
       <div class="railroad-item tl-card" data-city="philadelphia" data-tier="verified" data-phone="1" data-comm="acids|chemicals (dry)|chemicals (liq)|foods (dry)|foods (liq)|frac sand|minerals|petroleum products|plastics (dry)" data-cap="air compressor|blower|bulk conveyor|liquid pumps|portable vacuum|sampling services|scale" data-text="transflo csxt philadelphia  acids chemicals (dry) chemicals (liq) foods (dry) foods (liq) frac sand minerals petroleum products plastics (dry) air compressor blower bulk conveyor liquid pumps portable vacuum sampling services scale" style="margin-bottom:14px">
         <h3 style="margin:0 0 4px;font-size:1.05em">Transflo CSXT</h3>
@@ -285,6 +363,58 @@
     </section>
   </main>
 
+  <script>
+  (function(){
+    var box=document.getElementById('tlFilter');
+    var cl=document.getElementById('tlCityList'),mb=document.getElementById('tlMoreCities');
+    if(cl&&mb){
+      mb.addEventListener('click',function(){
+        var collapsed=cl.classList.toggle('is-collapsed');
+        mb.textContent=collapsed?('Show all '+cl.getAttribute('data-total')+' cities'):'Show fewer cities';
+      });
+    }
+    if(!box) return;
+    box.hidden=false;
+    var cards=[].slice.call(document.querySelectorAll('.tl-card'));
+    var grid=document.querySelector('.railroads-grid');
+    var q=document.getElementById('tlSearch'),city=document.getElementById('tlCity'),
+        comm=document.getElementById('tlComm'),cap=document.getElementById('tlCap'),
+        ver=document.getElementById('tlVerified'),ph=document.getElementById('tlPhone'),
+        cnt=document.getElementById('tlCount'),rst=document.getElementById('tlReset');
+    var empty=document.createElement('div');
+    empty.className='tl-empty'; empty.hidden=true;
+    empty.textContent='No facilities match those filters. Try clearing one.';
+    if(grid&&grid.parentNode) grid.parentNode.insertBefore(empty,grid.nextSibling);
+    function apply(){
+      var t=((q&&q.value)||'').trim().toLowerCase(),
+          c=(city&&city.value)||'',m=(comm&&comm.value)||'',p=(cap&&cap.value)||'',
+          v=!!(ver&&ver.checked),hp=!!(ph&&ph.checked),shown=0;
+      for(var i=0;i<cards.length;i++){
+        var el=cards[i];
+        var ok=(!t||el.getAttribute('data-text').indexOf(t)>-1)&&
+               (!c||el.getAttribute('data-city')===c)&&
+               (!m||el.getAttribute('data-comm').split('|').indexOf(m)>-1)&&
+               (!p||el.getAttribute('data-cap').split('|').indexOf(p)>-1)&&
+               (!v||el.getAttribute('data-tier')==='verified')&&
+               (!hp||el.getAttribute('data-phone')==='1');
+        el.hidden=!ok; if(ok) shown++;
+      }
+      empty.hidden=shown>0;
+      if(cnt) cnt.textContent='Showing '+shown+' of '+cards.length;
+    }
+    [q,city,comm,cap,ver,ph].forEach(function(el){
+      if(!el) return;
+      el.addEventListener('input',apply); el.addEventListener('change',apply);
+    });
+    if(rst) rst.addEventListener('click',function(){
+      if(q) q.value='';
+      [city,comm,cap].forEach(function(s){ if(s) s.value=''; });
+      [ver,ph].forEach(function(x){ if(x) x.checked=false; });
+      apply();
+    });
+    apply();
+  })();
+  </script>
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Steel Wheel Logistics. All rights reserved.</div>

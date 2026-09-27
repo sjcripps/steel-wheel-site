@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15",
+  "generated_at": "2026-09-27",
   "pages": [
     {
       "loc": "/transload",
@@ -1046,6 +1046,10 @@
       "priority": "0.5"
     },
     {
+      "loc": "/transload/port-arthur-tx",
+      "priority": "0.5"
+    },
+    {
       "loc": "/transload/beaumont-tx",
       "priority": "0.5"
     },
@@ -1066,7 +1070,7 @@
       "priority": "0.5"
     },
     {
-      "loc": "/transload/port-arthur-tx",
+      "loc": "/transload/galveston-tx",
       "priority": "0.5"
     },
     {
