@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Free rail demurrage calculator — estimate per-car and total demurrage charges using current Class I rate structures. Steel Wheel Logistics.">
-  <title>Rail Demurrage Calculator | Steel Wheel Logistics</title>
+  <meta name="description" content="Rail demurrage is the daily charge for holding a railcar past free time. Estimate it from free days, BNSF 6004-C rates, car count and days held. Indicative.">
+  <title>Rail Demurrage Calculator: Estimate Railcar Charges (2026)</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png">
   <link rel="stylesheet" href="/style.css?v=5">
   <link rel="canonical" href="https://steelwheellogistics.com/tools/demurrage-calculator">
-  <meta property="og:title" content="Rail Demurrage Calculator | Steel Wheel Logistics">
-  <meta property="og:description" content="Free rail demurrage estimator using current Class I rates. Itemized per-car breakdown.">
+  <meta property="og:title" content="Rail Demurrage Calculator: Estimate Railcar Demurrage Charges (2026)">
+  <meta property="og:description" content="Estimate rail demurrage per car and in total from free time, daily tariff rate, car count and days held. Indicative estimate with an itemized per-car breakdown.">
   <meta property="og:url" content="https://steelwheellogistics.com/tools/demurrage-calculator">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Steel Wheel Logistics">
@@ -324,6 +324,94 @@
       line-height: 1.5;
     }
 
+
+    /* Explanatory content cards below the calculator */
+    .tool-content .result-card h2 { margin-bottom: 14px; }
+    .tool-content .result-card h3 { font-size: 1.05rem; color: var(--navy); margin: 18px 0 8px; }
+    .tool-content .result-card p,
+    .tool-content .result-card li {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+    .tool-content .result-card p { margin-bottom: 12px; }
+    .tool-content .result-card ul { margin: 0 0 12px 20px; }
+    .tool-content .result-card li { margin-bottom: 8px; }
+    .tool-content .source-note { font-size: 0.85rem; color: var(--text-light); margin-bottom: 0; }
+
+    /* FAQ — same classes as tools/lease-vs-buy-calculator */
+    .faq { margin-top: 40px; }
+    .faq h2 { font-size: 1.5rem; color: var(--navy); margin-bottom: 18px; }
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--border-grey);
+      border-radius: 12px;
+      padding: 22px 24px;
+      margin-bottom: 14px;
+    }
+    .faq-item h3 { font-size: 1.05rem; color: var(--navy); margin-bottom: 8px; }
+    .faq-item p {
+      font-size: 0.93rem;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    .faq-item p:last-child { margin-bottom: 0; }
+
+    /* Concierge CTA — same classes as tools/rail-rate-quote */
+    .concierge-block {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 10px;
+      padding: 20px 22px;
+      margin: 40px 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .concierge-block .concierge-text { flex: 1 1 320px; }
+    .concierge-block .concierge-text strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+    .concierge-block .concierge-text span {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.5;
+    }
+    .concierge-block .concierge-text a {
+      color: var(--white);
+      text-decoration: underline;
+    }
+    .concierge-block .concierge-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .concierge-block .concierge-actions a {
+      display: inline-block;
+      padding: 11px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .concierge-block .concierge-book {
+      background: var(--steel-blue);
+      color: var(--white);
+    }
+    .concierge-block .concierge-book:hover { background: var(--steel-blue-dark); color: var(--white); }
+    .concierge-block .concierge-call {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.45);
+    }
+    .concierge-block .concierge-call:hover { background: rgba(255,255,255,0.1); color: var(--white); }
+
     /* Email-gate modal — copy/pasted styling from rail-rate-quote so the UX
        reads identical to the customer. */
     .email-gate-overlay {
@@ -446,7 +534,7 @@
     "@type": "WebApplication",
     "name": "Rail Demurrage Calculator",
     "url": "https://steelwheellogistics.com/tools/demurrage-calculator",
-    "description": "Free rail demurrage calculator \u2014 estimate per-car and total demurrage charges using current Class I rate structures. Steel Wheel Logistics.",
+    "description": "Rail demurrage is the daily charge for holding a railcar past free time. Estimate it from free days, BNSF 6004-C rates, car count and days held. Indicative.",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Any (web browser)",
     "browserRequirements": "Requires JavaScript",
@@ -485,6 +573,54 @@
         "position": 3,
         "name": "Rail Demurrage Calculator",
         "item": "https://steelwheellogistics.com/tools/demurrage-calculator"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is rail demurrage?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rail demurrage is a charge a railroad assesses when a railcar is detained beyond its free time for loading or unloading. Under 49 C.F.R. Part 1333, cited in BNSF Demurrage Book 6004-C, it both compensates the railroad for the tied-up car and encourages shippers to release equipment quickly. It applies to railroad-controlled cars, and also to private cars held on railroad tracks, at the daily rate in the serving railroad\u2019s tariff."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is rail demurrage calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Per car: Chargeable Days = Debit Days minus Credit (free) Days, then Chargeable Days are multiplied by the tariff daily rate, with a higher extended-dwell rate after the base tier. Under BNSF Demurrage Book 6004-C a rail-controlled car gets 2 credit days, then $210 per day for chargeable days 1 through 3 and $500 per day from chargeable day 4. Multiply the per-car figure by the number of cars; credits are per car and cannot be pooled."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is free time in rail demurrage?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Free time is the allowance to load or unload before daily charges start. Class I tariffs express it as credit days per car: BNSF 6004-C allows 2 credit days for a rail-controlled car, 1 for a rail-controlled refrigerated car and none for a private car held at a serving yard. The clock starts at the first 12:01 a.m. after placement or after notice of constructive placement, and runs until the car is released. Unused credits do not carry over to another car, facility or month."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who pays rail demurrage?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The party that detained the car: the consignee or unloader at destination, the shipper or loader at origin. BNSF 6004-C adds that if the receiving party does not normally do business directly with the railroad, the shipper is responsible for the charges. The railroad bills demurrage monthly by facility; a rail logistics provider such as Steel Wheel Logistics does not bill it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can rail demurrage charges be disputed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. If charges were assessed in error, the tariff provides for adjusting them to what would have accrued but for the error. BNSF accepts disputes through its Customer Dwell Management Tool, ideally before monthly invoicing, and not after 30 days past the invoice date; other Class I railroads publish windows of roughly 30 to 90 days. Disputes succeed on specifics: car numbers, placement and release timestamps, and evidence of railroad-caused delay or misplacement."
+        }
       }
     ]
   }
@@ -558,7 +694,7 @@
   <section class="tool-hero">
     <span class="badge">Free Tool · Rail Demurrage Estimator</span>
     <h1>Rail Demurrage Calculator</h1>
-    <p>Estimate per-car demurrage exposure on a held railcar using current Class I rate structures. Plug in equipment type, cars held, days held, and any surcharges.</p>
+    <p>Estimate rail demurrage on held railcars. Pick the equipment class, enter cars and debit days, and get an indicative per-car and total figure built on the free-time and daily-rate rules in BNSF Demurrage Book 6004-C. Railcars only, not ocean freight; the serving railroad’s invoice governs.</p>
   </section>
 
   <!-- Main content -->
@@ -617,7 +753,7 @@
         <p class="below-form-help">
           <strong>Debit Days</strong> = total calendar days the railroad held the car, minus non-chargeable holidays
           (manifest trains only). The calculator subtracts free credit days automatically.
-          For binding numbers, Class I railroads compute Debit Days from constructive placement timestamps.
+          On the invoice, Class I railroads compute Debit Days from constructive placement timestamps.
         </p>
 
         <div class="info-callout">
@@ -679,9 +815,70 @@
       </div>
     </div>
 
+    <!-- SEO content: how the number is built (source: BNSF Demurrage Book 6004-C, eff. 2025-07-01) -->
+    <div class="results-section tool-content" style="display:block;" id="how-calculated">
+      <div class="result-card">
+        <h2>How rail demurrage is calculated</h2>
+        <p>Every Class I demurrage tariff builds the bill the same way, per car:</p>
+        <div class="info-callout" style="margin-top:0;">
+          <strong>Demurrage = cars &times; chargeable days beyond free time &times; the tariff daily rate</strong>, where
+          <strong>Chargeable Days = Debit Days &minus; Credit Days</strong>. The daily rate steps up to an extended-dwell rate once a car passes the base tier.
+        </div>
+        <h3>The pieces, as BNSF Demurrage Book 6004-C defines them</h3>
+        <ul>
+          <li><strong>Debit Days</strong> are the days the railroad is holding a car for you. They combine <em>constructive placement days</em> (the car has arrived at the serving yard but your track is full or the car is not ordered in) and <em>industry days</em> (the car is spotted at your facility waiting to be released). The clock starts at the first 12:01 a.m. after placement, or after notice of constructive placement, and runs until the car is released.</li>
+          <li><strong>Credit Days</strong> are the free time. A rail-controlled car earns 2 credit days for loading or unloading, a rail-controlled refrigerated car earns 1, and a private car held at a serving yard earns none. Credits belong to the car that earned them: they cannot be pooled across cars, carried to another facility or rolled into next month.</li>
+          <li><strong>Weekends and holidays.</strong> Under 6004-C all days are chargeable except the non-chargeable holidays listed in its Section 5 (New Year&rsquo;s Day, Memorial Day, Independence Day, Labor Day, Thanksgiving and the day after, Christmas Eve and Christmas Day among them), and that holiday exclusion applies to manifest traffic. Saturdays and Sundays count. Other railroads&rsquo; tariffs treat weekends differently, so read the one that serves your siding before you assume a Friday spot is safe.</li>
+          <li><strong>Debits and credits, not an average agreement.</strong> The Class I system nets credits against debits <em>on the same car</em>. Pooling early releases against late ones is an Average Agreement, which survives on many short lines under RIC 6004 (below) but not in the Class I books.</li>
+          <li><strong>Unit trains and shuttles</strong> run on a separate clock measured in hours per train, not days per car, and are outside this calculator.</li>
+        </ul>
+        <h3>Worked example (the calculator&rsquo;s default inputs)</h3>
+        <p>One rail-controlled car held 5 debit days. Two days are credit days, so 3 days are chargeable. All three fall in the base tier, billed at $210 per day under 6004-C:</p>
+        <div class="legs-table">
+          <table>
+            <thead>
+              <tr><th>Component</th><th class="num">Days</th><th class="num">Rate</th><th class="num">Subtotal</th></tr>
+            </thead>
+            <tbody>
+              <tr class="free-row"><td>Credit (free) days</td><td class="num">2</td><td class="num">&mdash;</td><td class="num">$0</td></tr>
+              <tr><td>Base rate, chargeable days 1&ndash;3</td><td class="num">3</td><td class="num">$210/day</td><td class="num">$630</td></tr>
+              <tr class="subtotal-row"><td colspan="3">Per-car total, 5 debit days</td><td class="num">$630</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Hold the same car 7 debit days and the extended-dwell tier kicks in: 2 credit days, then 3 chargeable days at $210 ($630) and 2 more at $500 ($1,000), for <strong>$1,630 per car</strong>. Ten cars held 7 days each is <strong>$16,300</strong>. The jump from day 3 to day 4 of chargeable time is why a two-day slip on a block of cars costs more than the whole first week did.</p>
+        <p class="source-note">Source: BNSF Demurrage Book 6004-C, Section 2 (General Railcar Demurrage) and Section 5 (Non-Chargeable Holidays), effective July 1, 2025. Other railroads publish their own tariffs; figures are indicative.</p>
+      </div>
+    </div>
+
+    <!-- SEO content: rates by railroad (only BNSF 6004-C is on file; no other numbers invented) -->
+    <div class="results-section tool-content" style="display:block;" id="rates-by-railroad">
+      <div class="result-card">
+        <h2>Rail demurrage rates by railroad</h2>
+        <p>Each Class I railroad publishes its own demurrage tariff. The figures the calculator uses are from <strong>BNSF Demurrage Book 6004-C</strong>, effective July 1, 2025, by equipment class:</p>
+        <div class="legs-table">
+          <table>
+            <thead>
+              <tr><th>Equipment (BNSF 6004-C)</th><th class="num">Credit days</th><th class="num">Base rate</th><th class="num">Extended dwell</th><th>Extended tier starts</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Rail-controlled car, loading or unloading</td><td class="num">2</td><td class="num">$210/day</td><td class="num">$500/day</td><td>Chargeable day 4</td></tr>
+              <tr><td>Rail-controlled refrigerated car</td><td class="num">1</td><td class="num">$315/day</td><td class="num">$600/day</td><td>Chargeable day 5</td></tr>
+              <tr><td>Private car held at a BNSF serving yard</td><td class="num">0</td><td class="num">$210/day</td><td class="num">$500/day</td><td>Chargeable day 6</td></tr>
+              <tr><td>Any car held for instructions, diversion or transfer</td><td class="num">0</td><td class="num">$210/day</td><td class="num">$500/day</td><td>Chargeable day 6</td></tr>
+              <tr class="fee-row"><td>Loaded car containing explosives or hazardous materials</td><td class="num">&mdash;</td><td class="num" colspan="2">+$135/day, all days held, not offset by credits</td><td>Concurrent with the daily rate</td></tr>
+              <tr class="fee-row"><td>Held for shipping instructions (&ldquo;hold for billing&rdquo;)</td><td class="num">&mdash;</td><td class="num" colspan="2">$420 per car, one time</td><td>Plus daily demurrage</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The extended-dwell rate is the base rate plus an Extended Dwell Fee ($290 per day on standard cars, $285 on refrigerated cars). Union Pacific, CSX, Norfolk Southern, CN and CPKC publish their own books (UP 6004, the CSX 8100 series and the NS 8000 series among them) with their own free time, tiers and holiday rules; pull the current edition from the railroad&rsquo;s customer site before budgeting a lane. Our <a href="/blog/rail-demurrage-fees-guide">rail demurrage fees guide</a> covers the differences and how to read them. Short lines and regional railroads that adopt RIC 6004 use a much cheaper hourly structure, described in the next section.</p>
+        <p class="source-note">Source: BNSF Demurrage Book 6004-C, Sections 2 and 3, effective July 1, 2025. BNSF revises the book most years; the calculator is updated when a new edition posts.</p>
+      </div>
+    </div>
+
 
     <!-- Where the rates come from: Class I tariffs vs RIC 6004 -->
-    <div class="results-section" style="display:block;">
+    <div class="results-section tool-content" style="display:block;" id="ric-6004">
       <div class="result-card">
         <h2>Where these rates come from: Class I tariffs vs. RIC 6004</h2>
         <p>This calculator models the <strong>Class I demurrage tariffs</strong> (UP, BNSF, CSX, NS, CN and CPKC each publish their own, updated most years), where a rail-controlled car gets two free days and then bills about $210 per car per day, stepping up to roughly $500 per day once it sits past the base tier. Those are the numbers most shippers meet on an invoice.</p>
@@ -694,6 +891,56 @@
         </ul>
         <p>Practical read: if your siding is on a short line, ask which rulebook applies before you budget demurrage. A car that costs $210 a day on the Class I side of an interchange can cost $20 a day on the short-line side, and an Average Agreement can wipe out the small overruns entirely. If the short line has adopted the connecting Class I's tariff instead, the calculator above is the right model. The full RIC 6004 text is a free PDF on Railinc's national tariffs page; the Class I tariffs are on each carrier's customer site.</p>
         <p style="font-size:0.85rem;color:#555;">Sources: RIC 6004 (Railinc, agent; base edition March 2009 with supplements through January 2020), Class I demurrage tariffs current as of July 2025. Ranges, not quotes.</p>
+      </div>
+    </div>
+
+    <!-- SEO content: reduction tactics + FAQ + CTA -->
+    <div class="results-section tool-content" style="display:block;" id="reduce-demurrage">
+      <div class="result-card">
+        <h2>How to reduce demurrage</h2>
+        <ul>
+          <li><strong>Spot to a schedule you can work.</strong> Ask the serving railroad for a fixed switch window and staff to it. A car spotted Friday afternoon that nobody touches until Monday has burned both credit days under a tariff that counts weekends.</li>
+          <li><strong>Release the moment the car is empty or loaded.</strong> Submit the release electronically as each car finishes, not in a batch at shift end. The clock runs to release, not to the last pallet, and a few hours can be a full chargeable day.</li>
+          <li><strong>Size unloading capacity to the block, not the lane.</strong> If your crew and pit clear 4 cars a day, a 10-car block guarantees 6 cars in constructive placement or on your track past free time before you start.</li>
+          <li><strong>Order cars against actual capacity.</strong> Order empties for the product that is staged and the crew that is scheduled, then order more. Extra cars &ldquo;to get ahead&rdquo; are demurrage waiting to be billed.</li>
+          <li><strong>Dispute wrong timestamps in writing, fast.</strong> Reconcile the railroad&rsquo;s placement and release times against your gate log each week. A misplaced car, a late pull or a notice sent to the wrong contact is adjustable, but under BNSF 6004-C only within 30 days of the invoice.</li>
+        </ul>
+        <p class="source-note">Practices drawn from BNSF Demurrage Book 6004-C and our <a href="/blog/rail-demurrage-fees-guide">rail demurrage fees guide</a>. For the invoice side, see <a href="/blog/rail-freight-invoice-explained">how to read a rail freight invoice</a>.</p>
+      </div>
+    </div>
+
+    <section class="faq" id="faq">
+      <h2>Common questions about rail demurrage</h2>
+      <div class="faq-item">
+        <h3>What is rail demurrage?</h3>
+        <p>Rail demurrage is a charge a railroad assesses when a railcar is detained beyond its free time for loading or unloading. Under 49 C.F.R. Part 1333, cited in BNSF Demurrage Book 6004-C, it both compensates the railroad for the tied-up car and encourages shippers to release equipment quickly. It applies to railroad-controlled cars, and also to private cars held on railroad tracks, at the daily rate in the serving railroad&rsquo;s tariff.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How is rail demurrage calculated?</h3>
+        <p>Per car: Chargeable Days = Debit Days minus Credit (free) Days, then Chargeable Days are multiplied by the tariff daily rate, with a higher extended-dwell rate after the base tier. Under BNSF Demurrage Book 6004-C a rail-controlled car gets 2 credit days, then $210 per day for chargeable days 1 through 3 and $500 per day from chargeable day 4. Multiply the per-car figure by the number of cars; credits are per car and cannot be pooled.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is free time in rail demurrage?</h3>
+        <p>Free time is the allowance to load or unload before daily charges start. Class I tariffs express it as credit days per car: BNSF 6004-C allows 2 credit days for a rail-controlled car, 1 for a rail-controlled refrigerated car and none for a private car held at a serving yard. The clock starts at the first 12:01 a.m. after placement or after notice of constructive placement, and runs until the car is released. Unused credits do not carry over to another car, facility or month.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Who pays rail demurrage?</h3>
+        <p>The party that detained the car: the consignee or unloader at destination, the shipper or loader at origin. BNSF 6004-C adds that if the receiving party does not normally do business directly with the railroad, the shipper is responsible for the charges. The railroad bills demurrage monthly by facility; a rail logistics provider such as Steel Wheel Logistics does not bill it.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can rail demurrage charges be disputed?</h3>
+        <p>Yes. If charges were assessed in error, the tariff provides for adjusting them to what would have accrued but for the error. BNSF accepts disputes through its Customer Dwell Management Tool, ideally before monthly invoicing, and not after 30 days past the invoice date; other Class I railroads publish windows of roughly 30 to 90 days. Disputes succeed on specifics: car numbers, placement and release timestamps, and evidence of railroad-caused delay or misplacement.</p>
+      </div>
+    </section>
+
+    <div class="concierge-block" id="demurrageConcierge">
+      <div class="concierge-text">
+        <strong>Getting demurrage bills you did not expect?</strong>
+        <span>We audit the timestamps, dispute what is wrong and fix the spotting and release habits that caused the rest, as your <a href="/outsourced-rail-department">outsourced rail department</a>. Thirty minutes is enough to see where the days are going.</span>
+      </div>
+      <div class="concierge-actions">
+        <a class="concierge-book" href="https://cal.com/sj-services/30min?utm_source=site&amp;utm_campaign=rail_concierge&amp;utm_content=demurrage-calculator" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','rail_concierge_cta_click',{event_category:'cta',page:'demurrage-calculator',action:'book'})">Book a 30-Minute Call</a>
+        <a class="concierge-call" href="tel:+16018212199">Call (601) 821-2199</a>
       </div>
     </div>
   </div>
