@@ -1,22 +1,22 @@
 {
- "generated_at": "2026-09-24T12:25:45.380447Z",
- "week_start": "2026-08-28",
- "week_end": "2026-09-24",
+ "generated_at": "2026-09-28T13:00:20.275000Z",
+ "week_start": "2026-09-01",
+ "week_end": "2026-09-28",
  "totals": {
-  "leases": 8,
-  "assignments": 9,
-  "terminations": 16,
-  "cars_leased": 482,
-  "cars_terminated": 698
+  "leases": 9,
+  "assignments": 10,
+  "terminations": 15,
+  "cars_leased": 713,
+  "cars_terminated": 695
  },
  "by_car_type": {
+  "tank": {
+   "filings": 2,
+   "cars": 232
+  },
   "other": {
    "filings": 3,
    "cars": 398
-  },
-  "tank": {
-   "filings": 1,
-   "cars": 1
   },
   "open hopper": {
    "filings": 1,
@@ -31,6 +31,10 @@
   {
    "name": "First-Citizens Bank and Trust Company",
    "filings": 2
+  },
+  {
+   "name": "PNC Bank, National Association",
+   "filings": 1
   },
   {
    "name": "BFLX Leasing LLC",
@@ -55,13 +59,14 @@
   {
    "name": "CIT Equipment Financing, LLC",
    "filings": 1
-  },
-  {
-   "name": "BAL Global Finance Canada Corporation",
-   "filings": 1
   }
  ],
  "top_lessees": [
+  {
+   "name": "Westlake Vinyls, Inc.",
+   "filings": 1,
+   "cars": 231
+  },
   {
    "name": "Reworld Sustainable Solutions, LLC (f/k/a Covanta Sustainable Solutions, LLC)",
    "filings": 1,
@@ -115,6 +120,18 @@
    "filing_date": "9/3/2026",
    "rec_no": "40874",
    "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1788518996145/40874_A.pdf"
+  },
+  {
+   "lessee": "Westlake Vinyls, Inc.",
+   "lessor": "PNC Bank, National Association",
+   "cars": 231,
+   "car_type": "tank",
+   "marks": [
+    "CAOX"
+   ],
+   "filing_date": "9/24/2026",
+   "rec_no": "41736",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1790276809836/41736.pdf"
   },
   {
    "lessee": "Reworld Sustainable Solutions, LLC (f/k/a Covanta Sustainable Solutions, LLC)",
@@ -180,30 +197,6 @@
    "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1789757538541/30825_A.pdf"
   },
   {
-   "party": "Enkay Leasing Canada LP",
-   "cars": 1,
-   "car_type": "other",
-   "filing_date": "8/28/2026",
-   "rec_no": "40350",
-   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1787928832195/40350-H.pdf"
-  },
-  {
-   "party": "Enkay US Term I LLC",
-   "cars": 1,
-   "car_type": "other",
-   "filing_date": "8/28/2026",
-   "rec_no": "40633",
-   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1787928592388/40633-F.pdf"
-  },
-  {
-   "party": "Enkay US Term I LLC",
-   "cars": 1,
-   "car_type": "other",
-   "filing_date": "8/28/2026",
-   "rec_no": "40673",
-   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1787927064025/40673_C.pdf"
-  },
-  {
    "party": "PNW Railcars, LLC (f/k/a MUL Railcars, Inc., as ultimate successor in interest to Greenbri",
    "cars": null,
    "car_type": "other",
@@ -244,6 +237,22 @@
    "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1789063894479/40161_A.pdf"
   },
   {
+   "party": "Bridge Funding Group, Inc.",
+   "cars": null,
+   "car_type": "other",
+   "filing_date": "9/25/2026",
+   "rec_no": "30616",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1790369754162/30616_C.pdf"
+  },
+  {
+   "party": "Carbo Ceramics, Inc.",
+   "cars": null,
+   "car_type": "other",
+   "filing_date": "9/25/2026",
+   "rec_no": "32563",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1790368964884/32563_A.pdf"
+  },
+  {
    "party": "Wells Fargo Bank, National Association; BFLX Leasing LLC",
    "cars": null,
    "car_type": "other",
@@ -274,6 +283,14 @@
    "filing_date": "9/3/2026",
    "rec_no": "22225",
    "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1788461999099/22225-X.pdf"
+  },
+  {
+   "party": "U.S. Bank National Association; GATX Corporation",
+   "cars": null,
+   "car_type": "other",
+   "filing_date": "9/2/2026",
+   "rec_no": "30568",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1788369348423/30568-F.pdf"
   }
  ],
  "assignments": [
@@ -284,6 +301,14 @@
    "filing_date": "9/3/2026",
    "rec_no": "40874",
    "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1788518996145/40874_A.pdf"
+  },
+  {
+   "parties": "PNC Bank, National Association; First Horizon Bank",
+   "cars": 231,
+   "car_type": "tank",
+   "filing_date": "9/25/2026",
+   "rec_no": "41736",
+   "pdf": "https://dcms-external.s3.amazonaws.com/DCMS_External_PROD/1790356788389/41736-A.pdf"
   },
   {
    "parties": "SCF Revolver 2018-1 LLC; Stonebriar Commercial Finance LLC",
@@ -352,108 +377,108 @@
  ],
  "history": [
   {
-   "week_end": "2026-07-02",
-   "leases": 8,
-   "assignments": 4,
-   "terminations": 17,
-   "cars_leased": 1719,
-   "cars_terminated": 398
+   "week_end": "2026-07-06",
+   "leases": 7,
+   "assignments": 5,
+   "terminations": 20,
+   "cars_leased": 1699,
+   "cars_terminated": 568
   },
   {
-   "week_end": "2026-07-09",
-   "leases": 0,
-   "assignments": 3,
-   "terminations": 5,
-   "cars_leased": 0,
-   "cars_terminated": 170
-  },
-  {
-   "week_end": "2026-07-16",
-   "leases": 14,
+   "week_end": "2026-07-13",
+   "leases": 1,
    "assignments": 1,
    "terminations": 2,
+   "cars_leased": 0,
+   "cars_terminated": 0
+  },
+  {
+   "week_end": "2026-07-20",
+   "leases": 13,
+   "assignments": 3,
+   "terminations": 3,
    "cars_leased": 2579,
    "cars_terminated": 0
   },
   {
-   "week_end": "2026-07-23",
+   "week_end": "2026-07-27",
    "leases": 0,
-   "assignments": 2,
-   "terminations": 1,
+   "assignments": 0,
+   "terminations": 0,
    "cars_leased": 0,
    "cars_terminated": 0
   },
   {
-   "week_end": "2026-07-30",
+   "week_end": "2026-08-03",
    "leases": 2,
-   "assignments": 2,
-   "terminations": 2,
-   "cars_leased": 1,
-   "cars_terminated": 6
-  },
-  {
-   "week_end": "2026-08-06",
-   "leases": 5,
-   "assignments": 2,
+   "assignments": 4,
    "terminations": 5,
-   "cars_leased": 1429,
-   "cars_terminated": 52
+   "cars_leased": 1,
+   "cars_terminated": 10
   },
   {
-   "week_end": "2026-08-13",
-   "leases": 3,
-   "assignments": 8,
-   "terminations": 2,
-   "cars_leased": 331,
-   "cars_terminated": 181
+   "week_end": "2026-08-10",
+   "leases": 7,
+   "assignments": 1,
+   "terminations": 4,
+   "cars_leased": 1585,
+   "cars_terminated": 229
   },
   {
-   "week_end": "2026-08-20",
-   "leases": 2,
+   "week_end": "2026-08-17",
+   "leases": 1,
+   "assignments": 9,
+   "terminations": 4,
+   "cars_leased": 175,
+   "cars_terminated": 0
+  },
+  {
+   "week_end": "2026-08-24",
+   "leases": 5,
    "assignments": 13,
-   "terminations": 7,
-   "cars_leased": 0,
+   "terminations": 3,
+   "cars_leased": 34,
    "cars_terminated": 97
   },
   {
-   "week_end": "2026-08-27",
-   "leases": 23,
-   "assignments": 4,
-   "terminations": 2,
-   "cars_leased": 68,
-   "cars_terminated": 0
-  },
-  {
-   "week_end": "2026-09-03",
-   "leases": 6,
-   "assignments": 1,
+   "week_end": "2026-08-31",
+   "leases": 20,
+   "assignments": 2,
    "terminations": 5,
-   "cars_leased": 481,
+   "cars_leased": 34,
    "cars_terminated": 3
   },
   {
-   "week_end": "2026-09-10",
+   "week_end": "2026-09-07",
+   "leases": 6,
+   "assignments": 1,
+   "terminations": 2,
+   "cars_leased": 481,
+   "cars_terminated": 0
+  },
+  {
+   "week_end": "2026-09-14",
    "leases": 1,
-   "assignments": 0,
-   "terminations": 4,
+   "assignments": 1,
+   "terminations": 6,
    "cars_leased": 1,
    "cars_terminated": 0
   },
   {
-   "week_end": "2026-09-17",
+   "week_end": "2026-09-21",
    "leases": 0,
-   "assignments": 1,
-   "terminations": 2,
+   "assignments": 2,
+   "terminations": 3,
    "cars_leased": 0,
-   "cars_terminated": 0
+   "cars_terminated": 250
   },
   {
-   "week_end": "2026-09-24",
-   "leases": 1,
-   "assignments": 7,
-   "terminations": 5,
-   "cars_leased": 0,
-   "cars_terminated": 695
+   "week_end": "2026-09-28",
+   "leases": 2,
+   "assignments": 6,
+   "terminations": 4,
+   "cars_leased": 231,
+   "cars_terminated": 445
   }
  ],
  "window_days": 28
