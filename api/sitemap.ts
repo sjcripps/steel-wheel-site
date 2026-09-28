@@ -82,6 +82,7 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
       { loc: "/", priority: "1.0", changefreq: "weekly" },
       { loc: "/services", priority: "0.9", changefreq: "monthly" },
       { loc: "/outsourced-rail-department", priority: "0.9", changefreq: "monthly" },
+      { loc: "/rail-freight-rates", priority: "0.9", changefreq: "monthly" },
       { loc: "/rail-transload-services", priority: "0.9", changefreq: "monthly" },
       { loc: "/railcar-brokerage", priority: "0.8", changefreq: "monthly" },
       { loc: "/contact", priority: "0.8", changefreq: "monthly" },

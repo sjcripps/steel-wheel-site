@@ -613,31 +613,180 @@ ${cta(`in and out of ${c.city}`)}
   written.push({ loc: `/transload/${c.slug}`, priority: "0.5" });
 }
 
-// Hub
+// Hub — built to OWN the head terms: "transload facility", "transloading
+// services", "transload services", "transloading facilities near me". GSC 90d
+// before this rewrite (2026-09-28): 7,494 impressions across the cluster and
+// ONE click, because nothing on the site was built for the head terms and
+// Google kept picking the course sales page or a random city page. The hub
+// answers the query first (what a transload facility is, what the services
+// include, how a shipper uses one, how SWL fits), then routes: state grid,
+// largest markets, port terminals, how it works, what it costs, truck loadout,
+// FAQ, CTA. The cost figures are the ones already published in the course
+// module (/courses/transloading) — nothing is invented here, and they are
+// labelled as teaching ranges, not rates.
 {
   const url = `${BASE}/transload/`;
-  const title = "Transload Facility Directory by State | Steel Wheel Logistics";
-  const total = [...byRegion.values()].reduce((n, l) => n + l.length, 0);
+  const PAGE = "transload"; // utm_content + gtag page label for this page's CTAs
+  const fmt = (n) => n.toLocaleString("en-US");
+  // Directory size, not "placed on a page": a facility in an unmapped region
+  // is still in the tool, and the tool + services page quote the same figure.
+  const total = facilities.length;
+  const title = `Transload Facilities & Transloading Services: ${fmt(total)} Sites by State`;
   const description =
-    `Directory of ${total} rail transload facilities across ${regionPages.length} states and provinces. ` +
-    `Browse by region, or filter by commodity and capability in the full directory tool.`;
+    `A transload facility moves freight between railcar and truck, so you can ship by rail ` +
+    `with no rail spur. Browse ${fmt(total)} transload facilities by state and get the rail ` +
+    `leg plus the truck leg priced.`;
+  const BOOK = `https://cal.com/sj-services/30min?utm_source=site&amp;utm_campaign=rail_concierge&amp;utm_content=${PAGE}`;
+  const bookClick = `if(typeof gtag==='function')gtag('event','rail_concierge_cta_click',{event_category:'cta',page:'${PAGE}',action:'book'})`;
+
+  // Largest markets: the 15 city pages with the most facilities.
+  const topCities = cityPages
+    .slice()
+    .sort((a, b) => b.list.length - a.list.length || a.city.localeCompare(b.city))
+    .slice(0, 15);
+
+  // Port transload terminals (facility_type = "port-terminal"), grouped by
+  // city. Each links to the city page when one exists, else the region page,
+  // so every link lands on a page that actually lists the terminal.
+  const cityPageSlugs = new Set(cityPages.map((c) => c.slug));
+  const portByCity = new Map();
+  for (const f of facilities) {
+    if (f.facility_type !== "port-terminal") continue;
+    const code = String(f.state || "").trim().toUpperCase();
+    const city = String(f.city || "").trim();
+    if (!city || !REGIONS[code]) continue;
+    const key = `${city.toLowerCase()}|${code}`;
+    if (!portByCity.has(key)) portByCity.set(key, { city, code, n: 0 });
+    portByCity.get(key).n++;
+  }
+  const portCities = [...portByCity.values()].sort((a, b) => b.n - a.n || a.city.localeCompare(b.city));
+  const portTotal = portCities.reduce((n, p) => n + p.n, 0);
+  const portLink = (p) => {
+    const cs = `${slug(p.city)}-${p.code.toLowerCase()}`;
+    const href = cityPageSlugs.has(cs) ? `/transload/${cs}` : `/transload/${slug(REGIONS[p.code])}`;
+    return `<a href="${href}">${esc(p.city)}, ${esc(p.code)}</a> (${p.n})`;
+  };
+
+  // FAQ: plain text for the JSON-LD, the same answers with links for the page.
+  const FAQ = [
+    {
+      q: "What is a transload facility?",
+      a: `A transload facility is a rail-served site with track, transfer equipment and truck access where freight is moved between railcars and trucks. It lets a shipper or receiver use rail for the long haul without a rail spur of their own. Most handle dry bulk, liquid bulk or break-bulk, and many also offer storage and truck loadout.`,
+    },
+    {
+      q: "How do I find a transload facility near me?",
+      a: `Start with the state grid on this page, or filter the directory tool by state, commodity and on-site capability. Look within roughly 25 to 75 miles of the origin or destination; beyond that the truck leg starts eating the rail saving. Or tell Steel Wheel Logistics the lane and the commodity and we shortlist the facilities that actually handle it.`,
+      html: `Start with the <a href="#by-state">state grid</a> on this page, or filter the <a href="/tools/transload-directory">directory tool</a> by state, commodity and on-site capability. Look within roughly 25 to 75 miles of the origin or destination; beyond that the truck leg starts eating the rail saving. Or <a href="/contact">tell us the lane and the commodity</a> and we shortlist the facilities that actually handle it.`,
+    },
+    {
+      q: "Do I need a rail spur to use a transload facility?",
+      a: `No. That is the point of transloading: the facility has the track, so your product rides rail to the transload point and covers the last stretch by truck. A receiver with no siding can still buy on rail economics, and a shipper with no siding can still sell into rail-served markets.`,
+    },
+    {
+      q: "What commodities can be transloaded?",
+      a: `Dry bulk (grain, feed, fertilizer, cement, fly ash, aggregates, frac sand, plastic pellets), liquid bulk (chemicals, petroleum products, vegetable oils, ethanol), break-bulk (steel, lumber, paper and wood products) and heavy or project cargo. What a given facility can take depends on its equipment: pneumatic transfer, conveyors, liquid pumps, scales, heated transfer, cranes or a flat pad for boxed cargo.`,
+    },
+    {
+      q: "How do I price a transload move?",
+      a: `Add three parts: the rail line-haul to the transload point, the facility's handling fee (usually quoted per ton or per unit) and the truck leg to the final destination, then compare the sum against direct truck for the same lane. The Rail Rate Quote tool gives an indicative rail figure, the facility quotes its own handling rate, and Steel Wheel Logistics puts the three together and confirms them with the carrier and the operator.`,
+      html: `Add three parts: the rail line-haul to the transload point, the facility&rsquo;s handling fee (usually quoted per ton or per unit) and the truck leg to the final destination, then compare the sum against direct truck for the same lane. The <a href="/tools/rail-rate-quote">Rail Rate Quote tool</a> gives an indicative rail figure, the facility quotes its own handling rate, and we put the three together and confirm them with the carrier and the operator.`,
+    },
+  ];
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${url}#page`,
+        name: title,
+        url,
+        description,
+        about: "Rail transload facilities and transloading services",
+        isPartOf: { "@type": "WebSite", name: "Steel Wheel Logistics", url: `${BASE}/` },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${BASE}/` },
+          { "@type": "ListItem", position: 2, name: "Transload Facilities", item: url },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: FAQ.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+    ],
+  };
+
+  const HUB_STYLE = `
+  <style>
+    .tl-hub h2{margin-top:36px}
+    .tl-hub h3{margin-top:22px}
+    .tl-hub ol.tl-steps{padding-left:1.3em}
+    .tl-hub ol.tl-steps li{margin-bottom:10px}
+    .tl-hub .tl-inline{line-height:1.9}
+    .tl-hub .tl-faq h3{margin-top:18px;font-size:1.05em}
+    .tl-hub .tl-cta{margin-top:36px;padding:22px;background:#f4f6f8;border-radius:6px;text-align:center}
+    .tl-hub .tl-cta h2{margin-top:0}
+    .tl-hub .tl-cta .cta-btn{display:inline-block;margin:6px 4px;padding:12px 22px;background:#1f4e8c;color:#fff;border-radius:5px;text-decoration:none;font-weight:600}
+    .tl-hub .tl-cta .cta-btn:hover{background:#163a68}
+  </style>`;
 
   const body = `
-  <main class="city-page">
+  <main class="city-page tl-hub">
     <section>
-      <h1>Transload Facility Directory</h1>
+      <h1>Transload facilities and transloading services in the U.S.</h1>
       <p>
-        ${total} transload facilities across ${regionPages.length} states and
-        provinces. Transload sites move bulk freight between railcar and truck,
-        opening rail economics to shippers and receivers with no siding of their
-        own. Browse by region below, or use the
-        <a href="/tools/transload-directory">full directory tool</a> to filter by
-        commodity and capability.
+        <strong>A transload facility is a rail-served site where freight is moved
+        between railcars and trucks.</strong> It has the track, the transfer
+        equipment and the truck access, so a shipper or receiver can use rail for
+        the long haul without a rail spur of their own. This page lists
+        <strong>${fmt(total)} rail transload locations</strong> across
+        ${regionPages.length} U.S. states, Canadian provinces and Mexican states,
+        browsable by state and city.
+      </p>
+      <p>
+        <strong>Transloading services</strong> are what happens at that site:
+        rail-to-truck and truck-to-rail transfer, dry bulk handling (conveyors,
+        pneumatic transfer, dump pits), liquid bulk handling (pumps, tank storage,
+        heated transfer), break-bulk handling of steel, lumber and paper, short
+        or long-term storage, and truck loadout with scale tickets. Not every
+        facility does all of it; the directory records the commodities and
+        capabilities each operator publishes.
+      </p>
+      <p>
+        <strong>How a shipper uses one:</strong> the railcar is billed to the
+        transload facility instead of to your dock. The operator unloads it into
+        storage or straight into trucks, and the product covers the last
+        25&ndash;75 miles by road. Outbound works in reverse: trucks bring product
+        to the facility, it is loaded into railcars there, and rail carries the
+        long haul. No siding, no track agreement, no railcar spotting at your
+        site.
+      </p>
+      <p>
+        <strong>Where Steel Wheel Logistics fits:</strong> we do not own
+        terminals. We are the rail department for shippers who do not have one.
+        We find the facility that actually handles your commodity, price the
+        rail leg plus the truck leg, and coordinate the move with the railroad,
+        the operator and the trucker. Details on the
+        <a href="/rail-transload-services">rail transload services</a> page.
       </p>
     </section>
 
-    <section>
-      <h2>Browse by region</h2>
+    <section id="by-state">
+      <h2>Find a transload facility near you</h2>
+      <p>
+        Every facility below sits on a state page with the operator name, city,
+        published commodities and capabilities, and a phone number where one is
+        published. Want to filter across all regions at once? Use the
+        <a href="/tools/transload-directory">Transload Directory tool</a>.
+      </p>
+      <h3>Browse by state and province</h3>
       <div class="related-links-grid">
 ${regionPages
   .map(
@@ -645,28 +794,145 @@ ${regionPages
       `        <div><a href="/transload/${r.slug}">${esc(r.name)}</a> &mdash; ${r.list.length}</div>`
   )
   .join("\n")}
-      </div>${DISCLAIMER}
+      </div>
+
+      <h3>Largest transload markets</h3>
+      <p class="tl-inline">
+        ${topCities.map((c) => `<a href="/transload/${c.slug}">${esc(c.city)}, ${esc(c.code)}</a> (${c.list.length})`).join(" &middot; ")}
+      </p>
+
+      <h3>Port transload terminals</h3>
+      <p>
+        ${portTotal} of the listed facilities are port terminals: vessel-to-rail
+        and rail-to-vessel transfer for bulk, break-bulk and boxed cargo, usually
+        with on-dock or near-dock track. Cities with port terminals in the
+        directory:
+      </p>
+      <p class="tl-inline">
+        ${portCities.map(portLink).join(" &middot; ")}
+      </p>
+      <p>
+        <a href="/tools/transload-directory?type=port-terminal">See all port terminals on the map</a>
+        &middot; <a href="/ports/">U.S. ports for inland rail freight</a>
+        &middot; Need indoor storage on rail instead? See the
+        <a href="/rail-served-warehouses/">rail-served warehouse directory</a>.
+      </p>${DISCLAIMER}
     </section>
-${cta("by rail")}
+
+    <section>
+      <h2>How transloading works</h2>
+      <ol class="tl-steps">
+        <li><strong>Pick the facility.</strong> Close enough to the origin or
+          destination that the truck leg stays short, on a railroad that
+          reaches your other end, with the equipment your commodity needs
+          (pneumatic for pellets and cement, conveyor or dump pit for
+          aggregates, pumps for liquids, cranes or forklifts for steel and
+          lumber).</li>
+        <li><strong>Bill the rail leg to the facility.</strong> The railcar
+          moves from origin to the transload site&rsquo;s track under the
+          facility&rsquo;s name, with your product on the waybill. For an
+          outbound move the facility is the origin instead.</li>
+        <li><strong>Transfer.</strong> The operator unloads the railcar into
+          storage (silo, tank, warehouse, pad) or straight into waiting trucks.
+          Straight-to-truck is cheapest but needs trucks lined up the day the
+          car arrives.</li>
+        <li><strong>Store if needed.</strong> Most facilities include a few
+          free days, then charge storage. Holding product in the railcar
+          instead runs up railroad demurrage, which is the expensive way to
+          store anything; the <a href="/tools/demurrage-calculator">demurrage
+          calculator</a> shows the exposure.</li>
+        <li><strong>Truck loadout and delivery.</strong> Trucks are loaded,
+          weighed and ticketed at the facility, then run the last miles to the
+          consignee. Either you arrange the trucks or the facility does; agree
+          on that before the first car ships.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>What transloading costs</h2>
+      <p>
+        A transload move has three cost parts: the rail line-haul to the
+        transload point, the facility&rsquo;s handling fee, and the truck leg
+        to the final destination. Our
+        <a href="/courses/transloading">Transloading course module</a> teaches
+        the math with these working ranges: a handling fee of roughly
+        <strong>$15&ndash;$35 per ton</strong> depending on commodity, a truck
+        leg at <strong>$3&ndash;$5 per loaded mile</strong> over a typical
+        25&ndash;75 miles (priced per truck, not per ton), and all-truck at
+        roughly $0.12&ndash;$0.20 per ton-mile for comparison. Those are
+        teaching figures and indicative only; every facility quotes its own
+        rate.
+      </p>
+      <p>
+        What moves the handling fee: the <strong>commodity</strong> (free-flowing
+        grain is cheaper to handle than sticky or hazardous product), the
+        <strong>equipment</strong> it needs (a pneumatic blower or a heated tank
+        costs more per hour than a front-end loader), <strong>storage
+        days</strong> beyond the free period, and the <strong>truck leg</strong>
+        (distance, and whether the facility can load trucks fast enough to keep
+        them moving). Run the rail side through the
+        <a href="/tools/rail-rate-quote">Rail Rate Quote tool</a>, compare the
+        whole lane with the <a href="/tools/rail-vs-truck">rail-vs-truck
+        calculator</a>, and read
+        <a href="/blog/transloading-vs-direct-rail">transloading vs. direct
+        rail</a> for when the answer is &ldquo;just truck it.&rdquo;
+      </p>
+    </section>
+
+    <section>
+      <h2>Transload truck loadout</h2>
+      <p>
+        Truck loadout is the last step at the facility: product goes from the
+        railcar or from storage into the truck, gets weighed, and leaves with a
+        scale ticket. The equipment sets the pace. Pneumatic loadout for
+        pellets, cement and fly ash blows product into a dry-bulk trailer;
+        aggregates and grain load by conveyor, loadout spout or front-end
+        loader into dump or hopper trailers; liquids pump into tank trailers;
+        steel and lumber lift by crane or forklift onto flatbeds. A facility
+        that loads out 40 trucks a day empties a 100-ton railcar in a morning;
+        one that loads out eight leaves the car sitting, and that shows up as
+        demurrage or storage.
+      </p>
+      <p>
+        Before committing a lane, ask the operator four things: loadout hours
+        and whether they take appointments, trucks per hour for your commodity,
+        whether there is a certified scale on site, and whether they arrange
+        the trucks or you do. The answers decide the real cost of the truck leg
+        and how many railcars you can push through the facility in a week. We
+        ask those questions for every facility we shortlist.
+      </p>
+    </section>
+
+    <section class="tl-faq">
+      <h2>Transload facility FAQ</h2>
+${FAQ.map((f) => `      <h3>${esc(f.q)}</h3>\n      <p>${f.html || esc(f.a)}</p>`).join("\n")}
+    </section>
+
+    <section class="tl-cta">
+      <h2>Price a transload move</h2>
+      <p>
+        Tell us the origin, the destination and the commodity. We shortlist the
+        facilities that handle it, confirm capability and availability with the
+        operator, and price the rail leg plus the truck leg &mdash; indicative
+        first, then firmed up with the carrier and the facility. Or
+        <a href="/contact">send us the lane</a>.
+      </p>
+      <p>
+        <a class="cta-btn" href="${BOOK}" target="_blank" rel="noopener" onclick="${bookClick}">Book a 30-minute call</a>
+        <a class="cta-btn" href="tel:+16018212199">Call (601) 821-2199</a>
+        <a class="cta-btn" href="/tools/rail-rate-quote">Price a lane</a>
+      </p>
+    </section>
   </main>
 `;
 
   writeFileSync(
     join(OUTPUT_DIR, "index.html"),
-    head({
-      title,
-      description,
-      canonical: url,
-      jsonLd: {
-        "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        name: title,
-        url,
-        description,
-      },
-    }) + body + FOOTER
+    head({ title, description, canonical: url, jsonLd }) + HUB_STYLE + body + FOOTER
   );
-  written.unshift({ loc: "/transload", priority: "0.8" });
+  // 0.9: the hub is the page meant to rank for the head terms; region pages
+  // sit at 0.6 and city pages at 0.5 beneath it.
+  written.unshift({ loc: "/transload", priority: "0.9" });
 }
 
 // Manifest consumed by api/sitemap.ts
