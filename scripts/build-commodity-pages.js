@@ -127,6 +127,93 @@ function listWords(arr) {
 }
 
 /* ------------------------------------------------------------------ *
+ * Indicative lane rates — rates/lanes.json (one row per published
+ * /rates/<o>/to/<d>/<commodity> page: single-car tariff estimate, line
+ * haul + FSC + interchange, per car; commodity_id == rate-engine id, the
+ * same id the page's `est` carries). Each commodity page samples up to 10
+ * rows spread across the distance range. Missing file => warn and skip.
+ * ------------------------------------------------------------------ */
+let LANES = [];
+try {
+  LANES = JSON.parse(readFileSync(join(ROOT, "rates", "lanes.json"), "utf-8"));
+  if (!Array.isArray(LANES)) throw new Error("unexpected shape");
+} catch (e) {
+  console.warn(`WARN: rates/lanes.json unavailable (${e.message}) — lane-rate tables skipped.`);
+  LANES = [];
+}
+const LANE_IDS = new Set(LANES.map((l) => l.commodity_id));
+// Pages whose engine id has no published lanes borrow the family that rides
+// the same car: DDGS and soybean meal move in grain hoppers (est "ddgs" has
+// no lanes); wood pellets follow lumber (est null). Everything else uses its
+// own est, or gets no table when lanes.json has no rows for that id.
+const LANE_ID_OVERRIDES = { ddgs: "grain", "soybean-meal": "grain", "wood-pellets": "lumber" };
+const LANE_FAMILY_LABEL = {
+  grain: "grain", steel: "steel", plastic: "plastic resin", paper: "paper",
+  coal: "coal", chemicals: "liquid chemicals", fertilizer: "dry fertilizer", lumber: "lumber",
+};
+function laneIdFor(c) {
+  const id = LANE_ID_OVERRIDES[c.slug] ?? c.est;
+  return id && LANE_IDS.has(id) ? id : null;
+}
+// Up to k lanes for one commodity id, evenly spaced over the sorted distance
+// range so the table shows short, medium and long hauls, not ten near-twins.
+function sampleLanes(id, k = 10) {
+  // AK/HI rows are excluded: no rail connection to the lower 48, so a
+  // "Houston -> Anchorage" line would read as a rail lane that cannot exist.
+  const OFF_NETWORK = new Set(["AK", "HI"]);
+  const rows = LANES.filter((l) => l.commodity_id === id && l.rate > 0 && l.miles > 0
+      && !OFF_NETWORK.has(l.origin_state) && !OFF_NETWORK.has(l.dest_state))
+    .sort((a, b) => a.miles - b.miles);
+  if (rows.length <= k) return rows;
+  const picked = [];
+  for (let i = 0; i < k; i++) {
+    const row = rows[Math.round((i * (rows.length - 1)) / (k - 1))];
+    if (!picked.includes(row)) picked.push(row);
+  }
+  return picked;
+}
+const LANES_MONTH = LANES.length
+  ? monthLabel(LANES.map((l) => String(l.lastmod)).sort().at(-1).slice(0, 7))
+  : null;
+
+/* Naming helpers. `short` is the buyer's word for the commodity ("Steel",
+ * not "Steel (Coils, Plate, Bar)"); it drives title, H1, H2s and the CTA. */
+function shortName(c) { return c.short ?? c.name.split("(")[0].trim(); }
+// Mid-sentence casing that keeps acronyms: "DDGS" stays, "Plastic Pellets" -> "plastic pellets".
+function lc(s) {
+  return String(s).split(" ").map((w) => (/^[A-Z0-9-]{2,}$/.test(w) ? w : w.toLowerCase())).join(" ");
+}
+function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+function isPlural(short) { return /[^s]s$/i.test(short) && !/(ash|ss)$/i.test(short); }
+function carShort(c) { return c.cars.split("(")[0].trim(); }
+// "Coil car, gondola, bulkhead flat" -> "coil cars, gondolas or bulkhead flats"
+function carsPlural(c) {
+  const pieces = lc(carShort(c)).split(", ")
+    .map((p) => p.replace(/(\S+)$/, (w) => (/s$/.test(w) ? w : `${w}s`)));
+  return pieces.length > 1
+    ? `${pieces.slice(0, -1).join(", ")} or ${pieces.at(-1)}`
+    : pieces[0];
+}
+// Low end of the typical load: "90–100" -> 90 (the per-ton column divides by this).
+function lowTons(c) { return parseInt(String(c.tons), 10); }
+// Prose forms: "10–37 (grade-dependent)" -> "10–37"; qualifiers stay in the spec table.
+function tonsShort(c) { return String(c.tons).split("(")[0].trim(); }
+function densShort(c) { return String(c.density).split("(")[0].trim(); }
+// Title under 65 chars: the full form when the name is short enough, else
+// progressively shorter forms. Google truncates around 60 anyway.
+function pageTitle(short) {
+  const variants = [
+    `${short} Rail Shipping & Logistics: Rates, Railcars, Lanes (2026)`,
+    `${short} Rail Shipping & Logistics: Rates & Lanes (2026)`,
+    `${short} Rail Shipping & Logistics (2026)`,
+  ];
+  return variants.find((t) => t.length < 65) ?? variants.at(-1);
+}
+function quoteLink(c) {
+  return c.est ? `/tools/rail-rate-quote?commodity=${c.est}` : "/tools/rail-rate-quote";
+}
+
+/* ------------------------------------------------------------------ *
  * Commodity dataset. Figures are standard AAR/industry practice —
  * typical net loads for 263k/286k GRL cars, engineering-handbook bulk
  * densities. Ranges, not guarantees.
@@ -178,7 +265,7 @@ const COMMODITIES = [
     hubkey: "grain",
   },
   {
-    slug: "fertilizer", name: "Dry Fertilizer (Urea, DAP, MAP)", stcc: "28712", est: "fertilizer",
+    slug: "fertilizer", name: "Dry Fertilizer (Urea, DAP, MAP)", stcc: "28712", est: "fertilizer", short: "Fertilizer",
     cars: "Covered hopper (3,000–4,750 cu ft)", tons: "100–110",
     density: "45–62", constraint: "weight",
     what: "Urea, DAP and MAP move from Gulf import terminals and domestic plants to inland distribution warehouses ahead of planting seasons.",
@@ -214,7 +301,7 @@ const COMMODITIES = [
     hubkey: "chemicals",
   },
   {
-    slug: "aggregates", name: "Aggregates & Crushed Stone", stcc: "14212", est: "aggregates",
+    slug: "aggregates", name: "Aggregates & Crushed Stone", stcc: "14212", est: "aggregates", short: "Aggregates",
     cars: "Open-top hopper or gondola", tons: "100–115",
     density: "90–105", constraint: "weight",
     what: "Crushed stone, gravel and construction sand — the heaviest, cheapest tonnage on rail. It only moves where a quarry, a market and a rail line happen to align.",
@@ -259,7 +346,7 @@ const COMMODITIES = [
     hubkey: "steel",
   },
   {
-    slug: "lumber", name: "Lumber & Wood Products", stcc: "24211", est: "lumber",
+    slug: "lumber", name: "Lumber & Wood Products", stcc: "24211", est: "lumber", short: "Lumber",
     cars: "Centerbeam flat (73 ft)", tons: "75–95",
     density: "—", constraint: "cube",
     what: "Dimensional lumber, panels and engineered wood ride centerbeam flats from Canadian and Southern mills to distribution yards near housing markets.",
@@ -268,7 +355,7 @@ const COMMODITIES = [
     hubkey: "forest_products",
   },
   {
-    slug: "paper", name: "Paper & Pulp", stcc: "26211", est: "paper",
+    slug: "paper", name: "Paper & Pulp", stcc: "26211", est: "paper", short: "Paper",
     cars: "High-cube boxcar (60 ft, cushioned)", tons: "70–90",
     density: "—", constraint: "cube",
     what: "Rolls of containerboard, printing paper and market pulp move in clean, cushioned high-cube boxcars from Southern and Canadian mills.",
@@ -304,7 +391,7 @@ const COMMODITIES = [
     hubkey: "grain",
   },
   {
-    slug: "chemicals", name: "Industrial Chemicals (Liquid)", stcc: "28199", est: "chemicals",
+    slug: "chemicals", name: "Industrial Chemicals (Liquid)", stcc: "28199", est: "chemicals", short: "Chemicals",
     cars: "General-service or specialized tank car", tons: "80–100",
     density: "varies", constraint: "weight",
     what: "Caustic soda, sulfuric acid, alcohols, solvents — the general tank-car franchise from Gulf Coast chemistry to plants everywhere.",
@@ -313,7 +400,7 @@ const COMMODITIES = [
     hubkey: "chemicals",
   },
   {
-    slug: "lpg-propane", name: "Propane / LPG", stcc: "29121", est: "lpg",
+    slug: "lpg-propane", name: "Propane / LPG", stcc: "29121", est: "lpg", short: "Propane",
     cars: "Pressure tank car (DOT-112, ~33,500 gal)", tons: "60–70",
     density: "—", constraint: "volume",
     what: "Liquefied petroleum gas rides in thick-shelled pressure cars from fractionators to regional storage ahead of heating season.",
@@ -349,7 +436,7 @@ const COMMODITIES = [
     hubkey: "chemicals",
   },
   {
-    slug: "silica", name: "Synthetic Amorphous Silica", stcc: "2819956", est: null,
+    slug: "silica", name: "Synthetic Amorphous Silica", stcc: "2819956", est: null, short: "Amorphous Silica",
     cars: "Pressure-differential covered hopper (high cube)", tons: "10–37 (grade-dependent)",
     density: "2–20 (fumed vs. precipitated)", constraint: "cube",
     what: "Fumed and precipitated silica — ultra-light engineered powders. The car cubes out at a small fraction of its weight limit: precipitated grades load ~30–37 tons, fumed grades as little as 10–15.",
@@ -470,25 +557,157 @@ const DISCLAIMER = `
     <p style="font-size:0.85em;color:#666;margin-top:28px">
       Figures on this page are typical industry ranges for reference — actual
       loads depend on the specific car, commodity grade and railroad rules.
-      Rate estimates are indicative only; Steel Wheel Logistics does not issue
-      binding quotes from this page.
+      Rate estimates are indicative only, per car; nothing on this page is a
+      quote.
     </p>`;
 
-function estimatorCta(c) {
-  const link = c.est
-    ? `/tools/rail-rate-quote?commodity=${c.est}`
-    : `/tools/rail-rate-quote`;
+/* "<Commodity> logistics by rail: what we do" — one paragraph per page,
+ * assembled from the page's own fields (constraint, cars, tons, density,
+ * uses, moves) so no two commodities read the same. Covers routing and
+ * pricing, equipment selection, transload, demurrage and railcar brokerage. */
+function transloadKind(c) {
+  const k = c.cars.toLowerCase();
+  if (/autorack/.test(k)) return null;
+  if (/tank/.test(k)) return "tank transload terminal";
+  if (/covered hopper|pressure-differential/.test(k)) return "bulk transload terminal";
+  if (/boxcar|centerbeam|flat|coil/.test(k)) return "team track or rail-served warehouse";
+  return "bulk yard"; // open-top hopper, gondola, ore car
+}
+function whatWeDo(c) {
+  const s = lc(shortName(c));
+  const S = cap(s);
+  const pl = isPlural(shortName(c));
+  const v = (sing, plur) => (pl ? plur : sing);
+  const cars = carsPlural(c);
+  const unit = /unit train|unit-train|shuttle/i.test(c.moves);
+  const seasonal = /season|harvest|peak|winter|fall run|spring/i.test(c.moves);
+  const hasDensity = c.density !== "—" && c.density !== "varies";
+  const tons = tonsShort(c);
+  const dens = densShort(c);
+  const uses = c.uses.replace(/\.$/, "").replace(/^(\S+)/, (w) => lc(w));
+  const scope = `Steel Wheel Logistics prices and coordinates ${s} carload moves nationwide — ` +
+    `${unit ? "single cars, multi-car blocks and unit-train sets" : "single cars and multi-car blocks"} — ` +
+    `from routing and an indicative rate per car through car ordering, release and tracing to placement.`;
+  let equip;
+  if (/autorack/i.test(c.cars)) {
+    equip = `${S} load about ${tons} tons per rack and the vehicle count depends on deck level and model size, ` +
+      `so we match bi-level or tri-level autoracks to the models and to the ramp on each end.`;
+  } else if (c.constraint === "cube") {
+    equip = `${S} ${v("fills", "fill")} the car before ${v("it reaches", "they reach")} the weight limit` +
+      `${hasDensity ? ` (about ${dens} lb per cubic foot)` : ""}, topping out near ${tons} tons, ` +
+      `so we spec the largest-cube ${cars} the lane allows and check the load plan against the receiver's unloading setup.`;
+  } else if (c.constraint === "weight" && /tank/i.test(c.cars)) {
+    equip = `${S} ${v("is", "are")} weight-limited at about ${tons} tons per car, so tank car size, lining and ` +
+      `fittings are matched to the product and to the receiver's unloading connections before a car is ordered.`;
+  } else if (c.constraint === "weight") {
+    equip = `${S} ${v("weighs", "weigh")} out at ${tons} tons per car` +
+      `${hasDensity ? ` (roughly ${dens} lb per cubic foot)` : ""} well before the car is full, ` +
+      `so we size ${cars} to the weight limit and the receiving track's capacity rather than to cube.`;
+  } else if (c.constraint === "volume") {
+    equip = `${S} ${v("is", "are")} carried by volume rather than weight, about ${tons} tons per car in ${cars}, ` +
+      `so we spec the car class and fittings first and price the lane per car.`;
+  } else if (c.constraint === "balanced") {
+    equip = `At ${dens} lb per cubic foot ${s} ${v("loads", "load")} close to both limits at once (${tons} tons per car), ` +
+      `so we match ${cars} to the receiver's unloading method and check weight and cube on every load plan.`;
+  } else {
+    equip = `Bulk density runs ${dens} lb per cubic foot depending on grade, so a car can cube out or weigh out on the same lane; ` +
+      `we confirm the grade before selecting ${cars} and price the move on a realistic ${tons} tons per car.`;
+  }
+  const receivers = `Typical end uses are ${uses} — we confirm the receiving track ` +
+    `and unloading method before the first car is ordered.`;
+  const tk = transloadKind(c);
+  const transload = tk
+    ? `Where the plant has no spur, we set up transload at a ${tk} near the receiver and price the rail-plus-truck ` +
+      `move against straight truck, so the mode decision is made on numbers.`
+    : null;
+  const demurrage = `Demurrage control is planned rather than reactive: ` +
+    (unit
+      ? `on shuttle and unit-train cycles the clock runs on the whole set, so loading and release windows are agreed before the train is ordered.`
+      : `manifest cars arrive bunched, so we set release rules with the receiver and watch free time car by car.`);
+  const brokerage = `Shippers who need equipment can use our railcar brokerage to source ${cars} on lease or per trip` +
+    `${seasonal ? `, and on ${s} we line up car supply ahead of the seasonal peak` : ""}.`;
+  const text = [scope, equip, receivers, transload, demurrage, brokerage].filter(Boolean).join(" ");
   return `
-    <section class="cta-section" style="margin-top:32px;padding:20px;background:#f4f6f8;border-radius:6px">
-      <h2 style="margin-top:0">Shipping ${esc(c.name.toLowerCase())} by rail?</h2>
-      <p>
-        Run your lane through the <a href="${link}">Rail Rate Quote tool</a> for an
-        indicative estimate${c.est ? " (the commodity is pre-selected for you)" : ""},
-        compare modes with <a href="/tools/rail-vs-truck">Rail vs Truck</a>, or find
-        transfer points in the <a href="/tools/transload-directory">Transload Directory</a>.
-        We do not guarantee rates &mdash; we will talk through your lane before quoting.
-      </p>
+    <h2>${esc(S)} logistics by rail: what we do</h2>
+    <p>${esc(deIntermodal(text))}</p>`;
+}
+
+/* "Indicative <commodity> rail rates by lane" — up to 10 rows from
+ * rates/lanes.json for the page's lane family, linked to the lane pages.
+ * Per-ton column = rate / low end of the page's typical load. */
+function lanesSection(c) {
+  const id = laneIdFor(c);
+  if (!id) return { html: "", id: null, rows: 0 };
+  const rows = sampleLanes(id);
+  if (!rows.length) return { html: "", id, rows: 0 };
+  const s = lc(shortName(c));
+  const lo = lowTons(c);
+  const family = LANE_FAMILY_LABEL[id] ?? id;
+  const familyNote = family === s ? "" : ` (priced in the model's ${esc(family)} class, the same car family)`;
+  const td = 'style="padding:6px 8px;border-bottom:1px solid #e5e7eb"';
+  const tdr = 'style="padding:6px 8px;border-bottom:1px solid #e5e7eb;text-align:right;white-space:nowrap"';
+  const tr = rows.map((l) => {
+    const href = String(l.url).replace(/\/$/, "");
+    return `        <tr>` +
+      `<td ${td}><a href="${esc(href)}">${esc(l.origin_city)}, ${esc(l.origin_state)} &rarr; ${esc(l.dest_city)}, ${esc(l.dest_state)}</a></td>` +
+      `<td ${tdr}>${Math.round(l.miles).toLocaleString("en-US")}</td>` +
+      `<td ${tdr}>$${Math.round(l.rate).toLocaleString("en-US")}</td>` +
+      `<td ${tdr}>$${Math.round(l.rate / lo).toLocaleString("en-US")}</td></tr>`;
+  }).join("\n");
+  const html = `
+    <h2>Indicative ${esc(s)} rail rates by lane</h2>
+    <p>${rows.length >= 3
+      ? `${rows.length} sample lanes from our rate model${familyNote}, spread from short to long haul.`
+      : `${rows.length === 1 ? "The one published lane" : `The ${rows.length} published lanes`} from our rate model${familyNote}; more are added as the model publishes them.`}
+      The rate is per car; the per-ton column divides it by ${lo} tons, the low end of a typical
+      ${esc(s)} load. Open a lane for its route and per-leg breakdown.</p>
+    <div class="railroad-item" style="margin:12px 0 16px;padding:12px 16px;background:#f9fafb;border-radius:6px;overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse">
+        <thead><tr>
+          <th style="text-align:left;padding:6px 8px">Lane</th>
+          <th style="text-align:right;padding:6px 8px">Rail miles</th>
+          <th style="text-align:right;padding:6px 8px">Indicative rate per car</th>
+          <th style="text-align:right;padding:6px 8px">Per ton at ${lo} t/car</th>
+        </tr></thead>
+        <tbody>
+${tr}
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.85em;color:#666">Single-car indicative estimates from our rate model, line haul plus
+      fuel surcharge (plus interchange fees where a route crosses carriers), ${esc(LANES_MONTH)}. Not a quote.
+      <a href="${quoteLink(c)}">Price your own ${esc(s)} lane</a> or browse
+      <a href="/rail-freight-rates">rail freight rates</a> across all commodities.</p>`;
+  return { html, id, rows: rows.length };
+}
+
+/* The page's one CTA box: setup call (tagged), phone, indicative-rate tool. */
+function ctaBox(c) {
+  const s = lc(shortName(c));
+  const book = `https://cal.com/sj-services/30min?utm_source=site&utm_campaign=rail_concierge&utm_content=commodity-${c.slug}`;
+  const onclick = `if(typeof gtag==='function')gtag('event','rail_concierge_cta_click',{event_category:'cta',page:'commodity-${c.slug}',action:'book'})`;
+  const secondary = 'class="btn" style="background:#fff;color:#1f2937;border:2px solid #cbd5e1"';
+  return `
+    <section class="cta-section" style="margin-top:32px;padding:24px;background:#f4f6f8;border-radius:8px">
+      <h2 style="margin-top:0">Set up a ${esc(s)} rail lane</h2>
+      <p>Tell us origin, destination and cars per month. We come back with an indicative rate per car,
+        the equipment that fits, and how the lane would actually run &mdash; no obligation.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+        <a class="btn btn-primary" href="${esc(book)}" target="_blank" rel="noopener" onclick="${esc(onclick)}">Book a 30-minute setup call</a>
+        <a ${secondary} href="tel:+16018212199">Call (601) 821-2199</a>
+        <a ${secondary} href="${quoteLink(c)}">Indicative rate for ${esc(s)}</a>
+      </div>
     </section>`;
+}
+
+function serviceFaq(c) {
+  const s = lc(shortName(c));
+  return {
+    q: `Does Steel Wheel Logistics handle ${s} rail logistics?`,
+    a: `Yes — we price and coordinate ${s} carload moves nationwide: routing and indicative rates per car in ` +
+      `${carsPlural(c)} at ${tonsShort(c)} tons, car supply through our railcar brokerage, transload where the plant has ` +
+      `no spur, and demurrage control. Call (601) 821-2199 or book a 30-minute setup call to walk through your lane.`,
+  };
 }
 
 function faq(c) {
@@ -628,14 +847,17 @@ function vesselFaq(c, v) {
 
 function commodityPage(c) {
   const url = `${BASE}/commodities/${c.slug}`;
-  const title = `${c.name} by Rail — Railcar Type, Tons per Car & How It Moves | Steel Wheel Logistics`;
+  const short = shortName(c);
+  const s = lc(short);
+  const title = pageTitle(short);
   const description = deIntermodal(
-    `How ${c.name.toLowerCase()} ships by rail: ${c.cars.split("(")[0].trim()}, ` +
-    `${c.tons} tons per car, STCC ${c.stcc}. Uses, flows and freight guidance from Steel Wheel Logistics.`
+    `${cap(s)} ${isPlural(short) ? "move" : "moves"} in ${carsPlural(c)}, ${tonsShort(c)} tons per car. ` +
+    `We price and coordinate ${s} carload moves nationwide. Indicative rates by lane.`
   );
   const vessel = vesselImports(c);
   const vFaq = vesselFaq(c, vessel);
-  const faqs = [...faq(c), ...(vFaq ? [vFaq] : [])];
+  const faqs = [...faq(c), serviceFaq(c), ...(vFaq ? [vFaq] : [])];
+  const lanes = lanesSection(c);
   const hubs = (HUBKEY_MATCH[c.hubkey] ? HUBS.filter(HUBKEY_MATCH[c.hubkey]) : []).slice(0, 8);
 
   const jsonLd = {
@@ -653,8 +875,9 @@ function commodityPage(c) {
     <nav style="font-size:0.85em;color:#666;margin-bottom:12px">
       <a href="/">Home</a> &rsaquo; <a href="/commodities/">Commodities</a> &rsaquo; ${esc(c.name)}
     </nav>
-    <h1>${esc(c.name)} by Rail</h1>
+    <h1>${esc(`${short} Rail Shipping & Logistics: Rates, Railcars, Lanes`)}</h1>
     <p style="font-size:1.05em">${esc(deIntermodal(c.what))}</p>
+${whatWeDo(c)}
 
     <div class="railroad-item" style="margin:20px 0;padding:16px;background:#f9fafb;border-radius:6px">
       <table style="width:100%;border-collapse:collapse">
@@ -671,7 +894,7 @@ function commodityPage(c) {
 
     <h2>How it moves</h2>
     <p>${esc(deIntermodal(c.moves))}</p>
-${byTheNumbers(c)}
+${lanes.html}${byTheNumbers(c)}
     ${hubs.length ? `
     <h2>Where it flows</h2>
     <p>Key origins and gateways for ${esc(c.name.toLowerCase())} on the
@@ -690,11 +913,11 @@ ${faqs.map((f) => `    <h3 style="margin-bottom:4px">${esc(f.q)}</h3>\n    <p st
       <li><a href="/tools/rail-vs-truck">Rail vs Truck Calculator</a> &mdash; where rail wins on your lane</li>
       <li><a href="/tools/transload-directory">Transload Directory</a> &mdash; 2,400+ transfer facilities</li>
     </ul>
-${estimatorCta(c)}
+${ctaBox(c)}
 ${DISCLAIMER}
   </main>`;
 
-  return { url, html: head({ title, description, canonical: url, jsonLd }) + body + FOOTER };
+  return { url, title, lanes, html: head({ title, description, canonical: url, jsonLd }) + body + FOOTER };
 }
 
 function hubPage(h) {
@@ -824,10 +1047,12 @@ const idx = indexPage();
 writeFileSync(join(ROOT, "commodities", "index.html"), idx.html);
 pages.push({ loc: idx.url, priority: "0.8" });
 
+const laneReport = [];
 for (const c of COMMODITIES) {
   const p = commodityPage(c);
   writeFileSync(join(ROOT, "commodities", `${c.slug}.html`), p.html);
   pages.push({ loc: p.url, priority: "0.7" });
+  laneReport.push({ slug: c.slug, id: p.lanes.id, rows: p.lanes.rows, title: p.title });
 }
 
 for (const h of HUBS) {
@@ -849,6 +1074,15 @@ console.log(`pages.json: ${pages.length} URLs for the sitemap.`);
   console.log(PORT_IMPORTS
     ? `Vessel-imports section (Census ${PORT_IMPORTS.data_month}) on ${withVessel.length} commodity pages: ${withVessel.join(", ")}`
     : "Vessel-imports section: skipped (no port-imports.json).");
+}
+{
+  const withTable = laneReport.filter((r) => r.rows > 0);
+  console.log(`Lane-rate tables (${LANES.length} lanes, ${LANES_MONTH ?? "n/a"}) on ${withTable.length} pages:`);
+  for (const r of laneReport) {
+    console.log(`  ${r.slug.padEnd(16)} -> ${r.id ? `${r.id.padEnd(11)} ${r.rows} rows` : "no lanes (section skipped)"}`);
+  }
+  const longTitle = laneReport.filter((r) => r.title.length >= 65);
+  if (longTitle.length) console.error(`TITLE >= 65 chars: ${longTitle.map((r) => r.slug).join(", ")}`);
 }
 const banned = /intermodal|drayage/i;
 let bad = 0;
