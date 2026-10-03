@@ -1,5 +1,50 @@
 [
   {
+    "slug": "true-cost-of-leasing-a-railcar",
+    "title": "The True Cost of Leasing a Railcar: Everything Beyond the Lease Rate",
+    "description": "A railcar lease rate is only part of the cost. Add repairs, property tax, storage, cleaning and return conditions, subtract mileage credits, and price per load.",
+    "date": "2026-10-03",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "cost of leasing a railcar",
+      "railcar lease cost",
+      "railcar total cost of ownership",
+      "railcar lease rates",
+      "how much does it cost to lease a railcar",
+      "net lease vs full service railcar"
+    ]
+  },
+  {
+    "slug": "railcar-property-tax",
+    "title": "Railcar Property Tax: Who Pays Ad Valorem Tax on Leased Railcars",
+    "description": "How states tax private and leased railcars by miles run in each state, who pays under net vs full-service leases, and filing deadlines and penalties to avoid.",
+    "date": "2026-10-03",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "railcar property tax",
+      "railcar ad valorem tax",
+      "private railcar tax",
+      "leased railcar taxes",
+      "railroad car tax",
+      "private car tax report"
+    ]
+  },
+  {
+    "slug": "railcar-repair-invoice-audit",
+    "title": "Railcar Repair Bills: How Car Repair Billing Works and How to Audit It",
+    "description": "Why lessees get railcar repair bills, how AAR car repair billing works, the errors to look for, and the deadlines to dispute a charge before you lose the right.",
+    "date": "2026-10-03",
+    "author": "Steel Wheel Logistics",
+    "tags": [
+      "railcar repair billing",
+      "railcar repair invoice",
+      "car repair billing",
+      "AAR car repair billing",
+      "railcar repair audit",
+      "handling line responsibility"
+    ]
+  },
+  {
     "slug": "railcar-storage-costs",
     "title": "Railcar Storage Rates: What It Costs to Park Idle Cars (2026)",
     "description": "Railcar storage rates run $4-16 per car per day plus switching. See where to park idle cars, what storage really costs, and when a sublease beats storing them.",
