@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-28T00:48:39Z",
- "month_label": "September 2026",
+ "generated": "2026-10-03T13:03:35Z",
+ "month_label": "October 2026",
  "year": 2026,
  "basis": "Indicative estimates from the Steel Wheel rate model, line haul plus fuel surcharge, single-car basis, per car. Excludes accessorials, demurrage, transload and truck legs. Not a quote.",
  "source": "https://steelwheellogistics.com/api/rail-rate-quote",
@@ -17,24 +17,24 @@
    "weight_tons": 100,
    "band": "short",
    "miles": 637.0,
-   "rate_per_car": 5708.43,
+   "rate_per_car": 5810.34,
    "line_haul": 5326.26,
-   "fuel_surcharge": 382.17,
-   "per_ton": 57.08,
-   "cents_per_ton_mile": 8.96,
+   "fuel_surcharge": 484.08,
+   "per_ton": 58.1,
+   "cents_per_ton_mile": 9.12,
    "single_line": true,
    "interchange_count": 0,
    "railroads": [
     "BNSF",
     "UP"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:44:23Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:00:47Z",
    "stale": false,
    "notes": [
     "Routed BNSF (1 carrier, 637 mi).",
     "Priced as a single-railroad move on BNSF (637 mi). A multi-railroad routing was slightly shorter at 629 mi, but keeping one railroad end to end avoids handing the cars between carriers, which usually costs more than the extra miles.",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 100.0 tons/car, your cost is $57.08/ton. A covered hopper carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 100.0 tons/car, your cost is $58.10/ton. A covered hopper carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   },
   {
@@ -49,11 +49,11 @@
    "weight_tons": 100,
    "band": "medium",
    "miles": 1314.0,
-   "rate_per_car": 8203.72,
+   "rate_per_car": 8413.97,
    "line_haul": 7310.17,
-   "fuel_surcharge": 893.55,
-   "per_ton": 82.04,
-   "cents_per_ton_mile": 6.24,
+   "fuel_surcharge": 1103.8,
+   "per_ton": 84.14,
+   "cents_per_ton_mile": 6.4,
    "single_line": true,
    "interchange_count": 0,
    "railroads": [
@@ -67,13 +67,13 @@
     "TRRA",
     "UP"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:44:28Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:00:59Z",
    "stale": false,
    "notes": [
     "Routed UP (1 carrier, 1,314 mi). A shorter routing exists \u2014 BNSF\u2192CN\u2192CP at 1076 mi (3 carriers) \u2014 but we chose the one with fewer hand-offs between railroads. Every interchange adds cost and another chance for the cars to sit.",
     "UP can carry this move on its own network the whole way (1314 mi), so we've priced it as a single-railroad haul rather than splitting it across 2 railroads. Fewer hand-offs usually beats the shorter mileage.",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 100.0 tons/car, your cost is $82.04/ton. A covered hopper carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 100.0 tons/car, your cost is $84.14/ton. A covered hopper carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   },
   {
@@ -88,24 +88,24 @@
    "weight_tons": 100,
    "band": "long",
    "miles": 1540.3,
-   "rate_per_car": 8897.44,
+   "rate_per_car": 9143.9,
    "line_haul": 7973.23,
-   "fuel_surcharge": 924.21,
-   "per_ton": 88.97,
-   "cents_per_ton_mile": 5.78,
+   "fuel_surcharge": 1170.67,
+   "per_ton": 91.44,
+   "cents_per_ton_mile": 5.94,
    "single_line": true,
    "interchange_count": 0,
    "railroads": [
     "BNSF",
     "UP"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:44:31Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:01:03Z",
    "stale": false,
    "notes": [
     "Routed BNSF (1 carrier, 1,540 mi).",
     "BNSF can carry this move on its own network the whole way (1540 mi), so we've priced it as a single-railroad haul rather than splitting it across 2 railroads. Fewer hand-offs usually beats the shorter mileage.",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 100.0 tons/car, your cost is $88.97/ton. A covered hopper carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 100.0 tons/car, your cost is $91.44/ton. A covered hopper carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   },
   {
@@ -120,11 +120,11 @@
    "weight_tons": 100,
    "band": "short",
    "miles": 555.6,
-   "rate_per_car": 6596.24,
+   "rate_per_car": 6685.13,
    "line_haul": 6218.45,
-   "fuel_surcharge": 377.79,
-   "per_ton": 65.96,
-   "cents_per_ton_mile": 11.87,
+   "fuel_surcharge": 466.68,
+   "per_ton": 66.85,
+   "cents_per_ton_mile": 12.03,
    "single_line": true,
    "interchange_count": 0,
    "railroads": [
@@ -133,12 +133,12 @@
     "EACH",
     "UP"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:44:35Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:01:07Z",
    "stale": false,
    "notes": [
     "Routed UP (1 carrier, 556 mi).",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 100.0 tons/car, your cost is $65.96/ton. A gondola carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 100.0 tons/car, your cost is $66.85/ton. A gondola carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   },
   {
@@ -153,11 +153,11 @@
    "weight_tons": 100,
    "band": "medium",
    "miles": 1097.4,
-   "rate_per_car": 9231.8,
+   "rate_per_car": 9451.28,
    "line_haul": 8158.76,
-   "fuel_surcharge": 823.04,
-   "per_ton": 92.32,
-   "cents_per_ton_mile": 8.41,
+   "fuel_surcharge": 1042.52,
+   "per_ton": 94.51,
+   "cents_per_ton_mile": 8.61,
    "single_line": false,
    "interchange_count": 1,
    "railroads": [
@@ -167,13 +167,13 @@
     "NS",
     "TASD"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:44:41Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:01:17Z",
    "stale": false,
    "notes": [
     "Routed NS\u2192IORY (2 carriers, 1,097 mi).",
     "Route may include weight-restricted trackage (AGR): state rail plan data lists this short line at a 263,000-lb gross car limit rather than the standard 286,000 lb. Fully loaded modern cars may need to load lighter \u2014 confirm current limits with the carrier before committing equipment.",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 100.0 tons/car, your cost is $92.32/ton. A gondola carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 100.0 tons/car, your cost is $94.51/ton. A gondola carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   },
   {
@@ -188,11 +188,11 @@
    "weight_tons": 100,
    "band": "long",
    "miles": 2186.8,
-   "rate_per_car": 13107.83,
+   "rate_per_car": 13457.73,
    "line_haul": 11795.73,
-   "fuel_surcharge": 1312.1,
-   "per_ton": 131.08,
-   "cents_per_ton_mile": 5.99,
+   "fuel_surcharge": 1662.0,
+   "per_ton": 134.58,
+   "cents_per_ton_mile": 6.15,
    "single_line": true,
    "interchange_count": 0,
    "railroads": [
@@ -203,13 +203,13 @@
     "SCAX",
     "UP"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:44:44Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:01:20Z",
    "stale": false,
    "notes": [
     "Routed BNSF (1 carrier, 2,187 mi).",
     "BNSF can carry this move on its own network the whole way (2187 mi), so we've priced it as a single-railroad haul rather than splitting it across 2 railroads. Fewer hand-offs usually beats the shorter mileage. Other single-line options: UP 2201mi.",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 100.0 tons/car, your cost is $131.08/ton. A gondola carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 100.0 tons/car, your cost is $134.58/ton. A gondola carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   },
   {
@@ -224,11 +224,11 @@
    "weight_tons": 95,
    "band": "short",
    "miles": 589.7,
-   "rate_per_car": 7641.54,
+   "rate_per_car": 7750.5,
    "line_haul": 7109.12,
-   "fuel_surcharge": 282.42,
-   "per_ton": 80.44,
-   "cents_per_ton_mile": 13.64,
+   "fuel_surcharge": 391.38,
+   "per_ton": 81.58,
+   "cents_per_ton_mile": 13.83,
    "single_line": false,
    "interchange_count": 1,
    "railroads": [
@@ -238,13 +238,13 @@
     "NS",
     "UP"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:44:52Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:01:29Z",
    "stale": false,
    "notes": [
     "Routed CP\u2192CSXT (2 carriers, 590 mi). A shorter routing exists \u2014 UP\u2192CP\u2192CN\u2192NS\u2192CSXT\u2192NS at 582 mi (5 carriers) \u2014 but we chose the one with fewer hand-offs between railroads. Every interchange adds cost and another chance for the cars to sit.",
     "Routed CP\u2192CSXT (590 mi) with a single hand-off between railroads. A routing with fewer total miles would have used 3 railroads; each extra hand-off adds cost and another chance for the cars to sit.",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 95.0 tons/car, your cost is $80.44/ton. A tank car carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 95.0 tons/car, your cost is $81.58/ton. A tank car carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   },
   {
@@ -259,11 +259,11 @@
    "weight_tons": 95,
    "band": "medium",
    "miles": 927.7,
-   "rate_per_car": 9658.26,
+   "rate_per_car": 9840.08,
    "line_haul": 8718.98,
-   "fuel_surcharge": 689.28,
-   "per_ton": 101.67,
-   "cents_per_ton_mile": 10.96,
+   "fuel_surcharge": 871.1,
+   "per_ton": 103.58,
+   "cents_per_ton_mile": 11.17,
    "single_line": false,
    "interchange_count": 1,
    "railroads": [
@@ -274,12 +274,12 @@
     "NS",
     "UP"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:45:03Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:01:38Z",
    "stale": false,
    "notes": [
     "Routed UP\u2192NOPB\u2192NS (3 carriers, 928 mi). A shorter routing exists \u2014 UP\u2192CP\u2192CN\u2192CSXT at 906 mi (4 carriers) \u2014 but we chose the one with fewer hand-offs between railroads. Every interchange adds cost and another chance for the cars to sit.",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 95.0 tons/car, your cost is $101.67/ton. A tank car carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 95.0 tons/car, your cost is $103.58/ton. A tank car carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   },
   {
@@ -294,11 +294,11 @@
    "weight_tons": 95,
    "band": "long",
    "miles": 1732.1,
-   "rate_per_car": 13220.36,
+   "rate_per_car": 13552.56,
    "line_haul": 11696.18,
-   "fuel_surcharge": 1274.18,
-   "per_ton": 139.16,
-   "cents_per_ton_mile": 8.03,
+   "fuel_surcharge": 1606.38,
+   "per_ton": 142.66,
+   "cents_per_ton_mile": 8.24,
    "single_line": false,
    "interchange_count": 1,
    "railroads": [
@@ -310,12 +310,12 @@
     "NS",
     "UP"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:45:11Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:01:43Z",
    "stale": false,
    "notes": [
     "Routed UP\u2192NS (1732 mi) with a single hand-off between railroads. A routing with fewer total miles would have used 4 railroads; each extra hand-off adds cost and another chance for the cars to sit.",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 95.0 tons/car, your cost is $139.16/ton. A tank car carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 95.0 tons/car, your cost is $142.66/ton. A tank car carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   },
   {
@@ -346,7 +346,7 @@
    ],
    "fsc_as_of": "2026-09-16T06:00:02Z",
    "priced_at": "2026-09-28T00:45:22Z",
-   "stale": false,
+   "stale": true,
    "notes": [
     "Routed CP\u2192CSXT (2 carriers, 710 mi). A shorter routing exists \u2014 UP\u2192CP\u2192CN\u2192CSXT at 626 mi (4 carriers) \u2014 but we chose the one with fewer hand-offs between railroads. Every interchange adds cost and another chance for the cars to sit.",
     "Routed CP\u2192CSXT (710 mi) with a single hand-off between railroads. A routing with fewer total miles would have used 3 railroads; each extra hand-off adds cost and another chance for the cars to sit.",
@@ -365,11 +365,11 @@
    "weight_tons": 90,
    "band": "medium",
    "miles": 1244.2,
-   "rate_per_car": 10115.26,
+   "rate_per_car": 10314.33,
    "line_haul": 9368.74,
-   "fuel_surcharge": 746.52,
-   "per_ton": 112.39,
-   "cents_per_ton_mile": 9.03,
+   "fuel_surcharge": 945.59,
+   "per_ton": 114.6,
+   "cents_per_ton_mile": 9.21,
    "single_line": true,
    "interchange_count": 0,
    "railroads": [
@@ -379,13 +379,13 @@
     "NS",
     "UP"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:45:28Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:01:53Z",
    "stale": false,
    "notes": [
     "Routed BNSF (1 carrier, 1,244 mi).",
     "Priced as a single-railroad move on BNSF (1244 mi). A multi-railroad routing was slightly shorter at 1057 mi, but keeping one railroad end to end avoids handing the cars between carriers, which usually costs more than the extra miles.",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 90.0 tons/car, your cost is $112.39/ton. A covered hopper carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 90.0 tons/car, your cost is $114.60/ton. A covered hopper carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   },
   {
@@ -412,7 +412,7 @@
    ],
    "fsc_as_of": "2026-09-16T06:00:02Z",
    "priced_at": "2026-09-28T00:45:31Z",
-   "stale": false,
+   "stale": true,
    "notes": [
     "Routed UP (1 carrier, 1,623 mi).",
     "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 90.0 tons/car, your cost is $132.61/ton. A covered hopper carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
@@ -430,11 +430,11 @@
    "weight_tons": 75,
    "band": "short",
    "miles": 650.2,
-   "rate_per_car": 7086.95,
+   "rate_per_car": 7223.5,
    "line_haul": 6557.36,
-   "fuel_surcharge": 279.59,
-   "per_ton": 94.49,
-   "cents_per_ton_mile": 14.53,
+   "fuel_surcharge": 416.14,
+   "per_ton": 96.31,
+   "cents_per_ton_mile": 14.81,
    "single_line": false,
    "interchange_count": 1,
    "railroads": [
@@ -444,12 +444,12 @@
     "KBSR",
     "NS"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:45:38Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:02:06Z",
    "stale": false,
    "notes": [
     "Routed CSXT\u2192KBSR (2 carriers, 650 mi). A shorter routing exists \u2014 CSXT\u2192UP\u2192NS at 643 mi (3 carriers) \u2014 but we chose the one with fewer hand-offs between railroads. Every interchange adds cost and another chance for the cars to sit.",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 75.0 tons/car, your cost is $94.49/ton. A centerbeam flat carries up to about 100 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 75.0 tons/car, your cost is $96.31/ton. A centerbeam flat carries up to about 100 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   },
   {
@@ -464,19 +464,19 @@
    "weight_tons": 75,
    "band": "medium",
    "miles": 1356.5,
-   "rate_per_car": 10009.09,
+   "rate_per_car": 10226.13,
    "line_haul": 9086.67,
-   "fuel_surcharge": 922.42,
-   "per_ton": 133.45,
-   "cents_per_ton_mile": 9.84,
+   "fuel_surcharge": 1139.46,
+   "per_ton": 136.35,
+   "cents_per_ton_mile": 10.05,
    "single_line": true,
    "interchange_count": 0,
    "railroads": [
     "BNSF",
     "UP"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:45:43Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:02:11Z",
    "stale": false,
    "notes": [
     "Routed UP (1 carrier, 1,356 mi).",
@@ -496,11 +496,11 @@
    "weight_tons": 75,
    "band": "long",
    "miles": 2152.3,
-   "rate_per_car": 13166.41,
+   "rate_per_car": 13510.78,
    "line_haul": 11702.85,
-   "fuel_surcharge": 1463.56,
-   "per_ton": 175.55,
-   "cents_per_ton_mile": 8.16,
+   "fuel_surcharge": 1807.93,
+   "per_ton": 180.14,
+   "cents_per_ton_mile": 8.37,
    "single_line": true,
    "interchange_count": 0,
    "railroads": [
@@ -508,12 +508,12 @@
     "UP",
     "XXXX"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:45:46Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:02:13Z",
    "stale": false,
    "notes": [
     "Routed UP (1 carrier, 2,152 mi).",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 75.0 tons/car, your cost is $175.55/ton. A centerbeam flat carries up to about 100 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 75.0 tons/car, your cost is $180.14/ton. A centerbeam flat carries up to about 100 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   },
   {
@@ -543,7 +543,7 @@
    ],
    "fsc_as_of": "2026-09-16T06:00:02Z",
    "priced_at": "2026-09-28T00:45:49Z",
-   "stale": false,
+   "stale": true,
    "notes": [
     "Routed NS (1 carrier, 704 mi). A shorter routing exists \u2014 CSXT\u2192NS at 698 mi (2 carriers) \u2014 but we chose the one with fewer hand-offs between railroads. Every interchange adds cost and another chance for the cars to sit.",
     "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 75.0 tons/car, your cost is $111.27/ton. A boxcar carries up to about 100 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
@@ -561,11 +561,11 @@
    "weight_tons": 75,
    "band": "medium",
    "miles": 995.3,
-   "rate_per_car": 9665.68,
+   "rate_per_car": 9874.7,
    "line_haul": 8737.71,
-   "fuel_surcharge": 427.97,
-   "per_ton": 128.88,
-   "cents_per_ton_mile": 12.95,
+   "fuel_surcharge": 636.99,
+   "per_ton": 131.66,
+   "cents_per_ton_mile": 13.23,
    "single_line": false,
    "interchange_count": 2,
    "railroads": [
@@ -576,12 +576,12 @@
     "KBSR",
     "NS"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:45:54Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:02:22Z",
    "stale": false,
    "notes": [
     "Routed CSXT\u2192GC\u2192KBSR (3 carriers, 995 mi).",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 75.0 tons/car, your cost is $128.88/ton. A boxcar carries up to about 100 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 75.0 tons/car, your cost is $131.66/ton. A boxcar carries up to about 100 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   },
   {
@@ -596,11 +596,11 @@
    "weight_tons": 75,
    "band": "long",
    "miles": 2213.6,
-   "rate_per_car": 14634.46,
+   "rate_per_car": 14988.64,
    "line_haul": 13306.28,
-   "fuel_surcharge": 1328.18,
-   "per_ton": 195.13,
-   "cents_per_ton_mile": 8.81,
+   "fuel_surcharge": 1682.36,
+   "per_ton": 199.85,
+   "cents_per_ton_mile": 9.03,
    "single_line": true,
    "interchange_count": 0,
    "railroads": [
@@ -609,13 +609,13 @@
     "MNNR",
     "UP"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:45:57Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:02:25Z",
    "stale": false,
    "notes": [
     "Routed BNSF (1 carrier, 2,214 mi).",
     "BNSF can carry this move on its own network the whole way (2214 mi), so we've priced it as a single-railroad haul rather than splitting it across 2 railroads. Fewer hand-offs usually beats the shorter mileage. Other single-line options: UP 2225mi.",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 75.0 tons/car, your cost is $195.13/ton. A boxcar carries up to about 100 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 75.0 tons/car, your cost is $199.85/ton. A boxcar carries up to about 100 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   },
   {
@@ -644,7 +644,7 @@
    ],
    "fsc_as_of": "2026-09-16T06:00:02Z",
    "priced_at": "2026-09-28T00:48:14Z",
-   "stale": false,
+   "stale": true,
    "notes": [
     "Routed CSXT (1 carrier, 652 mi).",
     "CSXT can carry this move on its own network the whole way (652 mi), so we've priced it as a single-railroad haul rather than splitting it across 2 railroads. Fewer hand-offs usually beats the shorter mileage.",
@@ -663,11 +663,11 @@
    "weight_tons": 100,
    "band": "medium",
    "miles": 1314.0,
-   "rate_per_car": 8041.27,
+   "rate_per_car": 8251.52,
    "line_haul": 7147.72,
-   "fuel_surcharge": 893.55,
-   "per_ton": 80.41,
-   "cents_per_ton_mile": 6.12,
+   "fuel_surcharge": 1103.8,
+   "per_ton": 82.52,
+   "cents_per_ton_mile": 6.28,
    "single_line": true,
    "interchange_count": 0,
    "railroads": [
@@ -681,13 +681,13 @@
     "TRRA",
     "UP"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:48:19Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:02:36Z",
    "stale": false,
    "notes": [
     "Routed UP (1 carrier, 1,314 mi). A shorter routing exists \u2014 CP\u2192CN\u2192BNSF at 1076 mi (3 carriers) \u2014 but we chose the one with fewer hand-offs between railroads. Every interchange adds cost and another chance for the cars to sit.",
     "UP can carry this move on its own network the whole way (1314 mi), so we've priced it as a single-railroad haul rather than splitting it across 2 railroads. Fewer hand-offs usually beats the shorter mileage.",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 100.0 tons/car, your cost is $80.41/ton. A covered hopper carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 100.0 tons/car, your cost is $82.52/ton. A covered hopper carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   },
   {
@@ -702,11 +702,11 @@
    "weight_tons": 100,
    "band": "long",
    "miles": 1694.7,
-   "rate_per_car": 9342.78,
+   "rate_per_car": 9673.52,
    "line_haul": 8238.3,
-   "fuel_surcharge": 854.48,
-   "per_ton": 93.43,
-   "cents_per_ton_mile": 5.51,
+   "fuel_surcharge": 1185.22,
+   "per_ton": 96.74,
+   "cents_per_ton_mile": 5.71,
    "single_line": false,
    "interchange_count": 1,
    "railroads": [
@@ -718,12 +718,12 @@
     "NS",
     "UP"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:48:23Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:02:43Z",
    "stale": false,
    "notes": [
     "Routed CSXT\u2192UP (1695 mi) with a single hand-off between railroads. A routing with fewer total miles would have used 3 railroads; each extra hand-off adds cost and another chance for the cars to sit.",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 100.0 tons/car, your cost is $93.43/ton. A covered hopper carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 100.0 tons/car, your cost is $96.74/ton. A covered hopper carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   },
   {
@@ -751,7 +751,7 @@
    ],
    "fsc_as_of": "2026-09-16T06:00:02Z",
    "priced_at": "2026-09-28T00:46:14Z",
-   "stale": false,
+   "stale": true,
    "notes": [
     "Routed UP (1 carrier, 544 mi). A shorter routing exists \u2014 BNSF\u2192UP\u2192BNSF at 495 mi (2 carriers) \u2014 but we chose the one with fewer hand-offs between railroads. Every interchange adds cost and another chance for the cars to sit.",
     "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 100.0 tons/car, your cost is $53.76/ton. A covered hopper carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
@@ -769,24 +769,24 @@
    "weight_tons": 100,
    "band": "medium",
    "miles": 1016.2,
-   "rate_per_car": 6665.67,
+   "rate_per_car": 6828.26,
    "line_haul": 6055.96,
-   "fuel_surcharge": 609.71,
-   "per_ton": 66.66,
-   "cents_per_ton_mile": 6.56,
+   "fuel_surcharge": 772.3,
+   "per_ton": 68.28,
+   "cents_per_ton_mile": 6.72,
    "single_line": true,
    "interchange_count": 0,
    "railroads": [
     "BNSF",
     "UP"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:46:19Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:02:54Z",
    "stale": false,
    "notes": [
     "Routed BNSF (1 carrier, 1,016 mi).",
     "Priced as a single-railroad move on BNSF (1016 mi). A multi-railroad routing was slightly shorter at 1003 mi, but keeping one railroad end to end avoids handing the cars between carriers, which usually costs more than the extra miles.",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 100.0 tons/car, your cost is $66.66/ton. A covered hopper carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 100.0 tons/car, your cost is $68.28/ton. A covered hopper carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   },
   {
@@ -815,7 +815,7 @@
    ],
    "fsc_as_of": "2026-09-16T06:00:02Z",
    "priced_at": "2026-09-28T00:46:26Z",
-   "stale": false,
+   "stale": true,
    "notes": [
     "Routed UP (1 carrier, 1,778 mi).",
     "Priced as a single-railroad move on UP (1778 mi). A multi-railroad routing was slightly shorter at 1594 mi, but keeping one railroad end to end avoids handing the cars between carriers, which usually costs more than the extra miles.",
@@ -834,23 +834,23 @@
    "weight_tons": 110,
    "band": "short",
    "miles": 544.3,
-   "rate_per_car": 4851.3,
+   "rate_per_car": 4938.4,
    "line_haul": 4231.15,
-   "fuel_surcharge": 370.15,
-   "per_ton": 44.1,
-   "cents_per_ton_mile": 8.1,
+   "fuel_surcharge": 457.25,
+   "per_ton": 44.89,
+   "cents_per_ton_mile": 8.25,
    "single_line": true,
    "interchange_count": 1,
    "railroads": [
     "KCTL",
     "UP"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:48:26Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:03:05Z",
    "stale": false,
    "notes": [
     "Routed UP (1 carrier, 544 mi). A shorter routing exists \u2014 BNSF\u2192UP\u2192BNSF at 495 mi (2 carriers) \u2014 but we chose the one with fewer hand-offs between railroads. Every interchange adds cost and another chance for the cars to sit.",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 110.0 tons/car, your cost is $44.10/ton. An open-top hopper carries up to about 120 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 110.0 tons/car, your cost is $44.89/ton. An open-top hopper carries up to about 120 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   },
   {
@@ -865,11 +865,11 @@
    "weight_tons": 110,
    "band": "medium",
    "miles": 926.8,
-   "rate_per_car": 5725.28,
+   "rate_per_car": 5873.57,
    "line_haul": 5169.19,
-   "fuel_surcharge": 556.09,
-   "per_ton": 52.05,
-   "cents_per_ton_mile": 5.62,
+   "fuel_surcharge": 704.38,
+   "per_ton": 53.4,
+   "cents_per_ton_mile": 5.76,
    "single_line": false,
    "interchange_count": 0,
    "railroads": [
@@ -879,12 +879,12 @@
     "KCTL",
     "UP"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:48:30Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:03:12Z",
    "stale": false,
    "notes": [
     "Routed BNSF\u2192DGNO (2 carriers, 927 mi).",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 110.0 tons/car, your cost is $52.05/ton. An open-top hopper carries up to about 120 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 110.0 tons/car, your cost is $53.40/ton. An open-top hopper carries up to about 120 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   },
   {
@@ -899,11 +899,11 @@
    "weight_tons": 110,
    "band": "long",
    "miles": 1466.7,
-   "rate_per_car": 7444.65,
+   "rate_per_car": 7738.51,
    "line_haul": 6493.28,
-   "fuel_surcharge": 701.37,
-   "per_ton": 67.68,
-   "cents_per_ton_mile": 4.61,
+   "fuel_surcharge": 995.23,
+   "per_ton": 70.35,
+   "cents_per_ton_mile": 4.8,
    "single_line": false,
    "interchange_count": 1,
    "railroads": [
@@ -914,13 +914,13 @@
     "TRRA",
     "UP"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:48:39Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:03:22Z",
    "stale": false,
    "notes": [
     "Routed UP\u2192CSXT (2 carriers, 1,467 mi). A shorter routing exists \u2014 UP\u2192BNSF\u2192NS\u2192CSXT at 1363 mi (4 carriers) \u2014 but we chose the one with fewer hand-offs between railroads. Every interchange adds cost and another chance for the cars to sit.",
     "Routed UP\u2192CSXT (1467 mi) with a single hand-off between railroads. A routing with fewer total miles would have used 3 railroads; each extra hand-off adds cost and another chance for the cars to sit.",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 110.0 tons/car, your cost is $67.68/ton. An open-top hopper carries up to about 120 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 110.0 tons/car, your cost is $70.35/ton. An open-top hopper carries up to about 120 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   },
   {
@@ -935,22 +935,22 @@
    "weight_tons": 95,
    "band": "short",
    "miles": 742.4,
-   "rate_per_car": 6974.75,
+   "rate_per_car": 7093.53,
    "line_haul": 6469.95,
-   "fuel_surcharge": 504.8,
-   "per_ton": 73.42,
-   "cents_per_ton_mile": 9.89,
+   "fuel_surcharge": 623.58,
+   "per_ton": 74.67,
+   "cents_per_ton_mile": 10.06,
    "single_line": true,
    "interchange_count": 0,
    "railroads": [
     "UP"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:46:43Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:03:26Z",
    "stale": false,
    "notes": [
     "Routed UP (1 carrier, 742 mi). A shorter routing exists \u2014 BNSF\u2192UP\u2192BNSF at 690 mi (2 carriers) \u2014 but we chose the one with fewer hand-offs between railroads. Every interchange adds cost and another chance for the cars to sit.",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 95.0 tons/car, your cost is $73.42/ton. A tank car carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 95.0 tons/car, your cost is $74.67/ton. A tank car carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   },
   {
@@ -965,23 +965,23 @@
    "weight_tons": 95,
    "band": "medium",
    "miles": 995.3,
-   "rate_per_car": 7997.78,
+   "rate_per_car": 8157.04,
    "line_haul": 7320.96,
-   "fuel_surcharge": 676.82,
-   "per_ton": 84.19,
-   "cents_per_ton_mile": 8.46,
+   "fuel_surcharge": 836.08,
+   "per_ton": 85.86,
+   "cents_per_ton_mile": 8.63,
    "single_line": true,
    "interchange_count": 0,
    "railroads": [
     "CPRS",
     "UP"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:46:46Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:03:29Z",
    "stale": false,
    "notes": [
     "Routed UP (1 carrier, 995 mi). A shorter routing exists \u2014 UP\u2192BNSF at 957 mi (2 carriers) \u2014 but we chose the one with fewer hand-offs between railroads. Every interchange adds cost and another chance for the cars to sit.",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 95.0 tons/car, your cost is $84.19/ton. A tank car carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 95.0 tons/car, your cost is $85.86/ton. A tank car carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   },
   {
@@ -996,11 +996,11 @@
    "weight_tons": 95,
    "band": "long",
    "miles": 1790.3,
-   "rate_per_car": 11212.66,
+   "rate_per_car": 11499.1,
    "line_haul": 9995.26,
-   "fuel_surcharge": 1217.4,
-   "per_ton": 118.03,
-   "cents_per_ton_mile": 6.59,
+   "fuel_surcharge": 1503.84,
+   "per_ton": 121.04,
+   "cents_per_ton_mile": 6.76,
    "single_line": true,
    "interchange_count": 0,
    "railroads": [
@@ -1008,123 +1008,130 @@
     "PVTX",
     "UP"
    ],
-   "fsc_as_of": "2026-09-16T06:00:02Z",
-   "priced_at": "2026-09-28T00:46:49Z",
+   "fsc_as_of": "2026-10-01T06:00:02Z",
+   "priced_at": "2026-10-03T13:03:35Z",
    "stale": false,
    "notes": [
     "Routed UP (1 carrier, 1,790 mi).",
-    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 95.0 tons/car, your cost is $118.03/ton. A tank car carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
+    "Rail rates are quoted per car, not per ton. Loading heavier doesn't change the rate \u2014 it lowers your cost per ton. At 95.0 tons/car, your cost is $121.04/ton. A tank car carries up to about 115 tons \u2014 confirm with the carrier for your specific equipment, routing, and destination."
    ]
   }
  ],
  "summary": {
   "lanes": 30,
-  "per_car_min": 4851.3,
-  "per_car_max": 14634.46,
-  "per_car_median": 8274.54,
-  "per_ton_min": 44.1,
-  "per_ton_max": 195.13,
-  "per_ton_median": 90.82,
-  "cpt_mile_min": 4.61,
+  "per_car_min": 4938.4,
+  "per_car_max": 14988.64,
+  "per_car_median": 8379.67,
+  "per_ton_min": 44.89,
+  "per_ton_max": 199.85,
+  "per_ton_median": 92.56,
+  "cpt_mile_min": 4.8,
   "cpt_mile_max": 15.81,
-  "cpt_mile_median": 8.44,
+  "cpt_mile_median": 8.54,
   "miles_min": 544.3,
   "miles_max": 2213.6,
   "single_line_lanes": 20,
-  "stale_lanes": 0,
+  "stale_lanes": 6,
   "by_commodity": {
    "aggregates": {
     "label": "Aggregates",
     "n": 3,
-    "median_rate": 5725.28,
-    "median_per_ton": 52.05,
-    "median_cptm": 5.62,
-    "min_rate": 4851.3,
-    "max_rate": 7444.65
+    "median_rate": 5873.57,
+    "median_per_ton": 53.4,
+    "median_cptm": 5.76,
+    "min_rate": 4938.4,
+    "max_rate": 7738.51
    },
    "cement": {
     "label": "Cement",
     "n": 3,
-    "median_rate": 6665.67,
-    "median_per_ton": 66.66,
-    "median_cptm": 6.56,
+    "median_rate": 6828.26,
+    "median_per_ton": 68.28,
+    "median_cptm": 6.72,
     "min_rate": 5375.52,
     "max_rate": 9366.51
    },
    "chemicals": {
     "label": "Chemicals",
     "n": 3,
-    "median_rate": 9658.26,
-    "median_per_ton": 101.67,
-    "median_cptm": 10.96,
-    "min_rate": 7641.54,
-    "max_rate": 13220.36
+    "median_rate": 9840.08,
+    "median_per_ton": 103.58,
+    "median_cptm": 11.17,
+    "min_rate": 7750.5,
+    "max_rate": 13552.56
    },
    "ethanol": {
     "label": "Ethanol",
     "n": 3,
-    "median_rate": 7997.78,
-    "median_per_ton": 84.19,
-    "median_cptm": 8.46,
-    "min_rate": 6974.75,
-    "max_rate": 11212.66
+    "median_rate": 8157.04,
+    "median_per_ton": 85.86,
+    "median_cptm": 8.63,
+    "min_rate": 7093.53,
+    "max_rate": 11499.1
    },
    "fertilizer": {
     "label": "Fertilizer",
     "n": 3,
-    "median_rate": 8041.27,
-    "median_per_ton": 80.41,
-    "median_cptm": 6.12,
+    "median_rate": 8251.52,
+    "median_per_ton": 82.52,
+    "median_cptm": 6.28,
     "min_rate": 5531.97,
-    "max_rate": 9342.78
+    "max_rate": 9673.52
    },
    "grain": {
     "label": "Grain",
     "n": 3,
-    "median_rate": 8203.72,
-    "median_per_ton": 82.04,
-    "median_cptm": 6.24,
-    "min_rate": 5708.43,
-    "max_rate": 8897.44
+    "median_rate": 8413.97,
+    "median_per_ton": 84.14,
+    "median_cptm": 6.4,
+    "min_rate": 5810.34,
+    "max_rate": 9143.9
    },
    "lumber": {
     "label": "Lumber",
     "n": 3,
-    "median_rate": 10009.09,
-    "median_per_ton": 133.45,
-    "median_cptm": 9.84,
-    "min_rate": 7086.95,
-    "max_rate": 13166.41
+    "median_rate": 10226.13,
+    "median_per_ton": 136.35,
+    "median_cptm": 10.05,
+    "min_rate": 7223.5,
+    "max_rate": 13510.78
    },
    "paper": {
     "label": "Paper",
     "n": 3,
-    "median_rate": 9665.68,
-    "median_per_ton": 128.88,
-    "median_cptm": 12.95,
+    "median_rate": 9874.7,
+    "median_per_ton": 131.66,
+    "median_cptm": 13.23,
     "min_rate": 8345.36,
-    "max_rate": 14634.46
+    "max_rate": 14988.64
    },
    "plastic": {
     "label": "Plastic pellets",
     "n": 3,
-    "median_rate": 10115.26,
-    "median_per_ton": 112.39,
-    "median_cptm": 9.03,
+    "median_rate": 10314.33,
+    "median_per_ton": 114.6,
+    "median_cptm": 9.21,
     "min_rate": 8038.77,
     "max_rate": 11934.46
    },
    "steel": {
     "label": "Steel",
     "n": 3,
-    "median_rate": 9231.8,
-    "median_per_ton": 92.32,
-    "median_cptm": 8.41,
-    "min_rate": 6596.24,
-    "max_rate": 13107.83
+    "median_rate": 9451.28,
+    "median_per_ton": 94.51,
+    "median_cptm": 8.61,
+    "min_rate": 6685.13,
+    "max_rate": 13457.73
    }
   }
  },
- "failed": [],
+ "failed": [
+  "Baton Rouge, LA -> Nashville, TN [plastic]: HTTPError: HTTP Error 429: Too Many Requests",
+  "Houston, TX -> Los Angeles, CA [plastic]: HTTPError: HTTP Error 429: Too Many Requests",
+  "Savannah, GA -> Louisville, KY [paper]: HTTPError: HTTP Error 429: Too Many Requests",
+  "Tampa, FL -> Birmingham, AL [fertilizer]: HTTPError: HTTP Error 429: Too Many Requests",
+  "Dallas, TX -> Kansas City, MO [cement]: HTTPError: HTTP Error 429: Too Many Requests",
+  "Salt Lake City, UT -> Houston, TX [cement]: HTTPError: HTTP Error 429: Too Many Requests"
+ ],
  "scope_flags": []
 }
